@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[resp, err := http.Get("${1:http://example.com/}")
+if err != nil {
+	${2:log.Fatal(err)}
+}
+defer resp.Body.Close()
+body, err := ioutil.ReadAll(resp.Body)
+if err != nil {
+	${3:log.Fatal(err)}
+}
+${4:// code...}
+]]></content>
+	<tabTrigger>http.Get</tabTrigger>
+	<scope>source.go</scope>
+</snippet>

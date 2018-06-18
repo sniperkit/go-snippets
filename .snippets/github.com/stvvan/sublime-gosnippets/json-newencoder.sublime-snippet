@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+var ${1:data} ${2:interface{}}
+if err := json.NewEncoder(${3:w}).Encode(&${1:data}); err != nil {
+	${4:log.Fatal(err)}
+}
+]]></content>
+	<tabTrigger>json.NewDecoder</tabTrigger>
+	<scope>source.go</scope>
+</snippet>

@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+r := csv.NewReader(strings.NewReader(${1:in}))
+
+for {
+	record, err := r.Read()
+	if err == io.EOF {
+		break
+	}
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	${2:fmt.Println(record)}
+}
+]]></content>
+	<tabTrigger>csv.Read</tabTrigger>
+	<scope>source.go</scope>
+</snippet>
