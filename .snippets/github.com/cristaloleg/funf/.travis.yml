@@ -1,0 +1,28 @@
+language: go
+
+go:
+  - 1.9.x
+  - 1.8.x
+  - 1.7.x
+  - tip
+
+matrix:
+  allow_failures:
+    - go: tip
+  fast_finish: true
+
+before_install:
+  - make install
+
+script:
+  - make lint
+  - make test
+
+after_success:
+  - travis_retry goveralls -coverprofile=cover.out -service=travis-ci
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
