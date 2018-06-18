@@ -1,0 +1,28 @@
+[Statically compiled Go programs]
+https://dominik.honnef.co/posts/2015/06/go-musl/#flavor-be-gone
+
+
+$ cat > hello.go <<EOF
+package main
+
+// #include <stdio.h>
+// void helloworld() { printf("hello, world\n"); }
+import "C" 
+
+import (
+    "log"
+    "net"
+)
+
+func main() {
+    log.Println(net.LookupHost("google.com"))
+    C.helloworld()
+}
+EOF
+
+$ CC=/usr/local/musl/bin/musl-gcc go build --ldflags '-linkmode external -extldflags "-static"' hello.go
+$ file hello
+hello: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, not stripped
+$ ./hello
+2015/06/22 06:01:40 [216.58.211.14 2a00:1450:4016:804::200e] <nil>
+hello, world
