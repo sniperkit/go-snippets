@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),url('chrome-extension://__MSG_@@extension_id__/fonts/open-sans-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url('chrome-extension://__MSG_@@extension_id__/fonts/roboto.ttf') format('truetype');
+}
