@@ -1,0 +1,31 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "qWxk0mGRA74ZB2VuybLV/bipePA=",
+			"path": "github.com/fabioberger/chrome",
+			"revision": "e67b78149de75461d5bc8bf7dc77a31a3846abba",
+			"revisionTime": "2017-01-11T14:10:10Z"
+		},
+		{
+			"checksumSHA1": "yIkYzW7bzAD81zHyuCNmEj4+oxQ=",
+			"path": "github.com/gopherjs/gopherjs/js",
+			"revision": "444abdf920945de5d4a977b572bcc6c674d1e4eb",
+			"revisionTime": "2017-11-02T03:40:23Z"
+		},
+		{
+			"checksumSHA1": "r5eQHkttko6kxroDEENXbmXKrSs=",
+			"path": "github.com/nfnt/resize",
+			"revision": "891127d8d1b52734debe1b3c3d7e747502b6c366",
+			"revisionTime": "2016-07-24T20:39:20Z"
+		},
+		{
+			"checksumSHA1": "7l500RHm5kJL9BQehETOIXlSwMU=",
+			"path": "honnef.co/go/js/dom",
+			"revision": "0a64a2db1425c1881d4ec762370250c65f44b85b",
+			"revisionTime": "2017-03-25T14:35:19Z"
+		}
+	],
+	"rootPath": "github.com/backedrum/QuickTip"
+}
