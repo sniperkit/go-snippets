@@ -1,0 +1,85 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "yanbhS9p5qXUhEg3g0vcQi08Qig=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "3dd7008ac1529aca1bcd8a9db75228a71ba23cac",
+			"revisionTime": "2015-08-07T02:25:32Z"
+		},
+		{
+			"checksumSHA1": "y1Dr6JQSS84U7X0a4NBE6UsEiWk=",
+			"path": "github.com/gopherjs/gopherjs/js",
+			"revision": "e2a337cd781068e1cf6a23f5e0c1e1ea7e2d927b",
+			"revisionTime": "2016-03-01T11:39:10Z"
+		},
+		{
+			"checksumSHA1": "KO2yeUUtxS6kv2PqbCR5ByQCvps=",
+			"path": "github.com/jmoiron/sqlx",
+			"revision": "398dd5876282499cdfd4cb8ea0f31a672abe9495",
+			"revisionTime": "2016-02-06T22:15:33Z"
+		},
+		{
+			"checksumSHA1": "XkZjW7tjM7S8YOZZwJuDHyaSSG4=",
+			"path": "github.com/jmoiron/sqlx/reflectx",
+			"revision": "398dd5876282499cdfd4cb8ea0f31a672abe9495",
+			"revisionTime": "2016-02-06T22:15:33Z"
+		},
+		{
+			"checksumSHA1": "VcR5ZBXeogG9PycizBURUU0LmXQ=",
+			"path": "github.com/jtolds/gls",
+			"revision": "8ddce2a84170772b95dd5d576c48d517b22cac63",
+			"revisionTime": "2016-01-05T22:08:40Z"
+		},
+		{
+			"checksumSHA1": "1daxtgqirEq1p1gC4kzaXzahlCc=",
+			"path": "github.com/smartystreets/assertions",
+			"revision": "edb6e295a22c57a2aa353b2f0729b6eff9f9f4b7",
+			"revisionTime": "2015-12-10T17:08:24Z"
+		},
+		{
+			"checksumSHA1": "LnG+UUnyuyiHqM7IaN/oQEjlQr4=",
+			"path": "github.com/smartystreets/assertions/internal/oglematchers",
+			"revision": "edb6e295a22c57a2aa353b2f0729b6eff9f9f4b7",
+			"revisionTime": "2015-12-10T17:08:24Z"
+		},
+		{
+			"checksumSHA1": "d7gF6MGZVHsiGEX+yyOgNWqhH14=",
+			"path": "github.com/smartystreets/goconvey/convey",
+			"revision": "a2d5d788f3afbce0989463251ccc5492fad832df",
+			"revisionTime": "2015-12-28T21:47:19Z"
+		},
+		{
+			"checksumSHA1": "Tm/GOrmVTe6k2F9ZZMp9vWAvzD4=",
+			"path": "github.com/smartystreets/goconvey/convey/gotest",
+			"revision": "a2d5d788f3afbce0989463251ccc5492fad832df",
+			"revisionTime": "2015-12-28T21:47:19Z"
+		},
+		{
+			"checksumSHA1": "huUHK1bblIGcJRnL0jeXxTjq6jg=",
+			"path": "github.com/smartystreets/goconvey/convey/reporting",
+			"revision": "a2d5d788f3afbce0989463251ccc5492fad832df",
+			"revisionTime": "2015-12-28T21:47:19Z"
+		},
+		{
+			"checksumSHA1": "qJ1X9rSOd9kGLNBsjmcYfil+Ojc=",
+			"path": "github.com/thcyron/sqlbuilder",
+			"revision": "609a1abb836e7c9942de61f7149f576280885e76",
+			"revisionTime": "2016-03-07T21:02:01Z"
+		},
+		{
+			"checksumSHA1": "TY//X84xdQX00iG79iKZabRQ4VQ=",
+			"path": "github.com/thcyron/sqlbuilder/mysql",
+			"revision": "609a1abb836e7c9942de61f7149f576280885e76",
+			"revisionTime": "2016-03-07T21:02:01Z"
+		},
+		{
+			"checksumSHA1": "T5DW2RI9NVa8Q8pQtr4/CkdNYqE=",
+			"path": "github.com/thcyron/sqlbuilder/postgres",
+			"revision": "609a1abb836e7c9942de61f7149f576280885e76",
+			"revisionTime": "2016-03-07T21:02:01Z"
+		}
+	],
+	"rootPath": "github.com/go-zero-boilerplate/databases"
+}
