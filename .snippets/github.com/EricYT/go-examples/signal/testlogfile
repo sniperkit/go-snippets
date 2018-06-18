@@ -1,0 +1,5 @@
+2016/10/14 16:29:13 This is a test log entry
+2016/10/14 16:29:13 Catch kill signal
+2016/10/14 16:30:03 get kill signal: 2016-10-14 16:30:03.605131038 +0800 CST
+2016/10/14 16:30:03 get singal:terminated
+2016/10/14 16:30:13 stop time: 2016-10-14 16:30:13.605391112 +0800 CST
