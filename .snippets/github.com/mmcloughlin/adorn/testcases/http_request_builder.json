@@ -1,0 +1,8 @@
+{
+    "package": "testcases",
+    "doc": "Builder is anything that can build an HTTP request.",
+    "type": "Builder",
+    "method": "Build",
+    "argument_types": [],
+    "return": ["*http.Request", "error"]
+}
