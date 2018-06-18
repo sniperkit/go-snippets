@@ -1,0 +1,16 @@
+language: go
+notifications:
+  email: false
+env:
+  - ZOOKEEPER_VERSION="3.4.6"
+go:
+  - 1.3
+  - 1.4
+  - 1.5
+cache:
+  directories:
+    - $HOME/zookeeper-$ZOOKEEPER_VERSION
+before_install:
+  - test -d $HOME/zookeeper-$ZOOKEEPER_VERSION || (wget -O $HOME/zookeeper-$ZOOKEEPER_VERSION.tar.gz http://apache.claz.org/zookeeper/zookeeper-$ZOOKEEPER_VERSION/zookeeper-$ZOOKEEPER_VERSION.tar.gz && tar -xvf $HOME/zookeeper-$ZOOKEEPER_VERSION.tar.gz -C $HOME)
+script:
+  - ZOOKEEPER_PATH="$HOME/zookeeper-$ZOOKEEPER_VERSION" make test
