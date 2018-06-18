@@ -19,3 +19,6 @@ vendor/**
 .staging
 .next
 .todo
+
+.snippets/github.com/ibmendoza/go-examples/DOCKER/LINKS.MD
+.snippets/github.com/ibmendoza/go-examples/DOCKER/README.MD
