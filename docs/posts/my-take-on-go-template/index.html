@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="/images/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="My Take on Go Template"/>
+  <meta name="twitter:description" content="In programming, string interpolation is common. Using ES6 (JavaScript), string interpolation can be done like this:
+
+"/>
+  
+    <meta name="twitter:site" content="@wzulfikar"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@wzulfikar"/>
+  
+
+
+
+		
+		<meta name="author" content="wzulfikar">
+		<meta name="description" content="Just another blog.">
+		<meta name="generator" content="Hugo 0.37" />
+		<title>My Take on Go Template &middot; It&#39;s Dan :)</title>
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="stylesheet" href="/css/style.min.css">
+		<link rel="stylesheet" href="/css/highlight.min.css">
+		
+		
+		<link rel="stylesheet" href="/css/custom.css">
+		
+
+		
+			
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			
+		
+
+		
+		<link href="/index.xml" rel="alternate" type="application/rss+xml" title="It&#39;s Dan :)" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='/'> 
+	
+			<span>🏠&nbsp;</span>
+			Home
+		</a>
+
+	<a href='/posts'>
+		Archive
+	</a>
+	<a href='/tags'>Tags</a>
+	<a href='/about'>About</a>
+
+	
+
+	
+	<a href="/index.xml">RSS</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        My Take on Go Template
+                    </h1>
+                    
+                    <h2 class="headline">
+                    Mar 4, 2018 20:23
+                    · 588 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="/tags/go">go</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                
+                <section id="post-body">
+                    <p>In programming, string interpolation is common. Using ES6 (JavaScript), string interpolation can be done like this:</p>
+
+<p></p>
+
+<pre><code class="language-js">const name = &quot;Yondu&quot;
+let greeting = `Hi ${name}!`
+console.log(greeting) // yields &quot;Hi Yondu!&quot;
+</code></pre>
+
+<p>In Go, above code is similar to:</p>
+
+<pre><code class="language-go">// #1 approach: using `+`
+name := &quot;Yondu&quot;
+greeting := &quot;Hi &quot; + name + &quot;!&quot;
+fmt.Println(greeting)
+
+// #2 approach: using `fmt.Sprintf`
+name := &quot;Yondu&quot;
+greeting := fmt.Sprintf(&quot;Hi %s!&quot;, name)
+fmt.Println(greeting)
+</code></pre>
+
+<p>You may have noticed that we didn&rsquo;t use <code>${...}</code> in Go. It&rsquo;s simply because that&rsquo;s not how we do it in Go. However, sometimes we want to interpolate more stuffs. Something like:</p>
+
+<pre><code>Hello world!
+I'm {{ name }}. I'm {{ age }} years old!
+Nice to meet you!
+</code></pre>
+
+<p>When we see above text, we may have thought of the word <em>&ldquo;template&rdquo;</em>, because it has a placeholder-like formatting (the use of <code>{{ }}</code>). Go provides a built-in package, <a href="https://golang.org/pkg/text/template/"><code>text/template</code></a> and <a href="https://golang.org/pkg/html/template/"><code>html/template</code></a>, to deal with this template related operations.</p>
+
+<h2 id="enter-go-template">Enter: Go Template</h2>
+
+<p><img src="/images/gopher-head-sm.png#featured" alt="gopher" /></p>
+
+<p>Let&rsquo;s start with a sample code:</p>
+
+<pre><code class="language-go">// import &quot;text/template&quot;
+
+// create template string
+tplString := `
+Hello world!
+I'm {{ .Name }}. I'm {{ .Age }} years old!
+Nice to meet you :D
+`
+
+// initialize the template
+tmpl, _ := template.New(&quot;template_name&quot;).Parse(tplString)
+
+// create the data to pass to template
+data := struct {
+    Name, 
+    Age string
+    }{
+    &quot;Yondu&quot;,
+    &quot;110&quot;,
+    }
+
+// execute the template
+var tpl bytes.Buffer
+_ = tmpl.Execute(&amp;tpl, data)
+
+// Get string representation of our template and print it
+fmt.Println(tpl.String())
+</code></pre>
+
+<p><a href="https://play.golang.org/p/DlSE2I-f0er">Run in Go Playground</a></p>
+
+<p>You may notice that in above code, we used <code>{{ }}</code> in <code>tplString</code>. In Go template, the <code>{{ }}</code> is used to execute Actions. An action can mean a data evaluation or control structures. In our code, it&rsquo;s a data evaluation: printing variable. You should also notice the use of dot (<code>.</code>), which is how we access a variable in Go template.</p>
+
+<p>In real life, you may want to separate template to its own files. For example, this is how your folder may look like:</p>
+
+<pre><code>▾ &lt;mypackage&gt;/
+    ▾ templates/
+        nav.tpl
+        footer.tpl
+        sidebar.tpl
+</code></pre>
+
+<p>And the content of those <code>*.tpl</code> files is something like:</p>
+
+<pre><code class="language-go">// nav.tpl
+package templates
+
+Nav := `
+This is my navigation template.
+{{ .Link.Home }}
+{{ .Link.About }}
+{{ .Link.Login }}
+`
+</code></pre>
+
+<p>Using this approach – separating template files, it will be easier to edit the template and to use it. In our <code>nav.tpl</code> example above, the template string is stored in an exported variable <code>Nav</code>. An exported variable is a variable that can be accessed from other of the package. <em>Exporting</em> variable is easy: make its first letter uppercase (same goes to functions). In this case, we can access <code>Nav</code> from other package using <code>templates.Nav</code> like so:</p>
+
+<pre><code class="language-go">// main.go
+
+import &quot;mypackage/templates&quot;
+
+tmpl, _ := template.New(&quot;nav&quot;).Parse(templates.Nav)
+</code></pre>
+
+<p class="text-center red">✽ ✽ ✽
+</p>
+
+<p>So far, we&rsquo;ve only used a template string from variable. Can we just pass a file and treat it as a template? Yup! You can use <code>.ParseFiles</code>:</p>
+
+<pre><code class="language-go">data := ... 
+tmpl, _ := template.New(&quot;my-template&quot;).ParseFiles(&quot;my-template-file.txt&quot;)
+
+var tpl bytes.Buffer
+_ = tmpl.Execute(&amp;tpl, data)
+
+fmt.Println(tpl.String())
+</code></pre>
+
+<p>However, you may want to note that when passing a file as argument like in above <code>ParseFiles()</code> code, you should consider passing exact path. While passing relative path still works, it will be changed according to where the binary is run. So, be careful!</p>
+
+<h2 id="closing">Closing</h2>
+
+<p>It&rsquo;s interesting that Go provides a built-in package to handle template. Now, you can go wild and explore more about Go template (maybe, start with the difference between <code>text/template</code> and <code>html/template</code>). Have a good journey, stay safe, and don&rsquo;t get lost!</p>
+
+<p><strong><em>Till next. See ya!</em></strong></p>
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=%2fposts%2fmy-take-on-go-template%2f - My%20Take%20on%20Go%20Template by @wzulfikar">
+	<span><i class="fa fa-twitter"></i> tweet</span>
+</a>
+ ∙ 
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;">
+    <span><i class="fa fa-facebook-square"></i> share</span>
+</a>
+
+            
+            
+        		
+                	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'wzulfikar-com'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+                
+            
+
+            
+
+            <div style="padding-bottom: 50px; padding-top: 50px;">
+
+
+<div style="float: left;">
+	<a href="/posts/hello-hugo/" class="link-hover">
+		<b><i class="fa fa-caret-left"></i></b>
+		<span class="dark-underline"> Hello Hugo! (Mar 3)</span>
+	</a>
+</div>
+
+
+
+<div style="float: right;">
+	<a href="/posts/graphqlboiler-generator/" class="link-hover">
+		<span class="dark-underline">GraphQL + … (Mar 5)</span>
+		<b><i class="fa fa-caret-right"></i></b>
+	</a>
+</div>
+
+
+</div>
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/wzulfikar">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/wzulfikar">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        
+    
+    </p>
+    <p class="small">
+        Built with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="http://www.gohugo.io/">Hugo</a> ∙ Theme by <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+
+
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', "UA-63833085-3", 'auto');ga('send', 'pageview');</script>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="/images/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="GraphQL &#43; SQLBoiler Generator"/>
+  <meta name="twitter:description" content="This note as a continuation of my journey with Go template. Based on the knowledge of what template package can do, we&rsquo;ll generate a resolvers code from a given sqlboiler model struct to to satisfy graphql implementation of neelance/graphql-go.
+
+"/>
+  
+    <meta name="twitter:site" content="@wzulfikar"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@wzulfikar"/>
+  
+
+
+
+		
+		<meta name="author" content="wzulfikar">
+		<meta name="description" content="Just another blog.">
+		<meta name="generator" content="Hugo 0.37" />
+		<title>GraphQL &#43; SQLBoiler Generator &middot; It&#39;s Dan :)</title>
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="stylesheet" href="/css/style.min.css">
+		<link rel="stylesheet" href="/css/highlight.min.css">
+		
+		
+		<link rel="stylesheet" href="/css/custom.css">
+		
+
+		
+			
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			
+		
+
+		
+		<link href="/index.xml" rel="alternate" type="application/rss+xml" title="It&#39;s Dan :)" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='/'> 
+	
+			<span>🏠&nbsp;</span>
+			Home
+		</a>
+
+	<a href='/posts'>
+		Archive
+	</a>
+	<a href='/tags'>Tags</a>
+	<a href='/about'>About</a>
+
+	
+
+	
+	<a href="/index.xml">RSS</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        GraphQL &#43; SQLBoiler Generator
+                    </h1>
+                    
+                    <h2 class="headline">
+                    Mar 5, 2018 00:21
+                    · 571 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="/tags/go">go</a>
+                          
+                              <a href="/tags/sqlboiler">sqlboiler</a>
+                          
+                              <a href="/tags/graphql">graphql</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+	                  
+	                    <div id="toc">
+						Table of Contents:
+	                      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#synopsis">Synopsis</a></li>
+<li><a href="#generator-approach">Generator Approach</a></li>
+<li><a href="#the-code">The Code</a></li>
+<li><a href="#closing">Closing</a></li>
+</ul></li>
+</ul>
+</nav>
+	                    </div>
+	                  
+	              
+                
+                <section id="post-body">
+                    <p>This note as a continuation of my journey with Go template. Based on the knowledge of what template package can do, we&rsquo;ll generate a resolvers code from a given sqlboiler model struct to to satisfy graphql implementation of neelance/graphql-go.</p>
+
+<p></p>
+
+<h2 id="synopsis">Synopsis</h2>
+
+<p>I&rsquo;m working on a project that uses MySQL as database, and wanted to have GraphQL implemented. To handle the database, we&rsquo;ll use SQLBoiler from <a href="https://github.com/volatiletech/sqlboiler">volatiletech/sqlboiler</a> (they&rsquo;ve very good documentation!). As for the GraphQL, we&rsquo;ll use <a href="http://github.com/neelance/graphql-go">neelance/graphql-go</a>.</p>
+
+<p>Now, the flow to implement the GraphQL is:</p>
+
+<ol>
+<li><p>GraphQL endpoint starts with a root resolver, ie. <code>RootResolver</code>. A sample code would look like this:</p>
+
+<pre><code class="language-go">// import graphql &quot;http://github.com/neelance/graphql-go&quot;
+    
+resolver := &amp;RootResolver{}
+var schema *graphql.Schema = graphql.MustParseSchema(resolvers.Schema, resolver)
+</code></pre></li>
+
+<li><p>Every endpoint must have resolver. Assuming we want to create a graphql endpoint for <code>user</code>, then we&rsquo;ll have a <code>User()</code> method attached to <code>RootResolver</code>, that will return a <code>userResolver</code></p></li>
+
+<li><p>Every endpoint resolver (ie. <code>userResolver</code>), will resolve every available fields.
+If a <code>user</code> has 3 fields <code>name</code>, <code>email</code> and <code>username</code>, <code>userResolver</code> must have 3 accompanying methods: <code>Name()</code>, <code>Email()</code>, and <code>Username()</code></p></li>
+
+<li><p>Once <code>userResolver</code> is completed, update the graphql schema.</p></li>
+</ol>
+
+<p>We can represent the relationship of methods mentioned above like so:</p>
+
+<pre><code>▾ RootResolver
+    .User()     *userResolver
+▾ *userResolver
+    .Name()     string
+    .Email()    string
+    .Username() string
+</code></pre>
+
+<h2 id="generator-approach">Generator Approach</h2>
+
+<p>Looking at the relationships, it will be a repetitive work to hand-code all the resolvers for each model. Thus, we&rsquo;ll come with a generator approach, that will take a struct, generate those resolvers code based on the struct, and store the generated codes to files inside the directory we choose.</p>
+
+<h2 id="the-code">The Code</h2>
+
+<pre><code class="language-go">// import &quot;github.com/wzulfikar/lab/go/graphqlboiler&quot;
+
+type User struct {
+    Name      string
+    Email     string
+    Username  string
+}
+
+resolversDir := &quot;/path-to-project/resolvers/&quot;
+graphqlboiler.Boil(graphqlboiler.Tpl{
+    RootResolver: &quot;RootResolver&quot;,
+    Schema:       User{},
+    Repo:         &quot;gitlab.com/wzulfikar/iiumpayment&quot;,
+}, resolversDir)
+</code></pre>
+
+<p>When above code is executed, the <code>graphqlboiler.Boil</code> will use Go&rsquo;s reflection ability from <a href="https://golang.org/pkg/reflect/">pkg/reflect</a> to get the struct type, field names and field types. In this case, it will know that the struct&rsquo;s type name is <code>User</code>, and it has 3 fields; <code>Name</code>, <code>Email</code> and <code>Username</code>, which its types are all <code>string</code>.</p>
+
+<p>Using this information and common convention, the generator determines that the resolver name is <code>userResolver</code>, and proceeds with generating resolvers code for the <code>User</code> struct. Upon completion, there will be four new files stored in resolvers directory:</p>
+
+<pre><code>▾ path-to-project/
+    ▾ resolvers/
+        user.go
+        user_mutations.go
+        user_result.go
+        user_schema.go
+</code></pre>
+
+<p>Above four files contains the necessary codes to run the graphql;</p>
+
+<ol>
+<li><code>user.go</code>
+
+<ul>
+<li>attach <code>userResolver</code> to <code>RootResolver</code>, and</li>
+<li>attach methods for <code>userResolver</code> (<code>Name()</code>, <code>Email()</code> and <code>Username()</code>)</li>
+</ul></li>
+<li><code>user_mutations.go</code>
+
+<ul>
+<li>attach mutation endpoint <code>CreateUser()</code> to <code>RootResolver</code>.</li>
+</ul></li>
+<li><code>user_result.go</code>
+
+<ul>
+<li>Contains complimentary codes to add pagination for the query</li>
+</ul></li>
+<li><code>user_schema.go</code>
+
+<ul>
+<li>the GraphQL schema os <code>User</code>, with exported variables</li>
+</ul></li>
+</ol>
+
+<p>Using the generator, we&rsquo;ve completed steps 1 to 3 of the flow presented in <a href="#synopsis">#Synopsis</a>. All the repetitive steps are done by generator. We can proceed directly to step 4: updating our graphql schema, which basically just putting the variables from <code>user_schema.go</code> to the schema that will be parsed into <code>graphql.MustParseSchema()</code>.</p>
+
+<p>Once the schema is updated, we can run the test and spin up our graphql server!</p>
+
+<h2 id="closing">Closing</h2>
+
+<p>The templates used to generate above codes are available at <a href="https://github.com/wzulfikar/lab/tree/master/go/graphqlboiler/templates">wzulfikar/lab/graphqlboiler/templates</a>. While the generator itself is by any mean not a sophisticated code, it has helped me in building GraphQL endpoint from the same scenario (a Go project with SQLBoiler and neelance/graphql-go). If you&rsquo;d like to explore other graphql-go generator, you may want to see this: <a href="https://github.com/vektah/gqlgen">https://github.com/vektah/gqlgen</a>.</p>
+
+<p>Lastly, the full code for the generator is available here: <a href="https://github.com/wzulfikar/lab/tree/master/go/graphqlboiler">https://github.com/wzulfikar/lab/tree/master/go/graphqlboiler</a></p>
+
+<p><strong><em>Till next. See ya!</em></strong></p>
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=%2fposts%2fgraphqlboiler-generator%2f - GraphQL%20%2b%20SQLBoiler%20Generator by @wzulfikar">
+	<span><i class="fa fa-twitter"></i> tweet</span>
+</a>
+ ∙ 
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;">
+    <span><i class="fa fa-facebook-square"></i> share</span>
+</a>
+
+            
+            
+        		
+                	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'wzulfikar-com'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+                
+            
+
+            
+
+            <div style="padding-bottom: 50px; padding-top: 50px;">
+
+
+<div style="float: left;">
+	<a href="/posts/my-take-on-go-template/" class="link-hover">
+		<b><i class="fa fa-caret-left"></i></b>
+		<span class="dark-underline"> My Take on Go … (Mar 4)</span>
+	</a>
+</div>
+
+
+
+<div style="float: right;">
+	<a href="/posts/a-night-with-kubernetes/" class="link-hover">
+		<span class="dark-underline">A Night with … (Mar 21)</span>
+		<b><i class="fa fa-caret-right"></i></b>
+	</a>
+</div>
+
+
+</div>
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/wzulfikar">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/wzulfikar">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        
+    
+    </p>
+    <p class="small">
+        Built with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="http://www.gohugo.io/">Hugo</a> ∙ Theme by <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+
+
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', "UA-63833085-3", 'auto');ga('send', 'pageview');</script>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,74 @@
+/*
+h2[id]:before {
+    content: '# ';
+}
+*/
+
+.read-time {
+	font-weight: normal;
+	color: #c2c2c2;
+	font-size: 16px;
+	display: block;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.red {
+	color: firebrick;
+}
+
+.dark-underline {
+	color: #666;
+	text-decoration: underline;
+}
+
+.draft-indicator {
+	color: darkgrey;
+	font-size: 12px;
+	vertical-align: text-top;
+}
+
+.draft-indicator--inverted {
+	color: white;
+    font-size: 12px;
+    vertical-align: text-top;
+    background-color: #8e8e8e;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+.draft-indicator--inverted + h2.headline, .draft-indicator + h2.headline {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Link for Go playground, repl.it */
+a[href^="https://play.golang.org/"], 
+a[href^="https://repl.it/repls/"],
+a[href^="https://codesandbox.io/s/"] {
+	display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+a[href^="https://play.golang.org/"]:after,
+a[href^="https://repl.it/repls/"]:after,
+a[href^="https://codesandbox.io/s/"]:after {
+	content: " ▸";
+}
+
+p.figure-text {
+	line-height: 1;
+    text-align: center;
+    font-size: small;
+}
+
+img[src$='#featured']
+{
+	max-height: 100px;
+    width: auto;
+    display: block;
+    margin: auto;
+}
