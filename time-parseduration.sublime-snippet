@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+${1:d}, err := time.ParseDuration(${2:str})
+if err != nil {
+	log.Fatal(err)
+}
+]]></content>
+	<tabTrigger>time.ParseDuration</tabTrigger>
+	<scope>source.go</scope>
+</snippet>
