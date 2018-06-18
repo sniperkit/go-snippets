@@ -1,0 +1,6 @@
+nsqd: mkdir -p ./.tmp; nsqd -lookupd-tcp-address=127.0.0.1:4160 -broadcast-address=127.0.0.1 -data-path=./.tmp
+nsqlookupd: nsqlookupd
+nsqadmin: nsqadmin -lookupd-http-address=127.0.0.1:4161
+sensor: ./sensor/sensor
+worker: ./worker/worker
+app: ./app/app
