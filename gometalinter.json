@@ -1,0 +1,17 @@
+{
+  "DisableAll": true,
+  "Enable": [
+    "goimports",
+    "golint",
+    "ineffassign",
+    "deadcode",
+    "dupl",
+    "gas",
+    "gocyclo",
+    "misspell",
+    "goconst"
+  ],
+  "Skip": [
+    "mocks"
+  ]
+}
