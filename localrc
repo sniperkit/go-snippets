@@ -1,0 +1,36 @@
+DATABASE_PASSWORD=hao
+RABBIT_PASSWORD=hao
+SERVICE_TOKEN=hao
+SERVICE_PASSWORD=hao
+ADMIN_PASSWORD=hao
+
+HOST_IP=192.168.56.103
+PUBLIC_NETWORK_GATEWAY=10.0.3.254
+FLOATING_RANGE=10.0.3.0/24
+
+DEST=/opt/stack  #installation folder
+LOGFILE=stack.sh.log
+
+RECLONE=yes
+
+#FLAT_INTERFACE=br100
+
+#VOLUME_BACKING_FILE_SIZE=5120M
+
+#ENABLED_SERVICES+=,swift 
+#SWIFT_HASH=66a3d6b56c1f479c8b4e71ab5c2000f6
+
+disable_service n-net   #This disables Nova network, so it's possible to use Quantum services below:
+enable_service q-svc
+enable_service q-agt
+enable_service q-dhcp
+enable_service q-l3
+enable_service q-meta
+enable_service neutron
+enable_service tempest  #Optional, to enable tempest configuration as part of devstack
+Q_PLUGIN=openvswitch
+
+KEYSTONE_CATALOG_BACKEND=sql
+
+#API_RATE_LIMIT=False  #If you're interested in using tempest
+

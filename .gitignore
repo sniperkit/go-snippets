@@ -1,0 +1,5 @@
+*.pyc
+bootstrap
+node_modules
+client_secret.json
+*.csv

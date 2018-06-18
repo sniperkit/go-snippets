@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: consul-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: consul
+    spec:
+      containers:
+      - name: consul
+        #image: nginx:1.7.9
+        image: gliderlabs/consul-server
+        ports:
+        - containerPort: 8500
+        args: ["-bootstrap"]

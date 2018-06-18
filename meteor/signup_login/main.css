@@ -1,0 +1,167 @@
+/* CSS declarations go here */
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-family: "proximaNova", helvetica Neue;
+    font-weight: 600;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+body {
+    background: #ecf0f1;
+    color: #27ae60;
+    font-size: 12px;
+}
+#signup {
+    width: 220px;
+    margin: auto;
+    margin-top: 120px;
+}
+#signup h2 {
+    text-shadow: 0 1px 0 #27ae60;
+    font-size: 1.62em;
+    color: #2ecc71;
+    display: block;
+    width: 100%;
+    padding-bottom: .4em;
+    margin-bottom: .6em;
+    border-bottom: 2px solid #2ecc71;
+    /*box-shadow*/
+    -webkit-box-shadow: 0 1px 0 #27ae60;
+    -moz-box-shadow: 0 1px 0 #27ae60;
+    box-shadow: 0 1px 0 #27ae60;
+}
+#signup a { color: #27ae60 }
+#signup label {
+    font-size: 10px;
+    display: block;
+    float: right;
+    clear: left;
+    line-height: 2.4;
+    margin: -30px 0 0;
+    padding: 0;
+    width: 190px;
+    height: 20px;
+}
+input[type="text"],
+input[type="submit"] {
+    clear: both;
+    float: left;
+    display: block;
+    border: 1px solid #ccc;
+    background: #ebebeb;
+    margin: 6px 0;
+    padding: 4px 10px;
+    width: 100%;
+    height: 34px;
+    outline: 0;
+    color: #34495e;
+    font-size: 14px;
+}
+input[type=submit] {
+    background: #27ae60;
+    color: #ecf0f1;
+    border: 0;
+    border-bottom: 2px solid #2ecc71;
+    margin: 10px 0 0;
+}
+input[type=checkbox] {
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin: 10px 12px 10px 0;
+    /*border-radius*/
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: 0;
+}
+input[type=checkbox]:before {
+    content: "";
+    display: block;
+    border: 2px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    /*box-shadow*/
+    -webkit-box-shadow: 0 2px 0 #bdc3c7;
+    -moz-box-shadow: 0 2px 0 #bdc3c7;
+    box-shadow: 0 2px 0 #bdc3c7;
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+    margin: -2px;
+    /*border-radius*/
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+input[type=checkbox]:active,
+input[type=checkbox]:focus {
+    /*box-shadow*/
+    -webkit-box-shadow: 0 0 0;
+    -moz-box-shadow: 0 0 0;
+    box-shadow: 0 0 0;
+}
+input[type=checkbox]:checked { background: #27ae60 }
+input[type=checkbox]:checked:before {
+    content: "✔";
+    color: #2ecc71;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 10px;
+    /*box-shadow*/
+    -webkit-box-shadow: 0 2px 0 #bdc3c7 ,inset 0 1px 0px 0 #107a3d;
+    -moz-box-shadow: 0 2px 0 #bdc3c7 ,inset 0 1px 0px 0 #107a3d;
+    box-shadow: 0 2px 0 #bdc3c7 ,inset 0 1px 0px 0 #107a3d;
+    text-shadow: 0 -1px 0 #107a3d;
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+    margin: -2px;
+    /*border-radius*/
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+input[type=text]:not([value*=" "]):active,
+input[type=text]:not([value*=" "]):focus {
+    /*box-shadow*/
+    -webkit-box-shadow: inset 8px 0px 0  #2ecc71;
+    -moz-box-shadow: inset 8px 0px 0  #2ecc71;
+    box-shadow: inset 8px 0px 0  #2ecc71;
+    padding-left: x;
+}
+input[type=submit]:active,
+input[type=submit]:focus {
+    background: #2ecc71;
+    color: #ecf0f1;
+    border: 0;
+    position: relative;
+    top: 1px;
+    border-bottom: 1px solid;
+}
+input[value*=" Facebook"] {
+    background: #3b5998;
+    border-color: #1f4189;
+    width: 50%;
+    float: left;
+    clear: none;
+    margin-left: 0;
+}
+input[value*=" Twitter"] {
+    background: #0396c7;
+    border-color: #0078a6;
+    width: 50%;
+    float: left;
+    clear: none;
+}
+input[value*=" Facebook"]:active,
+input[value*=" Facebook"]:focus {
+    color: #ecf0f1;
+    background: #1f4189;
+}
+input[value*=" Twitter"]:active,
+input[value*=" Twitter"]:focus {
+    color: #ecf0f1;
+    background: #0078a6;
+}

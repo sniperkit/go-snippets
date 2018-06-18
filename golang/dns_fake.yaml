@@ -1,0 +1,24 @@
+zones:
+  zone: coding.net
+    host: @
+      type: a
+      value:
+        - 1.1.1.1
+      type: mx
+      value:
+        - 10 2.2.2.2
+    host: api
+      type: a
+      value:
+        - 1.1.1.1
+        - 2.2.2.2
+  zone: coding.com
+    host: @
+      type: mx
+      value:
+        - 10 1.1.1.1
+      type: a
+      value:
+        - 10 1.1.1.1
+    host: internal
+      include: internal.yaml

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Pie Chart -- OS Versions</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+        <script src="js/d3pie.js"></script>
+        <script src="js/underscore.js"></script>
+        <script src="http://code.jquery.com/jquery.js"></script>
+<!--        <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>-->
+
+        <style type="text/css">
+            text {
+                font-size: 12pt;
+                font-family: 'Nunito', sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <select id="dropdown">
+            <option value="version">Version</option>
+            <option value="cpu">CPU(No.)</option>
+            <option value="memory">Memory(GB)</option>
+            <option value="harddisk">Hard Disk(GB)</option>
+        </select>
+        <hr>
+        <div id="pie"></div>
+        <div id="bar"></div>
+        <div id="machine_list"></div>
+        <script type="text/javascript" src="graphs.js"></script>
+        <script>
+            $('#dropdown').click(function (e) {
+                var optionSelected = $(this).find("option:selected");
+                update_graph(optionSelected.val());
+            });
+        </script>
+    </body>
+</html>

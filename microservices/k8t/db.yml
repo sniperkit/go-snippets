@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: postgres
+  labels:
+    name: postgres
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: postgres
+    spec:
+      containers:
+        - image: postgres:9.5
+          name: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresdb
+                  key: password
+            - name: POSTGRES_USER
+              value: sample_user
+            - name: PG_DATA
+              value: /var/lib/postgresql/data/pgdata
+            - name: POSTGRES_DB
+              value: sample_db
+          ports:
+            - containerPort: 5432
+              name: postgres
+          volumeMounts:
+            - name: pg-data
+              mountPath: /var/lib/postgresql/data/pgdata
+      securityContext:
+        fsGroup: 999
+      volumes:
+        - name: pg-data
+          persistentVolumeClaim:
+            claimName: postgres-data
