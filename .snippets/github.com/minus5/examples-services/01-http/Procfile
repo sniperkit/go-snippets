@@ -1,0 +1,4 @@
+
+sensor: ./sensor/sensor 2>&1 
+worker: ./worker/worker 2>&1 
+app: ./app/app 2>&1 
