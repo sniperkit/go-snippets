@@ -1,0 +1,21 @@
+<div style="padding-bottom: 50px; padding-top: 50px;">
+
+{{ if .Next }}
+<div style="float: left;">
+	<a href="{{.Next.URL }}" class="link-hover">
+		<b><i class="fa fa-caret-left"></i></b>
+		<span class="dark-underline"> {{ .Next.Title | truncate 15 }} ({{ .Next.Date.Format "Jan 2" }})</span>
+	</a>
+</div>
+{{ end }}
+
+{{ if .Prev }}
+<div style="float: right;">
+	<a href="{{.Prev.URL }}" class="link-hover">
+		<span class="dark-underline">{{ .Prev.Title | truncate 15}} ({{ .Prev.Date.Format "Jan 2" }})</span>
+		<b><i class="fa fa-caret-right"></i></b>
+	</a>
+</div>
+{{ end }}
+
+</div>

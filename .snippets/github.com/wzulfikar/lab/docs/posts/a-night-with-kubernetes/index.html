@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="/images/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="A Night with Kubernetes"/>
+  <meta name="twitter:description" content="What is Kubernetes?
+
+
+*Kubernetes Logo.
+
+Dealing with lot of applications that are containerized (ie. via docker) and installed across regions can cause headache; from restarting containers, deploying to multiple nodes, scaling, etc. Kubernetes is a tool to help us deal with such situation by putting those containers in a cluster.
+
+"/>
+  
+    <meta name="twitter:site" content="@wzulfikar"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@wzulfikar"/>
+  
+
+
+
+		
+		<meta name="author" content="wzulfikar">
+		<meta name="description" content="Just another blog.">
+		<meta name="generator" content="Hugo 0.37" />
+		<title>A Night with Kubernetes &middot; It&#39;s Dan :)</title>
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="stylesheet" href="/css/style.min.css">
+		<link rel="stylesheet" href="/css/highlight.min.css">
+		
+		
+		<link rel="stylesheet" href="/css/custom.css">
+		
+
+		
+			
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			
+		
+
+		
+		<link href="/index.xml" rel="alternate" type="application/rss+xml" title="It&#39;s Dan :)" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='/'> 
+	
+			<span>🏠&nbsp;</span>
+			Home
+		</a>
+
+	<a href='/posts'>
+		Archive
+	</a>
+	<a href='/tags'>Tags</a>
+	<a href='/about'>About</a>
+
+	
+
+	
+	<a href="/index.xml">RSS</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        A Night with Kubernetes
+                    </h1>
+                    
+                    <h2 class="headline">
+                    Mar 21, 2018 23:13
+                    · 1312 words
+                    · 7 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="/tags/devops">devops</a>
+                          
+                              <a href="/tags/cloud">cloud</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+	                  
+	                    <div id="toc">
+						Table of Contents:
+	                      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#what-is-kubernetes">What is Kubernetes?</a></li>
+<li><a href="#kubernetes-cluster-nodes-deployments-and-pods">Kubernetes Cluster, Nodes, Deployments, and Pods</a></li>
+<li><a href="#creating-kubernetes-cluster">Creating Kubernetes Cluster</a></li>
+<li><a href="#creating-deployment">Creating Deployment</a></li>
+<li><a href="#exposing-deployments">Exposing Deployments</a></li>
+<li><a href="#closing">Closing</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+	                    </div>
+	                  
+	              
+                
+                <section id="post-body">
+                    <h3 id="what-is-kubernetes">What is Kubernetes?</h3>
+
+<p><img src="/images/kubernetes_logo-sm.png#featured" alt="kubernetes logo" />
+<p class="figure-text"><i>*Kubernetes Logo.</i></p></p>
+
+<p>Dealing with lot of applications that are containerized (ie. via docker) and installed across regions can cause headache; from restarting containers, deploying to multiple nodes, scaling, etc. Kubernetes is a tool to help us deal with such situation by putting those containers in a <em>cluster</em>.</p>
+
+<p></p>
+
+<h3 id="kubernetes-cluster-nodes-deployments-and-pods">Kubernetes Cluster, Nodes, Deployments, and Pods</h3>
+
+<p>Knowing these four terms will help us understand how Kubernetes work. <strong>Cluster</strong> is basically a pool of machines, which at least one of it acts as a cluster master, and the other machines act as worker machines (slaves). As you may&rsquo;ve guessed, master machine will manage the operation of its slaves. <strong>Node</strong> is a term used to address a worker machine in a cluster. <strong>Deployments</strong> refer to the applications we want to deploy or have deployed. <strong>Pod</strong>, the smallest unit in Kubernetes, is a group of one or more containers that makes up an application or service. You can think of pod as your logical host, or virtual machine. The overall logical view of a Kubernetes cluster would look like this:</p>
+
+<pre><code>▾ Kubernetes Cluster
+  ▾ Master #1
+    ▾ Deployment &quot;app1&quot;
+      ▾ Node #1
+        ▾ Pod &quot;app1-2035384211&quot;
+          nginx
+          redis
+        Pod ...
+    ▾ Deployment &quot;app2&quot;
+      ▾ Node #1
+        Pod &quot;app2-2035384224&quot;
+          [redacted]
+        Pod ...
+    ▾ Deployment &quot;app3&quot;
+      ▾ Node #1
+        Pod &quot;app3-2035384277&quot;
+          [redacted]
+        ...
+      ▾ Node #2
+        Pod &quot;app3-2035384122&quot;
+          [redacted]
+    ▾ Deployment &quot;app-xyz&quot;
+      ...
+  ▾ Master #N
+    ...
+</code></pre>
+
+<p class="figure-text">Figure 1: Logical view of typical Kubernetes cluster</p>
+
+<p>As shown in above structure, it&rsquo;s a a Kubernetes cluster with single master. However, we still can add more master (master N). Our master #1 currently contains 3 deployments; <code>app1</code>, <code>app2</code>, and <code>app3</code>. In practice, you&rsquo;d see those three apps as web server, cache, or your custom application.</p>
+
+<p>The <code>app1</code> has been deployed to one node, <code>Node #1</code>. Each deployment will have a unique suffix in its pod name, just like <code>app1-2035384211</code>. Digging deeper into pod <code>app1-2035384211</code>, we know that it runs two containers; nginx and redis. For every pod we have in our Kubernetes cluster, we can execute command (bash, etc) in it using <code>kubectl</code>. Below command will run bash in nginx container of pod <code>app1-2035384211</code>:</p>
+
+<p><code>kubectl exec -it app1-2035384211 --container nginx -- /bin/bash</code></p>
+
+<p>Going to deployment <code>app2</code>, it shows that pod <code>app2-2035384224</code> has been deployed to <code>Node #1</code>, which means that at this point, our <code>Node #1</code> contains 2 deployments; <code>app1</code> and <code>app2</code>. Deployment <code>app3</code> is a bit different than the previous two deployments because it has been deployed to two nodes (<code>Node #1</code> and <code>Node #2</code>). In other words, our <code>app3</code> has been scaled into two instances, which spread into two nodes. Together with <code>app3</code>, our <code>Node #1</code> now contains 3 deployments; <code>app1</code>, <code>app2</code>, and <code>app3</code>. Our <code>Node #2</code> however, only contains single pod so far, which is <code>app3-2035384122</code>.</p>
+
+<h3 id="creating-kubernetes-cluster">Creating Kubernetes Cluster</h3>
+
+<p>To simulate the structure in figure 1, we&rsquo;ll create a Kubernetes Cluster of three machines. One machine for cluster master, and other two as nodes. Let&rsquo;s name these machines as <code>vm1</code>, <code>vm2</code>, and <code>vm3</code> for this demonstration. Next, creating the cluster is quite straightforward:</p>
+
+<p><strong>1. Install kubernetes dependencies</strong></p>
+
+<pre><code># taken from 
+# https://zihao.me/post/creating-a-kubernetes-cluster-from-scratch-with-kubeadm/
+
+# 1. prepare new repos
+apt-get -y install apt-transport-https ca-certificates software-properties-common curl
+
+# 2. add docker repo
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+add-apt-repository \
+       &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+       $(lsb_release -cs) \
+       stable&quot;
+
+# 3. add kubernetes repo
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key  add -
+add-apt-repository \
+      &quot;deb https://apt.kubernetes.io/ \
+      kubernetes-$(lsb_release -cs) \
+      main&quot;
+
+# install dependencies
+apt-get update &amp;&amp; apt-get install -y docker-ce kubelet kubeadm kubernetes-cni
+</code></pre>
+
+<p>If everything went well, the <code>docker</code>, <code>kubectl</code>, and <code>kubeadm</code> commands should be available in your machines.</p>
+
+<p><strong>2. Initialize <code>vm1</code> as master</strong></p>
+
+<ul>
+<li>ssh to <code>vm1</code></li>
+<li>run <code>kubeadm init</code></li>
+</ul>
+
+<p>The <code>kubeadm init</code> command will output something like this:</p>
+
+<pre><code>kubeadm join --token token.abc.def {server_ip}:6443 --discovery-token-ca-cert-hash sha256:blabla
+</code></pre>
+
+<p><strong>3. Make the other machines join the cluster</strong></p>
+
+<ul>
+<li>ssh to <code>vm2</code></li>
+<li>run the <code>kubeadm join</code> command from step 2</li>
+
+<li><p>install container network interface (CNI<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">1</a></sup>)</p>
+
+<pre><code># using weave CNI for now, but you can try other choices
+kubectl apply -f https://git.io/weave-kube-1.6
+</code></pre></li>
+
+<li><p>repeat for <code>vm3</code></p></li>
+</ul>
+
+<p class="text-center">***</p>
+
+<p><em>The two important parts to create Kubernetes cluster from above steps is that we did <code>kubeadm init</code> in <code>vm1</code> to make it as cluster master, and then <code>kubeadm join ...</code> from other machines to join the cluster.</em></p>
+
+<p>Now that we&rsquo;ve a cluster master and joined the other two machines to our cluster master, we can verify if it&rsquo;s reflected in our list nodes by executing this command in cluster master: <code>kubectl get nodes</code></p>
+
+<p><img src="/images/kubernetes-nodes.jpg" alt="kubernetes nodes" />
+<p class="figure-text">Figure 2: Displaying Kubernetes nodes</p></p>
+
+<blockquote>
+<p>If you forgot to install CNI in step 3, your node status will likely yield <code>Pending</code> instead of <code>Ready</code></p>
+</blockquote>
+
+<p>In figure 2, you must have noticed that before we run <code>kubectl get nodes</code>, we set an environment variable <code>KUBECONFIG</code>. This variable refers to the config file used by <code>kubectl</code>, which defaults to <code>~/.kube/config</code>. However, we changed it since the we want the <code>kubectl</code> to interact with our cluster master, whose config is stored <code>/etc/kubernetes/admin.conf</code> (generated when we run <code>kubeadm init</code> command). Another approach if we don&rsquo;t want to change the <code>KUBECONFIG</code> is to pass a config file to kubectl&rsquo;s <code>--kubeconfig</code> arg, as follow:</p>
+
+<p><code>kubectl get nodes --kubeconfig=/etc/kubernetes/admin.conf</code></p>
+
+<h3 id="creating-deployment">Creating Deployment</h3>
+
+<p>You can create Kubernetes deployment using file or directly passing container&rsquo;s image url. For this demonstration, we&rsquo;ll create a deployment named <code>app1</code> which simply is a hello-world-nginx app pulled from public docker hub at <code>kitematic/hello-world-nginx</code>. To do so, we just need to execute this command:</p>
+
+<p><code>kubectl run app1 --image=kitematic/hello-world-nginx --port=80</code></p>
+
+<p>Above command will create one deployment named <code>app1</code> and one pod which name prefix is <code>app1</code>. The <code>--port=80</code> argument indicates that we want to expose port 80 of the image. To verify if the deployment and pod exist, run this command:</p>
+
+<pre><code>kubectl get deployments
+kubectl get pods
+</code></pre>
+
+<p><img src="/images/kubernetes-deployments.jpg" alt="kubernetes deployments" />
+<p class="figure-text">Figure 3: Listing Kubernetes deployments and pods</p></p>
+
+<p>As shown in above image, we&rsquo;ve successfully deployed our <code>app1</code> and the pods is running in one of our node. To get more detailed info of our <code>app1-ff7b44c5d-q8rxd</code> pod (the node where the pod has been deployed, state, IP, restart count, etc.), run this command:</p>
+
+<p><code>kubectl describe pods app1-ff7b44c5d-q8rxd</code></p>
+
+<h3 id="exposing-deployments">Exposing Deployments</h3>
+
+<p>Creating deployments will only create pods and assign it to internal IP of the cluster, which doesn&rsquo;t make the app accessible from outside vm; we can&rsquo;t access app1 from <code>{ip-of-vm}:{port-of-app1}</code>. To make the app publicly accessible, we&rsquo;ll need to expose our deployment. For this demonstration, we&rsquo;ll use the <code>NodePort</code> type which will bind our deployment port to vm&rsquo;s port:</p>
+
+<p><code>kubectl expose deployment app1 --type=NodePort --port 80</code></p>
+
+<p>Once <code>app1</code> is exposed, we can verify by checking the list of ports have been bound to our vm (the Kubernetes Services<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">2</a></sup>), using <code>kubectl get service</code>:</p>
+
+<p><img src="/images/kubernetes-expose-service.jpg" alt="kubernetes services" />
+<p class="figure-text">Figure 4: List of Kubernetes Services</p></p>
+
+<p>We can see that port 80 of our <code>app1</code> is bound to port <code>30485</code> (of our vm1), which means that the <code>app1</code> is now publicly accessible from <code>{ip-of-vm1}:30485</code>. If the IP of your <code>vm1</code> is <code>67.207.85.43</code>, then you can access <code>app1</code> from <code>67.207.85.43:30485</code>.</p>
+
+<h3 id="closing">Closing</h3>
+
+<p>That&rsquo;s it! We&rsquo;ve explored quite a lot of Kubernetes; the structure, nodes, deployments, and all the way down
+ to make the app accessible from internet. Of course, accessing your app from <code>67.207.85.43:30485</code> instead of <code>67.207.85.43</code> is not intuitive, which is why, in practice, we&rsquo;d put another layer to handle it (ie. proxy, load balancer, or ingress<sup class="footnote-ref" id="fnref:4"><a href="#fn:4">3</a></sup>).</p>
+
+<p>The next thing that you may want to explore is <a href="https://github.com/kubernetes/dashboard">Kubernetes Dashboard</a>, which enables us to control all Kubernetes things visually; deploying nodes, executing command in pods, deleting deployments, adjusting number of replicas, etc.</p>
+
+<p>Lastly, while this post is not meant to be an in-depth notes of Kubernetes, hopefully it gives you a better idea of what Kubernetes is and what is it capable of. Also, they&rsquo;ve a very complete documentation, which is awesome! See it here: <a href="https://kubernetes.io/docs/home/">https://kubernetes.io/docs/home/</a></p>
+
+<p><em>&ldquo;It turns out to be a long night of exploring Kubernetes&rdquo;</em> 😆</p>
+
+<p><strong><em>Till next. See ya!</em></strong></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:2"><a href="https://github.com/containernetworking/cni">https://github.com/containernetworking/cni</a>
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3"><a href="https://kubernetes.io/docs/concepts/services-networking/service/">https://kubernetes.io/docs/concepts/services-networking/service/</a>
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4"><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">https://kubernetes.io/docs/concepts/services-networking/ingress/</a>
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+</ol>
+</div>
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=%2fposts%2fa-night-with-kubernetes%2f - A%20Night%20with%20Kubernetes by @wzulfikar">
+	<span><i class="fa fa-twitter"></i> tweet</span>
+</a>
+ ∙ 
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;">
+    <span><i class="fa fa-facebook-square"></i> share</span>
+</a>
+
+            
+            
+        		
+                	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'wzulfikar-com'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+                
+            
+
+            
+
+            <div style="padding-bottom: 50px; padding-top: 50px;">
+
+
+<div style="float: left;">
+	<a href="/posts/graphqlboiler-generator/" class="link-hover">
+		<b><i class="fa fa-caret-left"></i></b>
+		<span class="dark-underline"> GraphQL + … (Mar 5)</span>
+	</a>
+</div>
+
+
+
+<div style="float: right;">
+	<a href="/posts/using-bettercap-proxy/" class="link-hover">
+		<span class="dark-underline">Using Bettercap … (Mar 24)</span>
+		<b><i class="fa fa-caret-right"></i></b>
+	</a>
+</div>
+
+
+</div>
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/wzulfikar">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/wzulfikar">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        
+    
+    </p>
+    <p class="small">
+        Built with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="http://www.gohugo.io/">Hugo</a> ∙ Theme by <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+
+
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', "UA-63833085-3", 'auto');ga('send', 'pageview');</script>
+
+
+
+
+    </body>
+</html>
