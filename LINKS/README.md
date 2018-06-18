@@ -1,0 +1,30 @@
+- https://github.com/search?l=go&q=stars%3A%3E1&s=updated&type=Repositories
+- https://github.com/golang/go/wiki/LearnServerProgramming
+- https://blog.kowalczyk.info/article/JyRZ/generating-good-random-and-unique-ids-in-go.html
+- https://medium.com/@matryer/the-http-handler-wrapper-technique-in-golang-updated-bc7fbcffa702
+- http://blog.ralch.com/tutorial/golang-sharing-libraries/
+- https://rakyll.org/go-tool-flags/
+- http://www.golangbootcamp.com/book/tricks_and_tips
+- https://nick.groenen.me/posts/2017/01/09/plugins-in-go-18/
+- https://athornton.github.io/go-it-mostly-doesnt-suck
+- https://blog.nelhage.com/2016/12/how-i-test/
+- https://medium.com/@sconant/5-things-to-watch-in-go-programming-in-2017-39cd7a7e58e3
+- https://github.com/Checksum/gosh/releases
+- https://github.com/TrueFurby/go-callvis
+- https://github.com/gobuffalo/buffalo/blob/master/SHOULDERS.md
+- http://hyperpolyglot.org/c
+- http://dnaeon.github.io/concurrent-maps-and-slices-in-go/
+- http://blog.ralch.com/tutorial/golang-concurrency-patterns-context/
+- https://medium.com/@matryer/context-has-arrived-per-request-state-in-go-1-7-4d095be83bd8
+- https://medium.com/@cep21/how-to-correctly-use-context-context-in-go-1-7-8f2c0fafdf39
+- https://joeshaw.org/revisiting-context-and-http-handler-for-go-17/
+- https://gocodecloud.com/blog/2016/11/15/simple-golang-http-request-context-example
+- https://www.nicolasmerouze.com/share-values-between-middlewares-context-golang/
+- http://jvns.ca/zines/
+- https://drawings.jvns.ca/
+- https://davidnix.io/post/error-handling-in-go/
+- https://medium.com/@deckarep/dancing-with-go-s-mutexes-92407ae927bf
+- https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091
+- [Using contexts to avoid leaking goroutines](http://golang.rakyll.org/leakingctx)
+- http://blog.charmes.net/2015/08/json-date-management-in-golang_7.html
+
