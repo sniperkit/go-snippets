@@ -1,0 +1,6 @@
+bin
+Gopkg.lock
+Gopkg.toml
+vendor
+_vendor*
+__tmp
