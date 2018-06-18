@@ -1,0 +1,23 @@
+group: edge
+sudo: required
+
+language: go
+go: 
+  - 1.8
+
+services: 
+  - docker
+
+install:
+  - go get -u github.com/golang/lint/golint
+
+before_script:
+  - make check
+
+script: 
+  - make build
+
+after_success:
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - make docker-build
+  - make docker-push
