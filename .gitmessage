@@ -1,0 +1,17 @@
+# This commit mesage must retain following format
+# and be valid YAML.
+# The resulting tweet will look like:
+#
+# <note>
+# Source: <source>
+# [short_commit_sha] by <twitter_username>
+
+# note for snippet (primary tweet text) [REQUIRED]
+note:
+
+# your twitter username [REQUIRED]
+twitter_username:
+
+# source is desirably a URL to snippet source [OPTIONAL]
+source:
+

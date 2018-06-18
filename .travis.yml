@@ -1,0 +1,36 @@
+language: ruby
+rvm:
+  - 2.2.2
+install:
+  - bundle install
+  - . $HOME/.nvm/nvm.sh
+  - nvm install stable
+  - nvm use stable
+  - npm install --save code-snipper
+cache:
+  bundler: true
+  directories:
+    - node_modules
+script:
+  - make
+env:
+  global:
+    # by default CI will publish tweet on push to master immediately
+    # but if TWEET_ON_CRON_OR_API_ONLY is set to true, it'll publish only when build is triggered by cron
+    # or api call (by travis CLI or web interface), and all pushes to master will be "queued" for publishing on twitter.
+    - TWEET_ON_CRON_OR_API_ONLY=true
+
+    - SNIPPET_FILE_EXTENSION=go # [ OPTIONAL ] set snippet file extension validation
+    - SNIPPET_MAX_LINES=20 # [ OPTIONAL, DEFAULT 20 ] reject snippets with more lines than SNIPPET_MAX_LINES
+
+    # If set, this command will be executed as part of the build.
+    # It must validate snippet content and return non-zero if snippet is invalid.
+    # $SNIPPET_FILE environment variable with path to snippet will be exported.
+    #- VALIDATE_SNIPPET_COMMAND='gofmt -d $SNIPPET_FILE | wc -l | xargs test 0 -eq'
+
+    - SNIPPET_FONT_NAME='Source Code Pro'   # set font for generated snippet image
+    - SNIPPET_FONT_SIZE=20                 # set font size for generated snippet image
+    - SNIPPET_COLOR_SCHEME='Tomorrow-Night' # set color scheme for generated snippet image
+branches:
+  only:
+    - master
