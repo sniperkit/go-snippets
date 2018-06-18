@@ -1,0 +1,10 @@
+language: go
+
+sudo: false
+
+go:
+- tip
+
+script:
+- ./test
+
