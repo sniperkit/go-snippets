@@ -1,0 +1,305 @@
+Cradle to grave! Google's Golang...
+
+Umut Tufan
+Senior Sofware Developer at Hurriyet
+Hurriyet Gazetecilik ve Matbaacilik A.S.
+
+@umt2fun
+tufanumut@gmail.com
+aim;
+- try to be Gopher
+- programming addicted
+- C#, Java, C++, Go hooked
+- Senior Sofware Developer at Hurriyet
+
+* Agenda
+- About
+- Specifications
+- Creators
+- Why Golang?
+- Gopher
+- Who Use?
+- General...
+- Package Management
+- Linus Torvalds: "Talk is cheap show me the code!!!" 
+
+.image ./gopher-head.png
+
+
+* About
+- Golang is an open source Google project started in 2007
+- Open source release in November 2009
+- Golang 1.0 version released in March 2012
+
+details about Golang in wiki
+.link https://en.wikipedia.org/wiki/Go_(programming_language) golang
+
+.image ./gopher-head.png
+
+* Specifications
+- compiled
+- concurrent
+- garbage-collected
+- composition not inheritance
+- statically typed 
+- procedural and structured language like C, fortran, pascal
+- declarative(tells to computer what to do like ex:scala)
+- imperative(tells to computer how to do like ex:ruby)
+- simple motto
+
+.image ./gopher-head.png
+
+
+* Creators
+- Coded by legends whose are Robert Griesemer, Rob Pike and Ken Thompson
+
+.image ./gocreators.png
+- Creators of JVM, Unix-UTF-8, B and C langs)
+
+* Why Golang?
+Go is an answer to problems of scale at Google.
+.image ./datacenter.jpg 500 952
+
+* 
+- Compiles to native machine code no need any environments like JVM, CLR
+- Fast Compilation
+- Compiles into executable file
+- using with app containers like Docker
+- Garbage Collection
+- simple syntax with only 25 keywords
+- work on distrubuted environments
+.image ./golang-mashup.png 250 250
+
+* System Scale
+- designed to scale to 10⁶⁺ machines
+- everyday jobs run on 1000s of machines
+- jobs coordinate, interact with others in the system
+- lots going on at once
+- Solution: great support for concurrency
+.image ./gophercomplex6.jpg
+
+* Dependency Management
+- Go gives compile time errors if binds unused dependencies
+- No circular dependency allowed
+.image ./gopher-head.png
+
+
+* Compilation Structure
+- Golang compile architecture takes an advantage of Rob Pike's Plan9(prohibits header files like C)
+- Less I/O, faster Compilation
+- after changing go compiler lang from C++ to Go, compiler is faster than old
+.image ./gopher-head.png
+
+
+* Garbage Collection
+- you can not change GC operations, can not request or supress finalization 
+- references is smaller than all langs
+- memory allocations is smaller than all langs
+.image ./gopher-head.png
+
+
+* Gopher
+.caption _Gopher_ by [[http://www.reneefrench.com][Renée French]]
+.image ./gopher.jpg 500 812
+
+* Who Use?
+- Google
+- Facebook
+- Twitter
+- Docker
+- Dropbox
+- amazon
+- bitly
+- vimeo
+
+.image ./gopher-head.png
+
+* General...
+- What types of programs should we use Go?
+    - Systems programming
+    - web apps
+    - command line tools
+    - games
+    - scientific programming
+- Application Programs vs. System Programs
+    - e-commerce            - API's
+    - to-do lists           - game engines
+    - end-user programs     - network apps
+    - etc...                - developer apps
+- Supported OS
+    - Linux
+    - Windows
+    - MAC OS
+    - BSD etc...
+
+* Package Management
+- A workspace is a directory hierarchy with three directories at its root:
+    - src contains Go source files,
+    - pkg contains package objects, and
+    - bin contains executable commands.
+.image ./golangpackagemanagement.png 350 350
+.link https://golang.org/doc/code.html for details about Go package management
+
+* Access Modifiers in Go
+- Name of the identifier itself shows the visibility
+    - Upper case initial letter -> public to other packages
+    - Lower case initial letter -> private to other packages
+.image ./gopher-head.png
+
+* Type Conversion
+- type Conversion in golang is different
+    -   package main
+
+        import "fmt"
+
+        func main(){
+            var x float64 = 5.5
+            var y int = int(x)
+        }
+.image ./gopher-head.png
+
+* Variables
+    var x int
+    var y bool = false
+    var z string = "hurriyet"
+
+    //shortcuts
+    x:=10     
+    y:=false
+.image ./gopher-head.png
+
+
+* Arrays
+
+- var arrList = [...]int[1,2,3,4]
+- var arrList = [3]int[1,2,3]
+- shortcuts also can use to define and apply arrays
+.image ./gopher-head.png
+
+
+* Pointers
+ 
+        package main
+        import "fmt"
+        func main() {
+            i, j := 42, 2701
+
+            p := &i         // point to i
+            fmt.Println(*p) // read i through the pointer
+            *p = 21         // set i through the pointer
+            fmt.Println(i)  // see the new value of i
+
+            p = &j         // point to j
+            *p = *p / 37   // divide j through the pointer
+            fmt.Println(j) // see the new value of j
+        }
+
+        Output
+        initial: 1
+        zeroval: 1
+        zeroptr: 0
+        pointer: 0x42131100
+
+* Concurrency
+- Do not communicate by sharing memory; instead, share memory by comminicating.
+.image ./gopher.gif
+
+* Goroutines
+- function executing concurrent with other operations
+- lightweight
+- they start with tiny stacks and resize as needed.
+- go programs can have hundreds of thousands of them.
+- similar to await in C#
+- uses with go keyword
+    go list.Sort() // run list sort concurrently do not wait
+- the Go runtime schedules goroutines onto OS threads.
+- blocked goroutines don't use a thread.
+
+* Channels
+- channels provide communication between goroutines.
+- by default, sends and receives block until the other side is ready
+
+* Stack Management
+
+- POSIX threads
+    - large amount of memory pre-reserved
+    - amount of available memory reduces with increase in threads
+- Goroutine
+    - starts with 2k
+    - a check before function call
+    - shrinks with GC
+.image ./gopher-head.png
+
+* hello world to Go!!!
+.image ./hello-go.png
+
+* variable using in Go!!!
+.image ./variable.png
+
+* Go Web Frameworks
+- Revel
+- Gorilla
+- Web.go
+- Gin Gonic
+- Martini
+- Go Craft
+- Beego
+- net/http(built-in)
+
+* Go Hasn't ?
+- No OOP
+- No Generics
+- No constructors
+- No Assertions
+- No Exception Handling
+- No Inheritance
+- No Annotations
+- No Polymorphism
+- No while or do-while
+
+* Comparing Go and other languages
+
+* "Go: 90% Perfect, 100% of the time" -bradfitz, 2014
+.image ./funfast.svg
+
+* Built-in TDD Go?
+- Programming is not easy; even the best programmers are incapable of writing programs that work exactly as intended every time. Therefore an important part of the software development process is testing. Writing tests for our code is a good way to ensure quality and improve reliability.
+- write test code;
+    package math
+    import "testing"
+    func TestAverage(t *testing.T) {
+        var v float64
+        v = Average([]float64{1,2})
+        if v != 1.5 {
+            t.Error("Expected 1.5, got ", v)
+        }
+    }
+- save as math_test.go
+- run command-> go test
+- Result will be FAIL or PASS
+
+* Go is designed for tooling
+Go tools meet you where you are. There's no one "Go IDE".
+
+- IDE & editor integration: Eclipse, IntelliJ, VisualStudio, SublimeText, emacs, vim, ...
+- play.golang.org: online playground
+- gofmt: automatic formatting
+- goimports: automatic updates of package imports
+- gocode: automatic completion
+- the go tool: automatic fetch & build
+- guru: static analysis, bug finding, code navigation
+- godoc.org: open source package index and docs
+
+* You're interested in Go. What next?
+Take the Go Tour online.
+.link tour.golang.org
+Then go deeper ...
+.link golang.org/wiki/Learn
+Still interested?
+Run a pilot project.
+
+* Look!
+.link https://gobyexample.com/ Go by Example
+.link http://go-lang.cat-v.org/go-code Go Language Resources
+.link https://blog.joshsoftware.com/2014/03/10/how-do-i-create-a-presentation-using-go/ Rob Pike style Go presentation - Slides
+.link http://blog.oguzhan.info/?p=870 Go Programlama Dili Üzerine
