@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: auth
+  name: auth
+spec:
+  ports:
+    - name: grpc
+      port: 7800
+      targetPort: 7800
+    - name: debug
+      port: 7801
+      targetPort: 7801
+  selector:
+    app: auth
+  type: LoadBalancer
