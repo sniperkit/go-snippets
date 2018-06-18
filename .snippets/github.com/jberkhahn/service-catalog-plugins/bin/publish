@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if ! type "gox" > /dev/null; then
+  go get github.com/mitchellh/gox
+fi
+
+mkdir plugins/darwin_amd64
+mkdir plugins/linux_amd64
+mkdir windows_plugins/windows_amd64
+
+cp -r plugins/binding plugins/broker plugins/class plugins/instance plugins/plan plugins/darwin_amd64/
+cp -r plugins/binding plugins/broker plugins/class plugins/instance plugins/plan plugins/linux_amd64/
+cp -r windows_plugins/binding windows_plugins/broker windows_plugins/class windows_plugins/instance windows_plugins/plan windows_plugins/windows_amd64/
+
+
+gox -osarch="darwin/amd64 linux/amd64" -output="plugins/{{.OS}}_{{.Arch}}/{{.Dir}}/{{.Dir}}" ./...
+gox -osarch="windows/amd64" -output="windows_plugins/{{.OS}}_{{.Arch}}/{{.Dir}}/{{.Dir}}" ./...
+
+pushd plugins/darwin_amd64
+zip -r svccat_plugins_darwin_amd64.zip binding/ broker/ class/ instance/ plan/
+popd
+
+pushd plugins/linux_amd64
+zip -r svccat_plugins_linux_amd64.zip binding/ broker/ class/ instance/ plan/
+popd
+
+pushd windows_plugins/windows_amd64
+zip -r svccat_plugins_windows_amd64.zip binding/ broker/ class/ instance/ plan/
+popd

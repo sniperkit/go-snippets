@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if ! type "ginkgo" > /dev/null; then
+  go get github.com/onsi/ginkgo
+  go get github.com/onsi/gomega
+fi
+
+ginkgo -r .
