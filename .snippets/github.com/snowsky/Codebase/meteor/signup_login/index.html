@@ -1,0 +1,56 @@
+<head>
+    <base href="/">
+</head>
+
+<body ng-app="userApp">
+<!-- div id="container">
+    <form id="login-form" action="action">
+      <div>
+        <input type="email" id="login-email" />
+        <input type="password" id="login-password" />
+        <input type="submit" id="login-button" value="Sign in" />
+     </div>
+   </form-->
+  
+
+    <div class="container">
+        <div ui-view></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#header_login').on('click', function () {
+                $('#login').addClass('active');
+                $('#sign_up').removeClass('active');
+                console.log("test");
+            });
+        
+            setInterval(function() {
+              $("input[type=text]").each(function() {
+                 var element = $(this);
+                 if (element.val() !== "") {
+                   $(this).css({
+                     boxShadow: 'inset 8px 0px 0  #2ecc71',
+                     paddingLeft: '12px'})
+                 }
+                 var element = $(this);
+                 if (element.val() == "") {
+                     $(this).css('border-left', '1px solid #ccc')
+                 }
+              });  
+              }, 200);
+        });
+    </script>
+
+<!--  {{> hello}}-->
+<!--{{> loginButtons}}-->
+</body>
+
+<template name="login">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>

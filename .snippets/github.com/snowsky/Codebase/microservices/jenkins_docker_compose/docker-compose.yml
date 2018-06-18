@@ -1,0 +1,19 @@
+data:
+ build: jenkins-data
+ 
+master:
+  build: jenkins-master
+  volumes:
+    - .:/backup
+    - test:/var/jenkins_home
+#  volumes_from:
+#    - data
+  ports:
+    - "50000:50000"
+
+nginx:
+  build: jenkins-nginx
+  ports:
+     - "${HTTP_PORT}:80" # Need to make this configurable, as we'll want 80:80 in 'prod' environments
+  links:
+     - master:jenkins-master

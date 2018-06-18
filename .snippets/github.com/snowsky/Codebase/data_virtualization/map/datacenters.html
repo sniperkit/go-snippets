@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>TPN Datacenters</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; height: 100% }
+    div .row .container {
+        position: absolute;
+        bottom: 0px;
+        align-items: center;
+        display: inherit;
+        background-color: none;
+    }
+</style>
+</head>
+<body>
+
+<div>
+    <div class="row">
+        <div id='map'></div>
+    </div>
+</div>
+
+<script>
+    
+    L.mapbox.accessToken = 'pk.eyJ1Ijoic29jY2VyaGFvdGlhbiIsImEiOiJQMTlDUmlzIn0.A3HXA0m5oBt5oIy6JoDWsw';
+
+    var geojson = [
+        {
+            "type":"Feature",
+            "properties":
+            {
+                "id":"cam",
+                "title":"Cambridge",
+                "description":"CAM Datacenter",
+                "marker-size":"medium",
+                "marker-color":"#a3e46b",
+                "marker-symbol":"commercial",
+                url:"http://en.wikipedia.org/wiki/Washington,_D.C."
+            },
+            "geometry":
+            {
+                "coordinates":[-71.149968,42.392495],
+                "type":"Point"
+            },
+            "id":"cibwmb7b005uftcm5wa04gp3l"
+        },
+        {
+            "type":"Feature",
+            "properties":
+            {
+                "id":"cdn",
+                "title":"Ottawa",
+                "description":"CDN Datacenter",
+                "marker-size":"medium",
+                "marker-color":"#a3e46b",
+                "marker-symbol":"commercial",
+                url:"http://en.wikipedia.org/wiki/Washington,_D.C."
+            },
+            "geometry":
+            {
+                "coordinates":[-75.884325,45.30061],
+                "type":"Point"
+            },
+            "id":"cibwmb7b205ugtcm5n3xbcrq0"
+        },
+        {
+            "type":"Feature",
+            "properties":
+            {
+                "id":"ams",
+                "title":"Amsterdam",
+                "description":"AMS Datacenter",
+                "marker-size":"medium",
+                "marker-color":"#a3e46b",
+                "marker-symbol":"commercial"
+            },
+            "geometry":
+            {
+                "coordinates":[4.88544,52.336525],
+                "type":"Point"
+            },
+            "id":"cibwmb7b305uhtcm5p96wmaok"
+        },
+        {
+            "type":"Feature",
+            "properties":
+            {
+                "id":"fra",
+                "title":"Frankfurt",
+                "description":"FRA Datacenter",
+                "marker-size":"medium",
+                "marker-color":"#a3e46b",
+                "marker-symbol":"commercial"
+            },
+            "geometry":
+            {
+                "coordinates":[8.6718,50.1103],
+                "type":"Point"
+            },
+            "id":"cibwmb7b505uitcm5lj89vccz"
+        },
+        {
+            "type":"Feature",
+            "properties":
+            {
+                "id":"bos",
+                "title":"Boston",
+                "description":"BOS Datacenter",
+                "marker-size":"medium",
+                "marker-color":"#a3e46b",
+                "marker-symbol":"commercial"
+            },
+            "geometry":
+            {
+                "coordinates":[-71.0609,42.3535],
+                "type":"Point"
+            },
+            "id":"cibwmb7b605ujtcm5jqfzsj9e"
+        },
+        {
+            "type":"Feature",
+            "properties":
+            {
+                "id":"sfo",
+                "title":"San Francisco",
+                "description":"SFO Datacenter",
+                "marker-size":"medium",
+                "marker-color":"#a3e46b",
+                "marker-symbol":"commercial"
+            },
+            "geometry":
+            {
+                "coordinates":[-122.4511,37.7363],
+                "type":"Point"
+            },
+            "id":"cibwmb7b805uktcm5f49durzs"
+        },
+        {
+            "type":"Feature",
+            "properties":
+            {
+                "id":"lon",
+                "title":"London",
+                "description":"LON Datacenter",
+                "marker-size":"medium",
+                "marker-color":"#a3e46b",
+                "marker-symbol":"commercial"
+            },
+            "geometry":
+            {
+                "coordinates":[-0.1275, 51.5072],
+                "type":"Point"
+            },
+            "id":"cibwmb7b805uktcm5f49durza"
+        }
+    ]
+
+    var map = L.mapbox.map('map', 'soccerhaotian.mm16d4el')
+        .featureLayer.setGeoJSON(geojson);
+    
+map.on('click', function(e) {
+    resetColors();
+    e.layer.feature.properties['old-color'] = e.layer.feature.properties['marker-color'];
+    e.layer.feature.properties['marker-color'] = '#ff8888';
+    map.setGeoJSON(geojson);
+    console.log(e);
+//    if (e.layer.feature.properties.url)
+//        window.open(e.layer.feature.properties.url);
+    window.open("show_graphs.html?dc="+e.layer.feature.properties.id);
+    console.log("versions_pie.html?"+e.layer.feature.properties.id);
+});
+    
+function resetColors() {
+    for (var i = 0; i < geojson.length; i++) {
+        geojson[i].properties['marker-color'] = geojson[i].properties['old-color'] ||
+            geojson[i].properties['marker-color'];
+    }
+    map.setGeoJSON(geojson);
+}
+</script>
+
+</body>
+</html>
+
+
