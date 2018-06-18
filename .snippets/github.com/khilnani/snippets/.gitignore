@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+*.class
+**/*.log
+**/*.pid
+**/db.sqlite3
