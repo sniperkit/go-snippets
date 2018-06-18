@@ -1,0 +1,13 @@
+#
+*.out
+*.8
+*.6
+*~
+main
+_*
+.idea
+# Log files
+*.log
+# temp files
+temp*
+
