@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GitHub Commits</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        #demo {
+            font-family: 'Helvetica', Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: #f66;
+        }
+
+        li {
+            line-height: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .author,
+        .date {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <h1>Latest Vue.js Commits</h1>
+        <template v-for="branch in branches">
+            <input type="radio" :id="branch" :value="branch" name="branch" v-model="currentBranch">
+            <label :for="branch">{{ branch }}</label>
+        </template>
+        <p>vuejs/vue@{{ currentBranch }}</p>
+        <ul>
+            <li v-for="record in commits">
+                <a :href="record.html_url" target="_blank" class="commit">{{ record.sha }}</a> - <span class="message">{{ record.commit_message | truncate }}</span><br>                by <span class="author"><a :href="record.author_name" target="_blank">{{ record.commit_author_name }}</a></span>                at <span class="date">{{ record.commit_author_date }}</span>
+            </li>
+        </ul>
+    </div>
+    <script src="./github.js"></script>
+</body>
+
+</html>
