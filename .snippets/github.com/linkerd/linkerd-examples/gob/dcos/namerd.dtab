@@ -1,0 +1,5 @@
+/srv                => /#/io.l5d.marathon ;
+/srv/proto.GenSvc   => /srv/gen;
+/srv/proto.WordSvc  => /srv/word;
+/svc                => /srv/web;
+/grpc               => /srv;
