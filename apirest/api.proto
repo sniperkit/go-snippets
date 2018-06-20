@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package protomodel;
+
+
+message Error {
+  int32 code = 1;
+  string Description = 2;
+
+}
