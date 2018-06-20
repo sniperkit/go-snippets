@@ -1,0 +1,14 @@
+node:<name:"x/Const" op:"Const" attr:<key:"_class" value:<list:<> > > attr:<key:"dtype" value:<type:DT_FLOAT > > 
+attr:<key:"value" value:<tensor:<dtype:DT_FLOAT tensor_shape:<> float_val:2 > > > > 
+node:<name:"Variable/VarHandleOp" op:"VarHandleOp" attr:<key:"_class" value:<list:<> > > 
+attr:<key:"container" value:<s:"" > > attr:<key:"dtype" value:<type:DT_FLOAT > > 
+attr:<key:"shape" value:<shape:<> > > attr:<key:"shared_name" value:<s:"" > > > 
+node:<name:"Variable/Assign/AssignVariableOp" op:"AssignVariableOp" input:"Variable/VarHandleOp" input:"x/Const" attr:<key:"_class" value:<list:<> > > 
+attr:<key:"dtype" value:<type:DT_FLOAT > > > 
+node:<name:"Variable/Read/ReadVariableOp" op:"ReadVariableOp" input:"Variable/VarHandleOp" attr:<key:"_class" value:<list:<> > > 
+attr:<key:"dtype" value:<type:DT_FLOAT > > > node:<name:"alpha/Const" op:"Const" attr:<key:"_class" value:<list:<> > > 
+attr:<key:"dtype" value:<type:DT_FLOAT > > attr:<key:"value" value:<tensor:<dtype:DT_FLOAT tensor_shape:<> float_val:1 > > > > 
+node:<name:"Delta/Const" op:"Const" attr:<key:"_class" value:<list:<> > > attr:<key:"dtype" value:<type:DT_FLOAT > > 
+attr:<key:"value" value:<tensor:<dtype:DT_FLOAT tensor_shape:<> float_val:0.05 > > > > 
+node:<name:"ResourceApplyGradientDescent" op:"ResourceApplyGradientDescent" input:"Variable/VarHandleOp" input:"alpha/Const" input:"Delta/Const" attr:<key:"T" value:<type:DT_FLOAT > > 
+attr:<key:"_class" value:<list:<> > > attr:<key:"use_locking" value:<b:false > > > versions:<producer:22 > library:<> 
