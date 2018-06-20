@@ -1,0 +1,31 @@
+language: go
+
+go:
+  - 1.9.x
+  - 1.8.x
+  - tip
+
+git:
+  depth: 3
+
+matrix:
+  allow_failures:
+    - go: tip
+  fast_finish: true
+
+before_install:
+  - make install
+
+script:
+  - diff -u <(echo -n) <(gofmt -d .)
+  - make lint
+  - make test
+
+after_success:
+  - make cover
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
