@@ -1,0 +1,11 @@
+[web]
+listenAddr = "localhost:8080"
+
+[auth]
+providerName = "github"
+#clientKey = "github oauth app client key"
+#clientSecret = "github oauth app client secret"
+
+[console]
+name = "Example App"
+basePath = ""

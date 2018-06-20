@@ -1,0 +1,20 @@
+<div class="ui bottom attached segment">
+  <form action="{{ req.URL.Path }}" method="POST">
+  <div class="ui top attached segment">
+    <div class="ui large fluid header input" style="font-size: large;">
+      <input type="text" name="title" value="{{ .Title }}">
+    </div>
+    <div class="ui form" style="font-size: larger;">
+      <div class="field">
+        <textarea name="content" style="font-family: 'Lucida Console', Monaco, monospace;">{{ .Content }}</textarea>
+      </div>
+    </div>
+  </div>
+  <div class="ui bottom attached segment">
+    <input type="submit" class="ui primary button" value="Save" />
+    <a class="ui button" href="javascript:window.history.back()">
+      Cancel
+    </a>
+  </div>
+  </form>
+</div>
