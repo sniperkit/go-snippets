@@ -1,0 +1,9 @@
+pipeline:
+  build:
+    image: golang:1.8
+    commands:
+      - export GOPATH=/drone
+      - export PATH=$PATH:$GOPATH/bin
+      - go get -t -v ./...
+      - go get github.com/mattn/goveralls
+      - goveralls -service=drone.io  -ignore=proto/common.pb.go -repotoken=${REPOTOKEN}
