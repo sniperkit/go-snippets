@@ -1,0 +1,15 @@
+Async Job Handler Algrorithm.
+
+jh is an instance of the Async Job Handler.
+
+init():
+	buffer := phi (null)
+
+submit(job):
+	buffer = buffer + {job}
+	confirm(job)
+
+while buffer != phi :
+	job := buffer[0]
+	process(job)
+	buffer = buffer / {job}
