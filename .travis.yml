@@ -1,0 +1,10 @@
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+before_install:
+- go get -t -v ./...
+go:
+- master
+- tip
+language: go
+script:
+- ./coverall.sh
