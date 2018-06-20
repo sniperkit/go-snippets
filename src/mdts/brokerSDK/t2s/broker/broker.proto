@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package broker;
+
+import "mdts/protocols/brokermsg/brokermsg.proto";
+
+service T2SBroker {
+
+  // Request: service -> dts -> broker -> dts -> third
+  rpc TransforDataToService(brokermsg.ParamToService) returns (brokermsg.ResultToService) {}
+  // Response: service <- dts <- broker <- dts <- third
+  rpc TransforDataFromService(brokermsg.ParamFromService) returns (brokermsg.ResultFromService) {}
+}

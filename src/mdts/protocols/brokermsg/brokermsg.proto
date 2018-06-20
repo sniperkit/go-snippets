@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package brokermsg;
+
+enum EnumState {
+  SUCCESS = 0;
+  FAILED = 1;
+}
+
+enum EnumMethod {
+  HttpGet = 0;
+  HttpPost = 1;
+  HttpDelete = 2;
+  HttpPut = 3;
+}
+
+// * [while service request to third]
+
+// ** GRPC TransforDataToThird
+
+message ParamToThird {
+  string TID = 1;
+  string APICODE = 2;
+  bytes Data = 3;
+}
+
+message ResultToThird {
+  EnumState State = 1; 
+  EnumMethod Method = 2;
+  map<string, string> Head = 3;
+  bytes Body = 4;
+  string URL = 5;
+}
+
+// ** GRPC TransforDataFromThird
+
+message ParamFromThird {
+  string TID = 1;
+  string APICODE = 2;
+  bytes Data = 3;
+}
+
+message ResultFromThird {
+  EnumState State = 1; 
+  map<string, string> Head = 3;
+  bytes Body = 4;
+}
+
+// * [while third request to service]
+
+// ** GRPC TransforDataToService
+
+message ParamToService {
+  string Version = 1;
+  string APICODE = 2;
+  bytes Data = 3;
+}
+
+message ResultToService {
+  EnumState State = 1; 
+  EnumMethod Method = 2;
+  map<string, string> Head = 3;
+  bytes Body = 4;
+  string URL = 5;
+}
+
+// ** GRPC TransforDataFromService
+
+message ParamFromService {
+  string Version = 1;
+  string APICODE = 2;
+  bytes Data = 3;
+}
+
+message ResultFromService {
+  EnumState State = 1; 
+  map<string, string> Head = 3;
+  bytes Body = 4;
+}
