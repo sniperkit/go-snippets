@@ -1,0 +1,3 @@
+Properties.
+
+1) Guaranteed Response: Every submitted job is eventually confirmed.

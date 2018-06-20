@@ -1,0 +1,24 @@
+TransformationHandler using JobHandler
+
+1) Upon event Init do
+	top = 1
+	bottom = 1
+	handling = false
+	buffer = null, array of size N, which has to be inputed.
+
+2) Upon event Submit do 
+	if bottom + N = top then 
+		trigger <Event Error>
+	else
+		buffer[top mod N + 1] = job
+		top = top + 1
+		trigger <Event Confirm>
+
+3) Upon bottom < top and handling = false do 
+	job = buffer[bottom mod N + 1]
+	bottom = bottom + 1
+	handling = true
+	trigger <Event Submit> // for job handler
+
+4) Upon event Confirm do // job handler
+	handling = false
