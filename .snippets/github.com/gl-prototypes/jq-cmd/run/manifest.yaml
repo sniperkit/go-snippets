@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jq-cmd
+data:
+  config.toml: |-
+    [ssh]
+    listen_addr = ":2222"
+    hostkey_pem = "/tmp/hostkey"
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jq-cmd
+spec:
+  replicas: 2
+  revisionHistoryLimit: 4
+  progressDeadlineSeconds: 90
+  template:
+    metadata:
+      labels:
+        app: jq-cmd
+    spec:
+      volumes:
+        - name: hostkey
+          secret:
+            secretName: jq-cmd
+            items:
+            - key: hostkey
+              path: hostkey
+        - name: config-volume
+          configMap:
+            name: jq-cmd
+      containers:
+        - name: jq
+          image: us.gcr.io/gliderlabs/jq-cmd:latest
+          ports:
+            - name: ssh
+              containerPort: 2222
+          env:
+            - name: JQSERVE_CONFIG
+              value: /config/config.toml
+          volumeMounts:
+            - mountPath: /tmp/
+              name: hostkey
+            - mountPath: /config
+              name: config-volume
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: jq-cmd
+spec:
+  type: LoadBalancer
+  selector:
+    app: jq-cmd
+  ports:
+    - name: ssh
+      port: 22
+      targetPort: 2222
