@@ -1,7 +1,0 @@
-{{ extends "base.jet" }}
-{{ import "library.jet" }}
-{{ import "library.jet" }}
-===
-{{extends "base.jet"}}
-{{import "library.jet"}}
-{{import "library.jet"}}

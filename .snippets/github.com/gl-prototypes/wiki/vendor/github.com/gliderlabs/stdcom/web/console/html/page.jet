@@ -1,4 +1,0 @@
-{{extends "__console.jet"}}
-{{block main()}}
-{{ . | raw }}
-{{end}}

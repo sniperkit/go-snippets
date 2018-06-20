@@ -1,2 +1,0 @@
-{{ includeIfExists("wcontext_child","Buddy") }}
-{{ includeIfExists("wcontext_child") }}
