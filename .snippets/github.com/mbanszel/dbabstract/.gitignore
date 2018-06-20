@@ -1,0 +1,10 @@
+.idea/.name
+.idea/*.iml
+.idea/*.xml
+.idea/codeStyles/*
+.idea/dataSources/*
+.idea/dictionaries/*.xml
+.idea/inspectionProfiles/*
+/vendor/
+
+!.idea/dictionaries/dbabstract.xml
