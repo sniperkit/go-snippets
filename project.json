@@ -1,0 +1,8 @@
+{
+  "name": "lambda-apex-mailchimp-golang",
+  "description": "Subscribe user in mailchimp with golang and aws lambda",
+  "memory": 128,
+  "timeout": 5,
+  "role": "",
+  "environment": {}
+}
