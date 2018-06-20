@@ -1,0 +1,39 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: google/cloud-sdk:alpine
+    steps:
+      - checkout
+      - setup_docker_engine
+      - run:
+          name: Install tools
+          command: |
+            apk add -U openssl docker
+            cd /bin
+            wget -qO- https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/linux/amd64/kubectl > kubectl
+            chmod +x kubectl
+      - run:
+          name: Build Binary
+          command: |
+            docker build -t jq-builder -f Dockerfile.build .
+            docker run --rm jq-builder > jqserve
+      - run:
+          name: Build Image
+          command: |
+            docker build -t us.gcr.io/gliderlabs/jq-cmd:build-$CIRCLE_BUILD_NUM .
+            docker tag us.gcr.io/gliderlabs/jq-cmd:build-$CIRCLE_BUILD_NUM us.gcr.io/gliderlabs/jq-cmd:latest
+      - run:
+          name: Push Image
+          command: |
+            openssl enc -aes-256-cbc -d -in .circleci/gliderlabs.json.enc -out .circleci/gliderlabs.json -k $GCLOUD_KEY
+            gcloud auth activate-service-account --key-file .circleci/gliderlabs.json
+            gcloud docker -- push us.gcr.io/gliderlabs/jq-cmd:build-$CIRCLE_BUILD_NUM
+            gcloud docker -- push us.gcr.io/gliderlabs/jq-cmd:latest
+      - run:
+          name: Deploy
+          command: |
+            gcloud config set project gliderlabs
+            gcloud container clusters get-credentials gl-demo --zone us-central1-a
+            kubectl apply -f run/manifest.yaml
+            kubectl rollout status deployment/jq-cmd --watch
