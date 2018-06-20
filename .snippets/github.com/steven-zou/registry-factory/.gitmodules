@@ -1,0 +1,3 @@
+[submodule "simulator"]
+	path = simulator/Hawkeye
+	url = https://github.com/steven-zou/Hawkeye.git
