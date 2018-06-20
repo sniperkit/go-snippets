@@ -1,0 +1,115 @@
+deepmind-paper-1 | Hybrid computing using a neural network with dynamic external memory |  | author:A Graves, G Wayne, M Reynolds, T Harley, I Danihelka, A Grabska-Barwinska, S Gomez Colmenarejo, E Grefenstette, T Ramalho, J Agapiou, A Puigdomènech, K M Hermann, Y Zwols, G Ostrovski, A Cain, H King, C Summerfield, P Blunsom, K Kavukcuoglu, D Hassabis description:Nature 2016
+deepmind-paper-2 | Mastering the game of Go with Deep Neural Networks & Tree Search |  | author:D Silver, A Huang, C J Maddison, A Guez, L Sifre, G van den Driessche, J Schrittwieser, I Antonoglou, V Panneershelvam, M Lanctot, S Dieleman, D Grewe, J Nham, N Kalchbrenner, I Sutskever, T Lillicrap, T Graepel, M Leach, K Kavukcuoglu, D Hassabis description:Nature 2016
+deepmind-paper-3 | Learning to Communicate with Deep Multi-Agent Reinforcement Learning |  | author:J Foerster, Y M Assael, N de Freitas, S Whiteson description:NIPS 2016
+deepmind-paper-4 | Unsupervised Learning of 3D Structure from Images |  | author:D J Rezende, S M A Eslami, S Mohamed, P Battaglia, M Jaderberg, N Heess description:NIPS 2016
+deepmind-paper-5 | Sequential Neural Models with Stochastic Layers |  | author:M Fraccaro, S K Sønderby, U Paquet, O Winther description:NIPS 2016
+deepmind-paper-6 | Conditional Image Generation with PixelCNN Decoders |  | author:A van den Oord, N Kalchbrenner, O Vinyals, L Espeholt, A Graves, K Kavukcuoglu description:NIPS 2016
+deepmind-paper-7 | Strategic Attentive Writer for Learning Macro-Actions |  | author:A Vezhnevets, V Mnih, J Agapiou, S Osindero, A Graves, O Vinyals, K Kavukcuoglu description:NIPS 2016
+deepmind-paper-8 | Learning to Learn by Gradient Descent by Gradient Descent |  | author:M Andrychowicz, M Denil, S Gomez Colmenarejo, M W Hoffman, D Pfau, T Schaul, N de Freitas description:NIPS 2016
+deepmind-paper-9 | Matching Networks for One Shot Learning |  | author:O Vinyals, C Blundell, T Lillicrap, K Kavukcuoglu, D Wierstra description:NIPS 2016
+deepmind-paper-10 | Memory-Efficient Backpropagation through Time |  | author:A Gruslys, R Munos, I Danihelka, M Lanctot, A Graves description:NIPS 2016
+deepmind-paper-11 | Safe and Efficient Off-Policy Reinforcement Learning |  | author:R Munos, T Stepleton, A Harutyunyan, M G Bellemare description:NIPS 2016
+deepmind-paper-12 | Unifying Count-Based Exploration and Intrinsic Motivation |  | author:M G Bellemare, S Srinivasan, G Ostrovski, T Schaul, D Saxton, R Munos description:NIPS 2016
+deepmind-paper-13 | Towards Conceptual Compression |  | author:K Gregor, F Besse, D J Rezende, I Danihelka, D Wierstra description:NIPS 2016
+deepmind-paper-14 | Deep Exploration via Bootstrapped DQN |  | author:I Osband, C Blundell, A Pritzel, B Van Roy description:NIPS 2016
+deepmind-paper-15 | Learning values across many orders of magnitude |  | author:H van Hasselt, A Guez, M Hessel, V Mnih, D Silver description:NIPS 2016
+deepmind-paper-16 | Attend, Infer, Repeat: Fast Scene Understanding with Generative Models |  | author:S M A Eslami, N Heess, T Weber, Y Tassa, D Szepesvari, K Kavukcuoglu, G E Hinton description:NIPS 2016
+deepmind-paper-17 | Scaling Memory-Augmented Neural Networks with Sparse Reads and Writes |  | author:J Rae, J J Hunt, T Harley, I Danihelka, A Senior, G Wayne, A Graves, T Lillicrap description:NIPS 2016
+deepmind-paper-18 | Learning the Curriculum with Bayesian Optimization for Task-Specific Word Representation Learning |  | author:Y Tsvetkov, M Faruqui, W Ling, B MacWhinney, C Dyer description:ACL 2016
+deepmind-paper-19 | Many Languages, One Parser |  | author:W Ammar, G Mulcaire, M Ballesteros, C Dyer, NA Smith description:ACL 2016
+deepmind-paper-20 | Synthesizing Compound Words for Machine Translation |  | author:A Matthews, E Schlinger, A Lavie, C Dyer description:ACL 2016
+deepmind-paper-21 | Cross-lingual Models of Word Embeddings |  | author:M Faruqui, S Upadhyay, C Dyer, D Roth description:ACL 2016
+deepmind-paper-22 | Latent Predictor Networks for Code Generation |  | author:W Ling, E Grefenstette, K M Hermann, T Kočiský, A Senior, F Wang, P Blunsom description:ACL 2016
+deepmind-paper-23 | WaveNet: A Generative Model for Raw Audio |  | author:A van den Oord, S Dieleman, H Zen, K Simonyan, O Vinyals, A Graves, N Kalchbrenner, A Senior, K Kavukcuoglu description:arXiv 2016
+deepmind-paper-24 | Learning and Transfer of Modulated Locomotor Controllers |  | author:N Heess, G Wayne, Y Tassa, T Lillicrap, M Riedmiller, D Silver description:arXiv 2016
+deepmind-paper-25 | Sim-to-Real Robot Learning from Pixels with Progressive Nets |  | author:A Rusu, M Vecerik, T Rothörl, N Heess, R Pascanu, R Hadsell description:arXiv 2016
+deepmind-paper-26 | Video Pixel Networks |  | author:N Kalchbrenner, A van den Oord, K Simonyan, I Danihelka, O Vinyals, A Graves, K Kavukcuoglu description:arXiv 2016
+deepmind-paper-27 | Deep Reinforcement Learning for Robotic Manipulation |  | author:S Gu, E Holly, T Lillicrap, S Levine description:arXiv 2016
+deepmind-paper-28 | Learning in Implicit Generative Models |  | author:S Mohamed, B Lakshminarayanan description:arXiv 2016
+deepmind-paper-29 | Decoupled Neural Interfaces using Synthetic Gradients |  | author:M Jaderberg, W M Czarnecki, S Osindero, O Vinyals, A Graves, K Kavukcuoglu description:arXiv 2016
+deepmind-paper-30 | Connecting Generative Adversarial Networks and Actor-Critic Method |  | author:D Pfau, O Vinyals description:arXiv 2016
+deepmind-paper-31 | Progressive Neural Networks |  | author:A Rusu, N Rabinowitz, G Desjardins, H Soyer, J Kirkpatrick, K Kavukcuoglu, R Pascanu, R Hadsell description:arXiv 2016
+deepmind-paper-32 | Successor Features for Transfer in Reinforcement Learning |  | author:A Barreto, R Munos, T Schaul, D Silver description:arXiv 2016
+deepmind-paper-33 | Early Visual Concept Learning with Unsupervised Deep Learning |  | author:I Higgins, L Matthey, X Glorot, A Pal, B Uria, C Blundell, S Mohamed, A Lerchner description:arXiv 2016
+deepmind-paper-34 | Sequence-to-sequence neural network models for transliteration |  | author:M Rosca, T Breuel description:arXiv 2016
+deepmind-paper-35 | Dorsal anterior cingulate cortex and the value of control |  | author:A Shenhav, J D Cohen, M Botvinick description:Nature Neuroscience 2016
+deepmind-paper-36 | Model-Free Episodic Control |  | author:C Blundell, B Uria, A Pritzel, Y Li, A Ruderman, J Z Leibo, J Rae, D Wierstra, D Hassabis description:arXiv 2016
+deepmind-paper-37 | Semantic representations in the temporal pole predict false memories |  | author:M J Chadwick, R S Anjum, D Kumaran, D L Schacter, H J Spiers, D Hassabis description:Proceedings of the National Academy of Sciences 2016
+deepmind-paper-38 | What Learning Systems do Intelligent Agents Need? Complementary Learning Systems Theory Updated |  | author:D Kumaran, D Hassabis, JL McClelland description:Trends in Cognitive Sciences 2016
+deepmind-paper-39 | Towards an integration of Deep Learning and Neuroscience |  | author:A H Marblestone, G Wayne, K P Kording description:bioRxiv2016
+deepmind-paper-40 | Safely Interruptible Agents |  | author:L Orseau, S Armstrong description:UAI 2016
+deepmind-paper-41 | Thompson Sampling is Asymptotically Optimal in General Environments |  | author:J Leike, T Lattimore, L Orseau, M Hutter description:UAI 2016 - Best Paper Award
+deepmind-paper-42 | Convolution by Evolution: Differentiable Pattern Producing Networks |  | author:C Fernando, D Banarse, M Reynolds, F Besse, D Pfau, M Jaderberg, M Lanctot, D Wierstra description:GECCO 2016
+deepmind-paper-43 | Adaptive Computation Time for Recurrent Neural Networks |  | author:A Graves description:arXiv 2016
+deepmind-paper-44 | Neural Mechanisms of Hierarchical Planning in a Virtual Subway Network |  | author:J Balaguer, H Spiers, D Hassabis, C Summerfield description:Neuron 2016
+deepmind-paper-45 | Pixel Recurrent Neural Networks |  | author:A van den Oord, N Kalchbrenner, K Kavukcuoglu description:ICML 2016 - Best Paper Award
+deepmind-paper-46 | One-shot Learning with Memory-Augmented Neural Networks |  | author:A Santoro, S Bartunov, M Botvinick, D Wierstra, T Lillicrap description:ICML 2016
+deepmind-paper-47 | Exploiting Cyclic Symmetry in Convolutional Neural Networks |  | author:S Dieleman, J De Fauw, K Kavukcuoglu description:ICML 2016
+deepmind-paper-48 | Asynchronous Methods for Deep Reinforcement Learning |  | author:V Mnih, A Puigdomènech Badia, M Mirza, A Graves, T Lillicrap, T Harley, D Silver, K Kavukcuoglu description:ICML 2016
+deepmind-paper-49 | Variational inference for Monte Carlo objectives |  | author:A Mnih, D J Rezende description:ICML 2016
+deepmind-paper-50 | Dueling Network Architecture for Deep Reinforcement Learning |  | author:Z Wang, T Schaul, M Hessel, H van Hasselt, M Lanctot, N de Freitas description:ICML 2016 - Best Paper Award
+deepmind-paper-51 | One-Shot Generalization in Deep Generative Models |  | author:D J Rezende, S Mohamed, I Danihelka, K Gregor, D Wierstra description:ICML 2016
+deepmind-paper-52 | Associative Long Short-Term Memory |  | author:I Danihelka, G Wayne, B Uria, N Kalchbrenner, A Graves description:ICML 2016
+deepmind-paper-53 | Continuous Deep Q-Learning with Model-based Acceleration |  | author:S Gu, T Lillicrap, I Sutskever, S Levine description:ICML 2016
+deepmind-paper-54 | Grid Long Short-Term Memory |  | author:N Kalchbrenner, I Danihelka, A Graves description:ICLR 2016
+deepmind-paper-55 | Policy Distillation |  | author:A Rusu, S Gomez Colmenarejo, C Gülçehre, G Desjardins, J Kirkpatrick, R Pascanu, V Mnih, K Kavukcuoglu, R Hadsell description:ICLR 2016
+deepmind-paper-56 | Prioritized Experience Replay |  | author:T Schaul, J Quan, I Antonoglou, D Silver description:ICLR 2016
+deepmind-paper-57 | Neural Programmer-Interpreters |  | author:S Reed, N de Freitas description:ICLR 2016 - Best Paper Award
+deepmind-paper-58 | Reasoning about Entailment with Neural Attention |  | author:T Rocktäschel, E Grefenstette, K M Hermann, T Kočiský, P Blunsom description:ICLR 2016
+deepmind-paper-59 | Continuous control with deep reinforcement learning |  | author:T Lillicrap, J J Hunt, A Pritzel, N Heess, T Erez, Y Tassa, D Silver, D Wierstra description:ICLR 2016
+deepmind-paper-60 | MuProp: Unbiased Backpropagation For Stochastic Neural Networks |  | author:S Gu, S Levine, I Sutskever, A Mnih description:ICLR 2016
+deepmind-paper-61 | Neural Random-Access Machines |  | author:K Kurach, M Andrychowicz, I Sutskever description:ICLR 2016
+deepmind-paper-62 | A Test of Relative Similarity for Model Selection in Generative Models |  | author:W Bounliphone, E Belilovsky, M Blaschko, I Antonoglou, A Gretton description:ICLR 2016
+deepmind-paper-63 | Order Matters: Sequence to sequence for sets |  | author:O Vinyals, S Bengio, M Kudlur description:ICLR 2016
+deepmind-paper-64 | Multi-task Sequence to Sequence Learning |  | author:M Luong, Q Le, I Sutskever, O Vinyals, L Kaiser description:ICLR 2016
+deepmind-paper-65 | ACDC: A Structured Efficient Linear Layer |  | author:M Moczulski, M Denil, J Appleyard, N de Freitas description:ICLR 2016
+deepmind-paper-66 | Learning Efficient Algorithms with Hierarchical Attentive Memory |  | author:M Andrychowicz, K Kurach description:arXiv 2016
+deepmind-paper-67 | Increasing the Action Gap: New Operators for Reinforcement Learning |  | author:M G Bellemare, G Ostrovski, A Guez, P S Thomas, R Munos description:AAAI 2016
+deepmind-paper-68 | Deep Reinforcement Learning with Double Q-learning |  | author:H van Hasselt, A Guez, D Silver description:AAAI 2016
+deepmind-paper-69 | Human Level Control Through Deep Reinforcement Learning |  | author:V Mnih, K Kavukcuoglu, D Silver, A Rusu, J Veness, M G Bellemare, A Graves, M Riedmiller, A Fidjeland, G Ostrovski, S Petersen, C Beattie, A Sadik, I Antonoglou, H King, D Kumaran, D Wierstra, S Legg, D Hassabis description:Nature 2015
+deepmind-paper-70 | Spatial Transformer Networks |  | author:M Jaderberg, K Simonyan, A Zisserman, K Kavukcuoglu description:NIPS 2015
+deepmind-paper-71 | Teaching Machines to Read and Comprehend |  | author:K M Hermann, T Kočiský, E Grefenstette, L Espeholt, W Kay, M Suleyman, P Blunsom description:NIPS 2015
+deepmind-paper-72 | DRAW: A Recurrent Neural Network For Image Generation |  | author:K Gregor, I Danihelka, A Graves, D J Rezende, D Wierstra description:ICML 2015
+deepmind-paper-73 | Universal Value Function Approximators |  | author:T Schaul, D Horgan, K Gregor, D Silver description:ICML 2015
+deepmind-paper-74 | Hippocampal place cells construct reward related sequences through unexplored space |  | author:H Ólafsdóttir, C Barry, A Saleem, D Hassabis, H Spiers description:eLife 2015
+deepmind-paper-75 | Natural Neural Networks |  | author:G Desjardins, K Simonyan, R Pascanu, K Kavukcuoglu description:NIPS 2015
+deepmind-paper-76 | Variational Inference with Normalizing Flows |  | author:D J Rezende, S Mohamed description:ICML 2015
+deepmind-paper-77 | Learning Continuous Control Policies by Stochastic Value Gradients |  | author:N Heess, G Wayne, D Silver, T Lillicrap, Y Tassa, T Erez description:NIPS 2015
+deepmind-paper-78 | Move Evaluation in Go Using Deep Convolutional Neural Networks |  | author:C J Maddison, A Huang, I Sutskever, D Silver description:ICLR 2015
+deepmind-paper-79 | Gradient Estimation Using Stochastic Computation Graphs |  | author:J Schulman, N Heess, T Weber, P Abbeel description:NIPS 2015
+deepmind-paper-80 | Approximate Hubel-Wiesel Modules and the Data Structures of Neural Computation |  | author:J Z Leibo, J Cornebise, S Gomez Colmenarejo, D Hassabis description:arVix 2015
+deepmind-paper-81 | Learning to Transduce with Unbounded Memory |  | author:E Grefenstette, K M Hermann, M Suleyman, P Blunsom description:NIPS 2015
+deepmind-paper-82 | Multiple Object Recognition with Visual Attention |  | author:J Lei Ba, V Mnih, K Kavukcuoglu description:ICLR 2015
+deepmind-paper-83 | Variational Information Maximisation for Intrinsically Motivated Reinforcement Learning |  | author:S Mohamed, D J Rezende description:NIPS 2015
+deepmind-paper-84 | Weight Uncertainty in Neural Networks |  | author:C Blundell, J Cornebise, K Kavukcuoglu, D Wierstra description:ICML 2015
+deepmind-paper-85 | Fictitious Self-Play in Extensive-Form Games |  | author:J Heinrich, M Lanctot, D Silver description:ICML 2015
+deepmind-paper-86 | Toward Minimax Off-policy Value Estimation |  | author:L Li, R Munos, D Szepesvari description:AISTATS 2015
+deepmind-paper-87 | Massively Parallel Methods for Deep Reinforcement Learning |  | author:A Nair, P Srinivasan, S Blackwell, C Alcicek, R Fearon, A De Maria, V Panneershelvam, M Suleyman, C Beattie, S Petersen, S Legg, V Mnih, K Kavukcuoglu, D Silver description:ICML 2015
+deepmind-paper-88 | Deep Structured Output Learning for Unconstrained Text Recognition |  | author:M Jaderberg, K Simonyan, A Vedaldi, A Zisserman description:ICLR 2015
+deepmind-paper-89 | Compress and Control |  | author:J Veness, M G Bellemare, M Hutter, A Chua, G Desjardins description:AAAI 2015
+deepmind-paper-90 | Smooth UCT Search in Computer Poker |  | author:J Heinrich, D Silver description:IJCAI 2015
+deepmind-paper-91 | Fast gradient descent for drifting least squares regression, with application to bandits |  | author:N Korda, L A Prashanth, R Munos description:AAAI 2015
+deepmind-paper-92 | Count-Based Frequency Estimation using Bounded Memory |  | author:M G Bellemare description:IJCAI 2015
+deepmind-paper-93 | Dependency Recurrent Neural Language Models for Sentence Completion |  | author:P Mirowski, A Vlachos description:ACL 2015
+deepmind-paper-94 | Neural Turing Machines |  | author:A Graves, G Wayne, I Danihelka description:arXiv 2014
+deepmind-paper-95 | Recurrent Models of Visual Attention |  | author:V Mnih, N Heess, A Graves, K Kavukcuoglu description:NIPS 2014
+deepmind-paper-96 | Semi-Supervised Learning with Deep Generative Models |  | author:D Kingma, D J Rezende, S Mohamed, M Welling description:NIPS 2014
+deepmind-paper-97 | Bayes-Adaptive Simulation-based Search with Value Function Approximation |  | author:A Guez, N Heess, D Silver, P Dayan description:NIPS 2014
+deepmind-paper-98 | Deep AutoRegressive Networks |  | author:K Gregor, I Danihelka, A Mnih, C Blundell, D Wierstra description:ICML 2014
+deepmind-paper-99 | Stochastic Backpropagation and Approximate Inference in Deep Generative Models |  | author:D J Rezende, S Mohamed, D Wierstra description:ICML 2014
+deepmind-paper-100 | Towards End-to-End Speech Recognition with Recurrent Neural Networks |  | author:A Graves, N Jaitly description:ICML 2014
+deepmind-paper-101 | Skip Context Tree Switching |  | author:M G Bellemare, J Veness, E Talvitie description:ICML 2014
+deepmind-paper-102 | Neural Variational Inference and Learning in Belief Networks |  | author:A Mnih, K Gregor description:ICML 2014
+deepmind-paper-103 | Deterministic Policy Gradient Algorithms |  | author:D Silver, G Lever, N Heess, T Degris, D Wierstra, M Riedmiller description:ICML 2014
+deepmind-paper-104 | Unit Tests for Stochastic Optimization |  | author:T Schaul, I Antonoglou, D Silver description:ICLR 2014
+deepmind-paper-105 | Online Learning of k-CNF Boolean Functions |  | author:J Veness, M Hutter, L Orseau, M G Bellemare description:IJCAI 2015
+deepmind-paper-106 | Learning word embeddings efficiently with noise-contrastive estimation |  | author:A Mnih, K Kavukcuoglu description:NIPS 2013
+deepmind-paper-107 | Bayesian Hierarchical Community Discovery |  | author:C Blundell, Y Whye Teh description:NIPS 2013
+deepmind-paper-108 | Playing Atari with Deep Reinforcement Learning |  | author:V Mnih, K Kavukcuoglu, D Silver, A Graves, I Antonoglou, D Wierstra, M Riedmiller description:NIPS 2013
+deepmind-paper-109 | The Future of Memory: Remembering, Imagining, and the Brain |  | author:D Schacter, D Addis, D Hassabis, V Martin, N Spreng, K Szpunar description:Neuron. 76 2012
+deepmind-paper-110 | Is the brain a good model for machine intelligence? |  | author:D Hassabis, R Brooks, D Bray, A Shashua description:Nature. 482 2012
+deepmind-paper-111 | An Approximation of the Universal Intelligence Measure |  | author:S Legg, J Veness description:Solomonoff Memorial Conference Melbourne, Australia, 2011
+deepmind-paper-112 | Reinforcement learning, efficient coding, and the statistics of natural tasks |  | author:M Botvinick, A Weinstein, A Solway, A Barto description:Current Opinion in Behavioral Sciences 2015
+deepmind-paper-113 | Evidence integration in model-based tree search |  | author:M Botvinick, A Solway description:Proceedings of the National Academy of Sciences 2015
+deepmind-paper-114 | A note on the evaluation of generative models |  | author:L Theis, A van den Oord, M Bethge description:ICLR 2016
+deepmind-paper-115 | Very Deep Convolutional Networks for Large-Scale Image Recognition |  | author:K Simonyan, A Zisserman description:ICLR 2015
