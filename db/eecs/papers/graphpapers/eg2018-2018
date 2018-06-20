@@ -1,0 +1,66 @@
+eg2017-1 | Computational Light Painting Using a Virtual Exposure |  | author:Nestor Salamon ,  Marcel Lancelle ,  Elmar Eisemann
+eg2017-2 | SketchSoup: Exploratory Ideation using Design Sketches |  | author:Rahul Arora , Ishan Darolia,  Vinay P. Namboodiri ,  Karan Singh ,  Adrien Bousseau
+eg2017-3 | Integrated Structural-Architectural Design for Interactive Planning |  | author:Bernhard Steiner , Elham Mousavian,  Fatemeh Mehdizadeh Saradj,  Michael Wimmer ,  Przemyslaw Musialski
+eg2017-4 | Unbiased Light Transport Estimators for Inhomogeneous Participating Media |  | author:Laszlo Szirmay-Kalos ,  Iliyan Georgiev ,  Milan Magdics ,  Balazs Molnar ,  David Legrady
+eg2017-5 | Multiple vertex next event estimation for lighting in dense, forward-scattering media |  | author:Pascal Weber,  Johannes Hanika ,  Carsten Dachsbacher
+eg2017-6 | Gradient-Domain Photon Density Estimation |  | author:Binh-Son Hua ,  Adrien Gruson ,  Derek Nowrouzezahrai ,  Toshiya Hachisuka
+eg2017-7 | Design Transformations for Rule-based Procedural Modeling |  | author:Stefan Lienhard , Cheryl Lau, Pascal Muller,  Peter Wonka ,  Mark Pauly
+eg2017-8 | Interactive Modeling and Authoring of Climbing Plants |  | author:Torsten Hadrich ,  Bedrich Benes ,  Oliver Deussen ,  Soren Pirk
+eg2017-9 | EcoBrush: Interactive Control of Visually Consistent Large-Scale Ecosystems |  | author:James Gain , Harry Long,  Guillaume Cordonnier ,  Marie-Paule Cani
+eg2017-10 | Enriching Facial Blendshape Rigs with Physical Simulation |  | author:Yeara Kozlov ,  Derek Bradley , Moritz Baecher ,  Markus Gross,  Thabo Beeler,  Bernhard Thomaszewski
+eg2017-11 | Sparse Rig Parameter Optimization for Character Animation |  | author:Jaewon Song,  Roger Blanco i Ribera,  Kyungmin Cho,  Mi You,  J. P. Lewis , Byungkuk Choi,  Junyong Noh
+eg2017-12 | Interactive Paper Tearing |  | author:Camille Schreck,  Damien Rohmer ,  Stefanie Hahmann
+eg2017-13 | Planar Shape Detection and Regularization in Tandem |  | author:Sven Oesau ,  Florent Lafarge ,  Pierre Alliez
+eg2017-14 | Extracting Sharp Features from RGB-D Images |  | author:Y-P. Cao,  Tao Ju , J. Xu,  Shi-Min Hu
+eg2017-15 | Interactive Analysis of Connolly Surfaces for Various Probes |  | author:Martin Manak , L. Jirkovsky,  I. Kolingerova
+eg2017-16 | General Point Sampling with Adaptive Density and Correlations |  | author:Riccardo Roveri,  Cengiz Oztireli ,  Markus Gross
+eg2017-17 | Flow-based Temporal Selection for Interactive Volume Visualization |  | author:Steffen Frey ,  Thomas Ertl
+eg2017-18 | Real-Time Oil Painting on Mobile Hardware |  | author:Tuur Stuyck ,  Fang Da ,  Sunil Hadap ,  Philip Dutre
+eg2017-19 | Character-Object Interaction Retrieval using the Interaction Bisector Surface |  | author:Xi Zhao,  Myung Geol Choi ,  Taku Komura
+eg2017-20 | Parallel Constant Time Collision Detection for Polygonal Objects |  | author:Rene Weller, Nicole Debowski,  Gabriel Zachmann
+eg2017-21 | Data-Driven Shape Interpolation and Morphing Editing |  | author:Lin Gao , Shu-Yu Chen,  Yu-Kun Lai , Shihong Xia
+eg2017-22 | Flow-Induced Inertial Steady Vector Field Topology |  | author:Tobias Gunther ,  Markus Gross
+eg2017-23 | Decoupled Opacity Optimization for Points, Lines and Surfaces |  | author:Tobias Gunther ,  Holger Theisel ,  Markus Gross
+eg2017-24 | Category-specific Salient View Selection via Deep Convolutional Neural Networks |  | author:Seong-Heum Kim , Yu-Wing Tai,  Joon-Young Lee ,  Jaesik Park ,  In So Kweon
+eg2017-25 | Diffusion Diagrams: Voronoi Cells and Centroids from Diffusion |  | author:Philipp Herholz , Felix Haase,  Marc Alexa
+eg2017-26 | Spectral Processing of Tangential Vector Fields |  | author:Christopher Brandt ,  Leonardo Scandolo ,  Elmar Eisemann ,  Klaus Hildebrandt
+eg2017-27 | Scalable Feature-Preserving Irregular Mesh Coding |  | author:J. El Sayeh Khalil,  A. Munteanu,  L. Denis,  P. Lambert,  R. Van de Walle
+eg2017-28 | Texture Stationarization: Turning Photos into Tileable Textures |  | author:Joep Moritz , Stuart James,  Tom S. F. Haines , Tobias Ritschel,  Tim Weyrich
+eg2017-29 | A Subjective Evaluation of Texture Synthesis Methods |  | author:Martin Kolar,  Alan Chalmers,  Kurt Debattista
+eg2017-30 | Analysis and Controlled Synthesis of Inhomogeneous Textures |  | author:Yang Zhou,  Huajie Shi,  Dani Lischinski , Minglun Gong,  Johannes Kopf ,  Hui Huang
+eg2017-31 | ShapeGenetics: Using Genetic Algorithms for Procedural Modeling |  | author:Karl Haubenwallner,  Hans-Peter Seidel ,  Markus Steinberger
+eg2017-32 | On Realism of Architectural Procedural Models |  | author:Jan Benes ,  Tom Kelly ,  Filip Dechterenko ,  Jaroslav Krivanek , Pascal Muller
+eg2017-33 | A Bi-Directional Procedural Model for Architectural Design |  | author:H. Hua
+eg2017-34 | Geometric Stiffness for Real-time Constrained Multibody Dynamics |  | author:Sheldon Andrews , Marek Teichmann,  Paul Kry
+eg2017-35 | Multivariate Gaussian-based Inverse Kinematics |  | author:Jing Huang,  Qi Wang,  Marco Fratarcangeli , Ke Yan, Catherine Pelachaud
+eg2017-36 | Articulated-motion-aware Sparse Localized Decomposition |  | author:Yupan Wang,  Guiqing Li,  Zhichao Zeng,  Huayun He
+eg2017-37 | Fully Spectral Partial Shape Matching |  | author:Or Litany,  Emanuele Rodola , Alex Bronstein,  Michael Bronstein
+eg2017-38 | Informative Descriptor Preservation via Commutativity for Shape Matching |  | author:Dorian Nogneng ,  Maks Ovsjanikov
+eg2017-39 | Discovering Structured Variations via Template Matching |  | author:Duygu Ceylan *,  Minh Dang *,  Boris Neubert ,  Niloy J. Mitra 
+eg2017-40 | DeepGarment : 3D Garment Shape Estimation from a Single Image |  | author:Radek Danecek,  Endri Dibra ,  Cengiz Oztireli , Remo Ziegler,  Markus Gross
+eg2017-41 | Simulation-Ready Hair Capture |  | author:Liwen Hu ,  Derek Bradley ,  Hao Li ,  Thabo Beeler
+eg2017-42 | Primal-Dual Optimization for Fluids |  | author:Tiffany Inglis ,  Marie-Lena Eckert , James Gregson,  Nils Thuerey
+eg2017-43 | Multi-View Stereo on Consistent Face Topology |  | author:Graham Fyffe , Koki Nagano,  Loc Huynh,  Shunsuke Saito,  Jay Busch,  Andrew Jones,  Hao Li ,  Paul Debevec
+eg2017-44 | Makeup Lamps: Live Augmentation of Human Faces via Projection |  | author:Amit H. Bermano , Markus Billeter,  Daisuke Iwai,  Anselm Grundhofer
+eg2017-45 | Real-Time Multi-View Facial Tracking with Synthetic Training |  | author:Martin Klaudiny ,  Steven McDonagh ,  Derek Bradley ,  Thabo Beeler ,  Kenny Mitchell
+eg2017-46 | Gradient-based steering for vision-based crowd simulation algorithms |  | author:T. Dutra,  R. Marques,  J. B. Cavalcante-Neto,  C. A. Vidal,  Julien Pettre
+eg2017-47 | Sparse Inertial Poser: Automatic 3D Human Pose Estimation from Sparse IMUs |  | author:Timo von Marcard ,  Bodo Rosenhahn ,  Michael Black ,  Gerard Pons-Moll
+eg2017-48 | Group Modeling: a Unified Velocity-based Approach |  | author:Z. Ren,  Panayiotis Charalambous , J. Bruneau,  Q. Peng,  Julien Pettre
+eg2017-49 | Learning Detail Transfer based on Geometric Features |  | author:Sema Berkiten ,  Maciej Halber ,  Justin Solomon ,  Chongyang Ma ,  Hao Li ,  Szymon Rusinkiewicz
+eg2017-50 | Chamber Recognition in Cave Data Sets |  | author:Nico Schertler , Manfred Buchroithner,  Stefan Gumhold
+eg2017-51 | Memory-Efficient Interactive Online Reconstruction from Depth Image Streams |  | author:Florian Reichl , Jakob Weiss,  Rudiger Westermann
+eg2017-52 | Performance-Based Biped Control using a Consumer Depth Camera |  | author:Yoonsang Lee ,  Taesoo Kwon
+eg2017-53 | Consistent Video Filtering for Camera Arrays |  | author:Nicolas Bonneel *,  James Tompkin *,  Deqing Sun ,  Oliver Wang ,  Kalyan Sunkavalli ,  Sylvain Paris 
+eg2017-54 | NeuroLens: Data-driven Camera Lens Simulation Using Neural Networks |  | author:Q. Zheng,  C. Zheng
+eg2017-55 | Practical Capture and Reproduction of Phosphorescent Appearance |  | author:Oliver Nalbach ,  Hans-Peter Seidel ,  Tobias Ritschel
+eg2017-56 | STD: Student¡¦s t-Distribution of Slopes for Microfacet Based BSDFs |  | author:Mickael Ribardiere ,  Benjamin Bringier ,  Daniel Meneveaux ,  Lionel Simonot
+eg2017-57 | Hybrid mesh-volume LoDs for all-scale pre-filtering of complex 3D assets |  | author:Guillaume Loubet ,  Fabrice Neyret
+eg2017-58 | Spatial Adjacency Maps for Translucency Simulation under General Illumination |  | author:Sebastian Maisch ,  Timo Ropinski
+eg2017-59 | Zooming On All Actors: Automatic Focus+Context Split Screen Video Generation |  | author:Moneish Kumar,  Vineet Gandhi ,  Remi Ronfard ,  Michael Gleicher
+eg2017-60 | Flicker Observer Effect: Guiding Attention Through High Frequency Flicker |  | author:Nicholas Waldin,  Manuela Waldner ,  Ivan Viola
+eg2017-61 | Multi-Modal Perception for Selective Rendering |  | author:C. Harvey,  K. Debattista,  T. Bashford-Rogers,  A. Chalmers
+eg2017-62 | Distributed Optimization Framework for Shadow Removal in Multi-Projection Systems |  | author:Jun Tsukamoto,  Daisuke Iwai,  Kenji Kashima
+eg2017-63 | GPU Ray Tracing using Irregular Grids |  | author:Arsene Perard-Gayot ,  Javor Kalojanov ,  Philipp Slusallek
+eg2017-64 | Parallel BVH Construction using Progressive Hierarchical Refinement |  | author:Jakub Hendrich, Daniel Meister,  Jiri Bittner
+eg2017-65 | A GPU-Adapted Structure for Unstructured Grids |  | author:Rhaleb Zayer ,  Markus Steinberger ,  Hans-Peter Seidel
+eg2017-66 | Hierarchical Bucket Queuing for Fine-Grained Priority Scheduling on the GPU |  | author:Bernhard Kerbl ,  Michael Kenzel ,  Dieter Schmalstieg ,  Hans-Peter Seidel ,  Markus Steinberger

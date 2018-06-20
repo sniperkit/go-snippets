@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Force-Directed Layout</title>
+    <script type="text/javascript" src="http://d3js.org/d3.v2.min.js?2.9.3""></script>
+    <style>
+
+    .link {
+      stroke: #ccc;
+    }
+
+    .node text {
+      pointer-events: none;
+      font: 10px sans-serif;
+    }
+    #chart {
+        width:1000px; /*设定宽度*/
+        text-align:left; /*文字左对齐*/
+        float:left; /*浮动居左*/
+        clear:left; /*不允许左侧存在浮动*/
+        overflow:hidden; /*超出宽度部分隐藏*/
+    }
+    #remark {
+        width:400px;
+        text-align:left;
+        font:12px Tahoma;
+        float:right; /*浮动居右*/
+        clear:right; /*不允许右侧存在浮动*/
+        overflow:hidden
+    }
+    </style>
+  </head>
+  <body>
+    <div id="chart"></div>
+<script>
+
+var width = 1000,
+    height = 800,
+    fill = d3.scale.category20();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var force = d3.layout.force()
+    .gravity(.05)
+    .distance(400)
+    .charge(-100)
+    .size([width, height]);
+
+d3.json("force.json", function(json) {
+  force
+      .nodes(json.nodes)
+      .links(json.links)
+      .start();
+
+  var link = svg.selectAll(".link")
+      .data(json.links)
+    .enter().append("line")
+      .attr("class", "link");
+
+  var color = d3.scale.category20();
+
+  var node = svg.selectAll(".node")
+      .data(json.nodes)
+    .enter().append("g")
+      .attr("class", "node")
+      .call(force.drag);
+
+  node.append("circle")
+      .attr("r", 8)
+      .style("fill", function(d) { return color(d.id == "me" ? 1 : 2); });
+
+  node.append("text")
+      .attr("dx", 12)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.id });
+
+  force.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+  });
+});
+
+window.onload = function setFont() {
+
+    document.frames['remarkframe'].document.body.style.fontSize = 12 + 'px';           
+    document.frames['remarkframe'].document.body.style.fontFamily = 'sans-serif';           
+}
+
+</script>
+<div id='remark'>
+<iframe id='remarkframe' src="remark.html" target="_blank" frameBorder="0" width="400" scrolling="yes" height="800"></iframe>
+</div>
+  </body>
+</html>
