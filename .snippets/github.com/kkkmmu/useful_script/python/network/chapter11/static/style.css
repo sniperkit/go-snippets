@@ -1,0 +1,57 @@
+html {
+    text-align: center;
+}
+body {
+    display: inline-block;
+}
+.flash_message {
+    position: relative;
+    padding: 1em;
+    color: white;
+    background: green;
+}
+.flash_message a {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-left: 0.5em;
+    padding: 0.3em;
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.complaint {
+    display: block;
+    padding-bottom: 1em;
+    color: red;
+}
+ul {
+    padding: 0px;
+    text-align: left;
+}
+li {
+    display: block;
+    margin: 2px;
+    padding: 2px 4px;
+}
+li.from {
+    background-color: lightgreen;
+}
+li.to {
+    background-color: pink;
+}
+form {
+    display: block;
+    float: left;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    box-shadow: 10px 10px 5px #aaa;
+    border: 1px solid black;
+}
+label {
+    display: block;
+    text-align: center;
+}

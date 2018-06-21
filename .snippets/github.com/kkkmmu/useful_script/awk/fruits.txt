@@ -1,0 +1,5 @@
+fruit qty
+apple 42
+banana 31
+fig 90
+guava 6

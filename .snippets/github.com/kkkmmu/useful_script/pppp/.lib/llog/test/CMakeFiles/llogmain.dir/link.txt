@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Werror  -rdynamic CMakeFiles/llogmain.dir/llogmain.c.o  -o ../bin/llogmain -Wl,-rpath,/home/leeweop/kkkmmu/pppp/.lib/llog/lib ../lib/libllog.so.1.1 

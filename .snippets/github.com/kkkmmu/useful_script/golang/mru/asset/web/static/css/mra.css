@@ -1,0 +1,67 @@
+#mra{
+	/*保证footer是相对于container位置绝对定位*/
+	position:relative;  
+	width:100%;
+	height: auto;
+	min-height:100%; 
+	/*设置padding-bottom值大于等于footer的height值，以保证main的内容能够全部显示出来而不被footer遮盖；*/  
+	padding-bottom: 50px;  
+	padding-top: 100px;  
+	box-sizing: border-box;
+}
+
+.header{
+	position: fixed;
+	z-index:1000000;
+	width: 100%;
+	height: 50px;
+	background: #999;
+}
+
+.footer{
+	width: 100%;
+	height:50px;   /* footer的高度一定要是固定值*/ 
+	position:fixed;
+	bottom: 0;
+	background-color: #f8f8f8;
+}
+.copyright {
+	color: #000000;
+	line-height: 30px;
+	min-height: 30px;
+	padding: 7px 0;
+}
+.design {
+	color: #000000;
+	line-height: 30px;
+	min-height: 30px;
+	padding: 7px 0;
+	text-align: right;
+}
+.design a {
+	color: #000000;
+}
+
+.navbar-brand { position: relative; z-index: 2; }
+
+.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; }
+
+.navbar .navbar-collapse { position: relative; }
+.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
+
+.navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
+.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
+.navbar.navbar-inverse .nav-collapse { background-color: #222; }
+.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
+.nav-collapse>li { float: right; }
+
+.btn.btn-circle { border-radius: 50px; }
+.btn.btn-outline { background-color: transparent; }
+
+@media screen and (max-width: 767px) {
+	.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; } 
+
+	.navbar .nav-collapse { margin: 7.5px auto; padding: 0; }
+	.navbar .nav-collapse .navbar-form { margin: 0; }
+	.nav-collapse>li { float: none; }
+}

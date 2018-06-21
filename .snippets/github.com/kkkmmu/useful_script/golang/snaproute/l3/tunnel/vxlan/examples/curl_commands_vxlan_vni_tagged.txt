@@ -1,0 +1,68 @@
+
+// Node 1 52.53.219.54
+
+curl  -i "Content-Type: application/json" -d '{"Module":"asicd", "Level":"debug"}' -X PATCH http://52.53.219.54:8080/public/v1/config/ComponentLogging
+curl  -i "Content-Type: application/json" -d '{"Module":"ribd", "Level":"debug"}' -X PATCH http://52.53.219.54:8080/public/v1/config/ComponentLogging
+curl  -i "Content-Type: application/json" -d '{"Module":"vxland", "Level":"debug"}' -X PATCH http://52.53.219.54:8080/public/v1/config/ComponentLogging
+curl  -i "Content-Type: application/json" -d '{"Module":"arp", "Level":"debug"}' -X PATCH http://52.53.219.54:8080/public/v1/config/ComponentLogging
+
+// create loopback interface
+//curl  -i "Content-Type: application/json" -d '{"Name":"vxlanlb0", "Type":"Loopback"}' http://52.53.219.54:8080/public/v1/config/LogicalIntf
+
+// create ip on the loopback interface
+//curl  -i "Content-Type: application/json" -d '{"IntfRef":"vxlanlb0", "IPAddr":"1.1.1.1/24", "AdminState":"UP"}' http://52.53.219.54:8080/public/v1/config/IPv4Intf
+
+// create a vlan
+//curl  -i "Content-Type: application/json" -d '{"VlanId":300, "AdminState":"UP", "UntagIntfList":["eth1"]}' -X PATCH http://52.53.219.54:8080/public/v1/config/Vlan
+curl  -i "Content-Type: application/json" -d '{"VlanId":300, "AdminState":"UP"}' http://52.53.219.54:8080/public/v1/config/Vlan
+
+// assign ip address to vlan
+curl  -i "Content-Type: application/json" -d '{"IntfRef":"vlan300", "IPAddr":"30.1.1.1/24", "AdminState":"UP"}' http://52.53.219.54:8080/public/v1/config/IPv4Intf
+
+
+// assign ip address to physical interface
+curl  -i "Content-Type: application/json" -d '{"IntfRef":"eth2", "IPAddr":"172.31.40.175/24", "AdminState":"UP"}' http://52.53.219.54:8080/public/v1/config/IPv4Intf
+
+//curl  -i "Content-Type: application/json" -d '{"DestinationNw":"172.31.32.0", "NetworkMask":"255.255.240.0", "Protocol":"STATIC", "NextHop":[{"NextHopIp":"172.31.40.230"}]}' http://52.53.219.54:8080/public/v1/config/IPv4Route
+
+// create vni to vlan mapping for the vxlan domain
+curl  -i "Content-Type: application/json" -d '{"Vni":10, "VlanId":[300], "AdminState":"UP"}' http://52.53.219.54:8080/public/v1/config/VxlanInstance
+
+// create vtep
+curl  -i "Content-Type: application/json" -d '{"Intf":"Vtep1000", "IntfRef":"eth2", "Vni":10, "DstIp":"172.31.40.230", "DstUDP":8472, "TOS":0, "Mtu":1550, "InnerVlanHandlingMode":0, "TTL":64, "AdminState":"UP"}' http://52.53.219.54:8080/public/v1/config/VxlanVtepInstance
+
+
+
+
+// node 2  54.153.102.187
+curl  -i "Content-Type: application/json" -d '{"Module":"asicd", "Level":"debug"}' -X PATCH http://54.153.102.187:8080/public/v1/config/ComponentLogging
+curl  -i "Content-Type: application/json" -d '{"Module":"ribd", "Level":"debug"}' -X PATCH http://54.153.102.187:8080/public/v1/config/ComponentLogging
+curl  -i "Content-Type: application/json" -d '{"Module":"vxland", "Level":"debug"}' -X PATCH http://54.153.102.187:8080/public/v1/config/ComponentLogging
+curl  -i "Content-Type: application/json" -d '{"Module":"arpd", "Level":"debug"}' -X PATCH http://54.153.102.187:8080/public/v1/config/ComponentLogging
+
+
+// create loopback interface
+//curl  -i "Content-Type: application/json" -d '{"Name":"vxlanlb0", "Type":"Loopback"}' http://54.153.102.187:8080/public/v1/config/LogicalIntf
+
+// create ip on the loopback interface
+//curl  -i "Content-Type: application/json" -d '{"IntfRef":"vxlanlb0", "IPAddr":"2.2.2.2/24", "AdminState":"UP"}' http://54.153.102.187:8080/public/v1/config/IPv4Intf
+
+// create a vlan
+curl  -i "Content-Type: application/json" -d '{"VlanId":300, "AdminState":"UP"}' http://54.153.102.187:8080/public/v1/config/Vlan
+
+// assign ip address to vlan
+curl  -i "Content-Type: application/json" -d '{"IntfRef":"vlan300", "IPAddr":"30.1.1.2/24", "AdminState":"UP"}' http://54.153.102.187:8080/public/v1/config/IPv4Intf
+
+
+// assign ip address to physical interface
+curl  -i "Content-Type: application/json" -d '{"IntfRef":"eth2", "IPAddr":"172.31.40.230/24", "AdminState":"UP"}' http://54.153.102.187:8080/public/v1/config/IPv4Intf
+
+
+curl  -i "Content-Type: application/json" -d '{"DestinationNw":"172.31.32.0", "NetworkMask":"255.255.240.0", "Protocol":"STATIC", "NextHop":[{"NextHopIp": "172.31.40.175"}]}' http://54.153.102.187:8080/public/v1/config/IPv4Route
+
+// create vni to vlan mapping for the vxlan domain
+curl  -i "Content-Type: application/json" -d '{"Vni":10, "VlanId":[300], "AdminState":"UP"}' http://54.153.102.187:8080/public/v1/config/VxlanInstance
+
+// create vtep
+curl  -i "Content-Type: application/json" -d '{"Intf":"Vtep1000", "IntfRef":"eth2", "Vni":10, "DstIp":"172.31.40.175", "DstUDP":8472, "TOS":0, "Mtu":1550, "InnerVlanHandlingMode":0, "TTL":64, "AdminState":"UP"}' http://54.153.102.187:8080/public/v1/config/VxlanVtepInstance
+

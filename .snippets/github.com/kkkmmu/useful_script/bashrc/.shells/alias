@@ -1,0 +1,51 @@
+# Cute shell shortcuts
+alias ls='ls --sort=extension --color=auto'
+alias ll='ls -lh'
+alias lal='ls -alh'
+alias la='ls -A'
+alias pms='sudo pm-suspend'
+alias psg='ps -A | grep'
+alias se='sudo gvim'
+alias e='gvim'
+alias smi='sudo make install'
+alias l='ls -CF'
+
+# Cool colors for man pages
+alias man="TERMINFO=~/.terminfo TERM=mostlike LESS=C PAGER=less man"
+
+# Enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# This one is to take care of make
+# Give me a nice, distinguishable make output
+alias make='clear && make'
+alias m='make'
+
+# Some more, to avoid mistakes
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Git Commands
+# Add and Commit are used as functions
+alias gpo='git push origin master'
+alias gp='git pull'
+alias gs='git status'
+alias gd='git diff'
+alias gr='git reflog'
+alias glf='git ls-files'
+
+# Useful for C/C++ work
+# R for recursive, p10 to show file paths
+alias scope='cscope -CR -p10'
+
+# Quickly load bashrc
+alias gogo='source ~/.bashrc'

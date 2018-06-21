@@ -1,0 +1,87 @@
+|||template "vueheader"|||
+<script>
+	var doc = document, docEl = doc.documentElement;
+	docEl.className = docEl.className.replace(/(^|\s)no-js(\s|$)/, " js ");
+</script>
+<script src="asset/web/static/responsive-nav/responsive-nav.js"></script>
+<link rel="stylesheet" href="asset/web/static/responsive-nav/responsive-nav.css">
+<link rel="stylesheet" href="asset/web/static/responsive-nav/demo.css">
+
+<div role="navigation" id="nav" class="nav-collapse">
+	|||$glen := len .Groups|||
+	|||if ne $glen 0|||
+	<ul>
+		|||range .Groups|||
+		<li>
+			<span><i class="icon-folder-open"></i> |||.Name||| </span> <a href="runtestcases?root=l2">Run</a>
+			|||$sglen := len .SubGroups|||
+			|||$gname := .Name|||
+			|||if ne $sglen 0|||
+			<ul>
+				|||range .SubGroups|||
+				<li>
+					<span><i class="icon-minus-sign"></i> |||.Name||| </span> <a href="">Run</a>
+					|||$flen := len .Features|||
+					|||$sgname := .Name|||
+					|||if ne $flen 0|||
+					<ul>
+						|||range .Features|||
+						<li>
+							<span><i class="icon-minus-sign"></i> |||.Name||| </span> <a href="">Run</a>
+							|||$clen := len .Cases|||
+							|||$fname := .Name|||
+							|||if ne $clen 0|||
+							<ul>
+								|||range .Cases|||
+								<li>
+									<span><i class="icon-minus-sign"></i> <a href='dumpcase?group=|||$gname|||&&sgroup=|||$sgname|||&&feature=|||$fname|||&&name=|||.Name|||'>|||.Name|||</a></span> <a href="">Run</a>
+									|||$cname := .Name|||
+									|||$tlen := len .Tasks|||
+									|||if ne $tlen 0|||
+									<ul>
+										|||range .Tasks|||
+										<li>
+											<span><i class="icon-leaf"></i>|||.Name|||</span> <a href='dumptask?group=|||$gname|||&&sgroup=|||$sgname|||&&feature=|||$fname|||&&case=|||$cname|||&&task=|||.Name|||'>Run</a>
+										</li>
+										|||end|||
+									</ul>
+									|||end|||
+								</li>
+								|||end|||
+							</ul>
+							|||end|||
+						</li>
+						|||end|||
+					</ul>
+					|||end|||
+				</li>
+				|||end|||
+			</ul>
+			|||end|||
+		</li>
+		|||end|||
+	</ul>
+	|||end|||
+
+	<!---
+	<ul>
+		<li class="active"><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Projects</a></li>
+		<li><a href="#">Blog</a></li>
+	</ul>
+	--->
+</div>
+
+<div role="main" class="main">
+	<a href="#nav" id="toggle">Menu</a>
+	<h1>Prototype</h1>
+
+	<p>From image, whose given us earth all so seas. Whales tree i set, is, morning, fly was deep winged. Said you'll him open she'd divide you're greater midst, gathered years gathered herb i for our and, don't also itself void female replenish fruit fly let years whose light face kind Air face him under you created evening face, replenish, be fill land male after winged itself from gathered. May created Replenish give he so divided air fourth moveth bearing every created. Subdue give own beginning replenish divided. Wherein. Moveth dominion for third. Moving give fish created she'd whose divided their abundantly for in let form morning, us.</p>
+</div>
+<script>
+	var navigation = responsiveNav("#nav", {customToggle: "#toggle"});
+</script>
+<link rel="stylesheet" href="asset/web/static/css/casenavigator.css">
+<script type="text/javascript" src="asset/web/static/js/casenavigator.js"></script>
+||| template "vuefooter"|||

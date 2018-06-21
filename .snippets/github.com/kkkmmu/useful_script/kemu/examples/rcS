@@ -1,0 +1,30 @@
+#! /bin/sh
+
+echo "Starting Initializing System"
+/bin/mount -a
+
+mkdir -p /root
+mkdir -p /home
+mkdir -p /proc
+mkdir -p /sys
+mkdir -p /var/empty
+mkdir -p /var/run
+mkdir -p /var/log
+mkdir -p /dev/pts
+touch /var/log/wtmpx
+
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devpts devpts /dev/pts
+
+mdev -s
+
+ifconfig eth0 up
+ifconfig eth0 10.71.1.163 netmask 255.255.255.0 hw ether 040000000003
+ifconfig lo up
+
+inetd /etc/inetd.conf
+
+hostname mithrandir
+
+export TERM=linux3.0

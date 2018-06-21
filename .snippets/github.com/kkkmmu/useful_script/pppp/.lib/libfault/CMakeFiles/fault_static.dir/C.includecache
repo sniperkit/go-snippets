@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/leeweop/kkkmmu/pppp/lib/libfault/fault.c
+fault.h
+/home/leeweop/kkkmmu/pppp/lib/libfault/fault.h
+dlfcn.h
+-
+inttypes.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+signal.h
+-
+
+/home/leeweop/kkkmmu/pppp/lib/libfault/fault.h
+
+/home/leeweop/kkkmmu/pppp/lib/libfault/leak_detector.c
+stdlib.h
+-
+mcheck.h
+-
+leak_detector.h
+/home/leeweop/kkkmmu/pppp/lib/libfault/leak_detector.h
+
+/home/leeweop/kkkmmu/pppp/lib/libfault/leak_detector.h
+

@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/leeweop/kkkmmu/pppp/tools/pvtrace/stack.c
+assert.h
+-
+
+/home/leeweop/kkkmmu/pppp/tools/pvtrace/stack.h
+
+/home/leeweop/kkkmmu/pppp/tools/pvtrace/symbols.c
+stdio.h
+-
+assert.h
+-
+string.h
+-
+stdlib.h
+-
+stack.h
+/home/leeweop/kkkmmu/pppp/tools/pvtrace/stack.h
+symbols.h
+/home/leeweop/kkkmmu/pppp/tools/pvtrace/symbols.h
+
+/home/leeweop/kkkmmu/pppp/tools/pvtrace/symbols.h
+
+/home/leeweop/kkkmmu/pppp/tools/pvtrace/trace.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+assert.h
+-
+symbols.h
+/home/leeweop/kkkmmu/pppp/tools/pvtrace/symbols.h
+stack.h
+/home/leeweop/kkkmmu/pppp/tools/pvtrace/stack.h
+

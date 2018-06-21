@@ -1,0 +1,98 @@
+{
+	"PluginInfoList": [
+		{
+			"PluginName": "Flexswitch",
+			"ParamsFile": "/opt/flexswitch/params/clients.json"
+		},
+		{
+			"PluginName": "DellCPS",
+			"ParamsFile": "/opt/flexswitch/params/clients.json"
+		}
+	],
+	"ClntInfoList": [
+		{
+			"ClntDmnName": "asicd",
+			"PluginName": "DellCPS"
+		},
+		{
+			"ClntDmnName": "bgpd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "ribd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "arpd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "bgpd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "lacpd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "ospfv2d",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "stpd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "dhcprelayd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "bfdd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "vrrpd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "sysd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "lldpd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "dhcpd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "fMgrd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "vxland",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "platformd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "ndpd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "notifierd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "statsd",
+			"PluginName": "Flexswitch"
+		},
+		{
+			"ClntDmnName": "confd",
+			"PluginName": "Flexswitch"
+		}
+	]
+}

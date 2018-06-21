@@ -1,0 +1,1 @@
+/usr/bin/cc -Wall  -rdynamic CMakeFiles/run.dir/run.c.o  -o ../../bin/run 

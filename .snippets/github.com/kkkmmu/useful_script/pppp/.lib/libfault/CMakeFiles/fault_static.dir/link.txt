@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libfault.a  CMakeFiles/fault_static.dir/fault.c.o CMakeFiles/fault_static.dir/leak_detector.c.o
+/usr/bin/ranlib ../../lib/libfault.a

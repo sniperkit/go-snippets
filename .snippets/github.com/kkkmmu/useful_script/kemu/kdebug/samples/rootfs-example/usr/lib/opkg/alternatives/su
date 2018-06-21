@@ -1,0 +1,2 @@
+/bin/su
+/bin/busybox.suid 50

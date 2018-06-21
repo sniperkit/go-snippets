@@ -1,0 +1,7 @@
+AUX_SOURCE_DIRECTORY(${CMAKE_CURRENT_SOURCE_DIR} APP_SRC)
+ADD_EXECUTABLE(ppppTest ${APP_SRC})
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+LINK_DIRECTORIES (${PROJECT_BINARY_DIR}/lib)
+TARGET_LINK_LIBRARIES(ppppTest kkkmmu unity llog fault libran)
+SET(CMAKE_C_FLAGS "-Wall -Werror -g -pg -finstrument-functions -ftest-coverage -fprofile-arcs -funwind-tables -rdynamic")
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/lib/unity ${PROJECT_SOURCE_DIR}/lib/llog/src ${PROJECT_SOURCE_DIR}/lib/libfault ${PROJECT_SOURCE_DIR}/lib/libran/src)

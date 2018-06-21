@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../dist/vue.tree-view.min.css"/>
+    </head>
+    <body id="app">
+
+        <treeview :value.sync="value"
+            :model="users"
+            labelname="name"
+            valuename="id"
+        ></treeview>
+
+        <span v-id="value">Selected user id: {{value}}</span>
+
+        <script src="../bower_components/vue/dist/vue.js" type="text/javascript"></script>
+        <script src="../dist/vue.tree-view.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    value: 1,
+                    users: [
+                        {
+                            name: 'John',
+                            id: 1
+                        },
+                        {
+                            name: 'Jane',
+                            id: 2
+                        },
+                        {
+                            name: 'Jenny',
+                            id: 3
+                        },
+                        {
+                            name: 'Oliver',
+                            id: 4
+                        }
+                    ]
+                }
+            });
+        </script>
+    </body>
+</html>

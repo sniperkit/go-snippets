@@ -1,0 +1,2 @@
+#!/bin/sh
+ps aux | grep qemu | awk '{split($0, a, " "); print a[2]}'| xargs sudo kill -9 

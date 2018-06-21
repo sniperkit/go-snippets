@@ -1,0 +1,151 @@
+|||template "vueheader"|||
+<div class="container-fluid display-table" id="app">
+	<div class="row-fluid display-table-row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			<legend>
+				Run a Script
+			</legend>
+			<fieldset>
+				<legend></legend>
+				<table>
+					<tbody>
+						<td class="col-sm-2">Timer <input type="text" v-model="newscript.Timer"/></td>
+						<td class="col-sm-2">Count <input type="text" v-model="newscript.Count"/></td>
+					</tbody>
+				</table>
+			</fieldset>
+				<legend></legend>
+				<legend></legend>
+			<div class="form-group">
+				<fieldset>
+					<legend>
+						Add a Command
+					</legend>
+					<table class="table table-bordered table-hover">
+						<tbody>
+							<td class="text-center"><input type="text" v-model="newCommand.Delay"/></td>
+							<td class="text-center"><input type="text" v-model="newCommand.Mode"/></td>
+							<td class="text-center"><input type="text" v-model="newCommand.cli"/></td>
+							<td class="text-center"><input type="text" v-model="newCommand.Expected"/></td>
+							<td class="text-center"><button @click="addNewCommand">Create</button></td>
+						</tbody>
+					</table>
+				</fieldset>
+				<form>
+					<div class="form-group">
+						<div class="row">
+							<table class="table table-bordered table-hover">
+								<thead>
+									<tr>
+										<th class="text-center">Delay</th>
+										<th class="text-center">Mode</th>
+										<th class="text-center">Command</th>
+										<th class="text-center">Expected</th>
+										<th class="text-center">Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr v-for="(command, index) in newscript.Commands">
+										<td class="text-center">{{ command.Delay }}</td>
+										<td class="text-center">{{ command.Mode }}</td>
+										<td class="text-center">{{ command.cli }}</td>
+										<td class="text-center">{{ command.Expected }}</td>
+										<td class="text-center"><button @click="deleteCommand(index)">Delete</button></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<td class="text-center"><button @click.prevent="submitit">Submit</button></td>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-2">
+	</div>
+	<div class="row-fluid display-table-row">
+		<div class="col-sm-4">
+			<div class="form-group" id="help" v-for="(result, index)  in results">
+				<p>{{ result.res }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<link href="asset/web/static/notifyjs/dist/styles/metro/notify-metro.css" rel="stylesheet" />
+	<script src="asset/web/static/notifyjs/dist/notify.js"></script>
+	<script src="asset/web/static/notifyjs/dist/styles/metro/notify-metro.js"></script>
+
+<script>
+    function notify(style, data) {
+        $.notify({
+            title: 'Email Notification',
+            text: data,
+            image: "<img src='asset/web/static/notifyjs/examples/images/Mail.png'/>"
+        }, {
+            style: 'metro',
+            className: style,
+            autoHide: false,
+            clickToHide: true
+        });
+    }
+
+
+	var vm = new Vue({
+		el: '#app',
+		data: {
+			frequency: "0",
+			newCommand: {
+				Delay: 0,
+				Mode: "normal",
+				cli: "show running-config",
+				Expected: "vlan 100"
+			},
+			newscript: {
+				Name: "Test",
+				Timer: "0",
+				Count: "1",
+				Commands: []
+			},
+			results: []
+		},
+		methods:{
+			addNewCommand: function(){
+				this.newCommand.Delay = +this.newCommand.Delay //Convert from string into int
+				this.newscript.Commands.push(this.newCommand);
+				this.newCommand = {Delay: 0, Mode: "normal", cli: "show ip interface brief", Expected: '#'}
+			},
+			deleteCommand: function(index){
+				// 删一个数组元素
+				this.newscript.Commands.splice(index,1);
+			},
+			submitit: function() {
+				var res = this.results;
+				this.newscript.Timer = +this.newscript.Timer;
+				this.newscript.Count = +this.newscript.Count; //Convert from string to int
+				$.ajax({
+					type:"post",
+					url:"runscript",
+					async:false,
+					data: {
+						Script: JSON.stringify(this.newscript)
+					},
+					success:function(data) {
+						var conn = new WebSocket("ws://"+data+"/ws");
+						conn.onclose = function(evt) {
+							data.textContent = 'Connection closed';
+						}
+						conn.onmessage = function(evt) {
+							res.push({res: evt.data.replace(/\n/g, "<br/>")});
+							notify("success", evt.data.replace(/\n/g, "<br/>"));
+						}
+					}
+				});
+				return false;
+			}
+		}
+	})
+</script>
+
+|||template "vuefooter"|||

@@ -1,0 +1,269 @@
+|||template "vueheader"|||
+<div class="container" id="vue-root">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>A JSON Tree View Component in Vue.js</h1>      
+		</div>  
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h2>
+				Simple JSON <small>opened until depth of 7</small>
+			</h2>
+			<div class="well">
+				<tree-view :data="sampleData" max-depth="7"></tree-view>
+			</div>      
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h2>
+				Complicated JSON <small>opened until depth of 3</small>
+			</h2>
+			<div class="well">
+				<tree-view :data="sampleData1" max-depth="3"></tree-view>
+			</div>    
+		</div>
+	</div>
+</div>
+<style>
+/* The Tree View should only fill out available space, scroll when 
+   necessary.
+ */
+
+.tree-view-item {
+	font-family: monospace;
+	font-size: 14px;
+	margin-left: 18px;
+}
+
+		.tree-view-wrapper {
+			overflow: auto;
+		}
+
+		/* Find the first nested node and override the indentation */
+		.tree-view-item-root > .tree-view-item-leaf > .tree-view-item {
+			margin-left: 0;
+		}
+
+		/* Root node should not be indented */
+		.tree-view-item-root {
+			margin-left: 0;
+		}
+
+		.tree-view-item-node {
+			cursor: pointer;
+			position: relative;
+			white-space: nowrap;
+		}
+
+		.tree-view-item-leaf {
+			white-space: nowrap;
+		}
+
+		.tree-view-item-key {
+			font-weight: bold;
+		}
+
+		.tree-view-item-key-with-chevron {
+			padding-left: 14px;
+		}
+
+
+		.tree-view-item-key-with-chevron.opened::before {
+			top:4px;
+			transform: rotate(90deg);  
+			-webkit-transform: rotate(90deg);
+		}
+
+		.tree-view-item-key-with-chevron::before {
+			color: #444;
+			content: '\25b6';
+			font-size: 10px;
+			left: 1px;
+			position: absolute;
+			top: 3px;
+			transition: -webkit-transform .1s ease;
+			transition: transform .1s ease;
+			transition: transform .1s ease, -webkit-transform .1s ease;
+			-webkit-transition: -webkit-transform .1s ease;
+		}
+
+		.tree-view-item-hint {
+			color: #ccc
+		}
+</style>
+<script>
+	Vue.component("tree-view-item", Vue.extend({
+		name: "tree-view-item",
+		props: ["data", "max-depth", "current-depth"],
+		data: function(){
+			return {
+				open: this.currentDepth < this.maxDepth
+			}
+		},
+		methods: {
+			isOpen: function(){
+				return this.isRootObject(this.data) || this.open;
+			},
+			toggleOpen:function(){
+				this.open = !this.open;
+			},    
+			isObject: function(value){
+				return value.type === 'object';
+			},
+			isArray: function(value){
+				return value.type === 'array';
+			},
+			isValue: function(value){
+				return value.type === 'value';
+			},
+			getKey: function(value){
+				if (_.isInteger(value.key)) {
+					return value.key+":";
+				} else {
+					return "\""+ value.key + "\":";	
+				}
+			},    
+			getValue: function(value){
+				if (_.isNumber(value.value)) {
+					return value.value
+				}
+				if (_.isNull(value.value)) {
+					return "null"
+				}
+				if (_.isString(value.value)) {}
+				return "\""+value.value+"\"";
+			},
+			isRootObject: function(value){
+				return value.isRoot;
+			}
+		},
+		template:`
+								   <div class="tree-view-item">
+									   <div v-if="isObject(data)" class="tree-view-item-leaf">
+										   <div class="tree-view-item-node" @click.stop="toggleOpen()">         	
+											   <span :class="{opened: isOpen()}" v-if="!isRootObject(data)" class="tree-view-item-key tree-view-item-key-with-chevron">{{getKey(data)}}</span>
+											   <span class="tree-view-item-hint" v-show="!isOpen() && data.children.length === 1">{{data.children.length}} property</span>
+											   <span class="tree-view-item-hint" v-show="!isOpen() && data.children.length !== 1">{{data.children.length}} properties</span>
+										   </div>
+										   <tree-view-item :max-depth="maxDepth" :current-depth="currentDepth+1" v-show="isOpen()" v-for="child in data.children" :data="child"></tree-view-item>
+									   </div>
+									   <div v-if="isArray(data)" class="tree-view-item-leaf">
+										   <div class="tree-view-item-node" @click.stop="toggleOpen()">
+											   <span :class="{opened: isOpen()}" v-if="!isRootObject(data)" class="tree-view-item-key tree-view-item-key-with-chevron">{{getKey(data)}}</span>
+											   <span class="tree-view-item-hint" v-show="!isOpen() && data.children.length === 1">{{data.children.length}} item</span>
+											   <span class="tree-view-item-hint" v-show="!isOpen() && data.children.length !== 1">{{data.children.length}} items</span>
+										   </div>
+										   <tree-view-item :max-depth="maxDepth" :current-depth="currentDepth+1" v-show="isOpen()" v-for="child in data.children" :data="child"></tree-view-item>
+									   </div>
+									   <div class="tree-view-item-leaf" v-if="isValue(data)">
+										   <span class="tree-view-item-key">{{getKey(data)}}</span>       
+										   <span class="tree-view-item-value">{{getValue(data)}}          
+		</div>
+								   </div>
+		`
+	}));
+
+	Vue.component("tree-view", Vue.extend({
+		name: "tree-view",
+		props: ["data", "max-depth"],
+		template: `
+		<div class="tree-view-wrapper">
+		<tree-view-item class="tree-view-item-root" :data="parsedData" :max-depth="maxDepth" :currentDepth="0"></tree-view-item>
+		</div>`,
+		methods: {
+
+			// Transformer for the non-Collection types, 
+			// like String, Integer of Float
+			transformValue: function(valueToTransform, keyForValue){
+				return {
+					key: keyForValue,
+					type: "value",
+					value: valueToTransform
+				}
+			},
+
+			// Since we use lodash, the _.map method will work on
+			// both Objects and Arrays, returning either the Key as
+			// a string or the Index as an integer
+			generateChildrenFromCollection: function(collection){
+				return _.map(collection, (value, keyOrIndex)=>{
+					if (this.isObject(value)) {
+						return this.transformObject(value, keyOrIndex);
+					}
+					if (this.isArray(value)) {
+						return this.transformArray(value, keyOrIndex);
+					}
+					if (this.isValue(value)) {
+						return this.transformValue(value, keyOrIndex);
+					}
+				}) ;   
+			},
+
+			// Transformer for the Array type
+			transformArray: function(arrayToTransform, keyForArray){
+				return {
+					key: keyForArray,
+					type: "array",
+					children: this.generateChildrenFromCollection(arrayToTransform)
+				}
+			},
+
+			// Transformer for the Object type
+			transformObject: function(objectToTransform, keyForObject, isRootObject = false){
+				return {
+					key: keyForObject,
+					type: "object",
+					isRoot: isRootObject,
+					children: this.generateChildrenFromCollection(objectToTransform)
+				}
+			},
+
+			// Helper Methods for value type detection
+			isObject: function(value){
+				return _.isPlainObject(value);
+			},
+
+			isArray: function(value){
+				return _.isArray(value);
+			},
+
+			isValue: function(value){
+				return !this.isObject(value) && !this.isArray(value);
+			}
+		},
+		computed: {
+			parsedData: function(){
+				// Take the JSON data and transform
+				// it into the Tree View DSL
+				return this.transformObject(this.data, "root", true);
+			}
+		}
+	}));
+</script>
+
+<script>
+	new Vue({
+		el: "#vue-root", 
+		methods: {
+			// return pretty-printed JSON
+			formatJSON: function(theJSON){
+				return JSON.stringify(theJSON, true, 2);
+			}
+		},
+		data: function(){
+			return {
+				// Returns a JSON object with common
+				// data structures, such as Arrays,
+				// Objects and raw Values
+				//sampleData: ["test"],
+				sampleData: {"glossary":{"title":"example glossary","GlossDiv":{"title":"S","GlossList":{"GlossEntry":{"ID":"SGML","SortAs":"SGML","GlossTerm":"Standard Generalized Markup Language","Acronym":"SGML","Abbrev":"ISO 8879:1986","GlossDef":{"para":"A meta-markup language, used to create markup languages such as DocBook.","GlossSeeAlso":["GML","XML"]},"GlossSee":"markup"}}}}},
+				sampleData1: {"medications":[{"aceInhibitors":[{"name":"lisinopril","strength":"10 mg Tab","dose":"1 tab","route":"PO","sig":"daily","pillCount":"#90","refills":"Refill 3"}],"antianginal":[{"name":"nitroglycerin","strength":"0.4 mg Sublingual Tab","dose":"1 tab","route":"SL","sig":"q15min PRN","pillCount":"#30","refills":"Refill 1"}],"anticoagulants":[{"name":"warfarin sodium","strength":"3 mg Tab","dose":"1 tab","route":"PO","sig":"daily","pillCount":"#90","refills":"Refill 3"}],"betaBlocker":[{"name":"metoprolol tartrate","strength":"25 mg Tab","dose":"1 tab","route":"PO","sig":"daily","pillCount":"#90","refills":"Refill 3"}],"diuretic":[{"name":"furosemide","strength":"40 mg Tab","dose":"1 tab","route":"PO","sig":"daily","pillCount":"#90","refills":"Refill 3"}],"mineral":[{"name":"potassium chloride ER","strength":"10 mEq Tab","dose":"1 tab","route":"PO","sig":"daily","pillCount":"#90","refills":"Refill 3"}]}],"labs":[{"name":"Arterial Blood Gas","time":"Today","location":"Main Hospital Lab"},{"name":"BMP","time":"Today","location":"Primary Care Clinic"},{"name":"BNP","time":"3 Weeks","location":"Primary Care Clinic"},{"name":"BUN","time":"1 Year","location":"Primary Care Clinic"},{"name":"Cardiac Enzymes","time":"Today","location":"Primary Care Clinic"},{"name":"CBC","time":"1 Year","location":"Primary Care Clinic"},{"name":"Creatinine","time":"1 Year","location":"Main Hospital Lab"},{"name":"Electrolyte Panel","time":"1 Year","location":"Primary Care Clinic"},{"name":"Glucose","time":"1 Year","location":"Main Hospital Lab"},{"name":"PT/INR","time":"3 Weeks","location":"Primary Care Clinic"},{"name":"PTT","time":"3 Weeks","location":"Coumadin Clinic"},{"name":"TSH","time":"1 Year","location":"Primary Care Clinic"}],"imaging":[{"name":"Chest X-Ray","time":"Today","location":"Main Hospital Radiology"},{"name":"Chest X-Ray","time":"Today","location":"Main Hospital Radiology"},{"name":"Chest X-Ray","time":"Today","location":"Main Hospital Radiology"}]}
+			}
+		}
+	})
+</script>
+||| template "vuefooter"|||

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{% block title2 %}Welcome, {{ user.username }}
+{% endblock %}{% endblock %}
+{% block content %}
+{% for message in messages %}
+  <div class="flash_message">{{ message }}<a href="/">&times;</a></div>
+{% endfor %}
+<p>Your Payments</p>
+<ul>
+  {% for p in payments %}
+    <li class="{{ p.prep }}">${{ p.dollars }} {{ p.prep }}
+    <b>{{ p.account }}</b> for: <i>{{ p.memo }}</i></li>
+  {% endfor %}
+</ul>
+<a href="/pay">Make payment</a> | <a href="/logout">Log out</a>
+{% endblock %}

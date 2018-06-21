@@ -1,0 +1,73 @@
+
+// Node 1 vxlan1: 52.52.102.167
+// ssh -i "AWSFlexSwitch.pem" ubuntu@52.52.102.167
+
+// curl  -i "Content-Type: application/json" -d '{"Module":"asicd", "Level":"debug"}' -X PATCH http://52.52.102.167:8080/public/v1/config/ComponentLogging
+// curl  -i "Content-Type: application/json" -d '{"Module":"ribd", "Level":"debug"}' -X PATCH http://52.52.102.167:8080/public/v1/config/ComponentLogging
+// curl  -i "Content-Type: application/json" -d '{"Module":"vxland", "Level":"debug"}' -X PATCH http://52.52.102.167:8080/public/v1/config/ComponentLogging
+// curl  -i "Content-Type: application/json" -d '{"Module":"arp", "Level":"debug"}' -X PATCH http://52.52.102.167:8080/public/v1/config/ComponentLogging
+
+// create a vlan
+curl  -i "Content-Type: application/json" -d '{"VlanId":300, "AdminState":"UP"}' http://52.52.102.167:8080/public/v1/config/Vlan
+
+// assign ip address to vlan
+curl  -i "Content-Type: application/json" -d '{"IntfRef":"vlan300", "IPAddr":"30.1.1.1/24", "AdminState":"UP"}' http://52.52.102.167:8080/public/v1/config/IPv4Intf
+
+
+// assign ip address to physical interface
+curl  -i "Content-Type: application/json" -d '{"IntfRef":"eth1", "IPAddr":"172.31.37.21/20", "AdminState":"UP"}' http://52.52.102.167:8080/public/v1/config/IPv4Intf
+
+// create vni to vlan mapping for the vxlan domain
+curl  -i "Content-Type: application/json" -d '{"Vni":10, "UntaggedVlanId":[300], "AdminState":"UP"}' http://52.52.102.167:8080/public/v1/config/VxlanInstance
+
+// create vtep
+curl  -i "Content-Type: application/json" -d '{"Intf":"Vtep1000", "IntfRef":"eth1", "Vni":10, "DstIp":"172.31.44.121", "DstUDP":8472, "TOS":0, "Mtu":1450, "InnerVlanHandlingMode":0, "TTL":64, "AdminState":"UP"}' http://52.52.102.167:8080/public/v1/config/VxlanVtepInstance
+
+// run on node, so that checksum calculations correct in packet
+sudo ethtool --offload  Vtep1000Int  rx off  tx off
+sudo ethtool --offload  Vtep1000  rx off  tx off
+sudo ethtool --offload  vlan300  rx off  tx off
+
+
+// Node 2 vxlan 2: 52.8.246.94 
+// ssh -i "AWSFlexSwitch.pem" ubuntu@52.8.246.94 
+// curl  -i "Content-Type: application/json" -d '{"Module":"asicd", "Level":"debug"}' -X PATCH http://52.8.246.94:8080/public/v1/config/ComponentLogging
+// curl  -i "Content-Type: application/json" -d '{"Module":"ribd", "Level":"debug"}' -X PATCH http://52.8.246.94:8080/public/v1/config/ComponentLogging
+// curl  -i "Content-Type: application/json" -d '{"Module":"vxland", "Level":"debug"}' -X PATCH http://52.8.246.94:8080/public/v1/config/ComponentLogging
+// curl  -i "Content-Type: application/json" -d '{"Module":"arpd", "Level":"debug"}' -X PATCH http://52.8.246.94:8080/public/v1/config/ComponentLogging
+
+
+// create a vlan
+curl  -i "Content-Type: application/json" -d '{"VlanId":300, "AdminState":"UP"}' http://52.8.246.94:8080/public/v1/config/Vlan
+
+// assign ip address to vlan
+curl  -i "Content-Type: application/json" -d '{"IntfRef":"vlan300", "IPAddr":"30.1.1.2/24", "AdminState":"UP"}' http://52.8.246.94:8080/public/v1/config/IPv4Intf
+
+
+// assign ip address to physical interface
+curl  -i "Content-Type: application/json" -d '{"IntfRef":"eth1", "IPAddr":"172.31.44.121/20", "AdminState":"UP"}' http://52.8.246.94:8080/public/v1/config/IPv4Intf
+
+
+// create vni to vlan mapping for the vxlan domain
+curl  -i "Content-Type: application/json" -d '{"Vni":10, "UntaggedVlanId":[300], "AdminState":"UP"}' http://52.8.246.94:8080/public/v1/config/VxlanInstance
+
+// create vtep
+curl  -i "Content-Type: application/json" -d '{"Intf":"Vtep1000", "IntfRef":"eth1", "Vni":10, "DstIp":"172.31.37.21", "DstUDP":8472, "TOS":0, "Mtu":1450, "InnerVlanHandlingMode":0, "TTL":64, "AdminState":"UP"}' http://52.8.246.94:8080/public/v1/config/VxlanVtepInstance
+
+// run on node
+sudo ethtool --offload  Vtep1000Int  rx off  tx off
+sudo ethtool --offload  Vtep1000  rx off  tx off
+sudo ethtool --offload  vlan300  rx off  tx off
+
+
+
+
+UDP:
+Client - iperf  -c  30.1.1.2 -i 1 -t 100 -u -b 500000000 <—run for 100 seconds with 500 Mbps of throughput 
+server - iperf -s -i 1 -B 30.1.1.2 -u 
+
+TCP
+Client - iperf  -c  30.1.1.2 -i 1 -t 100 <— Run for 100 Seconds
+Server -iperf -s -i 1 -B 30.1.1.2 
+
+

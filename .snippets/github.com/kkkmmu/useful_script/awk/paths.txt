@@ -1,0 +1,2 @@
+/foo/a/report.log
+/foo/y/power.log

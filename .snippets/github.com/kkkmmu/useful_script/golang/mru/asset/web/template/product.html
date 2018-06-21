@@ -1,0 +1,91 @@
+|||template "vueheader" .|||
+<div id="connectdevice" class="container">
+	<form class="form-horizontal" id="productform" role="form">
+		<fieldset>
+			<legend>Connect to a product</legend>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="device">Name</label>
+				<div class="col-sm-4">
+					<input class="form-control required" type="text" v-model="device.device" type="text" placeholder="V8500"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="device">HostName</label>
+				<div class="col-sm-4">
+					<input class="form-control required" type="text" v-model="device.hostname" type="text" placeholder="V8500"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="device">BasePrompt</label>
+				<div class="col-sm-4">
+					<input class="form-control required" type="text" v-model="device.baseprompt" type="text" placeholder="V8500[A]"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="ip">IP</label>
+				<div class="col-sm-4">
+					<input class="form-control required" type="text" v-model="device.ip" placeholder="10.71.20.115"/>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="group">UserName</label>
+				<div class="col-sm-4">
+					<input class="form-control required" type="text" v-model="device.username" placeholder="admin"/>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="password">password</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text" v-model="device.password" placeholder="Dasan123456"/>
+				</div>
+			</div>
+		</fieldset>     
+		<fieldset>
+			<legend></legend>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-4">
+				<button type="submit" name="submit" class="btn btn-block" @click.prevent="connectDevice">Connect</button>
+			</div>
+		</fieldset>
+	</form>
+</div>
+<link rel="stylesheet" href="static/css/product.css">
+<script>
+	var connectDevice = new Vue({
+		el: '#connectdevice',
+		data: {
+			device: {
+				index: "1",
+				device: "V8500",
+				hostname: "V8500",
+				baseprompt: "V8500[A]",
+				ip: "10.71.20.198",
+				port: "23",
+				username: "admin",
+				password: ""
+			},
+			submitted:false,
+		},
+		methods: {
+			connectDevice: function(e) {
+				this.device.index = +this.device.index;
+				$.ajax({
+					type:"post",
+					url:"product",
+					async:false,
+					data: {
+						Device: JSON.stringify(this.device)
+					},
+
+					success:function(data) {
+						window.location.href="script";
+					}
+				});
+				this.submitted = true;
+			},
+		}
+	});
+</script>,
+|||template "vuefooter"|||
