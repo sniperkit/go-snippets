@@ -1,0 +1,12 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/gdamore/mangos",
+			"repository": "https://github.com/gdamore/mangos",
+			"revision": "bc837e8072771d85684222fa229ec3f8783e9072",
+			"branch": "master",
+			"path": ""
+		}
+	]
+}
