@@ -1,0 +1,1 @@
+{"hash":"E50134550078DB4F2020CF7A1CB110A0","rights":"CC BY","creator":"batch","uri":"http://khason.net/dev/rsa-private-key-import-from-pem-format-in-c/","time":"2017-05-12","title":"how to import OpenSSL private key into .NET application and use it aside with X509 public certificate to establish TLS connection with asymmetric encryption and two phase certificates handshake."}

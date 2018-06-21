@@ -1,0 +1,1 @@
+{"hash":"B63D8E08EB53C5BC2372102D726BC241","rights":"CC BY","creator":"batch","uri":"https://github.com/merosss/VRepRosQuadSwarm","time":"2017-05-12","title":":drones :robotics This is a framework to control a swarm of quadcopters simulated in V-Rep by using ROS. Paths are planned with algorithms that make use of graph theory"}
