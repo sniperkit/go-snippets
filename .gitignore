@@ -26,3 +26,5 @@ vendor/**
 
 .snippets/github.com/youerning/UserGoScript/videos/dataFetch.go
 .snippets/github.com/youerning/UserGoScript/videos/dataFetch_test.go
+
+.snippets/github.com/kkkmmu/useful_script/golang/mru/examples/M3000.go
