@@ -23,3 +23,6 @@ vendor/**
 .snippets/github.com/ibmendoza/go-examples/DOCKER/LINKS.MD
 .snippets/github.com/ibmendoza/go-examples/DOCKER/README.MD
 .snippets/github.com/zacg/goutils/README.md
+
+.snippets/github.com/youerning/UserGoScript/videos/dataFetch.go
+.snippets/github.com/youerning/UserGoScript/videos/dataFetch_test.go
