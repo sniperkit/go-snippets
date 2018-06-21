@@ -1,0 +1,2550 @@
+[
+  {
+    "name": "andschwa/rust-genetic-algorithm — a genetic algorithm for academic benchmark problems ",
+    "url": "https://github.com/andschwa/rust-genetic-algorithm"
+  },
+  {
+    "name": "azerupi/mdBook — a command line utility to create books from markdown files ",
+    "url": "https://github.com/rust-lang-nursery/mdBook"
+  },
+  {
+    "name": "bluejekyll/trust-dns — a DNS-server ",
+    "url": "https://github.com/bluejekyll/trust-dns"
+  },
+  {
+    "name": "ivanceras/diwata — a database administration tool for postgresql ",
+    "url": "https://github.com/ivanceras/diwata"
+  },
+  {
+    "name": "runconduit/conduit",
+    "url": "https://github.com/runconduit/conduit",
+    "description": "Ultralight service mesh for Kubernetes."
+  },
+  {
+    "name": "danielrangel/rsign [rsign] — A simple command-line tool used to generate/sign/verify digital signatures designed to be compatible with Minisign  ",
+    "url": "https://bitbucket.org/danielrangel/rsign"
+  },
+  {
+    "name": "darrint/device-blocker — Limit screen time to children's various mobile devices by blocking internet access on the family Wifi router.",
+    "url": "https://github.com/darrint/device-blocker"
+  },
+  {
+    "name": "dlecan/generic-dns-update — a tool to update DNS zonefiles with your IP address ",
+    "url": "https://github.com/dlecan/generic-dns-update"
+  },
+  {
+    "name": "Factotum — A system to programmatically run data pipelines ",
+    "url": "https://github.com/snowplow/factotum"
+  },
+  {
+    "name": "fcsonline/drill — a HTTP load testing application inspired by Ansible syntax",
+    "url": "https://github.com/fcsonline/drill"
+  },
+  {
+    "name": "Fractalide — Simple Rust Microservices",
+    "url": "https://github.com/fractalide/fractalide"
+  },
+  {
+    "name": "habitat — An tool created by Chef to build, deploy, and manage applications.",
+    "url": "https://www.habitat.sh"
+  },
+  {
+    "name": "imjacobclark/Herd — an experimental HTTP load testing application",
+    "url": "https://github.com/imjacobclark/Herd"
+  },
+  {
+    "name": "intecture/api — an API-driven server management and configuration tool ",
+    "url": "https://github.com/intecture/api"
+  },
+  {
+    "name": "jedisct1/flowgger — a fast, simple and lightweight data collector",
+    "url": "https://github.com/jedisct1/flowgger"
+  },
+  {
+    "name": "jwilm/alacritty — a cross-platform, GPU enhanced terminal emulator",
+    "url": "https://github.com/jwilm/alacritty"
+  },
+  {
+    "name": "kbknapp/docli — a command line utility for managing DigitalOcean infrastructure ",
+    "url": "https://github.com/kbknapp/docli-rs"
+  },
+  {
+    "name": "MaidSafe — a decentralized platform.",
+    "url": "https://maidsafe.net"
+  },
+  {
+    "name": "nicohman/eidolon — a steam and drm-free game registry and launcher for linux and macosx ",
+    "url": "https://github.com/nicohman/eidolon"
+  },
+  {
+    "name": "notty — A new kind of terminal",
+    "url": "https://github.com/withoutboats/notty"
+  },
+  {
+    "name": "Pijul — a patch-based distributed version control system",
+    "url": "https://pijul.org"
+  },
+  {
+    "name": "qmx/limonite — static blog/website generator ",
+    "url": "https://github.com/qmx/limonite"
+  },
+  {
+    "name": "Sandstorm Collections App",
+    "url": "https://github.com/sandstorm-io/collections-app"
+  },
+  {
+    "name": "Servo — a prototype web browser engine",
+    "url": "https://github.com/servo/servo"
+  },
+  {
+    "name": "Weld — Full fake REST API generator ",
+    "url": "https://github.com/serayuzgur/weld"
+  },
+  {
+    "name": "indiscipline/zrtstr — a command line utility for checking if stereo wav files are faux-stereo (i.e. have identical channels) and converting such files to mono. ",
+    "url": "https://github.com/indiscipline/zrtstr"
+  },
+  {
+    "name": "ethaddrgen — Custom Ethereum vanity address generator made in Rust ",
+    "url": "https://github.com/Limeth/ethaddrgen"
+  },
+  {
+    "name": "Parity — Fast, light, and robust Ethereum implementation",
+    "url": "https://github.com/paritytech/parity"
+  },
+  {
+    "name": "parity-bitcoin — The Parity Bitcoin client ",
+    "url": "https://github.com/paritytech/parity-bitcoin"
+  },
+  {
+    "name": "pingcap/tikv — a distributed KV database in Rust ",
+    "url": "https://github.com/pingcap/tikv"
+  },
+  {
+    "name": "PumpkinDB — an event sourcing database engine ",
+    "url": "https://github.com/PumpkinDB/PumpkinDB"
+  },
+  {
+    "name": "seppo0010/rsedis — a Redis reimplementation in Rust ",
+    "url": "https://github.com/seppo0010/rsedis"
+  },
+  {
+    "name": "kondrak/rust64 — ",
+    "url": "https://github.com/kondrak/rust64"
+  },
+  {
+    "name": "Gekkio/mooneye-gb — ",
+    "url": "https://github.com/Gekkio/mooneye-gb"
+  },
+  {
+    "name": "mvdnes/rboy — ",
+    "url": "https://github.com/mvdnes/rboy"
+  },
+  {
+    "name": "NivenT/RGB — ",
+    "url": "https://github.com/nivent/RGB"
+  },
+  {
+    "name": "iamsix/oxidenes — ",
+    "url": "https://github.com/iamsix/oxidenes"
+  },
+  {
+    "name": "koute/pinky — ",
+    "url": "https://github.com/koute/pinky"
+  },
+  {
+    "name": "pcwalton/sprocketnes — ",
+    "url": "https://github.com/pcwalton/sprocketnes"
+  },
+  {
+    "name": "simias/rustation — ",
+    "url": "https://github.com/simias/rustation"
+  },
+  {
+    "name": "pacmancoder/rustzx — ",
+    "url": "https://github.com/pacmancoder/rustzx"
+  },
+  {
+    "name": "emu-rs/rustual-boy — ",
+    "url": "https://github.com/emu-rs/rustual-boy"
+  },
+  {
+    "name": "ioncodes/snesutilities — ROM analyser/extractor",
+    "url": "https://github.com/ioncodes/snesutilities"
+  },
+  {
+    "name": "lifthrasiir/angolmois-rust — a minimalistic music video game which supports the BMS format ",
+    "url": "https://github.com/lifthrasiir/angolmois-rust"
+  },
+  {
+    "name": "swatteau/sokoban-rs — a Sokoban implementation",
+    "url": "https://github.com/swatteau/sokoban-rs"
+  },
+  {
+    "name": "Zone of Control — a turn-based hexagonal strategy game ",
+    "url": "https://github.com/ozkriff/zoc"
+  },
+  {
+    "name": "rhex — hexagonal ascii roguelike",
+    "url": "https://github.com/dpc/rhex"
+  },
+  {
+    "name": "citybound — The city sim you deserve",
+    "url": "https://github.com/citybound/citybound"
+  },
+  {
+    "name": "ozkriff/zemeroth — a small 2D turn-based hexagonal strategy game ",
+    "url": "https://github.com/ozkriff/zemeroth"
+  },
+  {
+    "name": "rsaarelm/magog",
+    "url": "https://github.com/rsaarelm/magog",
+    "description": "A roguelike game in Rust"
+  },
+  {
+    "name": "cristicbz/rust-doom",
+    "url": "https://github.com/cristicbz/rust-doom",
+    "description": "A renderer for Doom, may progress to being a playable game "
+  },
+  {
+    "name": "Thinkofname/rust-quake",
+    "url": "https://github.com/Thinkofname/rust-quake",
+    "description": "Quake map renderer in Rust"
+  },
+  {
+    "name": "Limeth/euclider — a real-time 4D CPU ray tracer ",
+    "url": "https://github.com/Limeth/euclider"
+  },
+  {
+    "name": "ivanceras/svgbobrus — converts ASCII diagrams into SVG graphics ",
+    "url": "https://github.com/ivanceras/svgbobrus"
+  },
+  {
+    "name": "RazrFalcon/svgcleaner — tidies SVG graphics",
+    "url": "https://github.com/RazrFalcon/svgcleaner"
+  },
+  {
+    "name": "Twinklebear/tray_rust — a ray tracer ",
+    "url": "https://github.com/Twinklebear/tray_rust"
+  },
+  {
+    "name": "spejss/Image-Processing-CLI-in-Rust — CLI for processing images, generating histograms. ",
+    "url": "https://github.com/spejss/Image-Processing-CLI-in-Rust"
+  },
+  {
+    "name": "slowtec/tokio-modbus",
+    "url": "https://github.com/slowtec/tokio-modbus",
+    "description": "A tokio-based modbus library. "
+  },
+  {
+    "name": "locka99/opcua",
+    "url": "https://github.com/locka99/opcua",
+    "description": "A pure rust OPC UA library."
+  },
+  {
+    "name": "BiancoRoyal/modbus-iiot-rust",
+    "url": "https://github.com/BiancoRoyal/modbus-iiot-rust",
+    "description": "A pure rust modbus library with no or less dependencies. "
+  },
+  {
+    "name": "redox-os/redox — ",
+    "url": "https://github.com/redox-os/redox"
+  },
+  {
+    "name": "thepowersgang/rust_os — ",
+    "url": "https://github.com/thepowersgang/rust_os"
+  },
+  {
+    "name": "tock/tock — A secure embedded operating system for Cortex-M based microcontrollers",
+    "url": "https://github.com/tock/tock"
+  },
+  {
+    "name": "nebulet/nebulet — A microkernel that implements a WebAssembly \"usermode\" that runs in Ring 0.",
+    "url": "https://github.com/nebulet/nebulet"
+  },
+  {
+    "name": "Aaronepower/tokei — counts the lines of code ",
+    "url": "https://github.com/Aaronepower/tokei"
+  },
+  {
+    "name": "buster/rrun — a command launcher for Linux, similar to gmrun  ",
+    "url": "https://github.com/buster/rrun"
+  },
+  {
+    "name": "cristianoliveira/funzzy — a configurable filesystem watcher inspired by entr ",
+    "url": "https://github.com/cristianoliveira/funzzy"
+  },
+  {
+    "name": "jhspetersson/fselect [fselect] — Find files with SQL-like queries ",
+    "url": "https://github.com/jhspetersson/fselect"
+  },
+  {
+    "name": "k0pernicus/zou — a download accelerator ",
+    "url": "https://github.com/k0pernicus/zou"
+  },
+  {
+    "name": "lotabout/skim — A fuzzy finder in pure rust ",
+    "url": "https://github.com/lotabout/skim"
+  },
+  {
+    "name": "mmstick/concurr — Alternative to GNU Parallel w/ a client-server architecture",
+    "url": "https://github.com/mmstick/concurr"
+  },
+  {
+    "name": "mmstick/fontfinder — GTK3 application for previewing and installing Google's fonts",
+    "url": "https://github.com/mmstick/fontfinder"
+  },
+  {
+    "name": "mmstick/parallel — Reimplementation of GNU Parallel",
+    "url": "https://github.com/mmstick/parallel"
+  },
+  {
+    "name": "mmstick/systemd-manager — a systemd service manager written in Rust using GTK-rs.",
+    "url": "https://github.com/mmstick/systemd-manager"
+  },
+  {
+    "name": "mmstick/tv-renamer — a tv series renaming application with an optional GTK3 frontend. ",
+    "url": "https://github.com/mmstick/tv-renamer"
+  },
+  {
+    "name": "ogham/exa — a replacement for 'ls' ",
+    "url": "https://github.com/ogham/exa"
+  },
+  {
+    "name": "Ralvke/logram — Push log files' updates to Telegram ",
+    "url": "https://github.com/Ralvke/logram"
+  },
+  {
+    "name": "redox-os/ion — Next-generation system shell ",
+    "url": "https://github.com/redox-os/ion"
+  },
+  {
+    "name": "sharkdp/fd — A simple, fast and user-friendly alternative to find. ",
+    "url": "https://github.com/sharkdp/fd"
+  },
+  {
+    "name": "sitkevij/hex — A colorized hexdump terminal utility. ",
+    "url": "https://github.com/sitkevij/hex"
+  },
+  {
+    "name": "m4b/bingrep — Greps through binaries from various OSs and architectures, and colors them. ",
+    "url": "https://github.com/m4b/bingrep"
+  },
+  {
+    "name": "uutils/coreutils — a cross-platform Rust rewrite of the GNU coreutils ",
+    "url": "https://github.com/uutils/coreutils"
+  },
+  {
+    "name": "mattgreen/watchexec — Executes commands in response to file modifications ",
+    "url": "https://github.com/mattgreen/watchexec"
+  },
+  {
+    "name": "gchp/iota — a simple text editor ",
+    "url": "https://github.com/gchp/iota"
+  },
+  {
+    "name": "mathall/rim — Vim-like text editor written in Rust ",
+    "url": "https://github.com/mathall/rim"
+  },
+  {
+    "name": "xi-editor — a modern editor with a backend written in Rust.",
+    "url": "https://github.com/google/xi-editor"
+  },
+  {
+    "name": "BurntSushi/ripgrep — combines the usability of The Silver Searcher with the raw speed of grep ",
+    "url": "https://github.com/BurntSushi/ripgrep"
+  },
+  {
+    "name": "BurntSushi/xsv — a fast CSV command line tool (slicing, indexing, selecting, searching, sampling, etc.) ",
+    "url": "https://github.com/BurntSushi/xsv"
+  },
+  {
+    "name": "whitfin/runiq [runiq]",
+    "url": "https://github.com/whitfin/runiq",
+    "description": "an efficient way to filter duplicate lines from unsorted input."
+  },
+  {
+    "name": "arthrp/quick-skeleton — Project scaffolding tool, similar to Yeoman and Slush.",
+    "url": "https://github.com/arthrp/quick-skeleton"
+  },
+  {
+    "name": "yaa110/rubigo — Golang dependency tool and package manager, written in Rust ",
+    "url": "https://github.com/yaa110/rubigo"
+  },
+  {
+    "name": "amar-laksh/workstation",
+    "url": "https://github.com/amar-laksh/workstation",
+    "description": "A commandline tool to help you manage your workstation by distancing you from your screen, locking your screen when you aren't there among other things with OPENCV!"
+  },
+  {
+    "name": "tailhook/vagga — a containerization tool without daemons ",
+    "url": "https://github.com/tailhook/vagga"
+  },
+  {
+    "name": "way-cooler/way-cooler — a customizable Wayland compositor (window manager) ",
+    "url": "https://github.com/way-cooler/way-cooler"
+  },
+  {
+    "name": "OUISRC/muro — A new Forum use rust, rocket, diesel, postgresql, and responsive design ",
+    "url": "https://github.com/OUISRC/muro"
+  },
+  {
+    "name": "thecoshman/http — Host These Things Please",
+    "url": "https://github.com/thecoshman/http",
+    "description": "a basic http server for hosting a folder fast and simply "
+  },
+  {
+    "name": "svenstaro/miniserve — a small, self-contained cross-platform CLI tool that allows you to just grab the binary and serve some file(s) via HTTP ",
+    "url": "https://github.com/svenstaro/miniserve"
+  },
+  {
+    "name": "TheWaWaR/simple-http-server",
+    "url": "https://github.com/TheWaWaR/simple-http-server",
+    "description": "simple static http server"
+  },
+  {
+    "name": "Clippy [clippy] — Rust lints ",
+    "url": "https://github.com/rust-lang-nursery/rust-clippy"
+  },
+  {
+    "name": "clog-tool/clog-cli — generates a changelog from git metadata (conventional changelog) ",
+    "url": "https://github.com/clog-tool/clog-cli"
+  },
+  {
+    "name": "dan-t/rusty-tags — create ctags/etags for a cargo project and all of its dependencies ",
+    "url": "https://github.com/dan-t/rusty-tags"
+  },
+  {
+    "name": "frewsxcv/crate-deps — generates images of dependency graphs for crates hosted on crates.io",
+    "url": "https://github.com/frewsxcv/crate-deps"
+  },
+  {
+    "name": "git-journal — The Git Commit Message and Changelog Generation Framework ",
+    "url": "https://github.com/saschagrunert/git-journal/"
+  },
+  {
+    "name": "rust-lang-nursery/rustfix  — automatically applies the suggestions made by rustc ",
+    "url": "https://github.com/rust-lang-nursery/rustfix"
+  },
+  {
+    "name": "just — A handy command runner for project-specific tasks ",
+    "url": "https://github.com/casey/just"
+  },
+  {
+    "name": "Module Linker — Extension that adds <a> links to references in mod, use and extern crate statements at GitHub.",
+    "url": "http://fiatjaf.alhur.es/module-linker/#/rust"
+  },
+  {
+    "name": "ptags — A parallel universal-ctags wrapper for git repository ",
+    "url": "https://github.com/dalance/ptags"
+  },
+  {
+    "name": "Racer — code completion for Rust ",
+    "url": "https://github.com/racer-rust/racer"
+  },
+  {
+    "name": "rustfmt — a Rust code formatter ",
+    "url": "https://github.com/rust-lang-nursery/rustfmt"
+  },
+  {
+    "name": "Rustup — the Rust toolchain installer ",
+    "url": "https://github.com/rust-lang-nursery/rustup.rs"
+  },
+  {
+    "name": "Rust Language Server — a server that runs in the background, providing IDEs, editors, and other tools with information about Rust programs",
+    "url": "https://github.com/rust-lang-nursery/rls"
+  },
+  {
+    "name": "artifact — the design doc tool made for developers ",
+    "url": "https://github.com/vitiral/artifact"
+  },
+  {
+    "name": "semantic-rs — automatic crate publishing ",
+    "url": "https://github.com/semantic-rs/semantic-rs"
+  },
+  {
+    "name": "Cargo — the Rust package manager\n\nBurntSushi/cargo-benchcmp [cargo-benchcmp] — utility to compare Rust micro-benchmarks \ncardoe/cargo-bitbake [cargo-bitbake]",
+    "url": "https://crates.io/",
+    "description": "cargo extension that can generate BitBake recipes utilizing the classes from meta-rust "
+  },
+  {
+    "name": "BurntSushi/cargo-benchcmp [cargo-benchcmp] — utility to compare Rust micro-benchmarks ",
+    "url": "https://github.com/BurntSushi/cargo-benchcmp"
+  },
+  {
+    "name": "cardoe/cargo-bitbake [cargo-bitbake]",
+    "url": "https://github.com/cardoe/cargo-bitbake",
+    "description": "cargo extension that can generate BitBake recipes utilizing the classes from meta-rust "
+  },
+  {
+    "name": "rsolomo/cargo-check [cargo-check] — a wrapper around cargo rustc -- -Zno-trans which can be helpful for running a faster compile if you only need correctness checks ",
+    "url": "https://github.com/rsolomo/cargo-check"
+  },
+  {
+    "name": "kbknapp/cargo-count [cargo-count] — lists source code counts and details about cargo projects, including unsafe statistics ",
+    "url": "https://github.com/kbknapp/cargo-count"
+  },
+  {
+    "name": "mmstick/cargo-deb — generate binary Debian packages ",
+    "url": "https://github.com/mmstick/cargo-deb"
+  },
+  {
+    "name": "pwoolcoc/cargo-do [cargo-do] — run multiple cargo commands in a row ",
+    "url": "https://github.com/pwoolcoc/cargo-do"
+  },
+  {
+    "name": "maxsnew/cargo-dot — generate graphs of a Cargo project's dependencies ",
+    "url": "https://github.com/maxsnew/cargo-dot"
+  },
+  {
+    "name": "cardoe/cargo-ebuild [cargo-ebuild]",
+    "url": "https://github.com/cardoe/cargo-ebuild",
+    "description": "cargo extension that can generate ebuilds using the in-tree eclasses "
+  },
+  {
+    "name": "killercup/cargo-edit [cargo-edit] — allows you to add and list dependencies by reading/writing to your Cargo.toml file from the command line ",
+    "url": "https://github.com/killercup/cargo-edit"
+  },
+  {
+    "name": "Ralvke/cargo-find [cargo-find] — Find crates from command line ",
+    "url": "https://github.com/Ralvke/cargo-find"
+  },
+  {
+    "name": "kbknapp/cargo-graph [cargo-graph] — updated fork of cargo-dot with additional features ",
+    "url": "https://github.com/kbknapp/cargo-graph"
+  },
+  {
+    "name": "imp/cargo-info [cargo-info] — queries crates.io for crates details from command line ",
+    "url": "https://gitlab.com/imp/cargo-info"
+  },
+  {
+    "name": "sagiegurari/cargo-make [cargo-make] — Rust task runner and build tool. ",
+    "url": "https://github.com/sagiegurari/cargo-make"
+  },
+  {
+    "name": "regexident/cargo-modules [cargo-modules] — A cargo plugin for showing a tree-like overview of a crate's modules. ",
+    "url": "https://github.com/regexident/cargo-modules"
+  },
+  {
+    "name": "imp/cargo-multi [cargo-multi] — runs specified cargo command on multiple crates ",
+    "url": "https://gitlab.com/imp/cargo-multi"
+  },
+  {
+    "name": "kbknapp/cargo-outdated [cargo-outdated] — displays when newer versions of Rust dependencies are available, or out of date ",
+    "url": "https://github.com/kbknapp/cargo-outdated"
+  },
+  {
+    "name": "sunng87/cargo-release [cargo-release] — tool for releasing git-managed cargo project, build, tag, publish, doc and push ",
+    "url": "https://github.com/sunng87/cargo-release"
+  },
+  {
+    "name": "DanielKeep/cargo-script [cargo-script] — lets people quickly and easily run Rust \"scripts\" which can make use of Cargo's package ecosystem ",
+    "url": "https://github.com/DanielKeep/cargo-script"
+  },
+  {
+    "name": "greyblake/cargo-testify [cargo-testify] — watches files changes, runs tests and notifies about the result with friendly OS notification ",
+    "url": "https://github.com/greyblake/cargo-testify"
+  },
+  {
+    "name": "nabijaczleweli/cargo-update [cargo-update] — cargo subcommand for checking and applying updates to installed executables ",
+    "url": "https://github.com/nabijaczleweli/cargo-update"
+  },
+  {
+    "name": "passcod/cargo-watch [cargo-watch] — utility for cargo to compile projects when sources change ",
+    "url": "https://github.com/passcod/cargo-watch"
+  },
+  {
+    "name": "SiegeLord/RustCMake — an example project showing usage of CMake with Rust ",
+    "url": "https://github.com/SiegeLord/RustCMake"
+  },
+  {
+    "name": "Ralvke/rust-loader — Webpack Rust loader (wasm)",
+    "url": "https://github.com/Ralvke/rust-loader"
+  },
+  {
+    "name": "rust-gdb",
+    "url": "https://github.com/rust-lang/rust/blob/master/src/etc/rust-gdb"
+  },
+  {
+    "name": "gdbgui — Browser based frontend for gdb to debug C, C++, Rust, and go. ",
+    "url": "https://github.com/cs01/gdbgui"
+  },
+  {
+    "name": "lldb_batchmode.py — allows to use LLDB in a way similar to GDB's batch mode.",
+    "url": "https://github.com/rust-lang/rust/blob/master/src/etc/lldb_batchmode.py"
+  },
+  {
+    "name": "CodeLLDB — a LLDB extension for Visual Studio Code.",
+    "url": "https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb"
+  },
+  {
+    "name": "rr — rr is a lightweight tool for recording and replaying execution of applications",
+    "url": "https://rr-project.org/"
+  },
+  {
+    "name": "emk/rust-musl-builder — Docker images for compiling static Rust binaries using musl-libc and musl-gcc, with static versions of useful C libraries",
+    "url": "https://github.com/emk/rust-musl-builder"
+  },
+  {
+    "name": "kpcyrd/mini-docker-rust — An example project for very small rust docker images ",
+    "url": "https://github.com/kpcyrd/mini-docker-rust"
+  },
+  {
+    "name": "liuchong/docker-rustup — a multiple version (with musl tools) Rust Docker image",
+    "url": "https://github.com/liuchong/docker-rustup"
+  },
+  {
+    "name": "messense/rust-musl-cross",
+    "url": "https://github.com/messense/rust-musl-cross",
+    "description": "Docker images for compiling static Rust binaries using musl-cross "
+  },
+  {
+    "name": "rust-lang-nursery/docker-rust — the official Rust Docker image",
+    "url": "https://github.com/rust-lang-nursery/docker-rust"
+  },
+  {
+    "name": "DenisKolodin/rust-app-engine — App Engine Rust boilerplate",
+    "url": "https://github.com/DenisKolodin/rust-app-engine"
+  },
+  {
+    "name": "emk/heroku-buildpack-rust — a buildpack for Rust applications on Heroku",
+    "url": "https://github.com/emk/heroku-buildpack-rust"
+  },
+  {
+    "name": "japaric/rust-cross — everything you need to know about cross compiling Rust programs ",
+    "url": "https://github.com/japaric/rust-cross"
+  },
+  {
+    "name": "japaric/xargo — effortless cross compilation of Rust programs to custom bare-metal targets like ARM Cortex-M ",
+    "url": "https://github.com/japaric/xargo"
+  },
+  {
+    "name": "Ogeon/rust-on-raspberry-pi — instructions for how to cross compile Rust projects for the Raspberry Pi .",
+    "url": "https://github.com/Ogeon/rust-on-raspberry-pi"
+  },
+  {
+    "name": "rlhunt/cbindgen — generates C header files from Rust source files. Used in Gecko for WebRender ",
+    "url": "https://github.com/eqrion/cbindgen"
+  },
+  {
+    "name": "Sean1708/rusty-cheddar — generates C header files from Rust source files ",
+    "url": "https://github.com/Sean1708/rusty-cheddar"
+  },
+  {
+    "name": "rust-lang-nursery/rust-bindgen — a Rust bindings generator",
+    "url": "https://github.com/rust-lang-nursery/rust-bindgen"
+  },
+  {
+    "name": "hansihe/Rustler — safe Rust bridge for creating Erlang NIF functions ",
+    "url": "https://github.com/hansihe/Rustler"
+  },
+  {
+    "name": "mgattozzi/curryrs — Bridge the gap between Haskell and Rust",
+    "url": "https://github.com/mgattozzi/curryrs"
+  },
+  {
+    "name": "mgattozzi/haskellrs — Rust in Haskell FFI Example",
+    "url": "https://github.com/mgattozzi/haskellrs"
+  },
+  {
+    "name": "mgattozzi/rushs — Haskell in Rust FFI Example",
+    "url": "https://github.com/mgattozzi/rushs"
+  },
+  {
+    "name": "bennettanderson/rjni — use Java from Rust ",
+    "url": "https://github.com/benanders/rjni"
+  },
+  {
+    "name": "drrb/java-rust-example — use Rust from Java ",
+    "url": "https://github.com/drrb/java-rust-example"
+  },
+  {
+    "name": "kud1ing/rucaja [rucaja] — use Java from Rust ",
+    "url": "https://github.com/kud1ing/rucaja"
+  },
+  {
+    "name": "prevoty/jni-rs [jni] — use Rust from Java ",
+    "url": "https://github.com/prevoty/jni-rs"
+  },
+  {
+    "name": "rawrasaur/rust-jdbc — uses JDBC from Rust ",
+    "url": "https://github.com/rawrasaur/rust-jdbc"
+  },
+  {
+    "name": "sfackler/rust-jni-sys [jni-sys] — Rust definitions corresponding to jni.h ",
+    "url": "https://github.com/sfackler/rust-jni-sys"
+  },
+  {
+    "name": "jcmoyer/rust-lua53 — Lua 5.3 bindings for Rust ",
+    "url": "https://github.com/jcmoyer/rust-lua53"
+  },
+  {
+    "name": "kballard/rust-lua — Safe Rust bindings to Lua 5.1 ",
+    "url": "https://github.com/kballard/rust-lua"
+  },
+  {
+    "name": "tickbh/td_rlua — Zero-cost high-level lua 5.3 wrapper for Rust ",
+    "url": "https://github.com/tickbh/td_rlua"
+  },
+  {
+    "name": "tomaka/hlua — Rust library to interface with Lua ",
+    "url": "https://github.com/tomaka/hlua"
+  },
+  {
+    "name": "anima-engine/mrusty — mruby safe bindings for Rust ",
+    "url": "https://github.com/anima-engine/mrusty"
+  },
+  {
+    "name": "neon-bindings/neon — use Rust from Node.js ",
+    "url": "https://github.com/neon-bindings/neon"
+  },
+  {
+    "name": "SSheldon/rust-objc — Objective-C Runtime bindings and wrapper for Rust",
+    "url": "https://github.com/SSheldon/rust-objc"
+  },
+  {
+    "name": "vickenty/mi-rust",
+    "url": "https://github.com/vickenty/mi-rust",
+    "description": "Adds support to M::I for building modules with Cargo"
+  },
+  {
+    "name": "vickenty/perl-xs",
+    "url": "https://github.com/vickenty/perl-xs",
+    "description": "Create Perl XS modules using Rust "
+  },
+  {
+    "name": "getsentry/milksnake",
+    "url": "https://github.com/getsentry/milksnake",
+    "description": "extension for python setuptools that allows you to distribute dynamic linked libraries in Python wheels in the most portable way imaginable."
+  },
+  {
+    "name": "dgrunwald/rust-cpython — Python bindings ",
+    "url": "https://github.com/dgrunwald/rust-cpython"
+  },
+  {
+    "name": "PyO3/PyO3 — Rust bindings for the Python interpreter ",
+    "url": "https://github.com/PyO3/PyO3"
+  },
+  {
+    "name": "rustr/rustr — use Rust from R, and use R in Rust ",
+    "url": "https://github.com/rustr/rustr"
+  },
+  {
+    "name": "d-unseductable/ruru — native Ruby extensions written in Rust ",
+    "url": "https://github.com/d-unseductable/ruru"
+  },
+  {
+    "name": "tildeio/helix — write Ruby classes in Rust ",
+    "url": "https://github.com/tildeio/helix"
+  },
+  {
+    "name": "ashleygwilliams/wasm-pack — 📦 ✨ pack up the wasm and publish it to npm! ",
+    "url": "https://github.com/ashleygwilliams/wasm-pack"
+  },
+  {
+    "name": "rustwasm/wasm-bindgen — A project for facilitating high-level interactions between wasm modules and JS. ",
+    "url": "https://github.com/rustwasm/wasm-bindgen"
+  },
+  {
+    "name": "Atom\n\nzargony/atom-language-rust\n\n",
+    "url": "https://atom.io/"
+  },
+  {
+    "name": "zargony/atom-language-rust",
+    "url": "https://github.com/zargony/atom-language-rust"
+  },
+  {
+    "name": "Eclipse\n\nRustDT — \n\n",
+    "url": "https://www.eclipse.org/"
+  },
+  {
+    "name": "RustDT — ",
+    "url": "https://github.com/RustDT/RustDT"
+  },
+  {
+    "name": "Emacs\n\nrust-mode — Rust Major Mode\nflycheck-rust — Rust support for Flycheck\nemacs-racer — Autocompletion (see also company and auto-complete)\nlsp-rust",
+    "url": "https://www.gnu.org/software/emacs/",
+    "description": "Add rls support to lsp-mode"
+  },
+  {
+    "name": "rust-mode — Rust Major Mode",
+    "url": "https://github.com/rust-lang/rust-mode"
+  },
+  {
+    "name": "flycheck-rust — Rust support for Flycheck",
+    "url": "https://github.com/flycheck/flycheck-rust"
+  },
+  {
+    "name": "emacs-racer — Autocompletion (see also company and auto-complete)",
+    "url": "https://github.com/racer-rust/emacs-racer"
+  },
+  {
+    "name": "lsp-rust",
+    "url": "https://github.com/emacs-lsp/lsp-rust",
+    "description": "Add rls support to lsp-mode"
+  },
+  {
+    "name": "gnome-builder native support for rust and cargo since Version 3.22.2",
+    "url": "https://wiki.gnome.org/Apps/Builder"
+  },
+  {
+    "name": "Kakoune\n\nul/kak-lsp — LSP client. Implemented in Rust and supports rls out of the box.\n\n",
+    "url": "http://kakoune.org/"
+  },
+  {
+    "name": "ul/kak-lsp — LSP client. Implemented in Rust and supports rls out of the box.",
+    "url": "https://github.com/ul/kak-lsp/"
+  },
+  {
+    "name": "NetBeans\n\ndrrb/rust-netbeans\n\n",
+    "url": "https://netbeans.org/"
+  },
+  {
+    "name": "drrb/rust-netbeans",
+    "url": "https://github.com/drrb/rust-netbeans"
+  },
+  {
+    "name": "IntelliJ\n\nintellij-rust/intellij-rust — \nintellij-rust/intellij-toml — basic Toml support\n\n",
+    "url": "https://www.jetbrains.com/idea/"
+  },
+  {
+    "name": "intellij-rust/intellij-rust — ",
+    "url": "https://github.com/intellij-rust/intellij-rust"
+  },
+  {
+    "name": "intellij-rust/intellij-toml — basic Toml support",
+    "url": "https://github.com/intellij-rust/intellij-toml"
+  },
+  {
+    "name": "Ride — ",
+    "url": "https://github.com/madeso/ride"
+  },
+  {
+    "name": "SolidOak — a simple IDE for Rust, based on GTK+ and Neovim",
+    "url": "https://github.com/oakes/SolidOak"
+  },
+  {
+    "name": "Sublime Text\n\nrust-lang/rust-enhanced — official Rust package\nsublimehq/packages — native Sublime support (already installed)\n\n",
+    "url": "https://www.sublimetext.com/"
+  },
+  {
+    "name": "rust-lang/rust-enhanced — official Rust package",
+    "url": "https://github.com/rust-lang/rust-enhanced"
+  },
+  {
+    "name": "sublimehq/packages — native Sublime support (already installed)",
+    "url": "https://github.com/sublimehq/Packages/tree/master/Rust"
+  },
+  {
+    "name": "Vim — the ubiquitous text editor\n\nrust.vim — provides file detection, syntax highlighting, formatting, Syntastic integration, and more.\nvim-cargo — command bindings to quickly run cargo stuff from vim.\nvim-racer — allows vim to use Racer for Rust code completion and navigation.\nautozimu/LanguageClient-neovim — LSP client. Implemented in Rust and supports rls out of the box.\n\n",
+    "url": "https://vim.sourceforge.io/"
+  },
+  {
+    "name": "rust.vim — provides file detection, syntax highlighting, formatting, Syntastic integration, and more.",
+    "url": "https://github.com/rust-lang/rust.vim"
+  },
+  {
+    "name": "vim-cargo — command bindings to quickly run cargo stuff from vim.",
+    "url": "https://github.com/timonv/vim-cargo"
+  },
+  {
+    "name": "vim-racer — allows vim to use Racer for Rust code completion and navigation.",
+    "url": "https://github.com/racer-rust/vim-racer"
+  },
+  {
+    "name": "autozimu/LanguageClient-neovim — LSP client. Implemented in Rust and supports rls out of the box.",
+    "url": "https://github.com/autozimu/LanguageClient-neovim"
+  },
+  {
+    "name": "PistonDevelopers/VisualRust — a Visual Studio extension for Rust ",
+    "url": "https://github.com/PistonDevelopers/VisualRust"
+  },
+  {
+    "name": "Visual Studio Code\n\nrust-lang-nursery/rls-vscode",
+    "url": "https://code.visualstudio.com/",
+    "description": "Rust support for Visual Studio Code"
+  },
+  {
+    "name": "rust-lang-nursery/rls-vscode",
+    "url": "https://marketplace.visualstudio.com/items?itemName=rust-lang.rust",
+    "description": "Rust support for Visual Studio Code"
+  },
+  {
+    "name": "CodeLLDB — a LLDB extension",
+    "url": "https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb"
+  },
+  {
+    "name": "crates",
+    "url": "https://github.com/serayuzgur/crates",
+    "description": "crates is an extension for crates.io dependencies.  "
+  },
+  {
+    "name": "KalitaAlexey/vscode-rust — a fork of RustyCode",
+    "url": "https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust"
+  },
+  {
+    "name": "saviorisdead/RustyCode (unmaintained)",
+    "url": "https://marketplace.visualstudio.com/items?itemName=saviorisdead.RustyCode"
+  },
+  {
+    "name": "sfikas/rusteval — A tool used to evaluate the output of retrieval algorithms ",
+    "url": "https://github.com/sfikas/rusteval"
+  },
+  {
+    "name": "performancecopilot/hornet — a Performance Co-Pilot memory-mapped values instrumentation library  ",
+    "url": "https://github.com/performancecopilot/hornet"
+  },
+  {
+    "name": "ellisonch/rust-stopwatch — a stopwatch library ",
+    "url": "https://github.com/ellisonch/rust-stopwatch"
+  },
+  {
+    "name": "mrhooray/torch — generates FlameGraphs based on DWARF Debug Info",
+    "url": "https://github.com/mrhooray/torch"
+  },
+  {
+    "name": "TyOverby/flame — ",
+    "url": "https://github.com/TyOverby/flame"
+  },
+  {
+    "name": "nvzqz/static-assertions-rs [static_assertions] Compile-time assertions to ensure that invariants are met ",
+    "url": "https://github.com/nvzqz/static-assertions-rs/"
+  },
+  {
+    "name": "llogiq/mutagen [mutagen] — A source-level mutation testing framework (nightly only) ",
+    "url": "https://github.com/llogiq/mutagen"
+  },
+  {
+    "name": "AlKass/polish — Mini Testing/Test-Driven Framework  ",
+    "url": "https://github.com/AlKass/polish"
+  },
+  {
+    "name": "altsysrq/proptest [proptest] — property testing framework inspired by the Hypothesis framework for Python ",
+    "url": "https://github.com/altsysrq/proptest"
+  },
+  {
+    "name": "BurntSushi/quickcheck [quickcheck] — a Rust implementation of QuickCheck ",
+    "url": "https://github.com/BurntSushi/quickcheck"
+  },
+  {
+    "name": "Mockito [mockito] — HTTP mocking ",
+    "url": "https://github.com/lipanski/mockito"
+  },
+  {
+    "name": "utkarshkukreti/speculate.rs [speculate] — An RSpec inspired minimal testing framework for Rust",
+    "url": "https://github.com/utkarshkukreti/speculate.rs"
+  },
+  {
+    "name": "rust-fuzz/afl.rs — a Rust fuzzer, using AFL ",
+    "url": "https://github.com/rust-fuzz/afl.rs"
+  },
+  {
+    "name": "trust",
+    "url": "https://github.com/japaric/trust",
+    "description": "A Travis CI and AppVeyor template to test your Rust crate on 5 architectures and publish binary releases of it for Linux, macOS and Windows"
+  },
+  {
+    "name": "xd009642/tarpaulin [tarpaulin] — A code coverage tool designed for Rust ",
+    "url": "https://github.com/xd009642/tarpaulin"
+  },
+  {
+    "name": "saurvs/astro-rust — astronomy for Rust ",
+    "url": "https://github.com/saurvs/astro-rust"
+  },
+  {
+    "name": "mindriot101/rust-fitsio [fitsio] — fits interface library wrapping cfitsio ",
+    "url": "https://github.com/mindriot101/rust-fitsio"
+  },
+  {
+    "name": "flosse/rust-sun — A rust port of the JS library suncalc ",
+    "url": "https://github.com/flosse/rust-sun"
+  },
+  {
+    "name": "zonyitoo/coio-rs — a coroutine I/O library with a working-stealing scheduler ",
+    "url": "https://github.com/zonyitoo/coio-rs"
+  },
+  {
+    "name": "dpc/mioco — Scalable, coroutine-based, asynchronous IO handling library ",
+    "url": "https://github.com/dpc/mioco"
+  },
+  {
+    "name": "rust-lang-nursery/futures-rs — Zero-cost futures in Rust ",
+    "url": "https://github.com/rust-lang-nursery/futures-rs"
+  },
+  {
+    "name": "carllerche/mio — MIO is a lightweight IO library for Rust with a focus on adding as little overhead as possible over the OS abstractions ",
+    "url": "https://github.com/carllerche/mio"
+  },
+  {
+    "name": "GuillaumeGomez/rust-fmod — FMOD bindings ",
+    "url": "https://github.com/GuillaumeGomez/rust-fmod"
+  },
+  {
+    "name": "jhasse/ears — a simple library to play Sounds and Musics, on top of OpenAL and libsndfile ",
+    "url": "https://github.com/jhasse/ears"
+  },
+  {
+    "name": "jpernst/alto — OpenAL 1.1 bindings ",
+    "url": "https://github.com/jpernst/alto"
+  },
+  {
+    "name": "musitdev/portmidi-rs — PortMidi bindings ",
+    "url": "https://github.com/musitdev/portmidi-rs"
+  },
+  {
+    "name": "ruuda/hound [Hound] — A WAV encoding and decoding library ",
+    "url": "https://github.com/ruuda/hound"
+  },
+  {
+    "name": "tomaka/rodio",
+    "url": "https://github.com/tomaka/rodio",
+    "description": "A Rust audio playback library "
+  },
+  {
+    "name": "RustAudio\n\nRustAudio/rust-portaudio — PortAudio bindings \n\n",
+    "url": "https://github.com/RustAudio"
+  },
+  {
+    "name": "RustAudio/rust-portaudio — PortAudio bindings ",
+    "url": "https://github.com/RustAudio/rust-portaudio"
+  },
+  {
+    "name": "hngnaig/rust-accountkit — An implementation Facebook AccountKit for Rust ",
+    "url": "https://github.com/hngnaig/rust-accountkit"
+  },
+  {
+    "name": "Keats/jsonwebtoken — JSON Web Token lib in rust  ",
+    "url": "https://github.com/Keats/jsonwebtoken"
+  },
+  {
+    "name": "Rust-Bio — bioinformatics libraries in Rust.",
+    "url": "https://github.com/rust-bio"
+  },
+  {
+    "name": "jaysonsantos/bmemcached-rs — Memcached library written in pure rust ",
+    "url": "https://github.com/jaysonsantos/bmemcached-rs"
+  },
+  {
+    "name": "jaemk/cached — Simple function caching/memoization",
+    "url": "https://github.com/jaemk/cached"
+  },
+  {
+    "name": "aisk/rust-memcache",
+    "url": "https://github.com/aisk/rust-memcache",
+    "description": "Memcached client library "
+  },
+  {
+    "name": "crossbeam-rs/crossbeam – Support for parallelism and low-level concurrency in Rust ",
+    "url": "https://github.com/crossbeam-rs/crossbeam"
+  },
+  {
+    "name": "Rayon – A data parallelism library for Rust ",
+    "url": "https://github.com/rayon-rs/rayon"
+  },
+  {
+    "name": "rustcc/coroutine-rs – Coroutine Library in Rust ",
+    "url": "https://github.com/rustcc/coroutine-rs"
+  },
+  {
+    "name": "zonyitoo/coio-rs – Coroutine I/O for Rust ",
+    "url": "https://github.com/zonyitoo/coio-rs"
+  },
+  {
+    "name": "AWS [aws]\n\nrusoto/rusoto — \n\n",
+    "url": "https://crates.io/keywords/aws"
+  },
+  {
+    "name": "rusoto/rusoto — ",
+    "url": "https://github.com/rusoto/rusoto"
+  },
+  {
+    "name": "kbknapp/doapi — DigitalOcean v2 API bindings ",
+    "url": "https://github.com/kbknapp/doapi-rs"
+  },
+  {
+    "name": "kbknapp/clap-rs [clap] — a simple to use, full featured command-line argument parser ",
+    "url": "https://github.com/kbknapp/clap-rs"
+  },
+  {
+    "name": "docopt/docopt.rs [docopt] — a Rust implementation of DocOpt ",
+    "url": "https://github.com/docopt/docopt.rs"
+  },
+  {
+    "name": "TeXitoi/structopt [structopt] — parse command line argument by defining a struct ",
+    "url": "https://github.com/TeXitoi/structopt"
+  },
+  {
+    "name": "killercup/quicli [quicli] — quickly build cool CLI apps in Rust ",
+    "url": "https://github.com/killercup/quicli"
+  },
+  {
+    "name": "yoshuawuyts/human-panic — panic messages for humans ",
+    "url": "https://github.com/yoshuawuyts/human-panic"
+  },
+  {
+    "name": "srijs/rust-copperline [copperline] — pure-Rust command line editing library",
+    "url": "https://github.com/srijs/rust-copperline"
+  },
+  {
+    "name": "MovingtoMars/liner [liner] — a library offering readline-like functionality ",
+    "url": "https://github.com/MovingtoMars/liner"
+  },
+  {
+    "name": "kkawakam/rustyline [rustyline] — readline implementation in Rust ",
+    "url": "https://github.com/kkawakam/rustyline"
+  },
+  {
+    "name": "imp/pager-rs [pager] — pipe your output through an external pager ",
+    "url": "https://gitlab.com/imp/pager-rs"
+  },
+  {
+    "name": "hniksic/rust-subprocess [subprocess] — facilities for interaction with external pipelines ",
+    "url": "https://github.com/hniksic/rust-subprocess"
+  },
+  {
+    "name": "philippkeller/rexpect [rexpect] — automate interactive applications such as ssh, ftp, passwd, etc ",
+    "url": "https://github.com/philippkeller/rexpect"
+  },
+  {
+    "name": "mitsuhiko/indicatif [indicatif] — indicate progress to users",
+    "url": "https://github.com/mitsuhiko/indicatif"
+  },
+  {
+    "name": "a8m/pb [pbr] — console progress bar for Rust",
+    "url": "https://github.com/a8m/pb"
+  },
+  {
+    "name": "FGRibreau/spinners [spinners] — 60+ elegant terminal spinners",
+    "url": "https://github.com/FGRibreau/spinners"
+  },
+  {
+    "name": "hashmismatch/terminal_cli.rs [terminal_cli]  — build an interactive command prompt ",
+    "url": "https://github.com/hashmismatch/terminal_cli.rs"
+  },
+  {
+    "name": "ogham/rust-ansi-term [ansi_term] — control colours and formatting on ANSI terminals ",
+    "url": "https://github.com/ogham/rust-ansi-term"
+  },
+  {
+    "name": "LukasKalbertodt/term-painter [term-painter] — cross-platform styled terminal output ",
+    "url": "https://github.com/LukasKalbertodt/term-painter"
+  },
+  {
+    "name": "vitiral/termstyle [termstyle] — build (and test) formatted and styled command line applications",
+    "url": "https://github.com/vitiral/termstyle"
+  },
+  {
+    "name": "SergioBenitez/yansi [yansi] — a dead simple ANSI terminal color painting library",
+    "url": "https://github.com/SergioBenitez/yansi"
+  },
+  {
+    "name": "TimonPost/crossterm [crossterm] — crossplatform terminal library",
+    "url": "https://github.com/TimonPost/crossterm"
+  },
+  {
+    "name": "gyscos/Cursive [cursive] — build rich TUI applications ",
+    "url": "https://github.com/gyscos/Cursive"
+  },
+  {
+    "name": "ticki/termion [termion] — bindless library for controlling terminals/TTY  ",
+    "url": "https://github.com/redox-os/termion"
+  },
+  {
+    "name": "fdehau/tui-rs [tui] — a TUI library inspired by blessed-contrib and termui ",
+    "url": "https://github.com/fdehau/tui-rs"
+  },
+  {
+    "name": "cfyzium/bearlibterminal [bear-lib-terminal] — BearLibTerminal bindings ",
+    "url": "https://github.com/nabijaczleweli/BearLibTerminal.rs"
+  },
+  {
+    "name": "jeaye/ncurses-rs [ncurses] — ncurses bindings ",
+    "url": "https://github.com/jeaye/ncurses-rs"
+  },
+  {
+    "name": "ihalila/pancurses [pancurses] — curses library, supports linux and windows ",
+    "url": "https://github.com/ihalila/pancurses"
+  },
+  {
+    "name": "gchp/rustbox [rustbox] — bindings to Termbox ",
+    "url": "https://github.com/gchp/rustbox"
+  },
+  {
+    "name": "Brotli\n\nende76/brotli-rs — implementation of Brotli compression\ndropbox/rust-brotli — Brotli decompressor in Rust that optionally avoids the stdlib\n\n",
+    "url": "https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html"
+  },
+  {
+    "name": "ende76/brotli-rs — implementation of Brotli compression",
+    "url": "https://github.com/ende76/brotli-rs"
+  },
+  {
+    "name": "dropbox/rust-brotli — Brotli decompressor in Rust that optionally avoids the stdlib",
+    "url": "https://github.com/dropbox/rust-brotli"
+  },
+  {
+    "name": "alexcrichton/bzip2-rs — libbz2 bindings ",
+    "url": "https://github.com/alexcrichton/bzip2-rs"
+  },
+  {
+    "name": "carols10cents/zopfli — implementation of the Zopfli compression algorithm for higher quality deflate or zlib compression",
+    "url": "https://github.com/carols10cents/zopfli"
+  },
+  {
+    "name": "alexcrichton/flate2-rs — miniz bindings ",
+    "url": "https://github.com/alexcrichton/flate2-rs"
+  },
+  {
+    "name": "JeffBelgum/rust-snappy — snappy bindings ",
+    "url": "https://github.com/JeffBelgum/rust-snappy"
+  },
+  {
+    "name": "alexcrichton/tar-rs — tar archive reading/writing in Rust ",
+    "url": "https://github.com/alexcrichton/tar-rs"
+  },
+  {
+    "name": "mvdnes/zip-rs — read and write ZIP archives ",
+    "url": "https://github.com/mvdnes/zip-rs"
+  },
+  {
+    "name": "BLAS [blas]\n\nmikkyang/rust-blas — BLAS bindings\nstainless-steel/blas — BLAS bindings \n\n",
+    "url": "https://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms"
+  },
+  {
+    "name": "mikkyang/rust-blas — BLAS bindings",
+    "url": "https://github.com/mikkyang/rust-blas"
+  },
+  {
+    "name": "stainless-steel/blas — BLAS bindings ",
+    "url": "https://github.com/blas-lapack-rs/blas"
+  },
+  {
+    "name": "Conjugate Gradient\n\nnoshu/cg-sys — Rust binding of fortran CG+ subroutine\n\n",
+    "url": "https://en.wikipedia.org/wiki/Limited-memory_BFGS"
+  },
+  {
+    "name": "noshu/cg-sys — Rust binding of fortran CG+ subroutine",
+    "url": "https://github.com/noshu/cg-sys"
+  },
+  {
+    "name": "GMP\n\nfizyk20/rust-gmp — libgmp bindings \n\n",
+    "url": "https://gmplib.org/"
+  },
+  {
+    "name": "fizyk20/rust-gmp — libgmp bindings ",
+    "url": "https://github.com/fizyk20/rust-gmp"
+  },
+  {
+    "name": "GSL\n\nGuillaumeGomez/rust-GSL — GSL bindings \n\n",
+    "url": "http://www.gnu.org/software/gsl/"
+  },
+  {
+    "name": "GuillaumeGomez/rust-GSL — GSL bindings ",
+    "url": "https://github.com/GuillaumeGomez"
+  },
+  {
+    "name": "LAPACK\n\nstainless-steel/lapack — LAPACK bindings \n\n",
+    "url": "https://en.wikipedia.org/wiki/LAPACK"
+  },
+  {
+    "name": "stainless-steel/lapack — LAPACK bindings ",
+    "url": "https://github.com/blas-lapack-rs/lapack"
+  },
+  {
+    "name": "L-BFGS-B\n\nnoshu/lbfgsb-sys — Rust binding of fortran L-BFGS-B subroutine\n\n",
+    "url": "https://en.wikipedia.org/wiki/Limited-memory_BFGS"
+  },
+  {
+    "name": "noshu/lbfgsb-sys — Rust binding of fortran L-BFGS-B subroutine",
+    "url": "https://github.com/noshu/lbfgsb-sys"
+  },
+  {
+    "name": "sebcrozet/nalgebra — low-dimensional linear algebra library ",
+    "url": "https://github.com/sebcrozet/nalgebra"
+  },
+  {
+    "name": "arrayfire/arrayfire-rust — Arrayfire bindings",
+    "url": "https://github.com/arrayfire/arrayfire-rust"
+  },
+  {
+    "name": "autumnai/collenchyma — An extensible, pluggable, backend-agnostic framework for parallel, high-performance computations on CUDA, OpenCL and common host CPU. ",
+    "url": "https://github.com/autumnai/collenchyma"
+  },
+  {
+    "name": "luqmana/rust-opencl — OpenCL bindings ",
+    "url": "https://github.com/luqmana/rust-opencl"
+  },
+  {
+    "name": "indigits/scirust — scientific computing library in Rust ",
+    "url": "https://github.com/indigits/scirust"
+  },
+  {
+    "name": "boxtown/statrs — Robust statistical computation library in Rust ",
+    "url": "https://github.com/boxtown/statrs"
+  },
+  {
+    "name": "Rustimization [rustimization]\n\nnoshu/rustimization — A rust optimization library which includes L-BFGS-B and Conjugate Gradient algorithm\n\n",
+    "url": "https://crates.io/crates/rustimization"
+  },
+  {
+    "name": "noshu/rustimization — A rust optimization library which includes L-BFGS-B and Conjugate Gradient algorithm",
+    "url": "https://github.com/noshu/rustimization"
+  },
+  {
+    "name": "mehcode/config-rs [config] — Layered configuration system for Rust applications (with strong support for 12-factor applications). ",
+    "url": "https://github.com/mehcode/config-rs"
+  },
+  {
+    "name": "briansmith/ring — Safe, fast, small crypto using Rust and BoringSSL's cryptography primitives. ",
+    "url": "https://github.com/briansmith/ring"
+  },
+  {
+    "name": "briansmith/webpki — Web PKI TLS X.509 certificate validation in Rust. ",
+    "url": "https://github.com/briansmith/webpki"
+  },
+  {
+    "name": "ctz/rustls — a Rust implementation of TLS",
+    "url": "https://github.com/ctz/rustls"
+  },
+  {
+    "name": "DaGenix/rust-crypto — cryptographic algorithms in Rust ",
+    "url": "https://github.com/DaGenix/rust-crypto"
+  },
+  {
+    "name": "dnaq/sodiumoxide — libsodium bindings ",
+    "url": "https://github.com/sodiumoxide/sodiumoxide"
+  },
+  {
+    "name": "doublify/libblockchain — A Blockchain implementation ",
+    "url": "https://github.com/doublify/libblockchain"
+  },
+  {
+    "name": "exonum/exonum [exonum] — extensible framework for blockchain projects ",
+    "url": "https://github.com/exonum/exonum"
+  },
+  {
+    "name": "klutzy/suruga — a Rust implementation of TLS 1.2",
+    "url": "https://github.com/klutzy/suruga"
+  },
+  {
+    "name": "libOctavo/octavo — Modular hash and crypto library in Rust ",
+    "url": "https://github.com/libOctavo/octavo"
+  },
+  {
+    "name": "rustindia/mpw-rs — Pure Rust implementation of the Master Password password manager ",
+    "url": "https://github.com/rustindia/mpw-rs"
+  },
+  {
+    "name": "racum/rust-djangohashers — A Rust port of the password primitives used in the Django Project. It doesn't require Django, only hashes and validates passwords according to its style. ",
+    "url": "https://github.com/racum/rust-djangohashers"
+  },
+  {
+    "name": "RNCryptor/rncryptor-rs — Pure Rust implementation of the RNCryptor AES file format",
+    "url": "https://github.com/RNCryptor/rncryptor-rs"
+  },
+  {
+    "name": "sfackler/rust-native-tls — Bindings for native TLS libraries",
+    "url": "https://github.com/sfackler/rust-native-tls"
+  },
+  {
+    "name": "sfackler/rust-openssl — OpenSSL bindings ",
+    "url": "https://github.com/sfackler/rust-openssl"
+  },
+  {
+    "name": "sfackler/rust-security-framework — Bindings for Security Framework (OSX native crypto)",
+    "url": "https://github.com/sfackler/rust-security-framework"
+  },
+  {
+    "name": "steffengy/schannel-rs — Bindings for Schannel (Windows native TLS)",
+    "url": "https://github.com/steffengy/schannel-rs"
+  },
+  {
+    "name": "zebradil/rustotpony — CLI manager of one-time password generators aka Google Authenticator (TOTP)",
+    "url": "https://github.com/zebradil/rustotpony"
+  },
+  {
+    "name": "sfackler/r2d2 — generic connection pool ",
+    "url": "https://github.com/sfackler/r2d2"
+  },
+  {
+    "name": "NoSQL [nosql]\n\nCassandra [cassandra, cql]\n\nAlexPikalov/cdrs [cdrs] — native client written in Rust \nMetaswitch/cassandra-rs —  bindings to the DataStax C/C++ client \n\n\nCouchDB [couchdb]\n\nchill-rs/chill [couchdb] — a Rust client for the CouchDB REST API \n\n\nElasticsearch [elasticsearch]\n\nbenashford/rs-es [rs-es] — a Rust client for the Elastic REST API \nelastic-rs/elastic-reqwest [elastic_reqwest] — a lightweight implementation of the Elasticsearch API based on Reqwest \n\n\netcd\n\njimmycuadra/rust-etcd [etcd] — A client library for CoreOS's etcd. \n\n\nForestDB\n\nvhbit/sherwood — ForestDB bindings \n\n\nInfluxDB\n\npanoptix-za/influxdb-rs — asynchronous interface \ndriftluo/InfluxDBClient-rs",
+    "url": "https://crates.io/keywords/nosql",
+    "description": "Synchronization interface "
+  },
+  {
+    "name": "Cassandra [cassandra, cql]\n\nAlexPikalov/cdrs [cdrs] — native client written in Rust \nMetaswitch/cassandra-rs —  bindings to the DataStax C/C++ client \n\n",
+    "url": "http://cassandra.apache.org"
+  },
+  {
+    "name": "AlexPikalov/cdrs [cdrs] — native client written in Rust ",
+    "url": "https://github.com/AlexPikalov/cdrs"
+  },
+  {
+    "name": "Metaswitch/cassandra-rs —  bindings to the DataStax C/C++ client ",
+    "url": "https://github.com/Metaswitch/cassandra-rs"
+  },
+  {
+    "name": "CouchDB [couchdb]\n\nchill-rs/chill [couchdb] — a Rust client for the CouchDB REST API \n\n",
+    "url": "https://crates.io/keywords/couchdb"
+  },
+  {
+    "name": "chill-rs/chill [couchdb] — a Rust client for the CouchDB REST API ",
+    "url": "https://github.com/chill-rs/chill"
+  },
+  {
+    "name": "Elasticsearch [elasticsearch]\n\nbenashford/rs-es [rs-es] — a Rust client for the Elastic REST API \nelastic-rs/elastic-reqwest [elastic_reqwest] — a lightweight implementation of the Elasticsearch API based on Reqwest \n\n",
+    "url": "https://crates.io/keywords/elasticsearch"
+  },
+  {
+    "name": "benashford/rs-es [rs-es] — a Rust client for the Elastic REST API ",
+    "url": "https://github.com/benashford/rs-es"
+  },
+  {
+    "name": "elastic-rs/elastic-reqwest [elastic_reqwest] — a lightweight implementation of the Elasticsearch API based on Reqwest ",
+    "url": "https://github.com/elastic-rs/elastic-reqwest"
+  },
+  {
+    "name": "jimmycuadra/rust-etcd [etcd] — A client library for CoreOS's etcd. ",
+    "url": "https://github.com/jimmycuadra/rust-etcd"
+  },
+  {
+    "name": "vhbit/sherwood — ForestDB bindings ",
+    "url": "https://github.com/vhbit/sherwood"
+  },
+  {
+    "name": "InfluxDB\n\npanoptix-za/influxdb-rs — asynchronous interface \ndriftluo/InfluxDBClient-rs",
+    "url": "https://www.influxdata.com/",
+    "description": "Synchronization interface "
+  },
+  {
+    "name": "panoptix-za/influxdb-rs — asynchronous interface ",
+    "url": "https://github.com/panoptix-za/influxdb-rs"
+  },
+  {
+    "name": "driftluo/InfluxDBClient-rs",
+    "url": "https://github.com/driftluo/InfluxDBClient-rs",
+    "description": "Synchronization interface "
+  },
+  {
+    "name": "skade/leveldb — LevelDB bindings ",
+    "url": "https://github.com/skade/leveldb"
+  },
+  {
+    "name": "LMDB [lmdb]\n\nvhbit/lmdb-rs [lmdb-rs] — LMDB bindings \n\n",
+    "url": "https://crates.io/keywords/lmdb"
+  },
+  {
+    "name": "vhbit/lmdb-rs [lmdb-rs] — LMDB bindings ",
+    "url": "https://github.com/vhbit/lmdb-rs"
+  },
+  {
+    "name": "MongoDB [mongodb]\n\nmongodb-labs/mongo-rust-driver-prototype [mongodb] — MongoDB bindings \n\n",
+    "url": "https://crates.io/keywords/mongodb"
+  },
+  {
+    "name": "mongodb-labs/mongo-rust-driver-prototype [mongodb] — MongoDB bindings ",
+    "url": "https://github.com/mongodb-labs/mongo-rust-driver-prototype"
+  },
+  {
+    "name": "Neo4j [cypher, neo4j]",
+    "url": "https://crates.io/keywords/cypher"
+  },
+  {
+    "name": "Redis [redis]\n\nmitsuhiko/redis-rs — Redis library in Rust \n\n",
+    "url": "https://crates.io/keywords/redis"
+  },
+  {
+    "name": "mitsuhiko/redis-rs — Redis library in Rust ",
+    "url": "https://github.com/mitsuhiko/redis-rs"
+  },
+  {
+    "name": "RocksDB\n\nspacejam/rust-rocksdb — RocksDB bindings \n\n",
+    "url": "https://rocksdb.org/"
+  },
+  {
+    "name": "spacejam/rust-rocksdb — RocksDB bindings ",
+    "url": "https://github.com/spacejam/rust-rocksdb"
+  },
+  {
+    "name": "UnQLite\n\nzitsen/unqlite.rs — UnQLite bindings \n\n",
+    "url": "https://unqlite.org/"
+  },
+  {
+    "name": "zitsen/unqlite.rs — UnQLite bindings ",
+    "url": "https://github.com/zitsen/unqlite.rs"
+  },
+  {
+    "name": "ZooKeeper\n\nbonifaido/rust-zookeeper [zookeeper] — A client library for Apache ZooKeeper. \n\n",
+    "url": "https://zookeeper.apache.org/"
+  },
+  {
+    "name": "bonifaido/rust-zookeeper [zookeeper] — A client library for Apache ZooKeeper. ",
+    "url": "https://github.com/bonifaido/rust-zookeeper"
+  },
+  {
+    "name": "SQL [sql]\n\nMicrosoft SQL\n\nsteffengy/tiberius — \n\n\nMySql [mysql]\n\nAgilData/mysql-proxy-rs — a MySQL Proxy \nblackbeam/mysql_async [mysql_async] — asyncronous Rust Mysql driver based on Tokio. \nblackbeam/rust-mysql-simple [mysql] — a native MySql client \n\n\nPostgreSql [postgres, postgresql]\n\nsfackler/rust-postgres [postgres] — a native PostgreSQL client \n\n\nSqlite [sqlite]\n\njgallagher/rusqlite — Sqlite3 bindings \n\n\n\n",
+    "url": "https://crates.io/keywords/sql"
+  },
+  {
+    "name": "steffengy/tiberius — ",
+    "url": "https://github.com/steffengy/tiberius"
+  },
+  {
+    "name": "MySql [mysql]\n\nAgilData/mysql-proxy-rs — a MySQL Proxy \nblackbeam/mysql_async [mysql_async] — asyncronous Rust Mysql driver based on Tokio. \nblackbeam/rust-mysql-simple [mysql] — a native MySql client \n\n",
+    "url": "https://crates.io/keywords/mysql"
+  },
+  {
+    "name": "AgilData/mysql-proxy-rs — a MySQL Proxy ",
+    "url": "https://github.com/AgilData/mysql-proxy-rs"
+  },
+  {
+    "name": "blackbeam/mysql_async [mysql_async] — asyncronous Rust Mysql driver based on Tokio. ",
+    "url": "https://github.com/blackbeam/mysql_async"
+  },
+  {
+    "name": "blackbeam/rust-mysql-simple [mysql] — a native MySql client ",
+    "url": "https://github.com/blackbeam/rust-mysql-simple"
+  },
+  {
+    "name": "PostgreSql [postgres, postgresql]\n\nsfackler/rust-postgres [postgres] — a native PostgreSQL client \n\n",
+    "url": "https://crates.io/keywords/postgres"
+  },
+  {
+    "name": "sfackler/rust-postgres [postgres] — a native PostgreSQL client ",
+    "url": "https://github.com/sfackler/rust-postgres"
+  },
+  {
+    "name": "Sqlite [sqlite]\n\njgallagher/rusqlite — Sqlite3 bindings \n\n",
+    "url": "https://crates.io/keywords/sqlite"
+  },
+  {
+    "name": "jgallagher/rusqlite — Sqlite3 bindings ",
+    "url": "https://github.com/jgallagher/rusqlite"
+  },
+  {
+    "name": "ORM [orm]\n\ndiesel-rs/diesel — an ORM and Query builder for Rust \nivanceras/rustorm — an ORM for Rust \n\n",
+    "url": "https://crates.io/keywords/orm"
+  },
+  {
+    "name": "diesel-rs/diesel — an ORM and Query builder for Rust ",
+    "url": "https://github.com/diesel-rs/diesel"
+  },
+  {
+    "name": "ivanceras/rustorm — an ORM for Rust ",
+    "url": "https://github.com/ivanceras/rustorm"
+  },
+  {
+    "name": "bluss/ndarray — N-dimensional array with array views, multidimensional slicing, and efficient operations",
+    "url": "https://github.com/bluss/ndarray"
+  },
+  {
+    "name": "kernelmachine/utah — Dataframe structure and operations in Rust",
+    "url": "https://github.com/kernelmachine/utah"
+  },
+  {
+    "name": "weld-project/weld",
+    "url": "https://github.com/weld-project/weld",
+    "description": "High-performance runtime for data analytics applications"
+  },
+  {
+    "name": "bluss/rust-itertools — ",
+    "url": "https://github.com/bluss/rust-itertools"
+  },
+  {
+    "name": "contain-rs — Extension of Rust's std::collections",
+    "url": "https://github.com/contain-rs"
+  },
+  {
+    "name": "danielpclark/array_tool — Array helpers for Rust. Some of the most common methods you would use on Arrays made available on Vectors. Polymorphic implementations for handling most of your use cases. ",
+    "url": "https://github.com/danielpclark/array_tool"
+  },
+  {
+    "name": "fizyk20/generic-array – a hack to allow for arrays sized by typenums ",
+    "url": "https://github.com/fizyk20/generic-array"
+  },
+  {
+    "name": "Nemo157/roaring-rs – Roaring Bitmaps in Rust ",
+    "url": "https://github.com/Nemo157/roaring-rs"
+  },
+  {
+    "name": "orium/rpds [rpds] — Persistent data structures in Rust. ",
+    "url": "https://github.com/orium/rpds"
+  },
+  {
+    "name": "garro95/priority-queue[priority-queue]",
+    "url": "https://github.com/garro95/priority-queue",
+    "description": "A priority queue that implements priority changes. "
+  },
+  {
+    "name": "reem/rust-typemap — ",
+    "url": "https://github.com/reem/rust-typemap"
+  },
+  {
+    "name": "xfix/enum-map [enum-map] — An optimized map implementation for enums using an array to store values. ",
+    "url": "https://github.com/xfix/enum-map"
+  },
+  {
+    "name": "saresend/gust",
+    "url": "https://github.com/saresend/Gust"
+  },
+  {
+    "name": "chronotope/chrono — ",
+    "url": "https://github.com/chronotope/chrono"
+  },
+  {
+    "name": "yaa110/rust-persian-calendar — ",
+    "url": "https://github.com/yaa110/rust-persian-calendar"
+  },
+  {
+    "name": "antimonyproject/antimony [antimony] — stream processing / distributed computation platform ",
+    "url": "https://github.com/antimonyproject/antimony"
+  },
+  {
+    "name": "fede1024/rust-rdkafka [rdkafka] — librdkafka bindings ",
+    "url": "https://github.com/fede1024/rust-rdkafka"
+  },
+  {
+    "name": "spicavigo/kafka-rust — ",
+    "url": "https://github.com/spicavigo/kafka-rust"
+  },
+  {
+    "name": "schickling/rust-beanstalkd — Beanstalkd bindings ",
+    "url": "https://github.com/schickling/rust-beanstalkd"
+  },
+  {
+    "name": "hyunsik/hdfs-rs — libhdfs bindings ",
+    "url": "https://github.com/hyunsik/hdfs-rs"
+  },
+  {
+    "name": "GildedHonour/atarashii_imap — 新しい (atarashii/new) IMAP client in Rust. It supports plain and secure connections ",
+    "url": "https://github.com/GildedHonour/atarashii_imap"
+  },
+  {
+    "name": "gsquire/sendgrid-rs — unofficial Rust library for SendGrid API ",
+    "url": "https://github.com/gsquire/sendgrid-rs"
+  },
+  {
+    "name": "lettre/lettre — an SMTP-library for Rust ",
+    "url": "https://github.com/lettre/lettre"
+  },
+  {
+    "name": "staktrace/mailparse [mailparse] — a library for parsing real-world email files ",
+    "url": "https://github.com/staktrace/mailparse"
+  },
+  {
+    "name": "alex/rust-asn1 — a Rust ASN.1 (DER) serializer ",
+    "url": "https://github.com/alex/rust-asn1"
+  },
+  {
+    "name": "arjantop/rust-bencode — Bencode implementation in Rust ",
+    "url": "https://github.com/arjantop/rust-bencode"
+  },
+  {
+    "name": "arcnmx/nue — I/O and binary data encoding for Rust ",
+    "url": "https://github.com/arcnmx/nue"
+  },
+  {
+    "name": "TyOverby/bincode — a binary encoder/decoder in Rust ",
+    "url": "https://github.com/TyOverby/bincode"
+  },
+  {
+    "name": "m4b/goblin [goblin] —  cross-platform, zero-copy, and endian-aware binary parsing ",
+    "url": "https://github.com/m4b/goblin"
+  },
+  {
+    "name": "zonyitoo/bson-rs — ",
+    "url": "https://github.com/zonyitoo/bson-rs"
+  },
+  {
+    "name": "BurntSushi/byteorder — Supports big-endian, little-endian and native byte orders ",
+    "url": "https://github.com/BurntSushi/byteorder"
+  },
+  {
+    "name": "capnproto/capnproto-rust — ",
+    "url": "https://github.com/capnproto/capnproto-rust"
+  },
+  {
+    "name": "BurntSushi/rust-cbor — Supports JSON conversion and type-based encoding/decoding ",
+    "url": "https://github.com/BurntSushi/rust-cbor"
+  },
+  {
+    "name": "hsivonen/encoding_rs [encoding_rs] — A Gecko-oriented implementation of the Encoding Standard in Rust ",
+    "url": "https://github.com/hsivonen/encoding_rs"
+  },
+  {
+    "name": "lifthrasiir/rust-encoding — ",
+    "url": "https://github.com/lifthrasiir/rust-encoding"
+  },
+  {
+    "name": "mrhooray/crc-rs — ",
+    "url": "https://github.com/mrhooray/crc-rs"
+  },
+  {
+    "name": "BurntSushi/rust-csv — ",
+    "url": "https://github.com/BurntSushi/rust-csv"
+  },
+  {
+    "name": "servo/html5ever — High-performance browser-grade HTML5 parser ",
+    "url": "https://github.com/servo/html5ever"
+  },
+  {
+    "name": "veddan/rust-htmlescape — encoding/decoding HTML entities ",
+    "url": "https://github.com/veddan/rust-htmlescape"
+  },
+  {
+    "name": "pikkr/pikkr [pikkr] — JSON parser which picks up values directly without performing tokenization in Rust",
+    "url": "https://github.com/pikkr/pikkr"
+  },
+  {
+    "name": "serde-rs/json [serde_json] — JSON support for Serde framework ",
+    "url": "https://github.com/serde-rs/json"
+  },
+  {
+    "name": "maciejhirsz/json-rust [json] — JSON implementation in Rust ",
+    "url": "https://github.com/maciejhirsz/json-rust"
+  },
+  {
+    "name": "Qihoo360/rust-jsonnet —  ",
+    "url": "https://github.com/Qihoo360/rust-jsonnet"
+  },
+  {
+    "name": "3Hren/msgpack-rust — a pure Rust low/high level MessagePack implementation ",
+    "url": "https://github.com/3Hren/msgpack-rust"
+  },
+  {
+    "name": "jcreekmore/pem-rs [pem]",
+    "url": "https://github.com/jcreekmore/pem-rs",
+    "description": "a Rust based way to parse and encode PEM-encoded data "
+  },
+  {
+    "name": "danburkert/prost — ",
+    "url": "https://github.com/danburkert/prost"
+  },
+  {
+    "name": "stepancheg/rust-protobuf — ",
+    "url": "https://github.com/stepancheg/rust-protobuf"
+  },
+  {
+    "name": "https://github.com/ron-rs/ron — ",
+    "url": "https://github.com/ron-rs/ron"
+  },
+  {
+    "name": "erickt/rust-tnetstring — ",
+    "url": "https://github.com/erickt/rust-tnetstring"
+  },
+  {
+    "name": "alexcrichton/toml-rs — ",
+    "url": "https://github.com/alexcrichton/toml-rs"
+  },
+  {
+    "name": "Florob/RustyXML — an XML parser written in Rust ",
+    "url": "https://github.com/Florob/RustyXML"
+  },
+  {
+    "name": "shepmaster/sxd-document — An XML library in Rust ",
+    "url": "https://github.com/shepmaster/sxd-document"
+  },
+  {
+    "name": "shepmaster/sxd-xpath — An XPath library in Rust ",
+    "url": "https://github.com/shepmaster/sxd-xpath"
+  },
+  {
+    "name": "netvl/xml-rs — a streaming XML library ",
+    "url": "https://github.com/netvl/xml-rs"
+  },
+  {
+    "name": "chyh1990/yaml-rust — The missing YAML 1.2 implementation for Rust. ",
+    "url": "https://github.com/chyh1990/yaml-rust"
+  },
+  {
+    "name": "dtolnay/serde-yaml [serde_yaml] — YAML support for Serde framework ",
+    "url": "https://github.com/dtolnay/serde-yaml"
+  },
+  {
+    "name": "kimhyunkang/libyaml-rust — libyaml bindings ",
+    "url": "https://github.com/kimhyunkang/libyaml-rust"
+  },
+  {
+    "name": "vitiral/stfu8 — Sorta Text Format in UTF-8 ",
+    "url": "https://github.com/vitiral/stfu8"
+  },
+  {
+    "name": "media-io/yaserde — Yet Another Serializer/Deserializer specialized for XML ",
+    "url": "https://github.com/media-io/yaserde"
+  },
+  {
+    "name": "vitiral/path_abs — Absolute serializable path types and associated methods. ",
+    "url": "https://github.com/vitiral/path_abs"
+  },
+  {
+    "name": "webdesus/fs_extra — expanding opportunities standard library std::fs and std::io ",
+    "url": "https://github.com/webdesus/fs_extra"
+  },
+  {
+    "name": "rust-lang-nursery/tempdir — temporary directory library ",
+    "url": "https://github.com/rust-lang-nursery/tempdir"
+  },
+  {
+    "name": "Stebalien/tempfile — temporary file library ",
+    "url": "https://github.com/Stebalien/tempfile"
+  },
+  {
+    "name": "Stebalien/xattr [xattr] — list and manipulate unix extended file attributes ",
+    "url": "https://github.com/Stebalien/xattr"
+  },
+  {
+    "name": "zboxfs/zbox [zbox] — Zero-details, privacy-focused embeddable file system. ",
+    "url": "https://github.com/zboxfs/zbox"
+  },
+  {
+    "name": "SiegeLord/RustAllegro — Allegro 5 bindings ",
+    "url": "https://github.com/SiegeLord/RustAllegro"
+  },
+  {
+    "name": "vityafx/challonge-rs [challonge] — Client library for the Challonge REST API. Helps to organize tournaments. ",
+    "url": "https://github.com/vityafx/challonge-rs"
+  },
+  {
+    "name": "lucidscape/corange-rs — Corange bindings",
+    "url": "https://github.com/lucidscape/corange-rs"
+  },
+  {
+    "name": "slide-rs/specs — Specs Parallel ECS ",
+    "url": "https://github.com/slide-rs/specs"
+  },
+  {
+    "name": "Amethyst — Data-oriented game engine ",
+    "url": "https://www.amethyst.rs"
+  },
+  {
+    "name": "Piston — ",
+    "url": "http://www.piston.rs"
+  },
+  {
+    "name": "ggez",
+    "url": "https://github.com/ggez/ggez",
+    "description": "a lightweight game framework for making 2D games with minimum friction "
+  },
+  {
+    "name": "SDL [sdl]\n\nbrson/rust-sdl — SDL1 bindings \nRust-SDL2/rust-sdl2 — SDL2 bindings \n\n",
+    "url": "http://www.libsdl.org/"
+  },
+  {
+    "name": "brson/rust-sdl — SDL1 bindings ",
+    "url": "https://github.com/brson/rust-sdl"
+  },
+  {
+    "name": "Rust-SDL2/rust-sdl2 — SDL2 bindings ",
+    "url": "https://github.com/Rust-SDL2/rust-sdl2"
+  },
+  {
+    "name": "jeremyletang/rust-sfml — SFML bindings ",
+    "url": "https://github.com/jeremyletang/rust-sfml"
+  },
+  {
+    "name": "tomassedovic/tcod-rs — Libtcod bindings for Rust.",
+    "url": "https://github.com/tomassedovic/tcod-rs"
+  },
+  {
+    "name": "bbodi/rust-voxlap — Voxlap bindings",
+    "url": "https://github.com/bbodi/rust-voxlap"
+  },
+  {
+    "name": "Georust — geospatial tools and libraries written in Rust",
+    "url": "https://github.com/georust"
+  },
+  {
+    "name": "rust-reverse-geocoder — a fast, offline reverse geocoder in Rust, inspired by https://github.com/thampiman/reverse-geocoder",
+    "url": "https://github.com/llambda/rust-reverse-geocoder"
+  },
+  {
+    "name": "gfx-rs/gfx — A high-performance, bindless graphics API for Rust. ",
+    "url": "https://github.com/gfx-rs/gfx"
+  },
+  {
+    "name": "redox-os/rusttype — a pure Rust alternative to libraries like FreeType ",
+    "url": "https://github.com/redox-os/rusttype"
+  },
+  {
+    "name": "OpenGL [opengl]\n\nbrendanzab/gl-rs — \nglium/glium — safe OpenGL wrapper for the Rust language. \nKiss3d — draw simple geometric figures and play with them with one-liners \nPistonDevelopers/glfw-rs — \ntomaka/glutin — Rust alternative to GLFW \n\n",
+    "url": "https://crates.io/keywords/opengl"
+  },
+  {
+    "name": "brendanzab/gl-rs — ",
+    "url": "https://github.com/brendanzab/gl-rs"
+  },
+  {
+    "name": "glium/glium — safe OpenGL wrapper for the Rust language. ",
+    "url": "https://github.com/glium/glium"
+  },
+  {
+    "name": "Kiss3d — draw simple geometric figures and play with them with one-liners ",
+    "url": "http://kiss3d.org"
+  },
+  {
+    "name": "PistonDevelopers/glfw-rs — ",
+    "url": "https://github.com/PistonDevelopers/glfw-rs"
+  },
+  {
+    "name": "tomaka/glutin — Rust alternative to GLFW ",
+    "url": "https://github.com/tomaka/glutin"
+  },
+  {
+    "name": "kaj/rust-pdf — ",
+    "url": "https://github.com/kaj/rust-pdf"
+  },
+  {
+    "name": "fschutt/printpdf — PDF writing library ",
+    "url": "https://github.com/fschutt/printpdf"
+  },
+  {
+    "name": "J-F-Liu/lopdf — PDF document manipulation ",
+    "url": "https://github.com/J-F-Liu/lopdf"
+  },
+  {
+    "name": "Vulkan [vulkan]\n\nvulkano [vulkano] — \n\n",
+    "url": "https://www.khronos.org/vulkan/"
+  },
+  {
+    "name": "vulkano [vulkano] — ",
+    "url": "https://github.com/vulkano-rs/vulkano"
+  },
+  {
+    "name": "kud1ing/tinkerpop-rs — an example how to use Apache TinkerPop from Rust ",
+    "url": "https://github.com/kud1ing/tinkerpop-rs"
+  },
+  {
+    "name": "PistonDevelopers/conrod — An easy-to-use, immediate-mode, 2D GUI library written entirely in Rust ",
+    "url": "https://github.com/PistonDevelopers/conrod/"
+  },
+  {
+    "name": "kylewlacy/sorbet-cocoa — ",
+    "url": "https://github.com/kylewlacy/sorbet-cocoa"
+  },
+  {
+    "name": "servo/cocoa-rs",
+    "url": "https://github.com/servo/cocoa-rs"
+  },
+  {
+    "name": "GTK+ [gtk]\n\ngtk-rs/gtk — GTK+ bindings \nrelm — Asynchronous, GTK+-based, GUI library, inspired by Elm \n\n",
+    "url": "https://www.gtk.org/"
+  },
+  {
+    "name": "gtk-rs/gtk — GTK+ bindings ",
+    "url": "https://github.com/gtk-rs/gtk"
+  },
+  {
+    "name": "relm — Asynchronous, GTK+-based, GUI library, inspired by Elm ",
+    "url": "https://github.com/antoyo/relm"
+  },
+  {
+    "name": "ImGui\n\nimgui-rs — Rust bindings for ImGui \n\n",
+    "url": "https://github.com/ocornut/imgui"
+  },
+  {
+    "name": "imgui-rs — Rust bindings for ImGui ",
+    "url": "https://github.com/Gekkio/imgui-rs"
+  },
+  {
+    "name": "IUP\n\nclear-coat — Clear Coat is a Rust wrapper for the IUP GUI library\ndcampbell24/iup-rust — IUP bindings \nKiss-ui — a simple UI framework built on IUP \n\n",
+    "url": "http://webserver2.tecgraf.puc-rio.br/iup/"
+  },
+  {
+    "name": "clear-coat — Clear Coat is a Rust wrapper for the IUP GUI library",
+    "url": "https://github.com/jminer/clear-coat"
+  },
+  {
+    "name": "dcampbell24/iup-rust — IUP bindings ",
+    "url": "https://github.com/dcampbell24/iup-rust"
+  },
+  {
+    "name": "Kiss-ui — a simple UI framework built on IUP ",
+    "url": "https://github.com/KISS-UI/kiss-ui"
+  },
+  {
+    "name": "libui\n\npcwalton/libui-rs — libui bindings . Abandoned project. The most updated fork is LeoTindall/libui-rs.\n\n",
+    "url": "https://github.com/andlabs/libui"
+  },
+  {
+    "name": "pcwalton/libui-rs — libui bindings . Abandoned project. The most updated fork is LeoTindall/libui-rs.",
+    "url": "https://github.com/pcwalton/libui-rs"
+  },
+  {
+    "name": "Nuklear\n\nnuklear-rust — Rust bindings for Nuklear \n\n",
+    "url": "https://github.com/vurtun/nuklear"
+  },
+  {
+    "name": "nuklear-rust — Rust bindings for Nuklear ",
+    "url": "https://github.com/snuk182/nuklear-rust"
+  },
+  {
+    "name": "Qt\n\ncyndis/qmlrs — QtQuick bindings \nkitech/qt.rs — Qt5 bindings \nRust Qt Binding Generator — Binding generator hosted by KDE.\nrust-qt —\nWhite-Oak/qml-rust — QML bindings. \n\n",
+    "url": "http://doc.qt.io"
+  },
+  {
+    "name": "cyndis/qmlrs — QtQuick bindings ",
+    "url": "https://github.com/cyndis/qmlrs"
+  },
+  {
+    "name": "kitech/qt.rs — Qt5 bindings ",
+    "url": "https://github.com/kitech/qt.rs"
+  },
+  {
+    "name": "Rust Qt Binding Generator — Binding generator hosted by KDE.",
+    "url": "https://phabricator.kde.org/source/rust-qt-binding-generator/"
+  },
+  {
+    "name": "rust-qt —",
+    "url": "https://github.com/rust-qt"
+  },
+  {
+    "name": "White-Oak/qml-rust — QML bindings. ",
+    "url": "https://github.com/White-Oak/qml-rust"
+  },
+  {
+    "name": "saurvs/nfd-rs — nativefiledialog bindings",
+    "url": "https://github.com/saurvs/nfd-rs"
+  },
+  {
+    "name": "Sciter\n\nsciter-sdk/rust-sciter — Sciter bindings \n\n",
+    "url": "https://sciter.com/"
+  },
+  {
+    "name": "sciter-sdk/rust-sciter — Sciter bindings ",
+    "url": "https://github.com/sciter-sdk/rust-sciter"
+  },
+  {
+    "name": "abonander/img_hash — Perceptual image hashing and comparison for equality and similarity.",
+    "url": "https://github.com/abonander/img_hash"
+  },
+  {
+    "name": "chyh1990/imageproc — An advanced image processing library for Rust. ",
+    "url": "https://github.com/chyh1990/imageproc"
+  },
+  {
+    "name": "PistonDevelopers/image — Basic imaging processing functions and methods for converting to and from image formats ",
+    "url": "https://github.com/PistonDevelopers/image"
+  },
+  {
+    "name": "kali/opencv-rust — Rust bindings for OpenCV ",
+    "url": "https://github.com/kali/opencv-rust"
+  },
+  {
+    "name": "teovoinea/steganography [steganography] — A simple steganography library ",
+    "url": "https://github.com/teovoinea/steganography"
+  },
+  {
+    "name": "shnewto/bnf — A library for parsing Backus–Naur form context-free grammars. ",
+    "url": "https://github.com/shnewto/bnf"
+  },
+  {
+    "name": "rust-lang-nursery/log — Logging implementation for Rust ",
+    "url": "https://github.com/rust-lang-nursery/log"
+  },
+  {
+    "name": "slog-rs/slog — Structured, composable logging for Rust ",
+    "url": "https://github.com/slog-rs/slog"
+  },
+  {
+    "name": "sfackler/log4rs — highly configurable logging framework modeled after Java's Logback and log4j libraries ",
+    "url": "https://github.com/sfackler/log4rs"
+  },
+  {
+    "name": "AtheMathmo/rusty-machine — Machine learning library for Rust ",
+    "url": "https://github.com/AtheMathmo/rusty-machine"
+  },
+  {
+    "name": "avinashshenoy97/RusticSOM",
+    "url": "https://github.com/avinashshenoy97/RusticSOM",
+    "description": "Rust library for Self Organising Maps (SOM). "
+  },
+  {
+    "name": "autumnai/leaf — Open Machine Intelligence framework. . Abandoned project. The most updated fork is spearow/juice.",
+    "url": "https://github.com/autumnai/leaf"
+  },
+  {
+    "name": "tensorflow/rust — Rust language bindings for TensorFlow. ",
+    "url": "https://github.com/tensorflow/rust"
+  },
+  {
+    "name": "maciejkula/rustlearn — Machine learning crate for Rust. ",
+    "url": "https://github.com/maciejkula/rustlearn"
+  },
+  {
+    "name": "mattgathu/cute",
+    "url": "https://github.com/mattgathu/cute",
+    "description": "Macro for Python-esque list comprehensions in Rust. "
+  },
+  {
+    "name": "ludat/hado-rs",
+    "url": "https://github.com/ludat/hado-rs",
+    "description": "A little macro for writing haskell-like do expressions without too much ceremony"
+  },
+  {
+    "name": "google/pulldown-cmark — CommonMark parser in Rust",
+    "url": "https://github.com/google/pulldown-cmark"
+  },
+  {
+    "name": "tomaka/android-rs-glue — glue between Rust and Android ",
+    "url": "https://github.com/tomaka/android-rs-glue"
+  },
+  {
+    "name": "TimNN/cargo-lipo — a cargo lipo subcommand which automatically creates a universal library for use with your iOS application. ",
+    "url": "https://github.com/TimNN/cargo-lipo"
+  },
+  {
+    "name": "vhbit/ObjCrust — using Rust to create an iOS static library ",
+    "url": "https://github.com/vhbit/ObjCrust"
+  },
+  {
+    "name": "andars/pebble.rs — a crate that allows Rust to be used to develop Pebble applications.",
+    "url": "https://github.com/andars/pebble.rs"
+  },
+  {
+    "name": "mattnenterprise/rust-ftp — an FTP client for Rust ",
+    "url": "https://github.com/mattnenterprise/rust-ftp"
+  },
+  {
+    "name": "achanda/ipnetwork — A library to work with IP networks in pure Rust ",
+    "url": "https://github.com/achanda/ipnetwork"
+  },
+  {
+    "name": "libpnet/libpnet — a cross-platform, low level networking ",
+    "url": "https://github.com/libpnet/libpnet"
+  },
+  {
+    "name": "tokio-rs/tokio — a network application framework for rapid development and highly scalable production deployments of clients and servers.",
+    "url": "https://github.com/tokio-rs/tokio"
+  },
+  {
+    "name": "dylanmckay/protocol — Custom TCP/UDP protocol definitions",
+    "url": "https://github.com/dylanmckay/protocol"
+  },
+  {
+    "name": "actix/actix — Actor library for Rust ",
+    "url": "https://github.com/actix/actix"
+  },
+  {
+    "name": "thehydroimpulse/nanomsg.rs — nanomsg bindings ",
+    "url": "https://github.com/thehydroimpulse/nanomsg.rs"
+  },
+  {
+    "name": "mattnenterprise/rust-nntp — an NNTP client for Rust ",
+    "url": "https://github.com/mattnenterprise/rust-nntp"
+  },
+  {
+    "name": "mattnenterprise/rust-pop3 — a POP3 client for Rust ",
+    "url": "https://github.com/mattnenterprise/rust-pop3"
+  },
+  {
+    "name": "alexcrichton/ssh2-rs — libssh2 bindings ",
+    "url": "https://github.com/alexcrichton/ssh2-rs"
+  },
+  {
+    "name": "Thrussh — an SSH library written from scratch in Rust, backed by libsodium",
+    "url": "https://github.com/pijul-scm/thrussh/"
+  },
+  {
+    "name": "zslayton/stomp-rs — a STOMP 1.2 client implementation in Rust ",
+    "url": "https://github.com/zslayton/stomp-rs"
+  },
+  {
+    "name": "meqif/rust-utp — a uTP (Micro Transport Protocol) library for Rust. ",
+    "url": "https://github.com/meqif/rust-utp"
+  },
+  {
+    "name": "erickt/rust-zmq — ZeroMQ bindings ",
+    "url": "https://github.com/erickt/rust-zmq"
+  },
+  {
+    "name": "Covertness/coap-rs — A Constrained Application Protocol(CoAP) library for Rust. ",
+    "url": "https://github.com/Covertness/coap-rs"
+  },
+  {
+    "name": "Geal/nom — parser combinator library ",
+    "url": "https://github.com/Geal/nom"
+  },
+  {
+    "name": "ivanceras/inquerest — an URL parameter parser for rest filter inquiry ",
+    "url": "https://github.com/ivanceras/inquerest"
+  },
+  {
+    "name": "kevinmehall/rust-peg — Parsing Expression Grammar (PEG) parser generator",
+    "url": "https://github.com/kevinmehall/rust-peg"
+  },
+  {
+    "name": "m4rw3r/chomp – A fast monadic-style parser combinator ",
+    "url": "https://github.com/m4rw3r/chomp"
+  },
+  {
+    "name": "Marwes/combine — parser combinator library ",
+    "url": "https://github.com/Marwes/combine"
+  },
+  {
+    "name": "lalrpop/lalrpop — LR(1) parser generator for Rust ",
+    "url": "https://github.com/lalrpop/lalrpop"
+  },
+  {
+    "name": "nrc/zero — zero-allocation parsing of binary data ",
+    "url": "https://github.com/nrc/zero"
+  },
+  {
+    "name": "pest-parser/pest — The Elegant Parser ",
+    "url": "https://github.com/pest-parser/pest"
+  },
+  {
+    "name": "ptal/oak — a typed PEG parser generator (compiler plugin)",
+    "url": "https://github.com/ptal/oak"
+  },
+  {
+    "name": "rustless/queryst — a query string parsing library for Rust inspired by https://github.com/ljharb/qs ",
+    "url": "https://github.com/rustless/queryst"
+  },
+  {
+    "name": "inotify-rs/inotify — inotify bindings ",
+    "url": "https://github.com/inotify-rs/inotify"
+  },
+  {
+    "name": "yaa110/rust-iptables — iptables bindings ",
+    "url": "https://github.com/yaa110/rust-iptables"
+  },
+  {
+    "name": "nix-rust/nix — Unix-like API bindings ",
+    "url": "https://github.com/nix-rust/nix"
+  },
+  {
+    "name": "zargony/rust-fuse — FUSE bindings ",
+    "url": "https://github.com/zargony/rust-fuse"
+  },
+  {
+    "name": "retep998/winapi-rs — Windows API bindings ",
+    "url": "https://github.com/retep998/winapi-rs"
+  },
+  {
+    "name": "PistonDevelopers/dyon — A rusty dynamically typed scripting language",
+    "url": "https://github.com/PistonDevelopers/dyon"
+  },
+  {
+    "name": "gluon-lang/gluon —  A small, statically-typed, functional programming language",
+    "url": "https://github.com/gluon-lang/gluon"
+  },
+  {
+    "name": "murarth/ketos — A Lisp dialect functional programming language serving as a scripting and extension language for rust",
+    "url": "https://github.com/murarth/ketos"
+  },
+  {
+    "name": "JohnBSmith/moss [moss] — A dynamically typed scripting language",
+    "url": "https://github.com/JohnBSmith/moss"
+  },
+  {
+    "name": "jonathandturner/rhai — A tiny and fast embedded scripting language resembling a combination of JS and Rust",
+    "url": "https://github.com/jonathandturner/rhai"
+  },
+  {
+    "name": "sunng87/handlebars-rust — Handlebars template engine with inheritance, custom helper support. ",
+    "url": "https://github.com/sunng87/handlebars-rust"
+  },
+  {
+    "name": "lfairy/maud — compile-time HTML templates ",
+    "url": "https://github.com/lfairy/maud"
+  },
+  {
+    "name": "Stebalien/horrorshow-rs — compile-time HTML templates ",
+    "url": "https://github.com/Stebalien/horrorshow-rs"
+  },
+  {
+    "name": "kaj/ructe — HTML template system for Rust ",
+    "url": "https://github.com/kaj/ructe"
+  },
+  {
+    "name": "Keats/tera — template engine based on Jinja2 and the Django template language. ",
+    "url": "https://github.com/Keats/tera"
+  },
+  {
+    "name": "djc/askama — template rendering engine based on Jinja ",
+    "url": "https://github.com/djc/askama"
+  },
+  {
+    "name": "rustache/rustache — ",
+    "url": "https://github.com/rustache/rustache"
+  },
+  {
+    "name": "tailhook/marafet — Compiler for Jade-like template language to cito.js-based virtual dom",
+    "url": "https://github.com/tailhook/marafet"
+  },
+  {
+    "name": "BurntSushi/suffix — Linear time suffix array construction (with Unicode support) ",
+    "url": "https://github.com/BurntSushi/suffix"
+  },
+  {
+    "name": "BurntSushi/tabwriter — Elastic tab stops (i.e., text column alignment) ",
+    "url": "https://github.com/BurntSushi/tabwriter"
+  },
+  {
+    "name": "dguo/strsim-rs [strsim-rs] — String similarity metrics ",
+    "url": "https://github.com/dguo/strsim-rs"
+  },
+  {
+    "name": "mgeisler/textwrap [textwrap] — Word wrap text (with support for hyphenation) ",
+    "url": "https://github.com/mgeisler/textwrap"
+  },
+  {
+    "name": "pwoolcoc/ngrams — Construct n-grams from arbitrary iterators ",
+    "url": "https://github.com/pwoolcoc/ngrams"
+  },
+  {
+    "name": "rust-lang/regex — Regular expressions (RE2 style) ",
+    "url": "https://github.com/rust-lang/regex"
+  },
+  {
+    "name": "greyblake/whatlang-rs — Natural language detection library based on trigrams ",
+    "url": "https://github.com/greyblake/whatlang-rs"
+  },
+  {
+    "name": "yaa110/rake-rs — Multilingual implementation of RAKE algorithm for Rust ",
+    "url": "https://github.com/yaa110/rake-rs"
+  },
+  {
+    "name": "BurntSushi/fst [fst] — ",
+    "url": "https://github.com/BurntSushi/fst"
+  },
+  {
+    "name": "CurrySoftware/perlin [perlin] — ",
+    "url": "https://github.com/CurrySoftware/perlin"
+  },
+  {
+    "name": "tantivy-search/tantivy [tantivy] — ",
+    "url": "https://github.com/tantivy-search/tantivy"
+  },
+  {
+    "name": "beneills/quantum — Advanced Rust quantum computer simulator ",
+    "url": "https://github.com/beneills/quantum"
+  },
+  {
+    "name": "ekse/unicorn-rs — Rust bindings for the unicorn CPU emulator",
+    "url": "https://github.com/ekse/unicorn-rs"
+  },
+  {
+    "name": "saurvs/hypervisor-rs — Hardware-accelerated virtualization on OS X",
+    "url": "https://github.com/saurvs/hypervisor-rs"
+  },
+  {
+    "name": "DenisKolodin/yew [yew] — Rust framework for making client web apps",
+    "url": "https://github.com/DenisKolodin/yew"
+  },
+  {
+    "name": "koute/cargo-web [cargo-web] — A Cargo subcommand for the client-side Web ",
+    "url": "https://github.com/koute/cargo-web"
+  },
+  {
+    "name": "koute/stdweb [stdweb] — A standard library for the client-side Web ",
+    "url": "https://github.com/koute/stdweb"
+  },
+  {
+    "name": "alexcrichton/curl-rust — libcurl bindings ",
+    "url": "https://github.com/alexcrichton/curl-rust"
+  },
+  {
+    "name": "hyperium/hyper — an HTTP implementation ",
+    "url": "https://github.com/hyperium/hyper"
+  },
+  {
+    "name": "seanmonstar/reqwest — an ergonomic HTTP Client for Rust. ",
+    "url": "https://github.com/seanmonstar/reqwest"
+  },
+  {
+    "name": "Gotham — A flexible web framework that does not sacrifice safety, security or speed. ",
+    "url": "https://github.com/gotham-rs/gotham"
+  },
+  {
+    "name": "hyperium/hyper — an HTTP implementation ",
+    "url": "https://github.com/hyperium/hyper"
+  },
+  {
+    "name": "GildedHonour/frank_jwt — JSON Web Token implementation in Rust. ",
+    "url": "https://github.com/GildedHonour/frank_jwt"
+  },
+  {
+    "name": "Iron — a middleware-based server framework ",
+    "url": "https://github.com/iron/iron"
+  },
+  {
+    "name": "sunng87/handlebars-iron — Handlebars-rust as an Iron web framework middleware. ",
+    "url": "https://github.com/sunng87/handlebars-iron"
+  },
+  {
+    "name": "Nickel — inspired by Express ",
+    "url": "https://github.com/nickel-org/nickel.rs/"
+  },
+  {
+    "name": "Ogeon/rustful — a RESTful web framework for Rust  ",
+    "url": "https://github.com/Ogeon/rustful"
+  },
+  {
+    "name": "Rocket — Rocket is web framework for Rust (nightly) with a focus on ease-of-use, expressability, and speed ",
+    "url": "https://github.com/SergioBenitez/Rocket"
+  },
+  {
+    "name": "Rustless — a REST-like API micro-framework inspired by Grape and Hyper ",
+    "url": "https://github.com/rustless/rustless"
+  },
+  {
+    "name": "sappworks/sapper — A lightweight web framework built on async hyper, implemented in Rust language. ",
+    "url": "https://github.com/sappworks/sapper"
+  },
+  {
+    "name": "tiny-http — Low level HTTP server library ",
+    "url": "https://github.com/tiny-http/tiny-http"
+  },
+  {
+    "name": "tomaka/rouille — Web framework in Rust ",
+    "url": "https://github.com/tomaka/rouille"
+  },
+  {
+    "name": "oltdaniel/zap",
+    "url": "https://github.com/oltdaniel/zap",
+    "description": "A lightning fast http framework for Rust "
+  },
+  {
+    "name": "actix/actix-web — A lightweight async web framework for Rust with websocket support ",
+    "url": "https://github.com/actix/actix-web"
+  },
+  {
+    "name": "mitum/sincere — A micro web framework for Rust(stable) based on hyper and multithreading. ",
+    "url": "https://github.com/mitum/sincere"
+  },
+  {
+    "name": "WebSocket\n\ncyderize/rust-websocket — a framework for dealing with WebSocket connections (both clients and servers) \nhousleyjk/ws-rs — lightweight, event-driven WebSockets for Rust \nsnapview/tungstenite-rs — Lightweight stream-based WebSocket implementation for Rust.\nactix/sockjs — SockJS server for Rust \nvityafx/urlshortener-rs [urlshortener] — A very simple urlshortener library for Rust. \n\n",
+    "url": "https://datatracker.ietf.org/doc/rfc6455/"
+  },
+  {
+    "name": "cyderize/rust-websocket — a framework for dealing with WebSocket connections (both clients and servers) ",
+    "url": "https://github.com/cyderize/rust-websocket"
+  },
+  {
+    "name": "housleyjk/ws-rs — lightweight, event-driven WebSockets for Rust ",
+    "url": "https://github.com/housleyjk/ws-rs"
+  },
+  {
+    "name": "snapview/tungstenite-rs — Lightweight stream-based WebSocket implementation for Rust.",
+    "url": "https://github.com/snapview/tungstenite-rs"
+  },
+  {
+    "name": "actix/sockjs — SockJS server for Rust ",
+    "url": "https://github.com/actix/sockjs"
+  },
+  {
+    "name": "vityafx/urlshortener-rs [urlshortener] — A very simple urlshortener library for Rust. ",
+    "url": "https://github.com/vityafx/urlshortener-rs"
+  },
+  {
+    "name": "cargonauts — A web framework intended for building maintainable, well-factored web apps.",
+    "url": "https://github.com/cargonauts-rs/cargonauts"
+  },
+  {
+    "name": "doublifyapis/toolkit-rust — Doublify API toolkit for Rust ",
+    "url": "https://github.com/doublifyapis/toolkit-rust"
+  },
+  {
+    "name": "pyros2097/rust-embed — A macro to embed static assets into the rust binary",
+    "url": "https://github.com/pyros2097/rust-embed"
+  },
+  {
+    "name": "sozu-proxy/sozu [sozu]",
+    "url": "https://github.com/sozu-proxy/sozu",
+    "description": "A HTTP reverse proxy. "
+  },
+  {
+    "name": "Keats/gutenberg [gutenberg] — An opinionated static site generator with everything built-in. ",
+    "url": "https://github.com/Keats/gutenberg"
+  },
+  {
+    "name": "cobalt-org/cobalt.rs",
+    "url": "https://github.com/cobalt-org/cobalt.rs",
+    "description": "Static site generator written in Rust "
+  },
+  {
+    "name": "FuGangqiang/mdblog.rs — Static site generator from markdown files.",
+    "url": "https://github.com/FuGangqiang/mdblog.rs"
+  },
+  {
+    "name": "quadrupleslap/leven [leven] — a simple, parallelized blog generator. ",
+    "url": "https://github.com/quadrupleslap/leven"
+  },
+  {
+    "name": "TeXitoi/benchmarksgame-rs — Rust implementations for the The Computer Language Benchmarks Game ",
+    "url": "https://github.com/TeXitoi/benchmarksgame-rs"
+  },
+  {
+    "name": "Learning systems programming with Rust — Presented by Julia Evans @ Rustconf 2016.",
+    "url": "https://speakerdeck.com/jvns/learning-systems-programming-with-rust"
+  },
+  {
+    "name": "Shipping a Solid Rust Crate — Presented by Michael Gattozzi @ RustConf 2017",
+    "url": "https://www.youtube.com/watch?v=t4CyEKb-ywA"
+  },
+  {
+    "name": "Rust: Hack Without Fear! — Presented by Nicholas Matsakis @ C++Now 2018",
+    "url": "https://www.youtube.com/watch?v=lO1z-7cuRYI"
+  },
+  {
+    "name": "Programming Community Curated Resources for Learning Rust",
+    "url": "https://hackr.io/tutorials/learn-rust",
+    "description": "A list of recommended resources voted by the programming community."
+  },
+  {
+    "name": "exercism.io — programming exercises that help you learn new concepts in Rust.",
+    "url": "http://exercism.io/languages/rust/about"
+  },
+  {
+    "name": "Idiomatic Rust —  A peer-reviewed collection of articles/talks/repos which teach idiomatic Rust.",
+    "url": "https://github.com/mre/idiomatic-rust"
+  },
+  {
+    "name": "Learning Rust With Entirely Too Many Linked Lists — in-depth exploration of Rust's memory management rules, through implementing a few different types of list structures.",
+    "url": "http://cglab.ca/%7Eabeinges/blah/too-many-lists/book/"
+  },
+  {
+    "name": "Rust by Example",
+    "url": "https://doc.rust-lang.org/rust-by-example/"
+  },
+  {
+    "name": "Rust Cookbook — a collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.",
+    "url": "https://rust-lang-nursery.github.io/rust-cookbook/"
+  },
+  {
+    "name": "rust-learning — a collection of useful resources to learn Rust",
+    "url": "https://github.com/ctjhoa/rust-learning"
+  },
+  {
+    "name": "Rustlings — small exercises to get you used to reading and writing Rust code",
+    "url": "https://github.com/rustlings/rustlings"
+  },
+  {
+    "name": "stdx — Learn these crates first as an extension to std",
+    "url": "https://github.com/brson/stdx"
+  },
+  {
+    "name": "University of Pennsylvania's Comp Sci Rust Programming Course",
+    "url": "http://cis198-2016s.github.io/schedule/"
+  },
+  {
+    "name": "New Rustacean — a podcast about learning Rust",
+    "url": "https://newrustacean.com"
+  },
+  {
+    "name": "RustCamp 2015 Talks",
+    "url": "http://confreaks.tv/events/rustcamp2015"
+  },
+  {
+    "name": "Rust Design Patterns",
+    "url": "https://github.com/rust-unofficial/patterns"
+  },
+  {
+    "name": "Rust Guidelines",
+    "url": "http://aturon.github.io/"
+  },
+  {
+    "name": "RustBooks — list of RustBooks",
+    "url": "https://github.com/sger/RustBooks"
+  }
+]

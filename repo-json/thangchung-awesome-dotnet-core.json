@@ -1,0 +1,2511 @@
+[
+  {
+    "name": "ASP.NET Core Documentation",
+    "url": "https://docs.asp.net/en/latest/",
+    "description": "The official ASP.NET Core documentation site."
+  },
+  {
+    "name": ".NET Core Documentation",
+    "url": "https://docs.microsoft.com/en-us/dotnet/articles/welcome",
+    "description": "Home of the technical documentation for .NET Core, C#, F# and Visual Basic, including basic concepts, getting started instructions, tutorials and samples."
+  },
+  {
+    "name": ".NET Core SDK",
+    "url": "https://www.microsoft.com/net/core",
+    "description": ".NET Core SDK is a general purpose development platform maintained by Microsoft and the .NET community on GitHub."
+  },
+  {
+    "name": ".NET Platform Standard",
+    "url": "https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md",
+    "description": "The differrent between the old version and the new version of .NET."
+  },
+  {
+    "name": "Introducing .NET Standard 2.0",
+    "url": "https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard",
+    "description": "The description of what will be going on for .NET Standard 2.0 and the roadmap for some missing parts of the current .NET Standard."
+  },
+  {
+    "name": "autorest",
+    "url": "https://github.com/Azure/autorest",
+    "description": "Swagger (OpenAPI) Specification code generator featuring C# and Razor templates. Supports C#, Java, Node.js, TypeScript, Python and Ruby. 4.5.x or above"
+  },
+  {
+    "name": "aspnet-api-versioning",
+    "url": "https://github.com/Microsoft/aspnet-api-versioning",
+    "description": "set of libraries which add service API versioning to ASP.NET Web API, OData with ASP.NET Web API, and ASP.NET Core."
+  },
+  {
+    "name": "AspNetCoreRateLimit",
+    "url": "https://github.com/stefanprodan/AspNetCoreRateLimit",
+    "description": "ASP.NET Core rate limiting middleware."
+  },
+  {
+    "name": "CondenserDotNet",
+    "url": "https://github.com/Drawaes/CondenserDotNet",
+    "description": "API Condenser / Reverse Proxy using Kestrel and Consul, Including light weight consul library."
+  },
+  {
+    "name": "Flurl",
+    "url": "https://github.com/tmenier/Flurl",
+    "description": "Fluent URL builder and testable HTTP for .NET http://tmenier.github.io/Flurl."
+  },
+  {
+    "name": "graphql-aspnetcore",
+    "url": "https://github.com/JuergenGutsch/graphql-aspnetcore",
+    "description": "ASP.NET Core MiddleWare to create a GraphQL end-point."
+  },
+  {
+    "name": "graphql-convention",
+    "url": "https://github.com/graphql-dotnet/conventions",
+    "description": "This library is a complementary layer on top that allows you to automatically wrap your .NET classes into GraphQL schema definitions using existing property getters and methods as field resolvers"
+  },
+  {
+    "name": "graphiql-dotnet",
+    "url": "https://github.com/JosephWoodward/graphiql-dotnet",
+    "description": "GraphiQL middleware for ASP.NET Core."
+  },
+  {
+    "name": "graphql-dotnetcore",
+    "url": "https://github.com/mkmarek/graphql-dotnetcore",
+    "description": "GraphQL for .NET Core based on https://github.com/graphql/graphql-js."
+  },
+  {
+    "name": "graphql-dotnet",
+    "url": "https://github.com/graphql-dotnet/graphql-dotnet",
+    "description": "GraphQL for .NET."
+  },
+  {
+    "name": "graphql-dotnet-server",
+    "url": "https://github.com/graphql-dotnet/server",
+    "description": "GraphQL for .NET - Subscription Transport WebSockets."
+  },
+  {
+    "name": "FSharp.Data.GraphQL",
+    "url": "https://github.com/fsprojects/FSharp.Data.GraphQL",
+    "description": "FSharp implementation of Facebook GraphQL query language https://fsprojects.github.io/FSharp.Data.GraphQL."
+  },
+  {
+    "name": "parser",
+    "url": "https://github.com/graphql-dotnet/parser",
+    "description": "A lexer and parser for GraphQL in .NET."
+  },
+  {
+    "name": "halcyon",
+    "url": "https://github.com/visualeyes/halcyon",
+    "description": "HAL implementation for ASP.NET."
+  },
+  {
+    "name": "JSON API .NET Core",
+    "url": "https://github.com/Research-Institute/json-api-dotnet-core",
+    "description": "Framework for building json:api compliant APIs with the goal of eliminating RESTful boilerplate."
+  },
+  {
+    "name": "LightNode",
+    "url": "https://github.com/neuecc/LightNode",
+    "description": "Micro RPC/REST Framework built on OWIN http://neuecc.github.io/LightNode."
+  },
+  {
+    "name": "NetCoreStack.Proxy",
+    "url": "https://github.com/NetCoreStack/Proxy",
+    "description": "The type-safe, distributed REST library for .NET Standard 2.0 (NetCoreStack Flying Proxy)"
+  },
+  {
+    "name": "NSwag",
+    "url": "https://github.com/NSwag/NSwag",
+    "description": "The Swagger API toolchain for .NET, Web API and TypeScript http://NSwag.org."
+  },
+  {
+    "name": "OData",
+    "url": "https://github.com/OData/WebApi/tree/feature/netcore",
+    "description": "The Open Data Protocol (OData) enables the creation of HTTP-based data services, which allow resources identified using Uniform Resource Identifiers (URIs) and defined in an abstract data model, to be published and edited by Web clients using simple HTTP messages."
+  },
+  {
+    "name": "refit",
+    "url": "https://github.com/paulcbetts/refit",
+    "description": "The automatic type-safe REST library for Xamarin and .NET."
+  },
+  {
+    "name": "RESTClient .NET",
+    "url": "https://bitbucket.org/MelbourneDeveloper/restclient-.net",
+    "description": "Simple REST Client for all .NET platforms."
+  },
+  {
+    "name": "RestEase",
+    "url": "https://github.com/canton7/RestEase",
+    "description": "Easy-to-use typesafe REST API client library, which is simple and customisable."
+  },
+  {
+    "name": "RestLess",
+    "url": "https://github.com/letsar/RestLess",
+    "description": "The automatic type-safe-reflectionless REST API client library for .Net Standard."
+  },
+  {
+    "name": "Swashbuckle",
+    "url": "https://github.com/domaindrivendev/Swashbuckle.AspNetCore",
+    "description": "Seamlessly adds a swagger to WebApi projects."
+  },
+  {
+    "name": "WebAPIContrib for ASP.NET CORE",
+    "url": "https://github.com/WebApiContrib/WebAPIContrib.Core",
+    "description": "Community Contributions for ASP.NET Core."
+  },
+  {
+    "name": "ASP.NET Boilerplate",
+    "url": "https://github.com/aspnetboilerplate/aspnetboilerplate",
+    "description": "ASP.NET Boilerplate is a general purpose application framework especially designed for new modern web applications. It uses already familiar tools and implements best practices arround them to provide you a SOLID development experience."
+  },
+  {
+    "name": "Aeron.NET",
+    "url": "https://github.com/AdaptiveConsulting/Aeron.NET",
+    "description": "Efficient reliable UDP unicast, UDP multicast, and IPC message transport - .NET port of Aeron."
+  },
+  {
+    "name": "akka.net",
+    "url": "https://github.com/akkadotnet/akka.net",
+    "description": "Toolkit and runtime for building highly concurrent, distributed, and fault tolerant event-driven applications on .NET & Mono."
+  },
+  {
+    "name": "ASP.NET MVC",
+    "url": "https://github.com/aspnet/Mvc",
+    "description": "Model view controller framework for building dynamic web sites with clean separation of concerns, including the merged MVC, Web API, and Web Pages w/ Razor."
+  },
+  {
+    "name": "Carter",
+    "url": "https://github.com/CarterCommunity/Carter",
+    "description": "Carter is a library that allows Nancy-esque routing for use with ASP.Net Core."
+  },
+  {
+    "name": "Chromely",
+    "url": "https://github.com/mattkol/Chromely",
+    "description": "Lightweight Alternative to Electron.NET, Electron for .NET/.NET Core."
+  },
+  {
+    "name": "CQRSlite",
+    "url": "https://github.com/gautema/CQRSlite",
+    "description": "Lightweight framework for helping writing CQRS and Eventsourcing applications in C#."
+  },
+  {
+    "name": "DotNetty",
+    "url": "https://github.com/Azure/DotNetty",
+    "description": "Port of netty, event-driven asynchronous network application framework."
+  },
+  {
+    "name": "ElectronNET",
+    "url": "https://github.com/ElectronNET/Electron.NET",
+    "description": "Build cross platform desktop apps with ASP.NET NET Core."
+  },
+  {
+    "name": "EmbedIO",
+    "url": "https://github.com/unosquare/embedio",
+    "description": "A tiny, cross-platform, module based web server for .NET Framework and .NET Core."
+  },
+  {
+    "name": "EventFlow",
+    "url": "https://github.com/eventflow/EventFlow",
+    "description": "Async/await first CQRS+ES and DDD framework for .NET."
+  },
+  {
+    "name": "ExtCore",
+    "url": "https://github.com/ExtCore",
+    "description": "Free, open source and cross-platform framework for creating modular and extendable web applications based on ASP.NET Core 1.0."
+  },
+  {
+    "name": "fission",
+    "url": "https://github.com/fission/fission",
+    "description": "Fast Serverless Functions for Kubernetes."
+  },
+  {
+    "name": "grpc",
+    "url": "https://github.com/grpc/grpc/tree/master/src/csharp",
+    "description": "Remote Procedure Calls (RPCs) provide a useful abstraction for building distributed applications and services. The libraries in this repository provide a concrete implementation of the gRPC protocol, layered over HTTP/2. These libraries enable communication between clients and servers using any combination of the supported languages."
+  },
+  {
+    "name": "Halibut",
+    "url": "https://github.com/OctopusDeploy/Halibut",
+    "description": "A secure communication stack for .NET using JSON-RPC over SSL."
+  },
+  {
+    "name": "MassTransit",
+    "url": "https://github.com/MassTransit/MassTransit",
+    "description": "Distributed Application Framework for .NET."
+  },
+  {
+    "name": "microdot",
+    "url": "https://github.com/gigya/microdot",
+    "description": "An open source .NET microservices framework."
+  },
+  {
+    "name": "Nancy",
+    "url": "https://github.com/NancyFx/Nancy",
+    "description": "Lightweight, low-ceremony, framework for building HTTP based services on .NET and Mono."
+  },
+  {
+    "name": "opencvsharp",
+    "url": "https://github.com/shimat/opencvsharp",
+    "description": ".NET Framework wrapper for OpenCV."
+  },
+  {
+    "name": "orleans",
+    "url": "https://github.com/dotnet/orleans",
+    "description": "Framework that provides a straight-forward approach to building distributed high-scale computing applications, without the need to learn and apply complex concurrency or other scaling patterns."
+  },
+  {
+    "name": "protoactor-dotnet",
+    "url": "https://github.com/AsynkronIT/protoactor-dotnet",
+    "description": "Ultra fast distributed actors for Golang and C# http://proto.actor."
+  },
+  {
+    "name": "RService.io",
+    "url": "https://github.com/Stoom/RService.IO",
+    "description": "ASP.Net Core RESTful microservice framework that focusing on speed and ease of use."
+  },
+  {
+    "name": "ServiceStack",
+    "url": "https://github.com/ServiceStack/ServiceStack",
+    "description": "Thoughtfully architected, obscenely fast, thoroughly enjoyable web services for all https://servicestack.net."
+  },
+  {
+    "name": "Steeltoe OSS",
+    "url": "https://github.com/SteelToeOSS",
+    "description": ".NET toolkit for common microservice patterns."
+  },
+  {
+    "name": ".NET Boxed",
+    "url": "https://github.com/Dotnet-Boxed/Templates",
+    "description": "Project templates with batteries included, providing the minimum amount of code required to get you going. Includes ASP.NET Core API and GraphQL Templates."
+  },
+  {
+    "name": "aspnet-core-react-template",
+    "url": "https://github.com/bradymholt/aspnet-core-react-template",
+    "description": "ASP.NET Core 2.0 / React SPA Template App."
+  },
+  {
+    "name": "AspNetCoreSpa",
+    "url": "https://github.com/asadsahi/AspNetCoreSpa",
+    "description": "Asp.Net Core 2+ & Angular 6 SPA with Angular CLI full featured application."
+  },
+  {
+    "name": "ASP.NET-MVC-Template",
+    "url": "https://github.com/NikolayIT/ASP.NET-MVC-Template",
+    "description": "A ready-to-use templates for ASP.NET MVC 5 and ASP.NET Core with repositories, services, models mapping and DI and StyleCop warnings fixed."
+  },
+  {
+    "name": "AddFeatureFolders",
+    "url": "https://github.com/OdeToCode/AddFeatureFolders",
+    "description": "Enable feature folders for MVC controllers and views in ASP.NET Core."
+  },
+  {
+    "name": "Angular Visual Studio Webpack Starter",
+    "url": "https://github.com/damienbod/AngularWebpackVisualStudio",
+    "description": "Template for Webpack, Visual Studio, ASP.NET Core and Angular. Both the client and the server side of the application are implemented inside one ASP.NET Core project which makes it easier to deploy."
+  },
+  {
+    "name": "JavaScriptServices",
+    "url": "https://github.com/aspnet/JavaScriptServices",
+    "description": "Microsoft ASP.NET Core JavaScript Services."
+  },
+  {
+    "name": "kendo-ui-core",
+    "url": "https://github.com/telerik/kendo-ui-core",
+    "description": "An HTML5, jQuery-based widget library for building modern web apps. http://www.telerik.com/kendo-ui."
+  },
+  {
+    "name": "QuickApp",
+    "url": "https://github.com/emonney/QuickApp",
+    "description": "ASP.NET Core / Angular4 startup project template with complete login, user and role management."
+  },
+  {
+    "name": "Scaffolder",
+    "url": "https://github.com/dncuug/scaffolder",
+    "description": "Lets you create extensible data-driven Web applications by automatically generated UI for each table in the database and  lets create a applications for viewing and editing data based on the schema of the data."
+  },
+  {
+    "name": "Serenity",
+    "url": "https://github.com/volkanceylan/Serenity",
+    "description": "Serenity is an ASP.NET MVC / TypeScript application platform designed to simplify and shorten development of data-centric business applications with a service based architecture."
+  },
+  {
+    "name": "Toucan",
+    "url": "https://github.com/mrellipse/toucan",
+    "description": "Boilerplate for building single page apps. Server is multi-project .Net Core solution designed around SOLID principles. Client is TypeScript 2, Vuejs 2, Vuex 2."
+  },
+  {
+    "name": "AspNet.Security.OpenIdConnect.Server",
+    "url": "https://github.com/aspnet-contrib/AspNet.Security.OpenIdConnect.Server",
+    "description": "OpenID Connect/OAuth2 server framework for OWIN/Katana and ASP.NET Core."
+  },
+  {
+    "name": "Auth0",
+    "url": "https://github.com/auth0/auth0.net",
+    "description": "Hosted, enterprise-grade platform for modern identity."
+  },
+  {
+    "name": "Identity",
+    "url": "https://github.com/aspnet/Identity",
+    "description": "ASP.NET Core Identity is the membership system for building ASP.NET Core web applications, including membership, login, and user data."
+  },
+  {
+    "name": "IdentityServer",
+    "url": "https://github.com/IdentityServer/IdentityServer4",
+    "description": "IdentityServer for ASP.NET Core 1.0 & 2.0"
+  },
+  {
+    "name": "IdentityServer4.EntityFramework",
+    "url": "https://github.com/IdentityServer/IdentityServer4.EntityFramework",
+    "description": "EntityFramework persistence layer"
+  },
+  {
+    "name": "IdentityServer4.MongoDB",
+    "url": "https://github.com/diogodamiani/IdentityServer4.MongoDB",
+    "description": "MongoDB persistence layer"
+  },
+  {
+    "name": "IdentityServer4.EntityFrameworkCore",
+    "url": "https://github.com/2020IP/TwentyTwenty.IdentityServer4.EntityFrameworkCore",
+    "description": "Entity Framework Core persistence layer"
+  },
+  {
+    "name": "IdentityServer4.Templates",
+    "url": "https://github.com/IdentityServer/IdentityServer4.Templates",
+    "description": "dotnet cli templates for IdentityServer4."
+  },
+  {
+    "name": "openiddict",
+    "url": "https://github.com/openiddict/openiddict-core",
+    "description": "Easy-to-use OpenID Connect server for ASP.NET Core."
+  },
+  {
+    "name": "stormpath-sdk",
+    "url": "https://github.com/stormpath/stormpath-sdk-dotnet",
+    "description": "Build simple, secure web applications with Stormpath and ASP.NET Core."
+  },
+  {
+    "name": "stuntman",
+    "url": "https://github.com/ritterim/stuntman",
+    "description": "Library for impersonating users during development leveraging ASP.NET Identity."
+  },
+  {
+    "name": "NBitcoin",
+    "url": "https://github.com/MetacoSA/NBitcoin",
+    "description": "Comprehensive Bitcoin library for the .NET framework."
+  },
+  {
+    "name": "NEO",
+    "url": "https://github.com/neo-project/neo",
+    "description": "Open Network For Smart Economy."
+  },
+  {
+    "name": "Nethereum",
+    "url": "https://github.com/Nethereum",
+    "description": "Bringing the love of Ethereum to .NET."
+  },
+  {
+    "name": "StratisBitcoinFullNode",
+    "url": "https://github.com/stratisproject/StratisBitcoinFullNode",
+    "description": "Simple and affordable end-to-end solutions for development, testing and deployment of native C# blockchain applications on the .Net framework."
+  },
+  {
+    "name": "NadekoBot",
+    "url": "https://github.com/Kwoth/NadekoBot",
+    "description": "Open source, general-purpose Discord chat bot written in C#."
+  },
+  {
+    "name": "cake-build",
+    "url": "https://github.com/cake-build/cake",
+    "description": "Cross platform build automation system. http://cakebuild.net."
+  },
+  {
+    "name": "CatLight",
+    "url": "https://catlight.io",
+    "description": "Status notifier for developers that monitors builds and tasks in the project. Built using .Net Core and Electron."
+  },
+  {
+    "name": "Colorful.Console",
+    "url": "https://github.com/tomakita/Colorful.Console",
+    "description": "Style your C# console output! http://colorfulconsole.com."
+  },
+  {
+    "name": "dotnet-docker",
+    "url": "https://github.com/dotnet/dotnet-docker",
+    "description": "The base Docker images for working with .NET Core and the .NET Core Tools."
+  },
+  {
+    "name": "GitInfo",
+    "url": "https://github.com/kzu/GitInfo",
+    "description": "Git and SemVer Info from MSBuild, C# and VB."
+  },
+  {
+    "name": "GitVersioning",
+    "url": "https://github.com/AArnott/Nerdbank.GitVersioning",
+    "description": "Stamp your assemblies and NuGet packages with a version from a single, simple version.txt file and include git commit IDs for non-official builds."
+  },
+  {
+    "name": "go-dotnet",
+    "url": "https://github.com/matiasinsaurralde/go-dotnet",
+    "description": "Go wrapper for the .NET Core Runtime."
+  },
+  {
+    "name": "Image2Docker",
+    "url": "https://github.com/docker/communitytools-image2docker-win",
+    "description": "PowerShell module which ports existing Windows application workloads to Docker."
+  },
+  {
+    "name": "LocalAppVeyor",
+    "url": "https://github.com/joaope/LocalAppVeyor",
+    "description": "Run your AppVeyor builds, locally."
+  },
+  {
+    "name": "msbuild",
+    "url": "https://github.com/Microsoft/msbuild",
+    "description": "The Microsoft Build Engine is a platform for building applications."
+  },
+  {
+    "name": "Nuke",
+    "url": "https://github.com/nuke-build/nuke",
+    "description": "Cross-platform build automation system."
+  },
+  {
+    "name": "Opserver",
+    "url": "https://github.com/opserver/Opserver",
+    "description": "Stack Exchange's Monitoring System."
+  },
+  {
+    "name": "vsts-agent",
+    "url": "https://github.com/Microsoft/vsts-agent/blob/master/README.md",
+    "description": "Visual Studio Team Services Build and Release Agent."
+  },
+  {
+    "name": "BundlerMinifier",
+    "url": "https://github.com/madskristensen/BundlerMinifier",
+    "description": "Visual Studio extension that let's you configure bundling and minification of JS, CSS and HTML files."
+  },
+  {
+    "name": "JavaScriptViewEngine",
+    "url": "https://github.com/pauldotknopf/JavaScriptViewEngine",
+    "description": "ASP.NET MVC ViewEngine for rendering markup in a JavaScript environment. Ideal for React and Angular server-side rendering."
+  },
+  {
+    "name": "Smidge",
+    "url": "https://github.com/Shazwazza/Smidge/",
+    "description": "Lightweight runtime CSS/JavaScript file minification, combination, compression & management library for ASP.NET Core."
+  },
+  {
+    "name": "Web Markup Minifier",
+    "url": "https://github.com/Taritsyn/WebMarkupMin",
+    "description": ".NET library that contains a set of markup minifiers. The objective of this project is to improve the performance of web applications by reducing the size of HTML, XHTML and XML code."
+  },
+  {
+    "name": "CacheManager",
+    "url": "https://github.com/MichaCo/CacheManager",
+    "description": "Open source caching abstraction layer for .NET written in C#. It supports various cache providers and implements many advanced features. http://cachemanager.michaco.net"
+  },
+  {
+    "name": "Foundatio",
+    "url": "https://github.com/exceptionless/Foundatio",
+    "description": "Pluggable foundation blocks for building distributed apps."
+  },
+  {
+    "name": "Microsoft Caching",
+    "url": "https://github.com/aspnet/Caching",
+    "description": "Libraries for in-memory caching and distributed caching."
+  },
+  {
+    "name": "Stack Exchange Redis",
+    "url": "https://github.com/StackExchange/StackExchange.Redis",
+    "description": "High performance general purpose redis client for .NET languages (C# etc)."
+  },
+  {
+    "name": "Blogifier.Core",
+    "url": "https://github.com/blogifierdotnet/Blogifier.Core",
+    "description": "ASP.NET applications to provide common blogging functionality."
+  },
+  {
+    "name": "Cofoundry",
+    "url": "https://github.com/cofoundry-cms/cofoundry",
+    "description": "Open source .NET Core CMS and modular application framework. Code-first, unobtrusive and extensible."
+  },
+  {
+    "name": "Lynicon",
+    "url": "https://github.com/jamesej/lyniconanc",
+    "description": "O/S ASP.Net Core/.Net Core CMS with paid for modules: JSON content, works with variety of data stores, c# content types"
+  },
+  {
+    "name": "Miniblog",
+    "url": "https://github.com/madskristensen/Miniblog.Core",
+    "description": "An ASP.NET Core blogging engine."
+  },
+  {
+    "name": "NetCoreCMS",
+    "url": "https://github.com/OnnoRokomSoftware/NetCoreCMS",
+    "description": "An Open source ASP.NET Core 2.0 CMS. It currently supports MySQL and planned to implement MSSQL, SQLite and PostgreSQL. Also it is a modular CMS supports theme, skin, custom layout, widgets, multiple language (En, BN)."
+  },
+  {
+    "name": "Orchard Core CMS",
+    "url": "https://github.com/OrchardCMS/OrchardCore",
+    "description": "Open Source Content Management System built with ASP.NET Core on top of a Modular and Extensible Application Framework."
+  },
+  {
+    "name": "Platformus",
+    "url": "https://github.com/Platformus",
+    "description": "Free, open source and cross-platform CMS based on ASP.NET Core 1.0 and ExtCore framework."
+  },
+  {
+    "name": "SimpleContent",
+    "url": "https://github.com/joeaudette/cloudscribe.SimpleContent",
+    "description": "Simple, yet flexible content and blog engine for ASP.NET Core that can work with or without a database."
+  },
+  {
+    "name": "Squidex",
+    "url": "https://github.com/Squidex/squidex",
+    "description": "Headless CMS, based on MongoDB, CQRS and Event Sourcing."
+  },
+  {
+    "name": "Weapsy",
+    "url": "https://github.com/Weapsy/Weapsy",
+    "description": "Open source ASP.NET Core CMS based on DDD and CQRS. It supports MSSQL, MySQL, SQLite and PostgreSQL out of the box."
+  },
+  {
+    "name": "Wyam",
+    "url": "https://github.com/Wyamio/Wyam",
+    "description": "Modular static content and static site generator."
+  },
+  {
+    "name": "awesome-static-analysis",
+    "url": "https://github.com/mre/awesome-static-analysis",
+    "description": "Curated list of static analysis tools, linters and code quality checkers for various programming languages."
+  },
+  {
+    "name": "DevSkim",
+    "url": "https://github.com/Microsoft/DevSkim",
+    "description": "A set of IDE plugins and rules that provide security \"linting\" capabilities."
+  },
+  {
+    "name": "RefactoringEssentials",
+    "url": "https://github.com/icsharpcode/RefactoringEssentials",
+    "description": "Refactoring Essentials for Visual Studio."
+  },
+  {
+    "name": "roslyn-analyzers",
+    "url": "https://github.com/dotnet/roslyn-analyzers",
+    "description": ".NET Compiler Platform (\"Roslyn\") Analyzers."
+  },
+  {
+    "name": "StyleCopAnalyzers",
+    "url": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers",
+    "description": "StyleCop rules using the .NET Compiler Platform."
+  },
+  {
+    "name": "AppMetrics",
+    "url": "https://github.com/alhardy/AppMetrics",
+    "description": "App Metrics is an open-source and cross-platform .NET library used to record and report metrics within an application and reports it's health."
+  },
+  {
+    "name": "Audit.NET",
+    "url": "https://github.com/thepirat000/Audit.NET",
+    "description": "Small framework to audit .NET object changes."
+  },
+  {
+    "name": "BenchmarkDotNet",
+    "url": "https://github.com/PerfDotNet/BenchmarkDotNet",
+    "description": "Powerful .NET library for benchmarking."
+  },
+  {
+    "name": "coverlet",
+    "url": "https://github.com/tonerdo/coverlet",
+    "description": "Cross platform code coverage library for .NET Core."
+  },
+  {
+    "name": "Foundatio",
+    "url": "https://github.com/exceptionless/Foundatio#metrics",
+    "description": "A common interface with in memory, redis, StatsD, and Metrics.NET implementations."
+  },
+  {
+    "name": "MiniCover",
+    "url": "https://github.com/lucaslorentz/minicover",
+    "description": "Minimalist Code Coverage Tool for .NET Core."
+  },
+  {
+    "name": "NBench",
+    "url": "https://github.com/petabridge/NBench",
+    "description": "Performance benchmarking and testing framework for .NET applications."
+  },
+  {
+    "name": "Nexogen.Libraries.Metrics",
+    "url": "https://github.com/nexogen-international/Nexogen.Libraries.Metrics",
+    "description": "Library for collecting application metrics in .NET and exporting them to Prometheus."
+  },
+  {
+    "name": "OpenCover",
+    "url": "https://github.com/OpenCover/opencover",
+    "description": "Code coverage tool for .NET 2 and above (WINDOWS OS only), support for 32 and 64 processes with both branch and sequence points."
+  },
+  {
+    "name": "prometheus-net",
+    "url": "https://github.com/prometheus-net/prometheus-net",
+    "description": ".NET Client for https://prometheus.io."
+  },
+  {
+    "name": "lz4net",
+    "url": "https://github.com/MiloszKrajewski/lz4net",
+    "description": "Ultra fast compression algorithm for all .NET platforms."
+  },
+  {
+    "name": "sharpcompress",
+    "url": "https://github.com/adamhathcock/sharpcompress",
+    "description": "Fully managed C# library to deal with many compression types and formats."
+  },
+  {
+    "name": "Fable",
+    "url": "https://github.com/fable-compiler/Fable",
+    "description": "F# to JavaScript Compiler."
+  },
+  {
+    "name": "fparsec",
+    "url": "https://github.com/stephan-tolksdorf/fparsec",
+    "description": "A parser combinatory library for F# and C#."
+  },
+  {
+    "name": "roslyn",
+    "url": "https://github.com/dotnet/roslyn",
+    "description": "The .NET Compiler Platform (\"Roslyn\") provides open-source C# and Visual Basic compilers with rich code analysis APIs."
+  },
+  {
+    "name": "peachpie",
+    "url": "https://github.com/peachpiecompiler/peachpie",
+    "description": "Open-source PHP compiler to .NET."
+  },
+  {
+    "name": "Pidgin",
+    "url": "https://github.com/benjamin-hodgson/Pidgin",
+    "description": "A lightweight, fast and flexible parsing library for C#, developed at Stack Overflow."
+  },
+  {
+    "name": "Sprache",
+    "url": "https://github.com/sprache/Sprache",
+    "description": "Tiny C# Monadic Parser Framework."
+  },
+  {
+    "name": "BCrypt.Net",
+    "url": "https://github.com/BcryptNet/bcrypt.net",
+    "description": "Bringing updates to the original bcrypt package"
+  },
+  {
+    "name": "BCrypt.NET-Core",
+    "url": "https://github.com/neoKushan/BCrypt.Net-Core",
+    "description": ".NET Core port of BCrypt.NET used to store passwords securely."
+  },
+  {
+    "name": "BouncyCastle PCL",
+    "url": "https://github.com/onovotny/BouncyCastle-PCL",
+    "description": "The Bouncy Castle Crypto package is a C# implementation of cryptographic algorithms and protocols."
+  },
+  {
+    "name": "DBreeze",
+    "url": "https://github.com/hhblaze/DBreeze",
+    "description": "C# .NET MONO NOSQL (key value store embedded) ACID multi-paradigm database management system."
+  },
+  {
+    "name": "JsonFlatFileDataStore",
+    "url": "https://github.com/ttu/json-flatfile-datastore",
+    "description": "Simple JSON flat file data store with support for typed and dynamic data."
+  },
+  {
+    "name": "LiteDB",
+    "url": "https://github.com/mbdavid/LiteDB",
+    "description": ".NET NoSQL Document Store in a single data file - http://www.litedb.org."
+  },
+  {
+    "name": "NoDb",
+    "url": "https://github.com/joeaudette/NoDb",
+    "description": "\"no database\" file system storage for .NET Core/ASP.NET Core because not every project needs a database."
+  },
+  {
+    "name": "marten",
+    "url": "https://github.com/JasperFx/marten",
+    "description": "Postgresql as a Document Database and Event Store for .NET Applications http://jasperfx.github.io/marten."
+  },
+  {
+    "name": "yessql",
+    "url": "https://github.com/sebastienros/yessql",
+    "description": ".NET document database working on any RDBMS."
+  },
+  {
+    "name": "cassandra-csharp-driver",
+    "url": "https://github.com/datastax/csharp-driver",
+    "description": "DataStax C# Driver for Apache Cassandra."
+  },
+  {
+    "name": "confluent-kafka-dotnet",
+    "url": "https://github.com/confluentinc/confluent-kafka-dotnet",
+    "description": "Confluent's Apache Kafka .NET client."
+  },
+  {
+    "name": "couchbase-lite-net",
+    "url": "https://github.com/couchbase/couchbase-lite-net",
+    "description": "A lightweight, document-oriented (NoSQL), syncable database engine for .NET."
+  },
+  {
+    "name": "MongoDB.Driver",
+    "url": "https://github.com/mongodb/mongo-csharp-driver",
+    "description": ".NET Driver for MongoDB."
+  },
+  {
+    "name": "mysql-connector-net",
+    "url": "https://github.com/mysql/mysql-connector-net/tree/8.0",
+    "description": "Connector/Net is a fully-managed ADO.NET driver for MySQL."
+  },
+  {
+    "name": "MySqlConnector",
+    "url": "https://github.com/mysql-net/MySqlConnector",
+    "description": "Async MySQL Connector for .NET and .NET Core."
+  },
+  {
+    "name": "neo4j-dotnet-driver",
+    "url": "https://github.com/neo4j/neo4j-dotnet-driver",
+    "description": "Neo4j Bolt driver for .NET."
+  },
+  {
+    "name": "Neo4jClient",
+    "url": "https://github.com/Readify/Neo4jClient",
+    "description": ".NET client binding for Neo4j."
+  },
+  {
+    "name": "npgsql",
+    "url": "https://github.com/npgsql/npgsql",
+    "description": ".NET data provider for PostgreSQL. It allows any program developed for .NET framework to access a PostgreSQL database server. It is implemented in 100% C# code. PostgreSQL versions since 9.1 are officially supported, others may work. http://www.npgsql.org"
+  },
+  {
+    "name": "ravendb",
+    "url": "https://github.com/ayende/ravendb/tree/v4.0",
+    "description": "Linq enabled document database for .NET."
+  },
+  {
+    "name": "RethinkDb.Driver",
+    "url": "https://github.com/bchavez/RethinkDb.Driver",
+    "description": "C#/.NET RethinkDB driver with 100% ReQL API coverage."
+  },
+  {
+    "name": "progaudi.tarantool",
+    "url": "https://github.com/progaudi/progaudi.tarantool",
+    "description": ".NET client for Tarantool NoSql database."
+  },
+  {
+    "name": "DbUp",
+    "url": "https://github.com/DbUp/DbUp",
+    "description": ".NET library that helps you to deploy changes to SQL Server databases. It tracks which SQL scripts have been run already, and runs the change scripts that are needed to get your database up to date."
+  },
+  {
+    "name": "NReco.PivotData",
+    "url": "https://www.nuget.org/packages/NReco.PivotData",
+    "description": "In-memory data cube with OLAP operations and PivotTable data model."
+  },
+  {
+    "name": "SharpRepository",
+    "url": "https://github.com/SharpRepository/SharpRepository",
+    "description": "SharpRepository is a generic repository written in C# which includes support for various relational, document and object databases including Entity Framework, RavenDB, MongoDb and Db4o. SharpRepository includes Xml and InMemory repository implementations as well."
+  },
+  {
+    "name": "Exceptionless.DateTimeExtensions",
+    "url": "https://github.com/exceptionless/Exceptionless.DateTimeExtensions",
+    "description": "DateTimeRange, Business Day and various DateTime, DateTimeOffset, TimeSpan extension methods."
+  },
+  {
+    "name": "FluentDateTime",
+    "url": "https://github.com/FluentDateTime/FluentDateTime",
+    "description": "Allows you to write cleaner DateTime expressions and operation. Partially inspired by Ruby DateTime Extensions."
+  },
+  {
+    "name": "nodatime",
+    "url": "https://github.com/nodatime/nodatime",
+    "description": "Better date and time API for .NET http://nodatime.org."
+  },
+  {
+    "name": "aspnetcore-health",
+    "url": "https://github.com/lurumad/aspnetcore-health",
+    "description": "Enables load balancers to monitor the status of deployed Web applications."
+  },
+  {
+    "name": "Foundatio",
+    "url": "https://github.com/exceptionless/Foundatio",
+    "description": "Pluggable foundation blocks for building distributed apps."
+  },
+  {
+    "name": "Rafty",
+    "url": "https://github.com/ThreeMammals/Rafty",
+    "description": "RAFT consensus in .NET Core."
+  },
+  {
+    "name": "Obvs",
+    "url": "https://github.com/christopherread/Obvs",
+    "description": "An observable microservice bus .NET library that wraps the underlying transport in simple Rx based interfaces."
+  },
+  {
+    "name": "Ocelot",
+    "url": "https://github.com/ThreeMammals/Ocelot",
+    "description": "API Gateway created using .NET Core."
+  },
+  {
+    "name": "OpenTracing",
+    "url": "https://github.com/opentracing/opentracing-csharp",
+    "description": "Vendor-neutral APIs and instrumentation for distributed tracing."
+  },
+  {
+    "name": "Polly",
+    "url": "https://github.com/App-vNext/Polly",
+    "description": ".NET 3.5 / 4.0 / 4.5 / PCL library that allows developers to express transient exception and fault handling policies such as Retry, Retry Forever, Wait and Retry or Circuit Breaker in a fluent manner."
+  },
+  {
+    "name": "SimplCommerce",
+    "url": "https://github.com/simplcommerce/SimplCommerce",
+    "description": "Super simple ecommerce system built on .NET Core."
+  },
+  {
+    "name": "Stripe",
+    "url": "https://github.com/ServiceStack/Stripe",
+    "description": "Typed .NET clients for stripe.com REST APIs."
+  },
+  {
+    "name": "Demystifier",
+    "url": "https://github.com/benaadams/Ben.Demystifier",
+    "description": "High performance understanding for stack traces (Make error logs more productive)."
+  },
+  {
+    "name": "Exceptionless",
+    "url": "https://github.com/exceptionless/Exceptionless.Net",
+    "description": "Exceptionless .NET Client"
+  },
+  {
+    "name": "GlobalExceptionHandlerDotNet",
+    "url": "https://github.com/JosephWoodward/GlobalExceptionHandlerDotNet",
+    "description": "GlobalExceptionHandlerDotNet allows you to configure exception handling as a convention with your ASP.NET Core application pipeline as opposed to explicitly handling them within each controller action."
+  },
+  {
+    "name": "CSharpFunctionalExtensions",
+    "url": "https://github.com/vkhorikov/CSharpFunctionalExtensions",
+    "description": "Functional Extensions for C#."
+  },
+  {
+    "name": "DynamicData",
+    "url": "https://github.com/RolandPheasant/DynamicData",
+    "description": "Reactive collections based on Rx.NET."
+  },
+  {
+    "name": "echo-process",
+    "url": "https://github.com/louthy/echo-process",
+    "description": "Actor library for C# with additional modules that support persistence to Redis, as well as JS integration."
+  },
+  {
+    "name": "FsCheck",
+    "url": "https://github.com/fscheck/FsCheck",
+    "description": "Random Testing for .NET."
+  },
+  {
+    "name": "Giraffe",
+    "url": "https://github.com/dustinmoris/Giraffe",
+    "description": "A native functional ASP.NET Core web framework for F# developers."
+  },
+  {
+    "name": "language-ext",
+    "url": "https://github.com/louthy/language-ext",
+    "description": "C# functional language extensions and 'Erlang like' concurrency system."
+  },
+  {
+    "name": "LaYumba.Functional",
+    "url": "https://github.com/la-yumba/functional-csharp-code",
+    "description": "Utility library for programming functionally in C#."
+  },
+  {
+    "name": "NetMQ.ReactiveExtensions",
+    "url": "https://github.com/NetMQ/NetMQ.ReactiveExtensions",
+    "description": "Effortlessly send messages anywhere on the network using Reactive Extensions (RX). Transport protocol is ZeroMQ."
+  },
+  {
+    "name": "Optional",
+    "url": "https://github.com/nlkl/Optional",
+    "description": "A robust option type for C#."
+  },
+  {
+    "name": "reactive-streams-dotnet",
+    "url": "https://github.com/reactive-streams/reactive-streams-dotnet",
+    "description": "Reactive Streams for .NET."
+  },
+  {
+    "name": "ReactiveUI",
+    "url": "https://github.com/reactiveui/ReactiveUI",
+    "description": "A MVVM framework that integrates with the Reactive Extensions for .NET to create elegant, testable User Interfaces that run on any mobile or desktop platform."
+  },
+  {
+    "name": "Rx.NET",
+    "url": "https://github.com/Reactive-Extensions/Rx.NET",
+    "description": "The Reactive Extensions for .NET."
+  },
+  {
+    "name": "Qactive",
+    "url": "https://github.com/RxDave/Qactive",
+    "description": "Reactive queryable observable framework. 4.x.x or above"
+  },
+  {
+    "name": "sodium",
+    "url": "https://github.com/SodiumFRP/sodium/tree/master/c%23",
+    "description": "Functional Reactive Programming (FRP) Library. 4.x.x or above"
+  },
+  {
+    "name": "GLFWDotNet",
+    "url": "https://github.com/smack0007/GLFWDotNet",
+    "description": ".NET bindings for GLFW."
+  },
+  {
+    "name": "ImageProcessor",
+    "url": "https://github.com/JimBobSquarePants/ImageProcessor",
+    "description": "A fluent wrapper around System.Drawing for the processing of image files http://imageprocessor.org. 4.5.x or above"
+  },
+  {
+    "name": "ImageSharp",
+    "url": "https://github.com/SixLabors/ImageSharp",
+    "description": "Cross-platform library for processing of image files written in C#."
+  },
+  {
+    "name": "Magick.NET",
+    "url": "https://github.com/dlemstra/Magick.NET",
+    "description": "The .NET library for ImageMagick."
+  },
+  {
+    "name": "QRCoder",
+    "url": "https://github.com/codebude/QRCoder",
+    "description": "A pure C# Open Source QR Code implementation."
+  },
+  {
+    "name": "SharpBgfx",
+    "url": "https://github.com/MikePopoloski/SharpBgfx",
+    "description": "C# bindings for the bgfx graphics library."
+  },
+  {
+    "name": "Structure.Sketching",
+    "url": "https://github.com/JaCraig/Structure.Sketching",
+    "description": "Image processing library for use in .NET applications that supports .NET Core."
+  },
+  {
+    "name": "veldrid",
+    "url": "https://github.com/mellinoe/veldrid",
+    "description": "A low-level, hardware-accelerated 3D graphics library for .NET."
+  },
+  {
+    "name": "Avalonia",
+    "url": "https://github.com/AvaloniaUI/Avalonia",
+    "description": "A multi-platform .NET UI framework (formerly known as Perspex)."
+  },
+  {
+    "name": "AvaloniaEdit",
+    "url": "https://github.com/AvaloniaUI/AvaloniaEdit/",
+    "description": "The Avalonia-based text editor component forked from AvalonEdit"
+  },
+  {
+    "name": "WinApi",
+    "url": "https://github.com/prasannavl/WinApi",
+    "description": "A simple, direct, ultra-thin CLR library for high-performance Win32 Native Interop with automation, windowing, DirectX, OpenGL and Skia helpers."
+  },
+  {
+    "name": "Mono",
+    "url": "https://github.com/mono/monodevelop",
+    "description": "MonoDevelop enables developers to quickly write desktop and web applications on Linux, Windows and Mac OS X. It also makes it easy for developers to port .NET applications created with Visual Studio to Linux and Mac OS X maintaining a single code base for all platforms."
+  },
+  {
+    "name": "rider",
+    "url": "https://www.jetbrains.com/rider/",
+    "description": "Cross-platform C# IDE based on the IntelliJ platform and ReSharper."
+  },
+  {
+    "name": "Omnisharp",
+    "url": "http://www.omnisharp.net/",
+    "description": "Family of Open Source projects, each with one goal: To enable a great .NET experience in YOUR editor of choice."
+  },
+  {
+    "name": "SharpDevelop",
+    "url": "https://github.com/icsharpcode/SharpDevelop",
+    "description": "SharpDevelop is a free Integrated Development Environment (IDE) for C#, VB.NET, Boo, IronPython, IronRuby and F# projects on Microsoft's .NET platform. It is written (almost) entirely in C#, and comes with features you would expect in an IDE plus a few more."
+  },
+  {
+    "name": "Visual Studio Code",
+    "url": "https://github.com/Microsoft/vscode",
+    "description": "New type of tool that combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. Code provides comprehensive editing and debugging support, an extensibility model, and lightweight integration with existing tools."
+  },
+  {
+    "name": "Visual Studio Community",
+    "url": "https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx",
+    "description": "Free editor for individual developers, open source projects, academic research, education, and small professional teams."
+  },
+  {
+    "name": "Localization",
+    "url": "https://github.com/aspnet/Localization",
+    "description": "Localization abstractions and implementations for ASP.NET Core applications."
+  },
+  {
+    "name": "AutoDI",
+    "url": "https://github.com/Keboo/AutoDI",
+    "description": "Super-fast compile-time dependency injection using IL weaving."
+  },
+  {
+    "name": "Autofac",
+    "url": "https://github.com/autofac/Autofac",
+    "description": "Addictive .NET IoC container."
+  },
+  {
+    "name": "Castle.Windsor Castle Windsor is a best of breed, mature Inversion of Control container available for .NET.",
+    "url": "https://github.com/castleproject/Windsor"
+  },
+  {
+    "name": "DryIoc",
+    "url": "https://bitbucket.org/dadhi/dryioc",
+    "description": "Fast, small, full-featured IoC Container for .NET."
+  },
+  {
+    "name": "LightInject",
+    "url": "https://github.com/seesharper/LightInject",
+    "description": "Ultra lightweight IoC container http://www.lightinject.net."
+  },
+  {
+    "name": "SimpleInjector",
+    "url": "https://github.com/simpleinjector/SimpleInjector",
+    "description": "Easy, flexible, and fast Dependency Injection library that promotes best practice to steer developers towards the pit of success."
+  },
+  {
+    "name": "Stashbox",
+    "url": "https://github.com/z4kn4fein/stashbox",
+    "description": "A lightweight, portable dependency injection framework for .NET based solutions."
+  },
+  {
+    "name": "StructureMap",
+    "url": "https://github.com/structuremap/structuremap",
+    "description": "Dependency Injection/Inversion of Control tool for .NET."
+  },
+  {
+    "name": "common-logging",
+    "url": "https://github.com/net-commons/common-logging",
+    "description": "Portable logging abstraction for .NET http://net-commons.github.io/common-logging."
+  },
+  {
+    "name": "dnxcore-logging-logstash",
+    "url": "https://github.com/jvandevelde/dnxcore-logging-logstash",
+    "description": "Logstash logging extension for .NET Core applications with UDP and Redis transports."
+  },
+  {
+    "name": "Exceptionless",
+    "url": "https://github.com/exceptionless/Exceptionless.Net",
+    "description": "Exceptionless .NET Client"
+  },
+  {
+    "name": "Foundatio",
+    "url": "https://github.com/exceptionless/Foundatio#logging",
+    "description": "A fluent logging api that can be used to log messages throughout your application."
+  },
+  {
+    "name": "LibLog",
+    "url": "https://github.com/damianh/LibLog",
+    "description": "Single file for you to either copy/paste or install via nuget, into your library/ framework/ application to provide a logging abstraction."
+  },
+  {
+    "name": "log4net",
+    "url": "https://github.com/apache/logging-log4net",
+    "description": "log4net is a port of the excellent Apache log4j™ framework to the Microsoft® .NET runtime."
+  },
+  {
+    "name": "NLog",
+    "url": "https://github.com/NLog/NLog",
+    "description": "Advanced .NET, Silverlight and Xamarin Logging."
+  },
+  {
+    "name": "Q42.Logging.ApplicationInsights",
+    "url": "https://github.com/Q42/Q42.Logging.ApplicationInsights",
+    "description": "Log appender for the build in ASP.NET Core logging to send all logs to Application Insights."
+  },
+  {
+    "name": "serilog",
+    "url": "https://github.com/serilog/serilog",
+    "description": "Simple .NET logging with fully-structured events."
+  },
+  {
+    "name": "Serilog.Exceptions",
+    "url": "https://github.com/RehanSaeed/Serilog.Exceptions",
+    "description": "Serilog.Exceptions is an add-on to Serilog to log exception details and custom properties that are not output in Exception.ToString()."
+  },
+  {
+    "name": "SEQ",
+    "url": "https://getseq.net",
+    "description": "Seq collects data over HTTP, while your applications use the best available structured logging APIs for your platform."
+  },
+  {
+    "name": "Accord",
+    "url": "https://github.com/accord-net/framework",
+    "description": "Machine learning, computer vision, statistics and general scientific computing for .NET."
+  },
+  {
+    "name": "ML.NET",
+    "url": "https://github.com/dotnet/machinelearning",
+    "description": "Cross-platform open-source machine learning framework which makes machine learning accessible to .NET developers http://dot.net/ml."
+  },
+  {
+    "name": "Spreads",
+    "url": "https://github.com/Spreads/Spreads/",
+    "description": "Series and Panels for Real-time and Exploratory Analysis of Data Streams."
+  },
+  {
+    "name": "TensorFlowSharp",
+    "url": "https://github.com/migueldeicaza/TensorFlowSharp",
+    "description": "TensorFlow API for .NET languages."
+  },
+  {
+    "name": "MailBody",
+    "url": "https://github.com/doxakis/MailBody",
+    "description": "Create transactional email with a fluent interface (.NET)."
+  },
+  {
+    "name": "MailKit",
+    "url": "https://github.com/jstedfast/MailKit",
+    "description": "Cross-platform .NET library for IMAP, POP3, and SMTP."
+  },
+  {
+    "name": "MailMergeLib",
+    "url": "https://github.com/axuno/MailMergeLib",
+    "description": "SMTP mail client library which provides comfortable mail merge capabilities for text, inline images and attachments, as well as good throughput and fault tolerance for sending mail messages."
+  },
+  {
+    "name": "MimeKit",
+    "url": "https://github.com/jstedfast/MimeKit",
+    "description": "Cross-platform .NET MIME creation and parser library with support for S/MIME, PGP, DKIM, TNEF and Unix mbox spools."
+  },
+  {
+    "name": "PreMailer.Net",
+    "url": "https://github.com/milkshakesoftware/PreMailer.Net/tree/dotnet-core",
+    "description": "C# library that moves your stylesheets to inline style attributes, for maximum compatibility with E-mail clients."
+  },
+  {
+    "name": "SendGrid Client",
+    "url": "https://github.com/0xdeafcafe/sendgrid-dotnet",
+    "description": "C# library for the SendGrid v3 mail endpoint."
+  },
+  {
+    "name": "StrongGrid",
+    "url": "https://github.com/Jericho/StrongGrid",
+    "description": "Client for SendGrid's v3 API. Not only allows you to send emails, but also allows you to bulk import contacts, manage lists and segments, create custom fields for your lists, etc. Also includes a parser for SendGrid Webhooks."
+  },
+  {
+    "name": "UnitConversion",
+    "url": "https://github.com/Stratajet/UnitConversion",
+    "description": "Expansible Unit Conversion Library for .NET Core and .NET Framework."
+  },
+  {
+    "name": "AngleSharp",
+    "url": "https://github.com/AngleSharp/AngleSharp",
+    "description": "The ultimate angle brackets parser library. It parses HTML5, MathML, SVG and CSS to construct a DOM based on the official W3C specification. Comparable to beautifulsoup4 of python."
+  },
+  {
+    "name": "AutoMapper",
+    "url": "https://github.com/AutoMapper/AutoMapper",
+    "description": "Convention-based object-object mapper in .NET."
+  },
+  {
+    "name": "Castle.Core",
+    "url": "https://github.com/castleproject/Core",
+    "description": "Castle Core, including Castle DynamicProxy, Logging Services and DictionaryAdapter http://www.castleproject.org."
+  },
+  {
+    "name": "Chessie",
+    "url": "https://github.com/fsprojects/Chessie",
+    "description": "Railway-oriented programming for .NET http://fsprojects.github.io/Chessie."
+  },
+  {
+    "name": "CliWrap",
+    "url": "https://github.com/Tyrrrz/CliWrap",
+    "description": "Wrapper for command line interfaces."
+  },
+  {
+    "name": "CommonMark.NET",
+    "url": "https://github.com/Knagis/CommonMark.NET",
+    "description": "The implementation of CommonMark specification in C# for converting Markdown documents to HTML."
+  },
+  {
+    "name": "ConsoleTableExt",
+    "url": "https://github.com/minhhungit/ConsoleTableExt",
+    "description": "Fluent library to create table for .NET console application."
+  },
+  {
+    "name": "datatables",
+    "url": "https://github.com/ALMMa/datatables.aspnet/tree/dev",
+    "description": "Microsoft ASP.NET server-side support and helpers for jQuery DataTables."
+  },
+  {
+    "name": "DinkToPdf",
+    "url": "https://github.com/rdvojmoc/DinkToPdf",
+    "description": "C# .NET Core wrapper for wkhtmltopdf library that uses Webkit engine to convert HTML pages to PDF."
+  },
+  {
+    "name": "Dotnet outdated",
+    "url": "https://github.com/jerriep/dotnet-outdated",
+    "description": "A .NET Core global tool to display outdated NuGet packages in a project."
+  },
+  {
+    "name": "Dotnet Script",
+    "url": "https://github.com/filipw/dotnet-script",
+    "description": "Run C# scripts from the .NET CLI."
+  },
+  {
+    "name": "Dotnet Serve",
+    "url": "https://github.com/natemcmaster/dotnet-serve",
+    "description": "Simple command-line HTTP server for .NET Core CLI."
+  },
+  {
+    "name": "Enums.NET",
+    "url": "https://github.com/TylerBrinkley/Enums.NET",
+    "description": "Enums.NET is a high-performance type-safe .NET enum utility library"
+  },
+  {
+    "name": "FluentFTP",
+    "url": "https://github.com/robinrodricks/FluentFTP/",
+    "description": "FTP and FTPS client, with extensive FTP commands, SSL/TLS connections, hashing/checksums and more."
+  },
+  {
+    "name": "HdrHistogram.NET",
+    "url": "https://github.com/HdrHistogram/HdrHistogram.NET",
+    "description": "High Dynamic Range (HDR) Histogram."
+  },
+  {
+    "name": "httpclient-interception",
+    "url": "https://github.com/justeat/httpclient-interception",
+    "description": ".NET Standard library for intercepting server-side HTTP dependencies."
+  },
+  {
+    "name": "Humanizer",
+    "url": "https://github.com/Humanizr/Humanizer",
+    "description": "Humanizer meets all your .NET needs for manipulating and displaying strings, enums, dates, times, timespans, numbers and quantities."
+  },
+  {
+    "name": "Humidifier",
+    "url": "https://github.com/jakejscott/Humidifier",
+    "description": "Write and maintain AWS Cloudformation templates using C#."
+  },
+  {
+    "name": "LibSass Host",
+    "url": "https://github.com/Taritsyn/LibSassHost",
+    "description": ".NET wrapper around the libSass library with the ability to support a virtual file system."
+  },
+  {
+    "name": "markdig",
+    "url": "https://github.com/lunet-io/markdig",
+    "description": "Fast, powerfull, CommonMark compliant, extensible Markdown processor for .NET."
+  },
+  {
+    "name": "NReco.LambdaParser",
+    "url": "https://github.com/nreco/lambdaparser",
+    "description": "Parses string expressions (formulas, methods calls, conditions) to LINQ expression tree that can be compiled to lambda and evaluated."
+  },
+  {
+    "name": "readline",
+    "url": "https://github.com/tsolarin/readline",
+    "description": "Pure C# GNU-Readline like library for .NET/.NET Core."
+  },
+  {
+    "name": "Relinq",
+    "url": "https://github.com/re-motion/Relinq",
+    "description": "With re-linq, it's now easier than ever to create full-featured LINQ providers."
+  },
+  {
+    "name": "ReverseMarkdown",
+    "url": "https://github.com/mysticmind/reversemarkdown-net",
+    "description": "Html to Markdown converter library."
+  },
+  {
+    "name": "PdfReport.Core",
+    "url": "https://github.com/VahidN/PdfReport.Core",
+    "description": "PdfReport.Core is a code first reporting engine, which is built on top of the iTextSharp.LGPLv2.Core and EPPlus.Core libraries."
+  },
+  {
+    "name": "Scientist",
+    "url": "https://github.com/github/Scientist.net",
+    "description": ".NET library for carefully refactoring critical paths. It's a port of GitHub's Ruby Scientist library."
+  },
+  {
+    "name": "Scrutor",
+    "url": "https://github.com/khellang/Scrutor",
+    "description": "Assembly scanning extensions for Microsoft.Extensions.DependencyInjection."
+  },
+  {
+    "name": "SmartFormat.NET",
+    "url": "https://github.com/scottrippey/SmartFormat.NET",
+    "description": "An extensible replacement for string.Format."
+  },
+  {
+    "name": "Trady",
+    "url": "https://github.com/lppkarl/Trady",
+    "description": "Handy library for computing technical indicators, and it targets to be an automated trading system that provides stock data feeding, indicator computing, strategy building and automatic trading."
+  },
+  {
+    "name": "System.Linq.Dynamic.Core",
+    "url": "https://github.com/StefH/System.Linq.Dynamic.Core",
+    "description": "The .NET Standard (.NET Core) version from the System Linq Dynamic functionality."
+  },
+  {
+    "name": "FluentValidation",
+    "url": "https://github.com/JeremySkinner/FluentValidation",
+    "description": "Small validation library for .NET that uses a fluent interface and lambda expressions for building validation rules."
+  },
+  {
+    "name": "Valit",
+    "url": "https://github.com/valit-stack/Valit",
+    "description": "A dead simple validation for .NET Core. No more if-statements all around your code. Write nice and clean fluent validators instead!"
+  },
+  {
+    "name": "warden-stack",
+    "url": "https://github.com/warden-stack",
+    "description": "\"health checks\" for your applications, resources and infrastructure. Keep your Warden on the watch."
+  },
+  {
+    "name": "Xabe.FFmpeg",
+    "url": "https://github.com/tomaszzmuda/Xabe.FFmpeg",
+    "description": ".NET Standard wrapper for FFmpeg. It allows to process media without know how FFmpeg works, and can be used to pass customized arguments to FFmpeg from C# application."
+  },
+  {
+    "name": "YoutubeExplode",
+    "url": "https://github.com/Tyrrrz/YoutubeExplode",
+    "description": "Ultimate library for extracting metadata and downloading Youtube videos and playlists."
+  },
+  {
+    "name": "CurlThin",
+    "url": "https://github.com/stil/CurlThin",
+    "description": "Lightweight cURL binding library for C# with support for multiple simultaneous transfers through curl_multi interface."
+  },
+  {
+    "name": "NETStandard.HttpListener",
+    "url": "https://github.com/StefH/NETStandard.HttpListener",
+    "description": "HttpListener for .NET Core (NETStandard)."
+  },
+  {
+    "name": "Entity Framework Core",
+    "url": "https://github.com/aspnet/EntityFramework",
+    "description": "Familiar developer experience to previous versions of EF, including LINQ, POCO, and Code First support."
+  },
+  {
+    "name": "EntityFramework-Plus",
+    "url": "https://github.com/zzzprojects/EntityFramework-Plus",
+    "description": "Entity Framework Utilities | Bulk Operations | Batch Delete | Batch Update | Query Cache | Query Filter | Query Future | Query Include | Audit."
+  },
+  {
+    "name": "EntityFramework.Triggers",
+    "url": "https://github.com/NickStrupat/EntityFramework.Triggers",
+    "description": "Trigger events for EF."
+  },
+  {
+    "name": "EntityFramework.Rx",
+    "url": "https://github.com/NickStrupat/EntityFramework.Rx",
+    "description": "Reactive hot observables of your EF operations."
+  },
+  {
+    "name": "EntityFramework.PrimaryKey",
+    "url": "https://github.com/NickStrupat/EntityFramework.PrimaryKey",
+    "description": "Easily get the primary key of any entity (including composite keys)."
+  },
+  {
+    "name": "EntityFramework.TypedOriginalValues",
+    "url": "https://github.com/NickStrupat/EntityFramework.TypedOriginalValues",
+    "description": "Get a proxy object of the orginal values of your entity (typed access to Property(\"...\").OriginalValue)."
+  },
+  {
+    "name": "EntityFramework.VersionedProperties",
+    "url": "https://github.com/NickStrupat/EntityFramework.VersionedProperties",
+    "description": "Classes which auto-magically keep an audit history of the changes to the specified property."
+  },
+  {
+    "name": "LINQKit",
+    "url": "https://github.com/scottksmith95/LINQKit",
+    "description": "A free set of extensions for LINQ to SQL and Entity Framework power users."
+  },
+  {
+    "name": "Pomelo.EntityFrameworkCore.MySql",
+    "url": "https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql",
+    "description": "Entity Framework Core provider for MySql built on top of mysql-net/MySqlConnector."
+  },
+  {
+    "name": "Dapper",
+    "url": "https://github.com/StackExchange/Dapper",
+    "description": "Simple object mapper for .NET."
+  },
+  {
+    "name": "Dapper-FluentMap",
+    "url": "https://github.com/henkmollema/Dapper-FluentMap",
+    "description": "Provides a simple API to fluently map POCO properties to database columns when using Dapper."
+  },
+  {
+    "name": "Dommel",
+    "url": "https://github.com/henkmollema/Dommel",
+    "description": "Simple CRUD operations for Dapper."
+  },
+  {
+    "name": "MicroOrm.Dapper.Repositories",
+    "url": "https://github.com/phnx47/MicroOrm.Dapper.Repositories",
+    "description": "CRUD for Dapper."
+  },
+  {
+    "name": "Limebean",
+    "url": "https://nick-lucas.github.io/LimeBean/",
+    "description": "Hybrid-ORM, designed to be simple to use and not totally hide SQL, while having all the nice things you expect from an ORM. Inspired by RedBeanPHP."
+  },
+  {
+    "name": "LINQ to DB (linq2db)",
+    "url": "https://linq2db.github.io/",
+    "description": "The fastest LINQ database access library offering a simple, lightweight, fast, and type-safe layer between your POCO objects and your database for more than 10 database engines with full SQL support."
+  },
+  {
+    "name": "NEventStore",
+    "url": "https://github.com/NEventStore/NEventStore/tree/feature/dotnetcore",
+    "description": "Persistence library used to abstract different storage implementations when using event sourcing as storage mechanism. This library is developed with a specific focus on DDD/CQRS applications."
+  },
+  {
+    "name": "NPoco",
+    "url": "https://github.com/schotime/NPoco",
+    "description": "Simple microORM that maps the results of a query onto a POCO object. Project based on Schotime's branch of PetaPoco."
+  },
+  {
+    "name": "NReco.Data",
+    "url": "https://github.com/nreco/data",
+    "description": "Lightweight provider-independent DAL for SQL commands generation, CRUD operations and simple POCO mapping."
+  },
+  {
+    "name": "ServiceStack.OrmLite",
+    "url": "https://github.com/ServiceStack/ServiceStack.OrmLite",
+    "description": "Light, simple and fast convention-based POCO ORM."
+  },
+  {
+    "name": "SqlFu",
+    "url": "https://github.com/sapiens/SqlFu",
+    "description": "Fast and versatile Micro-ORM."
+  },
+  {
+    "name": "SQLStreamStore",
+    "url": "https://github.com/SQLStreamStore/SQLStreamStore",
+    "description": "Stream Store library targeting SQL based implementations for .NET."
+  },
+  {
+    "name": "Glimpse",
+    "url": "https://github.com/Glimpse/Glimpse.Prototype",
+    "description": "Lightweight, open-source, real-time diagnostics and insights profiler for .NET. Unstable version"
+  },
+  {
+    "name": "MiniProfiler",
+    "url": "https://github.com/MiniProfiler/dotnet",
+    "description": "A simple but effective mini-profiler for ASP.NET websites."
+  },
+  {
+    "name": "SqlKata",
+    "url": "https://github.com/sqlkata/querybuilder",
+    "description": "Elegant Sql Query Builder, that supports complex queries, joins, sub queries, nested where conditions, vendor engine targets and more"
+  },
+  {
+    "name": "emitter",
+    "url": "https://emitter.io/",
+    "description": "Free open source real-time messaging service that connects all devices. This publish-subscribe messaging API is built for speed and security."
+  },
+  {
+    "name": "EventStore",
+    "url": "https://github.com/EventStore/EventStore",
+    "description": "The open-source, functional database with Complex Event Processing in JavaScript."
+  },
+  {
+    "name": "Foundatio",
+    "url": "https://github.com/exceptionless/Foundatio#queues",
+    "description": "A common interface with in memory, redis and azure implementations."
+  },
+  {
+    "name": "MediatR",
+    "url": "https://github.com/jbogard/MediatR",
+    "description": "Simple, unambitious mediator implementation in .NET."
+  },
+  {
+    "name": "MediatR.Extensions.Microsoft.DependencyInjection",
+    "url": "https://github.com/jbogard/MediatR.Extensions.Microsoft.DependencyInjection",
+    "description": "MediatR extensions for Microsoft.Extensions.DependencyInjection."
+  },
+  {
+    "name": "Mediator.Net",
+    "url": "https://github.com/mayuanyang/Mediator.Net",
+    "description": "A simple mediator for .Net for sending command, publishing event and request response with pipelines supported."
+  },
+  {
+    "name": "MicroBus",
+    "url": "https://github.com/Lavinski/Enexure.MicroBus",
+    "description": "Simple in process mediator for .NET."
+  },
+  {
+    "name": "netmq",
+    "url": "https://github.com/zeromq/netmq",
+    "description": "100% native C# implementation of ZeroMQ for .NET."
+  },
+  {
+    "name": "rabbitmq-dotnet-client",
+    "url": "https://github.com/rabbitmq/rabbitmq-dotnet-client",
+    "description": "RabbitMQ .NET client https://www.rabbitmq.com."
+  },
+  {
+    "name": "RawRabbit",
+    "url": "https://github.com/pardahlman/RawRabbit",
+    "description": "Modern .NET framework for communication over RabbitMq."
+  },
+  {
+    "name": "Rebus",
+    "url": "https://github.com/rebus-org/Rebus",
+    "description": "Simple and lean service bus implementation for .NET."
+  },
+  {
+    "name": "Restbus",
+    "url": "http://restbus.org",
+    "description": "Messaging library for RabbitMq."
+  },
+  {
+    "name": "Tossit",
+    "url": "https://github.com/turgayozgur/tossit",
+    "description": "Simple, easy to use library for distributed job/worker logic. Distributed messages handled by built in RabbitMQ implementation."
+  },
+  {
+    "name": "Chroniton.NetCore",
+    "url": "https://github.com/leosperry/Chroniton",
+    "description": "Lightweight robust library for running tasks(jobs) on schedules."
+  },
+  {
+    "name": "FluentScheduler",
+    "url": "https://github.com/fluentscheduler/FluentScheduler",
+    "description": "Automated job scheduler with fluent interface."
+  },
+  {
+    "name": "HangfireIO",
+    "url": "https://github.com/HangfireIO/Hangfire",
+    "description": "Easy way to perform fire-and-forget, delayed and recurring tasks inside ASP.NET apps http://hangfire.io."
+  },
+  {
+    "name": "LiquidState",
+    "url": "https://github.com/prasannavl/LiquidState",
+    "description": "Efficient asynchronous and synchronous state machines for .NET"
+  },
+  {
+    "name": "quartznet",
+    "url": "https://github.com/quartznet/quartznet/",
+    "description": "Quartz Enterprise Scheduler .NET http://www.quartz-scheduler.net."
+  },
+  {
+    "name": "stateless",
+    "url": "https://github.com/dotnet-state-machine/stateless",
+    "description": "Simple library for creating state machines in C# code."
+  },
+  {
+    "name": "AWS SDK",
+    "url": "https://github.com/aws/aws-sdk-net",
+    "description": "The Amazon Web Services (AWS) .NET Core SDK components. Each AWS service has its own NuGet package."
+  },
+  {
+    "name": "azure-event-hubs-dotnet",
+    "url": "https://github.com/azure/azure-event-hubs-dotnet",
+    "description": ".NET Standard client library for Azure Event Hubs."
+  },
+  {
+    "name": "Bittrex.Net",
+    "url": "https://github.com/JKorf/Bittrex.Net",
+    "description": "C# .Net wrapper for the Bittrex web API including all features easily accessible and usable."
+  },
+  {
+    "name": "Binance.Net",
+    "url": "https://github.com/JKorf/Binance.Net",
+    "description": ".Net API wrapper for the Binance web API."
+  },
+  {
+    "name": "consuldotnet",
+    "url": "https://github.com/PlayFab/consuldotnet/tree/develop",
+    "description": ".NET API for Consul."
+  },
+  {
+    "name": "csharp-nats",
+    "url": "https://github.com/nats-io/csharp-nats",
+    "description": "C# .NET client for the NATS messaging system."
+  },
+  {
+    "name": "DarkSkyCore",
+    "url": "https://github.com/amweiss/dark-sky-core",
+    "description": "A .NET Standard wrapper for the Dark Sky API."
+  },
+  {
+    "name": "Docker.DotNet",
+    "url": "https://github.com/Microsoft/Docker.DotNet",
+    "description": ".NET (C#) Client Library for Docker API."
+  },
+  {
+    "name": "google-cloud-dotnet",
+    "url": "https://github.com/GoogleCloudPlatform/google-cloud-dotnet",
+    "description": "Google Cloud Client Libraries for .NET."
+  },
+  {
+    "name": "Microphone",
+    "url": "https://github.com/rogeralsing/Microphone",
+    "description": "Lightweight framework to run self hosting REST services using Web Api or NancyFx ontop of a Consul or ETCD cluster."
+  },
+  {
+    "name": "NetTelegramBotApi",
+    "url": "https://github.com/justdmitry/NetTelegramBotApi",
+    "description": "C# client library for building Telegram bot https://core.telegram.org/bots/api."
+  },
+  {
+    "name": "octokit.net",
+    "url": "https://github.com/octokit/octokit.net",
+    "description": "GitHub API client library for .NET."
+  },
+  {
+    "name": "Open-XML-SDK",
+    "url": "https://github.com/OfficeDev/Open-XML-SDK",
+    "description": "The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents."
+  },
+  {
+    "name": "PreStorm",
+    "url": "https://github.com/jshirota/PreStorm",
+    "description": "Parallel REST Client for ArcGIS Server."
+  },
+  {
+    "name": "SendGrid-csharp",
+    "url": "https://github.com/sendgrid/sendgrid-csharp",
+    "description": "C# client library for using the full SendGrid API."
+  },
+  {
+    "name": "statsd-csharp-client",
+    "url": "https://github.com/Pereingo/statsd-csharp-client",
+    "description": ".NET Standard compatible C# client to interface with Etsy's excellent statsd server."
+  },
+  {
+    "name": "tweetinvi",
+    "url": "https://github.com/linvi/tweetinvi",
+    "description": "Intuitive .NET C# library to access the Twitter REST and STREAM API."
+  },
+  {
+    "name": "HtmlSanitizer",
+    "url": "https://github.com/mganss/HtmlSanitizer",
+    "description": "Cleans HTML to avoid XSS attacks."
+  },
+  {
+    "name": "jose-jwt",
+    "url": "https://github.com/dvsekhvalnov/jose-jwt",
+    "description": "Library for processing JOSE objects (JWT, JWA, JWS and related)."
+  },
+  {
+    "name": "NWebsec",
+    "url": "https://github.com/NWebsec/NWebsec",
+    "description": "Security libraries for ASP.NET https://www.nwebsec.com."
+  },
+  {
+    "name": "reCAPTCHA",
+    "url": "https://github.com/PaulMiami/reCAPTCHA",
+    "description": "reCAPTCHA 2.0 for ASP.NET Core."
+  },
+  {
+    "name": "roslyn-security-guard",
+    "url": "https://github.com/dotnet-security-guard/roslyn-security-guard",
+    "description": "Roslyn analyzers that aim to help security audit on .NET applications."
+  },
+  {
+    "name": "OwaspHeaders",
+    "url": "https://github.com/GaProgMan/OwaspHeaders.Core",
+    "description": ".NET Core middleware for injecting the Owasp recommended HTTP Headers for increased security."
+  },
+  {
+    "name": "Security",
+    "url": "https://github.com/aspnet/Security",
+    "description": "Middleware for security and authorization of web apps."
+  },
+  {
+    "name": "SecurityHeaders",
+    "url": "https://github.com/andrewlock/NetEscapades.AspNetCore.SecurityHeaders",
+    "description": "Small package to allow adding security headers to ASP.NET Core websites."
+  },
+  {
+    "name": "AutoComplete",
+    "url": "https://github.com/omerfarukz/autocomplete",
+    "description": "Persistent, simple, powerful and portable autocomplete library."
+  },
+  {
+    "name": "Elasticsearch.Net & NEST",
+    "url": "https://github.com/elastic/elasticsearch-net",
+    "description": "Repository for both NEST and Elasticsearch.NET, the two official elasticsearch .NET clients."
+  },
+  {
+    "name": "ElasticsearchCRUD",
+    "url": "https://github.com/damienbod/ElasticsearchCRUD",
+    "description": "Elasticsearch .NET API."
+  },
+  {
+    "name": "SearchExtensions",
+    "url": "https://github.com/ninjanye/SearchExtensions",
+    "description": "Advanced search capabilities for IQueryable interfaces, such as Entity Framework queries."
+  },
+  {
+    "name": "SimMetrics.Net",
+    "url": "https://github.com/StefH/SimMetrics.Net",
+    "description": "A Similarity Metric Library, e.g. from edit distance's (Levenshtein, Gotoh, Jaro etc) to other metrics, (e.g Soundex, Chapman)"
+  },
+  {
+    "name": "SolrExpress",
+    "url": "https://github.com/solr-express/solr-express",
+    "description": "Simple and lightweight query .NET library for Solr, in a controlled, buildable and fail fast way."
+  },
+  {
+    "name": "bond",
+    "url": "https://github.com/Microsoft/bond",
+    "description": "Cross-platform framework for working with schematized data. It supports cross-language de/serialization and powerful generic mechanisms for efficiently manipulating data. Bond is broadly used at Microsoft in high scale services."
+  },
+  {
+    "name": "Channels",
+    "url": "https://github.com/davidfowl/Channels",
+    "description": "Push based .NET Streams."
+  },
+  {
+    "name": "CsvHelper",
+    "url": "https://github.com/JoshClose/CsvHelper",
+    "description": "Library to help reading and writing CSV files."
+  },
+  {
+    "name": "Edi.Net",
+    "url": "https://github.com/indice-co/EDI.Net",
+    "description": "EDI Serializer/Deserializer. Supports EDIFact, X12 and TRADACOMS format."
+  },
+  {
+    "name": "ExtendedXmlSerializer",
+    "url": "https://github.com/wojtpl2/ExtendedXmlSerializer",
+    "description": "Extended Xml Serializer for .NET."
+  },
+  {
+    "name": "Jil",
+    "url": "https://github.com/kevin-montrose/Jil",
+    "description": "Fast .NET JSON (De)Serializer, Built On Sigil."
+  },
+  {
+    "name": "msgpack-cli",
+    "url": "https://github.com/msgpack/msgpack-cli",
+    "description": "MessagePack implementation for Common Language Infrastructure / msgpack.org."
+  },
+  {
+    "name": "MessagePack-CSharp",
+    "url": "https://github.com/neuecc/MessagePack-CSharp",
+    "description": "Extremely Fast MessagePack Serializer for C#(.NET, .NET Core, Unity, Xamarin)."
+  },
+  {
+    "name": "Newtonsoft.Json",
+    "url": "https://github.com/JamesNK/Newtonsoft.Json",
+    "description": "Popular high-performance JSON framework for .NET."
+  },
+  {
+    "name": "protobuf-net",
+    "url": "https://github.com/mgravell/protobuf-net/",
+    "description": "Protocol Buffers library for idiomatic .NET."
+  },
+  {
+    "name": "Schema.NET",
+    "url": "https://github.com/RehanSaeed/Schema.NET",
+    "description": "Schema.org objects turned into strongly typed C# POCO classes for use in .NET. All classes can be serialized into JSON/JSON-LD and XML, typically used to represent structured data in the head section of html page."
+  },
+  {
+    "name": "ServiceStack.Text",
+    "url": "https://github.com/ServiceStack/ServiceStack.Text",
+    "description": "JSON, JSV and CSV Text Serializers."
+  },
+  {
+    "name": "TinyCsvParser",
+    "url": "https://github.com/bytefish/TinyCsvParser",
+    "description": "Easy to use, easy to extend and high-performance library for CSV parsing with .NET."
+  },
+  {
+    "name": "Wire",
+    "url": "https://github.com/rogeralsing/Wire",
+    "description": "Binary serializer for POCO objects."
+  },
+  {
+    "name": "YamlDotNet",
+    "url": "https://github.com/aaubry/YamlDotNet",
+    "description": ".NET"
+  },
+  {
+    "name": "ZeroFormatter",
+    "url": "https://github.com/neuecc/ZeroFormatter",
+    "description": "Fast binary (de)serializer for .NET."
+  },
+  {
+    "name": "Utf8Json",
+    "url": "https://github.com/neuecc/Utf8Json",
+    "description": "Definitely Fastest and Zero Allocation JSON Serializer for C#(NET, .NET Core, Unity, Xamarin)."
+  },
+  {
+    "name": "YAXLib",
+    "url": "https://github.com/sinairv/YAXLib",
+    "description": "XML Serialization Library for the .NET Framework and .NET Core. Extremely flexible and powerful."
+  },
+  {
+    "name": "dotliquid",
+    "url": "https://github.com/dotliquid/dotliquid",
+    "description": ".NET Port of Tobias Lütke's Liquid template language."
+  },
+  {
+    "name": "fluid",
+    "url": "https://github.com/sebastienros/fluid",
+    "description": "Open-source .NET template engine that is as close as possible to the Liquid template language."
+  },
+  {
+    "name": "Portable.Xaml",
+    "url": "https://github.com/cwensley/Portable.Xaml",
+    "description": "Portable .NET library for reading/writing xaml files."
+  },
+  {
+    "name": "Razor",
+    "url": "https://github.com/aspnet/Razor",
+    "description": "Parser and code generator for CSHTML files used in view pages for MVC web apps."
+  },
+  {
+    "name": "RazorLight",
+    "url": "https://github.com/toddams/RazorLight",
+    "description": "Template engine based on Microsoft's Razor parsing engine for .NET Core."
+  },
+  {
+    "name": "Bogus",
+    "url": "https://github.com/bchavez/Bogus",
+    "description": "Simple and sane fake data generator for C#. Based on and ported from the famed faker.js."
+  },
+  {
+    "name": "FakeItEasy",
+    "url": "https://github.com/FakeItEasy/FakeItEasy",
+    "description": "The easy mocking library for .NET."
+  },
+  {
+    "name": "FluentAssertions",
+    "url": "https://github.com/dennisdoomen/FluentAssertions",
+    "description": "Set of .NET extension methods that allow you to more naturally specify the expected outcome of a TDD or BDD-style test."
+  },
+  {
+    "name": "GenFu",
+    "url": "https://github.com/MisterJames/GenFu",
+    "description": "Library you can use to generate realistic test data."
+  },
+  {
+    "name": "LightBDD",
+    "url": "https://github.com/LightBDD/LightBDD",
+    "description": "BDD framework allowing to create easy to read and maintain tests."
+  },
+  {
+    "name": "mockhttp",
+    "url": "https://github.com/richardszalay/mockhttp",
+    "description": "Testing layer for Microsoft's HttpClient library."
+  },
+  {
+    "name": "moq.netcore",
+    "url": "https://github.com/Moq/moq4",
+    "description": "Most popular and friendly mocking framework for .NET."
+  },
+  {
+    "name": "MSpec",
+    "url": "https://github.com/machine/machine.specifications",
+    "description": "Popular testing framework for writing BDD-style tests."
+  },
+  {
+    "name": "MyTested.AspNetCore.Mvc",
+    "url": "https://github.com/ivaylokenov/MyTested.AspNetCore.Mvc",
+    "description": "Fluent testing"
+  },
+  {
+    "name": "Netling",
+    "url": "https://github.com/hallatore/Netling",
+    "description": "Load tester client for easy web testing."
+  },
+  {
+    "name": "NSpec",
+    "url": "https://github.com/nspec/NSpec",
+    "description": "Battle hardened testing framework for C# that's heavily inspired by Mocha and RSpec."
+  },
+  {
+    "name": "NSubstitute",
+    "url": "https://github.com/nsubstitute/NSubstitute",
+    "description": "A friendly substitute for .NET mocking frameworks."
+  },
+  {
+    "name": "nunit",
+    "url": "https://github.com/nunit/dotnet-test-nunit",
+    "description": "NUnit test runner for .NET Core."
+  },
+  {
+    "name": "shouldly",
+    "url": "https://github.com/shouldly/shouldly",
+    "description": "Should testing for .NET - the way Asserting Should be! http://shouldly.readthedocs.org/en/latest"
+  },
+  {
+    "name": "SpecFlow",
+    "url": "https://github.com/techtalk/SpecFlow/tree/DotNetCore",
+    "description": "Pragmatic BDD solution for .NET. It uses the Gherkin specification language and integrates to Visual Studio."
+  },
+  {
+    "name": "Storyteller",
+    "url": "https://github.com/storyteller/Storyteller",
+    "description": "Executable Specifications for .NET http://storyteller.github.io."
+  },
+  {
+    "name": "Stubbery",
+    "url": "https://markvincze.github.io/Stubbery/",
+    "description": "A simple library for creating and running Api stubs in .NET."
+  },
+  {
+    "name": "TestStack.BDDfy",
+    "url": "https://github.com/TestStack/TestStack.BDDfy",
+    "description": "The simplest BDD framework EVER!"
+  },
+  {
+    "name": "xBehave.net",
+    "url": "https://github.com/xbehave/xbehave.net",
+    "description": "An xUnit.net extension for describing your tests using natural language. http://xbehave.github.io"
+  },
+  {
+    "name": "xUnit.net",
+    "url": "https://github.com/xunit/xunit",
+    "description": "A free, open source, community-focused unit testing tool for the .NET Framework."
+  },
+  {
+    "name": "CommandLineUtils",
+    "url": "https://github.com/natemcmaster/CommandLineUtils",
+    "description": "Command line parsing and utilities for .NET Core and .NET Framework."
+  },
+  {
+    "name": "docfx",
+    "url": "https://github.com/dotnet/docfx",
+    "description": "Tools for building and publishing API documentation for .NET projects http://dotnet.github.io/docfx"
+  },
+  {
+    "name": "dotnetfiddle",
+    "url": "https://dotnetfiddle.net",
+    "description": ".NET sandbox for developers to quickly try out code and share code snippets."
+  },
+  {
+    "name": "dotnet-tools",
+    "url": "https://github.com/natemcmaster/dotnet-tools",
+    "description": "A list of tool extensions for .NET Core Command Line (dotnet CLI)."
+  },
+  {
+    "name": "EntryPoint",
+    "url": "https://github.com/Nick-Lucas/EntryPoint",
+    "description": "Composable CLI (Command Line) Argument Parser for .Net Core & .Net Framework 4.5+."
+  },
+  {
+    "name": "Fake JSON Server",
+    "url": "https://github.com/ttu/dotnet-fake-json-server",
+    "description": "Fake REST API for prototyping or as a CRUD Back End. No need to define types, uses dynamic typing. Data is stored to a single JSON file. Has authentication, WebSocket notifications, async long running operations, random generation for errors/delays and experimental GraphQL support."
+  },
+  {
+    "name": "gitignore.io",
+    "url": "https://github.com/joeblau/gitignore.io",
+    "description": "Create useful .gitignore files for your project https://www.gitignore.io."
+  },
+  {
+    "name": "ICanHasDotnetCore",
+    "url": "https://github.com/OctopusDeploy/ICanHasDotnetCore",
+    "description": "Scans uploaded packages.config files or GitHub repository and determines whether the nuget packages target .NET Standard https://icanhasdot.net."
+  },
+  {
+    "name": "json2csharp",
+    "url": "http://json2csharp.com",
+    "description": "Generate C# classes from JSON."
+  },
+  {
+    "name": "letsencrypt-win-simple",
+    "url": "https://github.com/Lone-Coder/letsencrypt-win-simple",
+    "description": "A Simple ACME Client for Windows."
+  },
+  {
+    "name": "NuGetPackageExplorer",
+    "url": "https://github.com/NuGetPackageExplorer/NuGetPackageExplorer",
+    "description": "Create, update and deploy Nuget Packages with a GUI."
+  },
+  {
+    "name": "NugetVisualizer",
+    "url": "https://github.com/sepharg/NugetVisualizer",
+    "description": "Visualize all of the nuget packages and their corresponding versions for a set of given git repositories or folders."
+  },
+  {
+    "name": "OctoLinker",
+    "url": "https://github.com/OctoLinker/browser-extension",
+    "description": "Navigate through projects.json files efficiently with the OctoLinker browser extension for GitHub."
+  },
+  {
+    "name": "posh-dotnet",
+    "url": "https://github.com/bergmeister/posh-dotnet",
+    "description": "PowerShell tab completion for the dotnet CLI."
+  },
+  {
+    "name": "ShareX",
+    "url": "https://github.com/ShareX/ShareX",
+    "description": "Free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to over 80 supported destinations you can choose from. https://getsharex.com"
+  },
+  {
+    "name": "SharpLab",
+    "url": "https://github.com/ashmind/SharpLab",
+    "description": ".NET code playground that shows intermediate steps and results of code compilation. https://sharplab.io"
+  },
+  {
+    "name": "X.Web.Sitemap – Simple sitemap generator for .NET and .NET Core",
+    "url": "https://github.com/dncuug/X.Web.Sitemap"
+  },
+  {
+    "name": "X.Web.RSS – Simple RSS Feed generator for .NET and .NET Core",
+    "url": "https://github.com/dncuug/X.Web.RSS"
+  },
+  {
+    "name": "Blazor",
+    "url": "https://github.com/SteveSanderson/Blazor",
+    "description": "UI framework running .NET in the browser via WebAssembly."
+  },
+  {
+    "name": "Ooui",
+    "url": "https://github.com/praeclarum/Ooui",
+    "description": "Small cross-platform UI library that brings the simplicity of native UI development to the web."
+  },
+  {
+    "name": "ReactJS.NET",
+    "url": "https://github.com/reactjs/React.NET",
+    "description": ".NET library for JSX compilation and server-side rendering of React components."
+  },
+  {
+    "name": "redux.NET",
+    "url": "https://github.com/GuillaumeSalles/redux.NET",
+    "description": "Predictable state container for .NET apps. Inspired by https://github.com/reactjs/redux."
+  },
+  {
+    "name": "Fleck",
+    "url": "https://github.com/statianzo/Fleck",
+    "description": "Fleck is a WebSocket server implementation in C#. Fleck requires no inheritance, container, or additional references."
+  },
+  {
+    "name": "SignalR Server",
+    "url": "https://github.com/aspnet/signalr",
+    "description": "Real-time web functionality for web apps, including server-side push."
+  },
+  {
+    "name": "SuperSocket",
+    "url": "https://github.com/kerryjiang/SuperSocket",
+    "description": "Light weight, cross platform and extensible socket server application framework."
+  },
+  {
+    "name": "WampSharp",
+    "url": "https://github.com/Code-Sharp/WampSharp",
+    "description": "C# implementation of The Web Application Messaging Protocol - Protocol that provides messaging patterns of Remote Procedure Calls and Publish/Subscribe over WebSockets."
+  },
+  {
+    "name": "websocket-manager",
+    "url": "https://github.com/radu-matei/websocket-manager",
+    "description": "Real-Time library for ASP .NET Core."
+  },
+  {
+    "name": "dotnet-win32-service",
+    "url": "https://github.com/dasMulli/dotnet-win32-service",
+    "description": "Set up and run as Windows Service directly from .NET Core."
+  },
+  {
+    "name": "Topshelf",
+    "url": "https://github.com/Topshelf/Topshelf",
+    "description": "Easy service hosting framework for building Windows services using .NET."
+  },
+  {
+    "name": "CoreWF",
+    "url": "https://github.com/dmetzgar/corewf/",
+    "description": "Port of Windows Workflow Foundation (WF) to .NET Core."
+  },
+  {
+    "name": "workflow-core",
+    "url": "https://github.com/danielgerlag/workflow-core",
+    "description": "Lightweight workflow engine for .NET Standard."
+  },
+  {
+    "name": "WorkflowEngine.NET",
+    "url": "https://github.com/optimajet/WorkflowEngine.NET",
+    "description": "Component that adds workflow in your application."
+  },
+  {
+    "name": "Arch",
+    "url": "https://github.com/Arch",
+    "description": "The collection of .NET Core libraries that are created by software architects who embrace all the new stuff in .NET Core."
+  },
+  {
+    "name": "AspNetCore-Angular2-Universal",
+    "url": "https://github.com/MarkPieszak/aspnetcore-angular2-universal",
+    "description": "Cross-platform - w/ server-side rendering for SEO, Bootstrap, i18n internationalization (ngx-translate), Webpack, TypeScript, unit testing w/ Karma, WebAPI REST setup, SignalR, Swagger docs, and more!"
+  },
+  {
+    "name": "ASP.NET Core Starter Kit",
+    "url": "https://github.com/kriasoft/aspnet-starter-kit",
+    "description": "Opinionated boilerplate for web development based on .NET Core, Kestrel, GraphQL on the backend and Babel, Webpack, React and Redux on the frontend. This boilerplate comes in both C# and F# flavors."
+  },
+  {
+    "name": "aspnetcore-spa generator",
+    "url": "https://github.com/aspnet/JavaScriptServices",
+    "description": "Yeoman generator to build a brand-new ASP.NET Core single page application that uses Angular 2 / React / React With Redux / Knockout / Aurelia on the client."
+  },
+  {
+    "name": "ASP.Net Core Vue Starter",
+    "url": "https://github.com/MarkPieszak/aspnetcore-Vue-starter",
+    "description": "Asp.NETCore 2.0 Vue 2 (ES6) SPA Starter kit, contains routing, Vuex, and more!."
+  },
+  {
+    "name": "bitwarden-core",
+    "url": "https://github.com/bitwarden/core",
+    "description": "The core infrastructure backend (API, database, etc) https://bitwarden.com."
+  },
+  {
+    "name": "dotNetify",
+    "url": "https://github.com/dsuryd/dotNetify",
+    "description": "Simple, lightweight, yet powerful way to build real-time HTML5/C# .NET web apps."
+  },
+  {
+    "name": "generator-aspnet",
+    "url": "https://github.com/OmniSharp/generator-aspnet",
+    "description": "yo generator for ASP.NET Core."
+  },
+  {
+    "name": "react-aspnet-boilerplate",
+    "url": "https://github.com/pauldotknopf/react-aspnet-boilerplate",
+    "description": "Starting point for building isomorphic React applications with ASP.NET Core 1, leveraging existing techniques."
+  },
+  {
+    "name": "saaskit",
+    "url": "https://github.com/saaskit/saaskit",
+    "description": "Developer toolkit for building SaaS applications."
+  },
+  {
+    "name": "AlbumViewerVNext",
+    "url": "https://github.com/RickStrahl/AlbumViewerVNext",
+    "description": "West Wind Album Viewer ASP.NET 5 Sample."
+  },
+  {
+    "name": "allReady",
+    "url": "https://github.com/HTBox/allReady",
+    "description": "Open-source solution focused on increasing awareness, efficiency and impact of preparedness campaigns as they are delivered by humanitarian and disaster response organizations in local communities. http://www.htbox.org/projects/allready"
+  },
+  {
+    "name": "AspNet5GeoElasticsearch",
+    "url": "https://github.com/damienbod/AspNet5GeoElasticsearch",
+    "description": "ASP.NET Core MVC Geo Elasticsearch Swashbuckle Swagger."
+  },
+  {
+    "name": "aspnet-servicediscovery-patterns",
+    "url": "https://github.com/cecilphillip/aspnet-servicediscovery-patterns",
+    "description": "Samples of implementing Service Discovery patterns with ASP.NET Core."
+  },
+  {
+    "name": "AspNetAuthorizationWorkshop",
+    "url": "https://github.com/blowdart/AspNetAuthorizationWorkshop",
+    "description": "A workshop for moving through the various new pieces in ASP.NET Core Authorization"
+  },
+  {
+    "name": "BikeSharing360 Suite of Apps from Microsoft Presented December Connect 2016 Conference, a compreshsive set of interworking apps for both enterprise users and the consumers (bike riders):\nMobile Apps, Backend Services, Websites, Single Container Apps, Multi Container Apps, Cognitive Services Kiosk App,\nAzure Bot App.",
+    "url": "https://blogs.msdn.microsoft.com/visualstudio/2016/12/14/connectdemos-2016-bikesharing360-on-github/"
+  },
+  {
+    "name": "cloudscribe",
+    "url": "https://github.com/joeaudette/cloudscribe",
+    "description": "ASP.NET Core Multi-tenant web application foundation."
+  },
+  {
+    "name": "CoreCodeCamp",
+    "url": "https://github.com/shawnwildermuth/CoreCodeCamp",
+    "description": "An Open Source Website for running small, local development events."
+  },
+  {
+    "name": "distributed-playground",
+    "url": "https://github.com/jvandevelde/distributed-playground",
+    "description": "Distributed service playground with Vagrant, Consul, Docker & ASP.NET Core."
+  },
+  {
+    "name": "DotNetClub",
+    "url": "https://github.com/scheshan/DotNetClub",
+    "description": "Tiny club written in ASP.NET Core."
+  },
+  {
+    "name": "Entropy",
+    "url": "https://github.com/aspnet/Entropy",
+    "description": "Chaotic experimental playground for new features and ideas - check here for small and simple samples for individual features."
+  },
+  {
+    "name": "EquinoxProject",
+    "url": "https://github.com/EduardoPires/EquinoxProject",
+    "description": "Full ASP.NET Core 2.0 application with DDD, CQRS and Event Sourcing."
+  },
+  {
+    "name": "eShopOnContainers",
+    "url": "https://github.com/dotnet/eShopOnContainers",
+    "description": "Microservices Architecture and Containers based Reference Application."
+  },
+  {
+    "name": "guidance-identity-management-for-multitenant-apps",
+    "url": "https://github.com/Azure-Samples/guidance-identity-management-for-multitenant-apps",
+    "description": "How to manage user identities in a multitenant app on Microsoft Azure, using Azure Active Directory for authentication."
+  },
+  {
+    "name": "magazine-website",
+    "url": "https://github.com/thangchung/magazine-website",
+    "description": "Magazine website (using .NET Core, ASP.NET Core, EF Core) with DDD, CQRS, microservices, asynchronous programming applied."
+  },
+  {
+    "name": "MegaMine",
+    "url": "https://github.com/Nootus/MegaMine",
+    "description": "Open source mining solution that helps miners in extracting Gold, Quartz, Granite etc. This solution is built using ASP.NET Core and AngularJS utilizing multiple light weight components in a Microservices way."
+  },
+  {
+    "name": "minicompiler",
+    "url": "https://github.com/ealsur/minicompiler",
+    "description": "Minification, bundling and compiling sample."
+  },
+  {
+    "name": "MusicStore",
+    "url": "https://github.com/aspnet/MusicStore",
+    "description": "Sample MusicStore application that uses MVC and Entity Framework."
+  },
+  {
+    "name": "NLayerAppV3",
+    "url": "https://github.com/cesarcastrocuba/nlayerappv3",
+    "description": "NLayerAppV3 N-Layered Architecture with .NET Core Preview 2."
+  },
+  {
+    "name": "Orchard Core",
+    "url": "https://github.com/OrchardCMS/OrchardCore.Samples",
+    "description": "Modular and Multi-tenant applications - Use Orchard Core Framework to create Modular and Multi-tenant applications."
+  },
+  {
+    "name": "ReactiveTraderCloud",
+    "url": "https://github.com/AdaptiveConsulting/ReactiveTraderCloud",
+    "description": "Real-time trading platform demo showcasing reactive programming principles applied across the full application stack."
+  },
+  {
+    "name": "PhotoGallery",
+    "url": "https://github.com/chsakell/aspnet5-angular2-typescript",
+    "description": "Cross-platform Single Page Applications with ASP.NET Core, Angular 2 & TypeScript http://wp.me/p3mRWu-11L."
+  },
+  {
+    "name": "Practical ASP.NET Core",
+    "url": "https://github.com/dodyg/practical-aspnetcore",
+    "description": "A daily updated micro samples of ASP.NET Core features and facilities."
+  },
+  {
+    "name": "JustA.ML",
+    "url": "https://github.com/mustakimali/JustA.ML",
+    "description": "A web application that lets you share files/URL/text between your devices written in ASP.NET Core 2.0. Open source, live at https://justa.ml"
+  },
+  {
+    "name": "A guide to the .NET Core projects on GitHub",
+    "url": "https://blog.rendle.io/a-guide-to-the-net-projects-on-github/"
+  },
+  {
+    "name": "Microsoft architectual overview of comprehensive BikeSharing360 suite of demo apps with related videos",
+    "url": "https://blogs.msdn.microsoft.com/visualstudio/2016/12/14/connectdemos-2016-bikesharing360-on-github/"
+  },
+  {
+    "name": "Porting a .NET Framework library to .NET Core",
+    "url": "https://www.codeproject.com/Articles/1190475/Porting-a-NET-Framework-library-to-NET-Core"
+  },
+  {
+    "name": "The 68 things the CLR does before executing a single line of your code",
+    "url": "http://mattwarren.org/2017/02/07/The-68-things-the-CLR-does-before-executing-a-single-line-of-your-code/"
+  },
+  {
+    "name": "The comparison between .NET Core and Nodejs at here, here and here",
+    "url": "https://manuel-rauber.com/2016/03/07/node-js-asp-net-core-1-0-a-usage-comparison/"
+  },
+  {
+    "name": "Understanding ASP.NET Core Initialization",
+    "url": "http://developer.telerik.com/featured/understanding-asp-net-core-initialization/"
+  },
+  {
+    "name": "Why you should join .NET Core and ASP.NET Core train",
+    "url": "https://codingblast.com/why-you-should-join-asp-net-core/"
+  },
+  {
+    "name": "Configuring the AWS SDK in .NET Core",
+    "url": "https://aws.amazon.com/blogs/developer/configuring-aws-sdk-with-net-core/"
+  },
+  {
+    "name": "Serverless Architecture using C# and AWS Amazon Gateway Api/Lambda",
+    "url": "https://www.codeproject.com/Articles/1178781/Serverless-Architecture-using-Csharp-and-AWS-Amazo"
+  },
+  {
+    "name": "Using C# and .NET Core in Amazon Web Services (AWS) Lambda",
+    "url": "https://aws.amazon.com/blogs/compute/announcing-c-sharp-support-for-aws-lambda/"
+  },
+  {
+    "name": ".NET project structure",
+    "url": "https://gist.github.com/davidfowl/ed7564297c61fe9ab814"
+  },
+  {
+    "name": "Adding Travis CI builds to a .NET Core app",
+    "url": "http://andrewlock.net/adding-travis-ci-to-a-net-core-app/"
+  },
+  {
+    "name": "ASP.NET Core 1.0",
+    "url": "http://social.technet.microsoft.com/wiki/contents/articles/35918.asp-net-core-1-0-configure-applicationinsights.aspx",
+    "description": "Configure ApplicationInsights"
+  },
+  {
+    "name": "haproxy, nginx, Angular 2, ASP.NET Core, Redis and Docker",
+    "url": "http://tattoocoder.azurewebsites.net/legion-of-heroes-haproxy-nginx-angular2-aspnetcore-redis-docker/"
+  },
+  {
+    "name": "Project.json to MSBuild conversion guide",
+    "url": "http://www.natemcmaster.com/blog/2017/01/19/project-json-to-csproj/"
+  },
+  {
+    "name": "Publishing a .NET project with Appveyor and NuGet",
+    "url": "https://few-lines-of-code.blogspot.com/2016/03/publishing-net-project-with-appveyor.html"
+  },
+  {
+    "name": "The New Configuration Model in ASP.NET Core",
+    "url": "http://developer.telerik.com/featured/new-configuration-model-asp-net-core/"
+  },
+  {
+    "name": ".NET Core Data Access",
+    "url": "https://blogs.msdn.microsoft.com/dotnet/2016/11/09/net-core-data-access/"
+  },
+  {
+    "name": "A very good example about EF Core",
+    "url": "https://github.com/rowanmiller/Demo-EFCore"
+  },
+  {
+    "name": "Getting started with Orchard Core as a NuGet package",
+    "url": "http://www.ideliverable.com/blog/getting-started-with-orchard-core-as-a-nuget-package"
+  },
+  {
+    "name": "How to export HTML to PDF in ASP.NET Core",
+    "url": "https://code.msdn.microsoft.com/How-to-export-HTML-to-PDF-c5afd0ce"
+  },
+  {
+    "name": "Vue.js server side rendering with ASP.NET Core",
+    "url": "http://mgyongyosi.com/2016/Vuejs-server-side-rendering-with-aspnet-core/"
+  },
+  {
+    "name": ".NET Continuous Delivery Microservices",
+    "url": "http://stackshare.io/tomstaijen/net-continuous-delivery-microservices"
+  },
+  {
+    "name": "ASP.NET Core 2.0 Authentication and Authorization System Demystified",
+    "url": "https://digitalmccullough.com/posts/aspnetcore-auth-system-demystified.html"
+  },
+  {
+    "name": "A walk-through for an ASP.NET Authorization Lab",
+    "url": "https://github.com/blowdart/AspNetAuthorizationWorkshop"
+  },
+  {
+    "name": "Authentication in ASP.NET Core",
+    "url": "https://stormpath.com/blog/authentication-asp-net-core"
+  },
+  {
+    "name": "Selenium with .NET Core",
+    "url": "http://www.dotnetcatch.com/2016/11/23/selenium-with-net-core/"
+  },
+  {
+    "name": ".NET Core in Action",
+    "url": "https://manning.com/books/dotnet-core-in-action"
+  },
+  {
+    "name": "ASP.NET Core Application Development: Building an application in four sprints (Developer Reference)",
+    "url": "https://www.amazon.com/ASP-NET-Core-Application-Development-application/dp/1509304061"
+  },
+  {
+    "name": "ASP.NET Core in Action",
+    "url": "https://www.manning.com/books/asp-net-core-in-action"
+  },
+  {
+    "name": "ASP.NET Core 1.0 High Performance",
+    "url": "https://www.amazon.com/ASP-NET-Core-1-0-High-Performance/dp/1785881892"
+  },
+  {
+    "name": "Building Microservices with ASP.NET Core: Develop, Test, and Deploy Cross-Platform Services in the Cloud",
+    "url": "https://www.amazon.com/Building-Microservices-ASP-NET-Core-Cross-Platform/dp/1491961732"
+  },
+  {
+    "name": "C# 6 and .NET Core 1.0: Modern Cross-Platform Development",
+    "url": "https://www.amazon.com/NET-Core-1-0-Cross-Platform-Development/dp/1785285696"
+  },
+  {
+    "name": "Dependency Injection in .NET Core, 2nd edition",
+    "url": "https://www.manning.com/books/dependency-injection-in-dot-net-second-edition"
+  },
+  {
+    "name": "Exploring .NET Core with Microservices, ASP.NET Core, and Entity Framework Core",
+    "url": "https://www.manning.com/books/exploring-dot-net-core",
+    "description": "free eBook sampler"
+  },
+  {
+    "name": "Microservices in .NET Core: with C#, the Nancy framework, and OWIN middleware",
+    "url": "https://www.amazon.com/Microservices-NET-Core-framework-middleware/dp/1617293377"
+  },
+  {
+    "name": "Professional C# 6 and .NET Core 1.0",
+    "url": "https://www.amazon.com/Professional-NET-Core-Christian-Nagel/dp/111909660X"
+  },
+  {
+    "name": "The little ASP.NET Core",
+    "url": "https://www.recaffeinate.co/book"
+  },
+  {
+    "name": "Channel9",
+    "url": "https://channel9.msdn.com"
+  },
+  {
+    "name": "ASP.NET Monsters",
+    "url": "https://channel9.msdn.com/Series/aspnetmonsters"
+  },
+  {
+    "name": "Visual Studio",
+    "url": "https://www.youtube.com/user/VisualStudio/channels"
+  },
+  {
+    "name": ".NET Rocks",
+    "url": "https://www.dotnetrocks.com"
+  },
+  {
+    "name": "Merge Conflict",
+    "url": "http://www.mergeconflict.fm/"
+  },
+  {
+    "name": "The sound of .NET",
+    "url": "http://thesoundof.net/?q=.NET+Core"
+  },
+  {
+    "name": "ASP.NET",
+    "url": "https://forums.asp.net"
+  },
+  {
+    "name": ".NET Foundation",
+    "url": "http://forums.dotnetfoundation.org"
+  },
+  {
+    "name": "Channel9",
+    "url": "https://channel9.msdn.com"
+  },
+  {
+    "name": "Slack",
+    "url": "http://tattoocoder.com/aspnet-slack-sign-up"
+  },
+  {
+    "name": ".NET Core",
+    "url": "https://stackoverflow.com/questions/tagged/.net-core"
+  },
+  {
+    "name": "CoreCLR",
+    "url": "https://stackoverflow.com/questions/tagged/coreclr"
+  },
+  {
+    "name": "ASP.NET Core",
+    "url": "https://stackoverflow.com/questions/tagged/asp.net-core"
+  },
+  {
+    "name": "ASP.NET Core MVC",
+    "url": "https://stackoverflow.com/questions/tagged/asp.net-core-mvc"
+  },
+  {
+    "name": "ASP.NET Core 1.0",
+    "url": "https://stackoverflow.com/questions/tagged/asp.net-core-1.0"
+  },
+  {
+    "name": "Entity Framework Core",
+    "url": "https://stackoverflow.com/questions/tagged/entity-framework-core"
+  }
+]
