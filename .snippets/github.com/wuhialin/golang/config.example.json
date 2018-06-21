@@ -1,0 +1,14 @@
+{
+  "mail":{
+    "user":"wuhialin@vip.qq.com",
+    "host":"",
+    "pass":""
+  },
+  "database":{
+    "user":"root",
+    "pass":"",
+    "name":"",
+    "host":"localhost",
+    "port":"3306"
+  }
+}

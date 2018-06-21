@@ -1,0 +1,18 @@
+{% extends "../layout.html" %}
+
+{% block content %}
+    <form class="search form-inline" data-pjax action="?">
+        <div class="form-group">
+            <label for="name">名称：</label>
+            <input class="form-control" name="name" id="name" placeholder="名称" value="{{this.Name}}">
+        </div>
+
+        <div class="form-group">
+            <label for="code">编码：</label>
+            <input type="text" class="form-control" name="code" id="code" placeholder="编码" value="{{this.Code}}">
+        </div>
+
+        <button type="submit" class="btn btn-default btn-sm">Submit</button>
+    </form>
+    {% include "_list.html" %}
+{% endblock %}
