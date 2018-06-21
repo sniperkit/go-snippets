@@ -1,0 +1,1 @@
+/usr/bin/cc -Wall  -rdynamic CMakeFiles/pvtrace.dir/stack.c.o CMakeFiles/pvtrace.dir/symbols.c.o CMakeFiles/pvtrace.dir/trace.c.o  -o ../../bin/pvtrace 

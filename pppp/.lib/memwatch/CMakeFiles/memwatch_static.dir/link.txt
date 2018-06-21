@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libmemwatch.a  CMakeFiles/memwatch_static.dir/memwatch.c.o
+/usr/bin/ranlib ../../lib/libmemwatch.a

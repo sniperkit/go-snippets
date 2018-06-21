@@ -1,0 +1,15 @@
+#Ignore auto-generated thrift files
+arp/rpc/arpd.thrift
+dhcp/rpc/dhcpd.thrift
+bfd/rpc/bfdd.thrift
+bgp/rpc/bgpd.thrift
+dhcp_relay/rpc/dhcprelayd.thrift
+ospf/rpc/ospfd.thrift
+ospfv2/rpc/ospfv2d.thrift
+rib/rpc/ribd.thrift
+tunnel/vxlan/rpc/vxland.thrift
+vrrp/flexswitch/vrrpd.thrift
+ndp/flexswitch/ndpd.thrift
+isis/rpc/isisd.thrift
+#ignore cscope files
+cscope.*

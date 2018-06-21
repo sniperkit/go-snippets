@@ -1,0 +1,47 @@
+#! /bin/sh
+
+/bin/mount -a
+
+mkdir -p /root
+mkdir -p /home
+mkdir -p /proc
+mkdir -p /sys
+mkdir -p /var/empty
+mkdir -p /var/run
+mkdir -p /var/log
+mkdir -p /var/tmp
+mkdir -p /dev/pts
+touch /var/log/wtmpx
+
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devpts devpts /dev/pts
+mount -t debugfs debugfs /sys/kernel/debug
+
+mdev -s
+
+ifconfig eth0 up
+ifconfig eth1 up
+ifconfig eth0 10.71.1.162 netmask 255.255.255.0 hw ether 040000000102
+ifconfig eth1 10.71.2.162 netmask 255.255.255.0 hw ether 040000000202
+ifconfig lo up
+
+sysctl -w net.ipv4.conf.all.forwarding=1
+sysctl -w net.ipv6.conf.all.forwarding=1
+
+ssh-keygen -t rsa1 -f /usr/local/etc/ssh_host_key -N ""
+ssh-keygen -t rsa -f /usr/local/etc/ssh_host_rsa_key -N ""
+ssh-keygen -t dsa -f /usr/local/etc/ssh_host_dsa_key -N ""
+ssh-keygen -t ecdsa -f /usr/local/etc/ssh_host_ecdsa_key -N ""
+ssh-keygen -t ed25519 -f /usr/local/etc/ssh_host_ed25519_key -N ""
+
+inetd /etc/inetd.conf
+klogd
+syslogd
+/sbin/sshd
+touch /var/run/zebra.pid
+zebra -d -f /etc/zebra.conf.sample -i /var/run/zebra.pid
+
+hostname mithrandir
+
+export TERM=linux3.0

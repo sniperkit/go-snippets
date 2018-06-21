@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ResponsiveSlides.js &middot; Alternative themes</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../../responsiveslides.css">
+  <link rel="stylesheet" href="themes.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="../../responsiveslides.min.js"></script>
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+        auto: false,
+        pager: true,
+        nav: true,
+        speed: 500,
+        maxwidth: 800,
+        namespace: "centered-btns"
+      });
+
+      // Slideshow 2
+      $("#slider2").responsiveSlides({
+        auto: false,
+        pager: true,
+        nav: true,
+        speed: 500,
+        maxwidth: 800,
+        namespace: "transparent-btns"
+      });
+
+      // Slideshow 3
+      $("#slider3").responsiveSlides({
+        auto: false,
+        pager: false,
+        nav: true,
+        speed: 500,
+        maxwidth: 800,
+        namespace: "large-btns"
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <h1>Three different ways to use next/prev buttons</h1>
+
+
+
+    <h3>Vertically centered on both sides</h3>
+    <!-- Slideshow 1 -->
+    <div class="rslides_container">
+      <ul class="rslides" id="slider1">
+        <li><img src="../images/1.jpg" alt=""></li>
+        <li><img src="../images/2.jpg" alt=""></li>
+        <li><img src="../images/3.jpg" alt=""></li>
+      </ul>
+    </div>
+
+
+
+    <h3>Transparent buttons over the left and right side</h3>
+    <!-- Slideshow 2 -->
+    <div class="rslides_container">
+      <ul class="rslides" id="slider2">
+        <li><img src="../images/1.jpg" alt=""></li>
+        <li><img src="../images/2.jpg" alt=""></li>
+        <li><img src="../images/3.jpg" alt=""></li>
+      </ul>
+    </div>
+
+
+
+    <h3>100% height with vertically centered icons</h3>
+    <!-- Slideshow 3 -->
+    <div class="rslides_container">
+      <ul class="rslides" id="slider3">
+        <li><img src="../images/1.jpg" alt=""></li>
+        <li><img src="../images/2.jpg" alt=""></li>
+        <li><img src="../images/3.jpg" alt=""></li>
+      </ul>
+    </div>
+
+
+
+    <a href="http://responsiveslides.com/">View ResponsiveSlides.js documentation</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+|||template "vueheader" .|||
+<div id="monitormain" class="container">
+	<form class="form-horizontal" id="productform" role="form">
+		<fieldset>
+			<legend>Monitor A Device</legend>
+		</fieldset>     
+		<fieldset>
+			<legend></legend>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-4">
+				<button type="submit" class="btn btn-block" @click.prevent="monitor(dump.V4)">Route(4)</button>
+				<button type="submit" class="btn btn-block" @click.prevent="monitor(dump.V6)">ARP</button>
+				<button type="submit" class="btn btn-block" @click.prevent="monitor(dump.ARP)">ND</button>
+				<button type="submit" class="btn btn-block" @click.prevent="monitor(dump.ND)">Route(6)</button>
+			</div>
+		</fieldset>
+	</form>
+</div>
+<script type="text/javascript" src="static/js/product.js"></script>
+<link rel="stylesheet" href="static/css/product.css">
+<script>
+	var monitormain = new Vue({
+		el: '#monitormain',
+		data: {
+			dump: {
+				V4: "v4",
+				V6: "v6",
+				ARP: "arp",
+				ND: "nd"
+			}
+		},
+		methods: {
+			monitor: function(e) {
+				$.ajax({
+					type:"post",
+					url:"monitormain",
+					async:false,
+					data: {
+						id: e
+					},
+					success:function(data) {
+						window.location.href="monitormain"
+					}
+				});
+				this.submitted = true;
+			},
+		}
+	});
+</script>
+|||template "vuefooter"|||

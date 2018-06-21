@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/leeweop/kkkmmu/pppp/lib/memwatch/memwatch.c
+stdio.h
+-
+stdlib.h
+-
+stdarg.h
+-
+string.h
+-
+signal.h
+-
+setjmp.h
+-
+time.h
+-
+limits.h
+-
+memwatch.h
+/home/leeweop/kkkmmu/pppp/lib/memwatch/memwatch.h
+ctype.h
+-
+windows.h
+-
+pthread.h
+-
+windows.h
+-
+
+/home/leeweop/kkkmmu/pppp/lib/memwatch/memwatch.h
+stdlib.h
+-
+

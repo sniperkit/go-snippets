@@ -1,0 +1,4 @@
+::sysinit:/etc/init.d/rcS
+::ctrlaltdel:/bin/umount -a -r
+ca:12345:ctrlaltdel:/sbin/shutdown -t1 -a -r now
+tty1:12345:respawn:/sbin/getty -l /bin/login /dev/tty1 9600

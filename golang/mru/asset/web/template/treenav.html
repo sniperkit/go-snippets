@@ -1,0 +1,107 @@
+|||define "treenav"|||
+<link href="asset/web/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="./css/bootstrap-treeview.css" rel="stylesheet"> -->
+<script src="asset/web/static/jquery/jquery.min.js"></script>
+<script src="asset/web/static/bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+<style>
+#tree-nav{
+	padding-left:10px;
+}
+
+#atstreeview{
+	padding-top:150px;
+}
+</style>
+<div role="navigation" id="tree-nav">
+	<div class="col-sm-2" id="atstreeview">
+		<!--
+		<button type="button" class="btn btn-primary btn-lg" style="text-shadow: black 5px 3px 3px;">
+			  <span class="glyphicon glyphicon-th-list"></span> ATS-A
+		</button>
+		-->
+		<!-- <form> -->
+		<div class="form-group">
+			<button type="button" class="btn btn-info glyphicon glyphicon-search" id="btn-search"></button>
+			<button type="button" class="btn btn-error glyphicon glyphicon-tint" id="btn-clear-search"></button>
+			<button type="button" class="btn btn-success glyphicon glyphicon-eye-open" id="btn-expand-all"></button>
+			<button type="button" class="btn btn-danger glyphicon glyphicon-eye-close" id="btn-collapse-all"></button>
+
+			<label for="input-search" class="sr-only">Search Tree:</label>
+			<input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
+			<div id="treeview-searchable" class=""></div>
+		</div>
+	</div>
+	<!---
+	 <div id="expandible-output"></div>
+	 <hr>
+	-->
+</div>
+<script type="text/javascript">
+	$(function() {
+		var cases
+		$.ajax({
+			type:"get",
+			url:"treeview",
+			async:false,
+			success:function(e) {
+				cases = e;
+			}
+		});
+
+		var $searchableTree = $('#treeview-searchable').treeview({
+			enableLinks: true,
+			//data: |||.|||
+			data: cases
+
+			/*
+					onNodeCollapsed: function(event, node) {
+						$('#expandible-output').prepend('<p>' + node.text + ' was collapsed</p>');
+					},
+					onNodeExpanded: function (event, node) {
+						$('#expandible-output').prepend('<p>' + node.text + ' was expanded</p>');
+					}
+			 */
+		});
+
+		var search = function(e) {
+			var pattern = $('#input-search').val();
+			var options = {
+				ignoreCase: true,
+				exactMatch: false,
+				revealResults: true
+			};
+			var results = $searchableTree.treeview('search', [ pattern, options ]);
+
+			var output = '<p>' + results.length + ' matches found</p>';
+			$.each(results, function (index, result) {
+				output += '<p>- ' + result.text + '</p>';
+			});
+			$('#search-output').html(output);
+		}
+
+		$('#btn-search').on('click', search);
+		$('#input-search').on('keyup', search);
+
+		$('#btn-clear-search').on('click', function (e) {
+			$searchableTree.treeview('clearSearch');
+			$('#input-search').val('');
+			$('#search-output').html('');
+		});
+
+		var findExpandibleNodess = function() {
+			return $searchableTree.treeview('search', [ $('#input-expand-node').val(), { ignoreCase: false, exactMatch: false } ]);
+		};
+		var expandibleNodes = findExpandibleNodess();
+
+		// Expand/collapse all
+		$('#btn-expand-all').on('click', function (e) {
+			var levels = 100;
+			$searchableTree.treeview('expandAll', { levels: levels, silent: $('#chk-expand-silent').is(':checked') });
+		});
+
+		$('#btn-collapse-all').on('click', function (e) {
+			$searchableTree.treeview('collapseAll', { silent: $('#chk-expand-silent').is(':checked') });
+		});
+	});
+</script>
+|||end|||

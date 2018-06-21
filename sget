@@ -1,0 +1,49 @@
+#!/bin/sh
+
+expect_install=`which expect`
+
+if [ "$expect_install" == "" ]; then
+    echo "Cannot find expect in your environment, install first"
+    exit -1
+fi
+
+if [ $# -ne 1 ]; then
+    echo "Usuage aget FILE"
+    exit -1;
+fi
+
+echo "#!/usr/bin/expect     					" > sexpect
+echo "      							" >> sexpect
+echo "set timeout 10     					" >> sexpect
+echo "set host 10.55.2.202     					" >> sexpect
+echo "set username \"liwei\"     				" >> sexpect
+echo "set password \"Lee123!@#\"     				" >> sexpect
+echo "set local [lindex \$argv 0]     				" >> sexpect
+echo "set remote \$local     					" >> sexpect
+echo "spawn scp \$username@\$host:/home/\$username/\$remote   \$local 	" >> sexpect
+echo "expect {     						" >> sexpect
+echo "\"(yes/no)?\"     					" >> sexpect
+echo "{     							" >> sexpect
+echo "    send \"yes\n\"     					" >> sexpect
+echo "    expect \"*assword:\" { send \"\$password\n\"}     	" >> sexpect
+echo "}     							" >> sexpect
+echo "\"*assword:\"     					" >> sexpect
+echo "{     							" >> sexpect
+echo "    send \"\$password\n\"     				" >> sexpect
+echo "}     							" >> sexpect
+echo "}     							" >> sexpect
+echo "expect \"100%\"     					" >> sexpect
+echo "expect eof     						" >> sexpect
+chmod a+x ./sexpect
+
+current_dir=`pwd`
+
+# Save old PATH
+PATH_OLD=$PATH
+export PATH=$PATH:$current_dir
+
+sexpect $1
+
+# Restor PATH
+export PATH=$PATH_OLD
+rm -rf ./sexpect

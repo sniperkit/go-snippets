@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/leeweop/kkkmmu/pppp/lib/unity/unity.c
+unity.h
+/home/leeweop/kkkmmu/pppp/lib/unity/unity.h
+stddef.h
+-
+stdio.h
+-
+
+/home/leeweop/kkkmmu/pppp/lib/unity/unity.h
+unity_internals.h
+/home/leeweop/kkkmmu/pppp/lib/unity/unity_internals.h
+
+/home/leeweop/kkkmmu/pppp/lib/unity/unity_internals.h
+unity_config.h
+/home/leeweop/kkkmmu/pppp/lib/unity/unity_config.h
+setjmp.h
+-
+math.h
+-
+stdint.h
+-
+limits.h
+-
+stdio.h
+-
+stdio.h
+-
+

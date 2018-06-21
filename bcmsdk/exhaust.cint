@@ -1,0 +1,672 @@
+/* Exhaust test, ALPM mode */
+
+    bcm_error_t
+setup_IPv4_host_entries(int unit, int hostIPv4TableCount, bcm_if_t if_id,
+        bcm_ip_t base_local_ipv4, int keep_trying)
+{
+    bcm_error_t rv;
+    bcm_l3_host_t info;
+    int         i;
+    int         missed = 0;
+    int         first_miss = -1;
+    int         added;
+
+    printf("Set up %d IPv4 host entries at %d.%d.%d.%d\n", hostIPv4TableCount,
+            (base_local_ipv4 >> 24) & 0xFF,
+            (base_local_ipv4 >> 16) & 0xFF,
+            (base_local_ipv4 >> 8) & 0xFF, (base_local_ipv4 >> 0) & 0xFF);
+    for (i = 0; i < hostIPv4TableCount; i++) {
+        bcm_ip_t    local_ipv4 = base_local_ipv4 + i;
+
+        /* Add L3 ipV4 host entry. */
+        bcm_l3_host_t_init(&info);
+        info.l3a_ip_addr = local_ipv4;
+        info.l3a_intf = if_id;
+        info.l3a_vrf = 1;
+        if (BCM_FAILURE(rv = bcm_l3_host_add(unit, &info))) {
+            if (keep_trying && (rv == BCM_E_FULL)) {
+                /* Keep trying to add new entries even after first table full */
+                if (first_miss < 0) {
+                    first_miss = i + 1;
+                }
+                missed++;
+            } else {
+                printf("    bcm_l3_host_add() failed at iteration %d: %s\n", i + 1,
+                        bcm_errmsg(rv));
+                missed = hostIPv4TableCount - i;
+                break;
+            }
+        }
+    }
+    added = hostIPv4TableCount - missed;
+    printf("    Added %d IPv4 host entries;", added);
+    if (keep_trying) {
+        printf(" %d missed;", missed);
+        if (missed) {
+            printf(" first miss: %d;\n", first_miss);
+        }
+    }
+    printf("\n");
+    return ((rv != BCM_E_NONE) && (rv != BCM_E_FULL)) ? rv :
+        (keep_trying && (added > 0)) ||
+        (!keep_trying && (added == hostIPv4TableCount)) ? BCM_E_NONE : BCM_E_FULL;
+}
+
+    bcm_error_t
+setup_IPv4_route_entries(int unit, int routeIPv4TableCount, bcm_if_t if_id,
+        bcm_ip_t base_local_ipv4, int keep_trying)
+{
+    bcm_error_t rv;
+    bcm_l3_route_t info;
+    int         i;
+    int         missed = 0;
+    int         first_miss = -1;
+    int         added;
+    bcm_ip_t    ipv4mask = ~0xF;        /* Prefix length = 28 */
+
+    base_local_ipv4 &= ipv4mask;
+    printf("Set up %d IPv4 route entries at %d.%d.%d.%d\n", routeIPv4TableCount,
+            (base_local_ipv4 >> 24) & 0xFF,
+            (base_local_ipv4 >> 16) & 0xFF,
+            (base_local_ipv4 >> 8) & 0xFF, (base_local_ipv4 >> 0) & 0xFF);
+    for (i = 0; i < routeIPv4TableCount; i++) {
+        bcm_ip_t    local_ipv4 = base_local_ipv4 + (i << 4);
+
+        /* Add L3 ipV4 route entry. */
+        bcm_l3_route_t_init(&info);
+        info.l3a_subnet = local_ipv4;
+        info.l3a_ip_mask = ipv4mask;
+        info.l3a_intf = if_id;
+        info.l3a_vrf = 1;
+        if (BCM_FAILURE(rv = bcm_l3_route_add(unit, &info))) {
+            if (keep_trying && (rv == BCM_E_FULL)) {
+                /* Keep trying to add new entries even after first table full */
+                if (first_miss < 0) {
+                    first_miss = i + 1;
+                }
+                missed++;
+            } else {
+                printf("    bcm_l3_route_add() failed at iteration %d: %s\n", i + 1,
+                        bcm_errmsg(rv));
+                missed = routeIPv4TableCount - i;
+                break;
+            }
+        }
+    }
+    added = routeIPv4TableCount - missed;
+    printf("    Added %d IPv4 route entries;", added);
+    if (keep_trying) {
+        printf(" %d missed;", missed);
+        if (missed) {
+            printf(" first miss: %d;\n", first_miss);
+        }
+    }
+    printf("\n");
+    return ((rv != BCM_E_NONE) && (rv != BCM_E_FULL)) ? rv :
+        (keep_trying && (added > 0)) ||
+        (!keep_trying && (added == routeIPv4TableCount)) ? BCM_E_NONE : BCM_E_FULL;
+}
+
+    bcm_error_t
+setup_IPv6_host_entries(int unit, int hostIPv6TableCount, bcm_if_t if_id,
+        bcm_ip6_t base_local_ipv6, int keep_trying)
+{
+    bcm_error_t rv;
+    bcm_l3_host_t info;
+    int         i;
+    int         missed = 0;
+    int         first_miss = -1;
+    int         added;
+
+    printf("Set up %d IPv6 host entries at ", hostIPv6TableCount);
+    for (i = 0; i < 16; i += 2) {
+        if (i) {
+            printf(".");
+        }
+        printf("%02X%02X", base_local_ipv6[i], base_local_ipv6[i + 1]);
+    }
+    printf("\n");
+    for (i = 0; i < hostIPv6TableCount; i++) {
+        bcm_ip6_t   local_ipv6 = base_local_ipv6;       /* Destination host IP address (IPv6). */
+        int         lower_16 = (i + 1) + local_ipv6[15] + (local_ipv6[14] << 8);
+
+        local_ipv6[15] = lower_16 & 0xFF;
+        local_ipv6[14] = (lower_16 >> 8) & 0xFF;
+
+        /* Add L3 IPv6 host entry. */
+        bcm_l3_host_t_init(&info);
+        info.l3a_flags = BCM_L3_IP6;
+        info.l3a_ip6_addr = local_ipv6;
+        info.l3a_intf = if_id;
+        info.l3a_vrf = 1;
+        if (BCM_FAILURE(rv = bcm_l3_host_add(unit, &info))) {
+            if (keep_trying && (rv == BCM_E_FULL)) {
+                if (first_miss < 0) {
+                    first_miss = i;
+                }
+                missed++;
+            } else {
+                printf("    bcm_l3_host_add() failed at iteration %d: %s\n", i + 1,
+                        bcm_errmsg(rv));
+                missed = hostIPv6TableCount - i;
+                break;
+            }
+        }
+    }
+    added = hostIPv6TableCount - missed;
+    printf("    Added %d IPv6 host entries;", added);
+    if (keep_trying) {
+        printf(" %d missed;", missed);
+        if (missed) {
+            printf(" first miss: %d;\n", first_miss);
+        }
+    }
+    printf("\n");
+    return ((rv != BCM_E_NONE) && (rv != BCM_E_FULL)) ? rv :
+        (keep_trying && (added > 0)) ||
+        (!keep_trying && (added == hostIPv6TableCount)) ? BCM_E_NONE : BCM_E_FULL;
+}
+
+    bcm_error_t
+setup_IPv6_route_entries(int unit, int routeIPv6TableCount, bcm_if_t if_id,
+        bcm_ip6_t base_local_ipv6, int keep_trying)
+{
+    const int   inc_byte = 11;
+    const bcm_ip6_t ipv6_mask =
+    { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+        0x00, 0x00, 0x00
+    };
+    bcm_error_t rv;
+    bcm_l3_route_t info;
+    int         i;
+    int         missed = 0;
+    int         first_miss = -1;
+    int         added;
+
+    printf("Set up %d IPv6 route entries at ", routeIPv6TableCount);
+    for (i = 0; i < 16; i += 2) {
+        if (i) {
+            printf(".");
+        }
+        printf("%02X%02X", base_local_ipv6[i], base_local_ipv6[i + 1]);
+    }
+    printf("\n");
+    for (i = 0; i < routeIPv6TableCount; i++) {
+        bcm_ip6_t   local_ipv6 = base_local_ipv6;       /* Destination route IP address (IPv6). */
+        int         lower_16 =
+            (i + 1) + local_ipv6[inc_byte + 1] + (local_ipv6[inc_byte] << 8);
+
+        local_ipv6[inc_byte + 1] = lower_16 & 0xFF;
+        local_ipv6[inc_byte] = (lower_16 >> 8) & 0xFF;
+
+        /* Add L3 IPv6 route entry. */
+        bcm_l3_route_t_init(&info);
+        info.l3a_flags = BCM_L3_IP6;
+        info.l3a_ip6_net = local_ipv6;
+        info.l3a_ip6_mask = ipv6_mask;
+        info.l3a_intf = if_id;
+        info.l3a_vrf = 1;
+        if (BCM_FAILURE(rv = bcm_l3_route_add(unit, &info))) {
+            if (keep_trying && (rv == BCM_E_FULL)) {
+                if (first_miss < 0) {
+                    first_miss = i;
+                }
+                missed++;
+            } else {
+                printf("    bcm_l3_route_add() failed at iteration %d: %s\n", i + 1,
+                        bcm_errmsg(rv));
+                missed = routeIPv6TableCount - i;
+                break;
+            }
+        }
+    }
+    added = routeIPv6TableCount - missed;
+    printf("    Added %d IPv6 route entries;", added);
+    if (keep_trying) {
+        printf(" %d missed;", missed);
+        if (missed) {
+            printf(" first miss: %d;\n", first_miss);
+        }
+    }
+    printf("\n");
+    return ((rv != BCM_E_NONE) && (rv != BCM_E_FULL)) ? rv :
+        (keep_trying && (added > 0)) ||
+        (!keep_trying && (added == routeIPv6TableCount)) ? BCM_E_NONE : BCM_E_FULL;
+}
+
+    bcm_error_t
+setup_ipv4_multicast_groups(int unit, int multicastGroupCount, bcm_ip_t base_mc_ip_addr,
+        int *addedGroups, int keep_trying)
+{
+    int         i;
+    bcm_multicast_t mcg;
+    bcm_ipmc_addr_t ipmc_addr;
+    bcm_error_t rv;
+    int         missed = 0;
+    int         first_miss = -1;
+
+    printf("Set up %d multicast groups at %d.%d.%d.%d\n", multicastGroupCount,
+            (base_mc_ip_addr >> 24) & 0xFF,
+            (base_mc_ip_addr >> 16) & 0xFF,
+            (base_mc_ip_addr >> 8) & 0xFF, (base_mc_ip_addr >> 0) & 0xFF);
+    for (i = 0; i < multicastGroupCount; i++) {
+
+        if (BCM_FAILURE(rv = bcm_multicast_create(unit, BCM_MULTICAST_TYPE_L3, &mcg))) {
+            printf("bcm_multicast_create() failed at iteration %d: %s\n", i + 1,
+                    bcm_errmsg(rv));
+            return rv;
+        }
+
+        bcm_ipmc_addr_t_init(&ipmc_addr);
+        ipmc_addr.vid = 1;      /* VLAN identifier */
+        ipmc_addr.s_ip_addr = 10 << 24 | 10 << 16 | 10 << 8 | 10 << 0;
+        ipmc_addr.mc_ip_addr = base_mc_ip_addr + i;
+        ipmc_addr.flags = 0;
+        ipmc_addr.group = mcg;
+        if (BCM_FAILURE(rv = bcm_ipmc_add(unit, &ipmc_addr))) {
+            if (keep_trying && (rv == BCM_E_FULL)) {
+                if (first_miss < 0) {
+                    first_miss = i + 1;
+                }
+                missed++;
+            } else {
+                printf("    bcm_ipmc_add() failed at iteration %d: %s\n", i + 1,
+                        bcm_errmsg(rv));
+                missed = multicastGroupCount - i;
+                break;
+            }
+        }
+    }
+    *addedGroups = multicastGroupCount - missed;
+    printf("    Added %d multicast groups;", *addedGroups);
+    if (keep_trying) {
+        printf(" %d missed;", missed);
+        if (missed) {
+            printf(" first miss: %d;\n", first_miss);
+        }
+    }
+    printf("\n");
+    return ((rv != BCM_E_NONE) && (rv != BCM_E_FULL)) ? rv :
+        (keep_trying && (*addedGroups > 0)) ||
+        (!keep_trying && (*addedGroups == multicastGroupCount)) ? BCM_E_NONE : BCM_E_FULL;
+}
+
+    bcm_error_t
+create_vlan(int unit, bcm_vlan_t vlan, bcm_port_t port)
+{
+    bcm_error_t rv;
+    bcm_pbmp_t  port_list;
+    bcm_pbmp_t  untagged;
+
+    BCM_PBMP_PORT_SET(port_list, port);
+    BCM_PBMP_CLEAR(untagged);   /* Never untagged */
+
+    rv = bcm_vlan_create(unit, vlan);
+    if (BCM_FAILURE(rv) && (rv != BCM_E_EXISTS)) {
+        return rv;
+    }
+
+    BCM_IF_ERROR_RETURN(bcm_vlan_port_add(unit, vlan, port_list, untagged));
+
+    return BCM_E_NONE;
+}
+
+    bcm_error_t
+configure_hash_multi_move_depth(int unit, int depth)
+{
+    bcm_error_t rv;
+    const int   control_count = 3;
+    int         idx;
+
+    const bcm_switch_control_t controls[control_count] = {
+        bcmSwitchHashMultiMoveDepth,
+        bcmSwitchHashMultiMoveDepthL2,
+        bcmSwitchHashMultiMoveDepthL3
+    };
+    const char *control_names[control_count] = {
+        "HashMultiMoveDepth",
+        "HashMultiMoveDepthL2",
+        "HashMultiMoveDepthL3"
+    };
+
+    for (idx = 0; idx < control_count; idx++) {
+        if (BCM_FAILURE(rv = bcm_switch_control_set(unit, controls[idx], depth))) {
+            if (rv == BCM_E_UNAVAIL) {
+                printf("Cannot set multi-move depth, %s not available\n",
+                        control_names[idx]);
+            } else {
+                return rv;
+            }
+        }
+    }
+    return BCM_E_NONE;
+}
+
+    bcm_error_t
+display_hash_config(int unit)
+{
+    bcm_error_t rv;
+    const int   control_count = 9;
+    int         idx;
+    int         arg;
+    uint32      bank_count;
+
+    const bcm_switch_control_t controls[control_count] = {
+        bcmSwitchHashL3,
+        bcmSwitchHashL3Dual,
+        bcmSwitchHashL3DualLeastFull,
+        bcmSwitchHashMultiMoveDepth,
+        bcmSwitchHashMultiMoveDepthL2,
+        bcmSwitchHashMultiMoveDepthL3,
+        bcmSwitchHashMultiMoveDepthMpls,
+        bcmSwitchHashMultiMoveDepthVlan,
+        bcmSwitchHashMultiMoveDepthEgressVlan
+    };
+    const char *control_names[control_count] = {
+        "HashL3",
+        "HashL3Dual",
+        "HashL3DualLeastFull",
+        "HashMultiMoveDepth",
+        "HashMultiMoveDepthL2",
+        "HashMultiMoveDepthL3",
+        "HashMultiMoveDepthMpls",
+        "HashMultiMoveDepthVlan",
+        "HashMultiMoveDepthEgressVlan"
+    };
+
+    for (idx = 0; idx < control_count; idx++) {
+        if (BCM_FAILURE(rv = bcm_switch_control_get(unit, controls[idx], &arg))) {
+            if (rv == BCM_E_UNAVAIL) {
+                printf("%s not available\n", control_names[idx]);
+            } else {
+                return rv;
+            }
+        } else {
+            printf("%s = %d\n", control_names[idx], arg);
+        }
+    }
+    if (BCM_SUCCESS(bcm_switch_hash_banks_max_get(unit, bcmHashTableL3, &bank_count))) {
+        uint32      bank;
+        int         hash_type;
+        uint32      hash_offset;
+
+        printf("Hash Bank Configuration\n");
+        for (bank = 0; bank < bank_count; bank++) {
+            BCM_IF_ERROR_RETURN(bcm_switch_hash_banks_config_get(unit, bcmHashTableL3,
+                        bank, &hash_type,
+                        &hash_offset));
+            switch (hash_type) {
+                case BCM_HASH_LSB:
+                    printf("  Bank %u: LSB\n", bank);
+                    break;
+                case BCM_HASH_CRC16U:
+                    printf("  Bank %u: Upper CRC16\n", bank);
+                    break;
+                case BCM_HASH_CRC16L:
+                    printf("  Bank %u: Lower CRC16\n", bank);
+                    break;
+                case BCM_HASH_CRC32U:
+                    printf("  Bank %u: Upper CRC32\n", bank);
+                    break;
+                case BCM_HASH_CRC32L:
+                    printf("  Bank %u: Lower CRC32\n", bank);
+                    break;
+                case BCM_HASH_OFFSET:
+                    printf("  Bank %u: Hash Offset; Offset=%u\n", bank, hash_offset);
+                    break;
+                default:
+                    printf("  Bank %u: Hash Type = %d; Offset=%u\n", bank, hash_type,
+                            hash_offset);
+                    break;
+            }
+        }
+    }
+    return BCM_E_NONE;
+}
+
+    bcm_error_t
+l3_info(int unit)
+{
+    bcm_l3_info_t l3info;
+
+    BCM_IF_ERROR_RETURN(bcm_l3_info(unit, &l3info));
+
+    printf("L3 INFO:\n");
+    printf("  L3 host table size (unit is IPv4 unicast): %d\n", l3info.l3info_max_host);
+    printf("  L3 host entries used: %d (%d remaining, %d%% utilization)\n",
+            l3info.l3info_used_host, l3info.l3info_max_host - l3info.l3info_used_host,
+            ((l3info.l3info_used_host * 100) +
+             (l3info.l3info_used_host / 2)) / l3info.l3info_max_host);
+    printf("  L3 route table size (unit is IPv4 route): %d\n", l3info.l3info_max_route);
+    printf("  L3 route entries used: %d\n", l3info.l3info_used_route);
+    printf("  NextHops used: %d\n", l3info.l3info_used_nexthop);
+    printf("  L3 interfaces used: %d\n", l3info.l3info_used_intf);
+    printf("  LPM blocks used: %d\n", l3info.l3info_used_lpm_block);
+    printf("  Maximum ECMP paths allowed: %d\n", l3info.l3info_max_ecmp);
+    printf("  Maximum IPV4 tunnels that can be initiated: %d\n",
+            l3info.l3info_max_tunnel_init);
+    printf("  Maximum IPV4 tunnels that can be terminated: %d\n",
+            l3info.l3info_max_tunnel_term);
+    printf("  Maximum L3 interface groups the chip supports: %d\n",
+            l3info.l3info_max_intf_group);
+    printf("  Maximum L3 interfaces the chip supports: %d\n", l3info.l3info_max_intf);
+    printf("  Maximum LPM blocks: %d\n", l3info.l3info_max_lpm_block);
+    printf("  Maximum NextHops: %d\n", l3info.l3info_max_nexthop);
+    printf("  Maximum number of virtual routers allowed: %d\n", l3info.l3info_max_vrf);
+    printf("  Number of active IPV4 tunnels initiated: %d\n",
+            l3info.l3info_used_tunnel_init);
+    printf("  Number of active IPV4 tunnels terminated: %d\n",
+            l3info.l3info_used_tunnel_term);
+    printf("  Number of virtual routers created so far: %d\n", l3info.l3info_used_vrf);
+    return BCM_E_NONE;
+}
+
+    bcm_error_t
+hash_config(int unit, int l3, int l3dual, int leastFull)
+{
+    bcm_error_t rv;
+
+    /*
+     * BCM_HASH_ZERO[1]:   Always return 0 (debug only).
+     * BCM_HASH_LSB[2]:    Return LSB of key.
+     * BCM_HASH_CRC16L[3]: Lower bits of CRC-16.
+     * BCM_HASH_CRC16U[4]: Upper bits of CRC-16.
+     * BCM_HASH_CRC32L[5]: Lower bits of CRC-32.
+     * BCM_HASH_CRC32U[6]: Upper bits of CRC-32.
+     */
+
+    /* Hash Select for L3. */
+    if (BCM_FAILURE(rv = bcm_switch_control_set(unit, bcmSwitchHashL3, l3))
+            && (rv != BCM_E_UNAVAIL)) {
+        return rv;
+    }
+    /* Secondary Hash Select for L3. */
+    if (BCM_FAILURE(rv = bcm_switch_control_set(unit, bcmSwitchHashL3Dual, l3dual))
+            && (rv != BCM_E_UNAVAIL)) {
+        return rv;
+    }
+    /* Use least full bank in dual hash L3 */
+    if (BCM_FAILURE(rv = bcm_switch_control_set
+                (unit, bcmSwitchHashL3DualLeastFull, leastFull))
+            && (rv != BCM_E_UNAVAIL)) {
+        return rv;
+    }
+    return BCM_E_NONE;
+}
+
+    bcm_error_t
+hash_bank_config(int unit, int banks, uint32 * config)
+{
+    uint32      bank;
+    bcm_error_t rv;
+
+    for (bank = 0; bank < banks; bank++) {
+        int         hash_type;
+        uint32      hash_offset;
+
+        if (config[bank] & BCM_HASH_OFFSET) {
+            hash_type = BCM_HASH_OFFSET;
+            hash_offset = config[bank] & ~BCM_HASH_OFFSET;
+        } else {
+            hash_type = config[bank];
+            hash_offset = 0;
+        }
+
+        if (BCM_FAILURE(rv = bcm_switch_hash_banks_config_set(unit, bcmHashTableL3,
+                        bank, hash_type,
+                        hash_offset))) {
+            if (rv == BCM_E_UNAVAIL) {
+                printf("Cannot configure hash banks, feature not available\n");
+                return BCM_E_NONE;
+            } else {
+                return rv;
+            }
+
+        }
+    }
+    return BCM_E_NONE;
+}
+
+    bcm_error_t
+exhaust(int unit)
+{
+    /* Specific recursion depth for hash multi-move, set to 0 to disable hash multi move */
+    const int   hashMultiMoveDepth = 8;
+
+    /* Hash controls */
+    const int   has_hash_banks = 1;
+    const int   TD2_banks = 4;
+    const uint32 hash_params[TD2_banks] =
+    { BCM_HASH_CRC32U, BCM_HASH_CRC32L, BCM_HASH_CRC16U, BCM_HASH_CRC16L };
+    const int   l3HashMode = BCM_HASH_LSB;
+    const int   l3dualHashMode = BCM_HASH_CRC32L;
+    const int   leastFull = TRUE;
+
+    /* In "keep_trying" mode, keep trying to add entries after the first "table full" */
+    const int   keep_trying = 0;
+
+    /*
+     * By adjusting these constants, it is possible to cause "table full"
+     * errors for various entry types.
+     */
+    const int   hostIPv4TableCount = 8192;
+    const int   hostIPv6TableCount = 2013;
+    const int   routeIPv4TableCount = 55;
+    const int   routeIPv6TableCount = 47;
+    const int   maxIpmcGroups = 2;
+    const int   multicastGroupCount = 256;
+
+    /* Program constants */
+    const bcm_port_t local_port = 2;
+    const bcm_mac_t local_mac = { 0x00, 0x00, 0x00, 0x00, 0x22, 0x22 };
+    const bcm_vlan_t local_vid = 22;
+
+    const bcm_port_t remote_port = 3;
+    const bcm_mac_t remote_mac = { 0x00, 0x00, 0x00, 0x00, 0x33, 0x33 };
+    const bcm_vlan_t remote_vid = 33;
+
+    const bcm_ip_t base_local_ipv4 = 10 << 24 | 10 << 16 | 10 << 8 | 12 << 0;
+    const bcm_ip_t base_route_ipv4 = 192 << 24 | 14 << 16 | 0 << 8 | 0 << 0;
+    const bcm_ip6_t base_local_ipv6 =
+    { 0x7D, 0xA0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00
+    };
+    const bcm_ip6_t base_route_ipv6 =
+    { 0x20, 0x01, 0x0D, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00
+    };
+
+    /* Program variables */
+    bcm_error_t rv;
+    bcm_gport_t remote_gport;
+    bcm_if_t    if_id;
+    bcm_l3_egress_t l3_egress;
+    bcm_l3_intf_t intf;
+    int         i;
+
+    BCM_IF_ERROR_RETURN(bcm_switch_control_set(unit, bcmSwitchL3EgressMode, TRUE));
+
+    BCM_IF_ERROR_RETURN(configure_hash_multi_move_depth(unit, hashMultiMoveDepth));
+
+    if (has_hash_banks) {
+        BCM_IF_ERROR_RETURN(hash_bank_config(unit, TD2_banks, hash_params));
+    } else {
+        BCM_IF_ERROR_RETURN(hash_config(unit, l3HashMode, l3dualHashMode, leastFull));
+    }
+
+    BCM_IF_ERROR_RETURN(display_hash_config(unit));
+
+    BCM_IF_ERROR_RETURN(bcm_port_gport_get(unit, remote_port, &remote_gport));
+
+    BCM_IF_ERROR_RETURN(create_vlan(unit, local_vid, local_port));
+    BCM_IF_ERROR_RETURN(create_vlan(unit, remote_vid, remote_port));
+
+    /* Create L3 Interface */
+    bcm_l3_intf_t_init(&intf);
+    intf.l3a_flags = BCM_L3_ADD_TO_ARL;
+    intf.l3a_mac_addr = local_mac;
+    intf.l3a_vid = local_vid;
+    BCM_IF_ERROR_RETURN(bcm_l3_intf_create(unit, &intf));
+
+    /* Create L3 Egress Object */
+    bcm_l3_egress_t_init(&l3_egress);
+    l3_egress.mac_addr = remote_mac;
+    l3_egress.intf = intf.l3a_intf_id;
+    l3_egress.vlan = remote_vid;
+    l3_egress.port = remote_gport;
+
+    BCM_IF_ERROR_RETURN(bcm_l3_egress_create(unit, 0, &l3_egress, &if_id));
+
+    /* STEP 1: Create IPv4 route entries */
+    if (routeIPv4TableCount) {
+        if (BCM_FAILURE(rv = setup_IPv4_route_entries(unit, routeIPv4TableCount, if_id,
+                        base_route_ipv4, keep_trying))) {
+            BCM_IF_ERROR_RETURN(l3_info(unit));
+            return rv;
+        }
+    }
+    /* STEP 2: Create IPv4 host entries */
+    if (hostIPv4TableCount) {
+        if (BCM_FAILURE(rv = setup_IPv4_host_entries(unit, hostIPv4TableCount, if_id,
+                        base_local_ipv4, keep_trying))) {
+            BCM_IF_ERROR_RETURN(l3_info(unit));
+            return rv;
+        }
+    }
+    /* STEP 3: Create IPv6 route entries */
+    if (routeIPv6TableCount) {
+        if (BCM_FAILURE(rv = setup_IPv6_route_entries(unit, routeIPv6TableCount, if_id,
+                        base_route_ipv6, keep_trying))) {
+            BCM_IF_ERROR_RETURN(l3_info(unit));
+            return rv;
+        }
+    }
+    /* STEP 4: Create IPv6 host entries */
+    if (hostIPv6TableCount) {
+        if (BCM_FAILURE(rv = setup_IPv6_host_entries(unit, hostIPv6TableCount, if_id,
+                        base_local_ipv6, keep_trying))) {
+            BCM_IF_ERROR_RETURN(l3_info(unit));
+            return rv;
+        }
+    }
+    /* STEP 5: Create IPMC entries */
+    for (i = 0; i < maxIpmcGroups; i++) {
+        const bcm_ip_t base_mc_ip_addr = (225 + i) << 24 | 0 << 16;
+        int         addedGroups;
+        bcm_error_t rv;
+
+        printf("IPMC group %d\n", i + 1);
+        if (BCM_FAILURE(rv = setup_ipv4_multicast_groups
+                    (unit, multicastGroupCount, base_mc_ip_addr, &addedGroups,
+                     keep_trying))) {
+            printf("Failed[%s] after adding %d IPv4 multicast groups\n", bcm_errmsg(rv),
+                    (multicastGroupCount * i) + addedGroups);
+            BCM_IF_ERROR_RETURN(l3_info(unit));
+            return rv;
+        }
+    }
+
+    printf("TEST COMPLETE\n");
+    BCM_IF_ERROR_RETURN(l3_info(unit));
+    return BCM_E_NONE;
+}

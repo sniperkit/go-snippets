@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Vue and Bootstrap</title>
+        <link rel="stylesheet" href="/asset/web/css/bootstrap.min.css">
+        <script src="/asset/web/js/jquery.min.js"></script>
+        <script src="/asset/web/js/bootstrap.min.js"></script>
+        <script src="/asset/web/js/vue.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1> Bootstrap and Vue practise. </h1>
+            <pre>
+                {{$data | json}}
+            </pre>
+        </div>
+    </body>
+    <script>
+    new Vue({
+            el: '.container',
+            data: {
+            }
+    })
+    </script>
+</html>

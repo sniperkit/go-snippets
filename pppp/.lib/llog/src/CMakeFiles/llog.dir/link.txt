@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC  -Wall -Werror  -shared -Wl,-soname,libllog.so.1 -o ../lib/libllog.so.1.1 CMakeFiles/llog.dir/llog.c.o 

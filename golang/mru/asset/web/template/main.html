@@ -1,0 +1,33 @@
+|||template "vueheader" |||
+<link rel="stylesheet" href="asset/web/static/css/caseheader.css">
+<script type="text/javascript" src="asset/web/static/js/caseheader.js"></script>
+<div id="mainpage">
+	<fieldset>
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<button class="btn btn-info btn-block" @click.prevent="scriptmain">RunScript</button>
+			<button class="btn btn-primary btn-block" @click.prevent="testcasemain">RunTestCase</button>
+			<button class="btn btn-warning btn-block" @click.prevent="monitormain">Monitor</button>
+		</div>
+	</fieldset>
+</div>
+<script>
+var newMain = new Vue({
+		el: '#mainpage',
+		data: {},
+		methods: {
+			scriptmain: function() {
+				window.location.href="product"
+			},
+
+			testcasemain: function() {
+				window.location.href="newcase"
+			},
+
+			monitormain: function() {
+				window.location.href="monitor"
+			}
+	}
+});
+</script>
+|||template "vuefooter"|||

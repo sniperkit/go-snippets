@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -Wall -g -finstrument-functions -pg -funwind-tables -rdynamic  -shared -Wl,-soname,libmemwatch.so.1 -o ../../lib/libmemwatch.so.1.1 CMakeFiles/memwatch.dir/memwatch.c.o -ldl -lpthread -lm 

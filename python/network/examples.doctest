@@ -1,0 +1,172 @@
+Run this file, after pip installing "requests" under Python 3 and
+starting up "httpbin" running on localhost (see "config.py" which is
+also in this directory), with:
+
+$ python3 -m doctest examples.doctest
+
+------------------------------------------------------------------------
+
+Assuming that httpbin is running on port 8000:
+
+------------------------------------------------------------------------
+
+>>> import requests
+
+>>> r = requests.get('http://localhost:8000/headers')
+>>> print(r.text)
+{
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "Host": "localhost:8000",
+    "User-Agent": "python-requests/2.4.1 CPython/3.4.1 Linux/3.13.0-37-generic"
+  }
+}
+
+>>> from urllib.request import urlopen
+>>> import urllib.error
+
+>>> r = urlopen('http://localhost:8000/headers')
+>>> print(r.read().decode('ascii'))
+{
+  "headers": {
+    "Accept-Encoding": "identity",
+    "Connection": "close",
+    "Host": "localhost:8000",
+    "User-Agent": "Python-urllib/3.4"
+  }
+}
+
+------------------------------------------------------------------------
+
+>>> r = requests.get('http://localhost:8000/status/200')
+>>> r.raise_for_status()
+>>> r.status_code
+200
+
+>>> r = requests.get('http://localhost:8000/status/301')
+>>> r.raise_for_status()
+>>> (r.status_code, r.url)
+(200, 'http://localhost:8000/get')
+>>> r.history
+[<Response [301]>, <Response [302]>]
+
+>>> r = requests.get('http://localhost:8000/status/303')
+>>> r.raise_for_status()
+>>> (r.status_code, r.url)
+(200, 'http://localhost:8000/get')
+
+>>> r = requests.get('http://localhost:8000/status/307')
+>>> r.raise_for_status()
+>>> (r.status_code, r.url)
+(200, 'http://localhost:8000/get')
+
+>>> r = requests.get('http://localhost:8000/status/400')
+>>> r.raise_for_status()
+Traceback (most recent call last):
+...
+requests.exceptions.HTTPError: 400 Client Error: BAD REQUEST
+>>> r.status_code
+400
+
+>>> r = requests.get('http://localhost:8000/status/500')
+>>> r.raise_for_status()
+Traceback (most recent call last):
+...
+requests.exceptions.HTTPError: 500 Server Error: INTERNAL SERVER ERROR
+>>> r.status_code
+500
+
+But:
+
+>>> r = requests.get('http://localhost:8000/status/301', allow_redirects=False)
+>>> r.raise_for_status()
+>>> (r.status_code, r.url, r.headers['Location'])
+(301, 'http://localhost:8000/status/301', '/redirect/1')
+
+>>> r = requests.get('http://localhost:8000/status/303', allow_redirects=False)
+>>> r.raise_for_status()
+>>> (r.status_code, r.url)
+(303, 'http://localhost:8000/status/303')
+
+>>> r = requests.get('http://localhost:8000/status/307', allow_redirects=False)
+>>> r.raise_for_status()
+>>> (r.status_code, r.url)
+(307, 'http://localhost:8000/status/307')
+
+>>> r = requests.get('http://google.com/')
+>>> r.url
+'http://www.google.com/'
+>>> r = requests.get('http://www.twitter.com/')
+>>> r.url
+'https://twitter.com/'
+
+------------------------------------------------------------------------
+
+>>> from urllib.request import urlopen
+>>> import urllib.error
+
+>>> r = urlopen('http://localhost:8000/status/200')
+>>> r.status
+200
+
+>>> r = urlopen('http://localhost:8000/status/301')
+>>> (r.status, r.url)
+(200, 'http://localhost:8000/get')
+
+>>> r = urlopen('http://localhost:8000/status/303')
+>>> (r.status, r.url)
+(200, 'http://localhost:8000/get')
+
+>>> r = urlopen('http://localhost:8000/status/307')
+>>> (r.status, r.url)
+(200, 'http://localhost:8000/get')
+
+>>> urlopen('http://localhost:8000/status/400')
+Traceback (most recent call last):
+...
+urllib.error.HTTPError: HTTP Error 400: BAD REQUEST
+
+>>> urlopen('http://localhost:8000/status/500')
+Traceback (most recent call last):
+...
+urllib.error.HTTPError: HTTP Error 500: INTERNAL SERVER ERROR
+
+>>> try:
+...     urlopen('http://localhost:8000/status/500')
+... except urllib.error.HTTPError as e:
+...     print(e.status, repr(e.headers['Content-Type']))
+500 'text/html; charset=utf-8'
+
+------------------------------------------------------------------------
+
+>>> requests.get('http://localhost:8000/basic-auth/brandon/atigdngnatwwal')
+<Response [401]>
+
+>>> s = requests.Session()
+>>> s.auth = 'brandon', 'atigdngnatwwal'
+>>> s.get('http://localhost:8000/basic-auth/brandon/atigdngnatwwal')
+<Response [200]>
+
+>>> s = requests.Session()
+>>> s.get('http://localhost:8000/cookies/set?'
+...       'session-id=d41d8cd98f00b204e9800998ecf8427e')
+<Response [200]>
+>>> s.get('http://localhost:8000/cookies')
+<Response [200]>
+
+------------------------------------------------------------------------
+
+>>> import http.client
+>>> h = http.client.HTTPConnection('localhost:8000')
+
+>>> h.request('GET', '/ip')
+>>> r = h.getresponse()
+>>> r.status
+200
+
+>>> h.request('GET', '/user-agent')
+>>> r = h.getresponse()
+>>> r.status
+200

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/liblibran.a  CMakeFiles/libran_static.dir/hash.c.o CMakeFiles/libran_static.dir/random.c.o CMakeFiles/libran_static.dir/util.c.o
+/usr/bin/ranlib ../../../lib/liblibran.a

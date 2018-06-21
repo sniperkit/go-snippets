@@ -1,0 +1,2 @@
+1. VLAN ContentAware Processor
+    The VLAN ContentAware processor (VCAP) is primarily designed to allow a user to assign a VLAN ID to a packet base on the collected metadata before further processing commences. VCAP has evolved and is now capable of performing other actions such as SVP/L3_IIF/VRF assignments, queue assignment, classification tag assignment, copying packets to CPU, or dropping of packets.

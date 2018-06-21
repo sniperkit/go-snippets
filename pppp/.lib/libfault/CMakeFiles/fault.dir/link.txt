@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -Wall -g -finstrument-functions -pg -ftest-coverage -fprofile-arcs -funwind-tables -rdynamic  -shared -Wl,-soname,libfault.so.1 -o ../../lib/libfault.so.1.1 CMakeFiles/fault.dir/fault.c.o CMakeFiles/fault.dir/leak_detector.c.o -ldl -lpthread -lm 

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/leeweop/kkkmmu/pppp/lib/llog/test/llogmain.c
+stdlib.h
+-
+llog.h
+/home/leeweop/kkkmmu/pppp/lib/llog/test/llog.h
+
+lib/llog/src/llog.h
+stdio.h
+-
+errno.h
+-
+string.h
+-
+
