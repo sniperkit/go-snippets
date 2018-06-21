@@ -1,0 +1,10 @@
+hash: a31bb3565b23118ff54847e4d96869046c0654c316a5c94beee2f486b1719aa9
+updated: 2016-05-29T16:47:41.207673735+02:00
+imports:
+- name: github.com/go-mangos/mangos
+  version: 83e303c317b515175501237794009a610fc918e1
+  subpackages:
+  - protocol/pair
+  - transport/ipc
+  - transport/tcp
+devImports: []
