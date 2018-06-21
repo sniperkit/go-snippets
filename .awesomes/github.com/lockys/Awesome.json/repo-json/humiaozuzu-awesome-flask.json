@@ -1,0 +1,581 @@
+[
+  {
+    "name": "Connexion",
+    "url": "https://github.com/zalando/connexion",
+    "description": "Swagger/OpenAPI First framework for Python on top of Flask with automatic endpoint validation and OAuth2 support"
+  },
+  {
+    "name": "Flask-MongoRest",
+    "url": "https://github.com/closeio/flask-mongorest",
+    "description": "Restful API framework wrapped around MongoEngine"
+  },
+  {
+    "name": "Eve",
+    "url": "https://github.com/pyeve/eve",
+    "description": "REST API framework powered by Flask, MongoDB and good intentions"
+  },
+  {
+    "name": "Flask-Restless",
+    "url": "https://github.com/jfinkels/flask-restless",
+    "description": "A Flask extension for creating simple ReSTful APIs from SQLAlchemy models"
+  },
+  {
+    "name": "Flask-RESTful",
+    "url": "https://github.com/flask-restful/flask-restful",
+    "description": "Simple framework for creating REST APIs"
+  },
+  {
+    "name": "Flask-RestPlus",
+    "url": "https://github.com/noirbizarre/flask-restplus",
+    "description": "syntaxic sugar, helpers and automatically generated Swagger documentation."
+  },
+  {
+    "name": "Flask-Potion",
+    "url": "https://github.com/biosustain/potion",
+    "description": "RESTful API framework for Flask and SQLAlchemy"
+  },
+  {
+    "name": "Zappa",
+    "url": "https://github.com/Miserlou/Zappa",
+    "description": "Build and deploy server-less Flask applications on AWS Lambda and API Gateway"
+  },
+  {
+    "name": "Flask-Admin",
+    "url": "https://github.com/flask-admin/flask-admin",
+    "description": "Simple and extensible administrative interface framework for Flask"
+  },
+  {
+    "name": "Flask-Security",
+    "url": "https://github.com/mattupstate/flask-security",
+    "description": "Quick and simple security for Flask applications"
+  },
+  {
+    "name": "Flask-Login",
+    "url": "https://github.com/maxcountryman/flask-login",
+    "description": "Flask user session management"
+  },
+  {
+    "name": "Flask-User",
+    "url": "https://github.com/lingthio/Flask-User",
+    "description": "Customizable user account management for Flask"
+  },
+  {
+    "name": "Flask-HTTPAuth",
+    "url": "https://github.com/miguelgrinberg/Flask-HTTPAuth",
+    "description": "Simple extension that provides Basic and Digest HTTP authentication for Flask routes"
+  },
+  {
+    "name": "Authlib",
+    "url": "https://github.com/lepture/authlib",
+    "description": "Authlib is an ambitious authentication library for OAuth 1, OAuth 2, OpenID clients, servers and more."
+  },
+  {
+    "name": "Authomatic",
+    "url": "https://github.com/authomatic/authomatic",
+    "description": "Authomatic provides out of the box support for a number of providers using OAuth 1.0a (Twitter, Tumblr and more) and OAuth 2.0 (Facebook, Foursquare, GitHub, Google, LinkedIn, PayPal and more)"
+  },
+  {
+    "name": "Flask-Pundit",
+    "url": "https://github.com/anurag90x/flask-pundit",
+    "description": "Extension based on Rails' Pundit gem that provides easy way to organize access control for your models"
+  },
+  {
+    "name": "Flask-MongoEngine",
+    "url": "https://github.com/MongoEngine/flask-mongoengine",
+    "description": "MongoEngine flask extension with WTF model forms support"
+  },
+  {
+    "name": "Flask-SQLAlchemy",
+    "url": "https://github.com/mitsuhiko/flask-sqlalchemy",
+    "description": "Adds SQLAlchemy support to Flask"
+  },
+  {
+    "name": "Flask-Migrate",
+    "url": "https://github.com/miguelgrinberg/Flask-Migrate",
+    "description": "SQLAlchemy database migrations for Flask applications using Alembic"
+  },
+  {
+    "name": "Flask-Session",
+    "url": "https://github.com/fengsp/flask-session",
+    "description": "Server side session extension for Flask"
+  },
+  {
+    "name": "Flask-Caching",
+    "url": "https://github.com/sh4nks/flask-caching",
+    "description": "Adds easy cache support to Flask"
+  },
+  {
+    "name": "flask-heroku-cacheify",
+    "url": "https://github.com/rdegges/flask-heroku-cacheify",
+    "description": "Automatic Flask cache configuration on Heroku"
+  },
+  {
+    "name": "Flask-WTF",
+    "url": "https://github.com/lepture/flask-wtf",
+    "description": "Simple integration of Flask and WTForms, including CSRF, file upload and Recaptcha integration."
+  },
+  {
+    "name": "Flask-Mail",
+    "url": "https://github.com/mattupstate/flask-mail/",
+    "description": "Flask-Mail adds SMTP mail sending to your Flask applications"
+  },
+  {
+    "name": "flask-babel",
+    "url": "https://github.com/python-babel/flask-babel",
+    "description": "i18n and l10n support for Flask based on Babel and pytz"
+  },
+  {
+    "name": "SQLAlchemy-Searchable",
+    "url": "https://github.com/kvesteri/sqlalchemy-searchable",
+    "description": "Full-text searching for Flask-SQLAlchemy (Postgres only)"
+  },
+  {
+    "name": "flask_msearch",
+    "url": "https://github.com/honmaple/flask-msearch",
+    "description": "Full text search for flask with whoosh"
+  },
+  {
+    "name": "Flask-Limiter",
+    "url": "https://github.com/alisaifee/flask-limiter",
+    "description": "Flask-Limiter provides rate limiting features to flask routes"
+  },
+  {
+    "name": "dramatiq",
+    "url": "https://github.com/Bogdanp/dramatiq",
+    "description": "A fast and reliable distributed task processing library for Python 3"
+  },
+  {
+    "name": "huey",
+    "url": "https://github.com/coleifer/huey",
+    "description": "a little task queue for python"
+  },
+  {
+    "name": "Flask-RQ",
+    "url": "https://github.com/mattupstate/flask-rq",
+    "description": "RQ (Redis Queue) integration for Flask applications"
+  },
+  {
+    "name": "celery",
+    "url": "https://github.com/celery/celery/",
+    "description": "Distributed Task Queue"
+  },
+  {
+    "name": "Raven",
+    "url": "https://github.com/getsentry/raven-python",
+    "description": "Raven is a Python client for Sentry."
+  },
+  {
+    "name": "airbrake-python",
+    "url": "https://github.com/airbrake/airbrake-python",
+    "description": "Python client for Airbrake"
+  },
+  {
+    "name": "flask-zipkin",
+    "url": "https://github.com/qiajigou/flask-zipkin",
+    "description": "Distributed tracing with Zipkin."
+  },
+  {
+    "name": "Flask-OpenTracing",
+    "url": "https://github.com/opentracing-contrib/python-flask",
+    "description": "Distributed tracing with OpenTracing."
+  },
+  {
+    "name": "elastic-apm",
+    "url": "https://github.com/elastic/apm-agent-python",
+    "description": "Elastic APM agent for Python"
+  },
+  {
+    "name": "Flask-GoogleMaps",
+    "url": "https://github.com/rochacbruno/Flask-GoogleMaps",
+    "description": "Build and embed google maps in our Flask templates"
+  },
+  {
+    "name": "Flask-Gravatar",
+    "url": "https://github.com/zzzsochi/Flask-Gravatar",
+    "description": "Small and simple gravatar usage in Flask"
+  },
+  {
+    "name": "Flask-Pusher",
+    "url": "https://github.com/iurisilvio/Flask-Pusher",
+    "description": "Pusher integration for Flask"
+  },
+  {
+    "name": "Flask-Azure-Storage",
+    "url": "https://github.com/alejoar/Flask-Azure-Storage",
+    "description": "Flask extension that provides integration with Azure Storage"
+  },
+  {
+    "name": "Flask-CORS",
+    "url": "https://github.com/corydolphin/flask-cors",
+    "description": "A Flask extension for handling Cross Origin Resource Sharing (CORS), making cross-origin AJAX possible"
+  },
+  {
+    "name": "flask-assets",
+    "url": "https://github.com/miracle2k/flask-assets",
+    "description": "Flask webassets integration"
+  },
+  {
+    "name": "flask-s3",
+    "url": "https://github.com/e-dard/flask-s3",
+    "description": "Seamlessly serve your static assets of your Flask app from Amazon S3"
+  },
+  {
+    "name": "Flask-SSLify",
+    "url": "https://github.com/kennethreitz/flask-sslify",
+    "description": "Force SSL on your Flask app"
+  },
+  {
+    "name": "Flask-HTMLmin",
+    "url": "https://github.com/hamidfzm/Flask-HTMLmin",
+    "description": "Flask html minifier"
+  },
+  {
+    "name": "Flasgger",
+    "url": "https://github.com/rochacbruno/flasgger",
+    "description": "Create API documentation for Flask views using Swagger 2.0 specs"
+  },
+  {
+    "name": "flask-apispec",
+    "url": "https://github.com/jmcarp/flask-apispec",
+    "description": "simple self-documenting APIs with flask"
+  },
+  {
+    "name": "flask2postman",
+    "url": "https://github.com/numberly/flask2postman",
+    "description": "Generate a Postman collection from your Flask application"
+  },
+  {
+    "name": "flask_profiler",
+    "url": "https://github.com/muatik/flask-profiler",
+    "description": "endpoint analyzer/profiler for Flask"
+  },
+  {
+    "name": "Flask-DebugToolbar",
+    "url": "https://github.com/mgood/flask-debugtoolbar",
+    "description": "A port of the django debug toolbar to flask"
+  },
+  {
+    "name": "flask-debug-toolbar-mongo",
+    "url": "https://github.com/cenkalti/flask-debug-toolbar-mongo",
+    "description": "MongoDB panel for the Flask Debug Toolbar"
+  },
+  {
+    "name": "Flask-Testing",
+    "url": "https://github.com/jarus/flask-testing",
+    "description": "Unittest extensions for Flask"
+  },
+  {
+    "name": "pytest-flask",
+    "url": "https://github.com/pytest-dev/pytest-flask",
+    "description": "A set of pytest fixtures to test Flask applications"
+  },
+  {
+    "name": "Flask-MonitoringDashboard",
+    "url": "https://github.com/flask-dashboard/Flask-MonitoringDashboard",
+    "description": "Automatically monitor the evolving performance of Flask/Python web services."
+  },
+  {
+    "name": "flask-marshmallow Flask + marshmallow for beautiful APIs",
+    "url": "https://github.com/marshmallow-code/flask-marshmallow"
+  },
+  {
+    "name": "flask-jsonrpc",
+    "url": "https://github.com/cenobites/flask-jsonrpc",
+    "description": "A basic JSON-RPC implementation for your Flask-powered sites"
+  },
+  {
+    "name": "Flask-Bcrypt",
+    "url": "https://github.com/maxcountryman/flask-bcrypt",
+    "description": "Flask-Bcrypt is a Flask extension that provides bcrypt hashing utilities for your application"
+  },
+  {
+    "name": "Mixer",
+    "url": "https://github.com/klen/mixer",
+    "description": "Mixer is application to generate instances of Django or SQLAlchemy models"
+  },
+  {
+    "name": "Flask-FeatureFlags",
+    "url": "https://github.com/trustrachel/Flask-FeatureFlags",
+    "description": "A Flask extension that enables or disables features based on configuration"
+  },
+  {
+    "name": "Flask-Reggie",
+    "url": "https://github.com/rhyselsmore/flask-reggie",
+    "description": "Regex Converter for Flask URL Routes"
+  },
+  {
+    "name": "Flask-SocketIO",
+    "url": "https://github.com/miguelgrinberg/Flask-SocketIO",
+    "description": "Socket.IO integration for Flask applications"
+  },
+  {
+    "name": "Flask-Moment",
+    "url": "https://github.com/miguelgrinberg/Flask-Moment",
+    "description": "Formatting of dates and times in Flask templates using moment.js"
+  },
+  {
+    "name": "Flask-Paginate",
+    "url": "https://github.com/lixxu/flask-paginate",
+    "description": "Pagination support for Flask"
+  },
+  {
+    "name": "How to build a news app that never goes down and costs you practically nothing (by NPR)",
+    "url": "http://blog.apps.npr.org/2013/02/14/app-template-redux.html"
+  },
+  {
+    "name": "Building websites in Python with Flask",
+    "url": "http://maximebf.com/blog/2012/10/building-websites-in-python-with-flask/"
+  },
+  {
+    "name": "The Flask Mega-Tutorial",
+    "url": "https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world"
+  },
+  {
+    "name": "Implementing a RESTful Web API with Python & Flask",
+    "url": "http://blog.luisrei.com/articles/flaskrest.html"
+  },
+  {
+    "name": "Discover Flask",
+    "url": "https://github.com/realpython/discover-flask",
+    "description": "Full Stack Web Development with Flask"
+  },
+  {
+    "name": "Flaskr",
+    "url": "https://github.com/mjhea0/flaskr-tdd",
+    "description": "Intro to Flask, Test Driven Development, and jQuery"
+  },
+  {
+    "name": "Full Stack Foundations",
+    "url": "https://www.udacity.com/course/full-stack-foundations--ud088"
+  },
+  {
+    "name": "Designing RESTful APIs",
+    "url": "https://www.udacity.com/course/designing-restful-apis--ud388"
+  },
+  {
+    "name": "Explore Flask",
+    "url": "https://exploreflask.com/en/latest/"
+  },
+  {
+    "name": "Flask Web Development",
+    "url": "http://shop.oreilly.com/product/0636920031116.do"
+  },
+  {
+    "name": "Real Python",
+    "url": "https://realpython.com"
+  },
+  {
+    "name": "Learning Flask Framework",
+    "url": "https://www.packtpub.com/web-development/learning-flask-framework"
+  },
+  {
+    "name": "Flask Blueprints",
+    "url": "https://www.packtpub.com/web-development/flask-blueprints"
+  },
+  {
+    "name": "Flask Framework Cookbook",
+    "url": "https://www.packtpub.com/web-development/flask-framework-cookbook"
+  },
+  {
+    "name": "Mastering Flask",
+    "url": "https://www.packtpub.com/web-development/mastering-flask"
+  },
+  {
+    "name": "Building Web Applications with Flask",
+    "url": "https://www.packtpub.com/web-development/building-web-applications-flask"
+  },
+  {
+    "name": "Creating beautiful REST APIs with Flask",
+    "url": "http://pycoder.net/bospy/presentation.html"
+  },
+  {
+    "name": "Advanced Flask Patterns",
+    "url": "https://speakerdeck.com/mitsuhiko/advanced-flask-patterns"
+  },
+  {
+    "name": "Flasky Goodness",
+    "url": "https://speakerdeck.com/kennethreitz/flasky-goodness"
+  },
+  {
+    "name": "Domain Driven Design (... with Flask)",
+    "url": "https://speakerdeck.com/mikedebo/domain-driven-design-dot-dot-dot-with-flask"
+  },
+  {
+    "name": "In Flask we Trust",
+    "url": "https://speakerdeck.com/playpauseandstop/in-flask-we-trust"
+  },
+  {
+    "name": "Flask by Example",
+    "url": "http://pyvideo.org/video/2608/flask-by-example/"
+  },
+  {
+    "name": "Writing RESTful web services with Flask",
+    "url": "http://pyvideo.org/video/2668/writing-restful-web-services-with-flask/"
+  },
+  {
+    "name": "Practical Flask Web Development Tutorials",
+    "url": "https://www.youtube.com/playlist?list=PLQVvvaa0QuDc_owjTbIY4rbgXOFkUYOUB"
+  },
+  {
+    "name": "zmusic-ng",
+    "url": "https://git.zx2c4.com/zmusic-ng/",
+    "description": "ZX2C4 Music provides a web interface for playing and downloading music files using metadata."
+  },
+  {
+    "name": "GuitarFan",
+    "url": "https://github.com/lowrain/GuitarFan",
+    "description": "guitar tab"
+  },
+  {
+    "name": "June",
+    "url": "https://github.com/pythoncn/june",
+    "description": "python-china.org"
+  },
+  {
+    "name": "Zerqu",
+    "url": "https://github.com/lepture/zerqu",
+    "description": "ZERQU is a content-focused API-based platform. eg: Python-China"
+  },
+  {
+    "name": "motiky",
+    "url": "https://github.com/notedit/motiky"
+  },
+  {
+    "name": "missing",
+    "url": "https://github.com/notedit/missing",
+    "description": "a list service called missing"
+  },
+  {
+    "name": "thenewsmeme.com",
+    "url": "https://github.com/danjac/newsmeme"
+  },
+  {
+    "name": "overholt",
+    "url": "https://github.com/mattupstate/overholt",
+    "description": "Example Flask application illustrating common practices"
+  },
+  {
+    "name": "pypress",
+    "url": "https://github.com/laoqiu/pypress",
+    "description": "flask team blog"
+  },
+  {
+    "name": "thepast.me",
+    "url": "https://github.com/laiwei/thepast"
+  },
+  {
+    "name": "redispapa",
+    "url": "https://github.com/no13bus/redispapa",
+    "description": "another redis monitor by using flask, angular, socket.io"
+  },
+  {
+    "name": "flaskblog",
+    "url": "https://github.com/defshine/flaskblog",
+    "description": "a simple blog system based on flask"
+  },
+  {
+    "name": "cleanblog",
+    "url": "https://github.com/defshine/cleanblog",
+    "description": "a clean blog system based on flask and mongoengine"
+  },
+  {
+    "name": "Quokka CMS",
+    "url": "https://github.com/rochacbruno/quokka",
+    "description": "CMS made with Flask and MongoDB"
+  },
+  {
+    "name": "chat",
+    "url": "https://github.com/lzyy/chat",
+    "description": "a live chat built with python (flask + gevent + apscheduler) + redis"
+  },
+  {
+    "name": "chatapp",
+    "url": "https://github.com/vinceprignano/chatapp",
+    "description": "Flask and Angular.js Chat Application using Socket.io"
+  },
+  {
+    "name": "Frozen-Flask",
+    "url": "https://github.com/Frozen-Flask/Frozen-Flask",
+    "description": "Freezes a Flask application into a set of static files"
+  },
+  {
+    "name": "mcflyin",
+    "url": "https://github.com/wrobstory/mcflyin",
+    "description": "A small timeseries transformation API built on Flask and Pandas"
+  },
+  {
+    "name": "Skylines",
+    "url": "https://github.com/skylines-project/skylines",
+    "description": "Live tracking, flight database and competition framework"
+  },
+  {
+    "name": "airflow",
+    "url": "https://github.com/apache/incubator-airflow",
+    "description": "Airflow is a system to programmatically author, schedule and monitor data pipelines."
+  },
+  {
+    "name": "timesketch",
+    "url": "https://github.com/google/timesketch",
+    "description": "Collaborative forensics timeline analysis"
+  },
+  {
+    "name": "changes",
+    "url": "https://github.com/dropbox/changes",
+    "description": "A dashboard for your code. A build system."
+  },
+  {
+    "name": "security_monkey",
+    "url": "https://github.com/Netflix/security_monkey",
+    "description": "monitors policy changes and alerts on insecure configurations in an AWS account."
+  },
+  {
+    "name": "securedrop- an open-source whistleblower submission system that media organizations can use to securely accept documents from and communicate with anonymous sources.",
+    "url": "https://github.com/freedomofpress/securedrop"
+  },
+  {
+    "name": "sync_engine",
+    "url": "https://github.com/nylas/sync-engine",
+    "description": "IMAP/SMTP sync system with modern APIs"
+  },
+  {
+    "name": "cleansweep",
+    "url": "https://github.com/AamAadmiParty/cleansweep",
+    "description": "Volunteer & Campaign Management System"
+  },
+  {
+    "name": "indico",
+    "url": "https://github.com/indico/indico",
+    "description": "a general-purpose event management web-based solution. It includes a full-blown conference organization workflow as well as tools for meeting management and room booking. It provides as well integration with video-conferencing solutions."
+  },
+  {
+    "name": "flaskbb",
+    "url": "https://github.com/flaskbb/flaskbb",
+    "description": "A classic Forum Software in Python using Flask."
+  },
+  {
+    "name": "fbone",
+    "url": "https://github.com/imwilsonxu/fbone"
+  },
+  {
+    "name": "cookiecutter-flask",
+    "url": "https://github.com/sloria/cookiecutter-flask"
+  },
+  {
+    "name": "Flask-Foundation",
+    "url": "https://github.com/JackStouffer/Flask-Foundation"
+  },
+  {
+    "name": "flask-rest-template",
+    "url": "https://github.com/alexandre/flask-rest-template"
+  },
+  {
+    "name": "gae-init",
+    "url": "https://gae-init.appspot.com",
+    "description": "Flask boilerplate running on Google App Engine"
+  },
+  {
+    "name": "Flask-AppBuilder",
+    "url": "https://github.com/dpgaspar/Flask-AppBuilder",
+    "description": "Simple and rapid application builder framework, built on top of Flask. includes detailed security, auto form generation, google charts and much more"
+  }
+]

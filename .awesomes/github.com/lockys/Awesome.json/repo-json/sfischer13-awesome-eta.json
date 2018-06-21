@@ -1,0 +1,217 @@
+[
+  {
+    "name": "Eta",
+    "url": "https://eta-lang.org/",
+    "description": "Official website."
+  },
+  {
+    "name": "GitHub",
+    "url": "https://github.com/typelead/eta",
+    "description": "Eta @ GitHub."
+  },
+  {
+    "name": "Getting Started",
+    "url": "https://eta-lang.org/docs/user-guides/eta-user-guide/introduction/what-is-eta",
+    "description": "First steps with Eta."
+  },
+  {
+    "name": "Tour of Eta",
+    "url": "https://tour.eta-lang.org",
+    "description": "Learn Functional Programming the Easy Way."
+  },
+  {
+    "name": "Eta vs. Haskell",
+    "url": "https://eta-lang.org/docs/faq#eta-not-haskell",
+    "description": "Differences between Eta and Haskell."
+  },
+  {
+    "name": "Eta vs. Frege",
+    "url": "https://eta-lang.org/docs/faq#eta-vs-frege",
+    "description": "Differences between Eta and Frege."
+  },
+  {
+    "name": "Etlas Packages",
+    "url": "https://github.com/typelead/eta-hackage#supported-packages",
+    "description": "Hackage packages that work with Eta."
+  },
+  {
+    "name": "Template Haskell",
+    "url": "https://eta-lang.org/docs/faq#eta-repl-support",
+    "description": "Status of Template Haskell."
+  },
+  {
+    "name": "GHC 8",
+    "url": "https://eta-lang.org/docs/faq#is-eta-compatible-ghc8",
+    "description": "Compatibility with GHC 8."
+  },
+  {
+    "name": "Documentation",
+    "url": "https://eta-lang.org/docs/",
+    "description": "Eta documentation."
+  },
+  {
+    "name": "Tutorials",
+    "url": "https://eta-lang.org/docs/tutorials",
+    "description": "Eta tutorials."
+  },
+  {
+    "name": "FAQ",
+    "url": "https://eta-lang.org/docs/faq",
+    "description": "Frequently asked questions."
+  },
+  {
+    "name": "Tour of Eta",
+    "url": "https://tour.eta-lang.org/",
+    "description": "Introduction to Eta."
+  },
+  {
+    "name": "Eta Cheatsheets",
+    "url": "https://eta-lang.org/docs/cheatsheets",
+    "description": "Eta reference."
+  },
+  {
+    "name": "Eta Blog",
+    "url": "https://blog.eta-lang.org/https-medium-com-jyothsnasrinivas-the-best-of-both-the-worlds-eta-and-java-part-1-336d181de89d",
+    "description": "Using Eta with Java, part I."
+  },
+  {
+    "name": "Eta Blog",
+    "url": "https://blog.eta-lang.org/the-best-of-both-the-worlds-eta-and-java-part-2-d7cf27acdef7",
+    "description": "Using Eta with Java, part II."
+  },
+  {
+    "name": "Eta Blog",
+    "url": "https://blog.eta-lang.org/eta-in-practice-working-with-haskell-packages-5dfa3dc0c98a",
+    "description": "Using Haskell packages in Eta code."
+  },
+  {
+    "name": "Eta Blog",
+    "url": "https://blog.eta-lang.org/integrating-eta-into-your-scala-projects-a8d494a2c5b0",
+    "description": "Using Eta code in Scala projects."
+  },
+  {
+    "name": "Docker Hub",
+    "url": "https://hub.docker.com/r/typelead/eta/",
+    "description": "Docker repo for Eta."
+  },
+  {
+    "name": "Google Group",
+    "url": "https://groups.google.com/forum/#!forum/eta-discuss",
+    "description": "Eta Google Group."
+  },
+  {
+    "name": "Gitter",
+    "url": "https://gitter.im/typelead/eta",
+    "description": "Gitter channel."
+  },
+  {
+    "name": "Slack",
+    "url": "https://slack.eta-lang.org/",
+    "description": "Slack channel."
+  },
+  {
+    "name": "IRC",
+    "url": "https://kiwiirc.com/client/irc.freenode.net/#eta-lang",
+    "description": "IRC channel."
+  },
+  {
+    "name": "Bangalore",
+    "url": "https://www.meetup.com/Bangalore-Eta-Meetup/",
+    "description": "Bangalore Eta Meetup."
+  },
+  {
+    "name": "Eta",
+    "url": "https://twitter.com/eta_lang",
+    "description": "Official Twitter account."
+  },
+  {
+    "name": "TypeLead",
+    "url": "https://twitter.com/typelead",
+    "description": "Company behind Eta."
+  },
+  {
+    "name": "Rahul Muttineni",
+    "url": "https://twitter.com/rahulmutt",
+    "description": "Creator of Eta and CTO of TypeLead."
+  },
+  {
+    "name": "InfoWorld",
+    "url": "https://www.infoworld.com/article/3157373/java/new-jvm-language-stands-apart-from-scala-clojure.html",
+    "description": "Short article about Eta."
+  },
+  {
+    "name": "Jaxenter",
+    "url": "https://jaxenter.com/eta-pirates-of-the-jvm-133518.html",
+    "description": "Functional programming made easy: Here comes Eta."
+  },
+  {
+    "name": "Eta programming language",
+    "url": "https://blog.eta-lang.org/",
+    "description": "Official blog."
+  },
+  {
+    "name": "TypeLead",
+    "url": "https://blog.typelead.com/",
+    "description": "Blog of the company behind Eta."
+  },
+  {
+    "name": "Eta on Android",
+    "url": "https://brianmckenna.org/blog/eta_android",
+    "description": "Post about using Eta on Android."
+  },
+  {
+    "name": "ICFP",
+    "url": "http://www.icfpconference.org/",
+    "description": "International Conference on Functional Programming."
+  },
+  {
+    "name": "FP101x",
+    "url": "https://www.edx.org/course/introduction-functional-programming-delftx-fp101x-0",
+    "description": "Introduction to Functional Programming on edX."
+  },
+  {
+    "name": "Introduction to Eta",
+    "url": "https://brianmckenna.org/files/presentations/lambdajam-2017-eta.pdf",
+    "description": "Introduction to the language and its origin."
+  },
+  {
+    "name": "Using Eta",
+    "url": "https://speakerdeck.com/filippovitale/using-eta-for-what-you-dont-like-writing-in-scala",
+    "description": "Comparison of Eta and Scala."
+  },
+  {
+    "name": "Eta Fibers",
+    "url": "https://rahulmutt.github.io/slides/fuconf17-eta-fibers/slides.html#1",
+    "description": "Concurrency on the JVM."
+  },
+  {
+    "name": "ICFP Videos",
+    "url": "https://www.youtube.com/channel/UCwRL68qZFfub1Ep1EScfmBw",
+    "description": "Videos about functional programming."
+  },
+  {
+    "name": "Functional Conf",
+    "url": "https://www.youtube.com/watch?v=CscBSNF6qnE",
+    "description": "2016 - Bringing the Power of Haskell to the JVM."
+  },
+  {
+    "name": "Functional Conf",
+    "url": "https://www.youtube.com/watch?v=ZuJg2cfmSmw",
+    "description": "2017 - Eta Fibers: Towards Better Concurrency on the JVM."
+  },
+  {
+    "name": "eta-android",
+    "url": "https://github.com/puffnfresh/eta-android",
+    "description": "Example of Eta on Android."
+  },
+  {
+    "name": "eta-examples",
+    "url": "https://github.com/typelead/eta-examples",
+    "description": "Examples of Eta code."
+  },
+  {
+    "name": "eta-2048",
+    "url": "https://github.com/rahulmutt/eta-2048",
+    "description": "The 2048 game written in Eta."
+  }
+]
