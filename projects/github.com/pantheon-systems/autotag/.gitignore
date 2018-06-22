@@ -1,0 +1,9 @@
+autotag/autotag
+cmd/bin
+release
+
+
+coverage*
+
+vendor/**
+!vendor/manifest
