@@ -1,0 +1,141 @@
+Status:  ok
+Language:  javascript
+Errors: 
+UAST: 
+File {
+.  Roles: File
+.  StartPosition: {
+.  .  Offset: 0
+.  .  Line: 1
+.  .  Col: 1
+.  }
+.  EndPosition: {
+.  .  Offset: 67
+.  .  Line: 4
+.  .  Col: 1
+.  }
+.  Children: {
+.  .  0: CommentLine {
+.  .  .  Roles: Comment
+.  .  .  TOKEN " This a comment"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 17
+.  .  .  .  Line: 1
+.  .  .  .  Col: 18
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: comments
+.  .  .  }
+.  .  }
+.  .  1: Program {
+.  .  .  Roles: Module
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 67
+.  .  .  .  Line: 4
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: program
+.  .  .  .  sourceType: module
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: CommentLine {
+.  .  .  .  .  Roles: Comment
+.  .  .  .  .  TOKEN " This a comment"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 17
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 18
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: innerComments
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: CommentBlock {
+.  .  .  .  .  Roles: Block,Comment
+.  .  .  .  .  TOKEN " Another comment "
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 18
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 39
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 22
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: innerComments
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: CommentBlock {
+.  .  .  .  .  Roles: Block,Comment
+.  .  .  .  .  TOKEN "* Yet another comment "
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 40
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 66
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 27
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: innerComments
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  2: CommentBlock {
+.  .  .  Roles: Block,Comment
+.  .  .  TOKEN " Another comment "
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 18
+.  .  .  .  Line: 2
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 39
+.  .  .  .  Line: 2
+.  .  .  .  Col: 22
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: comments
+.  .  .  }
+.  .  }
+.  .  3: CommentBlock {
+.  .  .  Roles: Block,Comment
+.  .  .  TOKEN "* Yet another comment "
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 40
+.  .  .  .  Line: 3
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 66
+.  .  .  .  Line: 3
+.  .  .  .  Col: 27
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: comments
+.  .  .  }
+.  .  }
+.  }
+}
+

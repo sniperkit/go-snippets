@@ -1,0 +1,156 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 14,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 2
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "declarations": [
+                        {
+                            "end": 13,
+                            "id": {
+                                "end": 5,
+                                "loc": {
+                                    "end": {
+                                        "column": 5,
+                                        "line": 1
+                                    },
+                                    "identifierName": "x",
+                                    "start": {
+                                        "column": 4,
+                                        "line": 1
+                                    }
+                                },
+                                "name": "x",
+                                "start": 4,
+                                "type": "Identifier"
+                            },
+                            "init": {
+                                "callee": {
+                                    "computed": false,
+                                    "end": 13,
+                                    "loc": {
+                                        "end": {
+                                            "column": 13,
+                                            "line": 1
+                                        },
+                                        "start": {
+                                            "column": 10,
+                                            "line": 1
+                                        }
+                                    },
+                                    "object": {
+                                        "end": 11,
+                                        "loc": {
+                                            "end": {
+                                                "column": 11,
+                                                "line": 1
+                                            },
+                                            "identifierName": "a",
+                                            "start": {
+                                                "column": 10,
+                                                "line": 1
+                                            }
+                                        },
+                                        "name": "a",
+                                        "start": 10,
+                                        "type": "Identifier"
+                                    },
+                                    "property": {
+                                        "end": 13,
+                                        "loc": {
+                                            "end": {
+                                                "column": 13,
+                                                "line": 1
+                                            },
+                                            "identifierName": "b",
+                                            "start": {
+                                                "column": 12,
+                                                "line": 1
+                                            }
+                                        },
+                                        "name": "b",
+                                        "start": 12,
+                                        "type": "Identifier"
+                                    },
+                                    "start": 10,
+                                    "type": "MemberExpression"
+                                },
+                                "end": 13,
+                                "loc": {
+                                    "end": {
+                                        "column": 13,
+                                        "line": 1
+                                    },
+                                    "start": {
+                                        "column": 8,
+                                        "line": 1
+                                    }
+                                },
+                                "object": null,
+                                "start": 8,
+                                "type": "BindExpression"
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 13,
+                                    "line": 1
+                                },
+                                "start": {
+                                    "column": 4,
+                                    "line": 1
+                                }
+                            },
+                            "start": 4,
+                            "type": "VariableDeclarator"
+                        }
+                    ],
+                    "end": 13,
+                    "kind": "let",
+                    "loc": {
+                        "end": {
+                            "column": 13,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "type": "VariableDeclaration"
+                }
+            ],
+            "directives": [],
+            "end": 14,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 2
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

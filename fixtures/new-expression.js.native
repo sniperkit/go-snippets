@@ -1,0 +1,88 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 9,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 2
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "end": 8,
+                    "expression": {
+                        "arguments": [],
+                        "callee": {
+                            "end": 5,
+                            "loc": {
+                                "end": {
+                                    "column": 5,
+                                    "line": 1
+                                },
+                                "identifierName": "a",
+                                "start": {
+                                    "column": 4,
+                                    "line": 1
+                                }
+                            },
+                            "name": "a",
+                            "start": 4,
+                            "type": "Identifier"
+                        },
+                        "end": 7,
+                        "loc": {
+                            "end": {
+                                "column": 7,
+                                "line": 1
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 1
+                            }
+                        },
+                        "start": 0,
+                        "type": "NewExpression"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 8,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "type": "ExpressionStatement"
+                }
+            ],
+            "directives": [],
+            "end": 9,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 2
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

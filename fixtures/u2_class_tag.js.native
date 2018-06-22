@@ -1,0 +1,123 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 28,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 3
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "body": {
+                        "body": [],
+                        "end": 27,
+                        "loc": {
+                            "end": {
+                                "column": 17,
+                                "line": 2
+                            },
+                            "start": {
+                                "column": 15,
+                                "line": 2
+                            }
+                        },
+                        "start": 25,
+                        "type": "ClassBody"
+                    },
+                    "decorators": [
+                        {
+                            "end": 9,
+                            "expression": {
+                                "end": 9,
+                                "loc": {
+                                    "end": {
+                                        "column": 9,
+                                        "line": 1
+                                    },
+                                    "identifierName": "testtag1",
+                                    "start": {
+                                        "column": 1,
+                                        "line": 1
+                                    }
+                                },
+                                "name": "testtag1",
+                                "start": 1,
+                                "type": "Identifier"
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 9,
+                                    "line": 1
+                                },
+                                "start": {
+                                    "column": 0,
+                                    "line": 1
+                                }
+                            },
+                            "start": 0,
+                            "type": "Decorator"
+                        }
+                    ],
+                    "end": 27,
+                    "id": {
+                        "end": 24,
+                        "loc": {
+                            "end": {
+                                "column": 14,
+                                "line": 2
+                            },
+                            "identifierName": "testcls1",
+                            "start": {
+                                "column": 6,
+                                "line": 2
+                            }
+                        },
+                        "name": "testcls1",
+                        "start": 16,
+                        "type": "Identifier"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 17,
+                            "line": 2
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "superClass": null,
+                    "type": "ClassDeclaration"
+                }
+            ],
+            "directives": [],
+            "end": 28,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 3
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

@@ -1,0 +1,93 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 14,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 2
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "end": 13,
+                    "expression": {
+                        "end": 12,
+                        "expressions": [],
+                        "loc": {
+                            "end": {
+                                "column": 12,
+                                "line": 1
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 1
+                            }
+                        },
+                        "quasis": [
+                            {
+                                "end": 11,
+                                "loc": {
+                                    "end": {
+                                        "column": 11,
+                                        "line": 1
+                                    },
+                                    "start": {
+                                        "column": 1,
+                                        "line": 1
+                                    }
+                                },
+                                "start": 1,
+                                "tail": true,
+                                "type": "TemplateElement",
+                                "value": {
+                                    "cooked": "x: {3 + 4}",
+                                    "raw": "x: {3 + 4}"
+                                }
+                            }
+                        ],
+                        "start": 0,
+                        "type": "TemplateLiteral"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 13,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "type": "ExpressionStatement"
+                }
+            ],
+            "directives": [],
+            "end": 14,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 2
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

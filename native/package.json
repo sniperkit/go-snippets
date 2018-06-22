@@ -1,0 +1,39 @@
+{
+  "name": "javascript-driver",
+  "version": "1.1.0",
+  "description": "Babelfish driver for JavaScript",
+  "main": "lib/index.js",
+  "bin": {
+    "javascript-driver": "./lib/index.js"
+  },
+  "repository": "https://github.com/bblfsh/javascript-driver",
+  "author": "source{d}",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run clean && rollup -c",
+    "clean": "rimraf lib",
+    "start": "npm run build && node lib/index.js",
+    "test": "npm run build && npm run test-only",
+    "test-only": "ava"
+  },
+  "devDependencies": {
+    "ava": "^0.18.1",
+    "rimraf": "^2.5.4",
+    "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-multi-entry": "^2.0.1",
+    "rollup-plugin-node-resolve": "^2.0.0"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ],
+    "source": [
+      "src/**/*.js"
+    ]
+  },
+  "dependencies": {
+    "babylon": "^7.0.0-beta.34"
+  }
+}

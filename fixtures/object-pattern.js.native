@@ -1,0 +1,195 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 16,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 2
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "declarations": [
+                        {
+                            "end": 15,
+                            "id": {
+                                "end": 9,
+                                "loc": {
+                                    "end": {
+                                        "column": 9,
+                                        "line": 1
+                                    },
+                                    "start": {
+                                        "column": 4,
+                                        "line": 1
+                                    }
+                                },
+                                "properties": [
+                                    {
+                                        "computed": false,
+                                        "end": 7,
+                                        "extra": {
+                                            "shorthand": true
+                                        },
+                                        "key": {
+                                            "end": 7,
+                                            "loc": {
+                                                "end": {
+                                                    "column": 7,
+                                                    "line": 1
+                                                },
+                                                "identifierName": "x",
+                                                "start": {
+                                                    "column": 6,
+                                                    "line": 1
+                                                }
+                                            },
+                                            "name": "x",
+                                            "start": 6,
+                                            "type": "Identifier"
+                                        },
+                                        "loc": {
+                                            "end": {
+                                                "column": 7,
+                                                "line": 1
+                                            },
+                                            "start": {
+                                                "column": 6,
+                                                "line": 1
+                                            }
+                                        },
+                                        "method": false,
+                                        "shorthand": true,
+                                        "start": 6,
+                                        "type": "ObjectProperty",
+                                        "value": {
+                                            "end": 7,
+                                            "loc": {
+                                                "end": {
+                                                    "column": 7,
+                                                    "line": 1
+                                                },
+                                                "identifierName": "x",
+                                                "start": {
+                                                    "column": 6,
+                                                    "line": 1
+                                                }
+                                            },
+                                            "name": "x",
+                                            "start": 6,
+                                            "type": "Identifier"
+                                        }
+                                    }
+                                ],
+                                "start": 4,
+                                "type": "ObjectPattern"
+                            },
+                            "init": {
+                                "computed": false,
+                                "end": 15,
+                                "loc": {
+                                    "end": {
+                                        "column": 15,
+                                        "line": 1
+                                    },
+                                    "start": {
+                                        "column": 12,
+                                        "line": 1
+                                    }
+                                },
+                                "object": {
+                                    "end": 13,
+                                    "loc": {
+                                        "end": {
+                                            "column": 13,
+                                            "line": 1
+                                        },
+                                        "identifierName": "a",
+                                        "start": {
+                                            "column": 12,
+                                            "line": 1
+                                        }
+                                    },
+                                    "name": "a",
+                                    "start": 12,
+                                    "type": "Identifier"
+                                },
+                                "property": {
+                                    "end": 15,
+                                    "loc": {
+                                        "end": {
+                                            "column": 15,
+                                            "line": 1
+                                        },
+                                        "identifierName": "x",
+                                        "start": {
+                                            "column": 14,
+                                            "line": 1
+                                        }
+                                    },
+                                    "name": "x",
+                                    "start": 14,
+                                    "type": "Identifier"
+                                },
+                                "start": 12,
+                                "type": "MemberExpression"
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 15,
+                                    "line": 1
+                                },
+                                "start": {
+                                    "column": 4,
+                                    "line": 1
+                                }
+                            },
+                            "start": 4,
+                            "type": "VariableDeclarator"
+                        }
+                    ],
+                    "end": 15,
+                    "kind": "let",
+                    "loc": {
+                        "end": {
+                            "column": 15,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "type": "VariableDeclaration"
+                }
+            ],
+            "directives": [],
+            "end": 16,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 2
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

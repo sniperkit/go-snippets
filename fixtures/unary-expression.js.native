@@ -1,0 +1,543 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 61,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 9
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "end": 3,
+                    "expression": {
+                        "argument": {
+                            "end": 2,
+                            "extra": {
+                                "raw": "0",
+                                "rawValue": 0
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 2,
+                                    "line": 1
+                                },
+                                "start": {
+                                    "column": 1,
+                                    "line": 1
+                                }
+                            },
+                            "start": 1,
+                            "type": "NumericLiteral",
+                            "value": 0
+                        },
+                        "end": 2,
+                        "extra": {
+                            "parenthesizedArgument": false
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 2,
+                                "line": 1
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 1
+                            }
+                        },
+                        "operator": "+",
+                        "prefix": true,
+                        "start": 0,
+                        "type": "UnaryExpression"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 3,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "type": "ExpressionStatement"
+                },
+                {
+                    "end": 7,
+                    "expression": {
+                        "argument": {
+                            "end": 6,
+                            "extra": {
+                                "raw": "0",
+                                "rawValue": 0
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 2,
+                                    "line": 2
+                                },
+                                "start": {
+                                    "column": 1,
+                                    "line": 2
+                                }
+                            },
+                            "start": 5,
+                            "type": "NumericLiteral",
+                            "value": 0
+                        },
+                        "end": 6,
+                        "extra": {
+                            "parenthesizedArgument": false
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 2,
+                                "line": 2
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 2
+                            }
+                        },
+                        "operator": "-",
+                        "prefix": true,
+                        "start": 4,
+                        "type": "UnaryExpression"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 3,
+                            "line": 2
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 2
+                        }
+                    },
+                    "start": 4,
+                    "type": "ExpressionStatement"
+                },
+                {
+                    "end": 11,
+                    "expression": {
+                        "argument": {
+                            "end": 10,
+                            "extra": {
+                                "raw": "0",
+                                "rawValue": 0
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 2,
+                                    "line": 3
+                                },
+                                "start": {
+                                    "column": 1,
+                                    "line": 3
+                                }
+                            },
+                            "start": 9,
+                            "type": "NumericLiteral",
+                            "value": 0
+                        },
+                        "end": 10,
+                        "extra": {
+                            "parenthesizedArgument": false
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 2,
+                                "line": 3
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 3
+                            }
+                        },
+                        "operator": "!",
+                        "prefix": true,
+                        "start": 8,
+                        "type": "UnaryExpression"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 3,
+                            "line": 3
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 3
+                        }
+                    },
+                    "start": 8,
+                    "type": "ExpressionStatement"
+                },
+                {
+                    "end": 15,
+                    "expression": {
+                        "argument": {
+                            "end": 14,
+                            "extra": {
+                                "raw": "0",
+                                "rawValue": 0
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 2,
+                                    "line": 4
+                                },
+                                "start": {
+                                    "column": 1,
+                                    "line": 4
+                                }
+                            },
+                            "start": 13,
+                            "type": "NumericLiteral",
+                            "value": 0
+                        },
+                        "end": 14,
+                        "extra": {
+                            "parenthesizedArgument": false
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 2,
+                                "line": 4
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 4
+                            }
+                        },
+                        "operator": "~",
+                        "prefix": true,
+                        "start": 12,
+                        "type": "UnaryExpression"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 3,
+                            "line": 4
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 4
+                        }
+                    },
+                    "start": 12,
+                    "type": "ExpressionStatement"
+                },
+                {
+                    "end": 25,
+                    "expression": {
+                        "argument": {
+                            "end": 24,
+                            "extra": {
+                                "raw": "0",
+                                "rawValue": 0
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 8,
+                                    "line": 5
+                                },
+                                "start": {
+                                    "column": 7,
+                                    "line": 5
+                                }
+                            },
+                            "start": 23,
+                            "type": "NumericLiteral",
+                            "value": 0
+                        },
+                        "end": 24,
+                        "extra": {
+                            "parenthesizedArgument": false
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 8,
+                                "line": 5
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 5
+                            }
+                        },
+                        "operator": "typeof",
+                        "prefix": true,
+                        "start": 16,
+                        "type": "UnaryExpression"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 9,
+                            "line": 5
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 5
+                        }
+                    },
+                    "start": 16,
+                    "type": "ExpressionStatement"
+                },
+                {
+                    "end": 33,
+                    "expression": {
+                        "argument": {
+                            "end": 32,
+                            "extra": {
+                                "raw": "0",
+                                "rawValue": 0
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 6,
+                                    "line": 6
+                                },
+                                "start": {
+                                    "column": 5,
+                                    "line": 6
+                                }
+                            },
+                            "start": 31,
+                            "type": "NumericLiteral",
+                            "value": 0
+                        },
+                        "end": 32,
+                        "extra": {
+                            "parenthesizedArgument": false
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 6,
+                                "line": 6
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 6
+                            }
+                        },
+                        "operator": "void",
+                        "prefix": true,
+                        "start": 26,
+                        "type": "UnaryExpression"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 7,
+                            "line": 6
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 6
+                        }
+                    },
+                    "start": 26,
+                    "type": "ExpressionStatement"
+                },
+                {
+                    "end": 45,
+                    "expression": {
+                        "argument": {
+                            "computed": false,
+                            "end": 44,
+                            "loc": {
+                                "end": {
+                                    "column": 10,
+                                    "line": 7
+                                },
+                                "start": {
+                                    "column": 7,
+                                    "line": 7
+                                }
+                            },
+                            "object": {
+                                "end": 42,
+                                "loc": {
+                                    "end": {
+                                        "column": 8,
+                                        "line": 7
+                                    },
+                                    "identifierName": "a",
+                                    "start": {
+                                        "column": 7,
+                                        "line": 7
+                                    }
+                                },
+                                "name": "a",
+                                "start": 41,
+                                "type": "Identifier"
+                            },
+                            "property": {
+                                "end": 44,
+                                "loc": {
+                                    "end": {
+                                        "column": 10,
+                                        "line": 7
+                                    },
+                                    "identifierName": "x",
+                                    "start": {
+                                        "column": 9,
+                                        "line": 7
+                                    }
+                                },
+                                "name": "x",
+                                "start": 43,
+                                "type": "Identifier"
+                            },
+                            "start": 41,
+                            "type": "MemberExpression"
+                        },
+                        "end": 44,
+                        "extra": {
+                            "parenthesizedArgument": false
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 10,
+                                "line": 7
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 7
+                            }
+                        },
+                        "operator": "delete",
+                        "prefix": true,
+                        "start": 34,
+                        "type": "UnaryExpression"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 11,
+                            "line": 7
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 7
+                        }
+                    },
+                    "start": 34,
+                    "type": "ExpressionStatement"
+                },
+                {
+                    "end": 60,
+                    "expression": {
+                        "argument": {
+                            "computed": true,
+                            "end": 59,
+                            "loc": {
+                                "end": {
+                                    "column": 13,
+                                    "line": 8
+                                },
+                                "start": {
+                                    "column": 7,
+                                    "line": 8
+                                }
+                            },
+                            "object": {
+                                "end": 54,
+                                "loc": {
+                                    "end": {
+                                        "column": 8,
+                                        "line": 8
+                                    },
+                                    "identifierName": "a",
+                                    "start": {
+                                        "column": 7,
+                                        "line": 8
+                                    }
+                                },
+                                "name": "a",
+                                "start": 53,
+                                "type": "Identifier"
+                            },
+                            "property": {
+                                "end": 58,
+                                "extra": {
+                                    "raw": "'x'",
+                                    "rawValue": "x"
+                                },
+                                "loc": {
+                                    "end": {
+                                        "column": 12,
+                                        "line": 8
+                                    },
+                                    "start": {
+                                        "column": 9,
+                                        "line": 8
+                                    }
+                                },
+                                "start": 55,
+                                "type": "StringLiteral",
+                                "value": "x"
+                            },
+                            "start": 53,
+                            "type": "MemberExpression"
+                        },
+                        "end": 59,
+                        "extra": {
+                            "parenthesizedArgument": false
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 13,
+                                "line": 8
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 8
+                            }
+                        },
+                        "operator": "delete",
+                        "prefix": true,
+                        "start": 46,
+                        "type": "UnaryExpression"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 14,
+                            "line": 8
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 8
+                        }
+                    },
+                    "start": 46,
+                    "type": "ExpressionStatement"
+                }
+            ],
+            "directives": [],
+            "end": 61,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 9
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 35,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 2
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "end": 34,
+                    "importKind": "value",
+                    "loc": {
+                        "end": {
+                            "column": 34,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "source": {
+                        "end": 33,
+                        "extra": {
+                            "raw": "'file'",
+                            "rawValue": "file"
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 33,
+                                "line": 1
+                            },
+                            "start": {
+                                "column": 27,
+                                "line": 1
+                            }
+                        },
+                        "start": 27,
+                        "type": "StringLiteral",
+                        "value": "file"
+                    },
+                    "specifiers": [
+                        {
+                            "end": 21,
+                            "loc": {
+                                "end": {
+                                    "column": 21,
+                                    "line": 1
+                                },
+                                "start": {
+                                    "column": 7,
+                                    "line": 1
+                                }
+                            },
+                            "local": {
+                                "end": 21,
+                                "loc": {
+                                    "end": {
+                                        "column": 21,
+                                        "line": 1
+                                    },
+                                    "identifierName": "namespace",
+                                    "start": {
+                                        "column": 12,
+                                        "line": 1
+                                    }
+                                },
+                                "name": "namespace",
+                                "start": 12,
+                                "type": "Identifier"
+                            },
+                            "start": 7,
+                            "type": "ImportNamespaceSpecifier"
+                        }
+                    ],
+                    "start": 0,
+                    "type": "ImportDeclaration"
+                }
+            ],
+            "directives": [],
+            "end": 35,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 2
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

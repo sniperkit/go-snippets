@@ -1,0 +1,1 @@
+function testfnc1() {}

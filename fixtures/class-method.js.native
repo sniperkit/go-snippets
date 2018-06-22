@@ -1,0 +1,146 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 20,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 2
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "body": {
+                        "body": [
+                            {
+                                "async": false,
+                                "body": {
+                                    "body": [],
+                                    "directives": [],
+                                    "end": 16,
+                                    "loc": {
+                                        "end": {
+                                            "column": 16,
+                                            "line": 1
+                                        },
+                                        "start": {
+                                            "column": 14,
+                                            "line": 1
+                                        }
+                                    },
+                                    "start": 14,
+                                    "type": "BlockStatement"
+                                },
+                                "computed": false,
+                                "end": 16,
+                                "generator": false,
+                                "id": null,
+                                "key": {
+                                    "end": 11,
+                                    "loc": {
+                                        "end": {
+                                            "column": 11,
+                                            "line": 1
+                                        },
+                                        "identifierName": "a",
+                                        "start": {
+                                            "column": 10,
+                                            "line": 1
+                                        }
+                                    },
+                                    "name": "a",
+                                    "start": 10,
+                                    "type": "Identifier"
+                                },
+                                "kind": "method",
+                                "loc": {
+                                    "end": {
+                                        "column": 16,
+                                        "line": 1
+                                    },
+                                    "start": {
+                                        "column": 10,
+                                        "line": 1
+                                    }
+                                },
+                                "params": [],
+                                "start": 10,
+                                "static": false,
+                                "type": "ClassMethod"
+                            }
+                        ],
+                        "end": 19,
+                        "loc": {
+                            "end": {
+                                "column": 19,
+                                "line": 1
+                            },
+                            "start": {
+                                "column": 8,
+                                "line": 1
+                            }
+                        },
+                        "start": 8,
+                        "type": "ClassBody"
+                    },
+                    "end": 19,
+                    "id": {
+                        "end": 7,
+                        "loc": {
+                            "end": {
+                                "column": 7,
+                                "line": 1
+                            },
+                            "identifierName": "A",
+                            "start": {
+                                "column": 6,
+                                "line": 1
+                            }
+                        },
+                        "name": "A",
+                        "start": 6,
+                        "type": "Identifier"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 19,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "superClass": null,
+                    "type": "ClassDeclaration"
+                }
+            ],
+            "directives": [],
+            "end": 20,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 2
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}
