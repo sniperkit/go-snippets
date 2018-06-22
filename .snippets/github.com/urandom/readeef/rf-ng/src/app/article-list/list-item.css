@@ -1,0 +1,74 @@
+:host {
+    height: 500px;
+}
+
+mat-card {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100% - 12px);
+    cursor: pointer;
+}
+
+mat-card-header {
+    overflow: hidden;
+    flex: 0 0 auto;
+}
+
+[mat-card-image] {
+    height: 240px;
+    flex: 1 0 auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+mat-card-content {
+    flex: 0 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis-lastline;
+    /*
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    */
+}
+
+mat-card-actions {
+    flex: 0 0 auto;
+}
+
+.read {
+    font-weight: 100;
+    color: #666;
+}
+
+.read .title {
+    font-weight: 300;
+}
+
+.title {
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1;
+    height: 3.85em;
+}
+
+.info {
+    margin: 0;
+}
+
+.feed {
+    font-weight: 200;
+    font-size: 10px;
+    text-align: start;
+}
+
+.time {
+    font-size: 12px;
+    text-align: end;
+}
+
+button:hover, button:focus {
+    outline: none;
+    text-decoration: none;
+}

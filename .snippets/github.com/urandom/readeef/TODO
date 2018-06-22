@@ -1,0 +1,3 @@
+* Create indexes for foreign key columns that are used in queries
+* Non-fatal API errors
+* TinyRSS API emulation
