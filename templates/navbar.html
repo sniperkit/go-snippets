@@ -1,0 +1,11 @@
+<nav class="navbar navbar-default" role="navigation">
+	<a class="navbar-brand" href="/">Awesom's Tagging System</a>
+	{{ if .Connected }}
+		<a class="navbar-brand" href="/user">Manage documents</a>
+		<a class="navbar-brand" href="/logout">Logout</a>
+	{{ else }}
+		<a class="navbar-brand" href="/login">Login</a>
+	{{ end }}
+</nav>
+
+<div id="info"></div>

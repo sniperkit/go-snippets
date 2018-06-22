@@ -1,0 +1,119 @@
+{{ define "content" }}
+	{{ if eq .Type "url" }}
+		<a href="{{ GetURL .Content }}">{{ GetURL .Content }}</a> <br />
+		{{  GetComment .Content }}
+	{{ else }}
+		{{ .Content }}
+	{{ end }}
+{{ end }}
+
+{{ $uid := .Uid }}
+
+<div class="container">
+	<form id="add" action="/add/" method="post">
+		<div class="panel panel-default text-left" id="add">
+			<div class="panel-heading">
+				<span class="panel-title">
+					<a data-toggle="collapse" data-parent="#add" href="#addcol">
+						Name:
+					</a>
+					<span class="name">
+						<input name="name" type="text" value="{{ .Empty.Name }}" />
+					</span>
+	
+					Tags:
+					<span class="tags">
+						<input name="tags" type="text" value="{{ GetTags .Empty.Tags }}" />
+					</span>
+				</span>
+			</div>
+			<div name="rcontent" class="panel-body panel-collapse collapse in"
+					contenteditable="true" id="#addcol">
+				{{ template "content" .Empty }}
+			</div>
+			<!-- filled with previous div via js on submit -->
+			<input name="content" type="hidden" value="" />
+			</div>
+		</div>
+
+		<div class="text-center">
+			<button type="submit" class="btn btn-success btn-lg">Add!</button>
+		</div>
+	</form>
+</div>
+
+<hr />
+
+<div class="container">
+	<div class="text-center">
+		<form id="search" action="#" method="post">
+			<p>
+				<input type="text" name="search" placeholder="Enter some tags">
+			</p>
+			<p>
+				<button type="submit" class="btn btn-success btn-lg">
+					Search!
+				</button>
+			</p>
+		</form>
+	</div>
+	<div id="searchroot" class="panel-group">
+	{{ range .Docs }}
+		<form id="{{ .Id }}e" action="/edit/" method="post">
+		<div class="panel panel-default text-left">
+			<div class="panel-heading">
+				<span class="panel-title">
+					<a data-toggle="collapse" data-parent="#searchroot" href="#{{ .Id }}col">
+						Name:
+					</a>
+					<span class="name">
+						{{ if eq .Uid $uid }}
+							<input name="name" type="text" value="{{ .Name }}" />
+						{{ else }}
+							{{ .Name }}
+						{{ end }}
+					</span>
+	
+					Tags:
+					<span class="tags">
+						{{ if eq .Uid $uid }}
+							<input name="tags" type="text" value="{{ GetTags .Tags }}" />
+						{{ else }}
+							{{ GetTags .Tags }}
+						{{ end }}
+					</span>
+				</span>
+			</div>
+			<div class="panel-collapse collapse" id="{{ .Id }}col">
+				<div name="rcontent" class="panel-body" 
+				{{ if eq .Uid $uid }}
+					contenteditable="true"
+				{{ end }}>
+					{{ template "content" . }}
+				</div>
+
+				{{ if eq .Uid $uid }}
+				<input name="content" type="hidden" value="" />
+				<div class="text-center">
+					<input type="hidden" name="id" value="{{ .Id }}" />
+					<div class="btn-group">
+						<button name="action" value="edit" style="width:50%;"
+							type="submit" class="btn btn-success">
+							Edit
+						</button>
+						<button name="action" value="delete" style="width:50%;"
+							type="submit" class="btn btn-danger">
+							Delete
+						</button>
+					</div>
+				</div>
+				{{ end }}
+
+			</div>
+		</div>
+
+
+		</form>
+	{{ end }}
+	</div>
+</div>
