@@ -1,0 +1,26 @@
+version: "3.4"
+services:
+  ss-obfs:
+    container_name: ss-obfs
+    image: nutshells/ss-obfs
+    # uncomment the line below to enable client mode
+    #command: [ "client" ]
+    ports:
+      - "12345:12345/tcp"
+      - "12345:12345/udp"
+    ulimits:
+      nofile:
+        soft: 51200
+        hard: 51200
+    environment:
+      - PASSWORD=<password>
+
+      # uncomment the line below to take advantage of AES-NI acceleration
+      #- ENCRYPT_METHOD=aes-256-gcm
+
+      # modify and uncomment the 3 lines below in client mode
+      #- SERVER_ADDRESS=<remote_address>
+      #- SERVER_PORT=<remote_port>
+      #- OBFS_HOST=bing.com
+    read_only: true
+    restart: unless-stopped
