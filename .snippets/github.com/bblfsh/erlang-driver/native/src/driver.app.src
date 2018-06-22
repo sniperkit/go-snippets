@@ -1,0 +1,17 @@
+{application, driver,
+ [{description, "An OTP application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { driver_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    jsx
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
+ ]}.
