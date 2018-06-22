@@ -1,0 +1,52 @@
+Status:  ok
+Language:  typescript
+Errors: 
+UAST: 
+SourceFile {
+.  Roles: File
+.  StartPosition: {
+.  .  Offset: 0
+.  .  Line: 1
+.  .  Col: 1
+.  }
+.  EndPosition: {
+.  .  Offset: 62
+.  .  Line: 8
+.  .  Col: 1
+.  }
+.  Properties: {
+.  .  flags: null
+.  .  identifierCount: 0
+.  .  isDeclarationFile: false
+.  .  languageVariant: 0
+.  .  nodeCount: 3
+.  .  scriptKind: 3
+.  }
+.  Children: {
+.  .  0: Comment {
+.  .  .  Roles: Unannotated
+.  .  .  TOKEN "single line"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: comments
+.  .  .  }
+.  .  }
+.  .  1: Comment {
+.  .  .  Roles: Unannotated
+.  .  .  TOKEN "* multi line"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: comments
+.  .  .  }
+.  .  }
+.  }
+}
+

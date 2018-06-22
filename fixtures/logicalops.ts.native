@@ -1,0 +1,134 @@
+{
+    "status": "ok",
+    "language": "typescript",
+    "errors": [],
+    "ast": {
+        "amdDependencies": [],
+        "bindDiagnostics": [],
+        "col": 1,
+        "comments": [],
+        "end": 34,
+        "flags": [],
+        "identifierCount": 0,
+        "identifiers": {},
+        "isDeclarationFile": false,
+        "kind": "SourceFile",
+        "languageVariant": 0,
+        "line": 1,
+        "nodeCount": 15,
+        "pos": 0,
+        "referencedFiles": [],
+        "scriptKind": 3,
+        "statements": [
+            {
+                "col": 1,
+                "end": 13,
+                "expression": {
+                    "col": 1,
+                    "end": 13,
+                    "flags": [],
+                    "kind": "BinaryExpression",
+                    "left": {
+                        "col": 1,
+                        "end": 4,
+                        "flags": [],
+                        "kind": "TrueKeyword",
+                        "line": 1,
+                        "pos": 0
+                    },
+                    "line": 1,
+                    "operatorToken": {
+                        "col": 5,
+                        "end": 7,
+                        "flags": [],
+                        "kind": "AmpersandAmpersandToken",
+                        "line": 1,
+                        "pos": 4
+                    },
+                    "pos": 0,
+                    "right": {
+                        "col": 8,
+                        "end": 13,
+                        "flags": [],
+                        "kind": "FalseKeyword",
+                        "line": 1,
+                        "pos": 7
+                    }
+                },
+                "flags": [],
+                "kind": "ExpressionStatement",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "pos": 0
+            },
+            {
+                "col": 14,
+                "end": 27,
+                "expression": {
+                    "col": 14,
+                    "end": 27,
+                    "flags": [],
+                    "kind": "BinaryExpression",
+                    "left": {
+                        "col": 14,
+                        "end": 18,
+                        "flags": [],
+                        "kind": "TrueKeyword",
+                        "line": 1,
+                        "pos": 13
+                    },
+                    "line": 1,
+                    "operatorToken": {
+                        "col": 5,
+                        "end": 21,
+                        "flags": [],
+                        "kind": "BarBarToken",
+                        "line": 2,
+                        "pos": 18
+                    },
+                    "pos": 13,
+                    "right": {
+                        "col": 8,
+                        "end": 27,
+                        "flags": [],
+                        "kind": "FalseKeyword",
+                        "line": 2,
+                        "pos": 21
+                    }
+                },
+                "flags": [],
+                "kind": "ExpressionStatement",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "pos": 13
+            },
+            {
+                "col": 14,
+                "end": 33,
+                "expression": {
+                    "col": 14,
+                    "end": 33,
+                    "flags": [],
+                    "kind": "PrefixUnaryExpression",
+                    "line": 2,
+                    "operand": {
+                        "col": 2,
+                        "end": 33,
+                        "flags": [],
+                        "kind": "TrueKeyword",
+                        "line": 3,
+                        "pos": 29
+                    },
+                    "operator": 51,
+                    "pos": 27
+                },
+                "flags": [],
+                "kind": "ExpressionStatement",
+                "line": 2,
+                "modifierFlagsCache": 536870912,
+                "pos": 27
+            }
+        ],
+        "typeReferenceDirectives": []
+    }
+}

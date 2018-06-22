@@ -1,0 +1,395 @@
+{
+    "status": "ok",
+    "language": "typescript",
+    "errors": [],
+    "ast": {
+        "amdDependencies": [],
+        "bindDiagnostics": [],
+        "col": 1,
+        "comments": [],
+        "end": 217,
+        "flags": [],
+        "identifierCount": 17,
+        "identifiers": {},
+        "isDeclarationFile": false,
+        "kind": "SourceFile",
+        "languageVariant": 0,
+        "line": 1,
+        "nodeCount": 47,
+        "pos": 0,
+        "referencedFiles": [],
+        "scriptKind": 3,
+        "statements": [
+            {
+                "col": 1,
+                "end": 35,
+                "flags": [],
+                "kind": "TypeAliasDeclaration",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "name": {
+                    "col": 5,
+                    "end": 13,
+                    "escapedText": "CallBack",
+                    "flags": [],
+                    "kind": "Identifier",
+                    "line": 1,
+                    "pos": 4
+                },
+                "pos": 0,
+                "type": {
+                    "col": 16,
+                    "end": 34,
+                    "flags": [],
+                    "kind": "FunctionType",
+                    "line": 1,
+                    "parameters": [
+                        {
+                            "col": 18,
+                            "end": 23,
+                            "flags": [],
+                            "kind": "Parameter",
+                            "line": 1,
+                            "name": {
+                                "col": 18,
+                                "end": 23,
+                                "escapedText": "string",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 1,
+                                "originalKeywordKind": 136,
+                                "pos": 17
+                            },
+                            "pos": 17
+                        }
+                    ],
+                    "pos": 15,
+                    "type": {
+                        "col": 28,
+                        "end": 34,
+                        "flags": [],
+                        "kind": "StringKeyword",
+                        "line": 1,
+                        "pos": 27
+                    }
+                }
+            },
+            {
+                "body": {
+                    "col": 36,
+                    "end": 96,
+                    "flags": [],
+                    "kind": "Block",
+                    "line": 3,
+                    "multiLine": true,
+                    "pos": 72,
+                    "statements": [
+                        {
+                            "col": 38,
+                            "end": 93,
+                            "expression": {
+                                "col": 11,
+                                "end": 92,
+                                "escapedText": "input",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 4,
+                                "pos": 86
+                            },
+                            "flags": [],
+                            "kind": "ReturnStatement",
+                            "line": 3,
+                            "pos": 74
+                        }
+                    ]
+                },
+                "col": 36,
+                "end": 96,
+                "flags": [],
+                "kind": "FunctionDeclaration",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "name": {
+                    "col": 9,
+                    "end": 49,
+                    "escapedText": "foo",
+                    "flags": [],
+                    "kind": "Identifier",
+                    "line": 3,
+                    "pos": 45
+                },
+                "parameters": [
+                    {
+                        "col": 14,
+                        "end": 63,
+                        "flags": [],
+                        "kind": "Parameter",
+                        "line": 3,
+                        "name": {
+                            "col": 14,
+                            "end": 55,
+                            "escapedText": "input",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 3,
+                            "pos": 50
+                        },
+                        "pos": 50,
+                        "type": {
+                            "col": 20,
+                            "end": 63,
+                            "flags": [],
+                            "kind": "StringKeyword",
+                            "line": 3,
+                            "pos": 56
+                        }
+                    }
+                ],
+                "pos": 35,
+                "type": {
+                    "col": 29,
+                    "end": 72,
+                    "flags": [],
+                    "kind": "StringKeyword",
+                    "line": 3,
+                    "pos": 65
+                }
+            },
+            {
+                "body": {
+                    "col": 38,
+                    "end": 162,
+                    "flags": [],
+                    "kind": "Block",
+                    "line": 6,
+                    "multiLine": true,
+                    "pos": 134,
+                    "statements": [
+                        {
+                            "col": 40,
+                            "end": 159,
+                            "expression": {
+                                "arguments": [
+                                    {
+                                        "col": 15,
+                                        "end": 157,
+                                        "flags": [],
+                                        "kind": "StringLiteral",
+                                        "line": 7,
+                                        "pos": 152,
+                                        "text": "bar"
+                                    }
+                                ],
+                                "col": 11,
+                                "end": 158,
+                                "expression": {
+                                    "col": 11,
+                                    "end": 151,
+                                    "escapedText": "cb",
+                                    "flags": [],
+                                    "kind": "Identifier",
+                                    "line": 7,
+                                    "pos": 148
+                                },
+                                "flags": [],
+                                "kind": "CallExpression",
+                                "line": 7,
+                                "pos": 148
+                            },
+                            "flags": [],
+                            "kind": "ReturnStatement",
+                            "line": 6,
+                            "pos": 136
+                        }
+                    ]
+                },
+                "col": 2,
+                "end": 162,
+                "flags": [],
+                "kind": "FunctionDeclaration",
+                "line": 5,
+                "modifierFlagsCache": 536870912,
+                "name": {
+                    "col": 9,
+                    "end": 112,
+                    "escapedText": "useFoo",
+                    "flags": [],
+                    "kind": "Identifier",
+                    "line": 6,
+                    "pos": 105
+                },
+                "parameters": [
+                    {
+                        "col": 17,
+                        "end": 125,
+                        "flags": [],
+                        "kind": "Parameter",
+                        "line": 6,
+                        "name": {
+                            "col": 17,
+                            "end": 115,
+                            "escapedText": "cb",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 6,
+                            "pos": 113
+                        },
+                        "pos": 113,
+                        "type": {
+                            "col": 20,
+                            "end": 125,
+                            "flags": [],
+                            "kind": "TypeReference",
+                            "line": 6,
+                            "pos": 116,
+                            "typeName": {
+                                "col": 20,
+                                "end": 125,
+                                "escapedText": "CallBack",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 6,
+                                "pos": 116
+                            }
+                        }
+                    }
+                ],
+                "pos": 96,
+                "type": {
+                    "col": 31,
+                    "end": 134,
+                    "flags": [],
+                    "kind": "StringKeyword",
+                    "line": 6,
+                    "pos": 127
+                }
+            },
+            {
+                "col": 2,
+                "declarationList": {
+                    "col": 2,
+                    "declarations": [
+                        {
+                            "col": 4,
+                            "end": 201,
+                            "flags": [],
+                            "kind": "VariableDeclaration",
+                            "line": 10,
+                            "name": {
+                                "col": 4,
+                                "end": 174,
+                                "escapedText": "myFunc",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 10,
+                                "pos": 167
+                            },
+                            "pos": 167,
+                            "type": {
+                                "col": 12,
+                                "end": 201,
+                                "flags": [],
+                                "kind": "FunctionType",
+                                "line": 10,
+                                "parameters": [
+                                    {
+                                        "col": 14,
+                                        "end": 190,
+                                        "flags": [],
+                                        "kind": "Parameter",
+                                        "line": 10,
+                                        "name": {
+                                            "col": 14,
+                                            "end": 182,
+                                            "escapedText": "input",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 10,
+                                            "pos": 177
+                                        },
+                                        "pos": 177,
+                                        "type": {
+                                            "col": 20,
+                                            "end": 190,
+                                            "flags": [],
+                                            "kind": "StringKeyword",
+                                            "line": 10,
+                                            "pos": 183
+                                        }
+                                    }
+                                ],
+                                "pos": 175,
+                                "type": {
+                                    "col": 31,
+                                    "end": 201,
+                                    "flags": [],
+                                    "kind": "StringKeyword",
+                                    "line": 10,
+                                    "pos": 194
+                                }
+                            }
+                        }
+                    ],
+                    "end": 201,
+                    "flags": [
+                        "Let",
+                        "BlockScoped"
+                    ],
+                    "kind": "VariableDeclarationList",
+                    "line": 8,
+                    "pos": 162
+                },
+                "end": 202,
+                "flags": [],
+                "kind": "VariableStatement",
+                "line": 8,
+                "modifierFlagsCache": 536870912,
+                "pos": 162
+            },
+            {
+                "col": 39,
+                "end": 216,
+                "expression": {
+                    "col": 39,
+                    "end": 215,
+                    "flags": [],
+                    "kind": "BinaryExpression",
+                    "left": {
+                        "col": 39,
+                        "end": 209,
+                        "escapedText": "myFunc",
+                        "flags": [],
+                        "kind": "Identifier",
+                        "line": 10,
+                        "pos": 202
+                    },
+                    "line": 10,
+                    "operatorToken": {
+                        "col": 7,
+                        "end": 211,
+                        "flags": [],
+                        "kind": "EqualsToken",
+                        "line": 11,
+                        "pos": 209
+                    },
+                    "pos": 202,
+                    "right": {
+                        "col": 9,
+                        "end": 215,
+                        "escapedText": "foo",
+                        "flags": [],
+                        "kind": "Identifier",
+                        "line": 11,
+                        "pos": 211
+                    }
+                },
+                "flags": [],
+                "kind": "ExpressionStatement",
+                "line": 10,
+                "modifierFlagsCache": 536870912,
+                "pos": 202
+            }
+        ],
+        "typeReferenceDirectives": []
+    }
+}

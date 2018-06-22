@@ -1,0 +1,282 @@
+{
+    "status": "ok",
+    "language": "typescript",
+    "errors": [],
+    "ast": {
+        "amdDependencies": [],
+        "bindDiagnostics": [],
+        "col": 1,
+        "comments": [],
+        "end": 95,
+        "flags": [],
+        "identifierCount": 11,
+        "identifiers": {},
+        "isDeclarationFile": false,
+        "kind": "SourceFile",
+        "languageVariant": 0,
+        "line": 1,
+        "nodeCount": 30,
+        "pos": 0,
+        "referencedFiles": [],
+        "scriptKind": 3,
+        "statements": [
+            {
+                "col": 1,
+                "declarationList": {
+                    "col": 1,
+                    "declarations": [
+                        {
+                            "col": 4,
+                            "end": 51,
+                            "flags": [],
+                            "initializer": {
+                                "col": 10,
+                                "end": 51,
+                                "flags": [],
+                                "kind": "ObjectLiteralExpression",
+                                "line": 1,
+                                "multiLine": true,
+                                "pos": 9,
+                                "properties": [
+                                    {
+                                        "col": 12,
+                                        "end": 24,
+                                        "flags": [],
+                                        "initializer": {
+                                            "col": 7,
+                                            "end": 24,
+                                            "flags": [],
+                                            "kind": "StringLiteral",
+                                            "line": 2,
+                                            "pos": 18,
+                                            "text": "foo"
+                                        },
+                                        "kind": "PropertyAssignment",
+                                        "line": 1,
+                                        "name": {
+                                            "col": 12,
+                                            "end": 17,
+                                            "escapedText": "a",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 1,
+                                            "pos": 11
+                                        },
+                                        "pos": 11
+                                    },
+                                    {
+                                        "col": 14,
+                                        "end": 35,
+                                        "flags": [],
+                                        "initializer": {
+                                            "col": 7,
+                                            "end": 35,
+                                            "flags": [],
+                                            "kind": "NumericLiteral",
+                                            "line": 3,
+                                            "numericLiteralFlags": 0,
+                                            "pos": 32,
+                                            "text": "42"
+                                        },
+                                        "kind": "PropertyAssignment",
+                                        "line": 2,
+                                        "name": {
+                                            "col": 14,
+                                            "end": 31,
+                                            "escapedText": "b",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 2,
+                                            "pos": 25
+                                        },
+                                        "pos": 25
+                                    },
+                                    {
+                                        "col": 11,
+                                        "end": 49,
+                                        "flags": [],
+                                        "initializer": {
+                                            "col": 7,
+                                            "end": 49,
+                                            "flags": [],
+                                            "kind": "StringLiteral",
+                                            "line": 4,
+                                            "pos": 43,
+                                            "text": "bar"
+                                        },
+                                        "kind": "PropertyAssignment",
+                                        "line": 3,
+                                        "name": {
+                                            "col": 11,
+                                            "end": 42,
+                                            "escapedText": "c",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 3,
+                                            "pos": 36
+                                        },
+                                        "pos": 36
+                                    }
+                                ]
+                            },
+                            "kind": "VariableDeclaration",
+                            "line": 1,
+                            "name": {
+                                "col": 4,
+                                "end": 7,
+                                "escapedText": "obj",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 1,
+                                "pos": 3
+                            },
+                            "pos": 3
+                        }
+                    ],
+                    "end": 51,
+                    "flags": [
+                        "Let",
+                        "BlockScoped"
+                    ],
+                    "kind": "VariableDeclarationList",
+                    "line": 1,
+                    "pos": 0
+                },
+                "end": 52,
+                "flags": [],
+                "kind": "VariableStatement",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "pos": 0
+            },
+            {
+                "col": 3,
+                "declarationList": {
+                    "col": 3,
+                    "declarations": [
+                        {
+                            "col": 4,
+                            "end": 93,
+                            "flags": [],
+                            "initializer": {
+                                "col": 38,
+                                "end": 93,
+                                "escapedText": "o",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 7,
+                                "pos": 91
+                            },
+                            "kind": "VariableDeclaration",
+                            "line": 7,
+                            "name": {
+                                "col": 4,
+                                "elements": [
+                                    {
+                                        "col": 6,
+                                        "end": 68,
+                                        "flags": [],
+                                        "kind": "BindingElement",
+                                        "line": 7,
+                                        "name": {
+                                            "col": 13,
+                                            "end": 68,
+                                            "escapedText": "b",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 7,
+                                            "pos": 66
+                                        },
+                                        "pos": 59,
+                                        "propertyName": {
+                                            "col": 6,
+                                            "end": 65,
+                                            "escapedText": "second",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 7,
+                                            "pos": 59
+                                        }
+                                    },
+                                    {
+                                        "col": 16,
+                                        "end": 78,
+                                        "flags": [],
+                                        "kind": "BindingElement",
+                                        "line": 7,
+                                        "name": {
+                                            "col": 23,
+                                            "end": 78,
+                                            "escapedText": "a",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 7,
+                                            "pos": 76
+                                        },
+                                        "pos": 69,
+                                        "propertyName": {
+                                            "col": 16,
+                                            "end": 75,
+                                            "escapedText": "first",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 7,
+                                            "pos": 69
+                                        }
+                                    },
+                                    {
+                                        "col": 26,
+                                        "end": 88,
+                                        "flags": [],
+                                        "kind": "BindingElement",
+                                        "line": 7,
+                                        "name": {
+                                            "col": 33,
+                                            "end": 88,
+                                            "escapedText": "c",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 7,
+                                            "pos": 86
+                                        },
+                                        "pos": 79,
+                                        "propertyName": {
+                                            "col": 26,
+                                            "end": 85,
+                                            "escapedText": "third",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 7,
+                                            "pos": 79
+                                        }
+                                    }
+                                ],
+                                "end": 89,
+                                "flags": [],
+                                "kind": "ObjectBindingPattern",
+                                "line": 7,
+                                "pos": 57
+                            },
+                            "pos": 57
+                        }
+                    ],
+                    "end": 93,
+                    "flags": [
+                        "Let",
+                        "BlockScoped"
+                    ],
+                    "kind": "VariableDeclarationList",
+                    "line": 5,
+                    "pos": 52
+                },
+                "end": 94,
+                "flags": [],
+                "kind": "VariableStatement",
+                "line": 5,
+                "modifierFlagsCache": 536870912,
+                "pos": 52
+            }
+        ],
+        "typeReferenceDirectives": []
+    }
+}

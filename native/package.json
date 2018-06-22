@@ -1,0 +1,30 @@
+{
+  "name": "typescript-driver",
+  "version": "1.0.0",
+  "description": "TypeScript babelfish driver",
+  "main": "src/index.js",
+  "repository": "https://github.com/bblfsh/typescript-driver",
+  "author": "Miguel Molina <hi@mvader.me>",
+  "license": "GPLv3",
+  "dependencies": {
+    "rollup": "^0.51.8",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "typescript": "^2.2.1",
+    "source-map-support": "^0.4.2"
+  },
+  "ava": {
+    "files": [
+      "test/*.js"
+    ]
+  },
+  "scripts": {
+    "build": "npm run clean && rollup -c",
+    "start": "npm run build && node lib/index.js",
+    "clean": "rm -rf lib",
+    "test": "ava -v"
+  },
+  "devDependencies": {
+    "ava": "^0.23.0"
+  }
+}

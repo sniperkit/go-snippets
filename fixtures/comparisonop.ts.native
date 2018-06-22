@@ -1,0 +1,296 @@
+{
+    "status": "ok",
+    "language": "typescript",
+    "errors": [],
+    "ast": {
+        "amdDependencies": [],
+        "bindDiagnostics": [],
+        "col": 1,
+        "comments": [],
+        "end": 42,
+        "flags": [],
+        "identifierCount": 0,
+        "identifiers": {},
+        "isDeclarationFile": false,
+        "kind": "SourceFile",
+        "languageVariant": 0,
+        "line": 1,
+        "nodeCount": 34,
+        "pos": 0,
+        "referencedFiles": [],
+        "scriptKind": 3,
+        "statements": [
+            {
+                "col": 1,
+                "end": 5,
+                "expression": {
+                    "col": 1,
+                    "end": 5,
+                    "flags": [],
+                    "kind": "BinaryExpression",
+                    "left": {
+                        "col": 1,
+                        "end": 1,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 1,
+                        "numericLiteralFlags": 0,
+                        "pos": 0,
+                        "text": "2"
+                    },
+                    "line": 1,
+                    "operatorToken": {
+                        "col": 2,
+                        "end": 3,
+                        "flags": [],
+                        "kind": "GreaterThanToken",
+                        "line": 1,
+                        "pos": 1
+                    },
+                    "pos": 0,
+                    "right": {
+                        "col": 4,
+                        "end": 5,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 1,
+                        "numericLiteralFlags": 0,
+                        "pos": 3,
+                        "text": "1"
+                    }
+                },
+                "flags": [],
+                "kind": "ExpressionStatement",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "pos": 0
+            },
+            {
+                "col": 6,
+                "end": 11,
+                "expression": {
+                    "col": 6,
+                    "end": 11,
+                    "flags": [],
+                    "kind": "BinaryExpression",
+                    "left": {
+                        "col": 6,
+                        "end": 7,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 1,
+                        "numericLiteralFlags": 0,
+                        "pos": 5,
+                        "text": "3"
+                    },
+                    "line": 1,
+                    "operatorToken": {
+                        "col": 2,
+                        "end": 9,
+                        "flags": [],
+                        "kind": "LessThanToken",
+                        "line": 2,
+                        "pos": 7
+                    },
+                    "pos": 5,
+                    "right": {
+                        "col": 4,
+                        "end": 11,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 2,
+                        "numericLiteralFlags": 0,
+                        "pos": 9,
+                        "text": "4"
+                    }
+                },
+                "flags": [],
+                "kind": "ExpressionStatement",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "pos": 5
+            },
+            {
+                "col": 6,
+                "end": 18,
+                "expression": {
+                    "col": 6,
+                    "end": 18,
+                    "flags": [],
+                    "kind": "BinaryExpression",
+                    "left": {
+                        "col": 6,
+                        "end": 13,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 2,
+                        "numericLiteralFlags": 0,
+                        "pos": 11,
+                        "text": "6"
+                    },
+                    "line": 2,
+                    "operatorToken": {
+                        "col": 2,
+                        "end": 16,
+                        "flags": [],
+                        "kind": "GreaterThanEqualsToken",
+                        "line": 3,
+                        "pos": 13
+                    },
+                    "pos": 11,
+                    "right": {
+                        "col": 5,
+                        "end": 18,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 3,
+                        "numericLiteralFlags": 0,
+                        "pos": 16,
+                        "text": "5"
+                    }
+                },
+                "flags": [],
+                "kind": "ExpressionStatement",
+                "line": 2,
+                "modifierFlagsCache": 536870912,
+                "pos": 11
+            },
+            {
+                "col": 7,
+                "end": 25,
+                "expression": {
+                    "col": 7,
+                    "end": 25,
+                    "flags": [],
+                    "kind": "BinaryExpression",
+                    "left": {
+                        "col": 7,
+                        "end": 20,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 3,
+                        "numericLiteralFlags": 0,
+                        "pos": 18,
+                        "text": "7"
+                    },
+                    "line": 3,
+                    "operatorToken": {
+                        "col": 2,
+                        "end": 23,
+                        "flags": [],
+                        "kind": "LessThanEqualsToken",
+                        "line": 4,
+                        "pos": 20
+                    },
+                    "pos": 18,
+                    "right": {
+                        "col": 5,
+                        "end": 25,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 4,
+                        "numericLiteralFlags": 0,
+                        "pos": 23,
+                        "text": "8"
+                    }
+                },
+                "flags": [],
+                "kind": "ExpressionStatement",
+                "line": 3,
+                "modifierFlagsCache": 536870912,
+                "pos": 18
+            },
+            {
+                "col": 7,
+                "end": 32,
+                "expression": {
+                    "col": 7,
+                    "end": 32,
+                    "flags": [],
+                    "kind": "BinaryExpression",
+                    "left": {
+                        "col": 7,
+                        "end": 27,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 4,
+                        "numericLiteralFlags": 0,
+                        "pos": 25,
+                        "text": "9"
+                    },
+                    "line": 4,
+                    "operatorToken": {
+                        "col": 2,
+                        "end": 30,
+                        "flags": [],
+                        "kind": "EqualsEqualsToken",
+                        "line": 5,
+                        "pos": 27
+                    },
+                    "pos": 25,
+                    "right": {
+                        "col": 5,
+                        "end": 32,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 5,
+                        "numericLiteralFlags": 0,
+                        "pos": 30,
+                        "text": "9"
+                    }
+                },
+                "flags": [],
+                "kind": "ExpressionStatement",
+                "line": 4,
+                "modifierFlagsCache": 536870912,
+                "pos": 25
+            },
+            {
+                "col": 7,
+                "end": 41,
+                "expression": {
+                    "col": 7,
+                    "end": 41,
+                    "flags": [],
+                    "kind": "BinaryExpression",
+                    "left": {
+                        "col": 7,
+                        "end": 35,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 5,
+                        "numericLiteralFlags": 0,
+                        "pos": 32,
+                        "text": "10"
+                    },
+                    "line": 5,
+                    "operatorToken": {
+                        "col": 3,
+                        "end": 38,
+                        "flags": [],
+                        "kind": "ExclamationEqualsToken",
+                        "line": 6,
+                        "pos": 35
+                    },
+                    "pos": 32,
+                    "right": {
+                        "col": 6,
+                        "end": 41,
+                        "flags": [],
+                        "kind": "NumericLiteral",
+                        "line": 6,
+                        "numericLiteralFlags": 0,
+                        "pos": 38,
+                        "text": "11"
+                    }
+                },
+                "flags": [],
+                "kind": "ExpressionStatement",
+                "line": 5,
+                "modifierFlagsCache": 536870912,
+                "pos": 32
+            }
+        ],
+        "typeReferenceDirectives": []
+    }
+}
