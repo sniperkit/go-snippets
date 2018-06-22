@@ -1,3 +1,4 @@
 {
-  "go.gopath": "vendor"
+  "go.gopath": "vendor",
+  "go.formatTool": "gofmt",
 }
