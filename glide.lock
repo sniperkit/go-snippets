@@ -1,0 +1,47 @@
+hash: d5aa4b5ff4e014e19ad4801b2264ee2134b1306d0bc5aa8a7e9974ee6add9789
+updated: 2017-11-29T21:21:07.5158+08:00
+imports:
+- name: github.com/aliyun/aliyun-oss-go-sdk
+  version: 6fe16293d6b7af4f5c2450714c5b4825c8ad040c
+  subpackages:
+  - oss
+- name: github.com/araddon/dateparse
+  version: f30ca3179c19d723d2f1f8c878fcce1089775c05
+- name: github.com/briandowns/spinner
+  version: 48dbb65d7bd5c74ab50d53d04c949f20e3d14944
+- name: github.com/BurntSushi/toml
+  version: a368813c5e648fee92e5f6c30e3944ff9d5e8895
+- name: github.com/chzyer/readline
+  version: a4d5111b617813c5d09df1ba6d76394ed71b1644
+- name: github.com/fatih/color
+  version: 5df930a27be2502f99b292b7cc09ebad4d0891f4
+- name: github.com/inconshreveable/mousetrap
+  version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
+- name: github.com/jroimartin/gocui
+  version: 4f518eddb04b8f73870836b6d1941e8aa3c06637
+- name: github.com/mattn/go-colorable
+  version: 5411d3eea5978e6cdc258b30de592b60df6aba96
+  repo: https://github.com/mattn/go-colorable
+- name: github.com/mattn/go-isatty
+  version: 57fdcb988a5c543893cc61bce354a6e24ab70022
+  repo: https://github.com/mattn/go-isatty
+- name: github.com/mattn/go-runewidth
+  version: 97311d9f7767e3d6f422ea06661bc2c7a19e8a5d
+- name: github.com/nsf/termbox-go
+  version: aa4a75b1c20a2b03751b1a9f7e41d58bd6f71c43
+- name: github.com/pkg/errors
+  version: f15c970de5b76fac0b59abb32d62c17cc7bed265
+- name: github.com/spf13/cobra
+  version: 1be1d2841c773c01bee8289f55f7463b6e2c2539
+- name: github.com/spf13/pflag
+  version: 4c012f6dcd9546820e378d0bdda4d8fc772cdfea
+- name: golang.org/x/crypto
+  version: 94eea52f7b742c7cbe0b03b22f0c4c8631ece122
+  subpackages:
+  - ssh/terminal
+- name: golang.org/x/sys
+  version: e24f485414aeafb646f6fca458b0bf869c0880a1
+  subpackages:
+  - unix
+  - windows
+testImports: []

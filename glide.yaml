@@ -1,0 +1,17 @@
+package: pet
+import:
+- package: github.com/BurntSushi/toml
+- package: github.com/aliyun/aliyun-oss-go-sdk
+  subpackages:
+  - oss
+- package: github.com/araddon/dateparse
+- package: github.com/briandowns/spinner
+- package: github.com/chzyer/readline
+- package: github.com/fatih/color
+- package: github.com/jroimartin/gocui
+- package: github.com/mattn/go-runewidth
+- package: github.com/pkg/errors
+- package: github.com/spf13/cobra
+- package: golang.org/x/crypto
+  subpackages:
+  - ssh/terminal
