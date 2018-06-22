@@ -1,0 +1,79 @@
+Command Line Development
+Make the command line fun and uniform
+
+Tim Anema
+Backend Devloper, Shopify
+timanema@gmail.com
+http://timanema.com/
+@tanema
+
+* Time to start writing better command line interfaces.
+
+- Go gave good yet primitive tools to write a CLI in go.
+- Go's CLI is not really uniform with general unix best practices
+- Flags are positional and not unix standard
+
+.image what.gif
+.caption "Sorry did you just bad mouth the std lib in the first slide?"
+
+* Best Practices for Options and Flags
+
+- Every option that can have a default option should have a default option.
+- Provide long, readable option names with short aliases.
+- Use common command line options.
+- Don’t have positional options.
+- Provide an extensive, comprehensive help command that can be accessed by help, --help or -h.
+- Provide a version command that can be accessed by version, --version or -v.
+
+* Cobra for better options
+
+.code main.go
+
+* Cobra for better options cont.
+
+.code output
+
+Check out the repo:
+.link github.com/spf13/cobra
+
+* Best Practices for Usage
+
+- Provide options for explicitly identifying the files to process.
+- Accept filenames from stdIn (Cobra does this for you)
+- Don't go for a long period without output to the user. Progress Bar https://github.com/vbauerster/mpb
+- If a command has a side effect provide a dry-run/whatif/no_post option if possible.
+- For long running operations, allow the user to recover at a failure point if possible.
+
+* Best Practices for Interfacing. Making your tool scriptable
+
+- Exit with nonzero status codes if and only if the program terminated with errors.
+- Write to stdout for useful information, stderr errors.
+.code io.go
+- Never panic
+- Reserve outputting stack traces for truly exceptional cases.
+
+
+* Input
+
+For better input, use survey github.com/AlecAivazis/survey
+
+.image https://camo.githubusercontent.com/7b17e8e47fe378dffe75139515464762d2248db5/68747470733a2f2f7a697070792e6766796361742e636f6d2f416d7573696e67426f7373794172726f77776f726d2e676966
+
+- Easy text input and validation
+- Easy and safe password retrieval
+- Single and Multi Select
+- Editor input (Vim and Emacs ect)
+
+* Testing
+
+- Fixtures or generative files for file interaction
+- httptest.Server for testing server interactions
+- Always use `filepath.Join` in all filepaths even in tests this makes your tests and application cross platform
+- For all input and output, have options to disable it so that your tests are clean.
+- Setting up logging like the previous slides allows for output testing
+- Run your tests while disconnected to the internet to make sure you have stubbed all connections
+
+* Credit goes to...
+
+Kevin Deisz @ Localytics
+.link http://eng.localytics.com/exploring-cli-best-practices/
