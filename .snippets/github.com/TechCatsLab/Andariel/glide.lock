@@ -1,0 +1,100 @@
+hash: b7933db49b272c6122975a629da190687d0c381eb07bde046194d606a6513eff
+updated: 2017-08-28T22:19:16.785250652+08:00
+imports:
+- name: github.com/fengyfei/nuts
+  version: e031bdbbcdc7452115b0226148f6a5fa076a47d5
+  subpackages:
+  - github/client
+- name: github.com/fsnotify/fsnotify
+  version: 4da3e2cfbabc9f751898f250b49f2439785783a1
+- name: github.com/golang/protobuf
+  version: ab9f9a6dab164b7d1246e0e688b0ab7b94d8553e
+  subpackages:
+  - proto
+- name: github.com/google/go-github
+  version: d3b18a99b5c5056e1828984d62b2fb4cf6349073
+  subpackages:
+  - github
+- name: github.com/google/go-querystring
+  version: 53e6ce116135b80d037921a7fdd5138cf32d7a8a
+  subpackages:
+  - query
+- name: github.com/hashicorp/hcl
+  version: 8f6b1344a92ff8877cf24a5de9177bf7d0a2a187
+  subpackages:
+  - hcl/ast
+  - hcl/parser
+  - hcl/scanner
+  - hcl/strconv
+  - hcl/token
+  - json/parser
+  - json/scanner
+  - json/token
+- name: github.com/magiconair/properties
+  version: be5ece7dd465ab0765a9682137865547526d1dfb
+- name: github.com/mitchellh/mapstructure
+  version: d0303fe809921458f417bcf828397a65db30a7e4
+- name: github.com/pelletier/go-toml
+  version: 9c1b4e331f1e3d98e72600677699fbe212cd6d16
+- name: github.com/spf13/afero
+  version: 36f8810e2e3d7eeac4ac05b57f65690fbfba62a2
+  subpackages:
+  - mem
+- name: github.com/spf13/cast
+  version: acbeb36b902d72a7a4c18e8f3241075e7ab763e4
+- name: github.com/spf13/jwalterweatherman
+  version: 0efa5202c04663c757d84f90f5219c1250baf94f
+- name: github.com/spf13/pflag
+  version: e57e3eeb33f795204c1ca35f56c44f83227c6e66
+- name: github.com/spf13/viper
+  version: 25b30aa063fc18e48662b86996252eabdcf2f0c7
+- name: go.uber.org/atomic
+  version: 4e336646b2ef9fc6e47be8e21594178f98e5ebcf
+- name: go.uber.org/multierr
+  version: 3c4937480c32f4c13a875a1829af76c98ca3d40a
+- name: go.uber.org/zap
+  version: 9d9d6135afe89b6fc4a05e9a8552526caba38048
+  subpackages:
+  - buffer
+  - internal/bufferpool
+  - internal/color
+  - internal/exit
+  - zapcore
+- name: golang.org/x/net
+  version: 57efc9c3d9f91fb3277f8da1cff370539c4d3dc5
+  subpackages:
+  - context
+  - context/ctxhttp
+- name: golang.org/x/oauth2
+  version: 9a379c6b3e95a790ffc43293c2a78dee0d7b6e20
+  subpackages:
+  - internal
+- name: golang.org/x/sys
+  version: 2d6f6f883a06fc0d5f4b14a81e4c28705ea64c15
+  subpackages:
+  - unix
+- name: golang.org/x/text
+  version: ac87088df8ef557f1e32cd00ed0b6fbc3f7ddafb
+  subpackages:
+  - transform
+  - unicode/norm
+- name: google.golang.org/appengine
+  version: d9a072cfa7b9736e44311ef77b3e09d804bfa599
+  subpackages:
+  - internal
+  - internal/base
+  - internal/datastore
+  - internal/log
+  - internal/remote_api
+  - internal/urlfetch
+  - urlfetch
+- name: gopkg.in/mgo.v2
+  version: 3f83fa5005286a7fe593b055f0d7771a7dce4655
+  subpackages:
+  - bson
+  - internal/json
+  - internal/sasl
+  - internal/scram
+- name: gopkg.in/yaml.v2
+  version: eb3733d160e74a9c7e442f435eb3bea458e1d19f
+testImports: []

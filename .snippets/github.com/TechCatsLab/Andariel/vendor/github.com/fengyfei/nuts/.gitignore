@@ -1,0 +1,8 @@
+*.log
+*.rdb
+*.pprof
+*.memprof
+.idea
+.vscode
+glide*
+vendor

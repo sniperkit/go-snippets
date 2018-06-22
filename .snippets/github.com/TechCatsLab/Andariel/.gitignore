@@ -1,0 +1,8 @@
+*.log
+.idea
+*.rdb
+*.pprof
+*.memprof
+
+Andariel
+cmd/github/github
