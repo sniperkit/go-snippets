@@ -1,0 +1,2 @@
+srcs = ['a.go', ':b']
+file_srcs = [src for src in srcs if not src.startswith('/') and not src.startswith(':')]

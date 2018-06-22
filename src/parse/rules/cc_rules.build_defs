@@ -1,0 +1,856 @@
+"""Rules to build C and C++ targets.
+
+Note that the C / C++ build process is complex with many options; we attempt to keep things
+as high-level as possible here but expose flags to tune things as needed.
+
+As a general note, most of the rules work by attaching labels indicating various flags etc which
+later rules need to know about. These get picked up by later rules to adjust commands; this way
+you can write a cc_library rule specifying e.g. linker_flags = ['-lz'] and not have to re-specify
+that on every single cc_binary / cc_test that transitively depends on that library.
+"""
+
+_COVERAGE_FLAGS = ' -ftest-coverage -fprofile-arcs -fprofile-dir=.'
+# OSX's ld uses --all_load / --noall_load instead of --whole-archive.
+_WHOLE_ARCHIVE = '-all_load' if CONFIG.OS == 'darwin' else '--whole-archive'
+_NO_WHOLE_ARCHIVE = '-noall_load' if CONFIG.OS == 'darwin' else '--no-whole-archive'
+
+
+def cc_library(name:str, srcs:list=[], hdrs:list=[], private_hdrs:list=[], deps:list=[],
+               visibility:list=None, test_only:bool&testonly=False, compiler_flags:list&cflags&copts=[],
+               linker_flags:list&ldflags&linkopts=[], pkg_config_libs:list=[], includes:list=[],
+               defines:list|dict=[], alwayslink:bool=False, linkstatic:bool=False, _c=False, textual_hdrs:list=[]):
+    """Generate a C++ library target.
+
+    Args:
+      name (str): Name of the rule
+      srcs (list): C++ source files to compile.
+      hdrs (list): Header files. These will be made available to dependent rules, so the distinction
+                   between srcs and hdrs is important.
+      private_hdrs (list): Header files that are available only to this rule and not exported to
+                           dependent rules.
+      deps (list): Dependent rules.
+      visibility (list): Visibility declaration for this rule.
+      test_only (bool): If True, is only available to other test rules.
+      compiler_flags (list): Flags to pass to the compiler.
+      linker_flags (list): Flags to pass to the linker; these will not be used here but will be
+                           picked up by a cc_binary or cc_test rule.
+      pkg_config_libs (list): Libraries to declare a dependency on using pkg-config. Again, the ldflags
+                              will be picked up by cc_binary or cc_test rules.
+      includes (list): List of include directories to be added to the compiler's path.
+      defines (list | dict): List of tokens to define in the preprocessor.
+                             Alternatively can be a dict of name -> value to define, in which case
+                             values are surrounded by quotes.
+      alwayslink (bool): If True, any binaries / tests using this library will link in all symbols,
+                         even if they don't directly reference them. This is useful for e.g. having
+                         static members that register themselves at construction time.
+      linkstatic (bool): Only provided for Bazel compatibility. Has no actual effect.
+      textual_hdrs (list): Also provided for Bazel compatibility. Effectively works the same as hdrs for now.
+    """
+    # Bazel suggests passing nonexported header files in 'srcs'. We however treat
+    # srcs as things to actually compile and must mark a distinction.
+    if CONFIG.BAZEL_COMPATIBILITY:
+        src_hdrs = [src for src in srcs if src.endswith('.h') or src.endswith('.inc')]
+        srcs = [src for src in srcs if src not in src_hdrs]
+        # This is rather nasty; people seem to be relying on being able to reuse
+        # headers that they've put in srcs. We hence need to re-export them here, but really
+        # they should be added to private_hdrs instead.
+        hdrs += src_hdrs
+        hdrs += textual_hdrs
+        # Found this in a few cases... can't pass -pthread to the linker.
+        linker_flags = ['-lpthread' if l == '-pthread' else l for l in linker_flags]
+
+    # Handle defines being passed as a dict, as a nicety for the user.
+    if isinstance(defines, dict):
+        defines = [k if v is None else r'%s=\"%s\"' % (k, v) for k, v in sorted(defines.items())]
+
+    pkg_name = package_name()
+    labels = (['cc:ld:' + flag for flag in linker_flags] +
+              ['cc:pc:' + lib for lib in pkg_config_libs] +
+              ['cc:inc:' + join_path(pkg_name, include) for include in includes] +
+              ['cc:def:' + define for define in defines])
+
+
+    if not srcs:
+        # Header-only library, no compilation needed.
+        return filegroup(
+            name=name,
+            srcs=hdrs,
+            exported_deps=deps,
+            labels=labels,
+            test_only=test_only,
+            visibility=visibility,
+            output_is_complete=False,
+        )
+
+    # Collect the headers for other rules
+    hdrs_rule = filegroup(
+        name = name,
+        tag = 'hdrs',
+        srcs=hdrs,
+        requires=['cc_hdrs'],
+        deps=deps,
+        test_only=test_only,
+        labels=labels,
+        output_is_complete=False,
+    )
+
+    cmds, tools = _library_cmds(_c, compiler_flags, pkg_config_libs)
+    # TODO(pebers): handle includes and defines in _library_cmds as well.
+    pre_build = _library_transitive_labels(_c, compiler_flags, pkg_config_libs) if (deps or includes or defines) else None
+    if len(srcs) > 1:
+        # Compile all the sources separately, this is much faster for large numbers of files
+        # than giving them all to gcc in one invocation.
+        a_rules = []
+        for src in srcs:
+            a_name = '_%s#%s' % (name, src.replace('/', '_').replace('.', '_').replace(':', '_').replace('|', '_'))
+            a_rule = build_rule(
+                name=a_name,
+                srcs={'srcs': [src], 'hdrs': hdrs, 'priv': private_hdrs},
+                outs=[a_name + '.a'],
+                optional_outs=['*.gcno'],  # For coverage
+                deps=deps,
+                cmd=cmds,
+                building_description='Compiling...',
+                requires=['cc_hdrs'],
+                test_only=test_only,
+                labels=labels,
+                tools=tools,
+                pre_build=pre_build,
+                needs_transitive_deps=True,
+            )
+            a_rules.append(a_rule)
+
+        # Combine the archives into one.
+        a_rule = build_rule(
+            name = name,
+            tag = 'a',
+            srcs = a_rules,
+            outs = [name + '.a'],
+            cmd = 'echo $SRCS | xargs -n 1 $TOOL xo && $TOOL rcs $OUT *.o',
+            building_description = 'Archiving...',
+            test_only = test_only,
+            labels = labels,
+            output_is_complete = True,
+            deps = deps + [hdrs_rule],  # This is a little suboptimal but makes sure they get built when needed.
+            tools = [CONFIG.AR_TOOL],
+        )
+        if alwayslink:
+            labels.append('cc:al:%s/%s.a' % (get_base_path(), name))
+
+        # Filegroup to pick that up with extra deps. This is a little annoying but means that
+        # things depending on this get the combined rule and not the individual ones, but do get
+        # all the other dependencies which are probably important.
+        lib_rule = filegroup(
+            name = name,
+            tag = 'lib',
+            srcs = [a_rule],
+            deps = deps,
+            test_only = test_only,
+            labels = labels,
+            output_is_complete=False,
+        )
+
+    else:
+        # Single source file, optimise slightly by not extracting & remerging the archive.
+        cc_rule = build_rule(
+            name=name,
+            tag='cc',
+            srcs={'srcs': srcs, 'hdrs': hdrs, 'priv': private_hdrs},
+            outs=[name + '.a'],
+            optional_outs=['*.gcno'],  # For coverage
+            deps=deps,
+            cmd=cmds,
+            building_description='Compiling...',
+            requires=['cc_hdrs'],
+            test_only=test_only,
+            labels=labels,
+            tools=tools,
+            pre_build=pre_build,
+            needs_transitive_deps=True,
+        )
+        if alwayslink:
+            labels.append('cc:al:%s/%s.a' % (get_base_path(), name))
+        # Need another rule to cover require / provide stuff. This is getting a bit complicated...
+        lib_rule = filegroup(
+            name = name,
+            tag = 'lib',
+            srcs = [cc_rule],
+            deps = deps,
+            test_only = test_only,
+            labels = labels,
+            output_is_complete=False,
+        )
+
+    return filegroup(
+        name=name,
+        srcs=[lib_rule],
+        deps=[hdrs_rule],
+        provides={
+            'cc_hdrs': hdrs_rule,
+            'cc': lib_rule,
+        },
+        test_only=test_only,
+        visibility=visibility,
+        output_is_complete=False,
+    )
+
+
+def cc_object(name:str, src:str, hdrs:list=[], private_hdrs:list=[], out:str=None, test_only:bool&testonly=False,
+              compiler_flags:list&cflags&copts=[], linker_flags:list&ldflags&linkopts=[], pkg_config_libs:list=[], includes:list=[],
+              defines:list|dict=[], alwayslink:bool=False, _c=False, visibility:list=None, deps:list=[]):
+    """Generate a C or C++ object file from a single source.
+
+    N.B. This is fairly low-level; for most use cases cc_library should be preferred.
+
+    Args:
+      name (str): Name of the rule
+      src (str): C or C++ source file to compile. This can be another rule, but if so it must
+                 have exactly one output.
+      hdrs (list): Header files. These will be made available to dependent rules, so the distinction
+                   between srcs and hdrs is important.
+      private_hdrs (list): Header files that are available only to this rule and not exported to
+                           dependent rules.
+      out (str): Name of the output file. Defaults to name + .o.
+      deps (list): Dependent rules.
+      visibility (list): Visibility declaration for this rule.
+      test_only (bool): If True, is only available to other test rules.
+      compiler_flags (list): Flags to pass to the compiler.
+      linker_flags (list): Flags to pass to the linker; these will not be used here but will be
+                           picked up by a cc_binary or cc_test rule.
+      pkg_config_libs (list): Libraries to declare a dependency on using pkg-config. Again, the ldflags
+                              will be picked up by cc_binary or cc_test rules.
+      includes (list): List of include directories to be added to the compiler's path.
+      defines (list | dict): List of tokens to define in the preprocessor.
+                             Alternatively can be a dict of name -> value to define, in which case
+                             values are surrounded by quotes.
+      alwayslink (bool): If True, any binaries / tests using this library will link in all symbols,
+                         even if they don't directly reference them. This is useful for e.g. having
+                         static members that register themselves at construction time.
+    """
+    # Handle defines being passed as a dict, as a nicety for the user.
+    if isinstance(defines, dict):
+        defines = [k if v is None else r'%s=\"%s\"' % (k, v) for k, v in sorted(defines.items())]
+
+    labels = (['cc:ld:' + flag for flag in linker_flags] +
+              ['cc:pc:' + lib for lib in pkg_config_libs] +
+              ['cc:inc:%s/%s' % (get_base_path(), include) for include in includes] +
+              ['cc:def:' + define for define in defines])
+    if alwayslink:
+        labels.append('cc:al:%s/%s.a' % (get_base_path(), name))
+    cmds, tools = _library_cmds(_c, compiler_flags, pkg_config_libs, archive=False)
+
+    return build_rule(
+        name=name,
+        srcs={'srcs': [src], 'hdrs': hdrs, 'priv': private_hdrs},
+        outs=[out or name + '.o'],
+        optional_outs=['*.gcno'],  # For coverage
+        deps=deps,
+        cmd=cmds,
+        building_description='Compiling...',
+        requires=['cc_hdrs'],
+        test_only=test_only,
+        labels=labels,
+        tools=tools,
+        pre_build=_library_transitive_labels(_c, compiler_flags, pkg_config_libs, archive=False)
+                  if (deps or includes or defines) else None,
+        needs_transitive_deps=True,
+    )
+
+
+def cc_static_library(name:str, srcs:list=[], hdrs:list=[], compiler_flags:list&cflags&copts=[], linker_flags:list&ldflags&linkopts=[],
+                      deps:list=[], visibility:list=None, test_only:bool&testonly=False, pkg_config_libs:list=[], _c=False):
+    """Generates a C++ static library (.a).
+
+    This is essentially just a collection of other cc_library rules into a single archive.
+    Optionally this rule can have sources of its own, but it's quite reasonable just to use
+    it as a collection of other rules.
+
+    Args:
+      name (str): Name of the rule
+      srcs (list): C or C++ source files to compile.
+      hdrs (list): Header files.
+      compiler_flags (list): Flags to pass to the compiler.
+      linker_flags (list): Flags to pass to the linker.
+      deps (list): Dependent rules.
+      visibility (list): Visibility declaration for this rule.
+      test_only (bool): If True, is only available to other test rules.
+      pkg_config_libs (list): Libraries to declare a dependency on using pkg-config.
+    """
+    provides = None
+    if srcs:
+        lib_rule = cc_library(
+            name = '_%s#lib' % name,
+            srcs = srcs,
+            hdrs = hdrs,
+            compiler_flags = compiler_flags,
+            linker_flags = linker_flags,
+            deps = deps,
+            test_only = test_only,
+            pkg_config_libs = pkg_config_libs,
+            _c=_c,
+        )
+        deps += [lib_rule, ':_%s#lib_hdrs' % name]
+        provides = {
+            'cc_hdrs': ':_%s#lib_hdrs' % name,
+            'cc': ':' + name,
+        }
+    return build_rule(
+        name = name,
+        deps = deps,
+        outs = ['lib%s.a' % name],
+        cmd = (
+            'for a in `find . -name "*.a"`; do (cd $(dirname $a) && $TOOL x $(basename $a)); done;' +
+            '$TOOL rcs $OUT `find . -name "*.o" | sort`'
+        ),
+        needs_transitive_deps = True,
+        output_is_complete = True,
+        visibility = visibility,
+        test_only = test_only,
+        building_description = 'Archiving...',
+        provides = provides,
+        requires = ['cc'],
+        tools = [CONFIG.AR_TOOL],
+    )
+
+
+def cc_shared_object(name:str, srcs:list=[], hdrs:list=[], out:str='', compiler_flags:list&cflags&copts=[],
+                     linker_flags:list&ldflags&linkopts=[], deps:list=[], visibility:list=None, test_only:bool&testonly=False,
+                     pkg_config_libs:list=[], includes:list=[], _c=False):
+    """Generates a C++ shared object (.so) with its dependencies linked in.
+
+    Args:
+      name (str): Name of the rule
+      srcs (list): C or C++ source files to compile.
+      hdrs (list): Header files. These will be made available to dependent rules, so the distinction
+                   between srcs and hdrs is important.
+      out (str): Name of the output .so. Defaults to name + .so.
+      compiler_flags (list): Flags to pass to the compiler.
+      linker_flags (list): Flags to pass to the linker.
+      deps (list): Dependent rules.
+      visibility (list): Visibility declaration for this rule.
+      test_only (bool): If True, is only available to other test rules.
+      pkg_config_libs (list): Libraries to declare a dependency on using pkg-config.
+      includes (list): Include directories to be added to the compiler's lookup path.
+    """
+    if CONFIG.DEFAULT_LDFLAGS:
+        linker_flags.append(CONFIG.DEFAULT_LDFLAGS)
+    provides = None
+    if srcs:
+        lib_rule = cc_library(
+            name = '_%s#lib' % name,
+            srcs = srcs,
+            hdrs = hdrs,
+            compiler_flags = compiler_flags,
+            linker_flags = linker_flags,
+            deps = deps,
+            test_only = test_only,
+            pkg_config_libs = pkg_config_libs,
+            includes = includes,
+            _c=_c,
+        )
+        deps += [lib_rule, ':_%s#lib_hdrs' % name]
+        provides = {
+            'cc_hdrs': ':_%s#lib_hdrs' % name,
+            'cc': ':' + name,
+        }
+    cmds, tools = _binary_cmds(_c, linker_flags, pkg_config_libs, shared=True)
+    return build_rule(
+        name=name,
+        srcs={'srcs': srcs, 'hdrs': hdrs},
+        outs=[out or name + '.so'],
+        deps=deps,
+        visibility=visibility,
+        cmd=cmds,
+        building_description='Linking...',
+        binary=True,
+        needs_transitive_deps=True,
+        output_is_complete=True,
+        provides=provides,
+        tools=tools,
+        test_only=test_only,
+        requires=['cc', 'cc_hdrs'],
+        pre_build=_binary_transitive_labels(_c, linker_flags, pkg_config_libs, shared=True) if deps else None,
+    )
+
+
+def cc_binary(name:str, srcs:list=[], hdrs:list=[], private_hdrs:list=[], compiler_flags:list&cflags&copts=[],
+              linker_flags:list&ldflags&linkopts=[], deps:list=[], visibility:list=None, pkg_config_libs:list=[],
+              test_only:bool&testonly=False, static:bool=False, _c=False, linkstatic:bool=False):
+    """Builds a binary from a collection of C++ rules.
+
+    Args:
+      name (str): Name of the rule
+      srcs (list): C or C++ source files to compile.
+      hdrs (list): Header files.
+      private_hdrs (list): Header files that are available only to this rule and not exported to
+                           dependent rules.
+      compiler_flags (list): Flags to pass to the compiler.
+      linker_flags (list): Flags to pass to the linker.
+      deps (list): Dependent rules.
+      visibility (list): Visibility declaration for this rule.
+      pkg_config_libs (list): Libraries to declare a dependency on using pkg-config.
+      test_only (bool): If True, this rule can only be used by tests.
+      static (bool): If True, the binary will be linked statically.
+      linkstatic (bool): Only provided for Bazel compatibility. Has no actual effect since we always
+                         link roughly equivalently to their "mostly-static" mode.
+    """
+    if CONFIG.BAZEL_COMPATIBILITY:
+        linker_flags = ['-lpthread' if l == '-pthread' else l for l in linker_flags]
+    if CONFIG.DEFAULT_LDFLAGS:
+        linker_flags.append(CONFIG.DEFAULT_LDFLAGS)
+    if static:
+        linker_flags.append('-static')
+    cmds, tools = _binary_cmds(_c, linker_flags, pkg_config_libs)
+    if srcs:
+        if static:
+            compiler_flags.append('-static -static-libgcc')
+        lib_rule = cc_library(
+            name='_%s#lib' % name,
+            srcs=srcs,
+            hdrs=hdrs,
+            private_hdrs=private_hdrs,
+            deps=deps,
+            pkg_config_libs=pkg_config_libs,
+            compiler_flags=compiler_flags,
+            test_only=test_only,
+            _c=_c,
+        )
+        deps.append(lib_rule)
+    return build_rule(
+        name=name,
+        outs=[name],
+        deps=deps,
+        visibility=visibility,
+        cmd=cmds,
+        building_description='Linking...',
+        binary=True,
+        needs_transitive_deps=True,
+        output_is_complete=True,
+        requires=['cc'],
+        tools=tools,
+        pre_build=_binary_transitive_labels(_c, linker_flags, pkg_config_libs),
+        test_only=test_only,
+    )
+
+
+def cc_test(name:str, srcs:list=[], hdrs:list=[], compiler_flags:list&cflags&copts=[], linker_flags:list&ldflags&linkopts=[],
+            pkg_config_libs:list=[], deps:list=[], worker:str='', data:list=[], visibility:list=[], flags:str='',
+            labels:list&features&tags=[], flaky:bool|int=0, test_outputs:list=[], size:str=None, timeout:int=0,
+            container:bool|dict=False, sandbox:bool=None, write_main:bool=not CONFIG.BAZEL_COMPATIBILITY, _c=False):
+    """Defines a C++ test using UnitTest++.
+
+    We template in a main file so you don't have to supply your own.
+    (Later we might allow that to be configured to help support other unit test frameworks).
+
+    Args:
+      name (str): Name of the rule
+      srcs (list): C or C++ source files to compile.
+      hdrs (list): Header files.
+      compiler_flags (list): Flags to pass to the compiler.
+      linker_flags (list): Flags to pass to the linker.
+      pkg_config_libs (list): Libraries to declare a dependency on using pkg-config.
+      deps (list): Dependent rules.
+      worker(str): Reference to worker script, A persistent worker process that is used to set up the test.
+      data (list): Runtime data files for this test.
+      visibility (list): Visibility declaration for this rule.
+      flags (str): Flags to apply to the test invocation.
+      labels (list): Labels to attach to this test.
+      flaky (bool | int): If true the test will be marked as flaky and automatically retried.
+      test_outputs (list): Extra test output files to generate from this test.
+      size (str): Test size (enormous, large, medium or small).
+      timeout (int): Length of time in seconds to allow the test to run for before killing it.
+      container (bool | dict): If true the test is run in a container (eg. Docker).
+      sandbox (bool): Sandbox the test on Linux to restrict access to namespaces such as network.
+      write_main (bool): Whether or not to write a main() for these tests.
+    """
+    if CONFIG.BAZEL_COMPATIBILITY:
+        linker_flags = ['-lpthread' if l == '-pthread' else l for l in linker_flags]
+    timeout, labels = _test_size_and_timeout(size, timeout, labels)
+    if CONFIG.DEFAULT_LDFLAGS:
+        linker_flags.append(CONFIG.DEFAULT_LDFLAGS)
+    if write_main:
+        linker_flags.append('-lUnitTest++')
+        main_rule = genrule(
+            name='_%s#main' % name,
+            outs=['_%s_main.cc' % name],
+            cmd='echo \'%s\' > $OUT' % _CC_TEST_MAIN_CONTENTS,
+            test_only=True,
+        )
+        srcs.append(main_rule)
+    cmds, tools = _binary_cmds(_c, linker_flags, pkg_config_libs)
+
+    if srcs:
+        lib_rule = cc_library(
+            name='_%s#lib' % name,
+            srcs=srcs,
+            hdrs=hdrs,
+            deps=deps,
+            pkg_config_libs=pkg_config_libs,
+            compiler_flags=compiler_flags,
+            test_only=True,
+            alwayslink=True,
+            _c=_c,
+        )
+        deps.append(lib_rule)
+
+    test_cmd = '$TEST %s' % flags
+    if worker:
+        test_cmd = '$(worker %s) && %s ' % (worker, test_cmd)
+        deps += [worker]
+
+    if CONFIG.CPP_COVERAGE:
+        test_cmd = {
+            'opt': test_cmd,
+            'dbg': test_cmd,
+            'cover': test_cmd + '; R=$?; cp $GCNO_DIR/*.gcno . && gcov *.gcda && cat *.gcov > test.coverage; exit $R'
+        }
+
+    return build_rule(
+        name=name,
+        outs=[name],
+        deps=deps,
+        data=data,
+        visibility=visibility,
+        cmd=cmds,
+        test_cmd=test_cmd,
+        building_description='Linking...',
+        binary=True,
+        test=True,
+        needs_transitive_deps=True,
+        output_is_complete=True,
+        requires=['cc', 'cc_hdrs'],
+        labels=labels,
+        tools=tools,
+        pre_build=_binary_transitive_labels(_c, linker_flags, pkg_config_libs),
+        flaky=flaky,
+        test_outputs=test_outputs,
+        test_timeout=timeout,
+        container=container,
+        test_sandbox=sandbox,
+    )
+
+
+def cc_embed_binary(name:str, src:str, deps:list=[], visibility:list=None,
+                    test_only:bool&testonly=False, namespace:str=None, _c:bool=False):
+    """Build rule to embed an arbitrary binary file into a C library.
+
+    You can depend on the output of this as though it were a cc_library rule.
+    There are five functions available to access the data once compiled, all of which are
+    prefixed with the file's basename:
+      filename_start(): returns a const char* pointing to the beginning of the data.
+      filename_end(): returns a const char* pointing to the end of the data.
+      filename_size(): returns the length of the data in bytes.
+      filename_start_nc(): returns a char* pointing to the beginning of the data.
+                           This is a convenience wrapper using const_cast, you should not
+                           mutate the contents of the returned pointer.
+      filename_end_nc(): returns a char* pointing to the end of the data.
+                         Again, don't mutate the contents of the pointer.
+    You don't own the contents of any of these pointers so don't try to delete them :)
+
+    Args:
+      name (str): Name of the rule.
+      src (str): Source file to embed.
+      deps (list): Dependencies.
+      visibility (list): Rule visibility.
+      test_only (bool): If True, is only available to test rules.
+      namespace (str): Allows specifying the namespace the symbols will be available in.
+    """
+    if src.startswith(':') or src.startswith('/'):
+        deps += [src]
+    namespace = namespace or CONFIG.DEFAULT_NAMESPACE
+    if not namespace and not _c:
+        raise ValueError('You must either pass namespace= to cc_library or set the default namespace in .plzconfig')
+    darwin = CONFIG.OS == 'darwin'
+    hdr_contents = _C_HEADER_CONTENTS if _c else _CC_HEADER_CONTENTS
+    hdr_rule = build_rule(
+        name=name,
+        tag='hdr',
+        outs=[name + '.h'],
+        srcs=[src],
+        deps=deps,
+        cmd='; '.join([
+            # This replacement roughly mimics what ld will do to munge it into a symbol name.
+            'export ENCODED_FILENAME="${SRCS//[\\/\\.]/_}"',
+            'export BINARY_NAME="%s"' % name,
+            'export NAMESPACE="%s"' % namespace,
+            'echo "%s" > $OUT' % hdr_contents,
+        ]),
+        visibility=visibility,
+        building_description='Writing header...',
+        requires=['cc'],
+        test_only=test_only,
+    )
+
+    tools = {'ar': [CONFIG.AR_TOOL]}
+    if darwin:
+        # OSX's ld doesn't support '--format binary', and this is the least fiddly
+        # alternative. Requiring an additional tool is a bit suboptimal but probably
+        # in the end easier than the alternatives.
+        cmd = ' && '.join([
+            'export ENCODED_FILENAME=${SRCS//[\\/\\.]/_}',
+            'echo "%s" > embedded.asm' % _CC_DARWIN_ASM_CONTENTS,
+            '$TOOLS_ASM -fmacho64 embedded.asm -o ${OUTS/.a/.o}',
+            '$TOOLS_AR rcs $OUT ${OUTS/.a/.o}',
+        ])
+        tools['asm'] = [CONFIG.ASM_TOOL]
+    else:
+        cmd = '$TOOLS_LD -r --format binary %s -o ${OUTS/.a/.o} $SRC && $TOOLS_AR rcs $OUT ${OUTS/.a/.o}' % CONFIG.DEFAULT_LDFLAGS
+        tools['ld'] = [CONFIG.LD_TOOL]
+
+    lib_rule = build_rule(
+        name = name,
+        tag = 'lib',
+        srcs=[src],
+        outs=['lib%s.a' % name],
+        deps=deps,
+        cmd=cmd,
+        visibility=visibility,
+        building_description='Embedding...',
+        requires=['cc'],
+        tools=tools,
+        test_only=test_only,
+    )
+    return filegroup(
+        name=name,
+        srcs=[lib_rule, hdr_rule],
+        visibility=visibility,
+        test_only=test_only,
+        provides={
+            'cc_hdrs': hdr_rule,
+            'cc': lib_rule,
+        },
+    )
+
+
+_CC_HEADER_CONTENTS = """\
+#ifdef __cplusplus
+namespace ${NAMESPACE} {
+extern \\"C\\" {
+#endif  // __cplusplus
+extern const char _binary_${ENCODED_FILENAME}_start[];
+extern const char _binary_${ENCODED_FILENAME}_end[];
+#ifdef __cplusplus
+}
+#endif  // __cplusplus
+
+// Nicer aliases.
+inline const char* ${BINARY_NAME}_start() {
+  return _binary_${ENCODED_FILENAME}_start;
+}
+inline const char* ${BINARY_NAME}_end() {
+  return _binary_${ENCODED_FILENAME}_end;
+}
+inline unsigned long ${BINARY_NAME}_size() {
+  return _binary_${ENCODED_FILENAME}_end - _binary_${ENCODED_FILENAME}_start;
+}
+inline char* ${BINARY_NAME}_start_nc() {
+  return (char*)(_binary_${ENCODED_FILENAME}_start);
+}
+inline char* ${BINARY_NAME}_end_nc() {
+  return (char*)(_binary_${ENCODED_FILENAME}_end);
+}
+#ifdef __cplusplus
+}  // namespace ${NAMESPACE}
+#endif  // __cplusplus
+"""
+
+_C_HEADER_CONTENTS = """\
+extern const char _binary_${ENCODED_FILENAME}_start[];
+extern const char _binary_${ENCODED_FILENAME}_end[];
+
+inline const char* ${BINARY_NAME}_start() {
+  return _binary_${ENCODED_FILENAME}_start;
+}
+inline const char* ${BINARY_NAME}_end() {
+  return _binary_${ENCODED_FILENAME}_end;
+}
+inline unsigned long ${BINARY_NAME}_size() {
+  return _binary_${ENCODED_FILENAME}_end - _binary_${ENCODED_FILENAME}_start;
+}
+inline char* ${BINARY_NAME}_start_nc() {
+  return (char*)(_binary_${ENCODED_FILENAME}_start);
+}
+inline char* ${BINARY_NAME}_end_nc() {
+  return (char*)(_binary_${ENCODED_FILENAME}_end);
+}
+"""
+
+# We duplicate the symbols with _ and __ preceding, the compiler fails if _ is not
+# present and the linker fails if __ isn't.
+_CC_DARWIN_ASM_CONTENTS = r"""
+bits 64
+
+section .rodata
+
+global _binary_${ENCODED_FILENAME}_start
+global __binary_${ENCODED_FILENAME}_start
+global _binary_${ENCODED_FILENAME}_end
+global __binary_${ENCODED_FILENAME}_end
+global _binary_${ENCODED_FILENAME}_size
+global __binary_${ENCODED_FILENAME}_size
+
+_binary_${ENCODED_FILENAME}_start:    incbin \"${SRCS}\"
+__binary_${ENCODED_FILENAME}_start:   incbin \"${SRCS}\"
+_binary_${ENCODED_FILENAME}_end:
+__binary_${ENCODED_FILENAME}_end:
+_binary_${ENCODED_FILENAME}_size:     dd \\$-_binary_${ENCODED_FILENAME}_start
+__binary_${ENCODED_FILENAME}_size:    dd \\$-_binary_${ENCODED_FILENAME}_start
+"""
+
+
+# This is a lightweight way of building the test main, but it's awkward not
+# having command line output as well as XML output.
+_CC_TEST_MAIN_CONTENTS = """
+#include <algorithm>
+#include <fstream>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <vector>
+#include "UnitTest++/UnitTest++.h"
+#include "UnitTest++/XmlTestReporter.h"
+int main(int argc, const char** argv) {
+    if (getenv("DEBUG")) {
+        unsetenv("DEBUG");
+        std::vector<char*> v({strdup("gdb"), strdup("-ex"), strdup("run"), strdup("--args")});
+        v.insert(v.end(), const_cast<char**>(argv), const_cast<char**>(argv) + argc);
+        execvp("gdb", const_cast<char**>(&v[0]));
+    }
+    auto run_named = [argc, argv](UnitTest::Test* test) {
+        return argc <= 1 || std::any_of(argv + 1, argv + argc, [test](const char* name) {
+            return strcmp(test->m_details.testName, name) == 0;
+        });
+    };
+
+    std::ofstream f("test.results");
+    if (!f.good()) {
+      fprintf(stderr, "Failed to open results file\\n");
+      return -1;
+    }
+    if (getenv("COVERAGE")) {
+      std::ofstream c("test.coverage");
+      c << "gcov";
+    }
+    UnitTest::XmlTestReporter reporter(f);
+    UnitTest::TestRunner runner(reporter);
+    return runner.RunTestsIf(UnitTest::Test::GetTestList(),
+                             NULL,
+                             run_named,
+                             0);
+}
+"""
+
+
+def _default_cflags(c, dbg):
+    """Returns the default cflags / cppflags for opt/dbg as appropriate."""
+    if c:
+        return CONFIG.DEFAULT_DBG_CFLAGS if dbg else CONFIG.DEFAULT_OPT_CFLAGS
+    else:
+        return CONFIG.DEFAULT_DBG_CPPFLAGS if dbg else CONFIG.DEFAULT_OPT_CPPFLAGS
+
+
+def _build_flags(compiler_flags:list, pkg_config_libs:list, defines=None, c=False, dbg=False):
+    """Builds flags that we'll pass to the compiler invocation."""
+    compiler_flags = [_default_cflags(c, dbg), '-fPIC'] + compiler_flags  # N.B. order is important!
+    if defines:
+        compiler_flags += ['-D' + define for define in defines]
+    pkg_config_cmd = ' '.join(['`pkg-config --cflags %s`' % x for x in pkg_config_libs])
+    return ' '.join(compiler_flags) + ' ' + pkg_config_cmd
+
+
+def _binary_build_flags(linker_flags:list, pkg_config_libs:list, shared=False, alwayslink='', c=False, dbg=False):
+    """Builds flags that we'll pass to the linker invocation."""
+    pkg_config_cmd = ' '.join(['`pkg-config --libs %s`' % x for x in pkg_config_libs])
+    objs = '`find . -name "*.o" -or -name "*.a" | sort`'
+    linker_prefix = '' if CONFIG.LINK_WITH_LD_TOOL else '-Wl,'
+    if (not shared) and alwayslink:
+        objs = '%s%s %s %s%s %s' % (linker_prefix, _WHOLE_ARCHIVE, alwayslink, linker_prefix, _NO_WHOLE_ARCHIVE, objs)
+    build_id_flag = ''
+    if CONFIG.OS != 'darwin':
+        # We don't order libraries in a way that is especially useful for the linker, which is
+        # nicely solved by --start-group / --end-group. Unfortunately the OSX linker doesn't
+        # support those flags; in many cases it will work without, so try that.
+        # Ordering them would be ideal but we lack a convenient way of working that out from here.
+        objs = '%s--start-group %s %s--end-group' % (linker_prefix, objs, linker_prefix)
+        # OSX's ld doesn't have --build-id
+        # TODO(pebers): Not sure about other OS's / linkers? This might be GNU specific?
+        build_id_flag = linker_prefix + '--build-id=none'
+    if shared:
+        objs = '-shared %s%s %s %s%s' % (linker_prefix, _WHOLE_ARCHIVE, objs, linker_prefix, _NO_WHOLE_ARCHIVE)
+    linker_flags = ' '.join([linker_prefix + f for f in linker_flags])
+    if not CONFIG.LINK_WITH_LD_TOOL:
+        linker_flags += ' ' + _default_cflags(c, dbg)
+    return ' '.join([objs, build_id_flag, linker_flags, pkg_config_cmd])
+
+
+def _library_cmds(c, compiler_flags, pkg_config_libs, extra_flags='', archive=True):
+    """Returns the commands needed for a cc_library rule."""
+    dbg_flags = _build_flags(compiler_flags, pkg_config_libs, c=c, dbg=True)
+    opt_flags = _build_flags(compiler_flags, pkg_config_libs, c=c)
+    cmd_template = '$TOOLS_CC -c -I . ${SRCS_SRCS} %s %s'
+    if archive:
+        cmd_template += ' && $TOOLS_AR rcs $OUT *.o'
+    cmds = {
+        'dbg': cmd_template % (dbg_flags, extra_flags),
+        'opt': cmd_template % (opt_flags, extra_flags),
+    }
+    if CONFIG.CPP_COVERAGE:
+        cmds['cover'] = cmd_template % (dbg_flags + _COVERAGE_FLAGS, extra_flags)
+    return cmds, {
+        'cc': [CONFIG.CC_TOOL if c else CONFIG.CPP_TOOL],
+        'ar': [CONFIG.AR_TOOL if archive else None],
+    }
+
+
+def _binary_cmds(c, linker_flags, pkg_config_libs, extra_flags='', shared=False, alwayslink=''):
+    """Returns the commands needed for a cc_binary, cc_test or cc_shared_object rule."""
+    dbg_flags = _binary_build_flags(linker_flags, pkg_config_libs, shared, alwayslink, c=c, dbg=True)
+    opt_flags = _binary_build_flags(linker_flags, pkg_config_libs, shared, alwayslink, c=c, dbg=False)
+    cmds = {
+        'dbg': '$TOOL -o ${OUT} %s %s' % (dbg_flags, extra_flags),
+        'opt': '$TOOL -o ${OUT} %s %s' % (opt_flags, extra_flags),
+    }
+    if CONFIG.CPP_COVERAGE:
+        cmds['cover'] = '$TOOL -o ${OUT} %s %s %s' % (dbg_flags, extra_flags, _COVERAGE_FLAGS)
+    return cmds, [CONFIG.LD_TOOL if CONFIG.LINK_WITH_LD_TOOL else
+                  CONFIG.CC_TOOL if c else CONFIG.CPP_TOOL]
+
+
+def _library_transitive_labels(c, compiler_flags, pkg_config_libs, archive=True):
+    """Applies commands from transitive labels to a cc_library rule."""
+    def apply_transitive_labels(name):
+        labels = get_labels(name, 'cc:')
+        flags = ['-isystem %s' % l[4:] for l in labels if l.startswith('inc:')]
+        flags.extend(['-D' + l[4:] for l in labels if l.startswith('def:')])
+        pkg_config_libs.extend([l[3:] for l in labels if l.startswith('pc:') and l[3:] not in pkg_config_libs])
+        if flags:  # Don't update if there aren't any relevant labels
+            cmds, _ = _library_cmds(c, compiler_flags, pkg_config_libs, ' '.join(flags), archive=archive)
+            for k, v in cmds.items():
+                set_command(name, k, v)
+    return apply_transitive_labels
+
+
+def _binary_transitive_labels(c, linker_flags, pkg_config_libs, shared=False):
+    """Applies commands from transitive labels to a cc_binary, cc_test or cc_shared_object rule."""
+    def apply_transitive_labels(name):
+        labels = get_labels(name, 'cc:')
+        linker_prefix = '' if CONFIG.LINK_WITH_LD_TOOL else '-Wl,'
+        flags = [linker_prefix + l[3:] for l in labels if l.startswith('ld:')]
+        flags.extend(['`pkg-config --libs %s`' % l[3:] for l in labels if l.startswith('pc:')])
+        # ./ here because some weak linkers don't realise ./lib.a is the same file as lib.a
+        # and report duplicate symbol errors as a result.
+        alwayslink = ' '.join(['./' + l[3:] for l in labels if l.startswith('al:')])
+        # Probably a little optimistic to check this (most binaries are likely to have *some*
+        # kind of linker flags to apply), but we might as well.
+        if flags or alwayslink:
+            cmds, _ = _binary_cmds(c, linker_flags, pkg_config_libs, ' '.join(flags), shared, alwayslink)
+            for k, v in cmds.items():
+                set_command(name, k, v)
+    return apply_transitive_labels
+
+
+if CONFIG.BAZEL_COMPATIBILITY:
+    # For nominal Buck compatibility. The cc_ forms are preferred.
+    cxx_binary = cc_binary
+    cxx_library = cc_library
+    cxx_test = cc_test

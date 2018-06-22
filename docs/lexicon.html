@@ -1,0 +1,344 @@
+    <h1>The Lexicon of Please</h1>
+
+    <p>This is the reference for the complete set of builtin rules & functions.</p>
+
+    <ul>
+      <li><a href="#builtins">Builtin rules and functions</a></li>
+      <li><a href="#cc">C and C++ rules</a></li>
+      <li><a href="#go">Go rules</a></li>
+      <li><a href="#java">Java rules</a></li>
+      <li><a href="#misc">Miscellaneous rules</a></li>
+      <li><a href="#proto">Protocol buffer rules</a></li>
+      <li><a href="#python">Python rules</a></li>
+      <li><a href="#sh">Shell rules</a></li>
+    </ul>
+
+    <h2><a name="builtins">Builtin functions</a></h2>
+
+    <h3><a name="subinclude">subinclude</a></h3>
+
+    <p><pre class="rule"><code>subinclude(target)</code></pre></p>
+
+    <p>Includes the output of a build target as extra rules in this one.</p>
+
+    <p>This is the closest equivalent to <code>import</code> in the BUILD language. It behaves
+      somewhat differently though in that the contents of the subincluded file are added to the
+      globals of the current module so can be called directly.</p>
+
+    <p>The target that you attempt to subinclude is simply a normal build target, with the
+      restriction that it must have exactly one output. The simplest form of this is a single-file
+      <a href="#filegroup">filegroup</a> or <a href="export_file">export_file</a> rule, but
+      it is possible to have more complex rules generating your BUILD definitions.</p>
+
+    <p>For example:
+
+    <pre><code>subinclude('//build_defs:my_build_rules')</code></pre>
+    </p>
+
+    <h3><a name="glob">glob</a></h3>
+
+    <p><pre class="rule"><code>glob(includes, excludes=None, hidden=False)</code></pre></p>
+
+    <p>Matches all filenames by a pattern, in a manner reminiscent of shell-style pattern
+      expansion or Python's builtin <a href="https://docs.python.org/3/library/glob.html">glob</a>
+      module.</p>
+
+    <p>Note that the only expansion patterns accepted are <code>*</code> to match an arbitrary
+      number of non-separator characters (i.e. not <code>/</code>), and <code>**</code> to
+      match any number of <b>complete</b> path components.<br/>
+      These are often referred to as &quot;Ant-style&quot; patterns since Ant introduced them.</p>
+
+    <p>It bears noting that you cannot glob generated files, only source files. Also glob will not
+      descend into any directories that contain a BUILD file; this maintains an invariant that
+      each file is owned by exactly one package (or potentially none, but then Please doesn't know
+      or care about them). If you want to pull in files from another package, export them there
+      using a <a href="#filegroup"><code>filegroup</code></a> and depend on that in the package
+      you want it.</p>
+
+    <table>
+      <thead>
+      <tr>
+	<th>Argument</th>
+	<th>Default</th>
+	<th>Type</th>
+	<th></th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr>
+	<td>include</td>
+	<td></td>
+	<td>list</td>
+	<td>List of paths to include. Each is globbed separately.</td>
+      </tr>
+
+      <tr>
+	<td>exclude</td>
+	<td>None</td>
+	<td>list</td>
+	<td>List of filenames to exclude from any patterns matched by <code>includes</code>.<br/>
+      These are subject to glob expansion of <code>*</code> themselves, but
+      <code>**</code> is <b>not</b> expanded (although since these are applied to each file found
+      individually, it's not necessary).</td>
+      </tr>
+
+      <tr>
+	<td>hidden</td>
+	<td>False</td>
+	<td>bool</td>
+	<td>Set to True to include hidden files / folders.</td>
+      </tr>
+
+      </tbody>
+    </table>
+
+    <h3><a name="get_labels">get_labels</a></h3>
+
+    <p><pre class="rule"><code>get_labels(target, prefix)</code></pre></p>
+
+    <p>Gets the unique set of labels for a rule and all its transitive dependencies.</p>
+
+    <p>Two formats are accepted for target: the first is a string containing just the target name,
+      which is resolved in the current package. This facilitates calling them from a pre-build
+      function, which is in fact the only time it's safe to call this way.<br/>
+      The other is a full build target, which should be a transitive dependency of the target
+      whose pre/post build function you're in. If the target isn't built when you ask for the
+      labels the build will terminate.<br/>
+      In either case this is only safe to call from a pre / post-build function and should
+      never be called at initial parse time, because at that point you generally don't have
+      the full set of labels available yet.</p>
+
+    <p>Uses for this are normally fairly language-specific. The clearest example is maybe the
+      builtin Python rules, where <code>python_binary</code> and <code>python_test</code> use
+      this to identify if any of their dependencies have marked them as not being zip-safe.</p>
+
+    <table>
+      <thead>
+      <tr>
+	<th>Argument</th>
+	<th>Default</th>
+	<th>Type</th>
+	<th></th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr>
+	<td>target</td>
+	<td></td>
+	<td>str</td>
+	<td>Label of the target to get labels for.</td>
+      </tr>
+
+      <tr>
+	<td>prefix</td>
+	<td>None</td>
+	<td>str</td>
+	<td>Filters the returned labels to only ones starting with this prefix.</td>
+      </tr>
+
+      </tbody>
+    </table>
+
+    <h3><a name="has_label">has_label</a></h3>
+
+    <p><pre class="rule"><code>has_label(target, prefix)</code></pre></p>
+
+    <p>Returns True if the target has any matching label that would be returned by get_labels.</p>
+
+    <table>
+      <thead>
+      <tr>
+	<th>Argument</th>
+	<th>Default</th>
+	<th>Type</th>
+	<th></th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr>
+	<td>target</td>
+	<td></td>
+	<td>str</td>
+	<td>Label of the target to get labels for.</td>
+      </tr>
+
+      <tr>
+	<td>prefix</td>
+	<td>None</td>
+	<td>str</td>
+	<td>Checks only labels that start with this prefix.</td>
+      </tr>
+
+      </tbody>
+    </table>
+
+    <h3><a name="package">package</a></h3>
+
+    <p><pre class="rule"><code>package(...)</code></pre></p>
+
+    <p>Defines settings affecting the current package - for example, default visibility.</p>
+
+    <p>With this you can override any current value in <code>CONFIG</code> by name for all
+      subsequent targets in the current package. Only existing values can be replaced.</p>
+
+    <p>There are also a couple of special values which aren't normally in <code>CONFIG</code>:
+      <code>default_licences</code> and <code>default_visibility</code>. As the names suggest
+      these set defaults for those attributes for all following targets that don't set them.</p>
+
+    <p>This function must be called <b>before</b> any targets are defined.</p>
+
+    <h3><a name="log">log</a></h3>
+
+    <p><pre class="rule"><code>log.warning(message, [args...])</code></pre></p>
+
+    <p>Logs an arbitrary message at some given level. The available levels, from most quiet
+      to most severe, are:
+      <ul>
+        <li><code>log.debug</code></li>
+        <li><code>log.info</code></li>
+        <li><code>log.notice</code></li>
+        <li><code>log.warning</code></li>
+        <li><code>log.error</code></li>
+        <li><code>log.fatal</code></li>
+      </ul>
+      These correspond to Please's built in messages and are controlled as usual by the
+      <code>-v</code> command-line argument.</p>
+
+    <p>As the name suggests, <code>log.fatal</code> immediately terminates the program with
+      a fatal error. The others have no side effect other than showing the message.</p>
+
+    <p>The message and arguments together are interpolated like Python's normal string
+      interpolation, similar to the builtin <code>logging</code> package.</p>
+
+    <h3><a name="decompose">decompose</a></h3>
+
+    <p><pre class="rule"><code>decompose(label)</code></pre></p>
+
+    <p>Decomposes a build label into the package and name parts.</p>
+
+    <p>Consider carefully when you should use this - command replacements may be more appropriate.<br/>
+      Most rules should be able to accept labels without having to know anything about their structure.</p>
+
+    <p>The input label can be given in either relative or absolute form. It will fail with an error
+      if it's not a structurally valid label.</p>
+
+    <h3><a name="canonicalise">canonicalise</a></h3>
+
+    <p><pre class="rule"><code>canonicalise(label)</code></pre></p>
+
+    <p>Converts the given build label to its full form.</p>
+
+    <p>For example:
+      <ul>
+        <li><code>//package:target</code> -> <code>//package:target</code></li>
+        <li><code>//package</code> -> <code>//package:package</code></li>
+        <li><code>:target</code> -> <code>//current_package:target</code></li>
+      </ul>
+    </p>
+
+
+    <h2><a name="cc">C and C++ rules</a></h2>
+
+    <p>Rules to build C and C++ targets.</p>
+    <p>The process of building C or C++ code is fairly complex so while these rules do their best
+      to keep things reasonably simple, there's a lot of scope for things going wrong.</p>
+    <p>There is very little difference between the <code>c_</code> and <code>cc_</code> variants
+      of each rule, in nearly all cases they simply use different tools and flags in the
+      <a href="config.html#cpp">relevant config section</a>.</p>
+
+    {{ template "lexicon_entry.html" .Named "c_library" }}
+    {{ template "lexicon_entry.html" .Named "c_static_library" }}
+    {{ template "lexicon_entry.html" .Named "c_shared_object" }}
+    {{ template "lexicon_entry.html" .Named "c_binary" }}
+    {{ template "lexicon_entry.html" .Named "c_test" }}
+    {{ template "lexicon_entry.html" .Named "c_embed_binary" }}
+
+
+    <h2><a name="go">Go rules</a></h2>
+
+    <p>Rules to build Go code.</p>
+    <p>Go has a strong built-in concept of packages so while it's not 100% required to strictly
+      keep to 1 package per dir as in classic Go, it's still probably a good idea to match Please
+      rules to Go packages.</p>
+
+    {{ template "lexicon_entry.html" .Named "go_library" }}
+    {{ template "lexicon_entry.html" .Named "cgo_library" }}
+    {{ template "lexicon_entry.html" .Named "go_binary" }}
+    {{ template "lexicon_entry.html" .Named "go_test" }}
+    {{ template "lexicon_entry.html" .Named "cgo_test" }}
+    {{ template "lexicon_entry.html" .Named "go_get" }}
+
+
+    <h2><a name="java">Java rules</a></h2>
+
+    <p>Built-in rules to compile Java code.</p>
+
+    {{ template "lexicon_entry.html" .Named "java_library" }}
+    {{ template "lexicon_entry.html" .Named "java_module" }}
+    {{ template "lexicon_entry.html" .Named "java_binary" }}
+    {{ template "lexicon_entry.html" .Named "java_runtime_image" }}
+    {{ template "lexicon_entry.html" .Named "java_test" }}
+    {{ template "lexicon_entry.html" .Named "maven_jar" }}
+    {{ template "lexicon_entry.html" .Named "maven_jars" }}
+
+
+    <h2><a name="misc">Misc rules</a></h2>
+
+    <p>Miscellaneous rules that aren't language-specific.</p>
+
+    {{ template "lexicon_entry.html" .Named "genrule" }}
+    {{ template "lexicon_entry.html" .Named "gentest" }}
+    {{ template "lexicon_entry.html" .Named "export_file" }}
+    {{ template "lexicon_entry.html" .Named "filegroup" }}
+    {{ template "lexicon_entry.html" .Named "hash_filegroup" }}
+    {{ template "lexicon_entry.html" .Named "system_library" }}
+    {{ template "lexicon_entry.html" .Named "remote_file" }}
+    {{ template "lexicon_entry.html" .Named "tarball" }}
+
+
+    <h2><a name="proto">Proto rules</a></h2>
+
+    <p>Build rules for compiling protocol buffers & gRPC service stubs.</p>
+    <p>Note that these are some of the most complex of our built-in build rules,
+      because of their cross-language nature. Each proto_library rule declares a set of
+      sub-rules to run protoc & the appropriate java_library, go_library rules etc. Users
+      shouldn't worry about those sub-rules and just declare a dependency directly on
+      the proto_library rule to get its appropriate outputs.</p>
+
+    {{ template "lexicon_entry.html" .Named "proto_library" }}
+    {{ template "lexicon_entry.html" .Named "grpc_library" }}
+
+
+    <h2><a name="python">Python rules</a></h2>
+
+    <p>Rules to build Python code.</p>
+    <p>The output artifacts for Python rules are .zip files similar to
+      <a href="https://github.com/pantsbuild/pex">.pex</a> files (and are suffixed as such).</p>
+    <p>This combines all the in-repo dependencies into a single file that can be deployed and run
+      on any system that has a suitable Python interpreter. Please optimises this process to
+      improve incrementality and includes some hooks to make running from a zipfile as transparent
+      as possible; nonetheless certain file-based operations may not work since there is not a
+      real file system available. If necessary various Python rules can be annotated with
+      <code>zip_safe</code> to control this; if a binary is zip-unsafe it will extract itself before
+      running.</p>
+
+    {{ template "lexicon_entry.html" .Named "python_library" }}
+    {{ template "lexicon_entry.html" .Named "python_binary" }}
+    {{ template "lexicon_entry.html" .Named "python_test" }}
+    {{ template "lexicon_entry.html" .Named "pip_library" }}
+    {{ template "lexicon_entry.html" .Named "python_wheel" }}
+
+
+    <h2><a name="sh">Shell rules</a></h2>
+
+    <p>Rules to 'build' shell scripts.</p>
+    <p>Note that these do pretty much nothing beyond collecting the files. In future we might
+      implement something more advanced (ala .sar files or whatever).</p>
+
+    {{ template "lexicon_entry.html" .Named "sh_library" }}
+    {{ template "lexicon_entry.html" .Named "sh_binary" }}
+    {{ template "lexicon_entry.html" .Named "sh_cmd" }}
+    {{ template "lexicon_entry.html" .Named "sh_test" }}
