@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# set -x
+# set -e
+
 function fbs { 
 	local limit=${1:-"20"}
 	du -m . | sort -nr | head -n $limit
@@ -21,19 +24,70 @@ function fd {
 	find . -name "$pattern" -type d -exec rm -rf {} +
 }
 
-function rmd { 
+function rm_dirs_by_name { 
 	local pattern=${1:-"test"}
 	find . -name "$pattern" -type d -print -exec rm -rf {} +
 }
 
-# alias biggy="du -m . | sort -nr | head -n 50"
+function ls_subtrees {
+	local export_file=${1:-".meta/ls-subtrees.tsv"}
+	ensure_dir
+	git log | grep -E 'git-subtree-dir|git-subtree-repo' | awk '{ print $2 $3 $4 }' > $export_file ;
+}
+
+function ls_subtrees_sorted {
+	local export_file=${1:-".meta/ls-subtrees.sorted.tsv"}
+	ensure_dir
+	git log | grep -e git-subtree-dir -e git-subtree-repo | tr -d ' ' | cut -d ":" -f2 | sort | uniq > $export_file ;
+}
+
+function ls_subtrees_exists {
+	local export_file=${1:-".meta/ls-subtrees.exists.tsv"}
+	ensure_dir
+	git log | grep -e git-subtree-dir -e git-subtree-repo | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi' > $export_file ;
+}
+
+function ls_subtrees_dedup {
+	local export_file=${1:-".meta/ls-subtrees.dedup.tsv"}
+	ensure_dir
+	git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi' > $export_file ;
+}
+
+function ensure_dir {
+	local prefix_path=${1:-".meta"}
+	mkdir -p ${prefix_path}
+}
+
+function ls_dirs_size {
+	local limit=${1:-"50"}
+	local export_file=${1:-".meta/ls-dirs.by_size.top${limit}.output"}
+	ensure_dir
+	du -m . | sort -nr | head -n $limit > ${export_file}
+}
 
 export DEP_DIRNAMES="vendor;Godeps;node_modules"
 
-rmd vendor 
-rmd Godeps 
-rmd node_modules
+# rm_dirs_by_name vendor;Godeps;node_modules
+rm_dirs_by_name vendor
+rm_dirs_by_name Godeps 
+rm_dirs_by_name node_modules
 echo "Successfully removed all vendor dirs: vendor, Godeps, node_modules"
+
+# ls_dirs_size
+# ls_subtrees
+# ls_subtrees_sorted
+# ls_subtrees_exists
+# ls_subtrees_dedup
+
+# git config --global fetch.prune true
+# git config --global gc.auto 1
+# git config --local gc.auto 1
+# git config -l
+# git config remote.origin.prune true
+# git config --global gc.auto 0
+# git config --global gc.aggressive 0
+# git config --local gc.auto 1
+# git config --local gc.aggressive 1
 
 # git commit -am "remove vendor dirs"
 # echo "clean-up vendor directories..."
