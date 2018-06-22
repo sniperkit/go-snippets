@@ -1,0 +1,11 @@
+# specific files
+.directory
+tags
+foo.json
+srcanlzr
+.DS_Store
+
+# files by extension
+*.swp
+*.prename
+*.prof
