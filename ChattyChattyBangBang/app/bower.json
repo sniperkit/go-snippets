@@ -1,0 +1,25 @@
+{
+  "name": "ChattyChattyBangBang",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gophergala/ChattyChattyBangBang",
+  "authors": [
+    "Guy Fergusson <fergs@iinet.net.au>"
+  ],
+  "description": "???",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "framework7": "~0.10.0"
+  }
+}

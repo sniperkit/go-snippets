@@ -1,0 +1,1 @@
+curl --data '[{"name":"server1","value":300,"status":"UP2"},{"name":"server2", "status":"DOWN", "value":0}]' http://localhost:8889/push/userid

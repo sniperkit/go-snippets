@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>Chatty Chatty Bang! Bang!</title>
+	<!-- Path to Framework7 Library CSS -->
+	
+	<link rel="stylesheet" href="assets/css/framework7/framework7.min.css">
+	<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+	 <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Left panel content goes here</p>
+        <a class="close-panel" href="index.html">Logout</a>
+         <a class="close-panel" href="about.html">About</a>
+      </div>
+    </div>
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+         <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+          </div>
+        </div>
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page no-navbar frontpage">
+            <!-- Scrollable page content -->
+            <div class="page-content">
+                 <div class="content-block">
+                    <div id="top">
+                     <div class="wud-icon">
+                      <div class="text">W</div>
+                    </div>
+                    </div>
+                    <div class="options">
+                    <p>
+                      <a href="#" class="button open-signup active">Sign Up</a>
+                    </p>
+                    <p>
+                        Already have an account?
+                    </p>
+                    <p>
+                      <a href="#" class="button open-login-screen">Log In</a>
+                    </p>
+                    <p>
+                     By using this app, you agree to our Terms of Use and Privacy Policy
+                    </p>
+					<p>
+					<a href="messages.html" class="button">Message</a>
+					</p>
+                </div>
+             </div>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+    
+    <!-- Login Popup -->
+    <div class="login-screen">
+        <div class="view">
+          <div class="page">
+            <div class="page-content login-screen-content">
+              <div class="login-screen-title">Login</div>
+              <form id="login-form">
+                <div class="list-block">
+                  <ul>
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">Email</div>
+                        <div class="item-input">
+                          <input type="text" name="email" placeholder="Your email address">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">Password</div>
+                        <div class="item-input">
+                          <input type="password" name="password" placeholder="Your password">
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="list-block">
+                  <ul>
+                    <li><a class="button button-big button-fill color-green popup-button">Log In</a></li>
+                  </ul>
+                  <div class="list-block-label">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p><a href="#" class="close-login-screen">Close</a></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+   
+    <!-- Sign Up Popup -->
+    <div class="popup popup-signup">
+     <div class="view">
+          <div class="page">
+            <div class="page-content login-screen-content">
+              <div class="login-screen-title">Sign Up</div>
+              <form id="signup-form">
+                <div class="list-block">
+                  <ul>
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">Email</div>
+                        <div class="item-input">
+                          <input type="text" name="email" placeholder="Your email address">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">Password</div>
+                        <div class="item-input">
+                          <input type="password" name="password" placeholder="Your password">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">Confirm</div>
+                        <div class="item-input">
+                          <input type="password" name="confirm" placeholder="Confirm your password">
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="list-block">
+                  <ul>
+                    <li><a class="button button-big button-fill color-green popup-button">Sign Up</a></li>
+                  </ul>
+                  <div class="list-block-label">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p><a href="#" class="close-popup">Close</a></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+  </div>
+	
+<!-- Path to Framework7 Library JS -->
+<script type="text/javascript" src="assets/js/vendor/framework7/framework7.js"></script>
+<!-- Path to your app js -->
+<script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+</html>

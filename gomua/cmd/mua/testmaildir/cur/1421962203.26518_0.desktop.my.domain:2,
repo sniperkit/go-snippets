@@ -1,0 +1,79 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Thu, 22 Jan 2015 16:30:03 -0500
+Received: (qmail 29960 invoked from network); 22 Jan 2015 13:04:34 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 22 Jan 2015 13:04:34 -0800
+X-ASG-Debug-ID: 1421960672-017fd408af20e1900001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id icDU0Yww9RWvjuZw for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 13:04:32 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146357=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0MLHQcZ015535
+	for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 14:17:28 -0700 (MST)
+Received: from mail-pa0-f52.google.com (mail-pa0-f52.google.com [209.85.220.52])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0MLHG6S008401 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 14:17:17 -0700 (MST)
+Received: by mail-pa0-f52.google.com with SMTP id kx10so4161621pab.11
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 13:03:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=from:message-id:date:user-agent:mime-version:to:subject:references :in-reply-to:content-type:content-transfer-encoding; bh=ys289RvHlfxnXYtCpWetUsPN61esoox5BM5S/APxhqc=; b=OJERbyXPXzrIyENoyWnWcPwqoG7/JtIEUVWtJNQxE3tJUFGCFkDrE9oIlqWB6apCiS jHyN6W88CIBC23qdstDsM2Gk7wmM65MqE60Ds294bDfLv3+A0nm1wHk3jog20JQK1OO2 o2Ja0U9sqP1q6gMM1fN0Bl9yg7mIODxHMQPQ1shsM7NmJADrP7PG3ZzlalP/FtytElIt eUxAIXOnNLehlBc41bOkI0C/b7BPWhtUgB8jTDdON8R7KYYoKOYsG0pbLHjiJ4gM0WF0 TvWmqMHBlw5M0DyEocNKcNWdGTsi4V979NKzm3ELIBVherhMqdNjtNxiEPPiYdsr7Z6Q FLIg==
+X-Received: by 10.66.120.109 with SMTP id lb13mr5719212pab.66.1421960607275; Thu, 22 Jan 2015 13:03:27 -0800 (PST)
+Received: from poulsbo.homeip.net (75-151-113-165-Washington.hfc.comcastbusiness.net. [75.151.113.165])
+	by mx.google.com with ESMTPSA id fx1sm6967456pdb.35.2015.01.22.13.03.25
+	for <misc@openbsd.org> (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128); Thu, 22 Jan 2015 13:03:26 -0800 (PST)
+From: Jason Adams <adamsjas@gmail.com>
+X-Google-Original-From: Jason Adams <Adamsjas@gmail.com>
+Message-ID: <54C1659C.3010003@gmail.com>
+Date: Thu, 22 Jan 2015 13:03:24 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Thunderbird/31.3.0
+MIME-Version: 1.0
+To: misc@openbsd.org
+Subject: Re: Hannover BSD meetup
+References: <20150122140230.GA18519@autobahn.atexit.net> <CAJO05K2ni8LSuYPUD4NjrsjmhZ5ePND3qZ2G3wgr5Tz9u+4Chw@mail.gmail.com> <20150122204129.GA2331@mail.greifdesign.net>
+X-ASG-Orig-Subj: Re: Hannover BSD meetup
+In-Reply-To: <20150122204129.GA2331@mail.greifdesign.net>
+Content-Type: text/plain; charset=windows-1252
+Content-Transfer-Encoding: 8bit
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421960672
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14538
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+On 01/22/2015 12:41 PM, Alex Greif wrote:
+> hi,
+> ... same for me here in Berlin
+>
+> Alex.
+>
+> On Thu, Jan 22, 2015 at 08:05:13PM +0100, Jan Lambertz wrote:
+>> Hey Reyk,
+>>
+>> that sounds great. Unfortunately the Way to Hannover is 600km from
+>> here. I hope something simliar is happening soon near Munich. I was
+>> not able to find any Meeting for OpenBSD here.
+>>
+>> Jan
+
+
+I can see Jan not wanting to sit 4 hours on the train, but I'd be tempted to sit two hours on a train
+from Berlin.  What does that trip cost these days?
+
+-- 
+Those who do not understand Unix are condemned to reinvent it, poorly.
+

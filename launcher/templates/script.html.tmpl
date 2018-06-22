@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title></title>
+     <link href="/static/all.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Script Launcher</a></h1>
+      <h2>{{.script.Name}}</h2>
+    </header>
+    <button class="button">Execute</button>
+    <button class="clear">Clear</button>
+    <div class="console">
+      <pre class="output"></pre>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var scriptName = '{{.name}}';
+  </script>
+  <script type="text/javascript" src="/static/all.js"></script>
+</html>

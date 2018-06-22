@@ -1,0 +1,17 @@
+POST /users
+
+{
+  "user":"<myname>",
+  "password":"<mypassword>"
+}
+
+
+-----------------
+
+POST /tweet
+needs basic auth of valid user
+
+{
+  "tweet":"<tweet text>"
+}
+

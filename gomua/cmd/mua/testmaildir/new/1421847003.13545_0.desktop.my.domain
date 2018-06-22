@@ -1,0 +1,71 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Wed, 21 Jan 2015 08:30:03 -0500
+Received: (qmail 32451 invoked from network); 21 Jan 2015 05:02:18 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 21 Jan 2015 05:02:18 -0800
+X-ASG-Debug-ID: 1421845337-017fd408af206bd10001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id JERa1WMhcs1lgb3u for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 05:02:17 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146314=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0LDFqOD020090
+	for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 06:15:54 -0700 (MST)
+Received: from g2.nickh.org (g2.nickh.org [208.90.197.29])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0LDFgT9023117 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=NO)
+	for <misc@openbsd.org>; Wed, 21 Jan 2015 06:15:43 -0700 (MST)
+Received: from fluffy.in.nickh.org (nick@localhost.nickh.org [127.0.0.1])
+	by g2.nickh.org (8.14.6/8.14.6) with ESMTP id t0LD1rJh029957
+	for <misc@openbsd.org>; Wed, 21 Jan 2015 08:01:28 -0500 (EST)
+Message-ID: <54BFA341.9020700@holland-consulting.net>
+Date: Wed, 21 Jan 2015 08:01:28 -0500
+From: Nick Holland <nick@holland-consulting.net>
+User-Agent: Mozilla/5.0 (X11; OpenBSD amd64; rv:31.0) Gecko/20100101 Thunderbird/31.1.1
+MIME-Version: 1.0
+To: misc@openbsd.org
+Subject: Re: What are the disadvantages of soft updates?
+References: <CAHbNe7XYkpOedDkg1EjFPga+vV3PcqwQNVcFf9kLR_VFALjPDQ@mail.gmail.com>
+X-ASG-Orig-Subj: Re: What are the disadvantages of soft updates?
+In-Reply-To: <CAHbNe7XYkpOedDkg1EjFPga+vV3PcqwQNVcFf9kLR_VFALjPDQ@mail.gmail.com>
+Content-Type: text/plain; charset=windows-1252
+Content-Transfer-Encoding: 8bit
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421845337
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14498
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+On 01/21/15 07:34, Mihai Popescu wrote:
+...
+> After watching this thread, I enabled softdep on all FFS partitions
+> thinking that Firefox will speed up a bit. I will see the results in
+> time.
+
+Keep in mind what softdeps do -- they improve performance of disk
+writes.  They do nothing for disk reads.  Write a few small files, you
+won't see much.  Write lots of files, you will see a huge difference.
+
+Firefox is just plain slow at everything it seems, but writes are not
+the major bottleneck, so you may not see much gain.
+
+If you want to see a huge difference in softdep performance, unpack a
+tar file with a lot of small files, such as the ports or source files.
+No stopwatch will be needed to see the difference.
+
+Nick.
+

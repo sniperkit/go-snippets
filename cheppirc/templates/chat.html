@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CheppIRC</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .inline {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+
+    content {
+      height: 100%;
+      width: 80%;
+      float: left;
+      background-color: #FFFFFF;
+    }
+
+    .content-top {
+      width: 100%;
+      min-height: 50px;
+      background-color: #3F51B5;
+      color: #FFFFFF;
+    }
+
+    aside {
+      width: 20%;
+      float: left;
+      height: 87%;
+    }
+
+    .side-top {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      background-color: #303F9F;
+      text-align: center;
+      vertical-align: middle;
+      color: #FFFFFF;
+    }
+
+    .logo {
+      width: auto;
+      margin: 15px;
+    }
+
+    .chepp {
+      font-style: italic;
+    }
+
+    .channel-tabs {
+      width: auto;
+    }
+
+    .channel-boxes {
+      clear: both;
+      height: 86%;
+      width: 100%;
+      overflow: scroll;
+    }
+
+    .channel-box {
+      display: none;
+    }
+
+    .channel-box.active {
+      display: block;
+    }
+
+    .channel-tab {
+      display: inline-block;
+      padding: 10px;
+      margin: 0 5px;
+      background-color: #303F9F;
+      vertical-align: top;
+    }
+
+    .channel-tab:hover,
+    .channel-tab.active {
+      border-top: 2px solid #FF9800;
+      padding-top: 7px;
+    }
+
+    .message {
+      margin: 1em 2em;
+    }
+
+    .message.status {
+      color: #727272;
+      font-style: italic;
+    }
+
+    .message .sender {
+      display: inline-block;
+      width: 15%;
+      color: #FF9800;
+      text-align: right;
+      margin: 0 15px;
+    }
+
+    .message.self .sender {
+      color: #3F51B5;
+    }
+
+    .message .text {
+      display: inline-block;
+      width: 79%;
+    }
+
+    .user-box {
+      height: 100%;
+      border-left: 1px solid #B6B6B6;
+      overflow: scroll;
+      display: none;
+    }
+
+    .user-box.active {
+      display: block;
+    }
+
+    .user-box .user {
+      padding: 10px;
+    }
+
+    footer {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      height: 36px;
+      border-top: 1px solid #B6B6B6;
+    }
+
+    footer .name {
+      width: 15%;
+      height: 36px;
+      line-height: 36px;
+      background-color: #303F9F;
+      color: #FFFFFF;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    footer input {
+      width: 84%;
+      height: 36px;
+      border: none;
+      padding: 0 0 0 5px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+</header>
+
+<content>
+  <span id="session" data-id="{{.Uuid}}"></span>
+
+  <div class="content-top">
+    <div class="logo inline">
+      <span class="chepp">Chepp</span><span class="irc">IRC</span>
+    </div>
+
+    <div class="channel-tabs inline">
+      {{range $target, $infos := .Targets}}
+      <div class="channel-tab {{$target}}-channel" data-channel="{{$target}}"> {{$target}}</div>
+      {{end}}
+    </div>
+  </div>
+
+  <div class="channel-boxes">
+    {{range $targets := .Targets}}
+    <div class="channel-box {{.Name}}-channel">
+      {{range $message := .Messages}}
+      {{if ne .Mtype "hidden"}}
+      <div class="message {{.Mtype}}">
+        <div class="sender">
+          {{if .Sender}}
+          {{.Sender}}
+          {{end}}
+        </div>
+        <div class="text">{{.Text}}</div>
+      </div>
+      {{end}}
+      {{end}}
+    </div>
+    {{end}}
+  </div>
+</content>
+
+<aside>
+  <div class="side-top">Users</div>
+  <div class="user-box">
+    {{range $target, $users := .Users}}
+    <div class="{{$target}}-channel">
+      {{range $nick, $info := $users}}
+      <div class="user">{{$nick}}</div>
+      {{end}}
+    </div>
+    {{end}}
+  </div>
+</aside>
+
+<footer>
+  <div class="name inline">{{.Nick}}</div>
+  {{if .Users}}
+  <input id= "message-input" type="text" name="text" class="text inline"
+         placeholder="Type text here..."/>
+  {{else}}
+  <input id= "message-input" type="text" name="text" class="text inline"
+         placeholder="Connecting..." disabled="disabled"/>
+  {{end}}
+</footer>
+
+<script type="text/javascript"
+        src="https://code.jquery.com/jquery-2.1.3.min.js">
+</script>
+<script type="text/javascript">
+  $('.channel-tab:first').addClass('active');
+  $('.channel-box:first').addClass('active');
+  $('.user-box:first').addClass('active');
+</script>
+<script type="text/javascript">
+  $(function(){
+    console.log("loaded")
+    function wsurl(s) {
+      var l = window.location;
+      return ((l.protocol === "https:") ? "wss://" : "ws://") + l.hostname + (((l.port != 80) && (l.port != 443)) ? ":" + l.port : "") + s;
+    }
+
+    var url = wsurl("/ws?session=" + $("#session").attr("data-id"))
+    var serversocket = new WebSocket(url);
+    console.log("add onmessage:", url)
+    serversocket.onmessage = function (e) {
+      console.log("onmessage trigger")
+      var message = jQuery.parseJSON(e.data);
+      var target = message.Target;
+      if (target.charAt(0) != "#") {
+        console.log("Not a channel: " + target);
+        //return;
+      }
+
+      console.log("Replace target:", target);
+      // Temporary solution to load users.
+      // TODO: make it work with websockets.
+      if (message.Mtype === 'hidden' && message.Text === 'reload') {
+        location.reload();
+      }
+      else {
+        $(".channel-boxes ." + target + "-channel")
+            .append("<div class=\"message " + message.Mtype + "\"><div class=\"sender\">" + message.Sender.replace("<", "&lt;").replace(">", "&gt;") + "</div><div class=\"text\">" + message.Text.replace("<", "&lt;").replace(">", "&gt;") + "</div></div>");
+      }
+    };
+
+    var sendsocket = new WebSocket(wsurl("/sendws?session=" + $("#session").attr("data-id")));
+
+    $("#message-input").keyup(function(e){
+      console.log("Pressed:", e.which);
+      if (e.which === 13) {
+        console.log("SEND:", $(".channel-tab.active").attr("data-channel") + "||" + $(this).val());
+        sendsocket.send($(".channel-tab.active").attr("data-channel") + "||" + $(this).val());
+        $(this).val("");
+      }
+    });
+  });
+
+</script>
+
+</body>
+</html>

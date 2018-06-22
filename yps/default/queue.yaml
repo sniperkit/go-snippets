@@ -1,0 +1,7 @@
+queue:
+- name: userInput
+  mode: pull
+- name: playlist
+  mode: pull
+- name: video
+  mode: pull

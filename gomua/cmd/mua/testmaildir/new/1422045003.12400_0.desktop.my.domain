@@ -1,0 +1,71 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 15:30:03 -0500
+Received: (qmail 6264 invoked from network); 23 Jan 2015 12:04:21 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 12:04:21 -0800
+X-ASG-Debug-ID: 1422043460-017fd408af212a0f0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id TpMfbJQwykHmj8t2 for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 12:04:20 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146374=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0NKGwF1009807
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 13:17:00 -0700 (MST)
+Received: from forward4l.mail.yandex.net (forward4l.mail.yandex.net [84.201.143.137])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0NKGj4q019404 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=FAIL)
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 13:16:47 -0700 (MST)
+Received: from smtp1o.mail.yandex.net (smtp1o.mail.yandex.net [37.140.190.26])
+	by forward4l.mail.yandex.net (Yandex) with ESMTP id DC1021441019
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 22:17:03 +0300 (MSK)
+Received: from smtp1o.mail.yandex.net (localhost [127.0.0.1])
+	by smtp1o.mail.yandex.net (Yandex) with ESMTP id 7A24BDE3320
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 22:17:03 +0300 (MSK)
+Received: from tor-exit.kakapo.dk (tor-exit.kakapo.dk [82.211.223.3])
+	by smtp1o.mail.yandex.net (nwsmtp/Yandex) with ESMTPSA id 94EjHzohgD-H1BmSFH1; Fri, 23 Jan 2015 22:17:02 +0300 (using TLSv1.2 with cipher AES256-GCM-SHA384 (256/256 bits)) (Client certificate not present)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail; t=1422040623; bh=4sWyAISCy0IiHgzlVI+hyGkMvP2D2b3ganGl0g4AxF8=; h=Date:From:To:Subject:Message-ID:Mail-Followup-To:References: MIME-Version:Content-Type:Content-Disposition:In-Reply-To: User-Agent; b=ZNDVskxFYSXPNI/VQ9glM6QGrxjOKF4wonFS0Z6/ytXdWVgS855R3EVAZ/TMc+0es ksWLZfvPcdj84rtr387GnpDITL/rnelx8Q33uSLnOSXXG35YUaPR6Gua+P9ro3l69p dTgD5zPU1dBy20NOtKXpF1dKqCmWMo1r1xnxOoPE=
+Authentication-Results: smtp1o.mail.yandex.net; dkim=pass header.i=@yandex.ru
+Date: Sat, 24 Jan 2015 01:03:17 +0600
+From: =?utf-8?B?0JDRgNGC0YPRgCDQmNGB0YLQvtC80LjQvQ==?= <art.istom@yandex.ru>
+To: misc@openbsd.org
+Subject: Re: Munich BSD meetup
+Message-ID: <20150123190317.GA16820@localhost>
+X-ASG-Orig-Subj: Re: Munich BSD meetup
+Mail-Followup-To: misc@openbsd.org
+References: <CAJO05K2Y+Q+mpwE_=yCReUyJAF7pRVVWPiA82-wrKJyo+fUU_Q@mail.gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+In-Reply-To: <CAJO05K2Y+Q+mpwE_=yCReUyJAF7pRVVWPiA82-wrKJyo+fUU_Q@mail.gmail.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422043460
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14568
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+On Fri, Jan 23, 2015 at 07:58:37PM +0100, Jan Lambertz wrote:
+> Hi,
+> 
+> stolen the idea from Reyk, maybe we can have a BSD meetup near munich.
+> One and only cirtitcal question is where.
+> I live about 30km North of Munich, but my job is near munich central station.
+> I fine with everywhere reachable in 1,5 hours.
+
+After all, someone wants to see very druns russians, bears etc?!
+
+.damn policy!
+

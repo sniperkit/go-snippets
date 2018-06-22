@@ -1,0 +1,86 @@
+@import url('materialize.min.css');
+
+body, html{
+	height: 100%;
+}
+body{
+	background: #edecec;
+}
+h1, h2, h3, h4, h5, .thin-text{
+	font-weight: 100;
+}
+.primaryDark{
+	background-color: #BF360C!important;
+}
+nav.transparent{
+	background-color: #BF360C!important;
+}
+.info-page{
+	background: url('../assets/background-index.jpg') no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.info-page .btn-floating{
+	position: absolute;
+	left: 50%;
+	bottom: -40px;
+	margin-left: -28px;
+}
+.btn-large.waves-effect.waves-light.red.waves-input-wrapper .waves-button-input{
+	background: transparent;
+	border: 0;
+}
+.row-container{
+	padding: 26px 0;
+}
+.row{margin-bottom: 0;}
+.opaque{
+	opacity: 0.8;
+}
+#map-canvas {
+	height: 450px;
+	margin: 0px;
+	padding: 0px
+}
+#map-canvas.full {
+	height: 90%!important;
+}
+.map-results{
+	position: absolute;
+	z-index: 20;
+}
+.map-results .container{
+	margin-top: 20px;
+}
+.map-results .card{
+	width: 300px;
+}
+.mdi-navigation-menu:before {
+	content: "\e8a1";
+}
+footer.page-footer{
+	background: #FFF;
+	padding-top: 0;
+}
+.footer-copyright{
+	color: #999!important;
+}
+.margin-bottom{
+	margin-bottom: 20px;
+}
+ul.side-nav.full{
+	-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	-moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+@media only screen and (min-width : 993px){
+	.row-container{
+		padding: 100px 0;
+	}
+	nav .brand-logo{
+		margin-left: 40px;
+	}
+	nav ul li:hover, nav ul li.active {
+		background-color: rgba(0,0,0,0)!important;
+	}
+}

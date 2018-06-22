@@ -1,0 +1,61 @@
+{
+	"ImportPath": "github.com/gophergala/gomegam",
+	"GoVersion": "go1.4",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/Unknwon/goconfig",
+			"Rev": "5cfc02f2789e6e98d8546e40b29d907aedc4c590"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego",
+			"Comment": "v1.4.2-2-gd7fe5ef",
+			"Rev": "d7fe5ef435ab030e79d0eaf7c0ad4b76523ae1ab"
+		},
+		{
+			"ImportPath": "github.com/beego/i18n",
+			"Rev": "e87155e8f0c05bf323d0b13470e1b97af0cb5652"
+		},
+		{
+			"ImportPath": "github.com/howeyc/fsnotify",
+			"Comment": "v0.9.0-14-g4894fe7",
+			"Rev": "4894fe7efedeeef21891033e1cce3b23b9af7ad2"
+		},
+		{
+			"ImportPath": "github.com/megamsys/libgo/action",
+			"Rev": "8b53d904e89f2626f955424a72fd77eda2740b86"
+		},
+		{
+			"ImportPath": "github.com/megamsys/libgo/cmd",
+			"Rev": "8b53d904e89f2626f955424a72fd77eda2740b86"
+		},
+		{
+			"ImportPath": "github.com/megamsys/libgo/exec",
+			"Rev": "8b53d904e89f2626f955424a72fd77eda2740b86"
+		},
+		{
+			"ImportPath": "github.com/megamsys/libgo/fs",
+			"Rev": "8b53d904e89f2626f955424a72fd77eda2740b86"
+		},
+		{
+			"ImportPath": "github.com/tsuru/config",
+			"Rev": "a2b4aec819a60c646dad55cba9c76ddfed4b6ed1"
+		},
+		{
+			"ImportPath": "gopkg.in/yaml.v1",
+			"Rev": "9f9df34309c04878acc86042b16630b0f696e1de"
+		},
+		{
+			"ImportPath": "launchpad.net/gnuflag",
+			"Comment": "13",
+			"Rev": "roger.peppe@canonical.com-20140716064605-pk32dnmfust02yab"
+		},
+		{
+			"ImportPath": "launchpad.net/gocheck",
+			"Comment": "87",
+			"Rev": "gustavo@niemeyer.net-20140225173054-xu9zlkf9kxhvow02"
+		}
+	]
+}

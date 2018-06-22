@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-eqiv="content-type" content="text/html;charset=utf-8">
+    <title>Go con Ejemplos: Funciones</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
+  </script>
+  <body>
+    <div class="example" id="funciones">
+      <h2><a href="./">Go con Ejemplos</a>: Funciones</h2>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>Las <em>Funciones</em> son una parte escencial de Go. Veamos algunos
+ejemplos para entender como se utilizan.</p>
+
+          </td>
+          <td class="code empty leading">
+          
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          <a href="http://play.golang.org/p/k0Ty5k9laL"><img title="Run code" src="play.png" class="run" /></a>
+            <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Aquí tenemos una funcion que recibe dos valores <code>int</code>
+y regresa la suma de los mismos como <code>int</code>.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">func</span> <span class="nx">plus</span><span class="p">(</span><span class="nx">a</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Go requiere retornos de valor explicitos, i.e. no regresa
+automáticamente el valor de la última expresión.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Puedes llamar a una función tal y como lo esperarías, con
+<code>funcion(args)</code>.</p>
+
+          </td>
+          <td class="code">
+          
+            <div class="highlight"><pre>    <span class="nx">res</span> <span class="o">:=</span> <span class="nx">plus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;1+2 =&quot;</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+      </table>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="gp">$</span> go run functions.go
+<span class="go">1+2 = 3</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Hay muchas más características de las funciones en Go.
+Una de ellas es el regreso de múltiples valores, lo
+cual veremos a continuación.</p>
+
+          </td>
+          <td class="code empty">
+          
+            
+          </td>
+        </tr>
+        
+      </table>
+      
+      
+      <p class="next">
+        Siguiente ejemplo: <a href="multiples-valores-de-retorno">Multiples Valores de Retorno</a>.
+      </p>
+      
+      <p class="footer">
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/funciones">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      </p>
+    </div>
+  </body>
+</html>

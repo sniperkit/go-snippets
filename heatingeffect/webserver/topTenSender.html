@@ -1,0 +1,28 @@
+<html>
+	<head>
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    	    <script type="text/javascript">
+		google.load("visualization", "1", {packages:["corechart"]});
+    		google.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+					['Sender to Recipient', 'Notices'],
+					{{range $index, $element := .}}
+						['{{$element.ID.Sender}} to {{$element.ID.Recipient}}', {{$element.Notices}} ],
+					 {{end}}				
+			]);
+			
+			var options = {
+				title: 'Top 10 Sender to Recipient',
+				is3D: true,
+			};
+			
+			var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+			chart.draw(data, options);
+		}
+	    </script>
+  	</head>
+	<body>
+		<div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+	</body>
+</html>

@@ -1,0 +1,102 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Thu, 22 Jan 2015 01:00:03 -0500
+Received: (qmail 22780 invoked from network); 21 Jan 2015 21:41:35 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 21 Jan 2015 21:41:35 -0800
+X-ASG-Debug-ID: 1421905294-017fd408af20a5b20001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id oxdp14hrbimrFYjj for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 21:41:34 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146341=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0M5sn9m017007
+	for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 22:54:52 -0700 (MST)
+Received: from vms173013pub.verizon.net (vms173013pub.verizon.net [206.46.173.13])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0M5sajX004068 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=NO)
+	for <misc@openbsd.org>; Wed, 21 Jan 2015 22:54:37 -0700 (MST)
+Received: from centos.kevla.org ([173.79.198.165])
+	by vms173013.mailsrvcs.net (Oracle Communications Messaging Server 7.0.5.32.0 64bit (built Jul 16 2014)) with ESMTPA id <0NIK00LMX4R9BG20@vms173013.mailsrvcs.net>
+	for misc@openbsd.org; Wed, 21 Jan 2015 20:40:21 -0600 (CST)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.1 cv=Kc1larcG c=1 sm=1 tr=0	a=wYxoiW1kBP8h4vlTcezL3Q==:117 a=YlWAjeGNxS0A:10 a=wPDyFdB5xvgA:10	a=8nJEP1OIZ-IA:10 a=ctJ9eq2TAAAA:8 a=oR5dmqMzAAAA:8 a=-9mUelKeXuEA:10	a=YNv0rlydsVwA:10 a=b_Ufx1hiAAAA:8 a=nxlI2F2nAAAA:8	a=tj4o5dy1P0t-ZUHTCT0A:9 a=wPNLvfGTeEIA:10 a=di-KW1dQ4dcA:10
+Received: from localhost (localhost [127.0.0.1])
+	by centos.kevla.org (Postfix) with ESMTP id 1249D5F251;	Wed, 21 Jan 2015 21:40:21 -0500 (EST)
+X-Virus-Scanned: amavisd-new at kevla.org
+Received: from centos.kevla.org ([127.0.0.1])
+	by localhost (centos.kevla.org [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id 3pOWLvPvDhmR; Wed, 21 Jan 2015 21:39:46 -0500 (EST)
+Received: from [192.168.1.41] (centos.kevla.org [192.168.1.41])
+	by centos.kevla.org (Postfix) with ESMTP id D5C075F1D6;	Wed, 21 Jan 2015 21:39:45 -0500 (EST)
+Received: from 192.168.1.31 (SquirrelMail authenticated user jhart)
+	by 192.168.1.41 with HTTP; Wed, 21 Jan 2015 21:39:46 -0500
+Message-id: <3eb34b334a61c275759efccb6bebef3c.squirrel@192.168.1.41>
+In-reply-to: <20150122023139.Vt0ySjszsUXdE6E+%punosevac72@gmail.com>
+References: <20150122023139.Vt0ySjszsUXdE6E+%punosevac72@gmail.com>
+Date: Wed, 21 Jan 2015 21:39:46 -0500
+Subject: Re: 1U / 2 Computers? For redundant FW pair
+From: "Jay Hart" <jhart@kevla.org>
+X-ASG-Orig-Subj: Re: 1U / 2 Computers? For redundant FW pair
+To: "Predrag Punosevac" <punosevac72@gmail.com>
+Cc: misc@openbsd.org
+User-Agent: SquirrelMail/1.4.22-4.el6
+MIME-version: 1.0
+Content-type: text/plain; charset=iso-8859-1
+Content-transfer-encoding: 8bit
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421905294
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-BRTS-Evidence: itxdepot.com
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14520
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+Check this out:
+
+http://www.itxdepot.com/shop/index.php?id_category=20&controller=category
+
+I have it installed in a rack with 2 ITX MBs.
+
+Jay
+
+> Daniel Ouellet wrote:
+>
+>> there is 23 model that are twin model in 1U:
+>>
+>> http://www.supermicro.com/products/nfo/1UTwin.cfm
+>>
+>> But they share the power supply. May be that's what you didn't like.
+>
+>>> On 1/21/15 7:31 AM, Alan McKay wrote:
+>>> I know that Supermicro has some interesting side-by-sides starting at
+>>> 2U, but I'm not aware of anything in 1U.  Basically I'd like to have
+>>> my redundant FW pairs take up less rack space.   I guess another
+>>> option would be half-width 1U if anything like that exists, and
+>>> install a rack shelf.
+>
+> So when the power supply fails you will have both FW down not just one.
+> Nice :) Even if the FW were only sharing the same case the idea is dumb
+> because you will have to take off line good FW to fix the one which
+> failed.
+>
+> Now somebody posted the link to pfSense hardware where each individual
+> FW is removable. That would seems like the solution which fits the bill
+> perfectly and doesn't suffer the problem I just pointed out. However
+> catch 22 is that the case has a non-standard width so you will have to
+> adjust your rack :)
+>
+> Cheers,
+> Predrag
+

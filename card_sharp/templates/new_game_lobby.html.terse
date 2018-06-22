@@ -1,0 +1,12 @@
+h1 Pick a Game to Start
+hr
+
+.row
+&available_games
+  .col-md-6.game_panel.panel.panel-success
+    .panel-heading > h4= .Name
+    .panel-body > p= .Description
+    .panel-footer
+      form action="/games" method="post"
+        input type="hidden" name="game_id" value=.ID
+        input.btn.btn-primary.btn-lg.btn-block type="submit" value=play_this_game

@@ -1,0 +1,26 @@
+{
+	"ImportPath": "github.com/julien/gogala",
+	"GoVersion": "go1.4.1",
+	"Deps": [
+		{
+			"ImportPath": "github.com/satori/go.uuid",
+			"Rev": "3beb4ac9036769bac8fea7ee8d686280d7ff02ea"
+		},
+		{
+			"ImportPath": "golang.org/x/net/websocket",
+			"Rev": "5058c78c3627b31e484a81463acd51c7cecc06f3"
+		},
+		{
+			"ImportPath": "golang.org/x/tools/go/ast/astutil",
+			"Rev": "84312aa521a751f09abebc5bd240a1719f2d1dcf"
+		},
+		{
+			"ImportPath": "golang.org/x/tools/imports",
+			"Rev": "84312aa521a751f09abebc5bd240a1719f2d1dcf"
+		},
+		{
+			"ImportPath": "golang.org/x/tools/playground/socket",
+			"Rev": "84312aa521a751f09abebc5bd240a1719f2d1dcf"
+		}
+	]
+}

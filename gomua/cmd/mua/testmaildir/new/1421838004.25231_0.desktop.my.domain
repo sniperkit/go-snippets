@@ -1,0 +1,78 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Wed, 21 Jan 2015 06:00:04 -0500
+Received: (qmail 27196 invoked from network); 21 Jan 2015 02:51:23 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 21 Jan 2015 02:51:23 -0800
+X-ASG-Debug-ID: 1421837482-017fd408af2064000001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id kmwT2vD6DsxjoDKj for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 02:51:22 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146309=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0LB4Zat006822
+	for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 04:04:38 -0700 (MST)
+Received: from obiit.org (integer.obiit.org [195.168.92.92])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0LB4O50012459
+	for <misc@openbsd.org>; Wed, 21 Jan 2015 04:04:26 -0700 (MST)
+Received: by integer.obiit.org (Postfix, from userid 1001) id ED098D85D0; Wed, 21 Jan 2015 11:50:35 +0100 (CET)
+Date: Wed, 21 Jan 2015 11:50:35 +0100
+From: frantisek holop <minusf@obiit.org>
+To: misc@openbsd.org
+Cc: Currell Berry <currellberry@gmail.com>
+Subject: Re: What are the disadvantages of soft updates?
+Message-ID: <20150121105035.GA11043@obiit.org>
+X-ASG-Orig-Subj: Re: What are the disadvantages of soft updates?
+Mail-Followup-To: misc@openbsd.org,
+	Currell Berry <currellberry@gmail.com>
+References: <em5ec6d08e-c3e2-49fb-90cc-d5735f9c60d6@probook> <20150120091709.GE21763@moule.localdomain>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+In-Reply-To: <20150120091709.GE21763@moule.localdomain>
+User-Agent: Mutt/1.5.23 (2014-03-12)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421837482
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14496
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+Alexandre Ratchov, 20 Jan 2015 10:17:
+> in *my* practice, yes. I lost no single file last 10 years despite
+> the frequent system crashes during kernel development &
+> experimenting.
+
+very nice, i dont doubt that.
+
+but in my experience it is not that hard to get a
+corrupted filesystem with softupdates and i had to stop
+using it.  but i seem to attract panics and
+page faults.
+
+in the recent past i had corrupted filesystems even
+without softupdates, up to a point that nowadays i
+mount -o sync,noatime.
+
+i have a toshiba ssd, so it actually feels like having
+softupdates on :)
+
+when your hardware (and its drivers) are solid,
+i am all for it though.  i just dont have that hw.
+
+-f
+-- 
+day-by-day a day goes by.
+

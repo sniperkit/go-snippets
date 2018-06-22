@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gopher Quiz</title>
+    <meta property="og:title" content="Gopher Quiz"/>
+    <!-- <meta property="og:image" content="image.png" /> -->
+    <meta property="og:description" content="How much GoLang do you know ?"/>
+    <meta name="description" content="How much GoLang do you know ?"/>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="canonical" href="http://gopherquiz.com/"/>
+    <!--<script type="text/javascript" src="/static/jquery.min.js"></script>-->
+    <!-- analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-58935024-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+<body>
+
+<!-- header -->
+<div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Gopher Quiz <sup>Alpha</sup></a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="#modaldiv" id="boardLink" data-toggle="modal">LeaderBoard</a></li>
+            <li><a href="#modaldiv" id="helpLink" data-toggle="modal">Help</a></li>
+            <li><a href="#modaldiv" id="aboutLink" data-toggle="modal">About</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {{if .login}}
+            <li> <a href="#" id="signinlist">Signed in as {{.username}}</a></li>
+            <li> <a href="#">|</a></li>
+            <li> <a href="{{.logoutUrl}}">Sign Out</a> </li>
+            {{else}}
+            <li><a href="{{.loginUrl}}">Sign in with GitHub <img style="width: 50px;" src="/static/images/github.png"/></a></li>
+            {{end}}
+        </ul>
+    </div>
+    <!--/.nav-collapse -->
+</div>
+<!-- header close -->
+<div id="body">
+
+    <div id="introdiv">
+        <img src="/static/images/gophergame.png"  style="height: 100px;"/>
+        <h3>
+            Are you an hardcore Gopher ?
+        </h3>
+
+        <p>
+        <h4>Prove your worth within 5 minutes.</h4>
+        </p>
+        <input type="button" value="Start Game" id="btnStartGame" class="btn btn-success"/>
+        {{if .login}}
+        {{else}}
+        <div style="padding: 20px; margin: 20px;"><a class="btn btn-default" style="color: #000;"href="{{.loginUrl}}">Sign in with GitHub to compete on LeaderBoard.
+            <br />
+            <br />
+            <img style="width: 100px;" src="/static/images/github.png"/></a>
+        </div>
+        {{end}}
+    </div>
+
+    <div id="questiondiv" style="display:none;">
+        <div id="timerBlock">
+        5m 0s
+        </div>
+        <div id="scoreBlock">
+        <span style="font-size: 20px;">Score:</span> 0
+        </div>
+        <p id="questionBlock">
+
+        </p>
+
+        <div>
+            <pre id="snippetBlock"></pre>
+            <textarea id="answerBlock" placeholder="//Write your codes here"></textarea>
+        </div>
+        <div style="padding: 20px;">
+            <input type="button" id="btnSubmitAnswer" value="Submit" class="btn btn-primary"/>
+            <input type="button" id="btnNextQuestion" value="Next" class="btn btn-primary"/>
+        </div>
+        <div style="padding: 20px;">
+            <pre id="statusBlock" style="display:none;"></pre>
+        </div>
+    </div>
+
+    <div id="finishdiv" style="display:none;">
+        <h4 class="finaltagline">
+            You Rock !
+        </h4>
+
+        <p>
+        <h3>Your score is: <span class="finalscore"></span></h3>
+        </p>
+        <p><h4 style="margin: 0">Why don't you tell the world your score.</h4></p>
+        <a href="#" id="twitterLink" target="_blank"> <img src="/static/images/tweetbutton.png"/> </a>
+        <a href="#" id="facebookLink" target="_blank"> <img src="/static/images/facebookshare.png"/> </a>
+        <a href="https://plus.google.com/share?url=http://gopherquiz.com/" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>
+        <p> &nbsp; </p>
+        <p><input type="button" value="Play Again" id="btnRestartGame" class="btn btn-success"/></p>
+    </div>
+
+    <div id="errordiv" style="display:none;">
+        <img src="/static/images/gophergame.png"  style="height: 100px;"/>
+        <div style="margin:20px;">&nbsp;</div>
+        <h4>Oh! Connection to server seems to be lost. Kindly check your internet connection.</h4>
+        <div style="margin:20px;">&nbsp;</div>
+        <a href="./" class="btn btn-primary">Try connecting again</a>
+    </div>
+
+</div>
+<!-- FOOTER -->
+<div class="footer text-center">
+    &copy; <a href="http://abiosoft.com" target="_blank">Abiosoft</a> 2015
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modaldiv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnModalSave">Save changes</button> -->
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- UI LIBS -->
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/app.js"></script>
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

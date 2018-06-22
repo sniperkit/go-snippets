@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-eqiv="content-type" content="text/html;charset=utf-8">
+    <title>Go con Ejemplos: Cerrando canales</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
+  </script>
+  <body>
+    <div class="example" id="cerrando-canales">
+      <h2><a href="./">Go con Ejemplos</a>: Cerrando canales</h2>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>Al <em>cerrar</em> un canal, indicamos que ya no se enviarán
+más valores por él. Esto puede ser útil para comunicar
+a los canales receptores que el trabajo se ha</p>
+
+          </td>
+          <td class="code leading">
+          <a href="http://play.golang.org/p/LLzv-cO4V7"><img title="Run code" src="play.png" class="run" /></a>
+            <div class="highlight"><pre><span class="c1">//completado.</span>
+<span class="kn">package</span> <span class="nx">main</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>En este ejemplo vamos a usar el canal <code>jobs</code> para
+comunicar el trabajo que debe de ser hecho desde la
+gorutina <code>main()</code> hacia la gorutina trabajadora. Cuando
+no haya más trabajos cerraremos el canal <code>jobs</code> con la
+llamada built-in <code>close</code>.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">jobs</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="nx">done</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">bool</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Aquí esta la gorutina trabajadora. Recibe
+continuamente desde <code>jobs</code> con <code>j, more := &lt;-
+jobs</code>.  En esta variante de recepción de 2 valores,
+el valor <code>more</code> será <code>false</code> si <code>jobs</code> ha sido
+cerrado y todos los valores en este canal han sido
+recibidos.  Usamos esto para notificar en el canal
+<code>done</code> que ya hemos terminado con todos los
+trabajos.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">{</span>
+            <span class="nx">j</span><span class="p">,</span> <span class="nx">more</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">jobs</span>
+            <span class="k">if</span> <span class="nx">more</span> <span class="p">{</span>
+                <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;trabajo recibido&quot;</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;todos los trabajos han&quot;</span> <span class="o">+</span>
+                    <span class="s">&quot;sido recibidos&quot;</span><span class="p">)</span>
+                <span class="nx">done</span> <span class="o">&lt;-</span> <span class="kc">true</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}()</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Aquí enviamos tres trabajos al trabajador por el
+canal <code>jobs</code> y luego lo cerramos.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span>
+        <span class="nx">jobs</span> <span class="o">&lt;-</span> <span class="nx">j</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;trabajo enviado&quot;</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nb">close</span><span class="p">(</span><span class="nx">jobs</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;todos los trabajos han sido enviados&quot;</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Esperamos a que el trabajador termine usando la
+<a>sincronización</a> de
+canales que vimos anteriormente</p>
+
+          </td>
+          <td class="code">
+          
+            <div class="highlight"><pre>    <span class="o">&lt;-</span><span class="nx">done</span>
+<span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+      </table>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>La idea de cerrar canales nos lleva naturalmente a
+nuestro siguiente ejemplo: Usar <code>range</code> con canales.</p>
+
+          </td>
+          <td class="code">
+          
+            <div class="highlight"><pre><span class="gp">$</span> go run cerrando-canales.go 
+<span class="go">trabajo enviado 1</span>
+<span class="go">trabajo recibido 1</span>
+<span class="go">trabajo enviado 2</span>
+<span class="go">trabajo recibido 2</span>
+<span class="go">trabajo enviado 3</span>
+<span class="go">trabajo recibido 3</span>
+<span class="go">todos los trabajos han sido enviados</span>
+<span class="go">todos los trabajos han sido recibidos</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+      </table>
+      
+      
+      <p class="next">
+        Siguiente ejemplo: <a href="range-sobre-canales">Range sobre canales</a>.
+      </p>
+      
+      <p class="footer">
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/cerrando-canales">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+#!/bin/bash -e
+
+if [ ! -e ".godeps" ]; then
+	echo "Missing .godeps! Run bootstrap.sh first!"
+	exit 1
+fi
+
+source gvp in
+git ls-files | grep '.go$' | while read i; do go vet $i 2>&1; done | grep -v "exit status" | grep -v pb.go | grep -v "Error call"
+source gvp out
+

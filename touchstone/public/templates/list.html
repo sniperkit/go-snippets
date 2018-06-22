@@ -1,0 +1,12 @@
+<div class="Category" ng-repeat="category in categories">
+	<h2 ng-click="navToCategory(category.CategoryName)"> {{category.CategoryName}}</h2>
+
+	<ul class="gallery"> 
+		<li class="gallery__item" ng-click="navigateToVideo(video.id)" ng-repeat="video in category.videos">
+
+			<img ng-src="{{video.medium_thumbnail.URL}}" width="{{video.medium_thumbnail.Width}}" height="{{video.medium_thumbnail.Height}}" >
+			<div class="title">{{ video.Title }}</div>
+		</li>
+	</ul>
+  <a ng-click="navToCategory(category.CategoryName)" href="javascript:void(0);">more...</a>
+</div>

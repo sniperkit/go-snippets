@@ -1,0 +1,238 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Sat, 24 Jan 2015 18:00:04 -0500
+Received: (qmail 26823 invoked from network); 24 Jan 2015 14:50:22 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 24 Jan 2015 14:50:22 -0800
+X-ASG-Debug-ID: 1422139820-017fd408af2163a30001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id evp9DVWRrdRzqhAv for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 14:50:20 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146394=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0ON1IZr017183
+	for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 16:01:23 -0700 (MST)
+Received: from www.stare.cz (mx.stare.cz [79.98.77.229])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0ON0w58022106 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=NO)
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 16:01:01 -0700 (MST)
+Received: from www.stare.cz (localhost [127.0.0.1]);
+	by www.stare.cz (OpenSMTPD) with ESMTP id 4f266422;
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 23:47:07 +0100 (CET)
+Date: Sat, 24 Jan 2015 23:47:07 +0100
+From: Jan Stary <hans@stare.cz>
+To: misc@openbsd.org
+Subject: Re: kbc: cmd word write error
+Message-ID: <20150124224707.GA15114@www.stare.cz>
+X-ASG-Orig-Subj: Re: kbc: cmd word write error
+Mail-Followup-To: misc@openbsd.org
+References: <20150124224627.GA3705@www.stare.cz>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+In-Reply-To: <20150124224627.GA3705@www.stare.cz>
+User-Agent: Mutt/1.5.23 (2014-03-12)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422139820
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.50
+X-Barracuda-Spam-Status: No, SCORE=0.50 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_RULE7568M, BSF_SC0_MISMATCH_TO, INFO_TLD
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14598
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+	0.00 INFO_TLD               URI: Contains an URL in the INFO top-level domain
+	0.50 BSF_RULE7568M          Custom Rule 7568M
+
+On Jan 24 23:46:27, hans@stare.cz wrote:
+> Just reinstalled a MacBook2,1 with current/amd64 (dmesg below).
+> Everything is working fine, except I can't do UKC at boot,
+> because the keyboard does not work inside UKC.
+> 
+> In the boot loader I can type my softraid password,
+> and enter 'boot -c'. But once inside UKC, it says
+> 
+> 	kbc: cmd word write error
+> 
+> and the keyboard stops working. I can see the cursor
+> running frantically across the last line I think.
+> http://stare.cz/dmesg/macbook2%2c1-kbc.jpg
+> 
+> NetBSD also used to have this problem it seems:
+> http://marc.info/?l=netbsd-bugs&m=115560001219535&w=2
+> 
+> What can I do to help debug this?
+
+
+OpenBSD 5.7-beta (GENERIC.MP) #5: Sat Jan 24 23:25:30 CET 2015
+    root@mac.stare.cz:/usr/src/sys/arch/amd64/compile/GENERIC.MP
+real mem = 1024417792 (976MB)
+avail mem = 993325056 (947MB)
+mpath0 at root
+scsibus0 at mpath0: 256 targets
+mainbus0 at root
+bios0 at mainbus0: SMBIOS rev. 2.4 @ 0xe0000 (37 entries)
+bios0: vendor Apple Inc. version "MB21.88Z.00A5.B07.0706270922" date 06/27/07
+bios0: Apple Inc. MacBook2,1
+acpi0 at bios0: rev 2
+acpi0: sleep states S0 S3 S4 S5
+acpi0: tables DSDT FACP HPET APIC MCFG ASF! SBST ECDT SSDT SSDT SSDT
+acpi0: wakeup devices ADP1(S3) LID0(S3) PXS1(S4) PXS2(S4) USB1(S3) USB2(S3) USB3(S3) USB4(S3) USB7(S3) EC__(S3)
+acpitimer0 at acpi0: 3579545 Hz, 24 bits
+acpihpet0 at acpi0: 14318179 Hz
+acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat
+cpu0 at mainbus0: apid 0 (boot processor)
+cpu0: Intel(R) Core(TM)2 CPU T7400 @ 2.16GHz, 2161.56 MHz
+cpu0: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,NXE,LONG,LAHF,PERF
+cpu0: 4MB 64b/line 16-way L2 cache
+cpu0: smt 0, core 0, package 0
+mtrr: Pentium Pro MTRR support, 8 var ranges, 88 fixed ranges
+cpu0: apic clock running at 166MHz
+cpu0: mwait min=64, max=64, C-substates=0.2.2.2.2, IBE
+cpu1 at mainbus0: apid 1 (application processor)
+cpu1: Intel(R) Core(TM)2 CPU T7400 @ 2.16GHz, 2161.25 MHz
+cpu1: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,NXE,LONG,LAHF,PERF
+cpu1: 4MB 64b/line 16-way L2 cache
+cpu1: smt 0, core 1, package 0
+ioapic0 at mainbus0: apid 1 pa 0xfec00000, version 20, 24 pins
+ioapic0: misconfigured as apic 0, remapped to apid 1
+acpimcfg0 at acpi0 addr 0xf0000000, bus 0-255
+acpiec0 at acpi0
+acpiprt0 at acpi0: bus 0 (PCI0)
+acpiprt1 at acpi0: bus 1 (RP01)
+acpiprt2 at acpi0: bus 2 (RP02)
+acpiprt3 at acpi0: bus 3 (PCIB)
+acpicpu0 at acpi0: C3, C2, C1, PSS
+acpicpu1 at acpi0: C3, C2, C1, PSS
+acpiac0 at acpi0: AC unit online
+acpibtn0 at acpi0: LID0
+acpibtn1 at acpi0: PWRB
+acpibtn2 at acpi0: SLPB
+acpibat0 at acpi0: BAT0 model "15253732082930497" type 15253732284385612 oem "15253732284387396"
+acpivideo0 at acpi0: GFX0
+cpu0: Enhanced SpeedStep 2161 MHz: speeds: 2167, 2000, 1833, 1667, 1500, 1333, 1000 MHz
+memory map conflict 0x3ef00000/0x100000
+memory map conflict 0x3f000000/0x1000000
+memory map conflict 0xf00f8000/0x1000
+memory map conflict 0xfed1c000/0x4000
+memory map conflict 0xfffb0000/0x30000
+pci0 at mainbus0 bus 0
+pchb0 at pci0 dev 0 function 0 "Intel 82945GM Host" rev 0x03
+vga1 at pci0 dev 2 function 0 "Intel 82945GM Video" rev 0x03
+intagp0 at vga1
+agp0 at intagp0: aperture at 0x40000000, size 0x10000000
+inteldrm0 at vga1
+drm0 at inteldrm0
+inteldrm0: 1280x800
+wsdisplay0 at vga1 mux 1: console (std, vt100 emulation)
+wsdisplay0: screen 1-5 added (std, vt100 emulation)
+"Intel 82945GM Video" rev 0x03 at pci0 dev 2 function 1 not configured
+vendor "Intel", unknown product 0x27a3 (class DASP subclass Time and Frequency, rev 0x03) at pci0 dev 7 function 0 not configured
+azalia0 at pci0 dev 27 function 0 "Intel 82801GB HD Audio" rev 0x02: msi
+azalia0: codecs: Sigmatel STAC9220/1
+audio0 at azalia0
+ppb0 at pci0 dev 28 function 0 "Intel 82801GB PCIE" rev 0x02: msi
+pci1 at ppb0 bus 1
+mskc0 at pci1 dev 0 function 0 "Marvell Yukon 88E8053" rev 0x22, Yukon-2 EC rev. A3 (0x2): apic 1 int 16
+msk0 at mskc0 port A: address 00:1b:63:36:2b:5d
+eephy0 at msk0 phy 0: 88E1111 Gigabit PHY, rev. 2
+ppb1 at pci0 dev 28 function 1 "Intel 82801GB PCIE" rev 0x02: msi
+pci2 at ppb1 bus 2
+athn0 at pci2 dev 0 function 0 "Atheros AR5418" rev 0x01: apic 1 int 17
+athn0: MAC AR5418 rev 2, RF AR5133 (2T3R), ROM rev 4, address 00:1c:b3:c4:b2:ae
+uhci0 at pci0 dev 29 function 0 "Intel 82801GB USB" rev 0x02: apic 1 int 21
+uhci1 at pci0 dev 29 function 1 "Intel 82801GB USB" rev 0x02: apic 1 int 19
+uhci2 at pci0 dev 29 function 2 "Intel 82801GB USB" rev 0x02: apic 1 int 18
+uhci3 at pci0 dev 29 function 3 "Intel 82801GB USB" rev 0x02: apic 1 int 16
+ehci0 at pci0 dev 29 function 7 "Intel 82801GB USB" rev 0x02: apic 1 int 21
+usb0 at ehci0: USB revision 2.0
+uhub0 at usb0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+ppb2 at pci0 dev 30 function 0 "Intel 82801BAM Hub-to-PCI" rev 0xe2
+pci3 at ppb2 bus 3
+"AT&T/Lucent FW322 1394" rev 0x61 at pci3 dev 3 function 0 not configured
+pcib0 at pci0 dev 31 function 0 "Intel 82801GBM LPC" rev 0x02
+pciide0 at pci0 dev 31 function 1 "Intel 82801GB IDE" rev 0x02: DMA, channel 0 configured to compatibility, channel 1 configured to compatibility
+atapiscsi0 at pciide0 channel 0 drive 0
+scsibus1 at atapiscsi0: 2 targets
+cd0 at scsibus1 targ 0 lun 0: <MATSHITA, DVD-R UJ-857E, ZB0E> ATAPI 5/cdrom removable
+cd0(pciide0:0:0): using PIO mode 4, Ultra-DMA mode 4
+pciide0: channel 1 disabled (no drives)
+pciide1 at pci0 dev 31 function 2 "Intel 82801GBM SATA" rev 0x02: DMA, channel 0 configured to native-PCI, channel 1 configured to native-PCI
+pciide1: using apic 1 int 19 for native-PCI interrupt
+wd0 at pciide1 channel 0 drive 1: <ST980811AS>
+wd0: 16-sector PIO, LBA48, 76319MB, 156301488 sectors
+wd0(pciide1:0:1): using PIO mode 4, Ultra-DMA mode 6
+ichiic0 at pci0 dev 31 function 3 "Intel 82801GB SMBus" rev 0x02: apic 1 int 19
+iic0 at ichiic0
+iic0: addr 0x48 00=39 01=00 02=4b 03=50 words 00=3980 01=00ff 02=4b00 03=5000 04=ffff 05=ffff 06=ffff 07=ffff
+spdmem0 at iic0 addr 0x50: 512MB DDR2 SDRAM non-parity PC2-5300CL5 SO-DIMM
+spdmem1 at iic0 addr 0x52: 512MB DDR2 SDRAM non-parity PC2-5300CL5 SO-DIMM
+usb1 at uhci0: USB revision 1.0
+uhub1 at usb1 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb2 at uhci1: USB revision 1.0
+uhub2 at usb2 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb3 at uhci2: USB revision 1.0
+uhub3 at usb3 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb4 at uhci3: USB revision 1.0
+uhub4 at usb4 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+isa0 at pcib0
+isadma0 at isa0
+pcppi0 at isa0 port 0x61
+spkr0 at pcppi0
+render error detected, EIR: 0x00000010
+page table error
+  PGTBL_ER: 0x00000102
+error: [drm:pid0:i915_report_and_clear_eir] *ERROR* EIR stuck: 0x00000010, masking
+render error detected, EIR: 0x00000010
+page table error
+  PGTBL_ER: 0x00000102
+uvideo0 at uhub0 port 4 configuration 1 interface 0 "Apple Computer Bluetooth" rev 2.00/0.0c addr 2
+uaudio0 at uhub1 port 1 configuration 1 interface 0 "M Audio MobilePre" rev 1.10/1.03 addr 2
+uaudio0: audio rev 1.00, 9 mixer controls
+audio1 at uaudio0
+uhidev0 at uhub1 port 2 configuration 1 interface 0 "Apple Computer Apple Internal Keyboard / Trackpad" rev 2.00/0.18 addr 3
+uhidev0: iclass 3/1
+ukbd0 at uhidev0: 8 variable keys, 5 key codes, country code 13
+wskbd0 at ukbd0: console keyboard, using wsdisplay0
+uhidev1 at uhub1 port 2 configuration 1 interface 1 "Apple Computer Apple Internal Keyboard / Trackpad" rev 2.00/0.18 addr 3
+uhidev1: iclass 3/1, 5 report ids
+ums0 at uhidev1 reportid 2: 3 buttons
+wsmouse0 at ums0 mux 0
+ums1 at uhidev1 reportid 5
+ums1: mouse has no X report
+uhidev2 at uhub1 port 2 configuration 1 interface 2 "Apple Computer Apple Internal Keyboard / Trackpad" rev 2.00/0.18 addr 3
+uhidev2: iclass 3/0
+uhid0 at uhidev2: input=1, output=0, feature=0
+uhidev3 at uhub3 port 2 configuration 1 interface 0 "Apple Computer, Inc. IR Receiver" rev 2.00/1.10 addr 2
+uhidev3: iclass 3/0, 38 report ids
+uhid1 at uhidev3 reportid 36: input=4, output=0, feature=0
+uhid2 at uhidev3 reportid 37: input=4, output=0, feature=0
+uhid3 at uhidev3 reportid 38: input=4, output=0, feature=0
+uhidev4 at uhub4 port 1 configuration 1 interface 0 "Apple Computer HID-proxy" rev 2.00/19.65 addr 2
+uhidev4: iclass 3/1
+ukbd1 at uhidev4: 8 variable keys, 6 key codes
+wskbd1 at ukbd1 mux 1
+wskbd1: connecting to wsdisplay0
+uhidev5 at uhub4 port 1 configuration 1 interface 1 "Apple Computer HID-proxy" rev 2.00/19.65 addr 2
+uhidev5: iclass 3/1
+ums2 at uhidev5: 5 buttons
+wsmouse1 at ums2 mux 0
+vscsi0 at root
+scsibus2 at vscsi0: 256 targets
+softraid0 at root
+scsibus3 at softraid0: 256 targets
+sd0 at scsibus3 targ 1 lun 0: <OPENBSD, SR CRYPTO, 005> SCSI2 0/direct fixed
+sd0: 19801MB, 512 bytes/sector, 40552459 sectors
+root on sd0a (6a43b4ff960b63d7.a) swap on sd0b dump on sd0b
+uvideo0 detached
+uvideo0 at uhub0 port 4 configuration 1 interface 0 "Micron Built-in iSight" rev 2.00/1.84 addr 2
+video0 at uvideo0
+

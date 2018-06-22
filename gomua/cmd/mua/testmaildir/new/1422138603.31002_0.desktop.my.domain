@@ -1,0 +1,278 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Sat, 24 Jan 2015 17:30:03 -0500
+Received: (qmail 22237 invoked from network); 24 Jan 2015 14:11:02 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 24 Jan 2015 14:11:02 -0800
+X-ASG-Debug-ID: 1422137460-017fd408af2162960001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id I9R25FP09ifv0zeu for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 14:11:00 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146392=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0OMMiIm000795
+	for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 15:22:49 -0700 (MST)
+Received: from sapo.pt (relay2.ptmail.sapo.pt [212.55.154.22])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0OMMMtN028685 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=NO)
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 15:22:24 -0700 (MST)
+Received: (qmail 13600 invoked
+	by uid 0); 24 Jan 2015 22:08:28 -0000
+Received: from unknown (HELO sapo.pt) (10.134.36.76)
+	by relay2 with SMTP; 24 Jan 2015 22:08:28 -0000
+Received: (qmail 13427 invoked from network); 24 Jan 2015 22:08:28 -0000
+Received: from unknown (HELO mail.phistat.com) (zeloff@sapo.pt@[85.245.87.15]) (envelope-sender <zeloff@zeloff.org>)
+	by mta-auth02 (qmail-ptmail-1.0.0) with SMTP
+	for <misc@openbsd.org>; 24 Jan 2015 22:08:27 -0000
+X-PTMail-RemoteIP: 85.245.87.15
+X-PTMail-AllowedSender-Action: 
+Received: from scomber.wlan.phistat.com (scomber.wlan.phistat.com [10.17.18.168])
+	by mail.phistat.com (Postfix) with ESMTPS id C045494
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 22:08:26 +0000 (WET)
+Received: from scomber.wlan.phistat.com (localhost [127.0.0.1]);
+	by scomber.wlan.phistat.com (OpenSMTPD) with ESMTP id d8e2b4f1;
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 22:08:26 +0000 (WET)
+Date: Sat, 24 Jan 2015 22:08:26 +0000
+From: =?iso-8859-1?Q?Z=E9?= Loff <zeloff@zeloff.org>
+To: misc@openbsd.org
+Subject: Re: SIM card in a Thinkpad T400
+Message-ID: <20150124220826.GA13088@scomber.wlan.phistat.com>
+X-ASG-Orig-Subj: Re: SIM card in a Thinkpad T400
+Mail-Followup-To: misc@openbsd.org
+References: <20150124170030.GA27256@www.stare.cz> <20150124171208.GE2730@colo.drijf.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <20150124171208.GE2730@colo.drijf.net>
+User-Agent: Mutt/1.5.23 (2014-03-12)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422137460
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO, INFO_TLD
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14597
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+	0.00 INFO_TLD               URI: Contains an URL in the INFO top-level domain
+
+On Sat, Jan 24, 2015 at 06:12:08PM +0100, Otto Moerbeek wrote:
+> On Sat, Jan 24, 2015 at 06:00:30PM +0100, Jan Stary wrote:
+> 
+> > I only just found that my Thinkpad T400 (dmesg below)
+> > has a slot that accepts a SIM card. I plugged mine in,
+> > but don't see anything new in dmesg or ifconfig.
+> > 
+> > Is there a way to use this for a mobile data connection?
+> > Can I use be just any SIM card, or does it have to be a specific one?
+> > Does this have anything to do with the umodem(4) I see in dmesg?
+> 
+> In can only speak form experience with T400, there you need a SIM card
+> and a 3G modem card like Lenove H5321. Watch out, this machine uses a
+> white list, only specific cards will work. 
+> 
+> But the Ericsson card could work with pppd. The tricky part is setting
+> it up. 
+> 
+> 	-Otto
+> 
+
+Hi Jan
+
+There is no need for pppd, you can setup the connection by issuing a
+couple of AT commands and then bring the cdce0 interface up. See this
+message (and thread):
+
+http://marc.info/?l=openbsd-misc&m=139472867308198&w=2
+
+That particular message contains the links for two documents with
+relevant AT commands which you will need to know about. If you are lucky
+AT+CFUN and AT*ENAP will be enough (it was for me), if you're not,
+you'll need to configure a 'profile' (username, password, APN, etc), and
+from then on +CFUN and *ENAP will be enough (one to bring up the radio,
+the other to make the connection with the given profile).
+
+If you need further info feel free to contact me, I am by no means an
+expert on the matter, but I've spent a significant amount of time trying
+to figure it out (and did), and maybe I can save some of yours.
+
+Attached below is a perl script I crafted to quickly connect/disconnect
+and query for status (network name, signal strength, HSDPA/GPRS, etc).
+It is a bit flawed, and maybe could use some improvement from someone
+who actually knows what he's doing, but hey "it works for me".
+
+Cheers
+Zé
+
+-- 
+
+
+#!/usr/bin/perl -w
+
+use strict;
+use warnings;
+
+use Device::Modem;
+
+my $modem;
+
+sub send_command {
+	$modem->atsend( $_[0] . Device::Modem::CR );
+	my $ans = $modem->answer();
+
+	my ($short_ans) = ($ans =~ /(.*)\n/m);
+	
+	if ( index($ans, $_[1]) != -1 ) {
+		print STDERR $_[0] . " -> " . $ans . "\n"; 
+		return 0;
+	}
+	if ( length $short_ans && index($short_ans, $_[1]) != -1 ) {
+		print STDERR $_[0] . " -> " . $short_ans . "\n"; 
+		return 0;
+	}
+
+	sleep 5;
+	$modem->atsend( $_[0] . Device::Modem::CR );
+	$ans = $modem->answer();
+	if ( index($ans, $_[1]) != -1 ) {
+		print STDERR $_[0] . " -> " . $ans . "\n"; 
+		return 0;
+	}
+
+	print STDERR "ERROR: " . $_[0] . "\n";
+	print STDERR "Answer: " . $ans . "\nShort answer: " . $short_ans . "\nExpected: " . $_[1];
+	$modem->disconnect();
+	exit 1;
+}
+
+sub status {
+
+	my @cfun_codes = ("Off", "GPRS + UMTS", "?", "?", "RF off", "GPRS only", "UMTS only" );
+	my @cops_codes = ("GSM", "Compact GSM", "UMTS");
+
+	$modem->atsend( 'AT*E2CFUN?' . Device::Modem::CR );
+	my $cfun = $modem->answer();
+	my ($cfunv) = ( $cfun =~ /,(\d),/ );
+	print "Mode: " . $cfun_codes[$cfunv] . "\n";
+
+	if ( grep( /^$cfunv/, ( 1, 5, 6 ) ) ) {
+		$modem->atsend( 'AT+COPS?' . Device::Modem::CR );
+		my $cops = $modem->answer();
+		if (defined $cops) {
+			my ($copsv) = ( $cops =~ /",(\d)/s );
+			if (defined $copsv) {
+				print "Network: " . $cops_codes[$copsv] . "\n";
+			}
+		}
+
+		$modem->atsend( 'AT*E2EMM=9' . Device::Modem::CR );
+		my $emm = $modem->answer();
+		if (defined $emm) {
+			my $rssi;
+			my ( $mode ) = ( $emm =~ /^([A-Z]+)\s/mg );
+			my ( $emml ) = ( $emm =~ /^ ([0-9]+.*)/mg );
+			my @emmv = split( ',', $emml );
+			print "Cell: " . $mode . "\n";
+			if ($mode eq "WCDMA") {
+				$emmv[7] =~ s/^\s+|\s+$//g;
+				$rssi = $emmv[7]
+			} else {
+				$emmv[6] =~ s/^\s+|\s+$//g;
+				$rssi = $emmv[6]
+			}
+			print "RSSI: " . $rssi . " dBm\n";
+		}
+	}
+
+	$modem->atsend( 'AT*ERINFO?' . Device::Modem::CR );
+	my $erinfo = $modem->answer();
+	if (defined $erinfo) {
+		my ( $erinfol ) = ( $erinfo =~ /^\*ERINFO:\s([0-9,]*)/mg );
+		my $tech;
+		if ( defined $erinfol ) {
+			if ( $erinfol eq "0,1,0" ) {
+				$tech = "GPRS";
+			} elsif ( $erinfol eq "0,2,0" ) {
+				$tech = "EDGE";
+			} elsif ( $erinfol eq "0,0,1" ) {
+				$tech = "WCDMA";
+			} elsif ( $erinfol eq "0,0,2" ) {
+				$tech = "HSDPA";
+			};
+			print "Tech: " . $tech . "\n";
+		}
+	}
+
+	$modem->atsend( 'AT+CIND?' . Device::Modem::CR );
+	my $cind = $modem->answer();
+	if (defined $cind) {
+		my ( $cindl ) = ( $cind =~ /^\+CIND:\s([0-9,]*)/mg );
+		my @cindv = split(',', $cindl );
+		print "Battery: " . $cindv[0] . "\n" .
+		"Signal: " . $cindv[1] . "\n" .
+		"Bat warning: " . $cindv[2] . "\n".
+		"Charger: " . $cindv[3] . "\n" .
+		"Service: " . $cindv[4] . "\n" .
+		"Sounder: " . $cindv[5] . "\n" .
+		"Message: " . $cindv[6] . "\n" .
+		"Call: " . $cindv[7] . "\n" .
+		"Roaming: " . $cindv[8] . "\n" .
+		"SMS Full: " . $cindv[9] . "\n" .
+		"Call setup: " . $cindv[10] . "\n" .
+		"Call held: " . $cindv[11] . "\n";
+	}
+	
+	return 0
+}
+
+sub link_up {
+	send_command("AT", "OK");
+	send_command("AT+CFUN=1", "OK");
+	sleep 5;
+	send_command("AT+PACSP?", "+PACSP0");
+	send_command("AT*ENAP=1,1", "OK");
+	sleep 5;
+	send_command("AT*ENAP?", "*ENAP: 1");
+}
+
+sub link_down {
+	send_command("AT", "OK");
+	send_command("AT*ENAP=0", "OK");
+	sleep 2;
+	send_command("AT*ENAP?", "*ENAP: 0");
+	send_command("AT+CFUN=4", "OK");
+	sleep 2;
+	send_command("AT+CFUN?", "+CFUN: 4")
+}
+
+for ($ARGV[0]) {
+	if (/up/) { 
+		$modem = new Device::Modem( port => '/dev/cuaU0' );
+		$modem->connect(baudrate => 9600);
+		link_up();
+	}
+	if (/down/) { 
+		$modem = new Device::Modem( port => '/dev/cuaU0' );
+		$modem->connect(baudrate => 9600);
+		link_down();
+	}
+	if (/status/) {
+		$modem = new Device::Modem( port => '/dev/cuaU1' );
+		$modem->connect(baudrate => 9600);
+		status();
+	}
+}
+
+$modem->disconnect();
+
+-- 
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>diff test</title>
+</head>
+<body>
+
+<script type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/static/js/lib/diff/diff_match_patch.js"></script>
+<script type="text/javascript" src="/static/js/doc.js"></script>
+<script type="text/javascript">
+    var doc = OpenDoc("/doc/filename");
+    var doc2 = OpenDoc("/doc/filename");
+    console.log(doc);
+    doc.setContent(doc.content+doc.version);
+    var result = doc.commit();
+    console.log(result);
+    console.log(doc);
+    doc2.pull();
+    console.log(doc2);
+</script>
+</body>
+</html>

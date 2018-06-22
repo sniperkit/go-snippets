@@ -1,0 +1,22 @@
+{
+    "Port": 8080,
+    "MaxFileSize": 20971520,
+    "HashLength": 7,
+    "UserAgent": "ImgurGo (https://github.com/gophergala/ImgurGo)",
+    "Stores" : [
+        {
+            "Type" : "s3",
+            "BucketName" : "",
+            "StoreRoot" : "",
+            "Region" : "us-east-1",
+            "NamePathRegex" : "",
+            "NamePathMap" : "${ImageSize}/${ImageName}"
+        },
+        {
+            "Type" : "local",
+            "StoreRoot": "/Users/jarvis/imagestore",
+            "NamePathRegex" : "^([a-zA-Z0-9])([a-zA-Z0-9]).*",
+            "NamePathMap" : "${ImageSize}/${1}/${2}/${ImageName}"
+        }
+    ]
+}

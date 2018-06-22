@@ -1,0 +1,67 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Wed, 21 Jan 2015 04:30:22 -0500
+Received: (qmail 18056 invoked from network); 21 Jan 2015 01:28:57 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 21 Jan 2015 01:28:57 -0800
+X-ASG-Debug-ID: 1421832536-017fd408af2061030001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id WcBoBbTP5GiVMh5v for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 01:28:56 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146308=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0L9gXQ5020200
+	for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 02:42:35 -0700 (MST)
+Received: from mail2.azathoth.net (172-11-193-180.lightspeed.sntcca.sbcglobal.net [172.11.193.180])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0L9gNfj012365 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=NO)
+	for <misc@openbsd.org>; Wed, 21 Jan 2015 02:42:25 -0700 (MST)
+Received: from mail2.azathoth.net (localhost [127.0.0.1])
+	by mail2.azathoth.net (8.14.7/8.14.5) with ESMTP id t0L9WVVl010532; Wed, 21 Jan 2015 01:32:32 -0800 (PST)
+Received: (from mlarkin@localhost)
+	by mail2.azathoth.net (8.14.7/8.14.5/Submit) id t0L9WV3g007744; Wed, 21 Jan 2015 01:32:31 -0800 (PST)
+Date: Wed, 21 Jan 2015 01:32:31 -0800
+From: Mike Larkin <mlarkin@azathoth.net>
+To: Martijn van Duren <martijn987@gmail.com>
+Cc: misc@openbsd.org
+Subject: Re: mobile internet support
+Message-ID: <20150121093231.GI1442@mail2.azathoth.net>
+X-ASG-Orig-Subj: Re: mobile internet support
+Reply-To: mlarkin@azathoth.net
+References: <1421830967.3152.8.camel@baldr.rootnet.nl>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+In-Reply-To: <1421830967.3152.8.camel@baldr.rootnet.nl>
+User-Agent: Mutt/1.5.21 (2010-09-15)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421832536
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14495
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+
+On Wed, Jan 21, 2015 at 10:02:47AM +0100, Martijn van Duren wrote:
+> Hello misc@,
+> 
+> I need to have mobile internet to be standby for work.
+> Is there any 4G dongle fully supported by OpenBSD (in combination with
+> dutch mobile internet providers)?
+> 
+> Sincerely,
+> 
+> Martijn van Duren
+> 
+
+Tether to your cellphone and use urndis(4)?
+

@@ -1,0 +1,39 @@
+{
+    "apiVersion": "v1beta1",
+    "kind": "ReplicationController",
+    "id": "gevvent-event-service-controller",
+    "desiredState": {
+        "replicas": 1,
+        "replicaSelector": {
+            "name": "gevvent-event-service"
+        },
+        "podTemplate": {
+            "desiredState": {
+                "manifest": {
+                    "version": "v1beta1",
+                    "id": "gevvent-event-service-controller",
+                    "containers": [{
+                        "name": "gevvent-event-service",
+                        "image": "gcr.io/gevvent/gevvent-event-service",
+                        "imagePullPolicy": "PullAlways",
+                        "ports": [{
+                            "name": "http-server",
+                            "containerPort": 8080
+                        }],
+                        "env": [{
+                            "name": "CONSUL_HTTP_ADDR",
+                            "value": "consul-http.default.kubernetes.local:8181"
+                        }],
+                        "command": ["--registry=kubernetes", "--bind_address=:8080"]
+                    }]
+                }
+            },
+            "labels": {
+                "name": "gevvent-event-service"
+            }
+        }
+    },
+    "labels": {
+        "name": "gevvent-event-service"
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "rethinkdb-driver",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 28015,
+  "containerPort": "rethinkdb-driver",
+  "selector": { "name": "rethinkdb" },
+  "labels": { "name": "rethinkdb" }
+}

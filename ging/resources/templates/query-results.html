@@ -1,0 +1,57 @@
+{{range .Results}}
+<div class="col-md-12 result">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">
+        <p>
+          {{if eq .Type "p"}}
+          <span class="label label-package">Package</span>
+          {{end}}
+          {{if eq .Type "f"}}
+          <span class="label label-func">Function</span>
+          {{end}}
+          {{if eq .Type "c"}}
+          <span class="label label-const">Constant</span>
+          {{end}}
+          {{if eq .Type "v"}}
+          <span class="label label-var">Variable</span>
+          {{end}}
+          {{if eq .Type "t"}}
+          <span class="label label-type">Type</span>
+          {{end}}
+          {{if eq .Type "m"}}
+          <span class="label label-method">Method</span>
+          {{end}}
+          <span class="name">
+            {{if .Highlights.Name}}
+            {{.Highlights.Name}}
+            {{else}}
+            {{.Name}}
+            {{end}}
+          </span>
+        </p>
+        <p class="link-wrapper">
+          <a href="{{.Link}}" target="_blank">{{.Link}}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  {{if .Highlights.Content}}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="well content-highlight">
+        {{.Highlights.Content}}
+      </div>
+    </div>
+  </div>
+  {{end}}
+</div>
+{{else}}
+  {{if .ShowNoResultAlert}}
+    <div class="col-md-10 col-md-offset-1">
+      <div class="alert alert-warning no-results" role="alert">
+        <p>Sorry, there is nothing like that</p>
+      </div>
+    </div>
+  {{end}}
+{{end}}

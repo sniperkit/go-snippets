@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Gallivanting Gophers</title>
+    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- inject:js -->
+    <!-- endinject -->
+  </head>
+  <body ng-app="gg" ng-controller="indexCtrl">
+    <div class="container">
+      <div class="row">
+        <gg-gameboard update-data="boardData" gopher-selected="updateGopher"></gg-gameboard>
+        <gg-controls update-trigger="updateTrigger"></gg-controls>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+h1#player_status class="{{ if eq .Lobby.Czar.ID .Player.ID }}czar{{ end }}"
+  = .Player.StatusMessage
+#player_board
+  ?.Player.ShowCards
+    .btn-group-vertical.card-list
+      &.Hand
+        a.btn.btn-default.btn-block.play_card= .Name
+  ?.Judging
+    .btn-group-vertical.judge-list
+      &.Judging:$card:$pid
+        a.btn.btn-default.btn-block.judge_card data-pid=$pid
+          = $.Lobby.Instance.CurrentWith $card
+
+#action
+  ?.Player.Actionable
+    a.btn.btn-primary#dothing.btn-block
+      = .Player.ButtonMessage
+  !?
+    a.btn.btn-primary#dothing.btn-block.disabled
+      = .Player.ButtonMessage

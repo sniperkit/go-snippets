@@ -1,0 +1,118 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Thu, 22 Jan 2015 07:00:03 -0500
+Received: (qmail 31195 invoked from network); 22 Jan 2015 03:47:48 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 22 Jan 2015 03:47:48 -0800
+X-ASG-Debug-ID: 1421927267-017fd408af20b43b0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id Rv1CLhs68WBZytck for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 03:47:47 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146344=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0MC1Swd009299
+	for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 05:01:31 -0700 (MST)
+Received: from mail-wi0-f181.google.com (mail-wi0-f181.google.com [209.85.212.181])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0MC1Eof004614 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 05:01:16 -0700 (MST)
+Received: by mail-wi0-f181.google.com with SMTP id fb4so2138675wid.2
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 03:47:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:in-reply-to:references:date:message-id:subject:from:cc :content-type; bh=XX+p2bpCSrFdeUuRDxbgrP1kXFKIylBaaxo42dK2XbA=; b=RuIV6/VF8axuzqfN1PJoY21ypNmhO54yyzVLnOeUf1Eb9pQKkQW4DRmFG4t30iiZby kfTGIK6zuGKtVtM8mFBxNXJvetsUEuqf3Mak6Hebp6Ec+RQ0pXQdSWpUjMmWS78C0Xvn i1aQrplHrGt2HcjNVLznOeOY+ijjnl1RMwcG0uL5E+WZBNwg5uE8VlHjWCqVh6XoJ+BF yxQRaNZOlY0udUatiZ4nTO2BbZWDGAsNm5wWpg7UvHShnm4At/Z3E/OR8k6zDXifvj+k uwdUl5BNc6hfj3J/gbI8b101EtXexYDs4V8hTTcNJxIPMA8ScO4BI3loxv9ymKcw4xiF 4qQg==
+MIME-Version: 1.0
+X-Received: by 10.194.23.6 with SMTP id i6mr2292535wjf.26.1421927244732; Thu, 22 Jan 2015 03:47:24 -0800 (PST)
+Received: by 10.27.87.34 with HTTP; Thu, 22 Jan 2015 03:47:24 -0800 (PST)
+In-Reply-To: <CA+tMuX0iV2yae-HFtrwL=eX1o+BRfFOV=QEgqZfpvgjzEEG9Dg@mail.gmail.com>
+References: <CAAr43iNahdFTa4Vp_Yd8z20U3--6o+QMYKaGJ3+L+d9yCCQZ5g@mail.gmail.com> <CA+tMuX0iV2yae-HFtrwL=eX1o+BRfFOV=QEgqZfpvgjzEEG9Dg@mail.gmail.com>
+Date: Thu, 22 Jan 2015 20:47:24 +0900
+Message-ID: <CAAr43iOiWZqdQcEvD6QQ5CVa33GnNt+cyuFDqEe3yMMkD79suQ@mail.gmail.com>
+Subject: Re: My computer suddenly turned itself off.
+From: Joel Rees <joel.rees@gmail.com>
+X-ASG-Orig-Subj: Re: My computer suddenly turned itself off.
+Cc: misc <misc@openbsd.org>
+Content-Type: text/plain; charset=UTF-8
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421927267
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 1.71
+X-Barracuda-Spam-Status: No, SCORE=1.71 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC1_TG070, MAILTO_TO_SPAM_ADDR, MISSING_HEADERS
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14526
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	1.21 MISSING_HEADERS        Missing To: header
+	0.00 MAILTO_TO_SPAM_ADDR    URI: Includes a link to a likely spammer email
+	0.50 BSF_SC1_TG070          Custom Rule TG070
+
+On Wed, Jan 21, 2015 at 11:42 PM, trondd <trondd@gmail.com> wrote:
+> Check 'sysctl hw.sensors' and see if you have some temp sensors in
+> there and what they're telling you.
+>
+> Tim.
+
+Now that you mention it, yeah, that command does tell the temperature and such.
+
+Right now:
+
+hw.sensors.acpitz0.temp0=38.50 degC (zone temperature)
+hw.sensors.lm1.temp0=21.00 degC
+hw.sensors.lm1.temp1=38.50 degC
+hw.sensors.lm1.fan0=3668 RPM
+hw.sensors.lm1.fan1=2596 RPM
+hw.sensors.lm1.volt0=1.55 VDC (VCore)
+hw.sensors.lm1.volt1=3.31 VDC (+3.3V)
+hw.sensors.lm1.volt2=5.03 VDC (+5V)
+hw.sensors.lm1.volt3=11.61 VDC (+12V)
+hw.sensors.lm1.volt4=-11.87 VDC (-12V)
+hw.sensors.lm1.volt5=-4.80 VDC (-5V)
+hw.sensors.lm1.volt6=4.87 VDC (5VSB)
+hw.sensors.lm1.volt7=3.30 VDC (VBAT)
+
+To my eye, that all looks withing range. I'll have to try replicating
+the load and checking the temperature. (I had google mail, a wikipedia
+page or two open and some candy-making pages for my wife, but that was
+all at the time. All browser stuff. I was thinking less about load and
+more about firefox dying and taking the system with it. Firefox 26.0
+from the openbsd 5.5 packages. Google even keeps telling me the
+browser is no longer supported by them. Need to upgrade to obsd 5.6
+this weekend if I can make the time.)
+
+On Wed, Jan 21, 2015 at 11:11 PM, Matt M <cmorrow132@gmail.com> wrote:
+> Sudden power offs are often indicative of heat issues, especially on
+> laptops. Does it power right back on and stay on for a long time? If not I
+> would suspect heat. If it does stay on, it may be a power management bug, a
+> bad power source or possibly a failing power supply in the machine.
+>  If it won't power back on right away, or won't stay on till it sits for a
+> while, try cleaning the cpu fan - they collect a lot of dust.
+
+I think it's getting close to time for spring cleaning with the vacuum
+cleaner. Dust is definitely a possibility.
+
+> On Wednesday, January 21, 2015, Joel Rees <joel.rees@gmail.com> wrote:
+>>
+>> I'm looking under /var/log, but not seeing any logfiles to give me any
+>> clues.
+>>
+>> What information should I post? I have /var/log/messages from the
+>> moment of the crash, but it's about 36K.
+>>
+>> dmesg:
+>> ---------------
+>> [See prior post in thread.]
+
+-- 
+Joel Rees
+
+Be careful when you look at conspiracy.
+Look first in your own heart,
+and ask yourself if you are not your own worst enemy.
+Arm yourself with knowledge of yourself, as well.
+

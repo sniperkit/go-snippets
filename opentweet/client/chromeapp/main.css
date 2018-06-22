@@ -1,0 +1,9 @@
+.tweet-list .item .timestamp{
+	font-size: 80%;
+	color: #777;
+	float: right;
+}
+
+.tweet-list .item .item-text-wrap{
+	white-space: normal;
+}

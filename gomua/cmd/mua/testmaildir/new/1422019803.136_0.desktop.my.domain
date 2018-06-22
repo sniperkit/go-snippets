@@ -1,0 +1,74 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 08:30:03 -0500
+Received: (qmail 32214 invoked from network); 23 Jan 2015 05:10:48 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 05:10:48 -0800
+X-ASG-Debug-ID: 1422018645-017fd408af2108ae0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id rtRVwceYusLlvhDx for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 05:10:46 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146368=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0NDNv73028773
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 06:23:59 -0700 (MST)
+Received: from teak.britvault.co.uk (teak.britvault.co.uk [78.33.153.148])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0NDNg7Q029557
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 06:23:43 -0700 (MST)
+Received: by teak.britvault.co.uk (Postfix, from userid 1970) id 3kTLRM6YYPzHv; Fri, 23 Jan 2015 13:09:51 +0000 (GMT)
+Date: Fri, 23 Jan 2015 13:09:51 +0000
+To: misc@openbsd.org
+Subject: Re: OpenBSD talk at ScotLUG, Glasgow
+Message-ID: <20150123130951.GA23878@teak.britvault.co.uk>
+X-ASG-Orig-Subj: Re: OpenBSD talk at ScotLUG, Glasgow
+References: <54BD8546.5020508@crowsons.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+In-Reply-To: <54BD8546.5020508@crowsons.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
+From: skinner@britvault.co.uk (Craig Skinner)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422018645
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14559
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+On 2015-01-19 Mon 22:29 PM |, Fred wrote:
+> 
+> If anyone is in Glasgow on Thursday evening - I'm giving a talk at the
+> Scottish Linux User Group (http://scotlug.github.io/) on Building redundant
+> and transparent firewalls with OpenBSD.
+> 
+
+Superb teaching Fred!
+
+He came backpacked with 5 OpenBSD devices networked, which the live
+streaming of internet music survived the furious battle-axe attack!
+
+Like the capital city of Edinburgh, the Glasgow group has free use of a
+hackerspace, with broadband & projector.
+
+The BBC were live broadcasting from another room in the venue, but I
+reckon Fred's show would've gotten better ratings.
+
+After Fred's 2 dramatic networking demos, he performed an upgrade on an
+Alix firewall.
+
+Ace!
+-- 
+Craig Skinner | http://twitter.com/Craig_Skinner | http://linkd.in/yGqkv7
+

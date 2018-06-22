@@ -1,0 +1,27 @@
+= content main
+  div class="small-12 small-centered columns"
+    form action="/projects/" method="post"
+      div class="row"
+        div class="large-12 columns"
+          h2 Create a new project
+      div class="row"
+        div class="large-6 columns"
+          label Name
+            input type="text" name="name" placeholder="Name of the project"
+        div class="large-6 columns"
+          label Link
+            input type="text" name="link" placeholder="Link (including http://)"
+      div class="row"
+        div class="large-12 columns"
+          label Category
+            select name="categoryId"
+              <% range .Categories %>
+                option value=<% .Id %> <% .Name %>
+              <% end %>
+      div class="row"
+        div class="large-12 columns"
+          label Description
+            textarea name="description" placeholder="Brief Description"
+      div class="row"
+        div class="large-3 columns"
+          input type="submit" value="Save" class="button success expand"

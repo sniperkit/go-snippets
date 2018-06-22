@@ -1,0 +1,75 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Wed, 21 Jan 2015 08:00:04 -0500
+Received: (qmail 27929 invoked from network); 21 Jan 2015 04:36:08 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 21 Jan 2015 04:36:08 -0800
+X-ASG-Debug-ID: 1421843767-017fd408af2068a70001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id 03lGhYvonCbLE8w3 for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 04:36:07 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146313=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0LCmr4B027456
+	for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 05:48:55 -0700 (MST)
+Received: from mail-lb0-f169.google.com (mail-lb0-f169.google.com [209.85.217.169])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0LCmgfs015884 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Wed, 21 Jan 2015 05:48:44 -0700 (MST)
+Received: by mail-lb0-f169.google.com with SMTP id f15so18265023lbj.0
+	for <misc@openbsd.org>; Wed, 21 Jan 2015 04:34:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=2acOhHDObc/YGJI3v5z7CxKAEW9ShyXYZLKJFd/kQgQ=; b=QFbzJLl9i80x9MBNsvtyHjDOI4J1lRD1EIyhjf+DQrJ6F4GYjMdEkTPjlXTp1NrRMa j6aAHI1CPTNJs92chYr9kJgX4+jg5FYYvC0/IdgaisZCL27+o9qwkya5V0zgdSagWrLN 7fIvDhsgWXmnnY3xCJ6Yv+89iOBlN6WsimH6kL1dwuZsJXJOar0owDGG0Ebq4wV7GuAf CBc5cOEmJLx2XsP45T3zzWUi4YOiRhN+jFEfdspuU4ZbP2rdT8M5F2j2hB8DsLR7AzAD MWoCNdLc8Ox5dusfyx9UNITBi60JjCDNEySXQbcTvvpIOtfy3GpUUR6Tr+7VoZDfBFmJ nsTw==
+MIME-Version: 1.0
+X-Received: by 10.112.41.234 with SMTP id i10mr44410554lbl.25.1421843694189; Wed, 21 Jan 2015 04:34:54 -0800 (PST)
+Received: by 10.112.172.10 with HTTP; Wed, 21 Jan 2015 04:34:54 -0800 (PST)
+Date: Wed, 21 Jan 2015 14:34:54 +0200
+Message-ID: <CAHbNe7XYkpOedDkg1EjFPga+vV3PcqwQNVcFf9kLR_VFALjPDQ@mail.gmail.com>
+Subject: Re: What are the disadvantages of soft updates?
+From: Mihai Popescu <mihscu@gmail.com>
+X-ASG-Orig-Subj: Re: What are the disadvantages of soft updates?
+To: misc@openbsd.org
+Content-Type: text/plain; charset=UTF-8
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421843767
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14498
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+> but in my experience it is not that hard to get a
+> corrupted filesystem with softupdates and i had to stop
+> using it.  but i seem to attract panics and
+> page faults.
+
+> in the recent past i had corrupted filesystems even
+> without softupdates, up to a point that nowadays i
+> mount -o sync,noatime.
+
+> i have a toshiba ssd, so it actually feels like having
+> softupdates on :)
+
+> when your hardware (and its drivers) are solid,
+> i am all for it though.  i just dont have that hw.
+
+I might be quick on judgement or even mess with thread's topic, but
+did you reported that problem anywere close to openbsd project lists?
+SSD is a very used hardware under OpenBSD, it is not so exotic. I
+think that are developers who can take a look at your problem if you
+report it.
+
+After watching this thread, I enabled softdep on all FFS partitions
+thinking that Firefox will speed up a bit. I will see the results in
+time.
+

@@ -1,0 +1,76 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Thu, 22 Jan 2015 17:30:10 -0500
+Received: (qmail 21224 invoked from network); 22 Jan 2015 14:24:01 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 22 Jan 2015 14:24:01 -0800
+X-ASG-Debug-ID: 1421965440-017fd408af20e6560001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id m43HPzSb1v6i2r6I for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 14:24:00 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146359=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0MMbhCS030096
+	for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 15:37:45 -0700 (MST)
+Received: from forward3l.mail.yandex.net (forward3l.mail.yandex.net [84.201.143.136])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0MMbWXu022580 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=FAIL)
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 15:37:34 -0700 (MST)
+Received: from smtp3m.mail.yandex.net (smtp3m.mail.yandex.net [77.88.61.130])
+	by forward3l.mail.yandex.net (Yandex) with ESMTP id 8F28815011BB
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 00:28:47 +0300 (MSK)
+Received: from smtp3m.mail.yandex.net (localhost [127.0.0.1])
+	by smtp3m.mail.yandex.net (Yandex) with ESMTP id 3823F27A0481
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 00:28:47 +0300 (MSK)
+Received: from exit4.telostor.ca (exit4.telostor.ca [62.210.74.137])
+	by smtp3m.mail.yandex.net (nwsmtp/Yandex) with ESMTPSA id UJPgAIKbuT-ShkuiZTg; Fri, 23 Jan 2015 00:28:45 +0300 (using TLSv1.2 with cipher AES256-GCM-SHA384 (256/256 bits)) (Client certificate not present)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail; t=1421962126; bh=jvJTXHtWBx9mTOEQyBGg9M4rYaVmv2i4gRFyklzJZR4=; h=Date:From:To:Subject:Message-ID:Mail-Followup-To:References: MIME-Version:Content-Type:Content-Disposition:In-Reply-To: User-Agent; b=DF4ixKMEoxtu0wcW5IjgefXwY2eP0K3tMoGxWMhUMTIYIvqKPVelyvosZ82KTy1HJ Kld9gu6W1Tbxl9Ub8SWLHJ2n7kW+NBdLiyeHqlOua9jSVBsaKG6kqywgkQdWFAgLQs g+VK9DyEatARzhkarHKw6MmdrOfzaHNHwcDV9jIU=
+Authentication-Results: smtp3m.mail.yandex.net; dkim=pass header.i=@yandex.ru
+Date: Fri, 23 Jan 2015 03:28:35 +0600
+From: =?utf-8?B?0JDRgNGC0YPRgCDQmNGB0YLQvtC80LjQvQ==?= <art.istom@yandex.ru>
+To: misc@openbsd.org
+Subject: Re: Hannover BSD meetup
+Message-ID: <20150122212834.GA18032@localhost>
+X-ASG-Orig-Subj: Re: Hannover BSD meetup
+Mail-Followup-To: misc@openbsd.org
+References: <20150122140230.GA18519@autobahn.atexit.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+In-Reply-To: <20150122140230.GA18519@autobahn.atexit.net>
+User-Agent: Mutt/1.5.23 (2014-03-12)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421965440
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14541
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+On Thu, Jan 22, 2015 at 03:02:30PM +0100, Reyk Floeter wrote:
+> Hi,
+> 
+> we figured out that there are more BSD people in the Hannover area,
+> Germany, which seems to be a good reason to meet and get beer.
+> 
+> We're not quite a user group, but let's give it a try.  We're a few
+> developers and users, mostly from OpenBSD but the other ones are
+> welcome.
+> 
+> We don't have a mailing list; just contact me directly or poke me on
+> twitter (@reykfloeter).
+> 
+> Save the date: Thursday, February 19th, 19:30 at "GiG Linden".
+
+What about drunk Russians, bears and balalaikas? )
+

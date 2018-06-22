@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-eqiv="content-type" content="text/html;charset=utf-8">
+    <title>Go con Ejemplos: Limitación de transferencia</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
+  </script>
+  <body>
+    <div class="example" id="limitacion-de-transferencia">
+      <h2><a href="./">Go con Ejemplos</a>: Limitación de transferencia</h2>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>La limitación de tasa de transferencia es un mecanísmo
+importante para controlar la utilización de un
+recurso y mantener la calidad del servicio. Go lo
+soporta elegantemente usando gorutinas, canales y
+<a href="/tickers">tickers</a>.</p>
+
+          </td>
+          <td class="code empty leading">
+          
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          <a href="http://play.golang.org/p/eeVQ_fQ8Jq"><img title="Run code" src="play.png" class="run" /></a>
+            <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;time&quot;</span>
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Primero veamos una limitación básica. Supongamos
+que queremos limirar el número de peticiones
+entrantes que podemos manejar. Serviremos estas
+peticiones desde un canal con el mismo nombre.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="nx">requests</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="nx">requests</span> <span class="o">&lt;-</span> <span class="nx">i</span>
+    <span class="p">}</span>
+    <span class="nb">close</span><span class="p">(</span><span class="nx">requests</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Este canal <code>limiter</code> recibirá un valor cada 200
+milisegundos. Este es el regulador en nuestro
+esquema limitador de transferencia.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="nx">limiter</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Tick</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span> <span class="o">*</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Al bloquear durante la recepción del canal
+<code>limiter</code> antes de servir cada petición, nos
+autolimitamos a una petición cada 200 milisegundos</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="k">for</span> <span class="nx">req</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">requests</span> <span class="p">{</span>
+        <span class="o">&lt;-</span><span class="nx">limiter</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;peticiones&quot;</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">())</span>
+    <span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Podriamos permitir pequeños picos de peticiones
+en nuestro esquema de limitación y seguir
+conservando el limite general. Para lograrlo
+podemos bufferear nuestro canal <code>limiter</code>. Este
+canal <code>burstyLimiter</code> nos permitirá tener picos
+de hasta 3 eventos.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="nx">burstyLimiter</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Llenamos el canal para representar los picos.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="nx">burstyLimiter</span> <span class="o">&lt;-</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">()</span>
+    <span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Cada 200 milisegundos intentaremos agregar un
+nuevo valor a <code>burstyLimiter</code> hasta su límite.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="nx">t</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Tick</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span> <span class="o">*</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">burstyLimiter</span> <span class="o">&lt;-</span> <span class="nx">t</span>
+        <span class="p">}</span>
+    <span class="p">}()</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Ahora simularemos 5 peticiones más. La primera
+de estas 3 se beneficiará de la capacidad de
+soportar picos del canal <code>burstyLimiter</code>.</p>
+
+          </td>
+          <td class="code">
+          
+            <div class="highlight"><pre>    <span class="nx">burstyRequests</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="nx">burstyRequests</span> <span class="o">&lt;-</span> <span class="nx">i</span>
+    <span class="p">}</span>
+    <span class="nb">close</span><span class="p">(</span><span class="nx">burstyRequests</span><span class="p">)</span>
+    <span class="k">for</span> <span class="nx">req</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">burstyRequests</span> <span class="p">{</span>
+        <span class="o">&lt;-</span><span class="nx">burstyLimiter</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;peticiones&quot;</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">())</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+      </table>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>Al ejecutar nuestro programa podemos ver que el primer
+bloque de peticiones es atendido cada ~200 milisegundos
+apróximadamente como lo deseamos.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="gp">$</span> go run limitacion-de-transferencia.go
+<span class="go">peticiones 1 2014-07-16 17:58:36.733961487 +0000 UTC</span>
+<span class="go">peticiones 2 2014-07-16 17:58:36.933979229 +0000 UTC</span>
+<span class="go">peticiones 3 2014-07-16 17:58:37.133983308 +0000 UTC</span>
+<span class="go">peticiones 4 2014-07-16 17:58:37.333995394 +0000 UTC</span>
+<span class="go">peticiones 5 2014-07-16 17:58:37.534003928 +0000 UTC</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>For the second batch of requests we serve the first
+3 immediately because of the burstable rate limiting,
+then serve the remaining 2 with ~200ms delays each.
+Para el segundo bloque de peticiones, servimos los
+primeros 3 inmediatamente usando el soporte de picos,
+y luego servimos los 2 restantes con un retraso de
+ ~200 milisegundos</p>
+
+          </td>
+          <td class="code">
+          
+            <div class="highlight"><pre><span class="go">peticiones 1 2014-07-16 17:58:37.534072367 +0000 UTC</span>
+<span class="go">peticiones 2 2014-07-16 17:58:37.534085589 +0000 UTC</span>
+<span class="go">peticiones 3 2014-07-16 17:58:37.534094082 +0000 UTC</span>
+<span class="go">peticiones 4 2014-07-16 17:58:37.734343287 +0000 UTC</span>
+<span class="go">peticiones 5 2014-07-16 17:58:37.935017031 +0000 UTC</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+      </table>
+      
+      
+      <p class="next">
+        Siguiente ejemplo: <a href="contadores-atomicos">Contadores atómicos</a>.
+      </p>
+      
+      <p class="footer">
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/limitacion-de-transferencia">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      </p>
+    </div>
+  </body>
+</html>

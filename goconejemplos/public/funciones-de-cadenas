@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-eqiv="content-type" content="text/html;charset=utf-8">
+    <title>Go con Ejemplos: Funciones de Cadenas</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
+  </script>
+  <body>
+    <div class="example" id="funciones-de-cadenas">
+      <h2><a href="./">Go con Ejemplos</a>: Funciones de Cadenas</h2>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>La librería estándar del paquete <code>strings</code> provee muchas
+funciones útiles relacionadas a las cadenas. Aquí hay algunos ejemplos
+donde puedes obtener noción del paquete.</p>
+
+          </td>
+          <td class="code empty leading">
+          
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          <a href="http://play.golang.org/p/ekm4Wth7eb"><img title="Run code" src="play.png" class="run" /></a>
+            <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kn">import</span> <span class="nx">s</span> <span class="s">&quot;strings&quot;</span>
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Creamos un alias de <code>fmt.Println</code> a un nombre más corto pues
+lo usaremos bastante debajo.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">var</span> <span class="nx">p</span> <span class="p">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Aquí hay un ejemplo de las funciones disponibles en
+<code>strings</code>. Nota que todas estas funciones son del
+paquete, por lo que no son métodos del objeto string.
+Esto significa que necesitaremos pasar la cadena en cuestión
+como el primer parámetro de la función.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Contains:  &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Contains</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="s">&quot;es&quot;</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Count:     &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Count</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="s">&quot;t&quot;</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;HasPrefix: &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">HasPrefix</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="s">&quot;te&quot;</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;HasSuffix: &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">HasSuffix</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="s">&quot;st&quot;</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Index:     &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Index</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Join:      &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Join</span><span class="p">([]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">},</span> <span class="s">&quot;-&quot;</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Repeat:    &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Repeat</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Replace:   &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Replace</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;o&quot;</span><span class="p">,</span> <span class="s">&quot;0&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Replace:   &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Replace</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;o&quot;</span><span class="p">,</span> <span class="s">&quot;0&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Split:     &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Split</span><span class="p">(</span><span class="s">&quot;a-b-c-d-e&quot;</span><span class="p">,</span> <span class="s">&quot;-&quot;</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;ToLower:   &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">ToLower</span><span class="p">(</span><span class="s">&quot;TEST&quot;</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;ToUpper:   &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">ToUpper</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">()</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Puedes encontrar más funciones en la documentación del paquete <a href="http://golang.org/pkg/strings/"><code>strings</code></a></p>
+
+          </td>
+          <td class="code empty leading">
+          
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>No son parte de <code>strings</code> pero valen la pena mencionar aquí
+los mecanismos para obtener la longitud de una cadena
+y para obtener un carácter por índice.</p>
+
+          </td>
+          <td class="code">
+          
+            <div class="highlight"><pre>    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Len: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">))</span>
+    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Char:&quot;</span><span class="p">,</span> <span class="s">&quot;hello&quot;</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+      </table>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="gp">$</span> go run string-functions.go
+<span class="go">Contains:   true</span>
+<span class="go">Count:      2</span>
+<span class="go">HasPrefix:  true</span>
+<span class="go">HasSuffix:  true</span>
+<span class="go">Index:      1</span>
+<span class="go">Join:       a-b</span>
+<span class="go">Repeat:     aaaaa</span>
+<span class="go">Replace:    f00</span>
+<span class="go">Replace:    f0o</span>
+<span class="go">Split:      [a b c d e]</span>
+<span class="go">toLower:    test</span>
+<span class="go">ToUpper:    TEST</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code">
+          
+            <div class="highlight"><pre><span class="go">Len:  5</span>
+<span class="go">Char: 101</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+      </table>
+      
+      
+      <p class="next">
+        Siguiente ejemplo: <a href="formateo-de-cadenas">Formateo de cadenas</a>.
+      </p>
+      
+      <p class="footer">
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/funciones-de-cadenas">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      </p>
+    </div>
+  </body>
+</html>

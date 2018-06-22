@@ -1,0 +1,11 @@
+application: zeta-rush-835
+
+dispatch:
+  - url: "*/favicon.ico"
+    module: default
+  - url: "zeta-rush-835.appspot.com/"
+    module: default
+  - url: "*/_backend/*"
+    module: backend
+  - url: "*/_process/*"
+    module: processing

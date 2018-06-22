@@ -1,0 +1,88 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Sat, 24 Jan 2015 13:00:03 -0500
+Received: (qmail 12464 invoked from network); 24 Jan 2015 09:41:06 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 24 Jan 2015 09:41:06 -0800
+X-ASG-Debug-ID: 1422121265-017fd408af21593a0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id l5H7BDnxI0gb5epE for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 09:41:05 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146390=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0OHskx0003159
+	for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 10:54:48 -0700 (MST)
+Received: from mail-wg0-f42.google.com (mail-wg0-f42.google.com [74.125.82.42])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0OHpZq5010268 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 10:51:37 -0700 (MST)
+Received: by mail-wg0-f42.google.com with SMTP id x13so2669797wgg.1
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 09:37:43 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=from:to:subject:date:message-id:user-agent:mime-version :content-type; bh=wm0JbXCIFcgwQLK4LXCfphGHaznMSdFC7Fwn3XOftzc=; b=YXvGEzp2PBd/aI+GLQMwDYRi6mcs5CEqc6QTo3ZnFRNJRJXzpvWji+0BWXG/sozVNL l0MJMsaLgHxhxPXop+N9YETiN/bpvueTaNq8E7w1kyN+d/4fw9AoRyEJLwZTza1Y0rhw xkAt70l40ZbvAcLHgdqnuQasyrLL8O/owjdWsvUYxakDHfwHuEGaGaWG2rj7v+FyYj/t hDxeDLQlMrys2HOeqemxNIJD8GUM6WLo0TDAgsvF+TdLG1qPQoZvf8nDMT+C3Xu/BC8O WJqhxe+ihwMg7ZUYQO+Z88FrEMQwkN/4NN763Ln3C5/uzn1IZQUnSU7q/i48BjGsWo/O 72Lg==
+X-Received: by 10.180.211.176 with SMTP id nd16mr15240543wic.23.1422121063885; Sat, 24 Jan 2015 09:37:43 -0800 (PST)
+Received: from juno.localdomain (host191-2.natpool.mwn.de. [138.246.2.191])
+	by mx.google.com with ESMTPSA id h13sm6652453wiw.4.2015.01.24.09.37.43
+	for <misc@openbsd.org> (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128); Sat, 24 Jan 2015 09:37:43 -0800 (PST)
+Received: by juno.localdomain (Postfix, from userid 1000) id 9403A80650; Sat, 24 Jan 2015 18:37:42 +0100 (CET)
+From: Christian Neukirchen <chneukirchen@gmail.com>
+To: misc@openbsd.org
+Subject: [ANN] portable cwm 5.6
+Date: Sat, 24 Jan 2015 18:37:42 +0100
+X-ASG-Orig-Subj: [ANN] portable cwm 5.6
+Message-ID: <87h9vgkrkp.fsf@gmail.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.4 (gnu/linux)
+MIME-Version: 1.0
+Content-Type: text/plain
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422121265
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.50
+X-Barracuda-Spam-Status: No, SCORE=0.50 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_RULE7568M, BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14593
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+	0.50 BSF_RULE7568M          Custom Rule 7568M
+
+Hello,
+
+today I'm proud to release the third public version of portable cwm 5.6.
+
+Portable cwm is a minor modification of the cwm version in OpenBSD CVS
+with a portable Makefile and a few compatibility features.  It has
+been built successfully on OpenBSD, NetBSD, FreeBSD, OS X 10.9 and Linux.
+
+This port requires pkg-config, Xft, Xinerama and Xrandr.  The included
+Makefile should work with both GNU make and BSD make.
+
+This version actively tracks changes in the OpenBSD CVS repository.
+The source can be found at https://github.com/chneukirchen/cwm
+
+A changelog can be found at
+https://github.com/chneukirchen/cwm/blob/linux/README
+
+http://chneukirchen.org/releases/cwm-5.6.tar.gz
+http://chneukirchen.org/releases/cwm-5.6.tar.gz.asc
+http://chneukirchen.org/releases/cwm-5.6.tar.gz.sig
+
+Releases are now also signed with signify(1) using
+http://chneukirchen.org/releases/cwm.pub namely:
+RWTdOib0PoIM0pmDAPnV2S9/AMRqTOVfTY/KAkFemdH13cqBDHdduTas
+
+Enjoy,
+-- 
+Christian Neukirchen  <chneukirchen@gmail.com>  http://chneukirchen.org
+
+637f615a2a5944070cfe2a5fd0125daa461967b5  cwm-5.6.tar.gz
+c7538b807165ab761f25b784fa78a4bac4cd76e4  cwm-5.6.tar.gz.asc
+7320fae4c85a81914e7a1ee3477e7003fdae8639  cwm-5.6.tar.gz.sig
+

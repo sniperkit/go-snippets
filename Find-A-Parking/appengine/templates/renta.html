@@ -1,0 +1,75 @@
+{{ define "css" }}
+    <style type="text/css">
+    	#map{
+    		height: 600px;
+    		width: 90%;
+    	}
+    </style>
+{{ end }}
+
+{{ define "content" }}
+    <div class="ui menu">
+	  <a class="item" href="/home">
+	    <i class="car icon"></i> Find
+	  </a>
+	  <a class="active item">
+	    <i class="building icon"></i> Rent
+	  </a>
+	</div>
+	<div class="ui grid">
+	
+	    <div class="six wide column">
+	    	<form class="ui form">
+  				<h4 class="ui dividing header">Parking Information</h4>
+  				
+			    <div class="field">
+			      <label>Name</label>
+			      
+			        <div class="field">
+			          <input type="text" id="name" name="name" placeholder="Name">
+			        </div>
+			    </div>
+			    <div class="field">
+			      <label>Email</label>
+			      
+			        <div class="field">
+			          <input type="email" id="email" name="email" placeholder="joel@example.com">
+			        </div>
+			    </div>   
+			    <div class="field">
+			      <label>Price</label>
+			      
+			        <div class="field">
+			          <input type="number" id="price"  placeholder="50">
+			        </div>
+			    </div>
+    			<div class="field">
+			      <label>Latitude</label>
+			      
+			        <div class="field">
+			          <input type="text" id="lat" >
+			        </div>
+			    </div>
+			    <div class="field">
+			      <label>Longitude</label>
+			      
+			        <div class="field">
+			          <input type="text" id="lng" >
+			        </div>
+			    </div>
+	  			<div class="field">
+	    			<div id="rent" class="ui submit button">Rent a Park</div>
+	    		</div>
+			</form>
+	    </div>
+	    <div id="map" class="nine wide column">
+	    	
+	    </div>
+	    
+  	</div>
+{{ end }}
+
+{{ define "js" }}
+	<script type="text/javascript" src="http://icalialabs.github.io/dmaps/dmaps.js"></script>
+    <script type="text/javascript" src="/media/js/rent.js"></script>
+{{ end }}

@@ -1,0 +1,11 @@
+{
+	"ImportPath": "github.com/gophergala/serradacapivara",
+	"GoVersion": "go1.4",
+	"Deps": [
+		{
+			"ImportPath": "github.com/zenazn/goji",
+			"Comment": "v0.8.3-2-g33ec673",
+			"Rev": "33ec673ad9018725008730b291c2f156bf3a6bf5"
+		}
+	]
+}

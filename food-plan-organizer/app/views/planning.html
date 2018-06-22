@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Mo</th>
+        <th>Di</th>
+        <th>Mi</th>
+        <th>Do</th>
+        <th>Fr</th>
+        <th>Sa</th>
+        <th>So</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="week in ::weeks">
+        <td ng-repeat="day in ::week"><span ng-bind="::day|date:'dd.MM.'"></span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,9 @@
+<div class="Category">
+<h2>{{ categoryName }}</h2>
+<ul class="gallery">
+	<li class="gallery_item" ng-click="navigateToVideo(video.id)" ng-repeat="video in videos">
+		<img ng-src="{{video.medium_thumbnail.URL}}" width="{{video.medium_thumbnail.Width}}" height="{{video.medium_thumbnail.Height}}" >
+		<h3 class="title">{{video.Title}}</h3>
+	</li>
+</ul>
+</div>

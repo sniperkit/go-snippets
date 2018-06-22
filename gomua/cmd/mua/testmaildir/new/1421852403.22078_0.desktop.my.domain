@@ -1,0 +1,85 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Wed, 21 Jan 2015 10:00:03 -0500
+Received: (qmail 19565 invoked from network); 21 Jan 2015 06:40:51 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 21 Jan 2015 06:40:51 -0800
+X-ASG-Debug-ID: 1421851246-017fd408af2073e90001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id uDFPQmPPe6wEkZfw for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 06:40:46 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146319=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0LEn0rY013491
+	for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 07:49:03 -0700 (MST)
+Received: from mail-yk0-f170.google.com (mail-yk0-f170.google.com [209.85.160.170])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0LEmkax005572 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Wed, 21 Jan 2015 07:48:47 -0700 (MST)
+Received: by mail-yk0-f170.google.com with SMTP id q200so8626846ykb.1
+	for <misc@openbsd.org>; Wed, 21 Jan 2015 06:34:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:in-reply-to:references:date:message-id:subject:from:to :cc:content-type; bh=ZrNJS9TGxaZlWKMX9PqC0R/gRJXmWTqsbjGwr+VMxJg=; b=zgdcB1DOtd0HSytzIk5G8Hq8MauDalLFU9S7wyCvAdn2x9WwnZ8VIDnGqr9CamYY8r iTvmOf6taEGOrHCmT0MGt/VG0yfYUMtgcQxuAoVZKSe702n5CzRZVYzKEWaQMEl15Kwh vPX9IL11s+47P+SguixKXuiOHfVHBzZ9VqmK8ljFbxaL7xBz7rqMRslSmpJ3rYixu293 MRZfVD9Ewb9D+opGpqNDH7lZ32ygEOZTuA5dSHtScUlgUBfFYP32Y/Q5n/6XuXfTiFAS YIqdHk/jscXluKajstyJXSF0qfxd6pa+dMOKVJ1+kRKKUYxIkEUTICnDttuXdw6EjK8E 3OyA==
+MIME-Version: 1.0
+X-Received: by 10.170.87.214 with SMTP id e205mr27627450yka.70.1421850898223; Wed, 21 Jan 2015 06:34:58 -0800 (PST)
+Received: by 10.170.75.65 with HTTP; Wed, 21 Jan 2015 06:34:58 -0800 (PST)
+In-Reply-To: <CAPDERwrOZKdu8T1WZgkKjk6GiqyHBTrtFyZ6re-WTFcYmFETEw@mail.gmail.com>
+References: <CAH8ZPGmaZwn5JtuD_zn0bsVmLcy9gDy4ZVxpbdjLhEs3d8O7TA@mail.gmail.com> <CAPDERwrOZKdu8T1WZgkKjk6GiqyHBTrtFyZ6re-WTFcYmFETEw@mail.gmail.com>
+Date: Wed, 21 Jan 2015 08:34:58 -0600
+Message-ID: <CAPDERwpnQqJgSEP9hML6OPVwLB1Wi-RE=bGFSHZpAvh-d+-UEg@mail.gmail.com>
+Subject: Re: 1U / 2 Computers? For redundant FW pair
+From: Brent Cook <busterb@gmail.com>
+X-ASG-Orig-Subj: Re: 1U / 2 Computers? For redundant FW pair
+To: Alan McKay <alan.mckay@gmail.com>
+Cc: "misc@openbsd.org" <misc@openbsd.org>
+Content-Type: text/plain; charset=UTF-8
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421851246
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.01
+X-Barracuda-Spam-Status: No, SCORE=0.01 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_SA_TO_FROM_DOMAIN_MATCH
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14500
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.01 BSF_SC0_SA_TO_FROM_DOMAIN_MATCH Sender Domain Matches Recipient
+	                           Domain
+
+I take back the HP suggestion, since it was pointed out these share a
+lot of components between the servers as well.
+
+This looks interesting, though it may be under-powered depending on your needs:
+
+http://www.hacom.net/catalog/mars-ii-twin-blade-d525-pfsense-1u-server
+
+With the right search terms, I found a number of other half-width 1u
+servers designed for this application that may also be appropriate.
+They seem to basically repackage mini ITX boards.
+
+On Wed, Jan 21, 2015 at 7:50 AM, Brent Cook <busterb@gmail.com> wrote:
+> I think Dell used to have servers in its 'Cloud' line that fit 2
+> machines in 1U, though IIRC they were a little pricey. I couldn't find
+> them again when searching.
+>
+> The HP SL2x170z server pulls off a similar feat - you can find several
+> on ebay, though it may be discontinued as well.
+>
+> On Wed, Jan 21, 2015 at 6:31 AM, Alan McKay <alan.mckay@gmail.com> wrote:
+>> I know that Supermicro has some interesting side-by-sides starting at
+>> 2U, but I'm not aware of anything in 1U.  Basically I'd like to have
+>> my redundant FW pairs take up less rack space.   I guess another
+>> option would be half-width 1U if anything like that exists, and
+>> install a rack shelf.
+>>
+>>
+>> --
+>> "Don't eat anything you've ever seen advertised on TV"
+>>          - Michael Pollan, author of "In Defense of Food"
+

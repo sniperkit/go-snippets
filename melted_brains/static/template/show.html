@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Go Racer!</title>
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="/js/core.js"></script>
+
+    <title>Gopher Run</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.1/flatly/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+  </head>
+  <body id="page-top" class="index">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#page-top">Gopher Run</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="dropdown nav navbar-nav navbar-right">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+              {{.Name}}
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="/game/random/join">Join another game</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+
+    <section class="join">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <img  class="img-enter-name"  src="https://golang.org/doc/gopher/talks.png" alt="">
+
+        <h4>Waiting for Other Gophers</h3>
+        <ul class="list-group" id="joined_list">
+
+        </ul>
+      </div>
+    </section>
+
+    <section class="" id="main_game">
+      <div class='wrapper'></div>
+    </section>
+
+
+    <div class='board' style='display: none'>
+      <h1>Results</h1>
+      <ol></ol>
+    </div>
+    <div class='countdown' style='display: none'>
+      <div class='counter'>
+        <h1></h1>
+      </div>
+    </div>
+<pre style="display:none;" id="template">
+{{.Code}}
+</pre>
+
+    <script>
+      window.users_ids = {
+    0: ""
+  };
+  function reRenderUsers(){
+    $("#joined_list").empty();
+    for(var id in window.users_ids) {
+      $("#joined_list").append('<li class="list-group-item">'+window.users_ids[id]+'</li>');
+    }
+  }
+  $(function() {
+    username = $.cookie("username");
+    window.ws = new WebSocket("ws://{{.HostAndPort}}/events/{{.Id}}?username="+username);
+
+    window.ws.onmessage = function(e) {
+      var tokens = e.data.split(":");
+      var command=tokens[0];
+      var params=tokens[1];
+
+      switch(command) {
+        case "k":
+          var tokens = params.split("#");
+          var user = parseInt(tokens[0], 10);
+          var key = tokens[1];
+          window.GO_RACER_NS.carretMoveLogic(key, user)
+          break;
+        case "users":
+          var tokens = params.split("&");
+          $(tokens).each(function(index, val){
+            var tokensInside = val.split("#");
+            var id = parseInt(tokensInside[0],10);
+            var name = tokensInside[1];
+            window.users_ids[id] = name;
+          })
+          reRenderUsers()
+          //TODO: Re-Render Users
+          break;
+        case "start":
+          //TODO: Write start logic
+          $(".join").hide();
+
+          var template = $('#template');
+          for(var id in window.users_ids) {
+            var pre = $("<pre/>").html(template.html()).prop("id", 'code_'+id).addClass('prettyprint code_field');
+            pre.offset({top: 100})
+            if(id != window.current_user_id){
+              pre.addClass('another_users_field');
+            }
+            $('.wrapper').append(pre);
+          }
+          var js = $("<script/>").attr('src', "https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?callback=js_ident")
+          $(document.body).append(js);
+
+          window.countDown();
+          break;
+        case "current_user":
+          window.current_user_id = parseInt(params, 10);
+          break;
+      }
+
+      // $(document.body).append(e.data) ;
+      // window.GO_RACER_NS.carretMoveLogic(e.data);
+      // $(document.body).append(e.data)
+      // window.GO_RACER_NS.carretMoveLogic(e.data, 'self');
+    };
+    // setTimeout(function(){
+    //   window.GO_RACER_NS.user1();
+    // }, 2000);
+    // window.GO_RACER_NS.user2();
+  });
+
+  window.exports = {};
+  window.exports['js_ident'] = window.GO_RACER_NS.prepareGameField;
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+<div class="panel-heading">
+  <h3 class="panel-title">Device sessions</h3>
+</div>
+<div class="panel-body">
+  <table class="table  table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Start time</th>
+        <th>End time</th>
+      </tr>
+      </thead>
+    <tbody>
+      {{#each session in model}}
+      <tr {{action 'showEvents' session}} style="cursor:pointer">
+        <td>{{session.id}}</td>
+        <td>{{format-date session.start_time}}</td>
+        <td>{{format-date session.end_time}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</div>
+
+</div>

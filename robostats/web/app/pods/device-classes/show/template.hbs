@@ -1,0 +1,22 @@
+{{link-to 'Back' 'device-classes' class='btn btn-success'}}
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Devices for klass</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table  table-hover">
+      <thead>
+        <tr></tr>
+        <th>ID</th>
+      </thead>
+      <tbody>
+        {{#each device in model}}
+        <tr>
+          <td>{{device.id}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

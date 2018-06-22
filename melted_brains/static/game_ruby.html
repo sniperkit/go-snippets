@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>test2</title>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/pretty_github_theme.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/core.js"></script>
+  </head>
+  <body>
+<pre class="prettyprint lang-ruby" id="code">
+module ActiveRecord
+  module Attributes # :nodoc:
+    extend ActiveSupport::Concern
+
+    Type = ActiveRecord::Type
+
+    included do
+      class_attribute :user_provided_columns, instance_accessor: false # :internal:
+      class_attribute :user_provided_defaults, instance_accessor: false # :internal:
+      self.user_provided_columns = {}
+      self.user_provided_defaults = {}
+    end
+
+    module ClassMethods # :nodoc:
+      # Defines or overrides a attribute on this model. This allows customization of
+      # Active Record's type casting behavior, as well as adding support for user defined
+      # types.
+      def attribute(name, cast_type, options = {})
+        name = name.to_s
+        clear_caches_calculated_from_columns
+        # Assign a new hash to ensure that subclasses do not share a hash
+        self.user_provided_columns = user_provided_columns.merge(name => cast_type)
+
+        if options.key?(:default)
+          self.user_provided_defaults = user_provided_defaults.merge(name => options[:default])
+        end
+      end
+
+      # Returns an array of column objects for the table associated with this class.
+      def columns
+        @columns ||= add_user_provided_columns(connection.schema_cache.columns(table_name))
+      end
+
+      # Returns a hash of column objects for the table associated with this class.
+      def columns_hash
+        @columns_hash ||= Hash[columns.map { |c| [c.name, c] }]
+      end
+
+      def reset_column_information # :nodoc:
+        super
+        clear_caches_calculated_from_columns
+      end
+
+      private
+
+      def add_user_provided_columns(schema_columns)
+        existing_columns = schema_columns.map do |column|
+          new_type = user_provided_columns[column.name]
+          if new_type
+            column.with_type(new_type)
+          else
+            column
+          end
+        end
+
+        existing_column_names = existing_columns.map(&:name)
+        new_columns = user_provided_columns.except(*existing_column_names).map do |(name, type)|
+          connection.new_column(name, nil, type)
+        end
+
+        existing_columns + new_columns
+      end
+
+      def clear_caches_calculated_from_columns
+        @attributes_builder = nil
+        @column_names = nil
+        @column_types = nil
+        @columns = nil
+        @columns_hash = nil
+        @content_columns = nil
+        @default_attributes = nil
+      end
+
+      def raw_default_values
+        super.merge(user_provided_defaults)
+      end
+    end
+  end
+end
+</pre>
+  </body>
+</html>

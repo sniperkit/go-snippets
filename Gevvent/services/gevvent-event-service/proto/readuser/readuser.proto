@@ -1,0 +1,23 @@
+package gevvent.service.event.readuser;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.marshaler_all) = true;
+
+message Request {
+	optional string eventID = 1 [(gogoproto.nullable) = false];
+	optional string userID = 2 [(gogoproto.nullable) = false];
+}
+
+message Response {
+	optional Status status = 1 [(gogoproto.nullable) = false];
+}
+
+enum Status {
+	NOT_GOING = 0;
+	GOING = 1;
+	INVITED = 2;
+	SAVED = 3;
+}
