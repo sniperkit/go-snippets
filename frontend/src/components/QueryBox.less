@@ -1,0 +1,94 @@
+@import '../variables.less';
+
+.query-box-padding {
+    padding: @small-spacing;
+}
+
+.query-box {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    border: solid 1px @primary;
+    background-color: @query-results-block;
+
+    .codemirror-row {
+        flex-grow: 1;
+        display: flex;
+        overflow: hidden;
+        padding-top: 22px;
+        padding-left: @big-spacing;
+    }
+
+    .button-row {
+        flex: 0 0;
+        border-top: solid 1px @primary-tint-3;
+        padding: @big-spacing;
+        margin: 0;
+
+        .meta-wrapper {
+            display: table;
+            height: 100%;
+
+            .meta {
+                .big-icon {
+                    margin-right: 15px;
+                }
+
+                display: table-cell;
+                vertical-align: middle;
+
+                font-size: 14px;
+
+                &.meta-success {
+                    svg path {
+                        fill: @success;
+                    }
+                }
+
+                &.meta-error {
+                    color: @error-text;
+
+                    svg path {
+                        fill: @error-text;
+                    }
+                }
+            }
+        }
+
+        .buttons-wrapper {
+            text-align: right;
+        }
+
+        button.run-query {
+            padding-left: 35px;
+            padding-right: 35px;
+            margin-left: @big-spacing;
+        }
+    }
+
+    .codemirror-col {
+        flex: 1;
+    }
+
+    .react-codemirror2 {
+        height: 100%;
+    }
+
+    .CodeMirror {
+        height: 100%;
+        font-family: @monospace-font;
+        font-size: 12px;
+        font-weight: bold;
+
+        .CodeMirror-gutters {
+            border-right: 0;
+            background-color: unset;
+        }
+    }
+
+    .CodeMirror-empty {
+        color: @gray-light;
+    }
+}

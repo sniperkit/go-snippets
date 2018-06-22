@@ -1,0 +1,236 @@
+@import '../node_modules/bootstrap/less/bootstrap.less';
+
+//=== Colors
+@primary:           #1b78b7;
+@primary-tint-2:    #76aed3;
+@primary-tint-3:    #e8f1f7;
+@primary-tint-4:    #f5f9fb;
+
+@secondary:         #4ecc7b;
+@secondary-tint-2:  #368e56;
+
+@tertiary:          #ffba34;
+@tertiary-tint-2:   #e59200;
+
+@dark-text:         #112a3c;
+@white-text:        #fff;
+
+@query-results-block: #ffffff;
+@query-examples-bock: rgba(118, 174, 211, 0.2);
+
+@success: #46b26a;
+@error-text: #e4415a;
+
+//=== Spacing
+@big-spacing: 26px;
+@small-spacing: 10px;
+@tabs-spacing: 8px;
+
+//=== Fonts
+@bold-font-weight: 600;
+@monospace-font: Hack, monospace;
+@regular-font: 'Source Sans Pro', sans-serif;
+
+//=== SVG Icons
+.big-icon {
+    height: 22px;
+    width: 22px;
+
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.small-icon {
+    height: 16px;
+    width: 16px;
+
+    display: inline-block;
+    vertical-align: middle;
+}
+
+// Use this for elements with svg children. Sets the fill color for child
+// svg elements, and darker on parent hover
+.icon-container-variant(@color) {
+    svg path {
+        fill: @color;
+    }
+
+    &:hover svg path {
+        fill: darken(@color, 10%);
+    }
+}
+
+// Use this for svg elements. Sets the fill color, and darker on svg hover
+.icon-btn-variant(@color) {
+    cursor: pointer;
+
+    path {
+        fill: @color;
+    }
+
+    &:hover path {
+        fill: darken(@color, 10%);
+    }
+}
+
+//=== Buttons
+@btn-font-weight: @bold-font-weight;
+
+.button-link-variant(@color) {
+    &:hover {
+        color: darken(@color, 10%);
+    }
+}
+
+// bsStyle gbpl-secondary: green background
+@btn-gbpl-secondary-color:  @white-text;
+@btn-gbpl-secondary-bg:     @secondary;
+@btn-gbpl-secondary-border: @btn-gbpl-secondary-bg;
+
+.btn-gbpl-secondary {
+    .button-variant(@btn-gbpl-secondary-color; @btn-gbpl-secondary-bg; @btn-gbpl-secondary-border);
+}
+
+// bsStyle gbpl-secondary-tint-2-link: green text, no background
+@btn-gbpl-secondary-tint-2-link-color:  @secondary-tint-2;
+@btn-gbpl-secondary-tint-2-link-bg:     transparent;
+@btn-gbpl-secondary-tint-2-link-border: @btn-gbpl-secondary-tint-2-link-bg;
+
+.btn-gbpl-secondary-tint-2-link {
+    .button-variant(@btn-gbpl-secondary-tint-2-link-color; @btn-gbpl-secondary-tint-2-link-bg; @btn-gbpl-secondary-tint-2-link-border);
+    .button-link-variant(@btn-gbpl-secondary-tint-2-link-color);
+}
+
+// bsStyle gbpl-tertiary: orange background
+@btn-gbpl-tertiary-color:     @white-text;
+@btn-gbpl-tertiary-bg:        @tertiary;
+@btn-gbpl-tertiary-border:    @btn-gbpl-tertiary-bg;
+
+.btn-gbpl-tertiary {
+    .button-variant(@btn-gbpl-tertiary-color; @btn-gbpl-tertiary-bg; @btn-gbpl-tertiary-border);
+}
+
+// bsStyle gbpl-tertiary-tint-2: orange text, no background
+@btn-gbpl-tertiary-tint-2-link-color:     @tertiary-tint-2;
+@btn-gbpl-tertiary-tint-2-link-bg:        transparent;
+@btn-gbpl-tertiary-tint-2-link-border:    @btn-gbpl-tertiary-tint-2-link-bg;
+
+.btn-gbpl-tertiary-tint-2-link {
+    .button-variant(@btn-gbpl-tertiary-tint-2-link-color; @btn-gbpl-tertiary-tint-2-link-bg; @btn-gbpl-tertiary-tint-2-link-border);
+    .button-link-variant(@btn-gbpl-tertiary-tint-2-link-color);
+}
+
+// bsStyle gbpl-primary-tint-2: blue background
+@btn-gbpl-primary-tint-2-color:     @white-text;
+@btn-gbpl-primary-tint-2-bg:        @primary-tint-2;
+@btn-gbpl-primary-tint-2-border:    @btn-gbpl-primary-tint-2-bg;
+
+.btn-gbpl-primary-tint-2 {
+    .button-variant(@btn-gbpl-primary-tint-2-color; @btn-gbpl-primary-tint-2-bg; @btn-gbpl-primary-tint-2-border);
+}
+
+// Allows for customizing button radius independently from global border radius
+@btn-border-radius-base:  100px;
+@btn-border-radius-large: 100px;
+@btn-border-radius-small: 100px;
+
+.btn {
+    letter-spacing: 0.6px;
+}
+
+// Less height, to be used inside the tables
+.btn-compact {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+//=== Tabs
+@nav-link-padding: @tabs-spacing 15px;
+@nav-tabs-border-color: @primary;
+@nav-tabs-link-hover-border-color: @primary;
+@nav-tabs-active-link-hover-border-color: @primary;
+
+@border-radius-base: @tabs-spacing;
+@border-radius-large: @tabs-spacing;
+@border-radius-small: @tabs-spacing;
+
+.nav-tabs {
+    > li {
+        margin-top: @tabs-spacing;
+
+        // Actual tabs (as links)
+        > a, > div {
+            color: @dark-text;
+            padding: @nav-link-padding;
+            margin-right: @tabs-spacing;
+            line-height: @line-height-base;
+            border: 1px solid @primary;
+            border-radius: @border-radius-base @border-radius-base 0 0;
+            background-color: @primary-tint-3;
+            cursor: pointer;
+            &:hover {
+                background-color: darken(@primary-tint-3, 10%);
+                outline: none;
+            }
+        }
+
+        // Active state, and its :hover to override normal :hover
+        &.active {
+            margin-top: 0px;
+
+            > a, > div {
+                &,
+                &:hover,
+                &:focus {
+                    padding-top: 8px + @tabs-spacing;
+
+                    color: @dark-text;
+                    background-color: @nav-tabs-active-link-hover-bg;
+                    border: 1px solid @nav-tabs-active-link-hover-border-color;
+                    border-bottom-color: transparent;
+                    cursor: default;
+                    outline: none;
+                }
+            }
+        }
+    }
+    // pulling this in mainly for less shorthand
+    &.nav-justified {
+        .nav-justified();
+        .nav-tabs-justified();
+    }
+}
+
+//== Modals
+
+//** Padding applied to the modal body
+@modal-inner-padding: 15px 0px 30px 0px;
+
+//** Padding applied to the modal title
+@modal-title-padding: 0px 0px 15px 0px;
+//** Modal title line-height
+@modal-title-line-height: normal;
+
+//** Modal backdrop background color
+@modal-backdrop-bg:           @primary;
+//** Modal backdrop opacity
+@modal-backdrop-opacity:      0.7;
+
+.modal-content {
+    box-shadow: unset;
+    border-radius: unset;
+    border: solid 1px @primary;
+
+    padding: 30px 30px 15px 30px;
+
+    .modal-header {
+        border-bottom: solid 1px @primary-tint-3;
+
+        .modal-title {
+            color: @dark-text;
+            font-size: 20px;
+            font-weight: normal;
+            letter-spacing: 0.8px;
+        }
+    }
+}
