@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  server:
+    build:
+      context: .
+    image: arukasio/alpine
+    ports:
+      - 22
