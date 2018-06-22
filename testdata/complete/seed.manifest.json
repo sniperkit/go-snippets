@@ -1,0 +1,107 @@
+{
+  "seedVersion": "1.0.0",
+  "job": {
+    "name": "my-job",
+    "jobVersion": "0.1.0",
+    "packageVersion": "0.1.0",
+    "title": "My first job",
+    "description": "Reads an HDF5 file and outputs two TIFF images, a CSV and manifest containing cell_count",
+    "tags": [
+      "hdf5",
+      "tiff",
+      "csv",
+      "image processing"
+    ],
+    "maintainer": {
+      "name": "John Doe",
+      "organization": "E-corp",
+      "email": "jdoe@example.com",
+      "url": "http://www.example.com",
+      "phone": "666-555-4321"
+    },
+    "timeout": 3600,
+    "interface": {
+      "command": "${INPUT_FILE} ${OUTPUT_DIR}",
+      "inputs": {
+        "files": [
+          {
+            "name": "INPUT_FILE",
+            "mediaTypes": [
+              "image/x-hdf5-image"
+            ],
+            "multiple": false,
+            "partial": false,
+            "required": true
+          }
+        ],
+        "json": [
+          {
+            "name": "INPUT_JSON",
+            "type": "object"
+          }
+        ]
+      },
+      "outputs": {
+        "files": [
+          {
+            "name": "output_file_tiffs",
+            "mediaType": "image/tiff",
+            "multiple": true,
+            "pattern": "outfile*.tif",
+            "required": true
+          },
+          {
+            "name": "output_file_csv",
+            "mediaType": "text/csv",
+            "multiple": false,
+            "pattern": "outfile*.csv",
+            "required": false
+          }
+        ],
+        "json": [
+          {
+            "name": "cell_count",
+            "key": "cellCount",
+            "type": "integer",
+            "required": true
+          }
+        ]
+      },
+      "mounts": [
+        {
+          "name": "MOUNT_PATH",
+          "path": "/the/container/path",
+          "mode": "ro"
+        }
+      ],
+      "settings": [
+        {
+          "name": "DB_HOST",
+          "secret": false
+        }
+      ]
+    },
+    "resources": {
+      "scalar": [
+        { "name": "cpus", "value": 1.0 },
+        { "name": "mem", "value": 10240.0 },
+        { "name": "sharedMem", "value": 0.0 },
+        { "name": "disk", "value": 10.0, "inputMultiplier": 4.0 }
+      ]
+    },
+    "errors": [
+      {
+        "code": 1,
+        "title": "Error Name",
+        "description": "Error Description",
+        "category": "data"
+      },
+      {
+        "code": 2,
+        "title": "Error Name",
+        "description": "Error Description",
+        "category": "job"
+      }
+    ]
+  }
+}
