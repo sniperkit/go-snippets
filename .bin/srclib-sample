@@ -1,0 +1,41 @@
+#!/bin/sh
+
+scanDir() {
+    dir="."
+    awkPrint='{print "\""$NF"\""}'
+    if [ -n "$1" ] ; then
+        dir="$1"
+	awkPrint="{print \"\\\"$dir/\"\$NF\"\\\"\"}"
+    fi
+    cd $dir
+    dirname=${PWD##*/}
+    # Files is a list of all the files in $dir that have extensions
+    # (like "sample.go"). Each file is surrounded by double quotes,
+    # and the list is comma-delimited.
+    # Ex: files='"sample.go","sample2.go","sample3.go"'
+    files=$(find . -maxdepth 1 -regex '\./[^.].*\..*'  -type f | awk -F/ "$awkPrint" | paste -s -d ',' -)
+    echo "{\"Type\":\"sample\",\"Name\":\"$dirname\",\"Files\":[$files],\"Dependencies\":[{\"name\":\"mydep\"}],\"Ops\":{\"graph\":null,\"depresolve\":null}}"
+}
+
+case $1 in
+    scan)
+        out="["$(scanDir .)
+        # Only scan directories one level deep. 'd' is a directory. Exclude everything that starts with the dot
+        # without a trailing slash.
+        for d in $(find . -maxdepth 1 -not -name '.*' -type d | awk -F/ '{print $NF}') ; do
+            out=$out","$(scanDir $d)
+        done
+        out=$out"]"
+        echo $out
+        ;;
+    graph)
+        echo "{\"Defs\":[{\"Repo\":\"\",\"UnitType\":\"sample\",\"Unit\":\".\",\"Path\":\"mydef\",\"Name\":\"mydef\",\"File\":\"f\",\"DefStart\":123,\"DefEnd\":456,\"Exported\":true,\"Kind\":\"var\",\"TreePath\":\"mydef\",\"Data\":{}}],\"Refs\":[],\"Docs\":[]}"
+        ;;
+    depresolve)
+        echo '[{"Raw":{"name":"mydep"},"Target":{"ToRepoCloneURL":"https://github.com/example/repo"}}]'
+        ;;
+    *)
+        echo Unknown command: $1 >&2
+        exit 1
+        ;;
+esac
