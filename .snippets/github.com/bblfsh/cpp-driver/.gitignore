@@ -1,0 +1,7 @@
+.sdk
+build
+
+target
+.m2
+native/.idea/*
+native/src/main/java/tech/sourced/babelfish/j2cpp/*
