@@ -1,0 +1,5 @@
+.idea
+*.iml
+*.out
+VERSION.txt
+qtypes.egg-info

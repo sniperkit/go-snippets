@@ -1,0 +1,2 @@
+# qtypes [![GoDoc](https://godoc.org/github.com/piotrkowalczuk/qtypes?status.svg)](http://godoc.org/github.com/piotrkowalczuk/qtypes)&nbsp;[![Build Status](https://travis-ci.org/piotrkowalczuk/qtypes.svg)](https://travis-ci.org/piotrkowalczuk/qtypes)&nbsp;[![Coverage Status](https://coveralls.io/repos/github/piotrkowalczuk/qtypes/badge.svg?branch=master)](https://coveralls.io/github/piotrkowalczuk/qtypes?branch=master)
+Package provides set of types that helps to build complex protobuf messages that can express conditional statements.
