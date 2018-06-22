@@ -1,0 +1,197 @@
+<h2>Project {X} Overview</h2>
+<hr />
+<div class="dashboard-wrapper">
+	<div class="dashboard-section">
+		<div class="dashboard-chart-wrapper pull-left">
+			<canvas id="chtProject" width="600" height="400"></canvas>
+		</div>
+		<div class="dashboard-grid-wrapper pull-right">
+			<table cellpadding="1" cellspacing="1">
+				<tr>
+					<th>Milestone</th>
+					<th>Outstanding Tasks</th>
+					<th>Status</th>
+					<th>Progress</th>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur</td>
+					<td>5</td>
+					<td>dapibus quam</td>
+					<td>36</td>
+				</tr>
+				<tr>
+					<td>Lorem</td>
+					<td>13</td>
+					<td>eget, venenatis</td>
+					<td>67</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor</td>
+					<td>7</td>
+					<td>Duis at</td>
+					<td>98</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit</td>
+					<td>22</td>
+					<td>lacus. Ut</td>
+					<td>16</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum</td>
+					<td>37</td>
+					<td>facilisi. Sed</td>
+					<td>51</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet, consectetuer</td>
+					<td>29</td>
+					<td>eu metus.</td>
+					<td>21</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</td>
+					<td>1</td>
+					<td>mattis. Integer</td>
+					<td>49</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur</td>
+					<td>34</td>
+					<td>pede ac</td>
+					<td>62</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit</td>
+					<td>36</td>
+					<td>Suspendisse sed</td>
+					<td>6</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur</td>
+					<td>13</td>
+					<td>tempor lorem,</td>
+					<td>57</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</td>
+					<td>37</td>
+					<td>urna. Ut</td>
+					<td>97</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet,</td>
+					<td>30</td>
+					<td>Phasellus nulla.</td>
+					<td>77</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit</td>
+					<td>43</td>
+					<td>velit dui,</td>
+					<td>67</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</td>
+					<td>28</td>
+					<td>nisl. Nulla</td>
+					<td>32</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor</td>
+					<td>42</td>
+					<td>sit amet,</td>
+					<td>39</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet,</td>
+					<td>15</td>
+					<td>dui. Suspendisse</td>
+					<td>74</td>
+				</tr>
+				<tr>
+					<td>Lorem</td>
+					<td>27</td>
+					<td>non quam.</td>
+					<td>35</td>
+				</tr>
+				<tr>
+					<td>Lorem</td>
+					<td>43</td>
+					<td>fermentum arcu.</td>
+					<td>89</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</td>
+					<td>41</td>
+					<td>ac turpis</td>
+					<td>30</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum</td>
+					<td>49</td>
+					<td>tortor nibh</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet,</td>
+					<td>25</td>
+					<td>rhoncus. Nullam</td>
+					<td>22</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit</td>
+					<td>12</td>
+					<td>morbi tristique</td>
+					<td>84</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur</td>
+					<td>19</td>
+					<td>placerat. Cras</td>
+					<td>15</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var data = {
+		labels: ["January", "February", "March", "April", "May", "June", "July"],
+		datasets: [
+			{
+				label: "My First dataset",
+				fillColor: "rgba(220,220,220,0.2)",
+				strokeColor: "rgba(220,220,220,1)",
+				pointColor: "rgba(220,220,220,1)",
+				pointStrokeColor: "#000",
+				pointHighlightFill: "#333",
+				pointHighlightStroke: "rgba(220,220,220,1)",
+				data: [65, 59, 80, 81, 56, 55, 40]
+			},
+			{
+				label: "My Second dataset",
+				fillColor: "rgba(151,187,205,0.2)",
+				strokeColor: "rgba(151,187,205,1)",
+				pointColor: "rgba(151,187,205,1)",
+				pointStrokeColor: "#111",
+				pointHighlightFill: "#666",
+				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: [28, 48, 40, 19, 86, 27, 90]
+			}
+		]
+	};
+	
+	// Get the context of the canvas element we want to select
+	var ctx = document.getElementById("chtProject").getContext("2d");		
+	ctx.canvas.width  = document.getElementById("main-container").offsetWidth * 0.40;
+	var lineChart = new Chart(ctx).Line(data, { responsive: false });
+	
+	window.onresize = function() {
+		var newSize = document.getElementById("main-container").offsetWidth * 0.40;
+		
+		lineChart.scale.width = newSize;
+		lineChart.update();		
+	}
+</script>

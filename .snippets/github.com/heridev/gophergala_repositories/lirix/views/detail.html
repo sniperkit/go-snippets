@@ -1,0 +1,36 @@
+{{define "detail"}}
+	{{template "header1"}}
+	<title>Lirix | {{.data.DisplayName}} Forecast</title>
+	{{template "header2"}}
+	<div class="jumbotron">
+		<div class="container">
+			<h2>5-Day Forecast for {{.data.DisplayName}}</h2>
+		</div>
+	</div>
+	<div class="container">
+		<table class="table table-hover">
+			<tr>
+				<th>Time</th>
+				<th>Description</th>
+				<th>Temperature</th>
+				<th>Humidity</th>
+				<th>Pressure</th>
+				<th>Cloud Coverage</th>
+				<th>Wind</th>
+			<tr>
+			{{range .data.Forecast}}
+				<tr>
+					<td>{{.TargetTime}}</td>
+					<td><img src="http://openweathermap.org/img/w/{{.WeatherIcon}}.png" />{{.WeatherDescription}}</td>
+					<td>{{.Temperature}} &deg;C</td>
+					<td>{{.Humidity}}%</td>
+					<td>{{.Pressure}} hPa</td>
+					<td>{{.CloudCoverage}}%</td>
+					<td>{{.WindSpeed}} mph ({{.WindDirection}}&deg;)</td>
+
+				</tr>
+			{{end}}
+		</table>
+	</div>
+	{{template "footer"}}
+{{end}}

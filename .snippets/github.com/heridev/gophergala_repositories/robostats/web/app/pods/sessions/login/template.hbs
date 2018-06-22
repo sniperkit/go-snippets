@@ -1,0 +1,59 @@
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 text-center">
+  <div class="page-header">
+    <p class="lead">Robostats. Mind your drones.</p>
+  </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {{#if errorMessage}}
+        <div class="alert alert-danger">
+          <p>Incorrect username or password</p>
+        </div>
+        {{/if}}
+        <form {{action 'authenticate' on='submit'}} class="form-horizontal" id="vendor-signup-form">
+          <fieldset>
+            <legend>Email</legend>
+
+            <div class="form-group">
+              <label for="identification" class="col-lg-2 control-label">Email</label>
+
+              <div class="col-lg-10">
+                <div class="form-control-wrapper">
+                  {{input type="email" value=identification placeholder='Email' class='form-control empty'}}
+                  <span class="material-input"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="identification" class="col-lg-2 control-label">Password</label>
+
+              <div class="col-lg-10">
+                <div class="form-control-wrapper">
+                  {{input value=password placeholder='Password' class='form-control empty' type='password'}}
+                  <span class="material-input"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-success">Log in</button>
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="signup-button text-center">
+      {{link-to  'Create an account' 'users.signup' class='btn btn-success'}}
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GopherPaint - Gopher Gala 2015</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/simplex/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+{{template "scripts" .}}
+{{template "navbar" .}}
+<div class="container">
+    
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li>Choose style</li>
+    </ol>
+    
+<h1>Painting Styles</h1>
+<p>Please select a painting style</p>
+    
+<div class="row">
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail">
+            <a href="/share?blobKey={{.imgkey}}&style=voronoi">
+            <img src="/render?blobKey={{.imgkey}}&style=voronoi" alt="voronoi">
+            </a>
+            <div class="caption">
+                <h3>Voronoi</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail">
+            <a href="/share?blobKey={{.imgkey}}&style=oilpaint">
+            <img src="/render?blobKey={{.imgkey}}&style=oilpaint" alt="oilpaint">
+            </a>
+            <div class="caption">
+                <h3>Oil Paint</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail">
+            <a href="/share?blobKey={{.imgkey}}&style=impresionist">
+            <img src="/render?blobKey={{.imgkey}}&style=impresionist" alt="impresionist">
+            </a>
+            <div class="caption">
+                <h3>Impresionist</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail">
+            <a href="/share?blobKey={{.imgkey}}&style=expresionist">
+            <img src="/render?blobKey={{.imgkey}}&style=expresionist" alt="expresionist">
+            </a>
+            <div class="caption">
+                <h3>Expresionist</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail">
+            <a href="/share?blobKey={{.imgkey}}&style=coloristwash">
+            <img src="/render?blobKey={{.imgkey}}&style=coloristwash" alt="colorist wash">
+            </a>
+            <div class="caption">
+                <h3>Colorist Wash</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail">
+            <a href="/share?blobKey={{.imgkey}}&style=pointillist">
+            <img src="/render?blobKey={{.imgkey}}&style=pointillist" alt="pointillist">
+            </a>
+            <div class="caption">
+                <h3>Pointillist</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail">
+            <a href="/share?blobKey={{.imgkey}}&style=psychedelic">
+            <img src="/render?blobKey={{.imgkey}}&style=psychedelic" alt="psychedelic">
+            </a>
+            <div class="caption">
+                <h3>Psychedelic</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail">
+            <a href="/share?blobKey={{.imgkey}}&style=grayscale">
+            <img src="/render?blobKey={{.imgkey}}&style=grayscale" alt="grayscale">
+            </a>
+            <div class="caption">
+                <h3>Grayscale</h3>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

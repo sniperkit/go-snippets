@@ -1,0 +1,17 @@
+package gevvent.service.user.login;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.marshaler_all) = true;
+
+message Request {
+	optional string username = 1 [(gogoproto.nullable) = false];
+	optional string password = 2 [(gogoproto.nullable) = false];
+}
+
+message Response {
+	optional string userID = 1 [(gogoproto.nullable) = false];
+	optional string token = 2 [(gogoproto.nullable) = false];
+}

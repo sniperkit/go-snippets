@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico" />
+
+  <title>UWatch | A new hub for sharing videos</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="#">UWatch</a>
+      </div>
+
+      <!--
+      <div class="navbar-collapse collapse">
+        <form class="navbar-form navbar-right" role="form">
+          <div class="form-group">
+            <input placeholder="Email" class="form-control" type="text" />
+          </div>
+    
+          <div class="form-group">
+            <input placeholder="Password" class="form-control" type="password" />
+          </div>
+    
+          <button type="submit" class="btn btn-success">Sign In</button>
+        </form>
+      </div>
+      -->
+    </div>
+  </div>
+
+  <!-- Marketing -->
+
+  <div class="jumbotron">
+    <div class="row">
+      <h2 class="col-md-8">Create a desciptive link to your favorite content for sharing</h2>
+    </div>
+
+    <div class="row">
+      <p class="col-md-8">Just enter the link of a YouTube video and you&apos;re ready to go!</p>
+    </div>
+
+    <form id="youTube-url-convert-fm" action="#" method="post">
+      <div class="row">
+        <div class="col-md-4 input-group lead">
+          <span class="input-group-addon glyphicon glyphicon-music"></span>
+          <input id="youTube-url" type="text" class="form-control" placeholder="YouTube URL" value="{{.URL}}"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="youTube-url-msg" class="col-md-4 alert" style="display: none">&nbsp;</div>
+      </div>
+  
+      <!--
+      <div class="row">
+        <div id="youTube-url-convert" class="col-md-4 btn-group">
+          <button id="youTube-url-convert-btn" type="button" class="btn btn-lg btn-success">Convert</button>
+        </div>
+      </div>
+      -->
+    </form>
+  </div>
+
+  <!-- Main -->
+
+  <div class="container">
+    <div class="row">
+
+      <!-- Embedded YouTube player -->
+
+      <div class="col-md-4">
+        <h2 id="youTube-title">&nbsp;</h2>
+        <div id="youTube-player" class="col-md-12"></div>
+      </div>
+
+      <!-- Supported video sharing sites -->
+
+      <div class="col-md-4">
+        <h2>Supported video sharing websites</h2>
+        <li>YouTube</li>
+        <br/>
+        <p>And the followings are coming soon...</p>
+        <li>Vimeo</li>
+        <li>Youku</li>
+        <li>Rutube</li>
+        <br/>
+      </div>
+
+      <!-- Top Videos -->
+         
+      <div class="col-md-4">
+        <h2>Top Videos</h2>
+        <p><a href="https://www.youtube.com/watch?v=kRrIAqCdjCI">ZEN MUSIC FOR BALANCE AND RELAXATION</a></p>
+        <p><a href="https://www.youtube.com/watch?v=pNuZIZOya78">3 HOURS Relax BRAVEHEART Theme Instrumental Soundtrack</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+  <div class="container">
+    <hr />
+
+    <footer>
+      <p>Footer</p>
+    </footer>
+  </div>
+
+  <!-- Common scripts -->
+
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/bootstrap/bootstrap.min.js"></script>
+
+  <!-- Application scripts -->
+  <script src="/js/uwatch/main.js"></script>
+</body>
+
+</html>

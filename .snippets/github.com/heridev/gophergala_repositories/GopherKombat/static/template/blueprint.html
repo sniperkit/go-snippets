@@ -1,0 +1,27 @@
+{{ if .loggedIn }}
+    <div id="headline">{{ index .user.Name }}'s blueprint</div>
+    <p class="message"></p>
+    <script>
+            $(".header .login").hide();
+            $(".header .logout").show();
+            
+    </script>
+{{else}}
+    <div id="headline">This could be your blueprint</div>
+    <p> All you have to do is log in with GitHub... </p>
+    <script>
+            $(".header .login").show();
+            $(".header .logout").hide();
+    </script>
+{{ end }}
+<div class="editor-wrapper">
+    <div id="editor"></div>
+    <div id="apidoc">
+
+    </div>
+        <div class="validation ace_editor" style="display: none;"></div>
+        <div class="submitCode">Submit blueprint</div>
+</div>
+
+
+<script type="application/javascript" src="js/blueprint.js" defer></script>

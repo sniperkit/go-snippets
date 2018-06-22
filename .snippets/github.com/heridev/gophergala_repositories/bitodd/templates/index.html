@@ -1,0 +1,30 @@
+{{ define "head" }}
+<title>Realtime tweet map</title>
+{{ end }}
+
+{{ define "content" }}
+
+<div id="error" class="row error hidden">
+  <p>This service won't work on your browser, sorry! You need a browser with <a href="http://caniuse.com/#feat=websockets">websockets</a> support!</p>
+</div>
+
+<div class="row">
+  <h1>Realtime tweet map</h1>
+</div>
+
+<div class="row">
+<p>This page shows realtime tweets for the following keyword(s): {{range .Params.Keywords }} <strong>{{.}}</strong> {{end}}</p>
+</div>
+
+<div id="map" class="row"></div>
+
+<div class="row">
+  <p class="u-pull-left"><span id="user_count">-</span> live follower(s), <span id="tweet_count">-</span> tweet(s)</p>
+  <p class="u-pull-right"><span id="tweet_speed">-</span> tweets/hour</p>
+</div>
+
+<h2>Tweets</h2>
+<div id="tweets">
+</div>
+
+{{ end }}

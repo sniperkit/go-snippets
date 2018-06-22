@@ -1,0 +1,8 @@
+xtremetron.com/game.js:1467 console.log(new Date().getTime(), e.data);
+
+time (ms)     x,  y
+1422118914132 43, 26
+1422118914183 44, 26
+1422118914231 45, 26
+
+

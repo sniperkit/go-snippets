@@ -1,0 +1,81 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 20:30:03 -0500
+Received: (qmail 8982 invoked from network); 23 Jan 2015 17:00:39 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 17:00:39 -0800
+X-ASG-Debug-ID: 1422061236-017fd408af2139320001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id WQ36xMoRaIyh6EVl for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 17:00:36 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146383=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0O1DMmm028368
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 18:13:24 -0700 (MST)
+Received: from zeus.maxpark.cz (zeus.maxpark.cz [82.119.241.4])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0O0jcPv002761 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=NO)
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 17:45:40 -0700 (MST)
+Received: from zeus-web2.system.maxpark.cz (unknown [127.0.0.1])
+	by zeus.maxpark.cz (Postfix) with ESMTP id E7A6A428556
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 00:15:01 +0100 (CET)
+X-Mail-Scanned: AntiSpam Filtering Engine at zeus.maxpark.cz
+Received: from zeus.maxpark.cz ([127.0.0.1])
+	by zeus-web2.system.maxpark.cz (zeus.maxpark.cz [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id J69BLWbVpRIZ
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 00:15:01 +0100 (CET)
+Received: from zeus.maxpark.cz (localhost [127.0.0.1])
+	by zeus.maxpark.cz (Postfix) with ESMTPA id A434E428555
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 00:15:01 +0100 (CET)
+Received: from Eg+Qpolp+h9KUOvvQ5FzTi7ZeKTNH5MfsfRo8OK4cdXox7IaQxFaupNGaGLifxJr (atvWxNNwqCkMfwrSPOP/hRSGgWk+z68I)
+	by www.allpark.cz with HTTP (HTTP/1.1 POST); Sat, 24 Jan 2015 00:15:01 +0100
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+Date: Sat, 24 Jan 2015 00:15:01 +0100
+From: "CORE ZONE s.r.o." <info@corezone.cz>
+To: <misc@openbsd.org>
+Subject: support new
+Organization: CORE ZONE s.r.o.
+X-ASG-Orig-Subj: support new
+Reply-To: <info@corezone.cz>
+Mail-Reply-To: <info@corezone.cz>
+Message-ID: <6670c89ff37e44f8517bec68bfdf8bc1@allpark.cz>
+X-Sender: info@corezone.cz
+User-Agent: AllPark Webmail/0.5.1
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422061236
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-BRTS-Evidence: corezone.cz
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO, UNPARSEABLE_RELAY
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14576
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+	0.00 UNPARSEABLE_RELAY      Informational: message has unparseable relay lines
+
+0
+ C Czech Republic
+ P Prague
+ T Prague
+ Z 11000
+ O CORE ZONE s.r.o.
+ I Gabriel Medon
+ A Rybna 716/24
+ M info@corezone.cz
+ U http://corezone.cz/
+ B +420 607 577 677
+ X NONE
+ N CORE ZONE s.r.o. is an IT outsourcing and consultancy company which
+ provides installations, administration and support for systems based on
+ FreeBSD, OpenBSD, Linux (CentOS, Debian, Ubuntu).
+

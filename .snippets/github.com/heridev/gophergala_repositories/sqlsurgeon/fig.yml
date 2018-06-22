@@ -1,0 +1,19 @@
+#
+# USAGE:
+#
+# To build the sources:
+#
+# $ fig run build
+# 
+# To run locally:
+#
+# $ fig run sqlsurgeon
+#
+# To build the master image:
+#
+# $ fig build sqlsurgeon
+#
+
+sqlsurgeon:
+    build: .
+

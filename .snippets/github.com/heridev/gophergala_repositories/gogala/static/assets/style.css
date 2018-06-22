@@ -1,0 +1,80 @@
+body {
+  font: normal 1.2em monospace;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+#js-editor {
+  position: absolute;
+  top: 0;
+  right: 0; bottom: 0; left: 0;
+}
+
+#js-output {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #00cc00;
+  border-top: 1px dashed #ccffee;
+
+  padding: 8px 0 8px 0;
+  margin: 4px 0 4px 0;
+  position: absolute;
+  right: 0;bottom: 0; left: 0;
+  height: 120px;
+  overflow-x: hidden !important;
+  overflow-y: auto;
+  z-index: 10;
+  word-wrap: break-word;
+  width: 70%;
+}
+
+#js-output .text {
+  padding: 0;margin: 0; overflow-x: hidden;
+  color: #34C9F5; word-wrap: break-word;
+}
+
+#js-sidebar {
+  background-color: #eee;
+  height: 100% !important;
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 30%;
+  z-index: 20;
+}
+
+.btn { color: #666;font-weight: bold;padding: 10px;text-transform: uppercase; }
+.btn:hover { color: #000; }
+.top-right { position: absolute; top: 10px; right: 10px; }
+
+#js-sidebar .content {
+  height: 100%;
+  padding: 4px;
+  position: relative;
+  top: 60px;
+}
+
+.content textarea {
+  border: none;
+  background: #000;
+  color: #ccc;
+  font: normal 0.9em monospace;
+  max-height: 90%;
+  max-width: 98%;
+  min-height: 80%;
+  outline: none;
+  resize: none;
+  width: 98%;
+}
+
+.content input[type="text"] {
+  border: none;
+  background: #000;
+  color: #fff;
+  font: normal 0.9em monospace;
+  max-width: 98%;
+  outline: none;
+  padding: 4px;
+  width: 98%;
+}
+

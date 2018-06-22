@@ -1,0 +1,74 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Thu, 22 Jan 2015 15:30:03 -0500
+Received: (qmail 14290 invoked from network); 22 Jan 2015 12:04:06 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 22 Jan 2015 12:04:06 -0800
+X-ASG-Debug-ID: 1421957043-017fd408af20dce10001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id YVH8ZARS0JJVFCAX for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 12:04:03 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146354=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0MKHNKJ000370
+	for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 13:17:25 -0700 (MST)
+Received: from gir.theapt.org (gir.theapt.org [81.209.183.113])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0MKHCWn012311 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=FAIL)
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 13:17:14 -0700 (MST)
+Received: from gir.theapt.org (unknown [127.0.0.1]) (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/0 bits)) (Client did not present a certificate) (Authenticated sender: phessler)
+	by gir.theapt.org (Postfix) with ESMTPSA id 383BC788FB; Thu, 22 Jan 2015 21:03:22 +0100 (CET)
+Date: Thu, 22 Jan 2015 21:03:20 +0100
+From: Peter Hessler <phessler@theapt.org>
+To: Jan Lambertz <jd.arbeit@googlemail.com>
+Cc: misc@openbsd.org
+Subject: Re: Hannover BSD meetup
+Message-ID: <20150122200320.GE28913@gir.theapt.org>
+X-ASG-Orig-Subj: Re: Hannover BSD meetup
+References: <20150122140230.GA18519@autobahn.atexit.net> <CAJO05K2ni8LSuYPUD4NjrsjmhZ5ePND3qZ2G3wgr5Tz9u+4Chw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+In-Reply-To: <CAJO05K2ni8LSuYPUD4NjrsjmhZ5ePND3qZ2G3wgr5Tz9u+4Chw@mail.gmail.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421957043
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14537
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+
+It's very simple.  Make one of your own :).
+
+Pick a place, advertise it, and *make sure to show up*.  Keep it
+regular, if you can.  The first 6 meetings or so will be you and your
+friends, though.
+
+
+On 2015 Jan 22 (Thu) at 20:05:13 +0100 (+0100), Jan Lambertz wrote:
+:Hey Reyk,
+:
+:that sounds great. Unfortunately the Way to Hannover is 600km from
+:here. I hope something simliar is happening soon near Munich. I was
+:not able to find any Meeting for OpenBSD here.
+:
+:Jan
+:
+
+-- 
+The turtle lives 'twixt plated decks
+Which practically conceal its sex.
+I think it clever of the turtle
+In such a fix to be so fertile.
+		-- Ogden Nash
+

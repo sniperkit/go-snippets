@@ -1,0 +1,49 @@
+{{define "root"}}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{.Title}}</title>
+  <link href='http://fonts.googleapis.com/css?family=Inconsolata|Raleway:200,400,500,700|Special+Elite' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="/static/article.css">
+  <meta charset='utf-8'>
+  <link rel="stylesheet" href="/static/hjs-themes/obsidian.css">
+  <script src="/static/js/highlight.go.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body class="fadebg">
+  <section id="navbar" class="slidedown hide">
+    <h2>Operation Go</h2>
+    <div id="player">
+      <span id="avatar"></span>
+      <span id="alias"></span>
+      <ul id="subnav">
+        <li><a href="/" onclick="return false;" id="restart">Restart &rarr;</a></li>
+        <li><a href="http://gopher-gala.challengepost.com/submissions/32239-operation-go-a-routine-mission" target="_blank">About &rarr;</a></li>
+      </ul>
+    </div>
+  </section>
+  <div id="page">
+    <div class="container">
+      <div id="content">
+        <section id="laptop" class="hide">
+          <div id="editor">
+            {{range .Sections}}
+              {{elem $.Template .}}
+            {{end}}
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src='/play.js'></script>
+  <script>
+    $(document).ready(function() {
+      $('div.code.frozen').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
+</body>
+</html>
+{{end}}

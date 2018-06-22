@@ -1,0 +1,47 @@
+{{define "section"}}
+  <h1 class="title">{{.Title}}</h1>
+  {{range .Elem}}{{elem $.Template .}}{{end}}
+{{end}}
+
+{{define "list"}}
+<ul>
+  {{range .Bullet}}
+  <li>{{style .}}</li>
+  {{end}}
+</ul>
+{{end}}
+
+{{define "text"}}
+  {{if .Pre}}
+    <div class="code"><pre>{{range .Lines}}{{.}}{{end}}</pre></div>
+  {{else}}
+  <p>
+    {{range $i, $l := .Lines}}{{if $i}}{{template "newline"}}
+    {{end}}{{style $l}}{{end}}
+  </p>
+  {{end}}
+{{end}}
+
+{{define "code"}}
+  {{if playable .}}
+    <div id="playground" class="code playground" contenteditable="true" spellcheck="false">{{.Text}}</div>
+  {{else}}
+    <div class="code frozen" contenteditable="false" spellcheck="false">{{.Text}}</div>
+  {{end}}
+{{end}}
+
+{{define "image"}}
+<div class="image">
+  <img src="{{.URL}}"{{with .Height}} height="{{.}}"{{end}}{{with .Width}} width="{{.}}"{{end}}>
+</div>
+{{end}}
+
+{{define "iframe"}}
+  <iframe src="{{.URL}}"{{with .Height}} height="{{.}}"{{end}}{{with .Width}} width="{{.}}"{{end}}></iframe>
+{{end}}
+
+{{define "link"}}<p class="link"><a href="{{.URL}}" target="_blank">{{style .Label}}</a></p>{{end}}
+
+{{define "html"}}{{.HTML}}{{end}}
+
+{{define "caption"}}<figcaption>{{style .Text}}</figcaption>{{end}}

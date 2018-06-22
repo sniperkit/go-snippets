@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+
+Dir['data/nuttxt/*.txt'].each do |fn|
+  CSV.open(fn.gsub(/txt/, 'csv'), 'w') do |out|
+    CSV::read(fn, encoding: 'windows-1251:utf-8', col_sep: '^', quote_char: '~').each do |l|
+      out << l
+    end
+  end
+end

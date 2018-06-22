@@ -1,0 +1,24 @@
+{
+  "name": "projectv",
+  "version": "0.0.1",
+	"description": "project v",
+	"private": true,
+  "repository": {
+		"type": "git",
+		"url": "git@github.com:logie17/Project-V"
+	},
+	"dependencies": {
+    "grunt": "",
+    "grunt-bower-task": "",
+    "grunt-contrib-clean": "",
+    "grunt-contrib-copy": "",
+    "grunt-contrib-csslint": "",
+    "grunt-contrib-cssmin": "",
+    "grunt-contrib-jshint": "",
+    "grunt-contrib-requirejs": ""
+  },
+  "scripts": {
+    "test": "grunt testonly",
+    "build": "grunt make"
+  }
+}

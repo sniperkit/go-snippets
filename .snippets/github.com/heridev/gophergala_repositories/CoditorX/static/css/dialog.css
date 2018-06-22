@@ -1,0 +1,124 @@
+/*
+ * Copyright (c) 2015, b3log.org
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * dialig style
+ *
+ * @author <a href="mailto:LLY219@gmail.com">Liyuan Li</a>
+ * @version 0.0.0.6, Jun 3, 2012
+*/
+
+.dialog-background {
+    height: 100%;
+    left: 0;
+    opacity: .3;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    filter: alpha(opacity=30);
+    display: none;
+    background-color: #000000;
+    z-index: 99;
+}
+
+.dialog-panel {
+    position: absolute;
+    z-index: 100;
+    display: none;
+    -moz-user-select: none;
+    user-select: none;
+    box-shadow: 0 2px 10px 1px #000000;
+}
+
+.dialog-title {
+    float: left;
+    line-height: 22px;
+    margin-left: 3px;
+    font-weight: bold;
+}
+
+.dialog-header-bg {
+    height: 23px;
+    background-color: #CCD5E5;
+    cursor: move;
+    width: 100%;
+}
+
+.dialog-close-icon {
+    float: right;
+    margin: 3px;
+    text-decoration: none;
+}
+
+.dialog-close-icon:hover {
+    text-decoration: none;
+}
+
+.dialog-main > div {
+    width: 100%;
+}
+
+.dialog-footer {
+    padding: 10px;
+    text-align: right;
+}
+
+.dialog-footer button,
+#dialogCloseEditor button {
+    margin: 0 5px;
+}
+
+#dialogRemoveConfirm,
+#dialogUnshareConfirm,
+.dialog-prompt,
+.dialog-form,
+#dialogAlert,
+#dialogShare {
+    padding: 10px 15px 0;
+    overflow: hidden;
+}
+
+.dialog-main input[type='text'],
+.dialog-main select {
+    width: 100%;
+    margin: 2px auto;
+}
+
+#dialogGoFilePrompt > ul {
+    position: relative;
+    height: 260px;
+    overflow: auto;
+    margin-top: 5px;
+    background-color: #FFF;
+    border: 1px solid #919191;
+}
+
+#dialogPreference {
+    margin: 10px;
+}
+
+#dialogPreference .tabs-panel {
+    padding: 10px;
+}
+
+#dialogPreference .preference {
+    margin-bottom: 10px;
+}
+
+#dialogPreference img.gravatar {
+    width: 48px;
+    height: 48px;
+}

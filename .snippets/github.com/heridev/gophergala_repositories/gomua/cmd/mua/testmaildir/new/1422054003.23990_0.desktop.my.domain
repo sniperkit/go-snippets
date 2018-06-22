@@ -1,0 +1,147 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 18:00:03 -0500
+Received: (qmail 10665 invoked from network); 23 Jan 2015 14:33:27 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 14:33:27 -0800
+X-ASG-Debug-ID: 1422052405-017fd408af2132ea0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id K5srhOhfy9L8LQvl for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 14:33:25 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146382=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0NMjr6d018371
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 15:45:56 -0700 (MST)
+Received: from mail-qg0-f48.google.com (mail-qg0-f48.google.com [209.85.192.48])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0NMjbQa022541 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 15:45:38 -0700 (MST)
+Received: by mail-qg0-f48.google.com with SMTP id z60so23825qgd.7
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 14:31:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=date:from:to:subject:cc:message-id:references:in-reply-to :user-agent:mime-version:content-type:content-transfer-encoding; bh=G7G15m34G9TE1IcNWMEUNANCG7S6JMHiSxGh2/MpgvI=; b=AYAPafb6dNt0afNTvwZGfuiR730M92dYWfvFshaiq3JkzmZp7BvME4GNDO6yZWksZE vzTCO6xg2HIL12yLSW+Y056TY9CAs3Hrwf+5sxmWB4+d3dsyeu7tNBErRC/t3hPMkdVL 4tN82lVpFzUFapcs+PlG8c3BWXUqlH9c05ln43Xm3DC/WsV4ikKpQ2a1x7grKtg48iqq yILdIO42RFfWlGg0/1uvLS6hYMMrpBQW41JxL0fDtQeARF7IaJyu7y+c7GOYcbk1t4is TGlStBr94JAPzkmxTh7r7e17hXwxX8mdmvTVeYCoifHxIAw/Yau4LGp2Q1PIgp08RccZ HZ3Q==
+X-Received: by 10.140.25.245 with SMTP id 108mr17741717qgt.57.1422052306944; Fri, 23 Jan 2015 14:31:46 -0800 (PST)
+Received: from oko.bagdala2.net (dynamic-acs-72-23-145-15.zoominternet.net. [72.23.145.15])
+	by mx.google.com with ESMTPSA id r16sm2743465qay.10.2015.01.23.14.31.46 (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128); Fri, 23 Jan 2015 14:31:46 -0800 (PST)
+Date: Fri, 23 Jan 2015 17:31:44 -0500
+From: Predrag Punosevac <punosevac72@gmail.com>
+To: schwarze@usta.de
+Subject: Re: What are the disadvantages of soft updates?
+Cc: misc@openbsd.org
+X-ASG-Orig-Subj: Re: What are the disadvantages of soft updates?
+Message-ID: <20150123223144.hLqGNOcrGYUEpK1Y%punosevac72@gmail.com>
+References: <20150123202400.htg6SHV5FSF8i0fq%punosevac72@gmail.com> <20150123205312.GJ3916@iris.usta.de>
+In-Reply-To: <20150123205312.GJ3916@iris.usta.de>
+User-Agent: s-nail v14.4.5
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by shear.ucar.edu id t0NMjdQZ012426
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422052405
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14572
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+Ingo Schwarze <schwarze@usta.de> wrote:
+
+> Hi Predrag,
+> 
+
+Hi Ingo,
+
+> Predrag Punosevac wrote on Fri, Jan 23, 2015 at 03:24:00PM -0500:
+> 
+> > I was following this discussion with the great interest but without
+> > intend to participate in it until today.
+> > 
+> > Namely one of my OpenBSD servers (5.6 sparc64) runs Mollify and last
+> > night I received an e-mail from an angry user who could not upload files
+> > (the upload will fail or upload the file with file size zero). After
+> > running df I noticed that /tmp was 100% full (4GB used) but the size of
+> > individual files was only 12Kb.
+> 
+> That is unlikely to be due to softdep.  The usual reason for a file
+> system to be actually full and seemingly almost empty at the same
+> time is somebody doing the following sequence of operations:
+> 
+
+Now it seems obvious that I made a mistake and put the blame on metadata
+instead of running fstat but at the moment I had a mindset of DF user.
+Namely couple of months ago I had a rogue process which keeps altering
+log files on one of DF machines. Long story short after couple of hours
+my /var had only about 1GB of log files but HAMMER history almost
+completely filled the rest of /var due to the frequent changes of log
+files. I regained the space by clearing HAMMER history and learned how
+to tune HAMMER retention parameters.
+
+It seems from what you are saying and from what seems clear to me before
+last night incident that I made a fundamental mistake of thinking of
+soft updates as honest journaling file system while in reality they are
+just a way of maintaining file system meta-data integrity. Hence softdep
+are safe from HAMMER like history retention problems.
+
+Most Kind Regards,
+Predrag
+
+P.S. Since you are developer I can't resist not to ask if anybody is
+looking at Bitrig code which brings WAPBL essentially into OpenBSD?
+
+
+>  - open(2) a file for writing
+>  - writing a lot of data until the file system is full
+>  - unlink(2) the file
+>  - keep the process running that open(2)'ed it
+>  - let that process keep the file open and *not* close(2) it
+> 
+> Specifically, in /tmp, anybody can do that.
+> 
+> > I thought for a second and I remember seeing this with HAMMER on DF.
+> 
+> The above works with almost any file system.
+> 
+> > Long story short I checked /etc/fstab and
+> > sure enough I had rw,softdep next to each partition including tmp. I
+> > removed softdep rebooted the sytem and /tmp usage dropped to 0%.
+> 
+> That's not likely to be related to softdep either.  Chances are
+> just rebooting would have solved the issue as well - simply because
+> rebooting terminates all running processes, and consequently closes
+> all open files.
+> 
+> What you should have done instead was run fstat(1), look for processes
+> having files open in /tmp, use ls(1) -iRa /tmp to find the inode
+> numbers of linked files in /tmp, and kill the processes having files
+> open that were *not* linked until you found the one having the big
+> file open - and then have a friendly talk with the responsible user,
+> if any, or figure out what went wrong in case some daemon process
+> caused the issue.
+> 
+> > My questions is which partitions should be mounted with softdep
+> > option?
+> 
+> I'm not an expert on that and hardly ever use softdep, but i'd say
+> on file systems where file create/delete performance is *critically*
+> important, performace has been clearly demonstrated to be insufficient
+> without softdep, and you consider data loss harmless.
+> 
+> > Is there a way to prune metadata which will save me for problems like
+> > the one I encountered last night.
+> 
+> I'm not convinced that's a good question to ask.
+> 
+> Yours,
+>   Ingo
+

@@ -1,0 +1,24 @@
+{{define "eventsSmall"}}
+{{$longf := `2006-01-2T15:04:05-07:00`}}
+{{$dayf := `Mon Jan 2`}}
+{{$eventsDate := parse $longf .events.EventsDate}}
+{{$today := now.Format $dayf}}
+{{$ed := $eventsDate.Format $dayf}}
+{{if .events.Event}}
+    <h2 class="range">{{if eq $ed $today}}Today -{{end}}
+        {{$ed}}
+    </h2>
+{{end}}
+{{range $e := .events.Event}}
+    <div class="match"><a href="/details/{{lower $e.Sport}}/{{$e.EventID}}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 card">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 away">
+            <span class="team-img"><img src="{{$e.AwayTeam.Logo}}"></span>
+            <h3>{{$e.AwayTeam.LastName}}</h3>
+        </div>
+        <span class="versus">VS</span>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 home">
+            <span class="team-img"><img src="{{$e.HomeTeam.Logo}}"></span>
+            <h3>{{$e.HomeTeam.LastName}}</h3>
+        </div>
+    </a></div>
+{{end}}{{end}}

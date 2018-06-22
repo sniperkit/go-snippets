@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{.Title}}</title>
+{{template "style.html" .}}
+<script type="text/javascript">
+    function noBack(){ window.history.forward() }
+    noBack();
+    window.onload=noBack;
+    window.onpageshow=function(evt){
+	     if(evt.persisted)
+	         noBack()
+	}
+    window.onunload=function(){ void(0) }
+</script>
+</head>
+<body>
+<b>framework</b> [{{.Status}}] | 
+<a href="/index" title="Home">Home</a> 
+<a href="/checkUser" >Find user</a> 
+<a href="/showPersons" >Show persons</a> 
+<a href="/addPerson" >Add person</a> 
+<a href="/ajax" >Ajax</a> 
+<a href="/index?logout=true" title="Logout">Logout</a>
+{{.Body}}
+</body>
+</html>

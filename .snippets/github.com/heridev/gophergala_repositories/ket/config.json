@@ -1,0 +1,12 @@
+{
+	"block":[
+		"/test/block"
+	],
+	"dirs":[{
+		"url": "/test/dir0",
+		"fpath": "../"
+	},{
+		"url": "/test/dir1",
+		"fpath": "../../"
+	}]
+}

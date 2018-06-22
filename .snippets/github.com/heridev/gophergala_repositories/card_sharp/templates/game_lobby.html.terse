@@ -1,0 +1,30 @@
+?eq .Lobby.State "rules"
+
+  h2 Rules:
+
+  ?eq .Lobby.Game.GameType "blanks"
+    >>blanks_rules.html
+  ?eq .Lobby.Game.GameType "adjective"
+    >>adjective_rules.html
+!?
+  ?.Lobby.Instance.Judging
+    #play.hide
+      h2 Current Phrase
+      .well
+        h3#phrase= .Lobby.Instance.CurrentCard
+    #judge
+      >>judging.html
+    #winner.hide
+  !?
+    #play
+      h2 Current Phrase
+      .well
+        h3#phrase= .Lobby.Instance.CurrentCard
+    #judge.hide
+      >>judging.html
+    #winner.hide
+      ?.Lobby.Instance.RoundWinner
+        .page-header
+          h1
+            = .Lobby.Instance.CurrentWith .Lobby.Instance.RoundCard
+            small= .Lobby.FindPlayer .Lobby.Instance.RoundWinner

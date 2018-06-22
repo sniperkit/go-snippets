@@ -1,0 +1,1 @@
+[{"path":"golang.org/x/crypto/bcrypt"}, {"path":"golang.org/x/crypto/ssh"}, {"path":"golang.org/x/mobile/app"}, {"path":"golang.org/x/net/context"}, {"path":"golang.org/x/net/html"}, {"path":"golang.org/x/net/websocket"}, {"path":"gopkg.in/mgo.v2"}, {"path":"labix.org/v2/mgo"}]

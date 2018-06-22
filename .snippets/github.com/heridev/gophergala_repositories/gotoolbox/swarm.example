@@ -1,0 +1,24 @@
+{
+  "app_name": "gotoolbox",
+  "services": [
+    {
+      "service_name": "gotoolbox-service",
+      "components": [
+        {
+          "component_name": "webserver",
+          "image": "registry.giantswarm.io/9elements/gotoolbox:latest",
+          "ports": ["8080/tcp"],
+          "domains": {
+            "gotoolbox.gigantic.io": "8080"
+          },
+          "env": {
+            "GOTOOLBOX_GITHUB_KEY": "...",
+            "GOTOOLBOX_GITHUB_SECRET": "...",
+            "GOTOOLBOX_GITHUB_CALLBACK": "...",
+            "GOTOOLBOX_POSTGRES_URL": "..."
+          }
+        }
+      ]
+    }
+  ]
+}

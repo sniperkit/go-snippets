@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/dashboard.css" rel="stylesheet">
+
+    <script src="/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body id="body">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Docker bastion</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a class="dropdown-toggle" id="dropdown-settings" href="#" data-toggle="dropdown" aria-expanded="true">Settings
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-settings">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#chpasswd_box">Channge Password</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript: logout();">Logout</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript: show_help();">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar" id="sidebar-nav">
+            <li class="active" id="nav-containers"><a href="/containers">Containers</a></li>
+            <li id="nav-users"><a href="/users">Users</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header" id="page-header">Containers</h1>
+          <div class="table-responsive">
+            <table class="table table-striped" id="main-table">
+              <thead>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- chpasswd box -->
+    <div class="modal fade" id="chpasswd_box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">Change Password</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="new_password" class="control-label">New Password:</label>
+                <input type="password" class="form-control" id="new_password">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="chpasswd();">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- create user box -->
+    <div class="modal fade" id="create_user_box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" >Create User</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="user_name" class="control-label">Name:</label>
+                <input type="text" class="form-control" id="user_name">
+              </div>
+              <div class="form-group">
+                <label for="user_password" class="control-label">New Password:</label>
+                <input type="password" class="form-control" id="user_password">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="create_user();">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- create container box -->
+    <div class="modal fade" id="create_container_box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" >Create Container</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="container_name_input" class="control-label">Name:</label>
+                <input type="text" class="form-control" id="container_name_input">
+              </div>
+              <div class="form-group">
+                <label for="image_input" class="control-label">Image:</label>
+                <select class="form-control" id="image_input">
+                  <option value="ubuntu:14.04">ubuntu:14.04</option>
+                  <option value="ubuntu:12.04">ubuntu:12.04</option>
+                  <option value="ubuntu:12.10">ubuntu:12.10</option>
+                  <option value="centos">centos</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="btn-create-container" class="btn btn-primary" onclick="create_container();">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- grant box -->
+    <div class="modal fade" id="grant_box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" ></h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="select_user_name" class="control-label">User:</label>
+                <select class="form-control" id="select_user_name">
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="grant();" id="grant_btn">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/jquery.min.js"></script>
+    <script src="/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/ie10-viewport-bug-workaround.js"></script>
+    <script src="/dashboard.js"></script>
+  </body>
+</html>
+

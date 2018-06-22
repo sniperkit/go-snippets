@@ -1,0 +1,6 @@
+[database]
+Database = "vebomm"
+User     = "postgres"
+Password = "thebest1om"
+Host     = "localhost"
+Port     = 5432

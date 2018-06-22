@@ -1,0 +1,72 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 14:00:03 -0500
+Received: (qmail 17737 invoked from network); 23 Jan 2015 10:46:29 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 10:46:29 -0800
+X-ASG-Debug-ID: 1422038787-017fd408af21247d0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id OgtlqNMrLnHiraHq for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 10:46:27 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146370=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0NIwiGc022637
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 11:58:47 -0700 (MST)
+Received: from plane.gmane.org (plane.gmane.org [80.91.229.3])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0NEqD5o007016
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 07:52:14 -0700 (MST)
+Received: from list
+	by plane.gmane.org with local (Exim 4.69) (envelope-from <goom-misc@m.gmane.org>) id 1YEfNL-0004GC-LD
+	for misc@openbsd.org; Fri, 23 Jan 2015 15:38:19 +0100
+Received: from fb-n15-11.unbelievable-machine.net ([94.198.62.204])
+	by main.gmane.org with esmtp (Gmexim 0.1 (Debian)) id 1AlnuQ-0007hv-00
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 15:38:19 +0100
+Received: from tg
+	by fb-n15-11.unbelievable-machine.net with local (Gmexim 0.1 (Debian)) id 1AlnuQ-0007hv-00
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 15:38:19 +0100
+X-Injected-Via-Gmane: http://gmane.org/
+To: misc@openbsd.org
+From: Thorsten Glaser <tg@mirbsd.org>
+Subject: Re: xterm initial tty weirdness
+Date: Fri, 23 Jan 2015 14:38:14 +0000 (UTC)
+X-ASG-Orig-Subj: Re: xterm initial tty weirdness
+Lines: 9
+Message-ID: <loom.20150123T153728-185@post.gmane.org>
+References: <54BEFC1E.5020104@beard.se>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 8bit
+X-Complaints-To: usenet@ger.gmane.org
+X-Gmane-NNTP-Posting-Host: sea.gmane.org
+User-Agent: Loom/3.14 (http://gmane.org/)
+X-Loom-IP: 94.198.62.204 (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.34 (KHTML, like Gecko) konqueror/4.14.2 Safari/534.34)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422038787
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14567
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+Alexander Hall <alexander <at> beard.se> writes:
+
+>    Editing commands sometimes don't (seem to) work on the first shell
+>    prompt in newly opened xterm window:
+> 
+>      $ bar^A^E^Afoo <ENTER>
+
+Interesting. I sometimes have that after exiting a curses application
+(e.g. lynx) or less.
+

@@ -1,0 +1,380 @@
+GUID
+System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+2c34594a-13b7-4c21-b8ca-adf23078def8
+]]]
+Name
+System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+Unnamed Sprite
+]]]
+FileName
+System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+C:\Users\Scott Redig\GoEnv\src\github.com\gophergala\gogalamon\spartan\ship.sparta
+]]]
+IsBlank
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+False
+]]]
+RecentlySaved
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+False
+]]]
+Palette
+SPArtAn.Palette, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+NEW
+GUID
+System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+aa1fca03-02a2-4401-8c6d-f1931c1b50a3
+]]]
+ColourRanges
+System.Collections.ObjectModel.ObservableCollection`1[[SPArtAn.ColourRange, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null]], System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+[ITEM]
+SPArtAn.ColourRange, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+0:#FF000000|0.2:#FF303030|0.4:#FF616161|0.6:#FF919191|0.8:#FFC2C2C2
+]]]
+[ITEM]
+SPArtAn.ColourRange, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+0:#FF540000|0.2:#FFAB0000|0.4:#FFFF0000|0.6:#FFFF5454|0.8:#FFFFABAB
+]]]
+[ITEM]
+SPArtAn.ColourRange, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+0:#FF544800|0.2:#FFAB9100|0.4:#FFFFD900|0.6:#FFFFE554|0.8:#FFFFF2AB
+]]]
+[ITEM]
+SPArtAn.ColourRange, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+0:#FF185400|0.2:#FF30AB00|0.4:#FF48FF00|0.6:#FF85FF54|0.8:#FFC3FFAB
+]]]
+[ITEM]
+SPArtAn.ColourRange, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+0:#FF005430|0.2:#FF00AB61|0.4:#FF00FF91|0.6:#FF54FFB5|0.8:#FFABFFDB
+]]]
+[ITEM]
+SPArtAn.ColourRange, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+0:#FF003054|0.2:#FF0061AB|0.4:#FF0091FF|0.6:#FF54B5FF|0.8:#FFABDBFF
+]]]
+[ITEM]
+SPArtAn.ColourRange, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+0:#FF180054|0.2:#FF3000AB|0.4:#FF4800FF|0.6:#FF8554FF|0.8:#FFC3ABFF
+]]]
+[ITEM]
+SPArtAn.ColourRange, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+0:#FF540048|0.2:#FFAB0091|0.4:#FFFF00D9|0.6:#FFFF54E5|0.8:#FFFFABF2
+]]]
+]]]
+Name
+System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+Palette 1
+]]]
+Width
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+32
+]]]
+Height
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+32
+]]]
+OffsetX
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+0
+]]]
+OffsetY
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+0
+]]]
+Image
+System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+[[[
+iVBORw0KGgoAAAANSUhEUgAAAOYAAAH0CAYAAAApA1GfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHVSURBVHhe7cEBDQAAAMKg909tDwcEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHCvBgc9AAH7RWjoAAAAAElFTkSuQmCC
+]]]
+Opacity
+System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+1
+]]]
+IsSelected
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+False
+]]]
+IsVisible
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+True
+]]]
+Parent
+SPArtAn.Frame, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+
+]]]
+]]]
+Animations
+System.Collections.ObjectModel.ObservableCollection`1[[SPArtAn.Animation, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null]], System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+[ITEM]
+SPArtAn.Animation, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+NEW
+GUID
+System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+51729110-b1c2-433b-a2f9-857875d50570
+]]]
+Name
+System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+Idle
+]]]
+Directions
+System.Collections.ObjectModel.ObservableCollection`1[[SPArtAn.Facing, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null]], System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+[ITEM]
+SPArtAn.Facing, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+NEW
+GUID
+System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+7cca2130-e995-4e5f-8c4b-6f78b9ddac87
+]]]
+Direction
+System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+0
+]]]
+Frames
+System.Collections.ObjectModel.ObservableCollection`1[[SPArtAn.Frame, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null]], System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+[ITEM]
+SPArtAn.Frame, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+NEW
+GUID
+System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+001fd262-6f86-425c-a536-1488e5d969b2
+]]]
+Width
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+64
+]]]
+Height
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+64
+]]]
+U
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+0
+]]]
+V
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+0
+]]]
+HotSpotX
+System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+0
+]]]
+HotSpotY
+System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+0
+]]]
+IsSelected
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+True
+]]]
+Layers
+System.Collections.ObjectModel.ObservableCollection`1[[SPArtAn.Layer, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null]], System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+[ITEM]
+SPArtAn.Layer, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+NEW
+GUID
+System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+d5eec7bb-d00c-4a81-a3bd-eb482f993cf8
+]]]
+Name
+System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+Generated Layer
+]]]
+Width
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+64
+]]]
+Height
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+64
+]]]
+OffsetX
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+0
+]]]
+OffsetY
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+0
+]]]
+Image
+System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+[[[
+iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVbSURBVHhe5ZtBbtxGEEWpXMJA1kbW0gV0CgNZ6wQ6i3UBrQPkFL6AtA6yDuBTyPw0iyh+/q6uak5mFn7AWBx2s6v+r+qmLcDTjflYPzfjbv15C1j4TXL5bf35y3KrDmi1/dXz+eU74BYG7Kp/f3+/Xi1c/UAst9zT09OW5Nvb2/T+/r5+W+itJwXChOw6J+MfOGXAfD29vr6u3yZclwzw1R8xYCD+gSEDkPjDw8N65yeoxvPzc7TeofpmAIk35Fon4kvKZ4BoO3mvh6++v+5xqfhG2QAVCNVAEgHN1jfEvUPHgMH4TcoGIFGfLAJ3KiCFKDImDMQPKRvAew/fs8E5eV4LCBN2nImvGDoDFI3Ew+q31iJ2axTjdykbgFcPg+Cqmh6VIJ6xD9MSNBq/RdmA+VWztJxVwvafqMyuctymPmE8678L8dtahfgphg5BVMESxk//fUUeXi3o2RbLmsn4acoGKOB+VAEvPkp0VEQvfkTZgFaS7v6u+qryWaHi2Y9E/BJlA5TTZ/ZgD5jgjbh0/LIB2G8q2FqBsPpcJRuP5vHh2RJ7tQ7AKazw/yoDPfEAYtQ8CLT5PA5UDlftAK4C7nlU0gzm+Hn8DAuKxjl+hbIBSIRfO4+Pj+vVEczj6rMYRj3D+C6AGbxVspQNqAZSrTmabMs4bL/RLigbAEEIaMJ89ZEgJ+kraWMtIep+1AkW++XlRRqdoWwAEsq6rZL3IjEeCcQYC8PzLQNHKBsA7MTn6keocVU1ntczCTkgn6udAVYBfwjhOycQJQ28sN7cHlc9AyBcJewrp8YrFTKTK1ztDIDT0WsP9FpbGcT3YBib4Ofw2NW2gDqUDEuQxXCymWpF4g2eM0L59+gz29/3VQJRlYAS4lHm+Or2xmdKmqodcPhFh4fFcVv2xGdIdEKYI1PeAhVGWjRjUs/oChUDSs568S1Rj99fl08PrOXXS5wh6VyHO4AFepGq8pnKGr25rXgqbo+sATtHK4FaYpbKf5nXmT+ZLhgg1QUZA7aFMpWtmPNl+rx8FMo4XjvRBV0TylvABxgVv1XfaHQB1q/GqB6IPQN2DvrFVYUyrz0Tj8r/Of2xfJYuGNwKKgYRdkGqA1R7qZM46g6PiTc2Exr4tVSF/Xi2C43IgM05BOWFe84rgw6tzyS6AHlwLmdeiy0DtgdUQCXez8F4yyCuvtHrggiOx/muSBPKh6CiEXBHt/rG4FmALmATMnkpA8JDo1XZCBPfqr6xdYEwQVXZC8TYyFYodUBPfDTO4v+a/tl9jEtuhQz8T8edQ6qFfIDeOPDV9/w9/Tv/sZ7owfi3T8dfdXGl/ZvBtoLNsQOc3h6bbm/A7uDjk185ywaoOdF+/vrfz+effz++2gxlAIhMAH6cx1YW7dIAUBFvjqt5HlUVNhH01gGRAZZLNGdmZ0DY+j6hkYS98Ag2Jbuuwev3xmfuyq9BJYIDZcFz/tmegCrKQC4gDDi8GiJUd0SVMhFeHAu369bcUfhZ6zDHB7bA7vDzZBwEap4PbkE5IdyPYtpYy2BlDglcUHGN1BkAOInenMgAlaRfz9ZR98CIcDU+c+ffAuCwHVpJADZBJcnigUvmUABbU5nQgsVxLKxBczbdbIBxygjDB2VDZprmY71ejEi0wXNmDnpbBhi7pLAgJ9JKVIkH6/3QeFvDr63WBaPCjZ4Bxq4j2ATAySIJIdxIGQDYYE9CfFdf1gAjNEIla0m6xHoxuyaw8ErFmaoBxmZEqxuEcJCNJ03gjsL44PobowYYoRHGmmQ11vKfo1qcFX5pYAQS3n7atftU2daya/H9NJd0LkpoNM7/saZjmn4AEPBhlb4c9B8AAAAASUVORK5CYII=
+]]]
+Opacity
+System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+1
+]]]
+IsSelected
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+False
+]]]
+IsVisible
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+True
+]]]
+Parent
+SPArtAn.Frame, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+001fd262-6f86-425c-a536-1488e5d969b2
+]]]
+]]]
+[ITEM]
+SPArtAn.Layer, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+NEW
+GUID
+System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+6d9c0971-0a9b-44f5-95fd-29e820270f34
+]]]
+OffsetX
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+0
+]]]
+OffsetY
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+0
+]]]
+Width
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+64
+]]]
+Height
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+64
+]]]
+Image
+System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+[[[
+iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGWSURBVHhe7ZXbbsMwDEPT/f8/d2tBGllb1zdJTmIeIOBbTFJysk3mjmcaN+gMXoNP8fIDXZZZG5Bb+3A/2gBoJKWPXqin6AJqv/hhvnQFoBG0/u9DvGkDoN60Tp+4+4sooDc8cfWoKwD1YnT6xM2nNgDqgdX0iYtXrwKswxNzv7oCUEu8pk9MPWsDoFZ4T5+Y+bYsICo8MfGuKwAdJXr6ZNi/NgA6wqzpk6EM2gBoL7OnT7pzjBRwlPCkK4uuALSVo02fNOfRBkBbOOr0SVOm1gKOHp5U59IVgNZwlumTqmzaAGiJs02fFPPVFHDW8ORrRl0BaI6zT59kc2oDoJ+4yvTJx6y5Aq4Wnrzl1RWA7rnq9Mm/zNoAKLn69EnKvS9glfDkmV1XALra9MlNG/D3rDr9J9oA6LLfgP1v8EF0EbMGkHK/FkAiDM0o/y1vrgDiZSq6+GzOUgHE2lhUAcV8tQUQC4OlMyPOSLQWQHpN1p7n/f5EbwGkxWjrWZ7vTowWQGrMehQw7N+qgAffDPee4/HOHdv2C7j1NFN1y2HuAAAAAElFTkSuQmCC
+]]]
+Opacity
+System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+1
+]]]
+IsVisible
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+True
+]]]
+Name
+System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+Layer 1
+]]]
+IsSelected
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+True
+]]]
+Parent
+SPArtAn.Frame, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+001fd262-6f86-425c-a536-1488e5d969b2
+]]]
+]]]
+]]]
+Parent
+SPArtAn.Facing, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+7cca2130-e995-4e5f-8c4b-6f78b9ddac87
+]]]
+]]]
+]]]
+IsSelected
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+True
+]]]
+Parent
+SPArtAn.Animation, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+51729110-b1c2-433b-a2f9-857875d50570
+]]]
+]]]
+]]]
+Parent
+SPArtAn.Sprite, SPArtAn, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null
+[[[
+2c34594a-13b7-4c21-b8ca-adf23078def8
+]]]
+IsSelected
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+True
+]]]
+]]]
+]]]
+DefaultWidth
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+64
+]]]
+DefaultHeight
+System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+64
+]]]
+IsSelected
+System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[[[
+True
+]]]

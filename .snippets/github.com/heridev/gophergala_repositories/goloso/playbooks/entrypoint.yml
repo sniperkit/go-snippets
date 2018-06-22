@@ -1,0 +1,23 @@
+---
+# file: playbooks/entrypoint.yml
+
+# this file is just an example how to load a main ansible playbook and use env variables to pick the correct role
+
+- hosts: all
+  sudo: yes
+
+  vars_files:
+    - ../group_vars/all
+    - ../group_vars/users
+    - ../group_vars/ecomisi
+    - ../group_vars/packages
+
+  pre_tasks:
+    - shell: echo 'BEGIN Playbook'
+
+  roles:
+    - { role: ../roles/common, when: ec2_tag_project == "" and ec2_tag_role == "" }
+    - { role: ../roles/goloso-worker, when: ec2_tag_project == "goloso" and ec2_tag_role == "worker" }
+
+  post_tasks:
+    - shell: echo 'END Playbook'

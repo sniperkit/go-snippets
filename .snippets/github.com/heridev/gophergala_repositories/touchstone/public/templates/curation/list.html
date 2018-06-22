@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+<!--	<link rel="stylesheet" href="public/stylesheets/screen.css" /> -->
+</head>
+
+<body>
+
+<div class="wrap">
+  <h2>Content</h2>
+  <ul>
+    {{ range $index, $video := .Videos }}
+    <li>
+    <div>
+      <img src="{{ $video.DefaultThumbnail.URL }}" />
+      <a href="/curate/v/{{$video.ID}}">edit</a>
+      {{ $video.Title }}
+      <p>
+      {{ $video.Desc }}
+      </p>
+    </div>
+    </li>
+    {{ end }}
+  </ul>
+  <a href="/curate/list?offset={{ .Offset }}">next</a>
+</div>
+
+</body>
+
+
+</html>

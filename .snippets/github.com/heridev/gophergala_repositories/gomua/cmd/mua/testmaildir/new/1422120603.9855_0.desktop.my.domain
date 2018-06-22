@@ -1,0 +1,226 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Sat, 24 Jan 2015 12:30:03 -0500
+Received: (qmail 5760 invoked from network); 24 Jan 2015 09:01:56 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 24 Jan 2015 09:01:56 -0800
+X-ASG-Debug-ID: 1422118914-017fd408af21577a0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id 0iGYSvNBTkxtm34x for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 09:01:54 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146388=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0OHEsou016395
+	for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 10:14:58 -0700 (MST)
+Received: from www.stare.cz (mx.stare.cz [79.98.77.229])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0OHEXNY006566 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=NO)
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 10:14:36 -0700 (MST)
+Received: from www.stare.cz (localhost [127.0.0.1]);
+	by www.stare.cz (OpenSMTPD) with ESMTP id b124f81f;
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 18:00:30 +0100 (CET)
+Date: Sat, 24 Jan 2015 18:00:30 +0100
+From: Jan Stary <hans@stare.cz>
+To: misc@openbsd.org
+Subject: SIM card in a Thinkpad T400
+Message-ID: <20150124170030.GA27256@www.stare.cz>
+X-ASG-Orig-Subj: SIM card in a Thinkpad T400
+Mail-Followup-To: misc@openbsd.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+User-Agent: Mutt/1.5.23 (2014-03-12)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422118914
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14592
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+I only just found that my Thinkpad T400 (dmesg below)
+has a slot that accepts a SIM card. I plugged mine in,
+but don't see anything new in dmesg or ifconfig.
+
+Is there a way to use this for a mobile data connection?
+Can I use be just any SIM card, or does it have to be a specific one?
+Does this have anything to do with the umodem(4) I see in dmesg?
+
+	Jan
+
+
+OpenBSD 5.7-beta (GENERIC.MP) #2: Sat Jan 24 08:49:59 CET 2015
+    root@lenovo.stare.cz:/usr/src/sys/arch/amd64/compile/GENERIC.MP
+real mem = 2021330944 (1927MB)
+avail mem = 1963704320 (1872MB)
+mpath0 at root
+scsibus0 at mpath0: 256 targets
+mainbus0 at root
+bios0 at mainbus0: SMBIOS rev. 2.4 @ 0xe0010 (80 entries)
+bios0: vendor LENOVO version "7UET94WW (3.24 )" date 10/17/2012
+bios0: LENOVO 64741EG
+acpi0 at bios0: rev 2
+acpi0: sleep states S0 S3 S4 S5
+acpi0: tables DSDT FACP SSDT ECDT APIC MCFG HPET SLIC BOOT ASF! SSDT TCPA SSDT SSDT SSDT
+acpi0: wakeup devices LID_(S3) SLPB(S3) UART(S3) IGBE(S4) EXP0(S4) EXP1(S4) EXP2(S4) EXP3(S4) EXP4(S4) PCI1(S4) USB0(S3) USB3(S3) USB5(S3) EHC0(S3) EHC1(S3) HDEF(S4)
+acpitimer0 at acpi0: 3579545 Hz, 24 bits
+acpiec0 at acpi0
+acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat
+cpu0 at mainbus0: apid 0 (boot processor)
+cpu0: Intel(R) Core(TM)2 Duo CPU P8400 @ 2.26GHz, 2261.30 MHz
+cpu0: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,SMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,SSE4.1,NXE,LONG,LAHF,PERF
+cpu0: 3MB 64b/line 8-way L2 cache
+cpu0: smt 0, core 0, package 0
+mtrr: Pentium Pro MTRR support, 7 var ranges, 88 fixed ranges
+cpu0: apic clock running at 265MHz
+cpu0: mwait min=64, max=64, C-substates=0.2.2.2.2, IBE
+cpu1 at mainbus0: apid 1 (application processor)
+cpu1: Intel(R) Core(TM)2 Duo CPU P8400 @ 2.26GHz, 2261.00 MHz
+cpu1: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,SMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,SSE4.1,NXE,LONG,LAHF,PERF
+cpu1: 3MB 64b/line 8-way L2 cache
+cpu1: smt 0, core 1, package 0
+ioapic0 at mainbus0: apid 1 pa 0xfec00000, version 20, 24 pins
+ioapic0: misconfigured as apic 2, remapped to apid 1
+acpimcfg0 at acpi0 addr 0xe0000000, bus 0-63
+acpihpet0 at acpi0: 14318179 Hz
+acpiprt0 at acpi0: bus 0 (PCI0)
+acpiprt1 at acpi0: bus -1 (AGP_)
+acpiprt2 at acpi0: bus 2 (EXP0)
+acpiprt3 at acpi0: bus 3 (EXP1)
+acpiprt4 at acpi0: bus -1 (EXP2)
+acpiprt5 at acpi0: bus 5 (EXP3)
+acpiprt6 at acpi0: bus 13 (EXP4)
+acpiprt7 at acpi0: bus 21 (PCI1)
+acpicpu0 at acpi0: C3, C2, C1, PSS
+acpicpu1 at acpi0: C3, C2, C1, PSS
+acpipwrres0 at acpi0: PUBS, resource for USB0, USB3, USB5, EHC0, EHC1
+acpitz0 at acpi0: critical temperature is 127 degC
+acpitz1 at acpi0: critical temperature is 100 degC
+acpibtn0 at acpi0: LID_
+acpibtn1 at acpi0: SLPB
+acpibat0 at acpi0: BAT0 model "93P5030" serial  1559 type LION oem "SONY"
+acpibat1 at acpi0: BAT1 not present
+acpiac0 at acpi0: AC unit online
+acpithinkpad0 at acpi0
+acpidock0 at acpi0: GDCK not docked (0)
+cpu0: Enhanced SpeedStep 2261 MHz: speeds: 2267, 2266, 1600, 800 MHz
+pci0 at mainbus0 bus 0
+pchb0 at pci0 dev 0 function 0 "Intel GM45 Host" rev 0x07
+vga1 at pci0 dev 2 function 0 "Intel GM45 Video" rev 0x07
+intagp0 at vga1
+agp0 at intagp0: aperture at 0xd0000000, size 0x10000000
+inteldrm0 at vga1
+drm0 at inteldrm0
+inteldrm0: 1280x800
+wsdisplay0 at vga1 mux 1: console (std, vt100 emulation)
+wsdisplay0: screen 1-5 added (std, vt100 emulation)
+"Intel GM45 Video" rev 0x07 at pci0 dev 2 function 1 not configured
+"Intel GM45 HECI" rev 0x07 at pci0 dev 3 function 0 not configured
+pciide0 at pci0 dev 3 function 2 "Intel GM45 PT IDER" rev 0x07: DMA (unsupported), channel 0 wired to native-PCI, channel 1 wired to native-PCI
+pciide0: using apic 1 int 18 for native-PCI interrupt
+pciide0: channel 0 ignored (not responding; disabled or no drives?)
+pciide0: channel 1 ignored (not responding; disabled or no drives?)
+puc0 at pci0 dev 3 function 3 "Intel GM45 KT" rev 0x07: ports: 1 com
+com4 at puc0 port 0 apic 1 int 17: ns16550a, 16 byte fifo
+com4: probed fifo depth: 15 bytes
+em0 at pci0 dev 25 function 0 "Intel ICH9 IGP M AMT" rev 0x03: msi, address 00:1c:25:9b:0a:23
+uhci0 at pci0 dev 26 function 0 "Intel 82801I USB" rev 0x03: apic 1 int 20
+uhci1 at pci0 dev 26 function 1 "Intel 82801I USB" rev 0x03: apic 1 int 21
+uhci2 at pci0 dev 26 function 2 "Intel 82801I USB" rev 0x03: apic 1 int 22
+ehci0 at pci0 dev 26 function 7 "Intel 82801I USB" rev 0x03: apic 1 int 23
+usb0 at ehci0: USB revision 2.0
+uhub0 at usb0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+azalia0 at pci0 dev 27 function 0 "Intel 82801I HD Audio" rev 0x03: msi
+azalia0: codecs: Conexant CX20561
+audio0 at azalia0
+ppb0 at pci0 dev 28 function 0 "Intel 82801I PCIE" rev 0x03: msi
+pci1 at ppb0 bus 2
+ppb1 at pci0 dev 28 function 1 "Intel 82801I PCIE" rev 0x03: msi
+pci2 at ppb1 bus 3
+iwn0 at pci2 dev 0 function 0 "Intel WiFi Link 5300" rev 0x00: msi, MIMO 3T3R, MoW, address 00:21:6a:01:9f:ce
+ppb2 at pci0 dev 28 function 3 "Intel 82801I PCIE" rev 0x03: msi
+pci3 at ppb2 bus 5
+ppb3 at pci0 dev 28 function 4 "Intel 82801I PCIE" rev 0x03: msi
+pci4 at ppb3 bus 13
+uhci3 at pci0 dev 29 function 0 "Intel 82801I USB" rev 0x03: apic 1 int 16
+uhci4 at pci0 dev 29 function 1 "Intel 82801I USB" rev 0x03: apic 1 int 17
+uhci5 at pci0 dev 29 function 2 "Intel 82801I USB" rev 0x03: apic 1 int 18
+ehci1 at pci0 dev 29 function 7 "Intel 82801I USB" rev 0x03: apic 1 int 19
+usb1 at ehci1: USB revision 2.0
+uhub1 at usb1 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+ppb4 at pci0 dev 30 function 0 "Intel 82801BAM Hub-to-PCI" rev 0x93
+pci5 at ppb4 bus 21
+cbb0 at pci5 dev 0 function 0 "Ricoh 5C476 CardBus" rev 0xba: apic 1 int 16
+"Ricoh 5C832 Firewire" rev 0x04 at pci5 dev 0 function 1 not configured
+sdhc0 at pci5 dev 0 function 2 "Ricoh 5C822 SD/MMC" rev 0x21: apic 1 int 18
+sdmmc0 at sdhc0
+"Ricoh 5C843 MMC" rev 0x11 at pci5 dev 0 function 3 not configured
+"Ricoh 5C592 Memory Stick" rev 0x11 at pci5 dev 0 function 4 not configured
+"Ricoh 5C852 xD" rev 0x11 at pci5 dev 0 function 5 not configured
+cardslot0 at cbb0 slot 0 flags 0
+cardbus0 at cardslot0: bus 22 device 0 cacheline 0x10, lattimer 0xb0
+pcmcia0 at cardslot0
+pcib0 at pci0 dev 31 function 0 "Intel 82801IEM LPC" rev 0x03
+ahci0 at pci0 dev 31 function 2 "Intel 82801I AHCI" rev 0x03: msi, AHCI 1.2
+scsibus1 at ahci0: 32 targets
+sd0 at scsibus1 targ 0 lun 0: <ATA, WDC WD1600BEVS-0, 13.0> SCSI3 0/direct fixed naa.50014ee2acde9a68
+sd0: 152627MB, 512 bytes/sector, 312581808 sectors
+cd0 at scsibus1 targ 1 lun 0: <HL-DT-ST, DVDRAM GSA-U20N, HX11> ATAPI 5/cdrom removable
+ichiic0 at pci0 dev 31 function 3 "Intel 82801I SMBus" rev 0x03: apic 1 int 23
+iic0 at ichiic0
+usb2 at uhci0: USB revision 1.0
+uhub2 at usb2 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb3 at uhci1: USB revision 1.0
+uhub3 at usb3 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb4 at uhci2: USB revision 1.0
+uhub4 at usb4 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb5 at uhci3: USB revision 1.0
+uhub5 at usb5 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb6 at uhci4: USB revision 1.0
+uhub6 at usb6 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb7 at uhci5: USB revision 1.0
+uhub7 at usb7 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+isa0 at pcib0
+isadma0 at isa0
+pckbc0 at isa0 port 0x60/5
+pckbd0 at pckbc0 (kbd slot)
+pckbc0: using irq 1 for kbd slot
+wskbd0 at pckbd0: console keyboard, using wsdisplay0
+pms0 at pckbc0 (aux slot)
+pckbc0: using irq 12 for aux slot
+wsmouse0 at pms0 mux 0
+wsmouse1 at pms0 mux 0
+pms0: Synaptics touchpad, firmware 7.0
+pcppi0 at isa0 port 0x61
+spkr0 at pcppi0
+aps0 at isa0 port 0x1600/31
+umodem0 at uhub1 port 4 configuration 1 interface 1 "Ericsson Ericsson F3507g Mobile Broadband Minicard Composite Device" rev 2.00/0.00 addr 2
+umodem0: data interface 2, has CM over data, has break
+umodem0: status change notification available
+ucom0 at umodem0
+umodem1 at uhub1 port 4 configuration 1 interface 3 "Ericsson Ericsson F3507g Mobile Broadband Minicard Composite Device" rev 2.00/0.00 addr 2
+umodem1: data interface 4, has CM over data, has break
+umodem1: status change notification available
+ucom1 at umodem1
+cdce0 at uhub1 port 4 configuration 1 interface 7 "Ericsson Ericsson F3507g Mobile Broadband Minicard Composite Device" rev 2.00/0.00 addr 2
+cdce0: address 02:80:37:ec:02:00
+ugen0 at uhub1 port 4 configuration 1 "Ericsson Ericsson F3507g Mobile Broadband Minicard Composite Device" rev 2.00/0.00 addr 2
+ugen1 at uhub3 port 1 "AuthenTec Fingerprint Sensor" rev 2.00/17.03 addr 2
+vscsi0 at root
+scsibus2 at vscsi0: 256 targets
+softraid0 at root
+scsibus3 at softraid0: 256 targets
+sd1 at scsibus3 targ 1 lun 0: <OPENBSD, SR CRYPTO, 005> SCSI2 0/direct fixed
+sd1: 150365MB, 512 bytes/sector, 307948512 sectors
+root on sd1a (236eb28361c74a52.a) swap on sd1b dump on sd1b
+

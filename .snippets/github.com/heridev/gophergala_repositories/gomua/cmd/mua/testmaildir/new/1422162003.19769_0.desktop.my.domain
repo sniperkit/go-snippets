@@ -1,0 +1,62 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Sun, 25 Jan 2015 00:00:03 -0500
+Received: (qmail 5864 invoked from network); 24 Jan 2015 20:32:59 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 24 Jan 2015 20:32:59 -0800
+X-ASG-Debug-ID: 1422160378-017fd408af216b270001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id uf2FU6GC0eHOr8VC for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 20:32:58 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146395=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0P4kMAU012409
+	for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 21:46:24 -0700 (MST)
+Received: from mx1.riseup.net (mx1.riseup.net [198.252.153.129])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0P4kAf8012386 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=FAIL)
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 21:46:11 -0700 (MST)
+Received: from berryeater.riseup.net (berryeater-pn.riseup.net [10.0.1.120]) (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits)) (Client CN "*.riseup.net", Issuer "COMODO RSA Domain Validation Secure Server CA" (verified OK))
+	by mx1.riseup.net (Postfix) with ESMTPS id 79E1A40F27
+	for <misc@openbsd.org>; Sun, 25 Jan 2015 04:32:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=riseup.net; s=squak; t=1422160338; bh=OShjy8jKybci/WgpRR4Kl05ePz1i700xxwaKSX9znAI=; h=Date:Subject:From:To:From; b=Mt3MGaPyFFp/RLk9A2CQqGHcOHtJHScecUR9CTNyfPBiQFalJUVzHZReAwum0Mwhd s4A73lY9zEkndlsNqO3AXF7SMybvjmCCkrKvqm13Q+badXeECOQ0YFB8M8GQMGdCoA 7kBO4rbyP/BfPlLmLx4aQKF7GBo3JfdmQYYCNhkU=
+Received: from [127.0.0.1] (localhost [127.0.0.1]) (Authenticated sender: shaul) with ESMTPSA id 5E58340E71
+Received: from localhost (127.0.0.1) (SquirrelMail authenticated user shaul)
+	by mail.riseup.net with HTTP; Sat, 24 Jan 2015 20:32:18 -0800
+Message-ID: <50bfea1bdad0c2d79079d1fef9c719e1.squirrel@mail.riseup.net>
+Date: Sat, 24 Jan 2015 20:32:18 -0800
+Subject: Install to USB 3.0 hard drive
+From: "Sha'ul" <shaul@riseup.net>
+X-ASG-Orig-Subj: Install to USB 3.0 hard drive
+To: misc@openbsd.org
+User-Agent: SquirrelMail/1.4.23 [SVN]
+MIME-Version: 1.0
+Content-Type: text/plain;charset=utf-8
+Content-Transfer-Encoding: 8bit
+X-Virus-Scanned: clamav-milter 0.98.5 at mx1
+X-Virus-Status: Clean
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422160378
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO, UNPARSEABLE_RELAY
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14604
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+	0.00 UNPARSEABLE_RELAY      Informational: message has unparseable relay lines
+
+For installing to an external USB 3.0 hard drive, do I need to install
+-current for full xhci support or can I use 5.6 since it will be running
+off of USB 3.0 but I won't be connecting or plugging in any USB 3.0
+devices?
+

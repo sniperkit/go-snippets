@@ -1,0 +1,2 @@
+client: cd client/main && gopherjs build --watch=true --output="../../public/app.js"
+server: PORT=3000 fresh -c fresh.conf

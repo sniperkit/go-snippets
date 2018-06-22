@@ -1,0 +1,475 @@
+/*
+* Global
+*/
+
+*:focus {
+  outline: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  min-height: 680px;
+  margin: 0;
+  font-family: "Raleway";
+  color: #fff;
+  transition: all ease 1.5s;
+  opacity: 1;
+}
+
+body.fadebg {
+  opacity: 0;
+  background: url('/static/images/blank.jpg') no-repeat top center;
+}
+
+#page {
+  height: 100%;
+  width: 100%;
+  background: url('/static/images/bg-reveal.png') no-repeat top center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.container {
+  padding: 60px 30px 0px 30px;
+}
+
+#content {
+  width: 1300px;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #29f;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.visible {
+  display: block;
+}
+
+.button:hover {
+  background: #3af;
+}
+
+a {
+  text-decoration: none;
+}
+
+#navbar {
+  width: 100%;
+  background: #1a1a1a;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  position: absolute;
+  top: -60px;
+  transition: top ease 1s;
+}
+
+#navbar.slidedown {
+  top:0;
+}
+
+#navbar h2 {
+  font-size: 19px;
+  font-family: "Special Elite";
+  display: inline-block;
+  padding: 2px 20px;
+  font-weight: normal;
+}
+
+#navbar h2 span {
+  color: tan;
+}
+
+#player {
+  background: #000;
+  display: flex;
+  align-items: center;
+  padding: 2px 20px;
+  color: #fff;
+  transition: all ease 0.2s;
+  position: relative;
+}
+
+#player:hover {
+  background: #3af;
+  cursor: pointer;
+}
+
+#player span#avatar {
+  margin-right: 10px;
+}
+
+#avatar img {
+  position: relative;
+  top: 2px;
+}
+
+#player span#alias {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#player #subnav {
+  position: absolute;
+  right: 0;
+  top: -100px;
+  transition: all ease 0.5s;
+  z-index: -10;
+}
+
+#player:hover #subnav {
+  top: 39px;
+}
+
+#subnav ul {
+  margin: 0;
+  padding: 0;
+}
+
+#subnav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+#subnav li a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0;
+  padding: 15px 20px;
+  display: inline-block;
+  text-align: right;
+  background: #29e;
+  min-width: 64px;
+  border-bottom: 1px dotted #29e;
+}
+
+#subnav li:last-child a {
+  border-bottom: none;
+}
+
+#subnav li a:hover {
+  background: #333;
+}
+
+/*
+* Screens
+*/
+
+/* Opening */
+
+body.opening {
+  background: url('/static/images/jump-small-blue.jpg') no-repeat center center;
+}
+
+body.opening #page {
+  align-items: center;
+}
+
+body.opening .container {
+  padding-bottom: 60px;
+}
+
+body.opening div#player {
+  display: none;
+}
+
+h1.title {
+  font-size: 42px;
+  font-family: "Special Elite";
+  font-weight: normal;
+  margin: 0 0 10px 0;
+  padding: 0;
+  text-align: center;
+  color: tan;
+  /* Safari */
+  -webkit-transform: rotate(-1deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-1deg);
+
+  /* IE */
+  -ms-transform: rotate(-1deg);
+
+  /* Opera */
+  -o-transform: rotate(-1deg);
+  text-shadow: 3px 3px 5px #000;
+  text-transform: uppercase;
+  opacity: 0.75;
+  transition: all ease 1s;
+}
+
+h1.title.big {
+  color: #fff;
+  text-decoration: none;
+  font-size: 75px;
+  text-transform: none;
+  opacity: 1;
+  margin-top: 80px;
+}
+
+h1.title.disappear {
+  opacity: 0;
+}
+
+#oauth {
+  margin-top: 80px;
+  width: 100%;
+  text-align: center;
+  opacity: 1;
+  transition: all ease 1s;
+}
+
+#oauth.disappear {
+  opacity: 0;
+}
+
+#profiles {
+  height: 350px;
+  width: 100%;
+  position: relative;
+  top: 40px;
+  transition: all ease 2s;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+}
+
+body.from-intro #profiles {
+  margin-top: 400px;
+}
+
+#profiles.slideup {
+  top: 0;
+  opacity: 1;
+}
+
+a.profile {
+  display: inline-block;
+  height: 300px;
+  width: 215px;
+  background: #000;
+
+  text-decoration: none;
+  color: #fff;
+  margin: 0 50px;
+  text-align: center;
+  -moz-box-shadow:    0px 0px 55px 0px #222;
+  -webkit-box-shadow: 0px 0px 55px 0px #222;
+  box-shadow:         0px 0px 55px 0px #222;
+  top: 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+a.profile:hover {
+  top: -15px;
+}
+
+a.profile:hover span.bio {
+  display: none;
+}
+a.profile:hover span.play {
+  display: inline-block;
+  position: relative;
+  top: -42px;
+}
+
+a.profile h3 {
+  font-size: 19px;
+  color: #eee;
+  margin: 5px 0 0 0;
+  padding-top: 211px;
+}
+
+a.profile p {
+  color: #bbb;
+  font-size: 12px;
+}
+
+span.play {
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #f45;
+  margin-top: 257px;
+  display: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+a#dee {
+  background: url('/static/images/dee.jpg') no-repeat;
+}
+
+a#jason {
+  background: url('/static/images/jason.jpg') no-repeat;
+}
+
+a.profile span.bio {
+  display: inline-block;
+  padding: 5px 20px;
+  background: url('/static/images/profile-mask-light.png') no-repeat;
+}
+
+/* Levels */
+#laptop {
+  height: 480px;
+  width: 740px;
+  background: url('/static/images/laptop-small.png') no-repeat;
+  position: relative;
+  top: 30px;
+  transition: top ease 1.5s;
+  padding: 90px 140px 60px 70px;
+}
+#laptop.movehigher {
+  top: 0;
+}
+body.level1 {
+  background: url('/static/images/plane-small.jpg') no-repeat center center;
+}
+body.level2 {
+  background: url('/static/images/island2-small.jpg') no-repeat center center;
+}
+body.level3 {
+  background: url('/static/images/jungle-small.jpg') no-repeat center center;
+}
+body.level4 {
+  background: url('/static/images/surveillance-small.jpg') no-repeat center center;
+}
+body.level5 {
+  background: url('/static/images/compound-small.jpg') no-repeat center center;
+}
+body.level5 {
+  background: url('/static/images/compound-small.jpg') no-repeat center center;
+}
+.intro {
+  width: 330px;
+  height: 380px;
+  margin-top: 30px;
+  font-size: 14px;
+  transition: all ease 1.5s;
+  position: relative;
+  top: 40px;
+  left: 20px;
+  opacity: 0;
+}
+.intro.movehigher {
+  top: 10px;
+  left: 0;
+  opacity: 1;
+}
+
+/* Editor */
+#editor {
+  height: 432px;
+  overflow-y: auto;
+  width: 757px;
+}
+#editor .buttons {
+  position: absolute;
+  top: 100px;
+  right: 150px;
+}
+#editor .code pre {
+  font-family: "Inconsolata";
+  font-size: 16px;
+}
+button.run {
+  background: #696c6e;
+  color: #fff;
+  border: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 8px 16px;
+  font-size: 12px;
+  transition: all ease 0.5s;
+  border-bottom: 3px solid #444;
+  outline: 0;
+}
+button.run:hover {
+  cursor: pointer;
+  background: #5b6;
+  border-bottom: 3px solid #284;
+}
+.code {
+  padding: 4px 10px;
+  width: 722px;
+}
+.code.frozen {
+
+}
+.code.playground {
+  background: #000 !important;
+  color: #fff;
+}
+
+#playground {
+  padding: 20px 10px;
+}
+
+.code pre {
+  padding: 3px 0;
+  margin: 0;
+}
+
+/* Output */
+.output .buttons {
+  display: none;
+}
+
+.output pre {
+  white-space: pre-wrap;       /* CSS 3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.stdout .fail {
+  display: inline-block;
+  margin: 20px 0;
+  background: #f45;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: 700;
+}
+
+.stdout .success {
+  display: inline-block;
+  margin: 20px 0;
+  background: #5b6;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: 700;
+}

@@ -1,0 +1,25 @@
+<% if (typeof(error) != "undefined") { %>
+<div class="panel panel-danger user-form center-block">
+	<div class="panel-heading">
+	<h5 class="text-center"><%=error%></h5>
+	</div>
+</div>
+<% } %>
+
+<form id="register-form" class="center-block user-form">
+	<div class="form-group">
+		<input type="email" class="form-control" name="username" placeholder="username">
+	</div>
+	<div class="form-group">
+		<input type="password" name="password" class="form-control" placeholder="password">
+	</div>
+
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="verseai">I am happy to play AI players
+		</label>
+	</div>
+
+	<button type="submit" id="register-button" class="btn btn-primary">Register</button>
+	<button type="button" id="i-want-to-login" class="btn btn-link">Login</button>
+</form>

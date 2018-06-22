@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gevvent</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+    <style>
+        body {
+          padding-top: 70px;
+          padding-bottom: 30px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+    </style>
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% block body %}
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Gevvent</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="dropdown">
+                            <a id="drop1" href="/events" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                My Events
+                                {% if num_invitations > 0 %}
+                                    <span class="badge">{{ num_invitations }}</span>
+                                {% else %}
+                                    <span class="caret"></span>
+                                {% endif %}
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/events/upcoming">Upcoming {% if num_upcoming > 0 %}<span class="badge pull-right">{{ num_upcoming }}</span>{% endif %}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/events/invitations">Invitations {% if num_invitations > 0 %}<span class="badge pull-right">{{ num_invitations }}</span>{% endif %}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/events/hosting">Hosting</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/events/past">Past</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/events/create">Create</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/events/search">Find Event</a></li>
+                    </ul>
+
+                    {% if authenticated %}
+                    <ul class="nav navbar-nav navbar-right">
+                      <li id="fat-menu" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                          Signed in as {{ user_name }}
+                          <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/account">Account</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout">Logout</a></li></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    {% else %}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/login">Login</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/register">Register</a></li>
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            {% for flash in flashes %}
+                <div class="alert alert-{{ flash.type }}" role="alert">{{ flash.message }}</div>
+            {% endfor %}
+
+            {% block content %}{% endblock %}
+        </div>
+{% endblock %}
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/static/js/bootstrap.min.js"></script>
+{% block footer_js %}{% endblock %}
+</body>
+</html>

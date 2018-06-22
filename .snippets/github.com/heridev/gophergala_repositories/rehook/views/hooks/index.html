@@ -1,0 +1,42 @@
+{{define "page"}}
+
+<script src="/public/js/graph.js"></script>
+
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-2">
+		<div class="panel-body header">
+			<h1>Hooks
+			<a href="/hooks/new" class="btn btn-default pull-right" style="font-weight: 600;">Create new hook</a>
+			</h1>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-body">
+
+				{{range $index, $element := .}}
+					{{if gt $index 0}}<hr>{{end}}
+					<div>
+						<h2 class="hook">
+							<a href="/hooks/edit/{{.ID}}">{{.ID}}</a>
+							<span class="info">{{.Count.Total}} <small>total requests</small></span>
+						</h2>
+						<div id="graph{{$index}}" class="graph">
+							<script>graphs.push({e: "#graph{{$index}}", dataset: {{.Count.Recent}}});</script>
+						</div>
+						<small class="graph-footer">Requests last 48 hours</small>
+					</div>
+				{{else}}
+					No hooks configured yet.
+				{{end}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>draw_graphs();</script>
+
+{{end}}

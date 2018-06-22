@@ -1,0 +1,15 @@
+{{define "home"}}{{template "header"}}{{template "nav"}}
+<div class="jumbotron">
+  <div class="container">
+    <h1>Calendar</h1>
+  </div>
+</div>
+<div class="center-block w50 row teams" data-sport="{{.sport}}" data-date="{{.events.EventsDate}}">
+    {{template "events" .}}
+</div>
+<br>
+<div class="text-center center-block row">
+    <a class="btn btn-default btn-lg" href="javascript:void(0);" id="load-more">Load more…</a>
+    <br>
+</div>
+{{template "footer"}}{{end}}

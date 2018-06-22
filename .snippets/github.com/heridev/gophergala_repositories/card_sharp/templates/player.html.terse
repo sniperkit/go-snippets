@@ -1,0 +1,15 @@
+!!
+html
+  head
+    title= default .Title "CardParty.Today"
+    link rel="stylesheet" href="/css/bootstrap.min.css"
+    link rel="stylesheet" href="/css/app.css"
+    script type="text/javascript" src="/js/jquery.js"
+    script type="text/javascript" src="/js/bootstrap.js"
+    script type="text/javascript" src="/js/app.js"
+    meta name="role" value="player"
+    meta name="lobby" value=.Lobby.ID
+    meta name="player" value=.Player.ID
+    meta name="initial" value=.Player.Status
+  body
+    @

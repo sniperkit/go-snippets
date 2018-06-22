@@ -1,0 +1,171 @@
+
+body {
+  margin-top: 50px;
+}
+
+/*
+  Navbar
+ */
+.navbar {
+  border: none;
+  background-color: #2E353E;
+}
+
+.navbar .navbar-brand {
+  color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.jumbotron {
+  background-color: #0BC5D8;
+  min-height: 160px;
+  margin-bottom: 0px;
+}
+
+/*
+  Jumbotron
+ */
+.jumbotron .form-inline {
+  text-align: center;
+  margin-top: 9px;
+}
+
+.jumbotron .form-inline input {
+  border-radius: 24px;
+  border: none;
+  min-width: 340px;
+}
+
+.jumbotron .form-inline button {
+  border-radius: 24px;
+  border: none;
+  background-color: #2E353E;
+}
+
+.jumbotron .form-inline button:disabled {
+  opacity: 0.35;
+}
+
+.jumbotron .subtitle {
+  text-align: center;
+  height: 26px;
+  padding-top: 6px;
+}
+
+.jumbotron .subtitle p {
+  font-size: 12px;
+  color: white;
+}
+
+/*
+  Query results
+ */
+.alert.no-results {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.result {
+  margin-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: solid 1px #E4E4E5;
+}
+
+.result:last-child {
+  border-bottom: none;
+}
+
+.result .page-header {
+  font-size: 18px;
+  border-bottom: none;
+  margin: 20px 0 20px;
+}
+
+.result .page-header p {
+  margin-bottom: 0px;
+}
+
+.result .label {
+  display: inline-block;
+  width: 100px;
+  margin-right: 10px;
+  line-height: 1.42857143; /* WTf... */
+}
+
+.result .label-package {
+  background-color: #2E353E;
+}
+
+.result .label-func {
+  background-color: #FF1E69;
+}
+
+.result .label-const {
+  background-color: #009FFF;
+}
+
+.result .label-var {
+  background-color: #AADD1F;
+}
+
+.result .label-type {
+  background-color: #FF7600;
+}
+.result .label-method {
+  background-color: #009FFF;
+}
+
+.link-wrapper a {
+  padding-left: 115px;
+  color: #2E353E;
+  text-decoration: none;
+  font-size: 80%;
+}
+
+.link-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.link-wrapper a:before {
+  background:url('/static/images/Link.png');
+  background-size: 16px 16px;
+  content:" ";
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: 2px;
+}
+
+span.highlight {
+  display: inline;
+  padding: 0em 0.2em 0em;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: bottom;
+  border-radius: .25em;
+  background-color: #FFE600;
+}
+
+.content-highlight {
+  margin-left: 115px;
+  border: none;
+  font-size: 90%;
+}
+
+/*
+   Add package
+ */
+
+.package-form  input {
+  width: 400px !important;
+}

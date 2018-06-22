@@ -1,0 +1,106 @@
+<html>
+<head>
+	<title>Register Site</title>
+	<meta charset="utf-8" />
+	<link type="text/css" rel="stylesheet" href="../../layout/css/layout.css"  media="screen,projection"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+</head>
+<body>
+
+	<div class="navbar-fixed">
+		<nav class="transparent" role="navigation">
+			<div class="container">
+				<div class="nav-wrapper">
+
+					<a id="logo-container" href="#" class="brand-logo thin-text">Serra da Capivara</a>
+
+					<ul id="slide-out" class="side-nav full">
+						<li><a href="#">ABOUT US</a></li>
+						<li><a href="#">HELP US</a></li>
+						<li><a href="#">SEARCH</a></li>
+						<li><a href="#">FAQ</a></li>
+					</ul>
+
+					<a href="#" data-activates="slide-out" class="button-menu">
+						<i class="mdi-navigation-menu"></i>
+					</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container">
+		<div class="card">
+			<div class="card-content">
+			<h1>Register Site</h1>
+			<form method="POST" action="/admin/newsite">
+
+				<div class="row">
+					<div class="input-field col s7">
+						<input id="Name" type="text" class="validate">
+						<label for="Name">Name</label>
+					</div>
+					<div class="input-field col s2">
+						<input type="checkbox" name="HasPicture" id="HasPicture" />
+						<label for="HasPicture">Has Picture</label>
+					</div>
+					<div class="input-field col s3">
+						<input type="checkbox" name="HasEngraving" id="HasEngraving" />
+						<label for="HasEngraving">Has Engraving</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s2">
+						<input type="checkbox" name="Other" id="Other" />
+						<label for="Other">Other</label>
+					</div>
+					<div class="input-field col s3">
+						<input type="checkbox" name="IsHistoric" id="IsHistoric" />
+						<label for="IsHistoric">Is Historic</label>
+					</div>
+
+					<div class="input-field col s7">
+						<input id="City" type="text" class="validate">
+						<label for="City">City</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="Circuit" type="text" class="validate">
+						<label for="Circuit">Circuit</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="NationalPark" type="text" class="validate">
+						<label for="NationalPark">National Park</label>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="Location" type="text" class="validate">
+						<label for="Location">Location</label>
+					</div>
+				</div>
+
+				<input class="btn right" type="submit" value="Register" />
+			</form>
+		</div>
+		</div>
+	</div>
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="../../layout/js/jquery.js"></script>
+	<script type="text/javascript" src="../../layout/js/materialize.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.parallax').parallax();
+			$('.button-menu').sideNav();
+		});
+	</script>
+</body>
+</html>

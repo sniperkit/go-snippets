@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Edrans Smart City</title>
+</head>
+
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0" bgcolor="#FFFFFF">
+	<table border="1" style="background-color:#FFFFCC;border-collapse:collapse;border:1px solid #FFCC00;color:#000000;width:100%" cellpadding="3" cellspacing="3">
+	</table>
+	
+	<meta http-equiv="refresh" content="5" />
+	<br>
+	Red is for Hospital/Ambulances <br>
+	Blue is for Policemen/Patrolman <br>
+	Green is for Fire Station/Pumpers <br>
+	<br> <hr> <br>
+	POST AN EMERGENCY <br> <br>
+	<form id="myForm" name="myForm" method="POST">
+	<label for="endpoint">Endpoint url </label>
+	<input id="endpoint" name="endpoint" value="http://10.211.55.134:2489">
+	(don't use "localhost", use IP!)
+	<br>
+	<label for="cityName">City Name</label>
+	<input id="cityName" name="default" value="default">
+	<br>
+	<label for="Where">Where to go</label>
+	<input id="where" name="where" value=5>
+	<br>
+	<label for="service">Service</label>
+	<input id="service" name="service" value="Medic">
+	<input type="submit" value="Send Me!">
+	</form>
+
+	<script>
+		window.addEventListener("load", function () {
+			function sendData() {
+				var XHR = new XMLHttpRequest();
+				// We bind the FormData object and the form element
+				var FD = new FormData(form);
+				var item = {"where": form.where.value, "service": form.service.value}
+				var jsonString = JSON.stringify(item);
+
+				// We define what will happen if the data are successfully sent
+				XHR.addEventListener("load", function(event) {
+					alert(event.target.responseText);
+				});
+
+				// We define what will happen in case of error
+				XHR.addEventListener("error", function(event) {
+					alert('Oups! Something goes wrong.');
+				});
+
+				// We setup our request
+				XHR.open("POST", form.endpoint.value+"/emergency/"+form.cityName.value);
+				// The data sent are the one the user provide in the form
+				XHR.send(jsonString);
+			}
+
+			// We need to access the form element
+			var form = document.getElementById("myForm");
+			
+			// to takeover its submit event.
+			form.addEventListener("submit", function (event) {
+				event.preventDefault();
+				sendData();
+			});
+		});
+	</script>
+</body>
+</html>

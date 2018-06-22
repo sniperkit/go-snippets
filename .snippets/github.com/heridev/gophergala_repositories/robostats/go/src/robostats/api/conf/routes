@@ -1,0 +1,43 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# module:testrunner
+
+# GET     /                                       App.Index
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+POST    /user/login                             User.Login
+POST    /users                                  User.Create
+GET			/users/:id                               User.Me
+
+POST		/device_classes													Class.Create
+GET			/device_classes													Class.Index
+GET			/device_classes/:id											Class.Get
+DELETE	/device_classes/:id											Class.Remove
+
+POST			/device_instances												Instance.Create
+GET			/device_instances												Instance.Index
+GET			/device_instances/:id										Instance.Get
+DELETE	/device_instances/:id										Instance.Remove
+
+POST			/device_sessions												Session.Create
+GET			/device_sessions												Session.Index
+GET			/device_sessions/time_series				Session.TimeSeries
+OPTIONS			/device_sessions/time_series				App.Options
+GET			/device_sessions/:id										Session.Get
+DELETE	/device_sessions/:id										Session.Remove
+
+POST			/device_events												Beat.Create
+GET			/device_events												Beat.Index
+GET			/device_events/:id										Beat.Get
+DELETE	/device_events/:id										Beat.Remove
+
+
+# Map static resources from the /app/public folder to the /public path
+# GET     /public/*filepath                       Static.Serve("public")
+
+# Catch all
+# *       /:controller/:action                    :controller.:action

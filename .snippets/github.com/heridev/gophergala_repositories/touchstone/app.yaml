@@ -1,0 +1,12 @@
+application: gopher-tv
+version: 4
+runtime: go
+api_version: go1
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /.*
+  script: _go_app

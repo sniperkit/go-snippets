@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+var values []interface{} = []interface{}{
+	"Hi",
+	20,
+	true,
+	1.0e100,
+	10.1,
+	int64(1234567890987654321),
+}
+
+func main() {
+	for _, v := range values {
+		{{%s}}
+		fmt.Println()
+	}
+}

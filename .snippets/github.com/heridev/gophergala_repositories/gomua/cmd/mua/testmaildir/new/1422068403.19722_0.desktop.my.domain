@@ -1,0 +1,65 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 22:00:03 -0500
+Received: (qmail 25509 invoked from network); 23 Jan 2015 18:47:55 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 18:47:54 -0800
+X-ASG-Debug-ID: 1422067673-017fd408af213c680001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id 60scqvgeC3FGk64J for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 18:47:54 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146385=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0O30eGF026401
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 20:00:42 -0700 (MST)
+Received: from conveyor.shockley.net (conveyor.shockley.net [64.85.172.239])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0O30TMq007340 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=NO); Fri, 23 Jan 2015 20:00:30 -0700 (MST)
+Received: from [10.0.2.40] (c-68-82-212-51.hsd1.pa.comcast.net [68.82.212.51]) (AUTH: PLAIN steve.shockley, SSL: TLSv1/SSLv3,128bits,AES128-SHA)
+	by conveyor.shockley.net with esmtp; Fri, 23 Jan 2015 21:46:38 -0500 id 00143887.54C3078E.00003A51
+Message-ID: <54C307B4.9070908@shockley.net>
+Date: Fri, 23 Jan 2015 21:47:16 -0500
+From: Steve Shockley <steve.shockley@shockley.net>
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Thunderbird/31.4.0
+MIME-Version: 1.0
+To: Reyk Floeter <reyk@openbsd.org>
+CC: misc@openbsd.org
+Subject: Re: What are the disadvantages of soft updates?
+References: <em5ec6d08e-c3e2-49fb-90cc-d5735f9c60d6@probook> <20150120091709.GE21763@moule.localdomain> <20150121105035.GA11043@obiit.org> <54C1030B.9010309@shockley.net> <20150122141326.GB18519@autobahn.atexit.net>
+X-ASG-Orig-Subj: Re: What are the disadvantages of soft updates?
+In-Reply-To: <20150122141326.GB18519@autobahn.atexit.net>
+Content-Type: text/plain; charset=windows-1252; format=flowed
+Content-Transfer-Encoding: 8bit
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422067673
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14578
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+
+On 1/22/2015 9:13 AM, Reyk Floeter wrote:
+> What release and what virtualized SCSI controller where you using?
+
+I found my old notes, it turns out it was on 4.6 and the crash message was:
+
+softdep_setup_freeblocks: got error 5 while accessing filesystem
+dev = 0x404, block = 1315, fs = /var
+panic: ffs_blkfree: freeing free frag
+Stopped at      Debugger+0x4:   leave
+
+I have screenshots of trace and ps I can send if interested, but I'm 
+sure a lot has been fixed in the interim.  I can also attempt to 
+reproduce on -current if you want, but even at its worst it'd stay up 
+for a month or two before crashing.
+

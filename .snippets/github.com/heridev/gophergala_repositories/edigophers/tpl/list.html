@@ -1,0 +1,14 @@
+{{define "list"}}
+{{template "header" .}}
+
+<h2>{{.Title}}</h2>
+<ul class="list-group">
+    {{range .Data}}
+    <li class="list-group-item">
+        <a href="/profile/{{.Name}}" title="View profile">{{.Name}}</a>
+    </li>
+    {{end}}
+</ul>
+
+{{template "footer" .}}
+{{end}}

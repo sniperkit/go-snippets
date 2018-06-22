@@ -1,0 +1,80 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Sat, 24 Jan 2015 17:00:03 -0500
+Received: (qmail 16614 invoked from network); 24 Jan 2015 13:33:03 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 24 Jan 2015 13:33:03 -0800
+X-ASG-Debug-ID: 1422135181-017fd408af2161710001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id ztZBS1fQOeOEHSlX for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 13:33:01 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146391=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0OLkK4X024844
+	for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 14:46:23 -0700 (MST)
+Received: from plane.gmane.org (plane.gmane.org [80.91.229.3])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0OLi3kN011182
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 14:44:05 -0700 (MST)
+Received: from list
+	by plane.gmane.org with local (Exim 4.69) (envelope-from <goom-misc@m.gmane.org>) id 1YF8HM-0007vc-6M
+	for misc@openbsd.org; Sat, 24 Jan 2015 22:30:04 +0100
+Received: from host191-2.natpool.mwn.de ([138.246.2.191])
+	by main.gmane.org with esmtp (Gmexim 0.1 (Debian)) id 1AlnuQ-0007hv-00
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 22:30:04 +0100
+Received: from chneukirchen
+	by host191-2.natpool.mwn.de with local (Gmexim 0.1 (Debian)) id 1AlnuQ-0007hv-00
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 22:30:04 +0100
+X-Injected-Via-Gmane: http://gmane.org/
+To: misc@openbsd.org
+From: Christian Neukirchen <chneukirchen@gmail.com>
+Subject: Re: Munich BSD meetup
+Date: Sat, 24 Jan 2015 22:23:52 +0100
+X-ASG-Orig-Subj: Re: Munich BSD meetup
+Lines: 18
+Message-ID: <87d263lvo7.fsf@gmail.com>
+References: <CAJO05K2Y+Q+mpwE_=yCReUyJAF7pRVVWPiA82-wrKJyo+fUU_Q@mail.gmail.com>
+Mime-Version: 1.0
+Content-Type: text/plain
+X-Complaints-To: usenet@ger.gmane.org
+X-Gmane-NNTP-Posting-Host: host191-2.natpool.mwn.de
+In-Reply-To: <CAJO05K2Y+Q+mpwE_=yCReUyJAF7pRVVWPiA82-wrKJyo+fUU_Q@mail.gmail.com> (Jan Lambertz's message of "Fri, 23 Jan 2015 19:58:37 +0100")
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.4 (gnu/linux)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422135181
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14597
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+Jan Lambertz <jd.arbeit@googlemail.com> writes:
+
+> Hi,
+>
+> stolen the idea from Reyk, maybe we can have a BSD meetup near munich.
+> One and only cirtitcal question is where.
+> I live about 30km North of Munich, but my job is near munich central station.
+> I fine with everywhere reachable in 1,5 hours.
+
+I live in Munich, and I would attend. :)
+
+I've been at http://bse.42.org/ a few years ago a few times, but I'm
+not sure whether it still takes place regularly.  Also I seem to
+remember mostly FreeBSD users there.
+
+cu,
+-- 
+Christian Neukirchen  <chneukirchen@gmail.com>  http://chneukirchen.org
+

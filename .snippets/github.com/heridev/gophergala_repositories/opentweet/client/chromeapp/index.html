@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>OpenTweet</title>
+
+	<link href="bower_components/ionic/css/ionic.css" rel="stylesheet">
+	<link href="main.css" rel="stylesheet">
+
+	<script src="bower_components/ionic/js/ionic.bundle.js"></script>
+	<script src="bower_components/moment/moment.js"></script>
+
+	<script src="app/tcp-client.js"></script>
+	<script src="app/app.js" type="text/javascript"></script>
+
+</head>
+<body ng-app="openTweet">
+	<ion-pane>
+		<ion-header-bar class="bar-positive" title="OpenTweet" ng-controller="HeaderCtrl">
+			<button class="button button-icon icon ion-egg"></button>
+			<h1 class="title">OpenTweet</h1>
+			<button class="button button-icon icon ion-ios7-compose" ng-click="compose.show()"></button>
+		</ion-header-bar>
+		<script id="compose.html" type="text/ng-template">
+		<div class="composeModal">
+			<div class="list list-inset">
+			<div class="list list-inset">
+				<label class="item item-input">
+					<textarea placeholder="Tweet text" rows="5" ng-model="tweetText"/>
+				</label>
+				<button ng-click="sendTweet(tweetText)" class="button button-full button-positive"><i class="icon ion-social-twitter"></i>
+					Send Tweet
+				</button>
+			</div>
+		</div>
+		</div>
+		</script>
+		<ion-tabs class="tabs-positive tabs-icon-only">
+			<ion-tab title="Home" icon-on="ion-ios7-bookmarks" icon-off="ion-ios7-bookmarks-outline" ng-controller="TweetListCtrl">
+				<ion-content class="has-header">
+					<ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+					<ion-list class="tweet-list">
+						<ion-item ng-repeat="tweet in tweetsFromWhoIFollow track by $index" class="item item-text-wrap item-thumbnail-left">
+							<img src="data:image/gif;base64,R0lGODdhUABQAOMAAMzMzJaWlrGxsZycnL6+vsXFxbe3t6qqqqOjowAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAUABQAAAE2BDISau9OOvNu/9gKI5kaZ5oqq5s675wLM90bd94ru987//AoHBILBqPyKRyyWw6n9CodEqtWq/YrHbLPQoCA4KEMBgUPt/wuHzeFQIGwUAyEBwOnnd8DqjfeW8EBnNvBQYBFQEBb4gTgYMAhYc9X3AABIuYFQUDCGYVlQaXmY07AXYIowWaFYeiiaiqrDqYq4iSpRMHAXgUtZq4gHAHfH69jnCLFHrEdHbHOoNql2yJqQi5ANJi1J9d3+Dh4uPk5ebn6Onq6+zt7u/w8fLz9PX29/j5+vvfEQA7"/>
+							<h2>
+								{{tweet.user | userName}}
+								<span class="timestamp">{{tweet.timestamp | fromNow}}</span>
+							</h2>
+							<p class="item-text-wrap">{{tweet.tweet}}</p>
+						</ion-item>
+						<ion-item class="item" ng-if="tweetsFromWhoIFollow.length===0">
+							<div class="card" style="text-align:center">
+								<div class="item item-text-wrap">
+									<h1> <i class="icon ion-alert-circled"></i>
+									</h1>
+									Could not load any tweets. Please pull to refresh, or follow some people to see more tweets.
+								</div>
+							</div>
+						</ion-item>
+					</ion-list>
+				</ion-content>
+			</ion-tab>
+
+			<ion-tab title="Follow" icon-on="ion-ios7-people" icon-off="ion-ios7-people-outline" ng-controller="FollowCtrl">
+				<ion-content class="has-header">
+					<div class="list list-inset">
+						<label class="item item-input">
+							<input type="text" placeholder="username@server:port" ng-model="user"/>
+						</label>
+						<button class="button button-block button-balanced" ng-click="user && follow(user)"> <i class="icon ion-person-add"></i>
+							Follow
+						</button>
+					</div>
+
+					<div class="list list-inset">
+						<div class="item item-divider">You currently follow</div>
+						<div class="item item-button-right" ng-repeat="user in whoIFollow track by $index">
+							{{user}}
+							<button class="button button-assertive button-clear" ng-click="unfollow(user)">
+								<i class="icon ion-minus-circled"></i>
+							</button>
+						</div>
+						<div class="item" ng-if="whoIFollow.length === 0">Nobody. It is lonely here :(</div>
+					</div>
+				</ion-content>
+			</ion-tab>
+
+			<ion-tab title="Settings" icon-on="ion-ios7-gear" icon-off="ion-ios7-gear-outline" ng-controller="SettingsCtrl">
+				<ion-content class="has-header">
+					<div class="list">
+						<div class="item item-divider">
+							<i class="icon ion-ios7-gear" ></i>
+							&nbsp;Sending Tweets
+						</div>
+						<label class="item item-input item-stacked-label">
+							<span class="input-label">Server</span>
+							<input type="text" placeholder="servername:port" ng-model="server"/>
+						</label>
+						<label class="item item-input item-stacked-label">
+							<span class="input-label">Username</span>
+							<input type="text" placeholder="username" ng-model="username"/>
+						</label>
+						<label class="item item-input item-stacked-label">
+							<span class="input-label">Password</span>
+							<input type="password" ng-model="password"/>
+						</label>
+						<button class="button button-block button-balanced" style="width:90%;margin:10px auto" ng-click="saveSettings(server, username, password)">
+							<i class="icon ion-ios-download"></i>
+							Save Settings
+						</button>
+						<button class="button button-block button-outline button-positive" style="width:90%;margin:10px auto" ng-click="registerUser(server, username, password)">
+							<i class="icon ion-ios-lightbulb"></i>
+							Create User on Server
+						</button>
+					</div>
+				</ion-content>
+			</ion-tab>
+		</ion-tabs>
+	</ion-pane>
+</body>
+</html>

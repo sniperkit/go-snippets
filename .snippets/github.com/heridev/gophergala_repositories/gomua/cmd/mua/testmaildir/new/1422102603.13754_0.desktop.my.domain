@@ -1,0 +1,229 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Sat, 24 Jan 2015 07:30:03 -0500
+Received: (qmail 8572 invoked from network); 24 Jan 2015 04:20:21 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 24 Jan 2015 04:20:21 -0800
+X-ASG-Debug-ID: 1422102019-017fd408af214c100001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id sNNapmWFC655Eq2o for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 04:20:19 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146386=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0OCX9M2021600
+	for <gabe@guzman-nunez.com>; Sat, 24 Jan 2015 05:33:13 -0700 (MST)
+Received: from mail-wg0-f54.google.com (mail-wg0-f54.google.com [74.125.82.54])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0OCWn7D020596 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 05:32:51 -0700 (MST)
+Received: by mail-wg0-f54.google.com with SMTP id b13so1823091wgh.13
+	for <misc@openbsd.org>; Sat, 24 Jan 2015 04:18:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:in-reply-to:references:date:message-id:subject:from:cc :content-type; bh=bNvj1QZcMg8xeB1xc0cmVvEv1pJmhsDz18zCO+Cpqcg=; b=hSZ9eTDEWJ8UFUQoMYulfk3yfDB1FNewHKZfwqkdaeRJ0Hvf3tyGWQ1+IQMhIKJGOU Ehv7+IS6bnp1auqt+wWXfVG0zZNkKELEo6qn542GgdBWwfRL/YPbiZUF7nCbI1MeE4P1 lJRmLI3MQhxma+k2CGGsmrRnRsj0cdEhL8zcoGjL5VZ8EoyiZrvfg+eUfAmy6WkDQSq4 xMr9r4UzjiOIF9LXBQusF62X7+PloGcZ9GmnSbtWXMIoATIwuHgrkJ964yegBPrLrZbi 8lW3HKcFinFVhbGuQecyY1e3fcfwS7Uh+AdEP3cZrLTaPSgvtGuLrjIKNrBHcUjE8PD1 cGKw==
+MIME-Version: 1.0
+X-Received: by 10.180.207.110 with SMTP id lv14mr5543432wic.41.1422101938264; Sat, 24 Jan 2015 04:18:58 -0800 (PST)
+Received: by 10.27.87.34 with HTTP; Sat, 24 Jan 2015 04:18:58 -0800 (PST)
+In-Reply-To: <CA+tMuX0iV2yae-HFtrwL=eX1o+BRfFOV=QEgqZfpvgjzEEG9Dg@mail.gmail.com>
+References: <CAAr43iNahdFTa4Vp_Yd8z20U3--6o+QMYKaGJ3+L+d9yCCQZ5g@mail.gmail.com> <CA+tMuX0iV2yae-HFtrwL=eX1o+BRfFOV=QEgqZfpvgjzEEG9Dg@mail.gmail.com>
+Date: Sat, 24 Jan 2015 21:18:58 +0900
+Message-ID: <CAAr43iOGTFSucDwmiqK4NPJgquuHo77jbO_YTAzQJm+U+2272A@mail.gmail.com>
+Subject: Re: My computer suddenly turned itself off.
+From: Joel Rees <joel.rees@gmail.com>
+X-ASG-Orig-Subj: Re: My computer suddenly turned itself off.
+Cc: misc <misc@openbsd.org>
+Content-Type: text/plain; charset=UTF-8
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422102019
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 1.21
+X-Barracuda-Spam-Status: No, SCORE=1.21 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=MAILTO_TO_SPAM_ADDR, MISSING_HEADERS
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14588
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	1.21 MISSING_HEADERS        Missing To: header
+	0.00 MAILTO_TO_SPAM_ADDR    URI: Includes a link to a likely spammer email
+
+On Wed, Jan 21, 2015 at 11:11 PM, Matt M <cmorrow132@gmail.com> wrote:
+> Sudden power offs are often indicative of heat issues, especially on
+> laptops. Does it power right back on and stay on for a long time? If not I
+> would suspect heat. If it does stay on, it may be a power management bug, a
+> bad power source or possibly a failing power supply in the machine.
+>  If it won't power back on right away, or won't stay on till it sits for a
+> while, try cleaning the cpu fan - they collect a lot of dust.
+>
+>
+> On Wednesday, January 21, 2015, Joel Rees <joel.rees@gmail.com> wrote:
+>>
+>> I'm looking under /var/log, but not seeing any logfiles to give me any
+>> clues.
+>>
+>> What information should I post? I have /var/log/messages from the
+>> moment of the crash, but it's about 36K.
+>>
+>> dmesg:
+>> ---------------
+>> OpenBSD 5.5-stable (GENERIC) #0: Sat Dec 13 14:38:02 JST 2014
+>>     root@ob.reiisi.homedns.org:/usr/src/sys/arch/i386/compile/GENERIC
+>> cpu0: AMD Sempron(tm) 2600+ ("AuthenticAMD" 686-class, 256KB L2 cache)
+>> 1.84 GHz
+>> cpu0:
+>> FPU,V86,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,MMX,FXSR,SSE,MPC,MMXX,3DNOW2,3DNOW
+>> real mem  = 737636352 (703MB)
+>> avail mem = 713281536 (680MB)
+>> mainbus0 at root
+>> bios0 at mainbus0: AT/286+ BIOS, date 07/28/04, BIOS32 rev. 0 @
+>> 0xfbaa0, SMBIOS rev. 2.3 @ 0xf0800 (33 entries)
+>> bios0: vendor Phoenix Technologies, LTD version "6.00 PG" date 07/28/2004
+>> bios0: MICRO-STAR INTERNATIONAL CO., LTD KM266-8237
+>> acpi0 at bios0: rev 0
+>> acpi0: sleep states S0 S1 S4 S5
+>> acpi0: tables DSDT FACP APIC
+>> acpi0: wakeup devices SLPB(S5) USB0(S1) USB1(S1) USB2(S1) USB3(S1)
+>> USB4(S1) USB5(S1) USB6(S1) USB7(S1) LAN0(S5) UAR1(S5) LPT1(S5)
+>> ECP1(S5) PCI0(S5)
+>> acpitimer0 at acpi0: 3579545 Hz, 24 bits
+>> acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat
+>> cpu0 at mainbus0: apid 0 (boot processor)
+>> mtrr: Pentium Pro MTRR support, 8 var ranges, 88 fixed ranges
+>> cpu0: apic clock running at 333MHz
+>> ioapic0 at mainbus0: apid 2 pa 0xfec00000, version 3, 24 pins
+>> acpiprt0 at acpi0: bus 0 (PCI0)
+>> acpicpu0 at acpi0
+>> acpitz0 at acpi0: critical temperature is 100 degC
+>> acpibtn0 at acpi0: PWRB
+>> acpibtn1 at acpi0: SLPB
+>> bios0: ROM list: 0xc0000/0x7e00 0xc8000/0x1a00!
+>> pci0 at mainbus0 bus 0: configuration mode 1 (bios)
+>> pchb0 at pci0 dev 0 function 0 "VIA VT8378 PCI" rev 0x00
+>> viaagp0 at pchb0: v3
+>> agp0 at viaagp0: aperture at 0xe0000000, size 0x10000000
+>> ppb0 at pci0 dev 1 function 0 "VIA VT8377 AGP" rev 0x00
+>> pci1 at ppb0 bus 1
+>> vga1 at pci1 dev 0 function 0 "VIA VT8378 VGA" rev 0x01
+>> wsdisplay0 at vga1 mux 1: console (80x25, vt100 emulation)
+>> wsdisplay0: screen 1-5 added (80x25, vt100 emulation)
+>> pciide0 at pci0 dev 7 function 0 "ITExpress IT8212F" rev 0x13: DMA,
+>> channel 0 wired to native-PCI, channel 1 wired to native-PCI
+>> pciide0: using apic 2 int 18 for native-PCI interrupt
+>> wd0 at pciide0 channel 0 drive 0: <Maxtor 6B160P0>
+>> wd0: 16-sector PIO, LBA48, 156334MB, 320173056 sectors
+>> wd1 at pciide0 channel 0 drive 1: <WDC WD3200AAJB-00J3A0>
+>> wd1: 16-sector PIO, LBA48, 305245MB, 625142448 sectors
+>> wd0(pciide0:0:0): using PIO mode 4, Ultra-DMA mode 6
+>> wd1(pciide0:0:1): using PIO mode 0
+>> pciide1 at pci0 dev 15 function 0 "VIA VT82C571 IDE" rev 0x06: ATA133,
+>> channel 0 configured to compatibility, channel 1 configured to
+>> compatibility
+>> wd2 at pciide1 channel 0 drive 0: <Maxtor 4R080L0>
+>> wd2: 16-sector PIO, LBA, 78167MB, 160086528 sectors
+>> wd2(pciide1:0:0): using PIO mode 4, Ultra-DMA mode 6
+>> atapiscsi0 at pciide1 channel 1 drive 0
+>> scsibus0 at atapiscsi0: 2 targets
+>> cd0 at scsibus0 targ 0 lun 0: <TSSTcorp, CD/DVDW TS-H552A, BA52> ATAPI
+>> 5/cdrom removable
+>> cd0(pciide1:1:0): using PIO mode 4, Ultra-DMA mode 3
+>> uhci0 at pci0 dev 16 function 0 "VIA VT83C572 USB" rev 0x81: apic 2 int 21
+>> uhci1 at pci0 dev 16 function 1 "VIA VT83C572 USB" rev 0x81: apic 2 int 21
+>> uhci2 at pci0 dev 16 function 2 "VIA VT83C572 USB" rev 0x81: apic 2 int 21
+>> uhci3 at pci0 dev 16 function 3 "VIA VT83C572 USB" rev 0x81: apic 2 int 21
+>> ehci0 at pci0 dev 16 function 4 "VIA VT6202 USB" rev 0x86: apic 2 int 21
+>> usb0 at ehci0: USB revision 2.0
+>> uhub0 at usb0 "VIA EHCI root hub" rev 2.00/1.00 addr 1
+>> viapm0 at pci0 dev 17 function 0 "VIA VT8237 ISA" rev 0x00: SMI
+>> iic0 at viapm0
+>> iic0: addr 0x2f 00=00 01=07 02=00 03=00 04=07 05=00 06=00 07=00 14=14
+>> 15=62 16=03 17=02 words 00=00ff 01=07ff 02=00ff 03=00ff 04=07ff
+>> 05=00ff 06=00ff 07=00ff
+>> spdmem0 at iic0 addr 0x50: 512MB DDR SDRAM non-parity PC2700CL2.5
+>> spdmem1 at iic0 addr 0x51: 256MB DDR SDRAM non-parity PC2700CL2.5
+>> auvia0 at pci0 dev 17 function 5 "VIA VT8233 AC97" rev 0x60: apic 2 int 22
+>> ac97: codec id 0x56494170 (VIA Technologies VT1617)
+>> ac97: codec features headphone, 18 bit DAC, 18 bit ADC, KS Waves 3D
+>> audio0 at auvia0
+>> vr0 at pci0 dev 18 function 0 "VIA RhineII-2" rev 0x78: apic 2 int 23,
+>> address 00:11:09:b4:08:41
+>> ukphy0 at vr0 phy 1: Generic IEEE 802.3u media interface, rev. 8: OUI
+>> 0x004063, model 0x0032
+>> usb1 at uhci0: USB revision 1.0
+>> uhub1 at usb1 "VIA UHCI root hub" rev 1.00/1.00 addr 1
+>> usb2 at uhci1: USB revision 1.0
+>> uhub2 at usb2 "VIA UHCI root hub" rev 1.00/1.00 addr 1
+>> usb3 at uhci2: USB revision 1.0
+>> uhub3 at usb3 "VIA UHCI root hub" rev 1.00/1.00 addr 1
+>> usb4 at uhci3: USB revision 1.0
+>> uhub4 at usb4 "VIA UHCI root hub" rev 1.00/1.00 addr 1
+>> isa0 at mainbus0
+>> isadma0 at isa0
+>> com0 at isa0 port 0x3f8/8 irq 4: ns16550a, 16 byte fifo
+>> com1 at isa0 port 0x2f8/8 irq 3: ns16550a, 16 byte fifo
+>> pckbc0 at isa0 port 0x60/5
+>> pckbd0 at pckbc0 (kbd slot)
+>> pckbc0: using irq 1 for kbd slot
+>> wskbd0 at pckbd0: console keyboard, using wsdisplay0
+>> pms0 at pckbc0 (aux slot)
+>> pckbc0: using irq 12 for aux slot
+>> wsmouse0 at pms0 mux 0
+>> pcppi0 at isa0 port 0x61
+>> spkr0 at pcppi0
+>> lpt0 at isa0 port 0x378/4 irq 7
+>> wbsio0 at isa0 port 0x2e/2: W83697HF rev 0x12
+>> lm1 at wbsio0 port 0x290/8: W83697HF
+>> npx0 at isa0 port 0xf0/16: reported by CPUID; using exception 16
+>> fdc0 at isa0 port 0x3f0/6 irq 6 drq 2
+>> pciide0:0:1: read intr before drq
+>> wd1c: device timeout reading fsbn 0 (wd1 bn 0; cn 0 tn 0 sn 0), retrying
+>> wd1: soft error (corrected)
+>> umass0 at uhub0 port 6 configuration 1 interface 0 "USB2.0 CardReader"
+>> rev 2.00/91.44 addr 2
+>> umass0: using SCSI over Bulk-Only
+>> scsibus1 at umass0: 2 targets, initiator 0
+>> sd0 at scsibus1 targ 1 lun 0: <USB2.0, CF CardReader, 9144> SCSI0
+>> 0/direct removable
+>> sd1 at scsibus1 targ 1 lun 1: <USB2.0, SM CardReader, 9144> SCSI0
+>> 0/direct removable
+>> sd2 at scsibus1 targ 1 lun 2: <USB2.0, SD CardReader, 9144> SCSI0
+>> 0/direct removable
+>> sd3 at scsibus1 targ 1 lun 3: <USB2.0, MS CardReader, 9144> SCSI0
+>> 0/direct removable
+>> uhidev0 at uhub1 port 1 configuration 1 interface 0 "ELECOM ELECOM USB
+>> mouse with wheel" rev 1.10/0.30 addr 2
+>> uhidev0: iclass 3/1
+>> ums0 at uhidev0: 3 buttons, Z dir
+>> wsmouse1 at ums0 mux 0
+>> vscsi0 at root
+>> scsibus2 at vscsi0: 256 targets
+>> softraid0 at root
+>> scsibus3 at softraid0: 256 targets
+>> root on wd2a (85f3c23fe413c2b0.a) swap on wd2b dump on wd2b
+>> WARNING: / was not properly unmounted
+>> -----------------------
+>>
+>>
+>> --
+>> Joel Rees
+>>
+>> Be careful when you look at conspiracy.
+>> Look first in your own heart,
+>> and ask yourself if you are not your own worst enemy.
+>> Arm yourself with knowledge of yourself, as well.
+>>
+>
+
+
+
+-- 
+Joel Rees
+
+Be careful when you look at conspiracy.
+Look first in your own heart,
+and ask yourself if you are not your own worst enemy.
+Arm yourself with knowledge of yourself, as well.
+

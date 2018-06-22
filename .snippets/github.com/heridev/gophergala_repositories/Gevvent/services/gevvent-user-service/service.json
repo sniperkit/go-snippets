@@ -1,0 +1,9 @@
+{
+  "id": "gevvent-user-service",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 8080,
+  "containerPort": 8080,
+  "selector": { "name": "gevvent-user-service" },
+  "labels": { "name": "gevvent-user-service" }
+}

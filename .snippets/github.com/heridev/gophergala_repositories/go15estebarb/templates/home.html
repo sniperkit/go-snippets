@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GopherPaint - Gopher Gala 2015</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/simplex/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+{{template "scripts" .}}
+{{template "navbar" .}}
+<div class="container">
+    <img src="/static/logo.png" class="pull-right">
+    <div class="jumbotron">
+        <h1>GopherPaint</h1>
+    {{if not .IsLogged}}
+    <p>Please sign in with your Google Account to upload images.</p>
+    <a href="{{.LoginURL}}" class="btn btn-lg btn-success">Log In</a>
+    {{ end }}
+    
+    {{if .IsLogged}}    
+    <p>Upload a image to repaint it! (accepting jpeg, png and gif)</p>
+    <form method="POST" action="{{.uploadURL}}" enctype="multipart/form-data" class="form-horizontal">
+        <div class="form-group">
+            <label for="file" class="col-sm-2 control-label">Filename:</label>
+            <div class="col-sm-10">
+                <input type="file" name="file" id="file" class="form-control">
+            </div>
+        </div>
+        <input type="submit" name="submit" value="Upload" class="btn btn-primary">
+    </form>
+    </div>
+    
+    <h2>Images of {{.UserName}} <a class="btn btn-warning btn-xs" href="{{.LogoutURL}}">Logout</a> </h2>
+    <div class="row">
+        {{ range $key, $value := .Images }}
+        <div class="col-sm-4 col-md-3">
+            <div class="thumbnail">
+                <a href="/share?blobKey={{$value.Blobkey}}&style={{$value.Style}}">
+                    <img class="img-responsive img-thumbnail"
+                         src="/render?blobKey={{$value.Blobkey}}&style={{$value.Style}}"
+                     alt="{{$value.Style}}">
+                </a>
+                <div class="row">
+                <a href="/prepare?blobKey={{$value.Blobkey}}" class="col-sm-offset-1 col-sm-4 btn btn-info">Change
+                    style</a>
+                <form method="post" action="/delete?blobKey={{$value.Blobkey}}">
+                <input type="submit" name="submit" value="Delete"
+                       class="col-sm-offset-2 col-sm-4 btn btn-danger">
+                </form>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+    {{if not .IsLogged}}
+    <div class="row">
+        <div class="col-lg-4">
+            <h2>Transform your images to paintings</h2>
+            <p>Upload your own image and a gopher will transform it in a paint.</p>
+        </div>
+        <div class="col-lg-4">
+            <h2>Styles</h2>
+            <p>Choose from 8 different painting styles.</p>
+            <img src="/static/ministyles.png">
+        </div>
+        <div class="col-lg-4">
+            <h2>Share it!</h2>
+            <p>Share to G+, Twitter or Facebook. You can also download it to your computer or save to Dropbox.</p>
+            <img src="/static/minishareit.png">
+        </div>
+    </div>
+    {{ end }}
+    {{template "footer" .}}
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Wed, 21 Jan 2015 11:00:04 -0500
+Received: (qmail 1963 invoked from network); 21 Jan 2015 07:56:12 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 21 Jan 2015 07:56:12 -0800
+X-ASG-Debug-ID: 1421855771-017fd408af2078800001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id E8aOU7CmDP5JpYmo for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 07:56:11 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146322=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0LG9g5g017336
+	for <gabe@guzman-nunez.com>; Wed, 21 Jan 2015 09:09:44 -0700 (MST)
+Received: from mail-qa0-f46.google.com (mail-qa0-f46.google.com [209.85.216.46])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0LG9W4Z016994 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Wed, 21 Jan 2015 09:09:33 -0700 (MST)
+Received: by mail-qa0-f46.google.com with SMTP id j7so33316486qaq.5
+	for <misc@openbsd.org>; Wed, 21 Jan 2015 07:55:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:in-reply-to:references:from:date:message-id:subject:to :cc:content-type; bh=/uWKIbbffokQMNeotWBRyL7neupplM73YuUhuIYA4iA=; b=KxjKkPcNekv3M39praOZawgl5M/yRolQQLQA+TSDnSuF6JrZWoztPSNF7co6LmKtD0 FPszlId63cLpw8mUZTWlRlxS018/I5suJapSGBrpToZMEM20XI85ol6RkgOffJShJI0T vQ7BQKCCj5qBMKYWTVxiyxxFwn2wUH/641vwZ08cd5Pgudl5m3urLWPuEWvBCkjh5Elz A80dalfICKBgRrfPpxSj9eNtB/75o6jBeGqxNkR6m8AHxEZwaeldKM9Bhl2oF48HfNNV weJ5gMf0jRwAbCWqHBx5pt2UjgcQL/EREHmWbFmE+zxZ11ZxgrODOWIqnwVUhfaPEMsl TtWA==
+X-Received: by 10.224.54.2 with SMTP id o2mr69314080qag.63.1421855744184; Wed, 21 Jan 2015 07:55:44 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.96.76.39 with HTTP; Wed, 21 Jan 2015 07:55:23 -0800 (PST)
+In-Reply-To: <CAKPQvHCZiPMfvgc0OfP11aFvqzzhT0-6WTZ_fHfr0uPejF6EoA@mail.gmail.com>
+References: <CAKPQvHCZiPMfvgc0OfP11aFvqzzhT0-6WTZ_fHfr0uPejF6EoA@mail.gmail.com>
+From: David Coppa <dcoppa@gmail.com>
+Date: Wed, 21 Jan 2015 16:55:23 +0100
+Message-ID: <CABM=MFKVyFFbqetggmPh4RghrV_Ka34Kf2cos-Xe4eQ7SPkrYA@mail.gmail.com>
+Subject: Re: anoncvsserver.openbsd.org
+To: Zuleyha Torku <zuleyhatorku@gmail.com>
+X-ASG-Orig-Subj: Re: anoncvsserver.openbsd.org
+Cc: misc <misc@openbsd.org>
+Content-Type: text/plain; charset=UTF-8
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421855771
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.01
+X-Barracuda-Spam-Status: No, SCORE=0.01 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_SA_TO_FROM_DOMAIN_MATCH
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14502
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.01 BSF_SC0_SA_TO_FROM_DOMAIN_MATCH Sender Domain Matches Recipient
+	                           Domain
+
+On Wed, Jan 21, 2015 at 4:31 PM, Zuleyha Torku <zuleyhatorku@gmail.com> wrote:
+> Hi
+>
+> I just realize that the anoncvsserver.openbsd.org is not available right
+> now or did I miss something ?
+
+Maybe because the right address is anoncvs.openbsd.org? ;)
+

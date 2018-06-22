@@ -1,0 +1,59 @@
+.game_panel p {
+  font-size: 1.4em;
+}
+.game_panel .panel-heading {
+  background-color: #66cc99;
+}
+
+.player_list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+}
+
+.join_message {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  background-color: #d2d7d3;
+  padding: 0 12px;
+  border-top-left-radius: 10px;
+}
+.join_message h2 {
+  color: #1f3a93;
+}
+.join_code {
+  float:right;
+}
+
+ul.rules {
+  width: 40%;
+}
+ul.rules li {
+  font-size: 1.5em;
+}
+#player_status {
+  text-align: center;
+}
+
+#action {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+#action a {
+  font-size: 1.3em;
+}
+
+.card-list, .judge-list {
+  width: 100%;
+}
+.card-list a, .judge-list a {
+  font-size: 1.2em;
+  padding: 10px;
+}
+.judge-list-group {
+  width: 80%;
+}

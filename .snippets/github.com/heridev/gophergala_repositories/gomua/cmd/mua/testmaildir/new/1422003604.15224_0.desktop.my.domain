@@ -1,0 +1,85 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 04:00:04 -0500
+Received: (qmail 7718 invoked from network); 23 Jan 2015 00:54:46 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 00:54:46 -0800
+X-ASG-Debug-ID: 1422003284-017fd408af20fbc00001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id YizKgqSoIQLyFaXK for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 00:54:45 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146365=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0N98Kda021831
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 02:08:23 -0700 (MST)
+Received: from mail-we0-f171.google.com (mail-we0-f171.google.com [74.125.82.171])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0N988ig006718 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 02:08:09 -0700 (MST)
+Received: by mail-we0-f171.google.com with SMTP id q58so6293728wes.2
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 00:54:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=googlemail.com; s=20120113; h=sender:date:from:to:subject:message-id:references:mime-version :content-type:content-disposition:in-reply-to:user-agent; bh=xP1GEPx9TMRhgKt4nHY7UQOxB8iKdlxGdqPD22Z8GZI=; b=Ie0jl8Yf54Cmnk257VdKNP6bCYcOCjNZRx3aSZmjkVK/PUm0FEaJ1pZ5px/LSAjiXC nCHeqfdjuosvfgRQBEnxLc8Ubd5PW/795wNxem9/uSzqohewdzmx6kWyeBdB8McP3vlj UQF/LEk0ZUciMZ1gvQ9EKcMeq0zH/uegKPXePLi9Mpc2YzpyEhMu8h4NVszaTlETDjH6 r3aFWdMvCaFG/iFoM9HIt6f0sZ+cSlOqvCfknYqHBJFGSXMngigP+6ExQk0XZgvn1t7V 8A0rZY6UDbqF3qb4jevH+7+1XabXZbTatt6sIPcVZ7qERFAeCm8LGvysyCpybzlybg0O DeBg==
+X-Received: by 10.194.108.98 with SMTP id hj2mr11872770wjb.102.1422003258360; Fri, 23 Jan 2015 00:54:18 -0800 (PST)
+Received: from autobahn.atexit.net (autobahn.atexit.net. [83.246.66.20])
+	by mx.google.com with ESMTPSA id x6sm1281712wjf.24.2015.01.23.00.54.17
+	for <misc@openbsd.org> (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128); Fri, 23 Jan 2015 00:54:17 -0800 (PST)
+Date: Fri, 23 Jan 2015 10:00:31 +0100
+From: Reyk Floeter <reyk@openbsd.org>
+To: misc@openbsd.org
+Subject: Re: Hannover BSD meetup
+Message-ID: <20150123090031.GA26263@autobahn.atexit.net>
+X-ASG-Orig-Subj: Re: Hannover BSD meetup
+References: <20150122140230.GA18519@autobahn.atexit.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+In-Reply-To: <20150122140230.GA18519@autobahn.atexit.net>
+User-Agent: Mutt/1.5.23 (2014-03-12)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422003284
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.01
+X-Barracuda-Spam-Status: No, SCORE=0.01 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO, BSF_SC0_SA_TO_FROM_DOMAIN_MATCH
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14555
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+	0.01 BSF_SC0_SA_TO_FROM_DOMAIN_MATCH Sender Domain Matches Recipient
+	                           Domain
+
+I'm amazed about the feedback on twitter and misc; it will   
+definitively happen.  Thanks!
+
+And I'm sure that people in Munich can find others to have their own
+OpenBSD Haxn-und-Mass-Oktoberfest every now and then ;)   
+
+Reyk
+
+On Thu, Jan 22, 2015 at 03:02:30PM +0100, Reyk Floeter wrote:
+> Hi,
+> 
+> we figured out that there are more BSD people in the Hannover area,
+> Germany, which seems to be a good reason to meet and get beer.
+> 
+> We're not quite a user group, but let's give it a try.  We're a few
+> developers and users, mostly from OpenBSD but the other ones are
+> welcome.
+> 
+> We don't have a mailing list; just contact me directly or poke me on
+> twitter (@reykfloeter).
+> 
+> Save the date: Thursday, February 19th, 19:30 at "GiG Linden".
+> 
+> Thanks,
+> Reyk
+
+-- 
+

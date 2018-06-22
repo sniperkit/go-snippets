@@ -1,0 +1,12 @@
+language: go
+go:
+  - 1.4
+  - tip
+before_install:
+  - sudo apt-get update -qqy
+  - sudo apt-get install bzr -qqy
+install:
+  - go get
+  - go get launchpad.net/gocheck
+script:
+  - go test
