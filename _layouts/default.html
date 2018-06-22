@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include sidebar.html %}
+
+    {% include pdf-export.html %}
+
+    {% if site.github_show_edit_link %}
+    <!-- A small EDIT icon at the top-right of the screen, for me
+         to edit my stuff online through Github. -->
+    <div class="github-edit-link">
+      <a href="https://github.com/{{ site.github_username }}/{{ site.github_repo }}/edit/master/{{page.path}}"
+         class="fa fa-github"
+         rel="external"></a>
+    </div>
+    {% endif %}
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <!-- <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a> -->
+            <a href="{{ site.baseurl }}/" title="Home">
+                {{ site.title }}<span class="run-974">974</span></a>
+            <small>{{ site.tagline }}</small>
+          </h3>
+        </div>
+        <div class="gitter-link">
+          <a href="https://gitter.im/fabic-github-com/Lobby"
+             title="Chat on Gitter: gitter.im/fabic-github-com/Lobby">
+            <img src="https://badges.gitter.im/fabic-github-com/Lobby.svg" /></a>
+        </div>
+      </div> <!--/ .masthead -->
+
+      <div class="container{% if page.tags contains "wide" %}-wide{% endif %} content">
+        {{ content }}
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+    {% include disqus.html %}
+
+    {% include footer.html %}
+
+    <!--
+         Body bottom JAVASCRIPTS below
+                                       -->
+
+    {% if site.hopwork_username %}
+        {% include hopwork.html %}
+    {% endif %}
+
+    {% if site.tracking_id %}
+        {% include analytics.html %}
+    {% endif %}
+
+    <script src="/vendor/ytv/ytv.js" type="text/javascript"></script>
+
+    {% if page.maths %}
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    {% endif %}
+
+    <script>
+      /**
+       * Utility class, essentially a repository for static methods.
+       *
+       * @author fabic.net
+       */
+      function Utils() {
+        if ( ! (this instanceof Utils) ) {
+          return new Utils();
+        }
+      }
+
+      /** __[Static method]__
+       * Test whether the HTML element `el` is currently into the viewport,
+       * or not.
+       *
+       * Got this code from Stackoverflow, see link.
+       *
+       * @link https://stackoverflow.com/a/21627295/643087
+       * @since 2017-12-16 For a timely Disqus comments loading.
+       *
+       * @param  {HTMLElement|string}  el   Some HTML element, or an #id.
+       * @param  {Document|null}       docu Defaults to the global `document`.
+       * @return {Boolean}
+       */
+      Utils.isElementVisible = function _utils_is_element_visible(el, docu) {
+        el = el instanceof HTMLElement ? el : docu.getElementById( el );
+        docu = docu || document;
+
+        var rect   = el.getBoundingClientRect(),
+            top    = rect.top,
+            height = rect.height,
+            el     = el.parentNode;
+
+        do {
+          rect = el.getBoundingClientRect();
+          if (top <= rect.bottom === false)
+            return false;
+          // Check if the element is out of view due to a container scrolling
+          if ((top + height) <= rect.top)
+            return false
+          el = el.parentNode;
+        } while (el != docu.body);
+
+        // Check its within the document viewport
+        return top <= docu.documentElement.clientHeight;
+      };
+    </script>
+  </body>
+</html>
