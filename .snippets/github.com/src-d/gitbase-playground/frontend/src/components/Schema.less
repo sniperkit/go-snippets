@@ -1,0 +1,20 @@
+@import '../variables.less';
+
+.schema-table {
+    .name {
+        cursor: pointer;
+
+        color: @primary;
+        &:hover {
+            color: darken(@primary, 10%);
+        }
+
+        .small-icon {
+            .icon-btn-variant(@primary-tint-2);
+        }
+    }
+
+    .columns {
+        margin-left: @big-spacing;
+    }
+}
