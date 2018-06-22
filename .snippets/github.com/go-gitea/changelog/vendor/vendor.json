@@ -1,0 +1,31 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "r1G5wrZpSqClQm7vC0UX9YSZ43s=",
+			"path": "github.com/go-yaml/yaml",
+			"revision": "cd8b52f8269e0feb286dfeef29f8fe4d5b397e0b",
+			"revisionTime": "2017-04-07T17:21:22Z"
+		},
+		{
+			"checksumSHA1": "T8BYVrv3AC0vDKvMOmgUhh0Rdl8=",
+			"path": "github.com/google/go-github/github",
+			"revision": "78072f320213a7e011b5fb2700bcb9eb90efec37",
+			"revisionTime": "2017-08-22T20:06:26Z"
+		},
+		{
+			"checksumSHA1": "p3IB18uJRs4dL2K5yx24MrLYE9A=",
+			"path": "github.com/google/go-querystring/query",
+			"revision": "53e6ce116135b80d037921a7fdd5138cf32d7a8a",
+			"revisionTime": "2017-01-11T10:11:55Z"
+		},
+		{
+			"checksumSHA1": "8YLoOB7KeQqUSPvlBynceGY4xOc=",
+			"path": "github.com/urfave/cli",
+			"revision": "f017f86fccc5a039a98f23311f34fdf78b014f78",
+			"revisionTime": "2017-08-13T14:59:49Z"
+		}
+	],
+	"rootPath": "code.gitea.io/changelog"
+}
