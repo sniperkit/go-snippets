@@ -1,0 +1,394 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+\usepackage{parcolumns}
+\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-skyblue}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{false}
+
+% Set false is you want Chronological design resume, instead of Functional design
+\setbool{acvShowSkills}{true}
+\setbool{acvShowExperienceDescription}{false}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+\newcommand{\cvitemskill}[1]{%
+  \ifthenelse{\equal{\string true}{\string true}}
+%    {\textit{\color{awesome}#1}}
+    {\textit{#1}}
+    {#1}%
+}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+\name{ {{user.basics.name}} }{}
+\position{ {{user.basics.label}} }
+\address{ {{user.basics.location.address}}, {{user.basics.location.city}}, {{user.basics.location.region}}, {{user.basics.location.countryCode}}, {{user.basics.location.postalCode}} }
+
+\mobile{ {{user.basics.phone}} }
+\email{ {{user.basics.email}} }
+\homepage{ {{user.basics.website}} }
+\github{posquit0}
+\linkedin{posquit0}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \extrainfo{extra informations}
+
+% \quote{ {{user.basics.summary}} }
+
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  { {{user.basics.name}} ~~~·~~~Résumé}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%-------------------------------------------------------------------------------
+%\input{resume/summary.tex}
+% \ifbool{acvShowSkills}{\input{resume/skills.tex}}{}
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Skills}
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\vspace{\acvSectionContentTopSkip}
+
+
+% ===== Software Development ========
+\begin{parcolumns}[colwidths={1=.1\textwidth},rulebetween=false]{2}
+\colchunk{% left column
+    \entrytitlestyle{
+    Software\\ Development\\ Skills
+    }
+}
+\colchunk{% right column
+    \descriptionstyle{
+    \vspace{-5mm} % Eliminate space before itemize
+    \begin{itemize}[noitemsep,topsep=0pt]
+        		% Languages, Frameworks, Libraries, Build Systems, Deployment
+		% Front-end
+		\item {Proficient developing front-end web applications and JSON REST API back-ends with \cvitemskill{HTML5} (including \cvitemskill{Jade}, \cvitemskill{Handlebars}), \cvitemskill{CSS3} (including \cvitemskill{LESS} and \cvitemskill{Sass}), \cvitemskill{JavaScript} (including \cvitemskill{ES6}, \cvitemskill{CoffeeScript}, \cvitemskill{Node.js}) and using frameworks such as \cvitemskill{Bootstrap}, \cvitemskill{Ember.js}, \cvitemskill{Angular.js}, \cvitemskill{Express}, \cvitemskill{Sails.js}, and \cvitemskill{Loopback.io}, and libraries such as \cvitemskill{jQuery}, \cvitemskill{Socket.io}, \cvitemskill{Lodash}/\cvitemskill{Underscore}, and \cvitemskill{Async}, and build systems such as \cvitemskill{Grunt}, and deploying to \cvitemskill{Amazon Web Services (AWS)}.}
+		% Databases
+		\item {Designed data models for client-server applications with databases such as \cvitemskill{MongoDB} and \cvitemskill{MySQL}, along with using \cvitemskill{RabbitMQ} and \cvitemskill{Redis}.}
+		% Testing \& Continuous Integration
+		\item {Experience with \cvitemskill{Test-Driven Development (TDD)} and using \cvitemskill{Continuous Integration} services, such as \cvitemskill{Travis CI} for Mac or Linux and \cvitemskill{AppVeyor} for Windows, for both corporate and open-source projects.}
+        \end{itemize}
+    }
+}
+\end{parcolumns}
+
+% ===== Analytical ========
+%\begin{parcolumns}[colwidths={1=.1\textwidth},rulebetween=false]{2}
+%\colchunk{% left column
+%    \entrytitlestyle{
+%    Analytical\\ Skills
+%    }
+%}
+%\colchunk{% right column
+%    \descriptionstyle{
+%    \vspace{-5mm} % Eliminate space before itemize
+%        \begin{itemize}
+%            \item {Researched classification and clustering techniques, such as \cvitemskill{Decision Tree}, \cvitemskill{Random Forest}, \cvitemskill{Support Vector Machines (SVM)}, \cvitemskill{Neural Networks}, and \cvitemskill{Genetic Algorithms}, for classifying electroencephalogram (EEG) data based on person and activity.}
+%            \item {Collaborated with experienced Data Scientist (Ph.D candidate) to design and implement predictive analytics system using \cvitemskill{R}, \cvitemskill{MongoDB}, and \cvitemskill{InfluxDB}.}
+%        \end{itemize}
+%    }
+%}
+%\end{parcolumns}
+
+% ===== Communication ========
+\begin{parcolumns}[colwidths={1=.1\textwidth},rulebetween=false]{2}
+\colchunk{% left column
+    \entrytitlestyle{
+    Communication\\ Skills
+    }
+}
+\colchunk{% right column
+    \descriptionstyle{
+    \vspace{-5mm} % Eliminate space before itemize
+        \begin{itemize}
+	\item {Prepared \cvitemskill{business presentations} and attended meetings as technical representative of Streamlyne Technologies.}
+	\item {\cvitemskill{Customer development} experience by working closely with early adopter customers to ensure their ideas and concerns were being heard and addressed with Streamlyne's product.}
+	\item {Wrote \cvitemskill{technical documents}, such as for National Research Council's Industrial Research Assistance Program (NRC-IRAP) and Scientific Research and Experimental Development (SR\&ED) for Streamlyne Technologies.}
+	\item {Extensive business-to-business software integration experience by working with third-party technical teams.}
+%        \item {Assisted with writing research papers in \cvitemskill{LaTeX}.}
+        \end{itemize}
+         \vspace*{-\baselineskip}\leavevmode
+    }
+}
+\end{parcolumns}
+
+% ===== Leadership ========
+\begin{parcolumns}[colwidths={1=.1\textwidth},rulebetween=false]{2}
+\colchunk{% left column
+    \entrytitlestyle{
+    Leadership\\ Skills
+    }
+}
+\colchunk{% right column
+    \descriptionstyle{
+    \vspace{-5mm} % Eliminate space before itemize
+        \begin{itemize}
+        	\item {Managed small teams of software developers at both Skilltapper and Streamlyne Technologies, both in office and remotely (\cvitemskill{telecommuting}) using \cvitemskill{email}, \cvitemskill{Slack}, \cvitemskill{Google Hangouts} for Video Calling, and \cvitemskill{GitHub}'s Issue Tracker.}
+	\item {Mentored students at Saint Mary's University while being Vice President of the Saint Mary's University Computing Science and Mathematics Society (SMUCSM).}
+	\item {Assisted with hosting of \href{http://aigicrv.org/aigicrv2015/}{AI/GI/CRV 2015 Conference at Saint Mary's University and Dalhousie University}, and hosting of \href{http://cs.smu.ca/hackaweek/}{Saint Mary's University's annual "Hack-A-Week" Hackathons}. }
+        \end{itemize}
+    }
+}
+\end{parcolumns}
+
+%% ===== Teamwork ========
+%\begin{parcolumns}[colwidths={1=.1\textwidth},rulebetween=false]{2}
+%\colchunk{% left column
+%    \entrytitlestyle{
+%    Teamwork\\ Skills
+%    }
+%}
+%\colchunk{% right column
+%    \descriptionstyle{
+%    \vspace{-5mm} % Eliminate space before itemize
+%        \begin{itemize}
+%        	\item {Collaborated with small teams of software developers at Skilltapper, Streamlyne, Compilr, and open-source projects on \cvitemskill{GitHub}}
+%        \end{itemize}
+%    }
+%}
+%\end{parcolumns}
+
+%---------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Related Work Experience}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cventries}
+
+%---------------------------------------------------------
+%  \cventry
+%    {Research Assistant} % Job title
+%    {Saint Mary's University} % Organization
+%    {Halifax, Nova Scotia} % Location
+%    {Jan. 2016 - Mar. 2016} % Date(s)
+%    {
+%      \begin{cvitems} % Description(s) of tasks/responsibilities
+%        \item {Researched classification and clustering techniques, such as \cvitemskill{Decision Tree}, \cvitemskill{Random Forest}, \cvitemskill{Support Vector Machines (SVM)}, \cvitemskill{Neural Networks}, and \cvitemskill{Genetic Algorithms}, for classifying electroencephalogram (EEG) data based on person and activity.}
+%        \item {Implemented software for classification and clustering of EEG data in \cvitemskill{R} and \cvitemskill{Java}.}
+%        \item {Assisted with writing research papers in \cvitemskill{LaTeX}.}
+%      \end{cvitems}
+%    }
+
+%---------------------------------------------------------
+  \cventry
+    {Senior Software Engineer} % Job title
+    {Skilltapper} % Organization
+    {Lakeville, New Brunswick [Remote/Telecommuting]} % Location
+    {Jul. 2015 - Mar. 2016} % Date(s)
+    {
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+        \item {Managed a small team of 3 other internal software developers \cvitemskill{remotely}, using \cvitemskill{Google Hangouts} for Video Calling and \cvitemskill{GitHub}'s Issue Tracker.}
+        \item {Developed web application in \cvitemskill{JavaScript} using \cvitemskill{Ember.js} framework and \cvitemskill{Sass}, along with managing 2 other team members.}
+        \item {Designed and implemented a RESTful API server in \cvitemskill{Node.js} using \cvitemskill{Sails.js}, to connect the web application to retrieve and manipulate customer data stored in \cvitemskill{MongoDB} and \cvitemskill{Redis}.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {Cofounder, Vice President of Engineering} % Job title
+    {Streamlyne Technologies}  % Organization
+    {Dartmouth, Nova Scotia} % Location
+    {Apr. 2013 - Jul. 2015} % Date(s)
+    {
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+	\item {Managed a small team of software developers, using \cvitemskill{GitHub}'s Issue Tracker.}
+	\item {Architected and implemented the \cvitemskill{RESTful API} server, along with 2 other server developers, with \cvitemskill{Python}, \cvitemskill{MongoDB}, \cvitemskill{Redis}, \cvitemskill{RabbitMQ}.}
+	\item {Gained business \cvitemskill{presentation} experience by attending business meetings as technical representative along with sales representative of Streamlyne.}
+	\item {Gained \cvitemskill{customer development} experience by working closely with early adopter customers to ensure their ideas and concerns were being heard and addressed with the Streamlyne technology.}
+	\item {Gained business-to-business software integration experience by working with third-party technical teams.}
+	\item {Developed web application in \cvitemskill{JavaScript} using \cvitemskill{Ember.js} framework and \cvitemskill{Sass}, along with training interns how to use these web technologies.}
+	\item {Developed \cvitemskill{iOS} application in \cvitemskill{Objective-C} for iPhone, iPod Touch, and iPad.}
+	\item {Collaborated with experienced Data Scientist (Ph.D candidate) to design and implement predictive analytics system using \cvitemskill{R}, \cvitemskill{MongoDB}, and \cvitemskill{InfluxDB}.}
+	\item {Improved data processing pipeline to dramatically reduce operating costs and improve real-time performance using \cvitemskill{Redis}, \cvitemskill{RabbitMQ}, \cvitemskill{MongoDB}, and \cvitemskill{Python}.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {Developer} % Job title
+    {Compilr} % Organization
+    {Halifax, Nova Scotia} % Location
+    {May 2013 - Jul. 2013} % Date(s)
+    {
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+	\item {Developed Compilr's web application using \cvitemskill{JavaScript} / \cvitemskill{Node.js}, \cvitemskill{HTML}, \cvitemskill{CSS}, \cvitemskill{PHP}, and \cvitemskill{MySQL}. Specifically tools for education, including an innovative interactive source code recording system.}
+	\item {Compilr was acquired by an online education company, Lynda.com, on April 7, 2014 and Compilr's education tools were integrated in Lynda.com's web application.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+\end{cventries}
+
+% \input{resume/experience.tex}
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Education}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cventries}
+
+%---------------------------------------------------------
+  \cventry
+    {(Expected) Honours in Computing Science, Bachelor of Science} % Degree
+    {Saint Mary's University} % Institution
+    {Halifax, Nova Scotia} % Location
+    {Sep. 2012 - Exp. Apr. 2017} % Date(s)
+    {
+%      \begin{cvitems} % Description(s) bullet points
+%        \item {Assisted with hosting of SMU's annual "Hackaweek" Hackathons ( http://cs.smu.ca/hackaweek/ ) }
+%	\item {Assisted with hosting AI/GI/CRV 2015 Conference at SMU and Dalhousie ( http://aigicrv.org/aigicrv2015/ ) }
+%	\item {Vice President of the Saint Mary's University Computing Science and Mathematics Society (SMUCSM) }
+%      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+\end{cventries}
+
+% \input{resume/education.tex}
+% %\input{resume/extracurricular.tex}
+% \input{resume/honors.tex}
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Honours \& Awards}
+
+
+%-------------------------------------------------------------------------------
+%	SUBSECTION TITLE
+%-------------------------------------------------------------------------------
+%\cvsubsection{International}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvhonors}
+
+%---------------------------------------------------------
+  \cvhonor
+    {Finalist Team} % Award
+    {IBM/Sobeys Retail Hackathon, hosted by Saint Mary's University} % Event
+    {Halifax, Nova Scotia} % Location
+    {2015} % Date(s)
+%---------------------------------------------------------
+  \cvhonor
+    {1st Place Team} % Award
+    {IBM Bluemix Hackathon, hosted by Saint Mary's University} % Event
+    {Halifax, Nova Scotia} % Location
+    {2015} % Date(s)
+
+%---------------------------------------------------------
+  \cvhonor
+    {1st Place Team} % Award
+    {Saint Mary's University Mobile App Contest} % Event
+    {Halifax, Nova Scotia} % Location
+    {2014} % Date(s)
+
+%---------------------------------------------------------
+  \cvhonor
+    {1st Place Team} % Award
+    {Saint Mary's University Mobile App Contest} % Event
+    {Halifax, Nova Scotia} % Location
+    {2013} % Date(s)
+
+%---------------------------------------------------------
+  \cvhonor
+    {1st Place} % Award
+    {Saint Mary's University High School Programming Competition} % Event
+    {Halifax, Nova Scotia} % Location
+    {2012} % Date(s)
+
+%---------------------------------------------------------
+  \cvhonor
+    {3rd Place} % Award
+    {Saint Mary's University High School Programming Competition} % Event
+    {Halifax, Nova Scotia} % Location
+    {2011} % Date(s)
+
+%---------------------------------------------------------
+\end{cvhonors}
+
+%\input{resume/presentation.tex}
+%\input{resume/writing.tex}
+%\input{resume/committees.tex}
+
+
+%-------------------------------------------------------------------------------
+\end{document}

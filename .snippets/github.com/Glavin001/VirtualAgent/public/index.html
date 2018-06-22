@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Simply Sift</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
+
+    <!-- Load c3.css -->
+    <link href="bower_components/c3/c3.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]-->
+</head>
+
+<body>
+
+    <div class="background-video">
+
+        <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+        <div id="player"></div>
+
+    </div>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+        <div role="tabpanel" class="tab-pane fade in active" id="intro">
+
+            <h1>Welcome to <img class="logo" src='images/simply_sift_logo_light.png' alt="Simply Sift"></img></h1>
+            <p>Let this be the <strong>last</strong> time you write a job-specific Resume and Cover Letter again.</p>
+            <a class="btn btn-primary" data-toggle="tab" href="#github">Continue</a>
+
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade invalid-username" id="github">
+
+            <label for="basic-url">Enter a GitHub Username</label>
+            <div class="input-group">
+                <span class="input-group-addon input-group-addon-front">https://github.com/</span>
+                <input type="text" class="form-control" id="github-username" aria-describedby="basic-addon3" placeholder="Glavin001">
+                <span class="input-group-addon input-group-addon-back">
+              <i class="glyphicon glyphicon-ok"></i>
+              <i class="glyphicon glyphicon-remove"></i>
+              <i class="glyphicon glyphicon-refresh"></i>
+            </span>
+            </div>
+            <br>
+            <div class="row github-user-preview">
+                <div class="col-sm-6">
+                    <div class="caption">
+                        <h3>
+                  <span class="github-user-full-name">Glavin Wiechert</span>
+                  <a href="" class="github-user-url" target="_blank">
+                    <i class="glyphicon glyphicon-link"></i>
+                  </a>
+                </h3>
+                        <p>
+                            <button class="btn btn-success sync-github-btn">That's right, next!</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <a class="thumbnail github-user-url" target="_blank">
+                        <img class="github-user-avatar" src="https://avatars.githubusercontent.com/u/1885333?v=3" alt="...">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="syncing">
+
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
+
+            <p>Please be patient while I learn more about what makes you great!</p>
+            <hr>
+            <p class="status-message"></p>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                    <span class="sr-only">0% Complete</span>
+                </div>
+            </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="json-resume">
+            <h1>Let's import your <a href="https://jsonresume.org/" target="_blank">JSON Resume!</a></h1>
+            <p>JSON Resume is a standard created to empower developers.</p>
+            <br>
+            <label for="import-json-resume-file">Upload your JSON Resume!</label>
+            <br>
+            <input type="file" id="import-json-resume-file">
+            <a class="btn btn-primary use-resume-btn" data-toggle="tab" href="#jobs">Let's get me some jobs!</a>
+            <hr>
+            <p>If you do not have a JSON Resume follow these instructions:
+                <ol style="text-align:left;">
+                    <li>Add Bookmarklet:
+                        <a class="btn btn-info btn-xs bookmarklet" href="javascript:(function()%7B(function()%20%7B%2F*%20Check%20if%20LinkedIn%20*%2Fvar%20redirectProfileUrl%20%3D%20'https%3A%2F%2Fwww.linkedin.com%2Fprofile%2Fview'%3Bif%20(location.hostname%20!%3D%3D%20'www.linkedin.com')%20%7Bwindow.location.href%20%3D%20redirectProfileUrl%3Breturn%3B%7Dvar%20basics%20%3D%20%7B%7D%3Bbasics.name%20%3D%20%24('.profile-overview-content%20.full-name')%5B0%5D.textContent%3Bbasics.label%20%3D%20%24('%23headline-container%20.title.field-text')%5B0%5D.textContent%3Bbasics.picture%20%3D%20%24('.profile-picture%20img')%5B0%5D.getAttribute('src')%3Bbasics.location%20%3D%20%24('%23location%20.locality')%5B0%5D.textContent%3Bvar%20profileUrl%20%3D%20%24('.public-profile-url')%5B0%5D.textContent%3Bbasics.website%20%3D%20profileUrl%3Bbasics.summary%20%3D%20%24('%23summary-item%20.summary%20.field-text')%5B0%5D.textContent%3Bbasics.profiles%20%3D%20%5B%7Bnetwork%3A%20%22LinkedIn%22%2C%22url%22%3A%20profileUrl%7D%5D%3B%2F*%20Work%20*%2Fvar%20%24experience%20%3D%20Array.prototype.slice.call(%24('%23background-experience-container%20.entity-container'))%3Bvar%20work%20%3D%20%24experience.map(function(%24job)%20%7Bvar%20job%20%3D%20%7Bposition%3A%20%24('header%20.main-header-field%20.field-text'%2C%20%24job)%5B0%5D.innerHTML%2Ccompany%3A%20%24('header%20.sub-header-field%20.field-text'%2C%20%24job)%5B0%5D.innerHTML%2Csummary%3A%20%24('.body-field%20.field-text'%2C%20%24job)%5B0%5D.innerHTML%2C%7D%3Bjob.highlights%20%3D%20job.summary.split('%3Cbr%3E%5Cn')%3Breturn%20job%3B%7D)%3B%2F*%20Education%20*%2Fvar%20%24education%20%3D%20Array.prototype.slice.call(%24('%23background-education%20.entity-container'))%3Bvar%20education%20%3D%20%24education.map(function(%24edu)%20%7Bvar%20edu%20%3D%20%7Binstitution%3A%20%24('header%20.main-header-field%20.field-text'%2C%20%24edu)%5B0%5D.innerHTML%2Carea%3A%20%24('header%20.sub-header-field%20.field-text%20.major'%2C%20%24edu)%5B0%5D.innerHTML%2CstudyType%3A%20%24('header%20.sub-header-field%20.field-text%20.degree'%2C%20%24edu)%5B0%5D.innerHTML%2Ccourses%3A%20%5B%5D%7D%3Breturn%20edu%3B%7D)%3Bvar%20resume%20%3D%20%7Bbasics%3A%20basics%2Cwork%3A%20work%2Ceducation%3A%20education%7D%3Bvar%20resumeStr%20%3D%20JSON.stringify(resume%2C%20undefined%2C%202)%3BdownloadData('linkedin-json-resume.json'%2C%20resumeStr%2C%20%22application%2Fjson%22)%3B%2F**%40desc%20Download%20the%20given%20data%20to%20the%20users%20computer%20as%20a%20file%40param%20%7Bstring%7D%20name%20-%20Name%20of%20the%20file%40param%20%7Bstring%7D%20data%20-%20Contents%20of%20the%20file%40param%20%7Bstring%7D%20type%20-%20MIME%20type%20of%20the%20file*%2Ffunction%20downloadData(name%2C%20data%2C%20type)%20%7B%2F*%20Browser%20support%20*%2Fwindow.URL%20%3D%20window.URL%20%7C%7C%20window.webkitURL%3B%2F*%20Arg%20defaults%20*%2Ftype%20%3D%20type%20%7C%7C%20%22text%2Fplain%22%3Bname%20%3D%20name%20%7C%7C%20%22download%22%3Bdata%20%3D%20data%20%7C%7C%20%22%22%3B%2F*%20Create%20Blob%20*%2Fvar%20blob%3Bif%20(data%20instanceof%20Blob)%20%7Bblob%20%3D%20data%3B%7D%20else%20%7Bblob%20%3D%20new%20Blob(%5Bdata%5D%2C%20%7Btype%3A%20type%7D)%3B%7Dvar%20url%20%3D%20window.URL.createObjectURL(blob)%3B%2F*%20Create%20link%20*%2Fvar%20link%20%3D%20document.createElement(%22a%22)%3Blink.download%20%3D%20name%3Blink.href%20%3D%20url%3B%2F*%20Download!%20*%2F%2F*%20See%20http%3A%2F%2Fstackoverflow.com%2Fa%2F25047811%2F2578205%20for%20more%20details%20*%2Fvar%20event%20%3D%20document.createEvent(%22MouseEvents%22)%3Bevent.initMouseEvent(%22click%22%2C%20true%2C%20false%2C%20window%2C%200%2C%200%2C%200%2C%200%2C%200%2C%20false%2C%20false%2C%20false%2C%20false%2C%200%2C%20null)%3Blink.dispatchEvent(event)%3B%7D%7D)()%7D)()">
+            LinkedIn to JSON Resume</a>
+                    </li>
+                    <li>Go to <a href="https://www.linkedin.com/profile/view" class="" target="_blank">your LinkedIn Profile</a></li>
+                    <li>Run the <strong>LinkedIn to JSON Resume</strong> Bookmarklet. It will download a JSON Resume extracted from your LinkedIn profile.</li>
+                    <li>You can edit your JSON Resume by pasting the JSON into <a href="http://registry.jsonresume.org/" target="_blank">JSON Resume Editor</a>.</li>
+                    <li>Come back and upload your JSON Resume here!</li>
+                </ol>
+            </p>
+            <!-- <div id="language-chart"></div> -->
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="jobs">
+
+            <h1>Job Finding Time!</h1>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Search:</span>
+                <input type="text" id="job-search-query" class="form-control" placeholder="Job search query"></input>
+              </div>
+
+            <hr>
+            <script id="jobs-template" type="text/x-handlebars-template">
+                {{#each jobs}}
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                              <h3 class="panel-title">
+                                <span>
+                                  <a href="{{_source.post_url}}" target="_blank">
+                                    {{_source.title}}
+                                  </a>
+                                </span>
+                                <span class="label label-success">{{_source.source}}</span>
+                              </h3>
+                            </div>
+                            <div class="panel-body">
+                                {{{_source.description}}}
+                            </div>
+                            <!-- <div class="panel-footer">
+                                <span class="label label-default">Keyword 1</span>
+                                <span class="label label-default">Keyword 2</span>
+                                <span class="label label-default">Keyword 3</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="badge" data-toggle="tooltip" data-placement="right" title="Confidence score">{{_score}}</span>
+                        <br>
+                        <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Download Cover Letter">
+                            <i class="glyphicon glyphicon-download-alt"></i> Cover Letter
+                        </a>
+                        <br>
+                        <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Download Resume Letter">
+                            <i class="glyphicon glyphicon-download-alt"></i> Resume
+                        </a>
+                    </div>
+                </div>
+                {{/each}}
+            </script>
+            <div class="job-results">
+                <div class="spinner">
+                    <div class="dot1"></div>
+                    <div class="dot2"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.2/lodash.min.js"></script>
+
+        <script>
+            // 2. This code loads the IFrame Player API code asynchronously.
+            var tag = document.createElement('script');
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // 3. This function creates an <iframe> (and YouTube player)    after the API code downloads.
+            var player;
+
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '390',
+                    width: '640',
+                    videoId: 'qREKP9oijWI',
+                    // https://developers.google.com/youtube/player_parameters#playsinline
+                    playerVars: {
+                        autoplayer: 1,
+                        controls: 0,
+                        showinfo: 0,
+                        iv_load_policy: 3,
+                    },
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            // 4. The API will call this function when the video player is ready.
+            function onPlayerReady(event) {
+                var player = event.target;
+                player.mute();
+                player.playVideo();
+                player.setLoop(true);
+            }
+
+            // 5. The API calls this function when the player's state changes.    The function indicates that when playing a video (state=1),    the player should play for six seconds and then stop.
+            var done = false;
+
+            function onPlayerStateChange(event) {
+                // if (event.data == YT.PlayerState.PLAYING && !done) {
+                //     setTimeout(stopVideo, 6000);
+                //     done = true;
+                // }
+            }
+
+            function stopVideo() {
+                player.stopVideo();
+            }
+        </script>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+        </script>
+        <!-- Load d3.js and c3.js -->
+        <script src="bower_components/d3/d3.min.js" charset="utf-8"></script>
+        <script src="bower_components/c3/c3.min.js"></script>
+        <script src="bower_components/handlebars/handlebars.min.js"></script>
+        <script src="bower_components/lodash/dist/lodash.min.js"></script>
+        <script src="main.js"></script>
+
+</body>
+
+</html>
