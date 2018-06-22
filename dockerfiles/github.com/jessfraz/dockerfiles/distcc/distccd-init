@@ -1,0 +1,29 @@
+#! /bin/sh
+#
+# distccd Debian init.d script contributed by Jason Thomas.  (Debian #161136)
+#
+# skeleton	example file to build /etc/init.d/ scripts.
+#		This file should be used to construct scripts for /etc/init.d.
+#
+#		Written by Miquel van Smoorenburg <miquels@cistron.nl>.
+#		Modified for Debian GNU/Linux
+#		by Ian Murdock <imurdock@gnu.ai.mit.edu>.
+#
+# Version:	@(#)skeleton  1.9.1  08-Apr-2002  miquels@cistron.nl
+#
+set -e
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=/usr/bin/distccd
+NAME=distccd
+DESC="Distributed Compiler Daemon"
+DAEMON_ARGS="--nice=10 --port=4200 --pid-file=/var/run/$NAME.pid --no-detach $@"
+
+test -x $DAEMON || exit 0
+
+
+# we need permission to write to the pid file
+touch /var/run/$NAME.pid
+chown distccd /var/run/$NAME.pid
+
+exec $DAEMON $DAEMON_ARGS
