@@ -1,0 +1,5 @@
+app:
+  image: redis:latest
+  tty: true
+  ports:
+   - "7703:6379"
