@@ -1,0 +1,25 @@
+{
+  "Tools": [
+    {
+      "Subcmd": "scan",
+      "Op": "scan",
+      "SourceUnitTypes": [
+        "placeholder-type"
+      ]
+    },
+    {
+      "Subcmd": "graph",
+      "Op": "graph",
+      "SourceUnitTypes": [
+        "placeholder-type"
+      ]
+    }
+  ],
+  "Bundle": {
+    "Paths": [
+      "Srclibtoolchain",
+      ".bin",
+      ".bin/srclib-quickstart"
+    ]
+  }
+}
