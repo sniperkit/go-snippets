@@ -1,0 +1,1 @@
+[('add_library', 'mylib sourcefile.c', None, None), ('target_link_libraries', 'mylib otherlib', None, None)]

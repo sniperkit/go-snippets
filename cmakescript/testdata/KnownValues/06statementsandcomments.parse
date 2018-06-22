@@ -1,0 +1,1 @@
+[('', None, '# Comment 1', None), ('add_library', 'mylib sourcefile.c', None, None), ('', None, '# Comment 2', None), ('target_link_libraries', 'mylib otherlib', None, None)]
