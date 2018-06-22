@@ -1,0 +1,34 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 15,
+                    "endLine": 3,
+                    "endTokenPos": 5,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 14,
+                        "endLine": 3,
+                        "endTokenPos": 4,
+                        "kind": 2,
+                        "startFilePos": 12,
+                        "startLine": 3,
+                        "startTokenPos": 4
+                    },
+                    "nodeType": "Scalar_String",
+                    "value": "1"
+                },
+                "nodeType": "Expr_Eval"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

@@ -1,0 +1,232 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 33,
+                    "endLine": 2,
+                    "endTokenPos": 14,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "byRef": false,
+                "name": "test",
+                "nodeType": "Stmt_Function",
+                "params": [
+                    {
+                        "attributes": {
+                            "endFilePos": 21,
+                            "endLine": 2,
+                            "endTokenPos": 5,
+                            "startFilePos": 20,
+                            "startLine": 2,
+                            "startTokenPos": 5
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "a",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": false
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 29,
+                            "endLine": 2,
+                            "endTokenPos": 10,
+                            "startFilePos": 24,
+                            "startLine": 2,
+                            "startTokenPos": 8
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "b",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": true
+                    }
+                ],
+                "returnType": null,
+                "stmts": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 63,
+                    "endLine": 3,
+                    "endTokenPos": 30,
+                    "startFilePos": 35,
+                    "startLine": 3,
+                    "startTokenPos": 16
+                },
+                "byRef": false,
+                "name": "test",
+                "nodeType": "Stmt_Function",
+                "params": [
+                    {
+                        "attributes": {
+                            "endFilePos": 50,
+                            "endLine": 3,
+                            "endTokenPos": 20,
+                            "startFilePos": 49,
+                            "startLine": 3,
+                            "startTokenPos": 20
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "a",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": false
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 59,
+                            "endLine": 3,
+                            "endTokenPos": 26,
+                            "startFilePos": 53,
+                            "startLine": 3,
+                            "startTokenPos": 23
+                        },
+                        "byRef": true,
+                        "default": null,
+                        "name": "b",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": true
+                    }
+                ],
+                "returnType": null,
+                "stmts": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 97,
+                    "endLine": 4,
+                    "endTokenPos": 47,
+                    "startFilePos": 65,
+                    "startLine": 4,
+                    "startTokenPos": 32
+                },
+                "byRef": false,
+                "name": "test",
+                "nodeType": "Stmt_Function",
+                "params": [
+                    {
+                        "attributes": {
+                            "endFilePos": 80,
+                            "endLine": 4,
+                            "endTokenPos": 36,
+                            "startFilePos": 79,
+                            "startLine": 4,
+                            "startTokenPos": 36
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "a",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": false
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 93,
+                            "endLine": 4,
+                            "endTokenPos": 43,
+                            "startFilePos": 83,
+                            "startLine": 4,
+                            "startTokenPos": 39
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "b",
+                        "nodeType": "Param",
+                        "type": {
+                            "attributes": {
+                                "endFilePos": 86,
+                                "endLine": 4,
+                                "endTokenPos": 39,
+                                "startFilePos": 83,
+                                "startLine": 4,
+                                "startTokenPos": 39
+                            },
+                            "nodeType": "Name",
+                            "parts": [
+                                "Type"
+                            ]
+                        },
+                        "variadic": true
+                    }
+                ],
+                "returnType": null,
+                "stmts": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 132,
+                    "endLine": 5,
+                    "endTokenPos": 65,
+                    "startFilePos": 99,
+                    "startLine": 5,
+                    "startTokenPos": 49
+                },
+                "byRef": false,
+                "name": "test",
+                "nodeType": "Stmt_Function",
+                "params": [
+                    {
+                        "attributes": {
+                            "endFilePos": 114,
+                            "endLine": 5,
+                            "endTokenPos": 53,
+                            "startFilePos": 113,
+                            "startLine": 5,
+                            "startTokenPos": 53
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "a",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": false
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 128,
+                            "endLine": 5,
+                            "endTokenPos": 61,
+                            "startFilePos": 117,
+                            "startLine": 5,
+                            "startTokenPos": 56
+                        },
+                        "byRef": true,
+                        "default": null,
+                        "name": "b",
+                        "nodeType": "Param",
+                        "type": {
+                            "attributes": {
+                                "endFilePos": 120,
+                                "endLine": 5,
+                                "endTokenPos": 56,
+                                "startFilePos": 117,
+                                "startLine": 5,
+                                "startTokenPos": 56
+                            },
+                            "nodeType": "Name",
+                            "parts": [
+                                "Type"
+                            ]
+                        },
+                        "variadic": true
+                    }
+                ],
+                "returnType": null,
+                "stmts": []
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

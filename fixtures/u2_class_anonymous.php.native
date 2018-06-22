@@ -1,0 +1,39 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "args": [],
+                "attributes": {
+                    "endFilePos": 17,
+                    "endLine": 2,
+                    "endTokenPos": 6,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 17,
+                        "endLine": 2,
+                        "endTokenPos": 6,
+                        "startFilePos": 10,
+                        "startLine": 2,
+                        "startTokenPos": 3
+                    },
+                    "extends": null,
+                    "flags": 0,
+                    "implements": [],
+                    "name": null,
+                    "nodeType": "Stmt_Class",
+                    "stmts": [],
+                    "type": 0
+                },
+                "nodeType": "Expr_New"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

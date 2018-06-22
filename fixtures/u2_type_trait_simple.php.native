@@ -1,0 +1,42 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 52,
+                    "endLine": 4,
+                    "endTokenPos": 16,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "name": "testtrait1",
+                "nodeType": "Stmt_Trait",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 50,
+                            "endLine": 3,
+                            "endTokenPos": 14,
+                            "startFilePos": 29,
+                            "startLine": 3,
+                            "startTokenPos": 7
+                        },
+                        "byRef": false,
+                        "flags": 0,
+                        "name": "testfnc1",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 0
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

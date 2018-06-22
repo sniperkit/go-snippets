@@ -1,0 +1,65 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 24,
+                    "endLine": 2,
+                    "endTokenPos": 6,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "name": "testtrait1",
+                "nodeType": "Stmt_Trait",
+                "stmts": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 61,
+                    "endLine": 3,
+                    "endTokenPos": 19,
+                    "startFilePos": 26,
+                    "startLine": 3,
+                    "startTokenPos": 8
+                },
+                "name": "testtrait2",
+                "nodeType": "Stmt_Trait",
+                "stmts": [
+                    {
+                        "adaptations": [],
+                        "attributes": {
+                            "endFilePos": 59,
+                            "endLine": 3,
+                            "endTokenPos": 17,
+                            "startFilePos": 45,
+                            "startLine": 3,
+                            "startTokenPos": 14
+                        },
+                        "nodeType": "Stmt_TraitUse",
+                        "traits": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 58,
+                                    "endLine": 3,
+                                    "endTokenPos": 16,
+                                    "startFilePos": 49,
+                                    "startLine": 3,
+                                    "startTokenPos": 16
+                                },
+                                "nodeType": "Name",
+                                "parts": [
+                                    "testtrait1"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

@@ -1,0 +1,359 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 44,
+                    "endLine": 5,
+                    "endTokenPos": 19,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "name": "A",
+                "nodeType": "Stmt_Trait",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 42,
+                            "endLine": 4,
+                            "endTokenPos": 17,
+                            "startFilePos": 21,
+                            "startLine": 4,
+                            "startTokenPos": 8
+                        },
+                        "byRef": false,
+                        "flags": 1,
+                        "name": "a",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 1
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "endFilePos": 276,
+                    "endLine": 20,
+                    "endTokenPos": 118,
+                    "startFilePos": 47,
+                    "startLine": 7,
+                    "startTokenPos": 21
+                },
+                "extends": null,
+                "flags": 0,
+                "implements": [],
+                "name": "B",
+                "nodeType": "Stmt_Class",
+                "stmts": [
+                    {
+                        "adaptations": [],
+                        "attributes": {
+                            "endFilePos": 66,
+                            "endLine": 8,
+                            "endTokenPos": 30,
+                            "startFilePos": 61,
+                            "startLine": 8,
+                            "startTokenPos": 27
+                        },
+                        "nodeType": "Stmt_TraitUse",
+                        "traits": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 65,
+                                    "endLine": 8,
+                                    "endTokenPos": 29,
+                                    "startFilePos": 65,
+                                    "startLine": 8,
+                                    "startTokenPos": 29
+                                },
+                                "nodeType": "Name",
+                                "parts": [
+                                    "C"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "adaptations": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 104,
+                                    "endLine": 10,
+                                    "endTokenPos": 45,
+                                    "startFilePos": 88,
+                                    "startLine": 10,
+                                    "startTokenPos": 38
+                                },
+                                "method": "a",
+                                "newModifier": 2,
+                                "newName": "b",
+                                "nodeType": "Stmt_TraitUseAdaptation_Alias",
+                                "trait": null
+                            },
+                            {
+                                "attributes": {
+                                    "endFilePos": 120,
+                                    "endLine": 11,
+                                    "endTokenPos": 52,
+                                    "startFilePos": 114,
+                                    "startLine": 11,
+                                    "startTokenPos": 47
+                                },
+                                "method": "c",
+                                "newModifier": null,
+                                "newName": "d",
+                                "nodeType": "Stmt_TraitUseAdaptation_Alias",
+                                "trait": null
+                            },
+                            {
+                                "attributes": {
+                                    "endFilePos": 142,
+                                    "endLine": 12,
+                                    "endTokenPos": 59,
+                                    "startFilePos": 130,
+                                    "startLine": 12,
+                                    "startTokenPos": 54
+                                },
+                                "method": "e",
+                                "newModifier": 4,
+                                "newName": null,
+                                "nodeType": "Stmt_TraitUseAdaptation_Alias",
+                                "trait": null
+                            }
+                        ],
+                        "attributes": {
+                            "endFilePos": 148,
+                            "endLine": 13,
+                            "endTokenPos": 61,
+                            "startFilePos": 72,
+                            "startLine": 9,
+                            "startTokenPos": 32
+                        },
+                        "nodeType": "Stmt_TraitUse",
+                        "traits": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 76,
+                                    "endLine": 9,
+                                    "endTokenPos": 34,
+                                    "startFilePos": 76,
+                                    "startLine": 9,
+                                    "startTokenPos": 34
+                                },
+                                "nodeType": "Name",
+                                "parts": [
+                                    "D"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "adaptations": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 195,
+                                    "endLine": 15,
+                                    "endTokenPos": 85,
+                                    "startFilePos": 176,
+                                    "startLine": 15,
+                                    "startTokenPos": 75
+                                },
+                                "insteadof": [
+                                    {
+                                        "attributes": {
+                                            "endFilePos": 191,
+                                            "endLine": 15,
+                                            "endTokenPos": 81,
+                                            "startFilePos": 191,
+                                            "startLine": 15,
+                                            "startTokenPos": 81
+                                        },
+                                        "nodeType": "Name",
+                                        "parts": [
+                                            "F"
+                                        ]
+                                    },
+                                    {
+                                        "attributes": {
+                                            "endFilePos": 194,
+                                            "endLine": 15,
+                                            "endTokenPos": 84,
+                                            "startFilePos": 194,
+                                            "startLine": 15,
+                                            "startTokenPos": 84
+                                        },
+                                        "nodeType": "Name",
+                                        "parts": [
+                                            "G"
+                                        ]
+                                    }
+                                ],
+                                "method": "a",
+                                "nodeType": "Stmt_TraitUseAdaptation_Precedence",
+                                "trait": {
+                                    "attributes": {
+                                        "endFilePos": 176,
+                                        "endLine": 15,
+                                        "endTokenPos": 75,
+                                        "startFilePos": 176,
+                                        "startLine": 15,
+                                        "startTokenPos": 75
+                                    },
+                                    "nodeType": "Name",
+                                    "parts": [
+                                        "E"
+                                    ]
+                                }
+                            },
+                            {
+                                "attributes": {
+                                    "endFilePos": 224,
+                                    "endLine": 16,
+                                    "endTokenPos": 96,
+                                    "startFilePos": 205,
+                                    "startLine": 16,
+                                    "startTokenPos": 87
+                                },
+                                "method": "b",
+                                "newModifier": 2,
+                                "newName": "c",
+                                "nodeType": "Stmt_TraitUseAdaptation_Alias",
+                                "trait": {
+                                    "attributes": {
+                                        "endFilePos": 205,
+                                        "endLine": 16,
+                                        "endTokenPos": 87,
+                                        "startFilePos": 205,
+                                        "startLine": 16,
+                                        "startTokenPos": 87
+                                    },
+                                    "nodeType": "Name",
+                                    "parts": [
+                                        "E"
+                                    ]
+                                }
+                            },
+                            {
+                                "attributes": {
+                                    "endFilePos": 243,
+                                    "endLine": 17,
+                                    "endTokenPos": 105,
+                                    "startFilePos": 234,
+                                    "startLine": 17,
+                                    "startTokenPos": 98
+                                },
+                                "method": "d",
+                                "newModifier": null,
+                                "newName": "e",
+                                "nodeType": "Stmt_TraitUseAdaptation_Alias",
+                                "trait": {
+                                    "attributes": {
+                                        "endFilePos": 234,
+                                        "endLine": 17,
+                                        "endTokenPos": 98,
+                                        "startFilePos": 234,
+                                        "startLine": 17,
+                                        "startTokenPos": 98
+                                    },
+                                    "nodeType": "Name",
+                                    "parts": [
+                                        "E"
+                                    ]
+                                }
+                            },
+                            {
+                                "attributes": {
+                                    "endFilePos": 268,
+                                    "endLine": 18,
+                                    "endTokenPos": 114,
+                                    "startFilePos": 253,
+                                    "startLine": 18,
+                                    "startTokenPos": 107
+                                },
+                                "method": "f",
+                                "newModifier": 4,
+                                "newName": null,
+                                "nodeType": "Stmt_TraitUseAdaptation_Alias",
+                                "trait": {
+                                    "attributes": {
+                                        "endFilePos": 253,
+                                        "endLine": 18,
+                                        "endTokenPos": 107,
+                                        "startFilePos": 253,
+                                        "startLine": 18,
+                                        "startTokenPos": 107
+                                    },
+                                    "nodeType": "Name",
+                                    "parts": [
+                                        "E"
+                                    ]
+                                }
+                            }
+                        ],
+                        "attributes": {
+                            "endFilePos": 274,
+                            "endLine": 19,
+                            "endTokenPos": 116,
+                            "startFilePos": 154,
+                            "startLine": 14,
+                            "startTokenPos": 63
+                        },
+                        "nodeType": "Stmt_TraitUse",
+                        "traits": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 158,
+                                    "endLine": 14,
+                                    "endTokenPos": 65,
+                                    "startFilePos": 158,
+                                    "startLine": 14,
+                                    "startTokenPos": 65
+                                },
+                                "nodeType": "Name",
+                                "parts": [
+                                    "E"
+                                ]
+                            },
+                            {
+                                "attributes": {
+                                    "endFilePos": 161,
+                                    "endLine": 14,
+                                    "endTokenPos": 68,
+                                    "startFilePos": 161,
+                                    "startLine": 14,
+                                    "startTokenPos": 68
+                                },
+                                "nodeType": "Name",
+                                "parts": [
+                                    "F"
+                                ]
+                            },
+                            {
+                                "attributes": {
+                                    "endFilePos": 164,
+                                    "endLine": 14,
+                                    "endTokenPos": 71,
+                                    "startFilePos": 164,
+                                    "startLine": 14,
+                                    "startTokenPos": 71
+                                },
+                                "nodeType": "Name",
+                                "parts": [
+                                    "G"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "type": 0
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

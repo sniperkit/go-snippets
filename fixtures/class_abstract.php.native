@@ -1,0 +1,64 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 87,
+                    "endLine": 6,
+                    "endTokenPos": 32,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "extends": null,
+                "flags": 16,
+                "implements": [],
+                "name": "A",
+                "nodeType": "Stmt_Class",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 51,
+                            "endLine": 4,
+                            "endTokenPos": 19,
+                            "startFilePos": 30,
+                            "startLine": 4,
+                            "startTokenPos": 10
+                        },
+                        "byRef": false,
+                        "flags": 1,
+                        "name": "a",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 1
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 85,
+                            "endLine": 5,
+                            "endTokenPos": 30,
+                            "startFilePos": 57,
+                            "startLine": 5,
+                            "startTokenPos": 21
+                        },
+                        "byRef": false,
+                        "flags": 17,
+                        "name": "b",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": null,
+                        "type": 17
+                    }
+                ],
+                "type": 16
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

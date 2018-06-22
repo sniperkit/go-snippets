@@ -1,0 +1,899 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 655,
+                    "endLine": 30,
+                    "endTokenPos": 202,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "byRef": false,
+                "name": "gen",
+                "nodeType": "Stmt_Function",
+                "params": [],
+                "returnType": null,
+                "stmts": [
+                    {
+                        "attributes": {
+                            "comments": [
+                                {
+                                    "filePos": 28,
+                                    "line": 4,
+                                    "nodeType": "Comment",
+                                    "text": "// statements\n"
+                                }
+                            ],
+                            "endFilePos": 50,
+                            "endLine": 5,
+                            "endTokenPos": 12,
+                            "startFilePos": 46,
+                            "startLine": 5,
+                            "startTokenPos": 12
+                        },
+                        "key": null,
+                        "nodeType": "Expr_Yield",
+                        "value": null
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 68,
+                            "endLine": 6,
+                            "endTokenPos": 17,
+                            "startFilePos": 57,
+                            "startLine": 6,
+                            "startTokenPos": 15
+                        },
+                        "key": null,
+                        "nodeType": "Expr_Yield",
+                        "value": {
+                            "attributes": {
+                                "endFilePos": 68,
+                                "endLine": 6,
+                                "endTokenPos": 17,
+                                "startFilePos": 63,
+                                "startLine": 6,
+                                "startTokenPos": 17
+                            },
+                            "name": "value",
+                            "nodeType": "Expr_Variable"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 94,
+                            "endLine": 7,
+                            "endTokenPos": 26,
+                            "startFilePos": 75,
+                            "startLine": 7,
+                            "startTokenPos": 20
+                        },
+                        "key": {
+                            "attributes": {
+                                "endFilePos": 84,
+                                "endLine": 7,
+                                "endTokenPos": 22,
+                                "startFilePos": 81,
+                                "startLine": 7,
+                                "startTokenPos": 22
+                            },
+                            "name": "key",
+                            "nodeType": "Expr_Variable"
+                        },
+                        "nodeType": "Expr_Yield",
+                        "value": {
+                            "attributes": {
+                                "endFilePos": 94,
+                                "endLine": 7,
+                                "endTokenPos": 26,
+                                "startFilePos": 89,
+                                "startLine": 7,
+                                "startTokenPos": 26
+                            },
+                            "name": "value",
+                            "nodeType": "Expr_Variable"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "comments": [
+                                {
+                                    "filePos": 102,
+                                    "line": 9,
+                                    "nodeType": "Comment",
+                                    "text": "// expressions\n"
+                                }
+                            ],
+                            "endFilePos": 133,
+                            "endLine": 10,
+                            "endTokenPos": 35,
+                            "startFilePos": 121,
+                            "startLine": 10,
+                            "startTokenPos": 31
+                        },
+                        "expr": {
+                            "attributes": {
+                                "endFilePos": 133,
+                                "endLine": 10,
+                                "endTokenPos": 35,
+                                "startFilePos": 129,
+                                "startLine": 10,
+                                "startTokenPos": 35
+                            },
+                            "key": null,
+                            "nodeType": "Expr_Yield",
+                            "value": null
+                        },
+                        "nodeType": "Expr_Assign",
+                        "var": {
+                            "attributes": {
+                                "comments": [
+                                    {
+                                        "filePos": 102,
+                                        "line": 9,
+                                        "nodeType": "Comment",
+                                        "text": "// expressions\n"
+                                    }
+                                ],
+                                "endFilePos": 125,
+                                "endLine": 10,
+                                "endTokenPos": 31,
+                                "startFilePos": 121,
+                                "startLine": 10,
+                                "startTokenPos": 31
+                            },
+                            "name": "data",
+                            "nodeType": "Expr_Variable"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 161,
+                            "endLine": 11,
+                            "endTokenPos": 46,
+                            "startFilePos": 140,
+                            "startLine": 11,
+                            "startTokenPos": 38
+                        },
+                        "expr": {
+                            "attributes": {
+                                "endFilePos": 160,
+                                "endLine": 11,
+                                "endTokenPos": 45,
+                                "startFilePos": 149,
+                                "startLine": 11,
+                                "startTokenPos": 43
+                            },
+                            "key": null,
+                            "nodeType": "Expr_Yield",
+                            "value": {
+                                "attributes": {
+                                    "endFilePos": 160,
+                                    "endLine": 11,
+                                    "endTokenPos": 45,
+                                    "startFilePos": 155,
+                                    "startLine": 11,
+                                    "startTokenPos": 45
+                                },
+                                "name": "value",
+                                "nodeType": "Expr_Variable"
+                            }
+                        },
+                        "nodeType": "Expr_Assign",
+                        "var": {
+                            "attributes": {
+                                "endFilePos": 144,
+                                "endLine": 11,
+                                "endTokenPos": 38,
+                                "startFilePos": 140,
+                                "startLine": 11,
+                                "startTokenPos": 38
+                            },
+                            "name": "data",
+                            "nodeType": "Expr_Variable"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 197,
+                            "endLine": 12,
+                            "endTokenPos": 61,
+                            "startFilePos": 168,
+                            "startLine": 12,
+                            "startTokenPos": 49
+                        },
+                        "expr": {
+                            "attributes": {
+                                "endFilePos": 196,
+                                "endLine": 12,
+                                "endTokenPos": 60,
+                                "startFilePos": 177,
+                                "startLine": 12,
+                                "startTokenPos": 54
+                            },
+                            "key": {
+                                "attributes": {
+                                    "endFilePos": 186,
+                                    "endLine": 12,
+                                    "endTokenPos": 56,
+                                    "startFilePos": 183,
+                                    "startLine": 12,
+                                    "startTokenPos": 56
+                                },
+                                "name": "key",
+                                "nodeType": "Expr_Variable"
+                            },
+                            "nodeType": "Expr_Yield",
+                            "value": {
+                                "attributes": {
+                                    "endFilePos": 196,
+                                    "endLine": 12,
+                                    "endTokenPos": 60,
+                                    "startFilePos": 191,
+                                    "startLine": 12,
+                                    "startTokenPos": 60
+                                },
+                                "name": "value",
+                                "nodeType": "Expr_Variable"
+                            }
+                        },
+                        "nodeType": "Expr_Assign",
+                        "var": {
+                            "attributes": {
+                                "endFilePos": 172,
+                                "endLine": 12,
+                                "endTokenPos": 49,
+                                "startFilePos": 168,
+                                "startLine": 12,
+                                "startTokenPos": 49
+                            },
+                            "name": "data",
+                            "nodeType": "Expr_Variable"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "comments": [
+                                {
+                                    "filePos": 205,
+                                    "line": 14,
+                                    "nodeType": "Comment",
+                                    "text": "// yield in language constructs with their own parentheses\n"
+                                }
+                            ],
+                            "endFilePos": 304,
+                            "endLine": 15,
+                            "endTokenPos": 82,
+                            "startFilePos": 268,
+                            "startLine": 15,
+                            "startTokenPos": 66
+                        },
+                        "cond": {
+                            "attributes": {
+                                "endFilePos": 281,
+                                "endLine": 15,
+                                "endTokenPos": 71,
+                                "startFilePos": 272,
+                                "startLine": 15,
+                                "startTokenPos": 69
+                            },
+                            "key": null,
+                            "nodeType": "Expr_Yield",
+                            "value": {
+                                "attributes": {
+                                    "endFilePos": 281,
+                                    "endLine": 15,
+                                    "endTokenPos": 71,
+                                    "startFilePos": 278,
+                                    "startLine": 15,
+                                    "startTokenPos": 71
+                                },
+                                "name": "foo",
+                                "nodeType": "Expr_Variable"
+                            }
+                        },
+                        "else": null,
+                        "elseifs": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 304,
+                                    "endLine": 15,
+                                    "endTokenPos": 82,
+                                    "startFilePos": 285,
+                                    "startLine": 15,
+                                    "startTokenPos": 75
+                                },
+                                "cond": {
+                                    "attributes": {
+                                        "endFilePos": 302,
+                                        "endLine": 15,
+                                        "endTokenPos": 80,
+                                        "startFilePos": 293,
+                                        "startLine": 15,
+                                        "startTokenPos": 78
+                                    },
+                                    "key": null,
+                                    "nodeType": "Expr_Yield",
+                                    "value": {
+                                        "attributes": {
+                                            "endFilePos": 302,
+                                            "endLine": 15,
+                                            "endTokenPos": 80,
+                                            "startFilePos": 299,
+                                            "startLine": 15,
+                                            "startTokenPos": 80
+                                        },
+                                        "name": "foo",
+                                        "nodeType": "Expr_Variable"
+                                    }
+                                },
+                                "nodeType": "Stmt_ElseIf",
+                                "stmts": []
+                            }
+                        ],
+                        "nodeType": "Stmt_If",
+                        "stmts": []
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 353,
+                            "endLine": 16,
+                            "endTokenPos": 103,
+                            "startFilePos": 310,
+                            "startLine": 16,
+                            "startTokenPos": 84
+                        },
+                        "cond": {
+                            "attributes": {
+                                "endFilePos": 323,
+                                "endLine": 16,
+                                "endTokenPos": 89,
+                                "startFilePos": 314,
+                                "startLine": 16,
+                                "startTokenPos": 87
+                            },
+                            "key": null,
+                            "nodeType": "Expr_Yield",
+                            "value": {
+                                "attributes": {
+                                    "endFilePos": 323,
+                                    "endLine": 16,
+                                    "endTokenPos": 89,
+                                    "startFilePos": 320,
+                                    "startLine": 16,
+                                    "startTokenPos": 89
+                                },
+                                "name": "foo",
+                                "nodeType": "Expr_Variable"
+                            }
+                        },
+                        "else": null,
+                        "elseifs": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 346,
+                                    "endLine": 16,
+                                    "endTokenPos": 100,
+                                    "startFilePos": 327,
+                                    "startLine": 16,
+                                    "startTokenPos": 93
+                                },
+                                "cond": {
+                                    "attributes": {
+                                        "endFilePos": 344,
+                                        "endLine": 16,
+                                        "endTokenPos": 98,
+                                        "startFilePos": 335,
+                                        "startLine": 16,
+                                        "startTokenPos": 96
+                                    },
+                                    "key": null,
+                                    "nodeType": "Expr_Yield",
+                                    "value": {
+                                        "attributes": {
+                                            "endFilePos": 344,
+                                            "endLine": 16,
+                                            "endTokenPos": 98,
+                                            "startFilePos": 341,
+                                            "startLine": 16,
+                                            "startTokenPos": 98
+                                        },
+                                        "name": "foo",
+                                        "nodeType": "Expr_Variable"
+                                    }
+                                },
+                                "nodeType": "Stmt_ElseIf",
+                                "stmts": []
+                            }
+                        ],
+                        "nodeType": "Stmt_If",
+                        "stmts": []
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 377,
+                            "endLine": 17,
+                            "endTokenPos": 112,
+                            "startFilePos": 359,
+                            "startLine": 17,
+                            "startTokenPos": 105
+                        },
+                        "cond": {
+                            "attributes": {
+                                "endFilePos": 375,
+                                "endLine": 17,
+                                "endTokenPos": 110,
+                                "startFilePos": 366,
+                                "startLine": 17,
+                                "startTokenPos": 108
+                            },
+                            "key": null,
+                            "nodeType": "Expr_Yield",
+                            "value": {
+                                "attributes": {
+                                    "endFilePos": 375,
+                                    "endLine": 17,
+                                    "endTokenPos": 110,
+                                    "startFilePos": 372,
+                                    "startLine": 17,
+                                    "startTokenPos": 110
+                                },
+                                "name": "foo",
+                                "nodeType": "Expr_Variable"
+                            }
+                        },
+                        "nodeType": "Stmt_While",
+                        "stmts": []
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 407,
+                            "endLine": 18,
+                            "endTokenPos": 126,
+                            "startFilePos": 383,
+                            "startLine": 18,
+                            "startTokenPos": 114
+                        },
+                        "cond": {
+                            "attributes": {
+                                "endFilePos": 405,
+                                "endLine": 18,
+                                "endTokenPos": 124,
+                                "startFilePos": 396,
+                                "startLine": 18,
+                                "startTokenPos": 122
+                            },
+                            "key": null,
+                            "nodeType": "Expr_Yield",
+                            "value": {
+                                "attributes": {
+                                    "endFilePos": 405,
+                                    "endLine": 18,
+                                    "endTokenPos": 124,
+                                    "startFilePos": 402,
+                                    "startLine": 18,
+                                    "startTokenPos": 124
+                                },
+                                "name": "foo",
+                                "nodeType": "Expr_Variable"
+                            }
+                        },
+                        "nodeType": "Stmt_Do",
+                        "stmts": []
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 434,
+                            "endLine": 19,
+                            "endTokenPos": 137,
+                            "startFilePos": 413,
+                            "startLine": 19,
+                            "startTokenPos": 128
+                        },
+                        "cases": [],
+                        "cond": {
+                            "attributes": {
+                                "endFilePos": 430,
+                                "endLine": 19,
+                                "endTokenPos": 133,
+                                "startFilePos": 421,
+                                "startLine": 19,
+                                "startTokenPos": 131
+                            },
+                            "key": null,
+                            "nodeType": "Expr_Yield",
+                            "value": {
+                                "attributes": {
+                                    "endFilePos": 430,
+                                    "endLine": 19,
+                                    "endTokenPos": 133,
+                                    "startFilePos": 427,
+                                    "startLine": 19,
+                                    "startTokenPos": 133
+                                },
+                                "name": "foo",
+                                "nodeType": "Expr_Variable"
+                            }
+                        },
+                        "nodeType": "Stmt_Switch"
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 454,
+                            "endLine": 20,
+                            "endTokenPos": 144,
+                            "kind": 2,
+                            "startFilePos": 440,
+                            "startLine": 20,
+                            "startTokenPos": 139
+                        },
+                        "expr": {
+                            "attributes": {
+                                "endFilePos": 453,
+                                "endLine": 20,
+                                "endTokenPos": 143,
+                                "startFilePos": 444,
+                                "startLine": 20,
+                                "startTokenPos": 141
+                            },
+                            "key": null,
+                            "nodeType": "Expr_Yield",
+                            "value": {
+                                "attributes": {
+                                    "endFilePos": 453,
+                                    "endLine": 20,
+                                    "endTokenPos": 143,
+                                    "startFilePos": 450,
+                                    "startLine": 20,
+                                    "startTokenPos": 143
+                                },
+                                "name": "foo",
+                                "nodeType": "Expr_Variable"
+                            }
+                        },
+                        "nodeType": "Expr_Exit"
+                    },
+                    {
+                        "args": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 507,
+                                    "endLine": 23,
+                                    "endTokenPos": 153,
+                                    "startFilePos": 498,
+                                    "startLine": 23,
+                                    "startTokenPos": 151
+                                },
+                                "byRef": false,
+                                "nodeType": "Arg",
+                                "unpack": false,
+                                "value": {
+                                    "attributes": {
+                                        "endFilePos": 507,
+                                        "endLine": 23,
+                                        "endTokenPos": 153,
+                                        "startFilePos": 498,
+                                        "startLine": 23,
+                                        "startTokenPos": 151
+                                    },
+                                    "key": null,
+                                    "nodeType": "Expr_Yield",
+                                    "value": {
+                                        "attributes": {
+                                            "endFilePos": 507,
+                                            "endLine": 23,
+                                            "endTokenPos": 153,
+                                            "startFilePos": 504,
+                                            "startLine": 23,
+                                            "startTokenPos": 153
+                                        },
+                                        "name": "foo",
+                                        "nodeType": "Expr_Variable"
+                                    }
+                                }
+                            }
+                        ],
+                        "attributes": {
+                            "comments": [
+                                {
+                                    "filePos": 462,
+                                    "line": 22,
+                                    "nodeType": "Comment",
+                                    "text": "// yield in function calls\n"
+                                }
+                            ],
+                            "endFilePos": 508,
+                            "endLine": 23,
+                            "endTokenPos": 154,
+                            "startFilePos": 493,
+                            "startLine": 23,
+                            "startTokenPos": 149
+                        },
+                        "name": {
+                            "attributes": {
+                                "comments": [
+                                    {
+                                        "filePos": 462,
+                                        "line": 22,
+                                        "nodeType": "Comment",
+                                        "text": "// yield in function calls\n"
+                                    }
+                                ],
+                                "endFilePos": 496,
+                                "endLine": 23,
+                                "endTokenPos": 149,
+                                "startFilePos": 493,
+                                "startLine": 23,
+                                "startTokenPos": 149
+                            },
+                            "nodeType": "Name",
+                            "parts": [
+                                "func"
+                            ]
+                        },
+                        "nodeType": "Expr_FuncCall"
+                    },
+                    {
+                        "args": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 535,
+                                    "endLine": 24,
+                                    "endTokenPos": 163,
+                                    "startFilePos": 526,
+                                    "startLine": 24,
+                                    "startTokenPos": 161
+                                },
+                                "byRef": false,
+                                "nodeType": "Arg",
+                                "unpack": false,
+                                "value": {
+                                    "attributes": {
+                                        "endFilePos": 535,
+                                        "endLine": 24,
+                                        "endTokenPos": 163,
+                                        "startFilePos": 526,
+                                        "startLine": 24,
+                                        "startTokenPos": 161
+                                    },
+                                    "key": null,
+                                    "nodeType": "Expr_Yield",
+                                    "value": {
+                                        "attributes": {
+                                            "endFilePos": 535,
+                                            "endLine": 24,
+                                            "endTokenPos": 163,
+                                            "startFilePos": 532,
+                                            "startLine": 24,
+                                            "startTokenPos": 163
+                                        },
+                                        "name": "foo",
+                                        "nodeType": "Expr_Variable"
+                                    }
+                                }
+                            }
+                        ],
+                        "attributes": {
+                            "endFilePos": 536,
+                            "endLine": 24,
+                            "endTokenPos": 164,
+                            "startFilePos": 515,
+                            "startLine": 24,
+                            "startTokenPos": 157
+                        },
+                        "name": "func",
+                        "nodeType": "Expr_MethodCall",
+                        "var": {
+                            "attributes": {
+                                "endFilePos": 518,
+                                "endLine": 24,
+                                "endTokenPos": 157,
+                                "startFilePos": 515,
+                                "startLine": 24,
+                                "startTokenPos": 157
+                            },
+                            "name": "foo",
+                            "nodeType": "Expr_Variable"
+                        }
+                    },
+                    {
+                        "args": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 560,
+                                    "endLine": 25,
+                                    "endTokenPos": 173,
+                                    "startFilePos": 551,
+                                    "startLine": 25,
+                                    "startTokenPos": 171
+                                },
+                                "byRef": false,
+                                "nodeType": "Arg",
+                                "unpack": false,
+                                "value": {
+                                    "attributes": {
+                                        "endFilePos": 560,
+                                        "endLine": 25,
+                                        "endTokenPos": 173,
+                                        "startFilePos": 551,
+                                        "startLine": 25,
+                                        "startTokenPos": 171
+                                    },
+                                    "key": null,
+                                    "nodeType": "Expr_Yield",
+                                    "value": {
+                                        "attributes": {
+                                            "endFilePos": 560,
+                                            "endLine": 25,
+                                            "endTokenPos": 173,
+                                            "startFilePos": 557,
+                                            "startLine": 25,
+                                            "startTokenPos": 173
+                                        },
+                                        "name": "foo",
+                                        "nodeType": "Expr_Variable"
+                                    }
+                                }
+                            }
+                        ],
+                        "attributes": {
+                            "endFilePos": 561,
+                            "endLine": 25,
+                            "endTokenPos": 174,
+                            "startFilePos": 543,
+                            "startLine": 25,
+                            "startTokenPos": 167
+                        },
+                        "class": {
+                            "attributes": {
+                                "endFilePos": 549,
+                                "endLine": 25,
+                                "endTokenPos": 169,
+                                "startFilePos": 547,
+                                "startLine": 25,
+                                "startTokenPos": 169
+                            },
+                            "nodeType": "Name",
+                            "parts": [
+                                "Foo"
+                            ]
+                        },
+                        "nodeType": "Expr_New"
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 583,
+                            "endLine": 27,
+                            "endTokenPos": 179,
+                            "startFilePos": 569,
+                            "startLine": 27,
+                            "startTokenPos": 177
+                        },
+                        "expr": {
+                            "attributes": {
+                                "endFilePos": 583,
+                                "endLine": 27,
+                                "endTokenPos": 179,
+                                "startFilePos": 580,
+                                "startLine": 27,
+                                "startTokenPos": 179
+                            },
+                            "name": "foo",
+                            "nodeType": "Expr_Variable"
+                        },
+                        "nodeType": "Expr_YieldFrom"
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 624,
+                            "endLine": 28,
+                            "endTokenPos": 190,
+                            "startFilePos": 590,
+                            "startLine": 28,
+                            "startTokenPos": 182
+                        },
+                        "left": {
+                            "attributes": {
+                                "endFilePos": 604,
+                                "endLine": 28,
+                                "endTokenPos": 184,
+                                "startFilePos": 590,
+                                "startLine": 28,
+                                "startTokenPos": 182
+                            },
+                            "expr": {
+                                "attributes": {
+                                    "endFilePos": 604,
+                                    "endLine": 28,
+                                    "endTokenPos": 184,
+                                    "startFilePos": 601,
+                                    "startLine": 28,
+                                    "startTokenPos": 184
+                                },
+                                "name": "foo",
+                                "nodeType": "Expr_Variable"
+                            },
+                            "nodeType": "Expr_YieldFrom"
+                        },
+                        "nodeType": "Expr_BinaryOp_LogicalAnd",
+                        "right": {
+                            "attributes": {
+                                "endFilePos": 624,
+                                "endLine": 28,
+                                "endTokenPos": 190,
+                                "startFilePos": 610,
+                                "startLine": 28,
+                                "startTokenPos": 188
+                            },
+                            "expr": {
+                                "attributes": {
+                                    "endFilePos": 624,
+                                    "endLine": 28,
+                                    "endTokenPos": 190,
+                                    "startFilePos": 621,
+                                    "startLine": 28,
+                                    "startTokenPos": 190
+                                },
+                                "name": "bar",
+                                "nodeType": "Expr_Variable"
+                            },
+                            "nodeType": "Expr_YieldFrom"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 652,
+                            "endLine": 29,
+                            "endTokenPos": 199,
+                            "startFilePos": 631,
+                            "startLine": 29,
+                            "startTokenPos": 193
+                        },
+                        "expr": {
+                            "attributes": {
+                                "endFilePos": 652,
+                                "endLine": 29,
+                                "endTokenPos": 199,
+                                "startFilePos": 642,
+                                "startLine": 29,
+                                "startTokenPos": 195
+                            },
+                            "left": {
+                                "attributes": {
+                                    "endFilePos": 645,
+                                    "endLine": 29,
+                                    "endTokenPos": 195,
+                                    "startFilePos": 642,
+                                    "startLine": 29,
+                                    "startTokenPos": 195
+                                },
+                                "name": "foo",
+                                "nodeType": "Expr_Variable"
+                            },
+                            "nodeType": "Expr_BinaryOp_Plus",
+                            "right": {
+                                "attributes": {
+                                    "endFilePos": 652,
+                                    "endLine": 29,
+                                    "endTokenPos": 199,
+                                    "startFilePos": 649,
+                                    "startLine": 29,
+                                    "startTokenPos": 199
+                                },
+                                "name": "bar",
+                                "nodeType": "Expr_Variable"
+                            }
+                        },
+                        "nodeType": "Expr_YieldFrom"
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

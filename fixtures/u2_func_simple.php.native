@@ -1,0 +1,120 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 59,
+                    "endLine": 5,
+                    "endTokenPos": 24,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "byRef": false,
+                "name": "testfnc1",
+                "nodeType": "Stmt_Function",
+                "params": [
+                    {
+                        "attributes": {
+                            "endFilePos": 25,
+                            "endLine": 2,
+                            "endTokenPos": 5,
+                            "startFilePos": 24,
+                            "startLine": 2,
+                            "startTokenPos": 5
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "a",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": false
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 29,
+                            "endLine": 2,
+                            "endTokenPos": 8,
+                            "startFilePos": 28,
+                            "startLine": 2,
+                            "startTokenPos": 8
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "b",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": false
+                    }
+                ],
+                "returnType": null,
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 42,
+                            "endLine": 3,
+                            "endTokenPos": 16,
+                            "startFilePos": 37,
+                            "startLine": 3,
+                            "startTokenPos": 12
+                        },
+                        "expr": {
+                            "attributes": {
+                                "endFilePos": 42,
+                                "endLine": 3,
+                                "endTokenPos": 16,
+                                "kind": 10,
+                                "startFilePos": 42,
+                                "startLine": 3,
+                                "startTokenPos": 16
+                            },
+                            "nodeType": "Scalar_LNumber",
+                            "value": 1
+                        },
+                        "nodeType": "Expr_Assign",
+                        "var": {
+                            "attributes": {
+                                "endFilePos": 38,
+                                "endLine": 3,
+                                "endTokenPos": 12,
+                                "startFilePos": 37,
+                                "startLine": 3,
+                                "startTokenPos": 12
+                            },
+                            "name": "c",
+                            "nodeType": "Expr_Variable"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 57,
+                            "endLine": 4,
+                            "endTokenPos": 22,
+                            "startFilePos": 49,
+                            "startLine": 4,
+                            "startTokenPos": 19
+                        },
+                        "expr": {
+                            "attributes": {
+                                "endFilePos": 56,
+                                "endLine": 4,
+                                "endTokenPos": 21,
+                                "kind": 10,
+                                "startFilePos": 56,
+                                "startLine": 4,
+                                "startTokenPos": 21
+                            },
+                            "nodeType": "Scalar_LNumber",
+                            "value": 2
+                        },
+                        "nodeType": "Stmt_Return"
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

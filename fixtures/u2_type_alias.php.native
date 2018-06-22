@@ -1,0 +1,89 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "args": [
+                    {
+                        "attributes": {
+                            "endFilePos": 24,
+                            "endLine": 2,
+                            "endTokenPos": 3,
+                            "startFilePos": 18,
+                            "startLine": 2,
+                            "startTokenPos": 3
+                        },
+                        "byRef": false,
+                        "nodeType": "Arg",
+                        "unpack": false,
+                        "value": {
+                            "attributes": {
+                                "endFilePos": 24,
+                                "endLine": 2,
+                                "endTokenPos": 3,
+                                "kind": 1,
+                                "startFilePos": 18,
+                                "startLine": 2,
+                                "startTokenPos": 3
+                            },
+                            "nodeType": "Scalar_String",
+                            "value": "type1"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 33,
+                            "endLine": 2,
+                            "endTokenPos": 6,
+                            "startFilePos": 27,
+                            "startLine": 2,
+                            "startTokenPos": 6
+                        },
+                        "byRef": false,
+                        "nodeType": "Arg",
+                        "unpack": false,
+                        "value": {
+                            "attributes": {
+                                "endFilePos": 33,
+                                "endLine": 2,
+                                "endTokenPos": 6,
+                                "kind": 1,
+                                "startFilePos": 27,
+                                "startLine": 2,
+                                "startTokenPos": 6
+                            },
+                            "nodeType": "Scalar_String",
+                            "value": "type2"
+                        }
+                    }
+                ],
+                "attributes": {
+                    "endFilePos": 34,
+                    "endLine": 2,
+                    "endTokenPos": 7,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 16,
+                        "endLine": 2,
+                        "endTokenPos": 1,
+                        "startFilePos": 6,
+                        "startLine": 2,
+                        "startTokenPos": 1
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "class_alias"
+                    ]
+                },
+                "nodeType": "Expr_FuncCall"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

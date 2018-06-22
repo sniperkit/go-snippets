@@ -1,0 +1,316 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 42,
+                    "endLine": 5,
+                    "endTokenPos": 23,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "cond": {
+                    "attributes": {
+                        "endFilePos": 12,
+                        "endLine": 3,
+                        "endTokenPos": 5,
+                        "startFilePos": 11,
+                        "startLine": 3,
+                        "startTokenPos": 5
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "else": {
+                    "attributes": {
+                        "endFilePos": 42,
+                        "endLine": 5,
+                        "endTokenPos": 23,
+                        "startFilePos": 35,
+                        "startLine": 5,
+                        "startTokenPos": 20
+                    },
+                    "nodeType": "Stmt_Else",
+                    "stmts": [
+                        {
+                            "attributes": {
+                                "endFilePos": 41,
+                                "endLine": 5,
+                                "endTokenPos": 22,
+                                "startFilePos": 40,
+                                "startLine": 5,
+                                "startTokenPos": 22
+                            },
+                            "name": "C",
+                            "nodeType": "Expr_Variable"
+                        }
+                    ]
+                },
+                "elseifs": [
+                    {
+                        "attributes": {
+                            "endFilePos": 33,
+                            "endLine": 4,
+                            "endTokenPos": 18,
+                            "startFilePos": 19,
+                            "startLine": 4,
+                            "startTokenPos": 11
+                        },
+                        "cond": {
+                            "attributes": {
+                                "endFilePos": 28,
+                                "endLine": 4,
+                                "endTokenPos": 14,
+                                "startFilePos": 27,
+                                "startLine": 4,
+                                "startTokenPos": 14
+                            },
+                            "name": "b",
+                            "nodeType": "Expr_Variable"
+                        },
+                        "nodeType": "Stmt_ElseIf",
+                        "stmts": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 32,
+                                    "endLine": 4,
+                                    "endTokenPos": 17,
+                                    "startFilePos": 31,
+                                    "startLine": 4,
+                                    "startTokenPos": 17
+                                },
+                                "name": "B",
+                                "nodeType": "Expr_Variable"
+                            }
+                        ]
+                    }
+                ],
+                "nodeType": "Stmt_If",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 16,
+                            "endLine": 3,
+                            "endTokenPos": 8,
+                            "startFilePos": 15,
+                            "startLine": 3,
+                            "startTokenPos": 8
+                        },
+                        "name": "A",
+                        "nodeType": "Expr_Variable"
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "endFilePos": 58,
+                    "endLine": 7,
+                    "endTokenPos": 33,
+                    "startFilePos": 45,
+                    "startLine": 7,
+                    "startTokenPos": 25
+                },
+                "cond": [],
+                "init": [],
+                "loop": [],
+                "nodeType": "Stmt_For",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 57,
+                            "endLine": 7,
+                            "endTokenPos": 32,
+                            "startFilePos": 54,
+                            "startLine": 7,
+                            "startTokenPos": 32
+                        },
+                        "name": "foo",
+                        "nodeType": "Expr_Variable"
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "endFilePos": 83,
+                    "endLine": 9,
+                    "endTokenPos": 46,
+                    "startFilePos": 61,
+                    "startLine": 9,
+                    "startTokenPos": 35
+                },
+                "byRef": false,
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 71,
+                        "endLine": 9,
+                        "endTokenPos": 38,
+                        "startFilePos": 70,
+                        "startLine": 9,
+                        "startTokenPos": 38
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "keyVar": null,
+                "nodeType": "Stmt_Foreach",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 82,
+                            "endLine": 9,
+                            "endTokenPos": 45,
+                            "startFilePos": 80,
+                            "startLine": 9,
+                            "startTokenPos": 45
+                        },
+                        "name": "AB",
+                        "nodeType": "Expr_Variable"
+                    }
+                ],
+                "valueVar": {
+                    "attributes": {
+                        "endFilePos": 77,
+                        "endLine": 9,
+                        "endTokenPos": 42,
+                        "startFilePos": 76,
+                        "startLine": 9,
+                        "startTokenPos": 42
+                    },
+                    "name": "b",
+                    "nodeType": "Expr_Variable"
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 99,
+                    "endLine": 11,
+                    "endTokenPos": 55,
+                    "startFilePos": 86,
+                    "startLine": 11,
+                    "startTokenPos": 48
+                },
+                "cond": {
+                    "attributes": {
+                        "endFilePos": 94,
+                        "endLine": 11,
+                        "endTokenPos": 51,
+                        "startFilePos": 93,
+                        "startLine": 11,
+                        "startTokenPos": 51
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Stmt_While",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 98,
+                            "endLine": 11,
+                            "endTokenPos": 54,
+                            "startFilePos": 97,
+                            "startLine": 11,
+                            "startTokenPos": 54
+                        },
+                        "name": "A",
+                        "nodeType": "Expr_Variable"
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "endFilePos": 119,
+                    "endLine": 13,
+                    "endTokenPos": 67,
+                    "startFilePos": 102,
+                    "startLine": 13,
+                    "startTokenPos": 57
+                },
+                "cond": {
+                    "attributes": {
+                        "endFilePos": 117,
+                        "endLine": 13,
+                        "endTokenPos": 65,
+                        "startFilePos": 116,
+                        "startLine": 13,
+                        "startTokenPos": 65
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Stmt_Do",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 106,
+                            "endLine": 13,
+                            "endTokenPos": 59,
+                            "startFilePos": 105,
+                            "startLine": 13,
+                            "startTokenPos": 59
+                        },
+                        "name": "A",
+                        "nodeType": "Expr_Variable"
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "endFilePos": 140,
+                    "endLine": 15,
+                    "endTokenPos": 78,
+                    "startFilePos": 122,
+                    "startLine": 15,
+                    "startTokenPos": 69
+                },
+                "declares": [
+                    {
+                        "attributes": {
+                            "endFilePos": 135,
+                            "endLine": 15,
+                            "endTokenPos": 74,
+                            "startFilePos": 131,
+                            "startLine": 15,
+                            "startTokenPos": 72
+                        },
+                        "key": "a",
+                        "nodeType": "Stmt_DeclareDeclare",
+                        "value": {
+                            "attributes": {
+                                "endFilePos": 135,
+                                "endLine": 15,
+                                "endTokenPos": 74,
+                                "kind": 1,
+                                "startFilePos": 133,
+                                "startLine": 15,
+                                "startTokenPos": 74
+                            },
+                            "nodeType": "Scalar_String",
+                            "value": "b"
+                        }
+                    }
+                ],
+                "nodeType": "Stmt_Declare",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 139,
+                            "endLine": 15,
+                            "endTokenPos": 77,
+                            "startFilePos": 138,
+                            "startLine": 15,
+                            "startTokenPos": 77
+                        },
+                        "name": "C",
+                        "nodeType": "Expr_Variable"
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

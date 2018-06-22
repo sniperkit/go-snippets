@@ -1,0 +1,49 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 13,
+                    "endLine": 3,
+                    "endTokenPos": 2,
+                    "kind": 2,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "nodeType": "Scalar_String",
+                "value": "\u0000"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 24,
+                    "endLine": 4,
+                    "endTokenPos": 5,
+                    "kind": 2,
+                    "startFilePos": 16,
+                    "startLine": 4,
+                    "startTokenPos": 5
+                },
+                "nodeType": "Scalar_String",
+                "value": "Ĕ"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 37,
+                    "endLine": 5,
+                    "endTokenPos": 8,
+                    "kind": 2,
+                    "startFilePos": 27,
+                    "startLine": 5,
+                    "startTokenPos": 8
+                },
+                "nodeType": "Scalar_String",
+                "value": "😂"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

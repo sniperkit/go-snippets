@@ -1,0 +1,179 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 8,
+                    "endLine": 3,
+                    "endTokenPos": 2,
+                    "kind": 1,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "nodeType": "Scalar_String",
+                "value": ""
+            },
+            {
+                "attributes": {
+                    "endFilePos": 12,
+                    "endLine": 4,
+                    "endTokenPos": 5,
+                    "kind": 2,
+                    "startFilePos": 11,
+                    "startLine": 4,
+                    "startTokenPos": 5
+                },
+                "nodeType": "Scalar_String",
+                "value": ""
+            },
+            {
+                "attributes": {
+                    "endFilePos": 17,
+                    "endLine": 5,
+                    "endTokenPos": 8,
+                    "kind": 1,
+                    "startFilePos": 15,
+                    "startLine": 5,
+                    "startTokenPos": 8
+                },
+                "nodeType": "Scalar_String",
+                "value": ""
+            },
+            {
+                "attributes": {
+                    "endFilePos": 22,
+                    "endLine": 6,
+                    "endTokenPos": 11,
+                    "kind": 2,
+                    "startFilePos": 20,
+                    "startLine": 6,
+                    "startTokenPos": 11
+                },
+                "nodeType": "Scalar_String",
+                "value": ""
+            },
+            {
+                "attributes": {
+                    "endFilePos": 28,
+                    "endLine": 7,
+                    "endTokenPos": 14,
+                    "kind": 1,
+                    "startFilePos": 25,
+                    "startLine": 7,
+                    "startTokenPos": 14
+                },
+                "nodeType": "Scalar_String",
+                "value": "Hi"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 35,
+                    "endLine": 8,
+                    "endTokenPos": 17,
+                    "kind": 1,
+                    "startFilePos": 31,
+                    "startLine": 8,
+                    "startTokenPos": 17
+                },
+                "nodeType": "Scalar_String",
+                "value": "Hi"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 42,
+                    "endLine": 9,
+                    "endTokenPos": 20,
+                    "kind": 1,
+                    "startFilePos": 38,
+                    "startLine": 9,
+                    "startTokenPos": 20
+                },
+                "nodeType": "Scalar_String",
+                "value": "Hi"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 48,
+                    "endLine": 10,
+                    "endTokenPos": 23,
+                    "kind": 2,
+                    "startFilePos": 45,
+                    "startLine": 10,
+                    "startTokenPos": 23
+                },
+                "nodeType": "Scalar_String",
+                "value": "Hi"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 55,
+                    "endLine": 11,
+                    "endTokenPos": 26,
+                    "kind": 2,
+                    "startFilePos": 51,
+                    "startLine": 11,
+                    "startTokenPos": 26
+                },
+                "nodeType": "Scalar_String",
+                "value": "Hi"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 62,
+                    "endLine": 12,
+                    "endTokenPos": 29,
+                    "kind": 2,
+                    "startFilePos": 58,
+                    "startLine": 12,
+                    "startTokenPos": 29
+                },
+                "nodeType": "Scalar_String",
+                "value": "Hi"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 76,
+                    "endLine": 13,
+                    "endTokenPos": 32,
+                    "kind": 1,
+                    "startFilePos": 65,
+                    "startLine": 13,
+                    "startTokenPos": 32
+                },
+                "nodeType": "Scalar_String",
+                "value": "!'!\\!\\a!"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 110,
+                    "endLine": 14,
+                    "endTokenPos": 35,
+                    "kind": 2,
+                    "startFilePos": 79,
+                    "startLine": 14,
+                    "startTokenPos": 35
+                },
+                "nodeType": "Scalar_String",
+                "value": "!\"!\\!$!\n!\r!\t!\u000c!\u000b!\u001b!\\a"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 133,
+                    "endLine": 15,
+                    "endTokenPos": 38,
+                    "kind": 2,
+                    "startFilePos": 113,
+                    "startLine": 15,
+                    "startTokenPos": 38
+                },
+                "nodeType": "Scalar_String",
+                "value": "!ÿ!ÿ!\u0000!\u0000!"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

@@ -1,0 +1,279 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 25,
+                    "endLine": 2,
+                    "endTokenPos": 11,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "byRef": false,
+                "nodeType": "Expr_Closure",
+                "params": [
+                    {
+                        "attributes": {
+                            "endFilePos": 16,
+                            "endLine": 2,
+                            "endTokenPos": 3,
+                            "startFilePos": 15,
+                            "startLine": 2,
+                            "startTokenPos": 3
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "a",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": false
+                    }
+                ],
+                "returnType": null,
+                "static": false,
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 22,
+                            "endLine": 2,
+                            "endTokenPos": 8,
+                            "startFilePos": 21,
+                            "startLine": 2,
+                            "startTokenPos": 8
+                        },
+                        "name": "a",
+                        "nodeType": "Expr_Variable"
+                    }
+                ],
+                "uses": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 50,
+                    "endLine": 3,
+                    "endTokenPos": 25,
+                    "startFilePos": 28,
+                    "startLine": 3,
+                    "startTokenPos": 14
+                },
+                "byRef": false,
+                "nodeType": "Expr_Closure",
+                "params": [
+                    {
+                        "attributes": {
+                            "endFilePos": 38,
+                            "endLine": 3,
+                            "endTokenPos": 16,
+                            "startFilePos": 37,
+                            "startLine": 3,
+                            "startTokenPos": 16
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "a",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": false
+                    }
+                ],
+                "returnType": null,
+                "static": false,
+                "stmts": [],
+                "uses": [
+                    {
+                        "attributes": {
+                            "endFilePos": 46,
+                            "endLine": 3,
+                            "endTokenPos": 21,
+                            "startFilePos": 45,
+                            "startLine": 3,
+                            "startTokenPos": 21
+                        },
+                        "byRef": false,
+                        "nodeType": "Expr_ClosureUse",
+                        "var": "b"
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "endFilePos": 78,
+                    "endLine": 4,
+                    "endTokenPos": 42,
+                    "startFilePos": 53,
+                    "startLine": 4,
+                    "startTokenPos": 28
+                },
+                "byRef": false,
+                "nodeType": "Expr_Closure",
+                "params": [],
+                "returnType": null,
+                "static": false,
+                "stmts": [],
+                "uses": [
+                    {
+                        "attributes": {
+                            "endFilePos": 69,
+                            "endLine": 4,
+                            "endTokenPos": 34,
+                            "startFilePos": 68,
+                            "startLine": 4,
+                            "startTokenPos": 34
+                        },
+                        "byRef": false,
+                        "nodeType": "Expr_ClosureUse",
+                        "var": "a"
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 74,
+                            "endLine": 4,
+                            "endTokenPos": 38,
+                            "startFilePos": 72,
+                            "startLine": 4,
+                            "startTokenPos": 37
+                        },
+                        "byRef": true,
+                        "nodeType": "Expr_ClosureUse",
+                        "var": "b"
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "endFilePos": 97,
+                    "endLine": 5,
+                    "endTokenPos": 53,
+                    "startFilePos": 81,
+                    "startLine": 5,
+                    "startTokenPos": 45
+                },
+                "byRef": true,
+                "nodeType": "Expr_Closure",
+                "params": [
+                    {
+                        "attributes": {
+                            "endFilePos": 93,
+                            "endLine": 5,
+                            "endTokenPos": 49,
+                            "startFilePos": 92,
+                            "startLine": 5,
+                            "startTokenPos": 49
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "a",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": false
+                    }
+                ],
+                "returnType": null,
+                "static": false,
+                "stmts": [],
+                "uses": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 119,
+                    "endLine": 6,
+                    "endTokenPos": 63,
+                    "startFilePos": 100,
+                    "startLine": 6,
+                    "startTokenPos": 56
+                },
+                "byRef": false,
+                "nodeType": "Expr_Closure",
+                "params": [],
+                "returnType": null,
+                "static": true,
+                "stmts": [],
+                "uses": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 144,
+                    "endLine": 7,
+                    "endTokenPos": 76,
+                    "startFilePos": 122,
+                    "startLine": 7,
+                    "startTokenPos": 66
+                },
+                "byRef": false,
+                "nodeType": "Expr_Closure",
+                "params": [
+                    {
+                        "attributes": {
+                            "endFilePos": 132,
+                            "endLine": 7,
+                            "endTokenPos": 68,
+                            "startFilePos": 131,
+                            "startLine": 7,
+                            "startTokenPos": 68
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "a",
+                        "nodeType": "Param",
+                        "type": null,
+                        "variadic": false
+                    }
+                ],
+                "returnType": "array",
+                "static": false,
+                "stmts": [],
+                "uses": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 178,
+                    "endLine": 8,
+                    "endTokenPos": 96,
+                    "startFilePos": 147,
+                    "startLine": 8,
+                    "startTokenPos": 79
+                },
+                "byRef": false,
+                "nodeType": "Expr_Closure",
+                "params": [],
+                "returnType": {
+                    "attributes": {
+                        "endFilePos": 175,
+                        "endLine": 8,
+                        "endTokenPos": 93,
+                        "startFilePos": 168,
+                        "startLine": 8,
+                        "startTokenPos": 90
+                    },
+                    "nodeType": "Name_FullyQualified",
+                    "parts": [
+                        "Foo",
+                        "Bar"
+                    ]
+                },
+                "static": false,
+                "stmts": [],
+                "uses": [
+                    {
+                        "attributes": {
+                            "endFilePos": 163,
+                            "endLine": 8,
+                            "endTokenPos": 85,
+                            "startFilePos": 162,
+                            "startLine": 8,
+                            "startTokenPos": 85
+                        },
+                        "byRef": false,
+                        "nodeType": "Expr_ClosureUse",
+                        "var": "a"
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}
