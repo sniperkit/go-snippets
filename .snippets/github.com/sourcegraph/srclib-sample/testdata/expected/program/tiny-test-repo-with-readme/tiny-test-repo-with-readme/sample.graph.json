@@ -1,0 +1,17 @@
+{
+  "Defs": [
+    {
+      "UnitType": "sample",
+      "Unit": ".",
+      "Path": "mydef",
+      "Name": "mydef",
+      "Kind": "var",
+      "File": "f",
+      "DefStart": 123,
+      "DefEnd": 456,
+      "Exported": true,
+      "Data": {},
+      "TreePath": "mydef"
+    }
+  ]
+}

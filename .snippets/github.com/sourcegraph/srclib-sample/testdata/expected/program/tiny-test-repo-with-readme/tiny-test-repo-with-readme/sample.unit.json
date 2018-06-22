@@ -1,0 +1,1 @@
+{"Name":"tiny-test-repo-with-readme","Type":"sample","Repo":"github.com/sgtest/tiny-test-repo-wth-readme","Files":["./README.md"],"Dependencies":[{"name":"mydep"}],"Ops":{"depresolve":null,"graph":null}}

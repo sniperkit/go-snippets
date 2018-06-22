@@ -1,0 +1,14 @@
+language: go # dummy
+
+before_install:
+  - echo nothing to do
+install:
+  - sudo wget -NO /tmp/src.zip 'https://api.equinox.io/1/Applications/ap_BQxVz1iWMxmjQnbVGd85V58qz6/Updates/Asset/src-0.0.28.zip?os=linux&arch=amd64&channel=stable'
+  - sudo unzip /tmp/src*.zip -d /usr/local/bin
+  - sudo mv /usr/local/bin/src-* /usr/local/bin/src
+  - sudo chmod +x /usr/local/bin/src
+  - src toolchain add sourcegraph.com/sourcegraph/srclib-sample
+before_script:
+  - echo nothing to do
+script:
+  - src test -m program
