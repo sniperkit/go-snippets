@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Create user and group
+addgroup -g ${GID} youtube-dl && adduser -h /var/www -s /bin/sh -D -G youtube-dl -u ${UID} youtube-dl
+
+# Set permissions
+chown -R youtube-dl:youtube-dl /var/www /var/run/php-fpm.sock /var/lib/nginx /tmp
+
+# RUN !
+youtube-dl -U
+supervisord -c /etc/supervisor/supervisord.conf
+
