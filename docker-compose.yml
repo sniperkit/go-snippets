@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+    hub:
+        build: .
+        image: esycat/jetbrains-hub
+        container_name: jetbrains-hub
+        restart: always
+        ports:
+            - 8081:8080
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /etc/timezone:/etc/timezone:ro
+            - /data/jetbrains-hub:/var/lib/hub
+            - /data/jetbrains-hub/conf:/opt/hub/conf
