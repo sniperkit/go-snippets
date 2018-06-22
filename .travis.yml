@@ -1,0 +1,20 @@
+sudo: required
+
+language: node_js
+
+node_js:
+  - node
+
+services:
+  - docker
+
+
+install:
+  - docker build --tag=artusvranken/alpine-bigchaindb .
+  - docker run -it --rm -v $HOME/bigchaindb_docker:/data --env BIGCHAINDB_DATABASE_HOST=172.17.01 artusvranken/alpine-bigchaindb -y configure mongodb
+  - docker run -d --name=mongodb -p 27017:27017 --restart=always -v $HOME/mongodb_docker/db:/data/db -v $HOME/mongodb_docker/configdb:/data/configdb mongo:3.4.9 --replSet=bigchain-rs
+  - docker run -d --name=bigchaindb -p 59984:9984 --restart=always -v $HOME/bigchaindb_docker:/data artusvranken/alpine-bigchaindb start
+  - npm install
+
+script:
+  - npm run test
