@@ -1,0 +1,43 @@
+sudo: false
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-5
+    - g++-5
+cache:
+  directories:
+    - $HOME/.cache/pip
+linux_before_install: &linux_before_install
+  - pip3 install --upgrade pip
+  - export CC=gcc-5 CXX=g++-5
+matrix:
+  include:
+    - language: generic
+      os: osx
+      before_install:
+        - brew update
+        - brew upgrade python
+    - language: python
+      os: linux
+      python: 3.4
+      before_install: *linux_before_install
+    - language: python
+      os: linux
+      python: 3.5
+      before_install: *linux_before_install
+    - language: python
+      os: linux
+      python: 3.6
+      before_install: *linux_before_install
+install:
+  - pip3 install numpy scipy pycodestyle codecov
+  - pip3 install -e .
+script:
+  - pycodestyle --max-line-length=99 wmd
+  - coverage run --concurrency=multiprocessing -m unittest discover . && coverage combine
+after_success:
+  - codecov
+notifications:
+  email: false
