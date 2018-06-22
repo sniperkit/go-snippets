@@ -1,0 +1,3 @@
+#!/bin/sh -e
+exec 2>&1
+exec /usr/bin/mysqld --defaults-file=/data/conf/my.cnf --datadir=/data/db/mysql/ --basedir=/usr --plugin-dir=/usr/lib/mysql/plugin --user=mysql --console
