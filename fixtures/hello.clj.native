@@ -1,0 +1,140 @@
+{
+    "status": "ok",
+    "language": "clojure",
+    "errors": [],
+    "ast": [
+        {
+            "args": [
+                {
+                    "class": "helloworld.core",
+                    "form": "helloworld.core",
+                    "op": "maybe-class"
+                }
+            ],
+            "children": [
+                "fn",
+                "args"
+            ],
+            "fn": {
+                "class": "ns",
+                "form": "ns",
+                "op": "maybe-class"
+            },
+            "form": [
+                "ns",
+                "helloworld.core"
+            ],
+            "meta": null,
+            "op": "invoke",
+            "top-level": true
+        },
+        {
+            "children": [
+                "meta",
+                "init"
+            ],
+            "doc": "I can say 'Hello World'.",
+            "form": [
+                "def",
+                "-main",
+                [
+                    "fn",
+                    [],
+                    [
+                        "println",
+                        "Hello, World!"
+                    ]
+                ]
+            ],
+            "init": {
+                "children": [
+                    "methods"
+                ],
+                "form": [
+                    "fn",
+                    [],
+                    [
+                        "println",
+                        "Hello, World!"
+                    ]
+                ],
+                "max-fixed-arity": 0,
+                "methods": [
+                    {
+                        "body": {
+                            "body?": true,
+                            "children": [
+                                "statements",
+                                "ret"
+                            ],
+                            "form": [
+                                "do",
+                                [
+                                    "println",
+                                    "Hello, World!"
+                                ]
+                            ],
+                            "op": "do",
+                            "ret": {
+                                "args": [
+                                    {
+                                        "form": "Hello, World!",
+                                        "literal?": true,
+                                        "op": "const",
+                                        "type": "string",
+                                        "val": "Hello, World!"
+                                    }
+                                ],
+                                "children": [
+                                    "fn",
+                                    "args"
+                                ],
+                                "fn": {
+                                    "class": "println",
+                                    "form": "println",
+                                    "op": "maybe-class"
+                                },
+                                "form": [
+                                    "println",
+                                    "Hello, World!"
+                                ],
+                                "meta": null,
+                                "op": "invoke"
+                            },
+                            "statements": []
+                        },
+                        "children": [
+                            "params",
+                            "body"
+                        ],
+                        "fixed-arity": 0,
+                        "form": [
+                            [],
+                            [
+                                "println",
+                                "Hello, World!"
+                            ]
+                        ],
+                        "loop-id": "loop_1",
+                        "op": "fn-method",
+                        "params": [],
+                        "variadic?": false
+                    }
+                ],
+                "once": false,
+                "op": "fn",
+                "variadic?": false
+            },
+            "meta": {
+                "column": 1,
+                "doc": "I can say 'Hello World'.",
+                "end-column": 29,
+                "end-line": 6,
+                "line": 3
+            },
+            "name": "-main",
+            "op": "def",
+            "top-level": true
+        }
+    ]
+}
