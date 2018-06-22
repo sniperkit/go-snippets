@@ -1,0 +1,25 @@
+{
+	"Tools": [
+	{
+		"Subcmd": "scan",
+		"Op": "scan",
+		"SourceUnitTypes": [
+			"yaml"
+		]
+	},
+	{
+		"Subcmd": "graph",
+		"Op": "graph",
+		"SourceUnitTypes": [
+			"yaml"
+		]
+	}
+	],
+	"Bundle": {
+		"Paths": [
+			"Srclibtoolchain",
+			".bin",
+			".bin/srclib-yaml"
+		]
+	}
+}
