@@ -1,0 +1,4 @@
+ID,Host Type,Repository Name with Owner,Repository ID,Manifest Platform,Manifest Filepath,Git branch,Manifest kind,Optional,Dependency Project Name,Dependency Requirements,Dependency Kind,Dependency Project ID
+48593218,GitHub,repo1/repo1,1,Bower,bower.json,,manifest,,lib1,~3.2.0,development,1
+48593223,GitHub,repo1/repo1,1,Bower,bower.json,,manifest,,lib2,~2.1.1,development,2
+48593228,GitHub,repo2/repo2,2,Bower,bower.json,,manifest,,lib2,~0.5.0,development,2
