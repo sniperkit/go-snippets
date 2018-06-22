@@ -1,0 +1,5 @@
+FROM alpine
+
+ENTRYPOINT /app/job.sh
+
+LABEL com.ngageoint.seed.manifest="{\"manifestVersion\":\"0.0.3\",\"job\":{ ... }}"

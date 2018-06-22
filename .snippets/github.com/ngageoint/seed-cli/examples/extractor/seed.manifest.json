@@ -1,0 +1,101 @@
+{
+    "seedVersion": "1.0.0",
+    "job": {
+        "name": "extractor",
+        "jobVersion": "0.1.0",
+        "packageVersion": "0.1.0",
+        "title": "Extractor",
+        "description": "Reads a zip file and extracts the contents",
+        "tags": [
+            "zip"
+        ],
+        "maintainer": {
+            "name": "John Tobe",
+            "email": "jtobe@example.com"
+        },
+        "timeout": 3600,
+        "resources": {
+            "scalar": [
+                { "name": "cpus", "value": 1.0 },
+                { "name": "mem", "value": 16.0 },
+                { "name": "sharedMem", "value": 1.0 },
+                { "name": "disk", "value": 0.01, "inputMultiplier": 1.0 }
+            ]
+        },
+        "interface": {
+            "command": "${ZIP} -d ${OUTPUT_DIR} ${MULTIPLE}",
+            "inputs": {
+                "files": [
+                    {
+                        "name": "ZIP",
+                        "required": true,
+                        "mediaTypes": [
+                            "application/zip"
+                        ]
+                    },
+                    {
+                        "name": "MULTIPLE",
+                        "required": false,
+                        "multiple": true,
+                        "mediaTypes": [
+                            "text"
+                        ]
+                    }
+                ]
+            },
+            "outputs": {
+                "files": [
+                    {
+                        "name": "output_file_tiffs",
+                        "mediaType": "image/png",
+                        "multiple": true,
+                        "pattern": "s*.png"
+                    }
+                ],
+                "json": [
+                    {
+                        "name": "NumFiles",
+                        "key": "Num_Files",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Filenames",
+                        "type": "string"
+                    },
+                    {
+                        "name": "dummy",
+                        "type": "integer",
+                        "required": false
+                    }
+                ]
+            },
+            "mounts": [
+                {
+                    "name": "MOUNTAIN",
+                    "path": "/the/mountain",
+                    "mode": "ro"
+                }
+            ],
+            "settings": [
+                {
+                    "name": "HELLO",
+                    "secret": false
+                }
+            ]
+        },
+        "errors": [
+            {
+                "code": 1,
+                "title": "Short Read",
+                "description": "Completed with warning errors. One or more files were skipped due to unsupported compression method or encryption with an unknown password. ",
+                "category": "data"
+            },
+            {
+                "code": 2,
+                "title": "Error Name",
+                "description": "Error Description",
+                "category": "job"
+            }
+        ]
+    }
+}
