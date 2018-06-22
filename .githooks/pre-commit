@@ -35,6 +35,8 @@ rmd Godeps
 rmd node_modules
 echo "Successfully removed all vendor dirs: vendor, Godeps, node_modules"
 
+# git commit -am "remove vendor dirs"
+# echo "clean-up vendor directories..."
 # echo "Top 50 subtrees by size"
 
 # git config core.hooksPath .githooks
