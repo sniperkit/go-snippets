@@ -1,0 +1,239 @@
+Concurrency With Go
+31 Mar 2018
+
+Jacky Chiu
+Data Eng Intern, Shopify
+https://github.com/JackyChiu
+
+Kirin Rastogi
+Production Eng Intern, Shopify
+https://github.com/KirinRastogi
+
+* Why go?
+
+"Go will be the server language of the future" - _Tobias_ _Lutke_, _Shopify_ _CEO_
+
+- Moore's Law is failing
+# Transistors double every ~18 months
+# single threaded performance is getting worse, while cores goes up
+- Transistors are small & expensive
+# They are so small, they are going to be affected by quantum tunnelling
+# Too expensive
+- Concurrent code is the solution
+# Instructions that can execute concurrently will be able to scale
+# The code makes use of the multiple cores, and works in multiple threads
+- Goroutines are a lightweight way of executing concurrent go code
+# A goroutine is not a thread
+# A goroutine can be thought of as a lightweight thread
+# In reality they are multiplexed and balanced between threads for optimization,
+# but you don't need to worry about that since they are abstracted
+# segmented stack that grows when needed
+# mutex locking is no longer the only solution for sharing data because of channels
+.image images/moore_law.png
+#.caption _Moore's_ _Law_ source: [[https://medium.com/@kevalpatel2106/why-should-you-learn-go-f607681fad65][Keval Patel]]
+
+* Go at Scale
+
+- Fast Builds
+- Controlled Dependency Management
+# C++ reads about 2000 extra bytes of dependency code for every source byte
+# because of the way the cycle it imports in works
+# go uses packages with explicit imports
+- One Correct Way of Doing Things
+- Familiar Semantics
+# familiar if you know C
+# uses structs
+# make keyword to allocate, or {}
+# garbage collected
+- Composition Not Inheritance
+# less side affects, easy to navigate
+- Zero Values Handled Well
+# we will see an example of this soon
+
+* Areas of Use
+
+- Cloud
+- Infrastructure
+- Backend API
+- CLI tools
+
+* Executing Go & Project Structure
+
+- go run
+# runs your code
+- go build
+# builds your code to an executable
+- gopath is used to unify the go environment
+  export GOPATH=$HOME
+  go get github.com/golang/go
+  # Will populate ~/src/github.com/golang/go
+- Local Packages
+# allow for single, easy to manage workspace
+- Remote Packages
+# allow for easy download and importation
+
+* Language Basics
+.link https://tour.golang.org/moretypes/19
+
+* Concurrency vs Parallelism
+
+* Concurrency vs Parallelism
+
+Concurrency:
+
+- The composition of independently executing tasks
+- It's about structuring the problem
+
+Parallelism:
+
+- The execution of tasks at the same time
+- It's about executing the problem
+
+Concurrency is not parallelism, but it does enables parallelism.
+
+* Example Problem
+
+This little gopher need to burn these Node.js books.
+
+- Run to book pile
+- Pick up books
+- Run to fire
+- Burn
+
+.image images/gophersimple1.jpg
+
+* Trying parallelism without concurrent design
+
+- Two gophers doing the same set of tasks
+
+.image images/gophersimple2.jpg
+
+Sadly they are bottlenecked at the book pile and fire.
+
+* Concurrent Design 
+
+- Break down the problem
+- Add staging area of books
+- Now the two gophers can get shit done at scale!
+
+.image images/gophercomplex3.jpg
+
+Notice how this concurrent design allowed for better parallelism.
+
+* Concurrency in Go 
+
+* Concurrency in Go 
+
+Concurrency is a first class concept in Go.
+
+Core components:
+
+- Goroutines
+- Channels
+
+Lets explore these ideas.
+
+* Goroutines
+
+- Independent executing function
+- Can run in parallel (if the cpu cores are available)
+- Not a thread, but can you can think of it as a cheap thread
+- Multiplexed into OS threads
+- Common to have thousands to hundred thousands of running
+
+Use:
+
+    go doSomethingCool()
+
+Notice the notion of a independent task: concurrent design.
+
+* Communication
+
+Concurrency is hard because of sharing information.
+Often you would need to access a shared variables which leads to race conditions.
+
+Go follows this phrase:
+  
+    Do not communicate by sharing memory; instead, share memory by communicating. 
+
+Whats does this mean?
+
+- Don't use shared variables between goroutines
+- Use built in channels to share data
+
+* Channels 
+
+Channels are values in go that allow goroutines to synchronize and exchange data.
+
+Use channels to:
+
+- Send data
+- Receive data
+
+    // init var in main goroutine 1
+    resultChan := make(chan int)
+
+    go func() {
+      // send in goroutine 2
+      resultChan <- 5
+    }()
+
+    // receive in goroutine 1
+    result := <- resultChan
+
+Channels can be closed.
+
+* Channels
+
+Channels come in two forms. `Unbuffered` and `Buffered`.
+
+Unbuffered channels:
+
+- Sender will block until message is received
+- Used to synchronize and share data 
+
+Buffered channels:
+
+- Sender won't block, message will be queued
+- Has a set max size
+
+* Analogy
+
+You can think of a unbuffered channel like a phone call.
+
+- You can only take one call at a time
+- Other calls have to wait if your in a current call
+
+A buffered channel is like adding a voice mail.
+
+- Someone that calls you doesn't have to wait for you to finish your call
+- You can listen to one voice mail after another at your own speed
+
+* Code Example
+
+* Google Search: A fake framework
+
+We can simulate the search function.
+
+.code google.go /START1/,/STOP1/
+
+* Google Search: Test the framework
+
+.play google.go /func.main/,/}/
+
+* Google Search
+
+The Google function takes a query and returns a slice of Results (which are just strings).
+
+Google invokes Web, Image, and Video searches one after another, appending them to the results.
+
+.play google.go /START0/,/STOP0/
+
+* Faster Google Search 
+
+Now we create a channel and goroutines for each search.
+The goroutines send the results down the channel.
+
+We receive on the channel and update our final result.
+
+.play google_concurrent.go /START0/,/STOP0/
