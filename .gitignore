@@ -1,0 +1,15 @@
+# Our binary
+lab
+
+# IntelliJ
+.idea/
+
+# vim
+*.sw*
+*.vim
+
+# test
+_test
+
+coverage*
+vendor
