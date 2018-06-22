@@ -1,0 +1,174 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 186,
+                    "endLine": 11,
+                    "endTokenPos": 73,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "extends": null,
+                "flags": 16,
+                "implements": [],
+                "name": "A",
+                "nodeType": "Stmt_Class",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 36,
+                            "endLine": 4,
+                            "endTokenPos": 13,
+                            "startFilePos": 30,
+                            "startLine": 4,
+                            "startTokenPos": 10
+                        },
+                        "flags": 0,
+                        "nodeType": "Stmt_Property",
+                        "props": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 35,
+                                    "endLine": 4,
+                                    "endTokenPos": 12,
+                                    "startFilePos": 34,
+                                    "startLine": 4,
+                                    "startTokenPos": 12
+                                },
+                                "default": null,
+                                "name": "a",
+                                "nodeType": "Stmt_PropertyProperty"
+                            }
+                        ],
+                        "type": 0
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 51,
+                            "endLine": 5,
+                            "endTokenPos": 18,
+                            "startFilePos": 42,
+                            "startLine": 5,
+                            "startTokenPos": 15
+                        },
+                        "flags": 8,
+                        "nodeType": "Stmt_Property",
+                        "props": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 50,
+                                    "endLine": 5,
+                                    "endTokenPos": 17,
+                                    "startFilePos": 49,
+                                    "startLine": 5,
+                                    "startTokenPos": 17
+                                },
+                                "default": null,
+                                "name": "b",
+                                "nodeType": "Stmt_PropertyProperty"
+                            }
+                        ],
+                        "type": 8
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 78,
+                            "endLine": 6,
+                            "endTokenPos": 27,
+                            "startFilePos": 57,
+                            "startLine": 6,
+                            "startTokenPos": 20
+                        },
+                        "byRef": false,
+                        "flags": 16,
+                        "name": "c",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": null,
+                        "type": 16
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 104,
+                            "endLine": 7,
+                            "endTokenPos": 38,
+                            "startFilePos": 84,
+                            "startLine": 7,
+                            "startTokenPos": 29
+                        },
+                        "byRef": false,
+                        "flags": 32,
+                        "name": "d",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 32
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 131,
+                            "endLine": 8,
+                            "endTokenPos": 49,
+                            "startFilePos": 110,
+                            "startLine": 8,
+                            "startTokenPos": 40
+                        },
+                        "byRef": false,
+                        "flags": 8,
+                        "name": "e",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 8
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 164,
+                            "endLine": 9,
+                            "endTokenPos": 62,
+                            "startFilePos": 137,
+                            "startLine": 9,
+                            "startTokenPos": 51
+                        },
+                        "byRef": false,
+                        "flags": 40,
+                        "name": "f",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 40
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 184,
+                            "endLine": 10,
+                            "endTokenPos": 71,
+                            "startFilePos": 170,
+                            "startLine": 10,
+                            "startTokenPos": 64
+                        },
+                        "byRef": false,
+                        "flags": 0,
+                        "name": "g",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 0
+                    }
+                ],
+                "type": 16
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

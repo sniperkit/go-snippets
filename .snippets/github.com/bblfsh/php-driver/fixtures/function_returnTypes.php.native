@@ -1,0 +1,88 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 25,
+                    "endLine": 3,
+                    "endTokenPos": 9,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "byRef": false,
+                "name": "test1",
+                "nodeType": "Stmt_Function",
+                "params": [],
+                "returnType": null,
+                "stmts": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 53,
+                    "endLine": 4,
+                    "endTokenPos": 22,
+                    "startFilePos": 27,
+                    "startLine": 4,
+                    "startTokenPos": 11
+                },
+                "byRef": false,
+                "name": "test2",
+                "nodeType": "Stmt_Function",
+                "params": [],
+                "returnType": "array",
+                "stmts": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 84,
+                    "endLine": 5,
+                    "endTokenPos": 35,
+                    "startFilePos": 55,
+                    "startLine": 5,
+                    "startTokenPos": 24
+                },
+                "byRef": false,
+                "name": "test3",
+                "nodeType": "Stmt_Function",
+                "params": [],
+                "returnType": "callable",
+                "stmts": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 114,
+                    "endLine": 6,
+                    "endTokenPos": 50,
+                    "startFilePos": 86,
+                    "startLine": 6,
+                    "startTokenPos": 37
+                },
+                "byRef": false,
+                "name": "test4",
+                "nodeType": "Stmt_Function",
+                "params": [],
+                "returnType": {
+                    "attributes": {
+                        "endFilePos": 111,
+                        "endLine": 6,
+                        "endTokenPos": 47,
+                        "startFilePos": 105,
+                        "startLine": 6,
+                        "startTokenPos": 45
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "Foo",
+                        "Bar"
+                    ]
+                },
+                "stmts": []
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

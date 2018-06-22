@@ -1,0 +1,33 @@
+{
+    "name": "bblfsh-php-ast",
+    "description": "bblfsh-php-ast is the php ast extractor for the bblfsh project",
+    "keywords": ["bblfsh", "php", "ast"],
+    "homepage": "https://github.com/bblfsh/php-ast",
+    "license": "GPL",
+    "type": "library",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name":  "Sourced Technologies S.L.",
+            "email": "hola@sourced.tech"
+        },
+        {
+            "name":  "David Pordomingo",
+            "email": "David.Pordomingo.F@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "AstExtractor\\": "src/AstExtractor/",
+          "FixturesGenerator\\": "fixturesGenerator/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "nikic/php-parser": "3.1.2"
+    },
+    "require-dev": {
+        "phpmd/phpmd" : "@stable",
+        "phpunit/phpunit": "@stable"
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 38,
+                    "endLine": 4,
+                    "endTokenPos": 12,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "extends": null,
+                "flags": 0,
+                "implements": [],
+                "name": "testcls1",
+                "nodeType": "Stmt_Class",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 36,
+                            "endLine": 3,
+                            "endTokenPos": 10,
+                            "startFilePos": 27,
+                            "startLine": 3,
+                            "startTokenPos": 7
+                        },
+                        "flags": 8,
+                        "nodeType": "Stmt_Property",
+                        "props": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 35,
+                                    "endLine": 3,
+                                    "endTokenPos": 9,
+                                    "startFilePos": 34,
+                                    "startLine": 3,
+                                    "startTokenPos": 9
+                                },
+                                "default": null,
+                                "name": "a",
+                                "nodeType": "Stmt_PropertyProperty"
+                            }
+                        ],
+                        "type": 8
+                    }
+                ],
+                "type": 0
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

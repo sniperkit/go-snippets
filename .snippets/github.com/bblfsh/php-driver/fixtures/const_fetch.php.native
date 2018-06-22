@@ -1,0 +1,87 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 7,
+                    "endLine": 3,
+                    "endTokenPos": 2,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 7,
+                        "endLine": 3,
+                        "endTokenPos": 2,
+                        "startFilePos": 7,
+                        "startLine": 3,
+                        "startTokenPos": 2
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "A"
+                    ]
+                },
+                "nodeType": "Expr_ConstFetch"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 13,
+                    "endLine": 4,
+                    "endTokenPos": 7,
+                    "startFilePos": 10,
+                    "startLine": 4,
+                    "startTokenPos": 5
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 10,
+                        "endLine": 4,
+                        "endTokenPos": 5,
+                        "startFilePos": 10,
+                        "startLine": 4,
+                        "startTokenPos": 5
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "A"
+                    ]
+                },
+                "name": "B",
+                "nodeType": "Expr_ClassConstFetch"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 23,
+                    "endLine": 5,
+                    "endTokenPos": 12,
+                    "startFilePos": 16,
+                    "startLine": 5,
+                    "startTokenPos": 10
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 16,
+                        "endLine": 5,
+                        "endTokenPos": 10,
+                        "startFilePos": 16,
+                        "startLine": 5,
+                        "startTokenPos": 10
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "A"
+                    ]
+                },
+                "name": "class",
+                "nodeType": "Expr_ClassConstFetch"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

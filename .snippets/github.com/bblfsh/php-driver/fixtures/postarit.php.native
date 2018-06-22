@@ -1,0 +1,102 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 10,
+                    "endLine": 3,
+                    "endTokenPos": 3,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "nodeType": "Expr_PostInc",
+                "var": {
+                    "attributes": {
+                        "endFilePos": 8,
+                        "endLine": 3,
+                        "endTokenPos": 2,
+                        "startFilePos": 7,
+                        "startLine": 3,
+                        "startTokenPos": 2
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 16,
+                    "endLine": 4,
+                    "endTokenPos": 7,
+                    "startFilePos": 13,
+                    "startLine": 4,
+                    "startTokenPos": 6
+                },
+                "nodeType": "Expr_PostDec",
+                "var": {
+                    "attributes": {
+                        "endFilePos": 14,
+                        "endLine": 4,
+                        "endTokenPos": 6,
+                        "startFilePos": 13,
+                        "startLine": 4,
+                        "startTokenPos": 6
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 22,
+                    "endLine": 5,
+                    "endTokenPos": 11,
+                    "startFilePos": 19,
+                    "startLine": 5,
+                    "startTokenPos": 10
+                },
+                "nodeType": "Expr_PreInc",
+                "var": {
+                    "attributes": {
+                        "endFilePos": 22,
+                        "endLine": 5,
+                        "endTokenPos": 11,
+                        "startFilePos": 21,
+                        "startLine": 5,
+                        "startTokenPos": 11
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 28,
+                    "endLine": 6,
+                    "endTokenPos": 15,
+                    "startFilePos": 25,
+                    "startLine": 6,
+                    "startTokenPos": 14
+                },
+                "nodeType": "Expr_PreDec",
+                "var": {
+                    "attributes": {
+                        "endFilePos": 28,
+                        "endLine": 6,
+                        "endTokenPos": 15,
+                        "startFilePos": 27,
+                        "startLine": 6,
+                        "startTokenPos": 15
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                }
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

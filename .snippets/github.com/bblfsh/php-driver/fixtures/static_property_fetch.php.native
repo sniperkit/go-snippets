@@ -1,0 +1,251 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "comments": [
+                        {
+                            "filePos": 7,
+                            "line": 3,
+                            "nodeType": "Comment",
+                            "text": "// property name variations\n"
+                        }
+                    ],
+                    "endFilePos": 39,
+                    "endLine": 4,
+                    "endTokenPos": 5,
+                    "startFilePos": 35,
+                    "startLine": 4,
+                    "startTokenPos": 3
+                },
+                "class": {
+                    "attributes": {
+                        "comments": [
+                            {
+                                "filePos": 7,
+                                "line": 3,
+                                "nodeType": "Comment",
+                                "text": "// property name variations\n"
+                            }
+                        ],
+                        "endFilePos": 35,
+                        "endLine": 4,
+                        "endTokenPos": 3,
+                        "startFilePos": 35,
+                        "startLine": 4,
+                        "startTokenPos": 3
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "A"
+                    ]
+                },
+                "name": "b",
+                "nodeType": "Expr_StaticPropertyFetch"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 47,
+                    "endLine": 5,
+                    "endTokenPos": 11,
+                    "startFilePos": 42,
+                    "startLine": 5,
+                    "startTokenPos": 8
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 42,
+                        "endLine": 5,
+                        "endTokenPos": 8,
+                        "startFilePos": 42,
+                        "startLine": 5,
+                        "startTokenPos": 8
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "A"
+                    ]
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 47,
+                        "endLine": 5,
+                        "endTokenPos": 11,
+                        "startFilePos": 45,
+                        "startLine": 5,
+                        "startTokenPos": 10
+                    },
+                    "name": "b",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_StaticPropertyFetch"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 58,
+                    "endLine": 6,
+                    "endTokenPos": 19,
+                    "startFilePos": 50,
+                    "startLine": 6,
+                    "startTokenPos": 14
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 50,
+                        "endLine": 6,
+                        "endTokenPos": 14,
+                        "startFilePos": 50,
+                        "startLine": 6,
+                        "startTokenPos": 14
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "A"
+                    ]
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 57,
+                        "endLine": 6,
+                        "endTokenPos": 18,
+                        "kind": 1,
+                        "startFilePos": 55,
+                        "startLine": 6,
+                        "startTokenPos": 18
+                    },
+                    "nodeType": "Scalar_String",
+                    "value": "b"
+                },
+                "nodeType": "Expr_StaticPropertyFetch"
+            },
+            {
+                "attributes": {
+                    "comments": [
+                        {
+                            "filePos": 62,
+                            "line": 8,
+                            "nodeType": "Comment",
+                            "text": "// array access\n"
+                        }
+                    ],
+                    "endFilePos": 87,
+                    "endLine": 9,
+                    "endTokenPos": 28,
+                    "startFilePos": 78,
+                    "startLine": 9,
+                    "startTokenPos": 23
+                },
+                "dim": {
+                    "attributes": {
+                        "endFilePos": 86,
+                        "endLine": 9,
+                        "endTokenPos": 27,
+                        "kind": 1,
+                        "startFilePos": 84,
+                        "startLine": 9,
+                        "startTokenPos": 27
+                    },
+                    "nodeType": "Scalar_String",
+                    "value": "c"
+                },
+                "nodeType": "Expr_ArrayDimFetch",
+                "var": {
+                    "attributes": {
+                        "comments": [
+                            {
+                                "filePos": 62,
+                                "line": 8,
+                                "nodeType": "Comment",
+                                "text": "// array access\n"
+                            }
+                        ],
+                        "endFilePos": 82,
+                        "endLine": 9,
+                        "endTokenPos": 25,
+                        "startFilePos": 78,
+                        "startLine": 9,
+                        "startTokenPos": 23
+                    },
+                    "class": {
+                        "attributes": {
+                            "comments": [
+                                {
+                                    "filePos": 62,
+                                    "line": 8,
+                                    "nodeType": "Comment",
+                                    "text": "// array access\n"
+                                }
+                            ],
+                            "endFilePos": 78,
+                            "endLine": 9,
+                            "endTokenPos": 23,
+                            "startFilePos": 78,
+                            "startLine": 9,
+                            "startTokenPos": 23
+                        },
+                        "nodeType": "Name",
+                        "parts": [
+                            "A"
+                        ]
+                    },
+                    "name": "b",
+                    "nodeType": "Expr_StaticPropertyFetch"
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 99,
+                    "endLine": 10,
+                    "endTokenPos": 36,
+                    "startFilePos": 90,
+                    "startLine": 10,
+                    "startTokenPos": 31
+                },
+                "dim": {
+                    "attributes": {
+                        "endFilePos": 98,
+                        "endLine": 10,
+                        "endTokenPos": 35,
+                        "kind": 1,
+                        "startFilePos": 96,
+                        "startLine": 10,
+                        "startTokenPos": 35
+                    },
+                    "nodeType": "Scalar_String",
+                    "value": "c"
+                },
+                "nodeType": "Expr_ArrayDimFetch",
+                "var": {
+                    "attributes": {
+                        "endFilePos": 94,
+                        "endLine": 10,
+                        "endTokenPos": 33,
+                        "startFilePos": 90,
+                        "startLine": 10,
+                        "startTokenPos": 31
+                    },
+                    "class": {
+                        "attributes": {
+                            "endFilePos": 90,
+                            "endLine": 10,
+                            "endTokenPos": 31,
+                            "startFilePos": 90,
+                            "startLine": 10,
+                            "startTokenPos": 31
+                        },
+                        "nodeType": "Name",
+                        "parts": [
+                            "A"
+                        ]
+                    },
+                    "name": "b",
+                    "nodeType": "Expr_StaticPropertyFetch"
+                }
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

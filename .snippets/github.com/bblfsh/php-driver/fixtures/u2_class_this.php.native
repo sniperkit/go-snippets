@@ -1,0 +1,95 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 82,
+                    "endLine": 6,
+                    "endTokenPos": 26,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "extends": null,
+                "flags": 0,
+                "implements": [],
+                "name": "testcls1",
+                "nodeType": "Stmt_Class",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 80,
+                            "endLine": 5,
+                            "endTokenPos": 24,
+                            "startFilePos": 27,
+                            "startLine": 3,
+                            "startTokenPos": 7
+                        },
+                        "byRef": false,
+                        "flags": 0,
+                        "name": "testfnc1",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 73,
+                                    "endLine": 4,
+                                    "endTokenPos": 21,
+                                    "startFilePos": 57,
+                                    "startLine": 4,
+                                    "startTokenPos": 15
+                                },
+                                "expr": {
+                                    "attributes": {
+                                        "endFilePos": 73,
+                                        "endLine": 4,
+                                        "endTokenPos": 21,
+                                        "kind": 10,
+                                        "startFilePos": 73,
+                                        "startLine": 4,
+                                        "startTokenPos": 21
+                                    },
+                                    "nodeType": "Scalar_LNumber",
+                                    "value": 1
+                                },
+                                "nodeType": "Expr_Assign",
+                                "var": {
+                                    "attributes": {
+                                        "endFilePos": 69,
+                                        "endLine": 4,
+                                        "endTokenPos": 17,
+                                        "startFilePos": 57,
+                                        "startLine": 4,
+                                        "startTokenPos": 15
+                                    },
+                                    "name": "member",
+                                    "nodeType": "Expr_PropertyFetch",
+                                    "var": {
+                                        "attributes": {
+                                            "endFilePos": 61,
+                                            "endLine": 4,
+                                            "endTokenPos": 15,
+                                            "startFilePos": 57,
+                                            "startLine": 4,
+                                            "startTokenPos": 15
+                                        },
+                                        "name": "this",
+                                        "nodeType": "Expr_Variable"
+                                    }
+                                }
+                            }
+                        ],
+                        "type": 0
+                    }
+                ],
+                "type": 0
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

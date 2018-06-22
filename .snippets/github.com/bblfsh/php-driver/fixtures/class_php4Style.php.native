@@ -1,0 +1,92 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 91,
+                    "endLine": 7,
+                    "endTokenPos": 35,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "extends": null,
+                "flags": 0,
+                "implements": [],
+                "name": "A",
+                "nodeType": "Stmt_Class",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 29,
+                            "endLine": 4,
+                            "endTokenPos": 11,
+                            "startFilePos": 21,
+                            "startLine": 4,
+                            "startTokenPos": 8
+                        },
+                        "flags": 0,
+                        "nodeType": "Stmt_Property",
+                        "props": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 28,
+                                    "endLine": 4,
+                                    "endTokenPos": 10,
+                                    "startFilePos": 25,
+                                    "startLine": 4,
+                                    "startTokenPos": 10
+                                },
+                                "default": null,
+                                "name": "foo",
+                                "nodeType": "Stmt_PropertyProperty"
+                            }
+                        ],
+                        "type": 0
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 51,
+                            "endLine": 5,
+                            "endTokenPos": 20,
+                            "startFilePos": 35,
+                            "startLine": 5,
+                            "startTokenPos": 13
+                        },
+                        "byRef": false,
+                        "flags": 0,
+                        "name": "bar",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 0
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 89,
+                            "endLine": 6,
+                            "endTokenPos": 33,
+                            "startFilePos": 57,
+                            "startLine": 6,
+                            "startTokenPos": 22
+                        },
+                        "byRef": false,
+                        "flags": 24,
+                        "name": "baz",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 24
+                    }
+                ],
+                "type": 0
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

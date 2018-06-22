@@ -1,0 +1,576 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "comments": [
+                        {
+                            "filePos": 7,
+                            "line": 3,
+                            "nodeType": "Comment",
+                            "text": "// boolean ops\n"
+                        }
+                    ],
+                    "endFilePos": 29,
+                    "endLine": 4,
+                    "endTokenPos": 7,
+                    "startFilePos": 22,
+                    "startLine": 4,
+                    "startTokenPos": 3
+                },
+                "left": {
+                    "attributes": {
+                        "comments": [
+                            {
+                                "filePos": 7,
+                                "line": 3,
+                                "nodeType": "Comment",
+                                "text": "// boolean ops\n"
+                            }
+                        ],
+                        "endFilePos": 23,
+                        "endLine": 4,
+                        "endTokenPos": 3,
+                        "startFilePos": 22,
+                        "startLine": 4,
+                        "startTokenPos": 3
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_BinaryOp_BooleanAnd",
+                "right": {
+                    "attributes": {
+                        "endFilePos": 29,
+                        "endLine": 4,
+                        "endTokenPos": 7,
+                        "startFilePos": 28,
+                        "startLine": 4,
+                        "startTokenPos": 7
+                    },
+                    "name": "b",
+                    "nodeType": "Expr_Variable"
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 39,
+                    "endLine": 5,
+                    "endTokenPos": 14,
+                    "startFilePos": 32,
+                    "startLine": 5,
+                    "startTokenPos": 10
+                },
+                "left": {
+                    "attributes": {
+                        "endFilePos": 33,
+                        "endLine": 5,
+                        "endTokenPos": 10,
+                        "startFilePos": 32,
+                        "startLine": 5,
+                        "startTokenPos": 10
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_BinaryOp_BooleanOr",
+                "right": {
+                    "attributes": {
+                        "endFilePos": 39,
+                        "endLine": 5,
+                        "endTokenPos": 14,
+                        "startFilePos": 38,
+                        "startLine": 5,
+                        "startTokenPos": 14
+                    },
+                    "name": "b",
+                    "nodeType": "Expr_Variable"
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 44,
+                    "endLine": 6,
+                    "endTokenPos": 18,
+                    "startFilePos": 42,
+                    "startLine": 6,
+                    "startTokenPos": 17
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 44,
+                        "endLine": 6,
+                        "endTokenPos": 18,
+                        "startFilePos": 43,
+                        "startLine": 6,
+                        "startTokenPos": 18
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_BooleanNot"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 50,
+                    "endLine": 7,
+                    "endTokenPos": 23,
+                    "startFilePos": 47,
+                    "startLine": 7,
+                    "startTokenPos": 21
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 50,
+                        "endLine": 7,
+                        "endTokenPos": 23,
+                        "startFilePos": 48,
+                        "startLine": 7,
+                        "startTokenPos": 22
+                    },
+                    "expr": {
+                        "attributes": {
+                            "endFilePos": 50,
+                            "endLine": 7,
+                            "endTokenPos": 23,
+                            "startFilePos": 49,
+                            "startLine": 7,
+                            "startTokenPos": 23
+                        },
+                        "name": "a",
+                        "nodeType": "Expr_Variable"
+                    },
+                    "nodeType": "Expr_BooleanNot"
+                },
+                "nodeType": "Expr_BooleanNot"
+            },
+            {
+                "attributes": {
+                    "comments": [
+                        {
+                            "filePos": 54,
+                            "line": 9,
+                            "nodeType": "Comment",
+                            "text": "// logical ops\n"
+                        }
+                    ],
+                    "endFilePos": 77,
+                    "endLine": 10,
+                    "endTokenPos": 31,
+                    "startFilePos": 69,
+                    "startLine": 10,
+                    "startTokenPos": 27
+                },
+                "left": {
+                    "attributes": {
+                        "comments": [
+                            {
+                                "filePos": 54,
+                                "line": 9,
+                                "nodeType": "Comment",
+                                "text": "// logical ops\n"
+                            }
+                        ],
+                        "endFilePos": 70,
+                        "endLine": 10,
+                        "endTokenPos": 27,
+                        "startFilePos": 69,
+                        "startLine": 10,
+                        "startTokenPos": 27
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_BinaryOp_LogicalAnd",
+                "right": {
+                    "attributes": {
+                        "endFilePos": 77,
+                        "endLine": 10,
+                        "endTokenPos": 31,
+                        "startFilePos": 76,
+                        "startLine": 10,
+                        "startTokenPos": 31
+                    },
+                    "name": "b",
+                    "nodeType": "Expr_Variable"
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 87,
+                    "endLine": 11,
+                    "endTokenPos": 38,
+                    "startFilePos": 80,
+                    "startLine": 11,
+                    "startTokenPos": 34
+                },
+                "left": {
+                    "attributes": {
+                        "endFilePos": 81,
+                        "endLine": 11,
+                        "endTokenPos": 34,
+                        "startFilePos": 80,
+                        "startLine": 11,
+                        "startTokenPos": 34
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_BinaryOp_LogicalOr",
+                "right": {
+                    "attributes": {
+                        "endFilePos": 87,
+                        "endLine": 11,
+                        "endTokenPos": 38,
+                        "startFilePos": 86,
+                        "startLine": 11,
+                        "startTokenPos": 38
+                    },
+                    "name": "b",
+                    "nodeType": "Expr_Variable"
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 98,
+                    "endLine": 12,
+                    "endTokenPos": 45,
+                    "startFilePos": 90,
+                    "startLine": 12,
+                    "startTokenPos": 41
+                },
+                "left": {
+                    "attributes": {
+                        "endFilePos": 91,
+                        "endLine": 12,
+                        "endTokenPos": 41,
+                        "startFilePos": 90,
+                        "startLine": 12,
+                        "startTokenPos": 41
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_BinaryOp_LogicalXor",
+                "right": {
+                    "attributes": {
+                        "endFilePos": 98,
+                        "endLine": 12,
+                        "endTokenPos": 45,
+                        "startFilePos": 97,
+                        "startLine": 12,
+                        "startTokenPos": 45
+                    },
+                    "name": "b",
+                    "nodeType": "Expr_Variable"
+                }
+            },
+            {
+                "attributes": {
+                    "comments": [
+                        {
+                            "filePos": 102,
+                            "line": 14,
+                            "nodeType": "Comment",
+                            "text": "// precedence\n"
+                        }
+                    ],
+                    "endFilePos": 135,
+                    "endLine": 15,
+                    "endTokenPos": 61,
+                    "startFilePos": 116,
+                    "startLine": 15,
+                    "startTokenPos": 49
+                },
+                "left": {
+                    "attributes": {
+                        "comments": [
+                            {
+                                "filePos": 102,
+                                "line": 14,
+                                "nodeType": "Comment",
+                                "text": "// precedence\n"
+                            }
+                        ],
+                        "endFilePos": 123,
+                        "endLine": 15,
+                        "endTokenPos": 53,
+                        "startFilePos": 116,
+                        "startLine": 15,
+                        "startTokenPos": 49
+                    },
+                    "left": {
+                        "attributes": {
+                            "comments": [
+                                {
+                                    "filePos": 102,
+                                    "line": 14,
+                                    "nodeType": "Comment",
+                                    "text": "// precedence\n"
+                                }
+                            ],
+                            "endFilePos": 117,
+                            "endLine": 15,
+                            "endTokenPos": 49,
+                            "startFilePos": 116,
+                            "startLine": 15,
+                            "startTokenPos": 49
+                        },
+                        "name": "a",
+                        "nodeType": "Expr_Variable"
+                    },
+                    "nodeType": "Expr_BinaryOp_BooleanAnd",
+                    "right": {
+                        "attributes": {
+                            "endFilePos": 123,
+                            "endLine": 15,
+                            "endTokenPos": 53,
+                            "startFilePos": 122,
+                            "startLine": 15,
+                            "startTokenPos": 53
+                        },
+                        "name": "b",
+                        "nodeType": "Expr_Variable"
+                    }
+                },
+                "nodeType": "Expr_BinaryOp_BooleanOr",
+                "right": {
+                    "attributes": {
+                        "endFilePos": 135,
+                        "endLine": 15,
+                        "endTokenPos": 61,
+                        "startFilePos": 128,
+                        "startLine": 15,
+                        "startTokenPos": 57
+                    },
+                    "left": {
+                        "attributes": {
+                            "endFilePos": 129,
+                            "endLine": 15,
+                            "endTokenPos": 57,
+                            "startFilePos": 128,
+                            "startLine": 15,
+                            "startTokenPos": 57
+                        },
+                        "name": "c",
+                        "nodeType": "Expr_Variable"
+                    },
+                    "nodeType": "Expr_BinaryOp_BooleanAnd",
+                    "right": {
+                        "attributes": {
+                            "endFilePos": 135,
+                            "endLine": 15,
+                            "endTokenPos": 61,
+                            "startFilePos": 134,
+                            "startLine": 15,
+                            "startTokenPos": 61
+                        },
+                        "name": "d",
+                        "nodeType": "Expr_Variable"
+                    }
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 159,
+                    "endLine": 16,
+                    "endTokenPos": 78,
+                    "startFilePos": 138,
+                    "startLine": 16,
+                    "startTokenPos": 64
+                },
+                "left": {
+                    "attributes": {
+                        "endFilePos": 153,
+                        "endLine": 16,
+                        "endTokenPos": 74,
+                        "startFilePos": 138,
+                        "startLine": 16,
+                        "startTokenPos": 64
+                    },
+                    "left": {
+                        "attributes": {
+                            "endFilePos": 139,
+                            "endLine": 16,
+                            "endTokenPos": 64,
+                            "startFilePos": 138,
+                            "startLine": 16,
+                            "startTokenPos": 64
+                        },
+                        "name": "a",
+                        "nodeType": "Expr_Variable"
+                    },
+                    "nodeType": "Expr_BinaryOp_BooleanAnd",
+                    "right": {
+                        "attributes": {
+                            "endFilePos": 152,
+                            "endLine": 16,
+                            "endTokenPos": 73,
+                            "startFilePos": 145,
+                            "startLine": 16,
+                            "startTokenPos": 69
+                        },
+                        "left": {
+                            "attributes": {
+                                "endFilePos": 146,
+                                "endLine": 16,
+                                "endTokenPos": 69,
+                                "startFilePos": 145,
+                                "startLine": 16,
+                                "startTokenPos": 69
+                            },
+                            "name": "b",
+                            "nodeType": "Expr_Variable"
+                        },
+                        "nodeType": "Expr_BinaryOp_BooleanOr",
+                        "right": {
+                            "attributes": {
+                                "endFilePos": 152,
+                                "endLine": 16,
+                                "endTokenPos": 73,
+                                "startFilePos": 151,
+                                "startLine": 16,
+                                "startTokenPos": 73
+                            },
+                            "name": "c",
+                            "nodeType": "Expr_Variable"
+                        }
+                    }
+                },
+                "nodeType": "Expr_BinaryOp_BooleanAnd",
+                "right": {
+                    "attributes": {
+                        "endFilePos": 159,
+                        "endLine": 16,
+                        "endTokenPos": 78,
+                        "startFilePos": 158,
+                        "startLine": 16,
+                        "startTokenPos": 78
+                    },
+                    "name": "d",
+                    "nodeType": "Expr_Variable"
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 175,
+                    "endLine": 18,
+                    "endTokenPos": 89,
+                    "startFilePos": 163,
+                    "startLine": 18,
+                    "startTokenPos": 81
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 175,
+                        "endLine": 18,
+                        "endTokenPos": 89,
+                        "startFilePos": 168,
+                        "startLine": 18,
+                        "startTokenPos": 85
+                    },
+                    "left": {
+                        "attributes": {
+                            "endFilePos": 169,
+                            "endLine": 18,
+                            "endTokenPos": 85,
+                            "startFilePos": 168,
+                            "startLine": 18,
+                            "startTokenPos": 85
+                        },
+                        "name": "b",
+                        "nodeType": "Expr_Variable"
+                    },
+                    "nodeType": "Expr_BinaryOp_BooleanOr",
+                    "right": {
+                        "attributes": {
+                            "endFilePos": 175,
+                            "endLine": 18,
+                            "endTokenPos": 89,
+                            "startFilePos": 174,
+                            "startLine": 18,
+                            "startTokenPos": 89
+                        },
+                        "name": "c",
+                        "nodeType": "Expr_Variable"
+                    }
+                },
+                "nodeType": "Expr_Assign",
+                "var": {
+                    "attributes": {
+                        "endFilePos": 164,
+                        "endLine": 18,
+                        "endTokenPos": 81,
+                        "startFilePos": 163,
+                        "startLine": 18,
+                        "startTokenPos": 81
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                }
+            },
+            {
+                "attributes": {
+                    "endFilePos": 190,
+                    "endLine": 19,
+                    "endTokenPos": 100,
+                    "startFilePos": 178,
+                    "startLine": 19,
+                    "startTokenPos": 92
+                },
+                "left": {
+                    "attributes": {
+                        "endFilePos": 184,
+                        "endLine": 19,
+                        "endTokenPos": 96,
+                        "startFilePos": 178,
+                        "startLine": 19,
+                        "startTokenPos": 92
+                    },
+                    "expr": {
+                        "attributes": {
+                            "endFilePos": 184,
+                            "endLine": 19,
+                            "endTokenPos": 96,
+                            "startFilePos": 183,
+                            "startLine": 19,
+                            "startTokenPos": 96
+                        },
+                        "name": "b",
+                        "nodeType": "Expr_Variable"
+                    },
+                    "nodeType": "Expr_Assign",
+                    "var": {
+                        "attributes": {
+                            "endFilePos": 179,
+                            "endLine": 19,
+                            "endTokenPos": 92,
+                            "startFilePos": 178,
+                            "startLine": 19,
+                            "startTokenPos": 92
+                        },
+                        "name": "a",
+                        "nodeType": "Expr_Variable"
+                    }
+                },
+                "nodeType": "Expr_BinaryOp_LogicalOr",
+                "right": {
+                    "attributes": {
+                        "endFilePos": 190,
+                        "endLine": 19,
+                        "endTokenPos": 100,
+                        "startFilePos": 189,
+                        "startLine": 19,
+                        "startTokenPos": 100
+                    },
+                    "name": "c",
+                    "nodeType": "Expr_Variable"
+                }
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

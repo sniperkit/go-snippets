@@ -1,0 +1,117 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 24,
+                    "endLine": 3,
+                    "endTokenPos": 7,
+                    "kind": 1,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 23,
+                        "endLine": 3,
+                        "endTokenPos": 6,
+                        "startFilePos": 17,
+                        "startLine": 3,
+                        "startTokenPos": 4
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "Foo",
+                        "Bar"
+                    ]
+                },
+                "nodeType": "Stmt_Namespace",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 28,
+                            "endLine": 4,
+                            "endTokenPos": 9,
+                            "startFilePos": 26,
+                            "startLine": 4,
+                            "startTokenPos": 9
+                        },
+                        "name": {
+                            "attributes": {
+                                "endFilePos": 28,
+                                "endLine": 4,
+                                "endTokenPos": 9,
+                                "startFilePos": 26,
+                                "startLine": 4,
+                                "startTokenPos": 9
+                            },
+                            "nodeType": "Name",
+                            "parts": [
+                                "foo"
+                            ]
+                        },
+                        "nodeType": "Expr_ConstFetch"
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "endFilePos": 45,
+                    "endLine": 6,
+                    "endTokenPos": 15,
+                    "kind": 1,
+                    "startFilePos": 32,
+                    "startLine": 6,
+                    "startTokenPos": 12
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 44,
+                        "endLine": 6,
+                        "endTokenPos": 14,
+                        "startFilePos": 42,
+                        "startLine": 6,
+                        "startTokenPos": 14
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "Bar"
+                    ]
+                },
+                "nodeType": "Stmt_Namespace",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 49,
+                            "endLine": 7,
+                            "endTokenPos": 17,
+                            "startFilePos": 47,
+                            "startLine": 7,
+                            "startTokenPos": 17
+                        },
+                        "name": {
+                            "attributes": {
+                                "endFilePos": 49,
+                                "endLine": 7,
+                                "endTokenPos": 17,
+                                "startFilePos": 47,
+                                "startLine": 7,
+                                "startTokenPos": 17
+                            },
+                            "nodeType": "Name",
+                            "parts": [
+                                "bar"
+                            ]
+                        },
+                        "nodeType": "Expr_ConstFetch"
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

@@ -1,0 +1,113 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 7,
+                    "endLine": 3,
+                    "endTokenPos": 2,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 7,
+                        "endLine": 3,
+                        "endTokenPos": 2,
+                        "startFilePos": 7,
+                        "startLine": 3,
+                        "startTokenPos": 2
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "A"
+                    ]
+                },
+                "nodeType": "Expr_ConstFetch"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 12,
+                    "endLine": 4,
+                    "endTokenPos": 7,
+                    "startFilePos": 10,
+                    "startLine": 4,
+                    "startTokenPos": 5
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 12,
+                        "endLine": 4,
+                        "endTokenPos": 7,
+                        "startFilePos": 10,
+                        "startLine": 4,
+                        "startTokenPos": 5
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "A",
+                        "B"
+                    ]
+                },
+                "nodeType": "Expr_ConstFetch"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 18,
+                    "endLine": 5,
+                    "endTokenPos": 13,
+                    "startFilePos": 15,
+                    "startLine": 5,
+                    "startTokenPos": 10
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 18,
+                        "endLine": 5,
+                        "endTokenPos": 13,
+                        "startFilePos": 15,
+                        "startLine": 5,
+                        "startTokenPos": 10
+                    },
+                    "nodeType": "Name_FullyQualified",
+                    "parts": [
+                        "A",
+                        "B"
+                    ]
+                },
+                "nodeType": "Expr_ConstFetch"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 33,
+                    "endLine": 6,
+                    "endTokenPos": 20,
+                    "startFilePos": 21,
+                    "startLine": 6,
+                    "startTokenPos": 16
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 33,
+                        "endLine": 6,
+                        "endTokenPos": 20,
+                        "startFilePos": 21,
+                        "startLine": 6,
+                        "startTokenPos": 16
+                    },
+                    "nodeType": "Name_Relative",
+                    "parts": [
+                        "A",
+                        "B"
+                    ]
+                },
+                "nodeType": "Expr_ConstFetch"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

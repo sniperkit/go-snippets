@@ -1,0 +1,71 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 36,
+                    "endLine": 5,
+                    "endTokenPos": 20,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "cond": {
+                    "attributes": {
+                        "endFilePos": 34,
+                        "endLine": 5,
+                        "endTokenPos": 18,
+                        "startFilePos": 33,
+                        "startLine": 5,
+                        "startTokenPos": 18
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Stmt_Do",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 21,
+                            "endLine": 4,
+                            "endTokenPos": 10,
+                            "startFilePos": 16,
+                            "startLine": 4,
+                            "startTokenPos": 6
+                        },
+                        "expr": {
+                            "attributes": {
+                                "endFilePos": 21,
+                                "endLine": 4,
+                                "endTokenPos": 10,
+                                "kind": 10,
+                                "startFilePos": 21,
+                                "startLine": 4,
+                                "startTokenPos": 10
+                            },
+                            "nodeType": "Scalar_LNumber",
+                            "value": 1
+                        },
+                        "nodeType": "Expr_Assign",
+                        "var": {
+                            "attributes": {
+                                "endFilePos": 17,
+                                "endLine": 4,
+                                "endTokenPos": 6,
+                                "startFilePos": 16,
+                                "startLine": 4,
+                                "startTokenPos": 6
+                            },
+                            "name": "a",
+                            "nodeType": "Expr_Variable"
+                        }
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

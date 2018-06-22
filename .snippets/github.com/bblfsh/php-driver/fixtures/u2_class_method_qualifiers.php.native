@@ -1,0 +1,136 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 162,
+                    "endLine": 7,
+                    "endTokenPos": 51,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "extends": null,
+                "flags": 0,
+                "implements": [],
+                "name": "testcls1",
+                "nodeType": "Stmt_Class",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 54,
+                            "endLine": 3,
+                            "endTokenPos": 16,
+                            "startFilePos": 27,
+                            "startLine": 3,
+                            "startTokenPos": 7
+                        },
+                        "byRef": false,
+                        "flags": 32,
+                        "name": "testfnc1",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 32
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 89,
+                            "endLine": 4,
+                            "endTokenPos": 27,
+                            "startFilePos": 60,
+                            "startLine": 4,
+                            "startTokenPos": 18
+                        },
+                        "byRef": false,
+                        "flags": 4,
+                        "name": "testfnc2",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 4
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 126,
+                            "endLine": 5,
+                            "endTokenPos": 38,
+                            "startFilePos": 95,
+                            "startLine": 5,
+                            "startTokenPos": 29
+                        },
+                        "byRef": false,
+                        "flags": 2,
+                        "name": "testfnc3",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 2
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 160,
+                            "endLine": 6,
+                            "endTokenPos": 49,
+                            "startFilePos": 132,
+                            "startLine": 6,
+                            "startTokenPos": 40
+                        },
+                        "byRef": false,
+                        "flags": 1,
+                        "name": "testfnc4",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 1
+                    }
+                ],
+                "type": 0
+            },
+            {
+                "attributes": {
+                    "endFilePos": 225,
+                    "endLine": 11,
+                    "endTokenPos": 70,
+                    "startFilePos": 165,
+                    "startLine": 9,
+                    "startTokenPos": 53
+                },
+                "extends": null,
+                "flags": 16,
+                "implements": [],
+                "name": "testcls2",
+                "nodeType": "Stmt_Class",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 223,
+                            "endLine": 10,
+                            "endTokenPos": 68,
+                            "startFilePos": 195,
+                            "startLine": 10,
+                            "startTokenPos": 61
+                        },
+                        "byRef": false,
+                        "flags": 16,
+                        "name": "testfnc5",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": null,
+                        "type": 16
+                    }
+                ],
+                "type": 16
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

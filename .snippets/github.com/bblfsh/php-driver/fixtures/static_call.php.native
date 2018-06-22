@@ -1,0 +1,451 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "args": [],
+                "attributes": {
+                    "endFilePos": 12,
+                    "endLine": 3,
+                    "endTokenPos": 6,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 7,
+                        "endLine": 3,
+                        "endTokenPos": 2,
+                        "startFilePos": 7,
+                        "startLine": 3,
+                        "startTokenPos": 2
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "A"
+                    ]
+                },
+                "name": "b",
+                "nodeType": "Expr_StaticCall"
+            },
+            {
+                "args": [],
+                "attributes": {
+                    "endFilePos": 24,
+                    "endLine": 4,
+                    "endTokenPos": 15,
+                    "startFilePos": 15,
+                    "startLine": 4,
+                    "startTokenPos": 9
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 15,
+                        "endLine": 4,
+                        "endTokenPos": 9,
+                        "startFilePos": 15,
+                        "startLine": 4,
+                        "startTokenPos": 9
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "A"
+                    ]
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 21,
+                        "endLine": 4,
+                        "endTokenPos": 12,
+                        "kind": 1,
+                        "startFilePos": 19,
+                        "startLine": 4,
+                        "startTokenPos": 12
+                    },
+                    "nodeType": "Scalar_String",
+                    "value": "b"
+                },
+                "nodeType": "Expr_StaticCall"
+            },
+            {
+                "args": [],
+                "attributes": {
+                    "endFilePos": 33,
+                    "endLine": 5,
+                    "endTokenPos": 22,
+                    "startFilePos": 27,
+                    "startLine": 5,
+                    "startTokenPos": 18
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 27,
+                        "endLine": 5,
+                        "endTokenPos": 18,
+                        "startFilePos": 27,
+                        "startLine": 5,
+                        "startTokenPos": 18
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "A"
+                    ]
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 31,
+                        "endLine": 5,
+                        "endTokenPos": 20,
+                        "startFilePos": 30,
+                        "startLine": 5,
+                        "startTokenPos": 20
+                    },
+                    "name": "b",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_StaticCall"
+            },
+            {
+                "args": [],
+                "attributes": {
+                    "endFilePos": 47,
+                    "endLine": 6,
+                    "endTokenPos": 32,
+                    "startFilePos": 36,
+                    "startLine": 6,
+                    "startTokenPos": 25
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 45,
+                        "endLine": 6,
+                        "endTokenPos": 30,
+                        "startFilePos": 36,
+                        "startLine": 6,
+                        "startTokenPos": 25
+                    },
+                    "dim": {
+                        "attributes": {
+                            "endFilePos": 44,
+                            "endLine": 6,
+                            "endTokenPos": 29,
+                            "kind": 1,
+                            "startFilePos": 42,
+                            "startLine": 6,
+                            "startTokenPos": 29
+                        },
+                        "nodeType": "Scalar_String",
+                        "value": "c"
+                    },
+                    "nodeType": "Expr_ArrayDimFetch",
+                    "var": {
+                        "attributes": {
+                            "endFilePos": 40,
+                            "endLine": 6,
+                            "endTokenPos": 27,
+                            "startFilePos": 36,
+                            "startLine": 6,
+                            "startTokenPos": 25
+                        },
+                        "class": {
+                            "attributes": {
+                                "endFilePos": 36,
+                                "endLine": 6,
+                                "endTokenPos": 25,
+                                "startFilePos": 36,
+                                "startLine": 6,
+                                "startTokenPos": 25
+                            },
+                            "nodeType": "Name",
+                            "parts": [
+                                "A"
+                            ]
+                        },
+                        "name": "b",
+                        "nodeType": "Expr_StaticPropertyFetch"
+                    }
+                },
+                "nodeType": "Expr_FuncCall"
+            },
+            {
+                "args": [],
+                "attributes": {
+                    "endFilePos": 66,
+                    "endLine": 7,
+                    "endTokenPos": 45,
+                    "startFilePos": 50,
+                    "startLine": 7,
+                    "startTokenPos": 35
+                },
+                "name": {
+                    "attributes": {
+                        "endFilePos": 64,
+                        "endLine": 7,
+                        "endTokenPos": 43,
+                        "startFilePos": 50,
+                        "startLine": 7,
+                        "startTokenPos": 35
+                    },
+                    "dim": {
+                        "attributes": {
+                            "endFilePos": 63,
+                            "endLine": 7,
+                            "endTokenPos": 42,
+                            "kind": 1,
+                            "startFilePos": 61,
+                            "startLine": 7,
+                            "startTokenPos": 42
+                        },
+                        "nodeType": "Scalar_String",
+                        "value": "d"
+                    },
+                    "nodeType": "Expr_ArrayDimFetch",
+                    "var": {
+                        "attributes": {
+                            "endFilePos": 59,
+                            "endLine": 7,
+                            "endTokenPos": 40,
+                            "startFilePos": 50,
+                            "startLine": 7,
+                            "startTokenPos": 35
+                        },
+                        "dim": {
+                            "attributes": {
+                                "endFilePos": 58,
+                                "endLine": 7,
+                                "endTokenPos": 39,
+                                "kind": 1,
+                                "startFilePos": 56,
+                                "startLine": 7,
+                                "startTokenPos": 39
+                            },
+                            "nodeType": "Scalar_String",
+                            "value": "c"
+                        },
+                        "nodeType": "Expr_ArrayDimFetch",
+                        "var": {
+                            "attributes": {
+                                "endFilePos": 54,
+                                "endLine": 7,
+                                "endTokenPos": 37,
+                                "startFilePos": 50,
+                                "startLine": 7,
+                                "startTokenPos": 35
+                            },
+                            "class": {
+                                "attributes": {
+                                    "endFilePos": 50,
+                                    "endLine": 7,
+                                    "endTokenPos": 35,
+                                    "startFilePos": 50,
+                                    "startLine": 7,
+                                    "startTokenPos": 35
+                                },
+                                "nodeType": "Name",
+                                "parts": [
+                                    "A"
+                                ]
+                            },
+                            "name": "b",
+                            "nodeType": "Expr_StaticPropertyFetch"
+                        }
+                    }
+                },
+                "nodeType": "Expr_FuncCall"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 80,
+                    "endLine": 9,
+                    "endTokenPos": 55,
+                    "startFilePos": 70,
+                    "startLine": 9,
+                    "startTokenPos": 48
+                },
+                "dim": {
+                    "attributes": {
+                        "endFilePos": 79,
+                        "endLine": 9,
+                        "endTokenPos": 54,
+                        "kind": 1,
+                        "startFilePos": 77,
+                        "startLine": 9,
+                        "startTokenPos": 54
+                    },
+                    "nodeType": "Scalar_String",
+                    "value": "c"
+                },
+                "nodeType": "Expr_ArrayDimFetch",
+                "var": {
+                    "args": [],
+                    "attributes": {
+                        "endFilePos": 75,
+                        "endLine": 9,
+                        "endTokenPos": 52,
+                        "startFilePos": 70,
+                        "startLine": 9,
+                        "startTokenPos": 48
+                    },
+                    "class": {
+                        "attributes": {
+                            "endFilePos": 70,
+                            "endLine": 9,
+                            "endTokenPos": 48,
+                            "startFilePos": 70,
+                            "startLine": 9,
+                            "startTokenPos": 48
+                        },
+                        "nodeType": "Name",
+                        "parts": [
+                            "A"
+                        ]
+                    },
+                    "name": "b",
+                    "nodeType": "Expr_StaticCall"
+                }
+            },
+            {
+                "args": [],
+                "attributes": {
+                    "endFilePos": 94,
+                    "endLine": 11,
+                    "endTokenPos": 62,
+                    "startFilePos": 84,
+                    "startLine": 11,
+                    "startTokenPos": 58
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 89,
+                        "endLine": 11,
+                        "endTokenPos": 58,
+                        "startFilePos": 84,
+                        "startLine": 11,
+                        "startTokenPos": 58
+                    },
+                    "nodeType": "Name",
+                    "parts": [
+                        "static"
+                    ]
+                },
+                "name": "b",
+                "nodeType": "Expr_StaticCall"
+            },
+            {
+                "args": [],
+                "attributes": {
+                    "endFilePos": 103,
+                    "endLine": 12,
+                    "endTokenPos": 69,
+                    "startFilePos": 97,
+                    "startLine": 12,
+                    "startTokenPos": 65
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 98,
+                        "endLine": 12,
+                        "endTokenPos": 65,
+                        "startFilePos": 97,
+                        "startLine": 12,
+                        "startTokenPos": 65
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "name": "b",
+                "nodeType": "Expr_StaticCall"
+            },
+            {
+                "args": [],
+                "attributes": {
+                    "endFilePos": 116,
+                    "endLine": 13,
+                    "endTokenPos": 79,
+                    "startFilePos": 106,
+                    "startLine": 13,
+                    "startTokenPos": 72
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 111,
+                        "endLine": 13,
+                        "endTokenPos": 75,
+                        "startFilePos": 106,
+                        "startLine": 13,
+                        "startTokenPos": 72
+                    },
+                    "name": {
+                        "attributes": {
+                            "endFilePos": 110,
+                            "endLine": 13,
+                            "endTokenPos": 74,
+                            "kind": 1,
+                            "startFilePos": 108,
+                            "startLine": 13,
+                            "startTokenPos": 74
+                        },
+                        "nodeType": "Scalar_String",
+                        "value": "a"
+                    },
+                    "nodeType": "Expr_Variable"
+                },
+                "name": "b",
+                "nodeType": "Expr_StaticCall"
+            },
+            {
+                "args": [],
+                "attributes": {
+                    "endFilePos": 130,
+                    "endLine": 14,
+                    "endTokenPos": 89,
+                    "startFilePos": 119,
+                    "startLine": 14,
+                    "startTokenPos": 82
+                },
+                "class": {
+                    "attributes": {
+                        "endFilePos": 125,
+                        "endLine": 14,
+                        "endTokenPos": 85,
+                        "startFilePos": 119,
+                        "startLine": 14,
+                        "startTokenPos": 82
+                    },
+                    "dim": {
+                        "attributes": {
+                            "endFilePos": 124,
+                            "endLine": 14,
+                            "endTokenPos": 84,
+                            "kind": 1,
+                            "startFilePos": 122,
+                            "startLine": 14,
+                            "startTokenPos": 84
+                        },
+                        "nodeType": "Scalar_String",
+                        "value": "b"
+                    },
+                    "nodeType": "Expr_ArrayDimFetch",
+                    "var": {
+                        "attributes": {
+                            "endFilePos": 120,
+                            "endLine": 14,
+                            "endTokenPos": 82,
+                            "startFilePos": 119,
+                            "startLine": 14,
+                            "startTokenPos": 82
+                        },
+                        "name": "a",
+                        "nodeType": "Expr_Variable"
+                    }
+                },
+                "name": "c",
+                "nodeType": "Expr_StaticCall"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

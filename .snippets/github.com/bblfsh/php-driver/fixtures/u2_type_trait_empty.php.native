@@ -1,0 +1,23 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 24,
+                    "endLine": 2,
+                    "endTokenPos": 6,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "name": "testtrait1",
+                "nodeType": "Stmt_Trait",
+                "stmts": []
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

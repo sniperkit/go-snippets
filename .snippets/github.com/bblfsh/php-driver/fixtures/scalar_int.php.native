@@ -1,0 +1,101 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 7,
+                    "endLine": 3,
+                    "endTokenPos": 2,
+                    "kind": 10,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "nodeType": "Scalar_LNumber",
+                "value": 0
+            },
+            {
+                "attributes": {
+                    "endFilePos": 10,
+                    "endLine": 4,
+                    "endTokenPos": 5,
+                    "kind": 10,
+                    "startFilePos": 10,
+                    "startLine": 4,
+                    "startTokenPos": 5
+                },
+                "nodeType": "Scalar_LNumber",
+                "value": 1
+            },
+            {
+                "attributes": {
+                    "endFilePos": 17,
+                    "endLine": 5,
+                    "endTokenPos": 8,
+                    "kind": 16,
+                    "startFilePos": 13,
+                    "startLine": 5,
+                    "startTokenPos": 8
+                },
+                "nodeType": "Scalar_LNumber",
+                "value": 4095
+            },
+            {
+                "attributes": {
+                    "endFilePos": 24,
+                    "endLine": 6,
+                    "endTokenPos": 11,
+                    "kind": 16,
+                    "startFilePos": 20,
+                    "startLine": 6,
+                    "startTokenPos": 11
+                },
+                "nodeType": "Scalar_LNumber",
+                "value": 4095
+            },
+            {
+                "attributes": {
+                    "endFilePos": 31,
+                    "endLine": 7,
+                    "endTokenPos": 14,
+                    "kind": 16,
+                    "startFilePos": 27,
+                    "startLine": 7,
+                    "startTokenPos": 14
+                },
+                "nodeType": "Scalar_LNumber",
+                "value": 4095
+            },
+            {
+                "attributes": {
+                    "endFilePos": 37,
+                    "endLine": 8,
+                    "endTokenPos": 17,
+                    "kind": 8,
+                    "startFilePos": 34,
+                    "startLine": 8,
+                    "startTokenPos": 17
+                },
+                "nodeType": "Scalar_LNumber",
+                "value": 511
+            },
+            {
+                "attributes": {
+                    "endFilePos": 53,
+                    "endLine": 9,
+                    "endTokenPos": 20,
+                    "kind": 2,
+                    "startFilePos": 40,
+                    "startLine": 9,
+                    "startTokenPos": 20
+                },
+                "nodeType": "Scalar_LNumber",
+                "value": 3640
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

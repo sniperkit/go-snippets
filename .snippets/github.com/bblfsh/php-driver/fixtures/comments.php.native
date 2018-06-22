@@ -1,0 +1,137 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "comments": [
+                        {
+                            "filePos": 7,
+                            "line": 3,
+                            "nodeType": "Comment_Doc",
+                            "text": "/** doc 1 */"
+                        },
+                        {
+                            "filePos": 20,
+                            "line": 4,
+                            "nodeType": "Comment",
+                            "text": "/* foobar 1 */"
+                        },
+                        {
+                            "filePos": 35,
+                            "line": 5,
+                            "nodeType": "Comment",
+                            "text": "// foo 1\n"
+                        },
+                        {
+                            "filePos": 44,
+                            "line": 6,
+                            "nodeType": "Comment",
+                            "text": "// bar 1\n"
+                        }
+                    ],
+                    "endFilePos": 56,
+                    "endLine": 7,
+                    "endTokenPos": 8,
+                    "startFilePos": 53,
+                    "startLine": 7,
+                    "startTokenPos": 8
+                },
+                "name": "var",
+                "nodeType": "Expr_Variable"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 135,
+                    "endLine": 14,
+                    "endTokenPos": 26,
+                    "startFilePos": 60,
+                    "startLine": 9,
+                    "startTokenPos": 11
+                },
+                "cond": {
+                    "attributes": {
+                        "endFilePos": 68,
+                        "endLine": 9,
+                        "endTokenPos": 14,
+                        "startFilePos": 64,
+                        "startLine": 9,
+                        "startTokenPos": 14
+                    },
+                    "name": "cond",
+                    "nodeType": "Expr_Variable"
+                },
+                "else": null,
+                "elseifs": [],
+                "nodeType": "Stmt_If",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "comments": [
+                                {
+                                    "filePos": 77,
+                                    "line": 10,
+                                    "nodeType": "Comment_Doc",
+                                    "text": "/** doc 2 */"
+                                },
+                                {
+                                    "filePos": 94,
+                                    "line": 11,
+                                    "nodeType": "Comment",
+                                    "text": "/* foobar 2 */"
+                                },
+                                {
+                                    "filePos": 113,
+                                    "line": 12,
+                                    "nodeType": "Comment",
+                                    "text": "// foo 2\n"
+                                },
+                                {
+                                    "filePos": 126,
+                                    "line": 13,
+                                    "nodeType": "Comment",
+                                    "text": "// bar 2\n"
+                                }
+                            ]
+                        },
+                        "nodeType": "Stmt_Nop"
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "comments": [
+                        {
+                            "filePos": 138,
+                            "line": 16,
+                            "nodeType": "Comment_Doc",
+                            "text": "/** doc 3 */"
+                        },
+                        {
+                            "filePos": 151,
+                            "line": 17,
+                            "nodeType": "Comment",
+                            "text": "/* foobar 3 */"
+                        },
+                        {
+                            "filePos": 166,
+                            "line": 18,
+                            "nodeType": "Comment",
+                            "text": "// foo 3\n"
+                        },
+                        {
+                            "filePos": 175,
+                            "line": 19,
+                            "nodeType": "Comment",
+                            "text": "// bar 3\n"
+                        }
+                    ]
+                },
+                "nodeType": "Stmt_Nop"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

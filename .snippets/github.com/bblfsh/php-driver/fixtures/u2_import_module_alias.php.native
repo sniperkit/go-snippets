@@ -1,0 +1,53 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 20,
+                    "endLine": 2,
+                    "endTokenPos": 12,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "nodeType": "Stmt_Use",
+                "type": 1,
+                "uses": [
+                    {
+                        "alias": "d",
+                        "attributes": {
+                            "endFilePos": 19,
+                            "endLine": 2,
+                            "endTokenPos": 11,
+                            "startFilePos": 10,
+                            "startLine": 2,
+                            "startTokenPos": 3
+                        },
+                        "name": {
+                            "attributes": {
+                                "endFilePos": 14,
+                                "endLine": 2,
+                                "endTokenPos": 7,
+                                "startFilePos": 10,
+                                "startLine": 2,
+                                "startTokenPos": 3
+                            },
+                            "nodeType": "Name",
+                            "parts": [
+                                "A",
+                                "B",
+                                "C"
+                            ]
+                        },
+                        "nodeType": "Stmt_UseUse",
+                        "type": 0
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

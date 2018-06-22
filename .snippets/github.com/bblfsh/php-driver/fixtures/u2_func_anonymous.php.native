@@ -1,0 +1,27 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 18,
+                    "endLine": 2,
+                    "endTokenPos": 6,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "byRef": false,
+                "nodeType": "Expr_Closure",
+                "params": [],
+                "returnType": null,
+                "static": false,
+                "stmts": [],
+                "uses": []
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

@@ -1,0 +1,263 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 17,
+                    "endLine": 2,
+                    "endTokenPos": 3,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 17,
+                        "endLine": 2,
+                        "endTokenPos": 3,
+                        "startFilePos": 16,
+                        "startLine": 2,
+                        "startTokenPos": 3
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_Cast_Array"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 31,
+                    "endLine": 3,
+                    "endTokenPos": 8,
+                    "startFilePos": 20,
+                    "startLine": 3,
+                    "startTokenPos": 6
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 31,
+                        "endLine": 3,
+                        "endTokenPos": 8,
+                        "startFilePos": 30,
+                        "startLine": 3,
+                        "startTokenPos": 8
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_Cast_Bool"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 45,
+                    "endLine": 4,
+                    "endTokenPos": 13,
+                    "startFilePos": 34,
+                    "startLine": 4,
+                    "startTokenPos": 11
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 45,
+                        "endLine": 4,
+                        "endTokenPos": 13,
+                        "startFilePos": 44,
+                        "startLine": 4,
+                        "startTokenPos": 13
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_Cast_Bool"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 59,
+                    "endLine": 5,
+                    "endTokenPos": 18,
+                    "startFilePos": 48,
+                    "startLine": 5,
+                    "startTokenPos": 16
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 59,
+                        "endLine": 5,
+                        "endTokenPos": 18,
+                        "startFilePos": 58,
+                        "startLine": 5,
+                        "startTokenPos": 18
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_Cast_Double"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 73,
+                    "endLine": 6,
+                    "endTokenPos": 23,
+                    "startFilePos": 62,
+                    "startLine": 6,
+                    "startTokenPos": 21
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 73,
+                        "endLine": 6,
+                        "endTokenPos": 23,
+                        "startFilePos": 72,
+                        "startLine": 6,
+                        "startTokenPos": 23
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_Cast_Double"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 87,
+                    "endLine": 7,
+                    "endTokenPos": 28,
+                    "startFilePos": 76,
+                    "startLine": 7,
+                    "startTokenPos": 26
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 87,
+                        "endLine": 7,
+                        "endTokenPos": 28,
+                        "startFilePos": 86,
+                        "startLine": 7,
+                        "startTokenPos": 28
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_Cast_Double"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 101,
+                    "endLine": 8,
+                    "endTokenPos": 33,
+                    "startFilePos": 90,
+                    "startLine": 8,
+                    "startTokenPos": 31
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 101,
+                        "endLine": 8,
+                        "endTokenPos": 33,
+                        "startFilePos": 100,
+                        "startLine": 8,
+                        "startTokenPos": 33
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_Cast_Int"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 115,
+                    "endLine": 9,
+                    "endTokenPos": 38,
+                    "startFilePos": 104,
+                    "startLine": 9,
+                    "startTokenPos": 36
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 115,
+                        "endLine": 9,
+                        "endTokenPos": 38,
+                        "startFilePos": 114,
+                        "startLine": 9,
+                        "startTokenPos": 38
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_Cast_Int"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 129,
+                    "endLine": 10,
+                    "endTokenPos": 43,
+                    "startFilePos": 118,
+                    "startLine": 10,
+                    "startTokenPos": 41
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 129,
+                        "endLine": 10,
+                        "endTokenPos": 43,
+                        "startFilePos": 128,
+                        "startLine": 10,
+                        "startTokenPos": 43
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_Cast_Object"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 143,
+                    "endLine": 11,
+                    "endTokenPos": 48,
+                    "startFilePos": 132,
+                    "startLine": 11,
+                    "startTokenPos": 46
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 143,
+                        "endLine": 11,
+                        "endTokenPos": 48,
+                        "startFilePos": 142,
+                        "startLine": 11,
+                        "startTokenPos": 48
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_Cast_String"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 157,
+                    "endLine": 12,
+                    "endTokenPos": 53,
+                    "startFilePos": 146,
+                    "startLine": 12,
+                    "startTokenPos": 51
+                },
+                "expr": {
+                    "attributes": {
+                        "endFilePos": 157,
+                        "endLine": 12,
+                        "endTokenPos": 53,
+                        "startFilePos": 156,
+                        "startLine": 12,
+                        "startTokenPos": 53
+                    },
+                    "name": "a",
+                    "nodeType": "Expr_Variable"
+                },
+                "nodeType": "Expr_Cast_Unset"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

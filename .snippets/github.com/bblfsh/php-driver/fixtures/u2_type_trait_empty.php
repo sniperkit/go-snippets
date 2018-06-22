@@ -1,0 +1,2 @@
+<?php
+trait testtrait1 {}

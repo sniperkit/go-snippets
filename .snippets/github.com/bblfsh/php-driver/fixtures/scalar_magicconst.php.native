@@ -1,0 +1,98 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 15,
+                    "endLine": 3,
+                    "endTokenPos": 2,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "nodeType": "Scalar_MagicConst_Class"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 24,
+                    "endLine": 4,
+                    "endTokenPos": 5,
+                    "startFilePos": 18,
+                    "startLine": 4,
+                    "startTokenPos": 5
+                },
+                "nodeType": "Scalar_MagicConst_Dir"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 34,
+                    "endLine": 5,
+                    "endTokenPos": 8,
+                    "startFilePos": 27,
+                    "startLine": 5,
+                    "startTokenPos": 8
+                },
+                "nodeType": "Scalar_MagicConst_File"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 48,
+                    "endLine": 6,
+                    "endTokenPos": 11,
+                    "startFilePos": 37,
+                    "startLine": 6,
+                    "startTokenPos": 11
+                },
+                "nodeType": "Scalar_MagicConst_Function"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 58,
+                    "endLine": 7,
+                    "endTokenPos": 14,
+                    "startFilePos": 51,
+                    "startLine": 7,
+                    "startTokenPos": 14
+                },
+                "nodeType": "Scalar_MagicConst_Line"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 70,
+                    "endLine": 8,
+                    "endTokenPos": 17,
+                    "startFilePos": 61,
+                    "startLine": 8,
+                    "startTokenPos": 17
+                },
+                "nodeType": "Scalar_MagicConst_Method"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 85,
+                    "endLine": 9,
+                    "endTokenPos": 20,
+                    "startFilePos": 73,
+                    "startLine": 9,
+                    "startTokenPos": 20
+                },
+                "nodeType": "Scalar_MagicConst_Namespace"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 96,
+                    "endLine": 10,
+                    "endTokenPos": 23,
+                    "startFilePos": 88,
+                    "startLine": 10,
+                    "startTokenPos": 23
+                },
+                "nodeType": "Scalar_MagicConst_Trait"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}
