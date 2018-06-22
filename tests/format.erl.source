@@ -1,0 +1,18 @@
+format(T) when is_list(T)->
+    format(list_to_tuple(T));
+format(T) ->
+    format(T, tuple_size(T), []).
+
+format(_, 0, Acc) ->
+    Result = case io_lib:printable_unicode_list(Acc) of
+        true -> list_to_binary(Acc);
+        false -> Acc
+    end,
+    Result;
+format(T, N, Acc) when is_tuple(element(N,T)) ->
+    format(T, N-1, [format(element(N,T),tuple_size(element(N,T)),[])|Acc]);
+format(T,N,Acc) when is_list(element(N,T)) ->
+    Tuple = list_to_tuple(element(N,T)),
+    format(T, N-1, [format(Tuple,tuple_size(Tuple),[])|Acc]);
+format(T,N,Acc)->
+    format(T,N-1,[element(N,T)|Acc]).
