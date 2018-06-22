@@ -1,0 +1,7 @@
+# AWS keys
+[AWS]
+pemPath = "[path/to/pem/file"
+userName = "root"
+remoteIP = "[public/ip]"
+localFilePath = "[path/to/local/file]"
+remoteFilePath = "[path/to/remote/file]"
