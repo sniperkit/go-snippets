@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>DevMine</title>
+  <meta name="description" content="DevMine - A developer search engine and source code analysis framework
+">
+  <meta name="author" content="Devmine team">
+
+  <link rel="shortcut icon" href="/assets/img/favicon.ico">
+
+  <link rel="stylesheet" href="/lib/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/assets/css/github-markdown.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="canonical" href="http://devmine.ch/">
+  <link rel="alternate" type="application/rss+xml" title="DevMine" href="http://devmine.ch/feed.xml" />
+
+  <script type="text/javascript" src="/lib/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/assets/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="/assets/js/scripts.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="/img/devmine-logo.png">&nbsp;DevMine</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/news/">News</a>
+          </li>
+          <li>
+            <a href="/project/">Project</a>
+          </li>
+          <li>
+            <a href="/downloads/">Downloads</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation<strong class="caret"></strong></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/doc/devmine/">Devmine</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="/doc/crawld">Crawld</a>
+              </li>
+              <li>
+                <a href="/doc/ght2dm">Ght2dm</a>
+              </li>
+              <li>
+                <a href="/doc/srccat">Srccat</a>
+              </li>
+              <li>
+                <a href="/doc/parsers">Parsers</a>
+              </li>
+              <li>
+                <a href="/doc/srctool/">Srctool</a>
+              </li>
+              <li>
+                <a href="/doc/repotool/">Repotool</a>
+              </li>
+              <li>
+                <a href="/doc/srcanlzr/">Srcanlzr</a>
+              </li>
+              <li>
+                <a href="/doc/fluxio/">Fluxio</a>
+              </li>
+              <li>
+                <a href="/doc/featscomp/">Featscomp</a>
+              </li>
+              <li>
+                <a href="/doc/api-server/">API-server</a>
+              </li>
+              <li>
+                <a href="/doc/webapp/">Webapp</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/about/">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</style><span id="forkongithub"><a href="https://github.com/DevMine">Fork me on GitHub</a></span>
+</header>
+
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <div class="container markdown-body">
+        <div class="row clearfix">
+    <div class="col-md-12 column">
+            <h1>
+                DevMine
+                <small>
+                    A developer search engine and source code analysis framework
+                </small>
+            </h1>
+        <div class="jumbotron" >
+            <p class="text-justify">
+                DevMine aims at providing a search engine for enterprises,
+                organizations or projects looking for software developers having
+                a set of skills that matches their requirements.
+            </p>
+            <p class="text-justify">
+                To achieve this goal, developers metadata analysis is performed,
+                leveraging content from platforms such as
+                <a href="https://github.com/">GitHub</a>.
+            </p>
+            <p class="text-justify">
+                Of course, analyzing only such platforms metadata would not be
+                sufficient to evaluate developers skills. Hence, source code
+                analysis is performed as well to evaluate code quality based on
+                open source contributions.
+            </p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/project/">Learn more</a>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-md-4 column">
+        <h2>Crawld</h2>
+        <p>
+            <code>crawld</code> is a data crawler and source code repository
+            fetcher. It is able to crawl metadata about source code repositories
+            and developers from websites such as
+            <a href="https://github.com">GitHub</a>.
+            All data is then stored into a database. Along with the metadata, it
+            is able to clone repositories source code for further analysis.
+        </p>
+        <p>
+            <a class="btn" href="/doc/crawld/">Learn more »</a>
+        </p>
+    </div>
+    <div class="col-md-4 column">
+        <h2>Ght2dm</h2>
+        <p>
+            <code>ght2dm</code> is a command line tool to import
+            <a href="http://ghtorrent.org/">GHTorrent</a>
+            MongoDB BSON dumps into the DevMine database.
+        </p>
+        <p>
+            <a class="btn" href="/doc/ght2dm/">Learn more »</a>
+        </p>
+    </div>
+    <div class="col-md-4 column">
+        <h2>Srccat</h2>
+        <p>
+            <code>srccat</code> is a tool that concatenates source code files
+            from repositories into large tar archives, suitable to store on
+            HDFS for further processing with
+            <a href="http://hadoop.apache.org/">Hadoop</a> or
+            <a href="https://spark.apache.org/">Spark</a>.
+        </p>
+        <p>
+            <a class="btn" href="/doc/srccat/">Learn more »</a>
+        </p>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-md-4 column">
+        <h2>Parsers</h2>
+        <p>
+            Languages parsers are used to parse source code repositories and
+            produce an extended custom abstract syntax tree as JSON, as defined
+            by <code>srcanlzr</code>.
+        </p>
+        <p>
+            <a class="btn" href="/doc/parsers/">Learn more »</a>
+        </p>
+    </div>
+    <div class="col-md-4 column">
+        <h2>Srctool</h2>
+        <p>
+            <code>srctool</code> is a command line tool to manage source code
+            parsers. It is able to download parsers from a web server, install
+            them and run them.In short, it is a manager for source code parsers.
+        </p>
+        <p>
+            <a class="btn" href="/doc/srctool/">Learn more »</a>
+        </p>
+    </div>
+    <div class="col-md-4 column">
+        <h2>Repotool</h2>
+        <p>
+            <code>repotool</code> is a command line tool that aggregates source
+            code repositories metadata (such as VCS type, commits and so on) in
+            order to add it to the JSON files produced by <code>srctool</code>.
+        </p>
+        <p>
+            <a class="btn" href="/doc/repotool/">Learn more »</a>
+        </p>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-md-4 column">
+        <h2>Srcanlzr</h2>
+        <p>
+            <code>srcanlzr</code> is a source code analyzer. It analyzes a
+            generic JSON representation of the source code, as generated by
+            a source code language parser (only Go and Java parsers exist
+            for now).
+        </p>
+        <p>
+            <a class="btn" href="/doc/srcanlzr/">Learn more »</a>
+        </p>
+    </div>
+    <div class="col-md-4 column">
+        <h2>Fluxio</h2>
+        <p>
+            <code>fluxio</code> is a command line tool to insert JSON data
+            from its standard input into a PostgreSQL 9.4+ jsonb store and which
+            can also output JSON from the database to its standard output.
+        </p>
+        <p>
+            <a class="btn" href="/doc/fluxio/">Learn more »</a>
+        </p>
+    </div>
+    <div class="col-md-4 column">
+        <h2>Featscomp</h2>
+        <p>
+            <code>featscomp</code> computes <em>features</em> from source code
+            data and developers metadata. A feature in the context of the
+            DevMine project is something like the proficiency of a user in a
+            certain programming language or paradigm, a developer reputation on
+            <a href="https://github.com">GitHub</a> and so on.
+        </p>
+        <p>
+            <a class="btn" href="/doc/featscomp/">Learn more »</a>
+        </p>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-md-4 column">
+        <h2>API-server</h2>
+        <p>
+            <code>devmine</code> is the API server. It provides a JSON RESTful
+            API to provide information computed by various DevMine sub-projects.
+            It is also able to answer queries to <em>rank</em> and filter
+            developers according to some user queries. Say a user wants to find
+            a good Go developer with some experience in Java and functional
+            programming as well, <code>devmine</code> is able to provide an
+            answer to that.
+        </p>
+        <p>
+            <a class="btn" href="/doc/api-server/">Learn more »</a>
+        </p>
+    </div>
+    <div class="col-md-4 column">
+        <h2>Webapp</h2>
+        <p>
+            <code>webapp</code> is a web front-end to the API server. More
+            precisely, it allows users to actually query the API server using
+            an intuitive, user-friendly interface.
+        </p>
+        <p>
+            <a class="btn" href="/doc/webapp/">Learn more »</a>
+        </p>
+    </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer id="footer">
+  <div class="container">
+    <p>
+      Copyright &copy; 2014-2015 - The DevMine authors
+      <a href="https://github.com/orgs/DevMine/people"><i class="fa fa-github"></i></a>
+      - <a href="/about">contact us!</a>
+    </p>
+    <p>
+    <small>Last site update: 2015-06-12 10:49:08 +0200</small>
+    </p>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>
