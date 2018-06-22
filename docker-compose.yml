@@ -1,0 +1,11 @@
+version: '2'
+services:
+  summitdb:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: summitdb
+    ports:
+      - "7481:7481"
+    volumes:
+      - ./data/summitdb:/data
