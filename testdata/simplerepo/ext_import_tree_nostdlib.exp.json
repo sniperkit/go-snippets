@@ -1,0 +1,40 @@
+{
+    "children": {
+        "django": {
+            "children": {
+                "django": {
+                    "children": {}, 
+                    "isleaf": "True"
+                }
+            }, 
+            "isleaf": "False"
+        }, 
+        "itsdangerous": {
+            "children": {}, 
+            "isleaf": "True"
+        }, 
+        "oauth": {
+            "children": {
+                "oauth": {
+                    "children": {}, 
+                    "isleaf": "True"
+                }
+            }, 
+            "isleaf": "True"
+        }, 
+        "repoze": {
+            "children": {
+                "lru": {
+                    "children": {}, 
+                    "isleaf": "True"
+                }
+            }, 
+            "isleaf": "False"
+        }, 
+        "snakefood": {
+            "children": {}, 
+            "isleaf": "True"
+        }
+    }, 
+    "isleaf": "False"
+}
