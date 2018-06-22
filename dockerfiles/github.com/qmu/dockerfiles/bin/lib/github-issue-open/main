@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd `dirname $0`/../../../
+
+issueNo=$(git rev-parse --abbrev-ref HEAD | grep -o 'i[0-9]*' | grep -o '[0-9]*$') 
+bin/vendor/git-open/git-open issue $issueNo

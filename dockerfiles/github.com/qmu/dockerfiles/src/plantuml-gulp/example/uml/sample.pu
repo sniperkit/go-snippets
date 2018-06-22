@@ -1,0 +1,11 @@
+@startuml ../img/
+class Hoge {
+    +hoge_attribute
+    +hoge_method()
+}
+class Poge {
+    +poge_attribute
+    +poge_method()
+}
+Hoge -- Poge
+@enduml

@@ -1,0 +1,35 @@
+#! /bin/sh
+
+# ------------------------
+#
+# Run a container as an example
+#
+# ------------------------
+
+cd `dirname $0`/../
+HERE=$(pwd)
+
+echo ""
+echo "----------------------------"
+echo "Running an example"
+echo "----------------------------"
+echo ""
+
+echo "see me on http://localhost:4444"
+echo "* stop me by 'docker stop selenium-standalone-chrome-debug-example'"
+echo ""
+
+docker run -d --rm \
+    -p 4444:4444 \
+    --name selenium-standalone-chrome-debug-example \
+    qmu1/selenium-standalone-chrome-debug:latest
+
+docker run -it --rm \
+    -v $HERE:/workspace \
+    --name selenium-webdriver-example \
+    --link selenium-standalone-chrome-debug-example:selenium-standalone-chrome-debug \
+    qmu1/selenium-webdriver-node:latest /bin/sh -c "
+        mocha sample.js --timeout=60000
+    "
+
+docker kill selenium-standalone-chrome-debug-example
