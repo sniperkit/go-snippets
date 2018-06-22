@@ -1,0 +1,85 @@
+path.data: data
+path.logs: log
+
+api_bind: 0.0.0.0:2900
+
+modules:
+- name: ui
+  enabled: false
+- name: api
+  enabled: false
+
+plugins:
+- name: csv2sql
+  enabled: true
+
+modules:
+- name: pipeline
+  enabled: true
+  runners:
+    - name: process_excel
+      enabled: true
+      input_queue: primary
+      max_go_routine: 1
+      threshold_in_ms: 0
+      timeout_in_ms: 5000
+      default_config:
+        start:
+          joint: read_csv
+          enabled: true
+          parameters:
+            file_name: "test/import.xlsx"
+        process:
+        - joint: convert_sql
+          enabled: true
+          parameters:
+            sheet_name: fish_information
+            data_start_from_index: 3
+            column_name:
+            - id
+            - outer_code
+            - common_name
+            - scientific_name
+            - english_name
+            - chinese_name
+            - region_name
+            - aquatic_category_id
+            - category_name
+            - is_homemade
+            - aquatic_region_id
+            - inner_code
+            - produce_pattern
+            - feed_pattern
+            - catch_pattern
+            row_format:
+            - 'INSERT INTO `aquatic_base_info` (`id`, `outer_code`, `common_name`, `scientific_name`, `english_name`, `chinese_name`, `region_name`, `aquatic_category_id`)'
+            - 'VALUES (<{id: }>, <{outer_code: }>, <{common_name: }>, <{scientific_name: }>, <{english_name: }>, <{chinese_name: }>, <{region_name: }>, <{aquatic_category_id: }>);'
+            - 'INSERT INTO `aquatic_source` (`inner_code`, `aquatic_base_info_id`, `is_homemade`, `aquatic_region_id`, `produce_pattern`, `feed_pattern`, `catch_pattern`) '
+            - 'VALUES (<{inner_code: }>, <{id: }>, <{is_homemade: }>, <{aquatic_region_id: }>, <{produce_pattern: }>, <{feed_pattern: }>, <{catch_pattern: }>);'
+
+        - joint: convert_sql
+          enabled: true
+          parameters:
+            sheet_name: aquatic_region
+            data_start_from_index: 1
+            column_name:
+            - id
+            - code
+            - name
+            - is_homemade
+            row_format:
+            - 'INSERT INTO `aquatic_region` (`id`, `code`, `name`, `is_homemade`) VALUES (<{id: }>, <{code: }>, <{name: }>, <{is_homemade: }>);'
+
+        - joint: import_sql
+          enabled: true
+          parameters:
+            mysql_conn: root:qeephp@tcp(localhost:3306)/ifish?charset=utf8
+            rollback_enabled: true
+
+        - joint: logging
+          enabled: true
+
+        error:
+          joint: on_error
+          enabled: true
+
