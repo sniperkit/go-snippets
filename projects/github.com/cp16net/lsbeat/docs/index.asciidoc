@@ -1,0 +1,5 @@
+= Lsbeat Docs
+
+Welcome to the Lsbeat documentation.
+
+
