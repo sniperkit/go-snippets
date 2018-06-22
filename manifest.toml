@@ -1,0 +1,14 @@
+name = "Bash"
+language = "bash"
+status = "beta"
+features = ["ast","uast","roles"]
+
+[documentation]
+description  = """
+bash driver for [babelfish](https://github.com/bblfsh/bblfshd).
+"""
+
+[runtime]
+os = "alpine"
+go_version = "1.9"
+native_version = ["8.151.12-r0"]

@@ -1,0 +1,516 @@
+{
+    "status": "ok",
+    "language": "bash",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "elementType": "[Bash] for",
+                        "startOffset": 0,
+                        "text": "for",
+                        "textLength": 3
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 3,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "elementType": "[Bash] word",
+                                "startOffset": 4,
+                                "text": "a",
+                                "textLength": 1
+                            }
+                        ],
+                        "elementType": "var-def-element",
+                        "startOffset": 4,
+                        "text": "a",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] ;",
+                        "startOffset": 5,
+                        "text": ";",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 6,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] do",
+                        "startOffset": 7,
+                        "text": "do",
+                        "textLength": 2
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 9,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "elementType": "[Bash] word",
+                                                        "startOffset": 10,
+                                                        "text": "b",
+                                                        "textLength": 1
+                                                    }
+                                                ],
+                                                "elementType": "[Bash] combined word",
+                                                "startOffset": 10,
+                                                "text": "b",
+                                                "textLength": 1
+                                            }
+                                        ],
+                                        "elementType": "[Bash] generic bash command",
+                                        "startOffset": 10,
+                                        "text": "b",
+                                        "textLength": 1
+                                    }
+                                ],
+                                "elementType": "simple-command",
+                                "startOffset": 10,
+                                "text": "b",
+                                "textLength": 1
+                            }
+                        ],
+                        "elementType": "logical block",
+                        "startOffset": 10,
+                        "text": "b",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] ;",
+                        "startOffset": 11,
+                        "text": ";",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 12,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] done",
+                        "startOffset": 13,
+                        "text": "done",
+                        "textLength": 4
+                    }
+                ],
+                "elementType": "for shellcommand",
+                "startOffset": 0,
+                "text": "for a; do b; done",
+                "textLength": 17
+            },
+            {
+                "children": [],
+                "elementType": "[Bash] linefeed",
+                "startOffset": 17,
+                "text": "\n",
+                "textLength": 1
+            },
+            {
+                "children": [],
+                "elementType": "[Bash] linefeed",
+                "startOffset": 18,
+                "text": "\n",
+                "textLength": 1
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "elementType": "[Bash] for",
+                        "startOffset": 19,
+                        "text": "for",
+                        "textLength": 3
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 22,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "elementType": "[Bash] word",
+                                "startOffset": 23,
+                                "text": "c",
+                                "textLength": 1
+                            }
+                        ],
+                        "elementType": "var-def-element",
+                        "startOffset": 23,
+                        "text": "c",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 24,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] in",
+                        "startOffset": 25,
+                        "text": "in",
+                        "textLength": 2
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 27,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "elementType": "[Bash] word",
+                                "startOffset": 28,
+                                "text": "d",
+                                "textLength": 1
+                            }
+                        ],
+                        "elementType": "[Bash] combined word",
+                        "startOffset": 28,
+                        "text": "d",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] ;",
+                        "startOffset": 29,
+                        "text": ";",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 30,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] do",
+                        "startOffset": 31,
+                        "text": "do",
+                        "textLength": 2
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 33,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "elementType": "[Bash] word",
+                                                        "startOffset": 34,
+                                                        "text": "e",
+                                                        "textLength": 1
+                                                    }
+                                                ],
+                                                "elementType": "[Bash] combined word",
+                                                "startOffset": 34,
+                                                "text": "e",
+                                                "textLength": 1
+                                            }
+                                        ],
+                                        "elementType": "[Bash] generic bash command",
+                                        "startOffset": 34,
+                                        "text": "e",
+                                        "textLength": 1
+                                    }
+                                ],
+                                "elementType": "simple-command",
+                                "startOffset": 34,
+                                "text": "e",
+                                "textLength": 1
+                            }
+                        ],
+                        "elementType": "logical block",
+                        "startOffset": 34,
+                        "text": "e",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] ;",
+                        "startOffset": 35,
+                        "text": ";",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 36,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] done",
+                        "startOffset": 37,
+                        "text": "done",
+                        "textLength": 4
+                    }
+                ],
+                "elementType": "for shellcommand",
+                "startOffset": 19,
+                "text": "for c in d; do e; done",
+                "textLength": 22
+            },
+            {
+                "children": [],
+                "elementType": "[Bash] linefeed",
+                "startOffset": 41,
+                "text": "\n",
+                "textLength": 1
+            },
+            {
+                "children": [],
+                "elementType": "[Bash] linefeed",
+                "startOffset": 42,
+                "text": "\n",
+                "textLength": 1
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "elementType": "[Bash] for",
+                        "startOffset": 43,
+                        "text": "for",
+                        "textLength": 3
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 46,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "elementType": "[Bash] word",
+                                "startOffset": 47,
+                                "text": "f",
+                                "textLength": 1
+                            }
+                        ],
+                        "elementType": "var-def-element",
+                        "startOffset": 47,
+                        "text": "f",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 48,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] in",
+                        "startOffset": 49,
+                        "text": "in",
+                        "textLength": 2
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 51,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "elementType": "[Bash] word",
+                                "startOffset": 52,
+                                "text": "g",
+                                "textLength": 1
+                            }
+                        ],
+                        "elementType": "[Bash] combined word",
+                        "startOffset": 52,
+                        "text": "g",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] ;",
+                        "startOffset": 53,
+                        "text": ";",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "WHITE_SPACE",
+                        "startOffset": 54,
+                        "text": " ",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] do",
+                        "startOffset": 55,
+                        "text": "do",
+                        "textLength": 2
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "elementType": "[Bash] linefeed",
+                                "startOffset": 57,
+                                "text": "\n",
+                                "textLength": 1
+                            },
+                            {
+                                "children": [],
+                                "elementType": "WHITE_SPACE",
+                                "startOffset": 58,
+                                "text": " ",
+                                "textLength": 1
+                            },
+                            {
+                                "children": [],
+                                "elementType": "WHITE_SPACE",
+                                "startOffset": 59,
+                                "text": " ",
+                                "textLength": 1
+                            },
+                            {
+                                "children": [],
+                                "elementType": "WHITE_SPACE",
+                                "startOffset": 60,
+                                "text": " ",
+                                "textLength": 1
+                            },
+                            {
+                                "children": [],
+                                "elementType": "WHITE_SPACE",
+                                "startOffset": 61,
+                                "text": " ",
+                                "textLength": 1
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "elementType": "[Bash] word",
+                                                        "startOffset": 62,
+                                                        "text": "h",
+                                                        "textLength": 1
+                                                    }
+                                                ],
+                                                "elementType": "[Bash] combined word",
+                                                "startOffset": 62,
+                                                "text": "h",
+                                                "textLength": 1
+                                            }
+                                        ],
+                                        "elementType": "[Bash] generic bash command",
+                                        "startOffset": 62,
+                                        "text": "h",
+                                        "textLength": 1
+                                    }
+                                ],
+                                "elementType": "simple-command",
+                                "startOffset": 62,
+                                "text": "h",
+                                "textLength": 1
+                            }
+                        ],
+                        "elementType": "logical block",
+                        "startOffset": 57,
+                        "text": "\n    h",
+                        "textLength": 6
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] linefeed",
+                        "startOffset": 63,
+                        "text": "\n",
+                        "textLength": 1
+                    },
+                    {
+                        "children": [],
+                        "elementType": "[Bash] done",
+                        "startOffset": 64,
+                        "text": "done",
+                        "textLength": 4
+                    }
+                ],
+                "elementType": "for shellcommand",
+                "startOffset": 43,
+                "text": "for f in g; do\n    h\ndone",
+                "textLength": 25
+            },
+            {
+                "children": [],
+                "elementType": "[Bash] linefeed",
+                "startOffset": 68,
+                "text": "\n",
+                "textLength": 1
+            }
+        ],
+        "elementType": "FILE",
+        "startOffset": 0,
+        "text": "for a; do b; done\n\nfor c in d; do e; done\n\nfor f in g; do\n    h\ndone\n",
+        "textLength": 69
+    }
+}
