@@ -1,0 +1,14 @@
+bin/
+**/*.pyc
+.vagrant
+vagrant/
+docs/
+scripts/gobgp
+# this is the dockerfile for binary compilation, other dockerfiles
+# may want archive artifacts, but this one does not
+*.tar
+**/*.tar.gz
+*.bz2
+# export from a docker container, no need to copy into any docker containers
+install/v2plugin/rootfs
+vagrant/k8s/export/netctl
