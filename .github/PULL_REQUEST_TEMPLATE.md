@@ -16,3 +16,10 @@
 1.
 
 ## Final comments 
+
+## Checklist
+
+- [ ] run `go test` and `go test -bench=.`
+- [ ] tests and/or benchmarks are included
+- [ ] documentation is changed or added
+- [ ] commit message and code follows [Code of conduct](https://github.com/netzkern/butler/blob/master/CODE_OF_CONDUCT.md)
