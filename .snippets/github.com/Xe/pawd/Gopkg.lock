@@ -1,0 +1,97 @@
+memo = "739a17caabc44c69f227066200a36e8b81be5184825959f307ae5e4e15c35569"
+
+[[projects]]
+  name = "github.com/Xe/ln"
+  packages = ["."]
+  revision = "466e05b2ef3e48ce08a367b6aaac09ee29a124e5"
+  version = "v0.1"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/Xe/uuid"
+  packages = ["."]
+  revision = "62b230097e9c9534ca2074782b25d738c4b68964"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/asdine/storm"
+  packages = [".","codec","codec/json","index","internal","q"]
+  revision = "328c29d527ef50fe6a6b1bd1cc90a0c3ccfec683"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/boltdb/bolt"
+  packages = ["."]
+  revision = "e9cf4fae01b5a8ff89d0ec6b32f0d9c9f79aefdd"
+
+[[projects]]
+  name = "github.com/caarlos0/env"
+  packages = ["."]
+  revision = "9de094f90fa8a13dc162e10ae8a3b95c0c2c33e1"
+  version = "v3.1.1"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/emirpasic/gods"
+  packages = ["containers","trees","trees/redblacktree","utils"]
+  revision = "ec46b0116df083cba218abbf72522c6d0c065e4e"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/golang/mock"
+  packages = ["gomock"]
+  revision = "d581abfc04272f381d7a05e4b80163ea4e2b9447"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/golang/protobuf"
+  packages = ["proto","ptypes/any"]
+  revision = "18c9bb3261723cd5401db4d0c9fbc5c3b6c70fe8"
+
+[[projects]]
+  name = "github.com/joho/godotenv"
+  packages = [".","autoload"]
+  revision = "a79fa1e548e2c689c241d10173efd51e5d689d5b"
+  version = "v1.2.0"
+
+[[projects]]
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
+  version = "v0.8.0"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = ["bcrypt","blowfish"]
+  revision = "9f005a07e0d31d45e6656d241bb5c0f2efd4bc94"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/net"
+  packages = ["context","http2","http2/hpack","idna","internal/timeseries","lex/httplex","trace"]
+  revision = "66aacef3dd8a676686c7ae3716979581e8b03c47"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/sys"
+  packages = ["unix"]
+  revision = "9ccfe848b9db8435a24c424abbc07a921adf1df5"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/text"
+  packages = ["internal/gen","internal/triegen","internal/ucd","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
+  revision = "470f45bf29f4147d6fbd7dfd0a02a848e49f5bf4"
+
+[[projects]]
+  branch = "master"
+  name = "google.golang.org/genproto"
+  packages = ["googleapis/rpc/status"]
+  revision = "411e09b969b1170a9f0c467558eb4c4c110d9c77"
+
+[[projects]]
+  branch = "master"
+  name = "google.golang.org/grpc"
+  packages = [".","codes","credentials","grpclb/grpc_lb_v1","grpclog","internal","keepalive","metadata","naming","peer","stats","status","tap","transport"]
+  revision = "0eb507a2ca07f13baf499f89d66cc566bf644643"
