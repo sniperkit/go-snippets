@@ -1,0 +1,19 @@
+builds:
+  - main: main.go
+    binary: duck
+    goos:
+      - darwin
+      - linux
+      - freebsd
+    goarch:
+      - amd64
+      - arm
+      - arm64
+    ldflags: -s -w -X main.DuckVersion={{.Version}}
+# Archive customization
+archive:
+  format: tar.gz
+  replacements:
+    amd64: 64-bit
+    darwin: macOS
+
