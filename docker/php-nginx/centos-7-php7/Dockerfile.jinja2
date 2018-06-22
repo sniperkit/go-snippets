@@ -1,0 +1,13 @@
+{{ docker.from("php", "centos-7-php7") }}
+
+{{ environment.web() }}
+{{ environment.webPhp() }}
+
+{{ docker.copy('conf/', '/opt/docker/') }}
+
+RUN set -x \
+    {{ nginx.centos() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}
+
+{{ docker.expose('80 443') }}

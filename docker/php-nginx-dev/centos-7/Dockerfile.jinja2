@@ -1,0 +1,12 @@
+{{ docker.from("php-nginx", "centos-7") }}
+
+{{ environment.web() }}
+{{ environment.webPhp() }}
+{{ environment.webDevelopment() }}
+
+{{ docker.copy('conf/', '/opt/docker/') }}
+
+RUN set -x \
+    {{ php5dev.centos() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}

@@ -1,0 +1,12 @@
+{{ baselayout.dockerStage() }}
+
+{{ docker.fromOfficial("debian", "stretch") }}
+
+{{ docker.version() }}
+
+{{ environment.general() }}
+
+{{ baselayout.copy() }}
+
+RUN set -x \
+    {{ bootstrap.debian('stretch') }}

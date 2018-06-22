@@ -1,0 +1,6 @@
+{{ docker.from("bootstrap", "alpine") }}
+
+RUN set -x \
+    {{ ansible.alpine() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}

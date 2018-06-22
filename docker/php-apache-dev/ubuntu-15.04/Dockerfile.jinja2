@@ -1,0 +1,12 @@
+{{ docker.from("php-apache", "ubuntu-15.04") }}
+
+{{ environment.web() }}
+{{ environment.webPhp() }}
+{{ environment.webDevelopment() }}
+
+{{ docker.copy('conf/', '/opt/docker/') }}
+
+RUN set -x \
+    {{ php5dev.ubuntu() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}

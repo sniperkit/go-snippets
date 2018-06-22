@@ -1,0 +1,14 @@
+{{ baselayout.dockerStage() }}
+
+{{ docker.fromOfficial("centos", "7") }}
+
+{{ docker.version() }}
+
+{{ environment.general(charset='en_US.utf8') }}
+
+{{ baselayout.copy() }}
+
+RUN set -x \
+    {{ bootstrap.centos() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}

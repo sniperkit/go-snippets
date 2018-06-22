@@ -1,0 +1,13 @@
+{{ docker.from("php-nginx", "7.1") }}
+
+ENV WEB_DOCUMENT_ROOT  /app/piwik/
+ENV PIWIK_URL          http://example.com/
+
+{{ docker.copy('conf/', '/opt/docker/') }}
+
+RUN set -x \
+    {{ piwik.install() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}
+
+VOLUME /app
