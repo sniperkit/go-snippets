@@ -1,0 +1,16 @@
+{
+    "ghtorrent_folders": [
+        "/path/to/bson/users",
+        "/path/to/bson/org_members",
+        "/path/to/bson/repos",
+        "/path/to/bson/repo_collaborators"
+    ],
+    "devmine_database": {
+        "host": "localhost",
+        "port": 5432,
+        "user": "postgres",
+        "password": "postgres",
+        "database": "devmine",
+        "ssl_mode": "disable"
+    }
+}
