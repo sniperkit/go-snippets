@@ -1,0 +1,5 @@
+*.ipynb linguist-language=Python
+pages/* linguist-documentation
+site/* linguist-documentation
+theme/* linguist-documentation
+*.html linguist-documentation

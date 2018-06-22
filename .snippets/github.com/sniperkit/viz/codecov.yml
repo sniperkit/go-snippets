@@ -1,0 +1,10 @@
+comment:
+    layout: header, changes, diff
+
+coverage:
+    ignore:
+        - githubstats/lib/*
+        - githubstats/data/*
+        - githubstats/user_geocoder.py
+        - language_stats/*
+        - tests/*
