@@ -331,6 +331,148 @@ fengyfei/nuts	https://github.com/fengyfei/nuts
 Bac 2018 : quand des candidats peuvent consulter les sujets à l'avance, en toute légalité	https://www.francetvinfo.fr/bac/bac-2018-quand-des-candidats-peuvent-consulter-les-sujets-a-l-avance-en-toute-legalite_2812785.html?utm_campaign=Echobox&utm_medium=Social&utm_source=Facebook&Echobox=1529642629#xtor=CS1-746
 New Tab	chrome://newtab/
 
+docker images - Go libraries and applications	https://golanglibs.com/search?q=docker+images&sort=top
+openshift/source-to-image: A tool for building/building artifacts from source and injecting into docker images	https://github.com/openshift/source-to-image
+golang-open-project/build.go at master · sinlov/golang-open-project	https://github.com/sinlov/golang-open-project/blob/master/en/build.go
+openshift/source-to-image: A tool for building/building artifacts from source and injecting into docker images	https://github.com/openshift/source-to-image
+AnalogRepublic/kongctl: CLI tool to version & manage your Kong APIs, Plugins and Consumers. Supporting multiple contexts, exports and diffs.	https://github.com/AnalogRepublic/kongctl
+forj-oss/forjj-modules: FORJJ Go module to manage forjj cli and data to send out to FORJJ plugins	https://github.com/forj-oss/forjj-modules
+VividCortex/godaemon: Daemonize Go applications deviously.	https://github.com/VividCortex/godaemon
+tyranron/daemonigo: A simple wrapper to daemonize Go applications.	https://github.com/tyranron/daemonigo
+tim1020/godaemon: a tools for go app daemonize	https://github.com/tim1020/godaemon
+chaten/go-daemon: A library to Daemonize a go process	https://github.com/chaten/go-daemon
+joshlf/daemonize	https://github.com/joshlf/daemonize
+lime-tech/go-cli-stub: Golang daemon/CLI application boilerplate	https://github.com/lime-tech/go-cli-stub
+simeji/jid: json incremental digger	https://github.com/simeji/jid
+bfirsh/whalebrew: Homebrew, but with Docker images	https://github.com/bfirsh/whalebrew
+SimonWaldherr/golang-examples: Go(lang) examples - (explain the basics of golang)	https://github.com/SimonWaldherr/golang-examples
+assembla/svn2go: libsvn bindings to go	https://github.com/assembla/svn2go
+jkawamoto/fgo: Build, upload, and create brew formulae for golang applications.	https://github.com/jkawamoto/fgo
+Page not found · GitHub	https://github.com/themalkolm/brew-me
+TeamMacLean/BrewLink: Link tools installed with brew to a sourceable path	https://github.com/TeamMacLean/BrewLink
+seungbemi/packageManager: Alfred workflow utility for managing packages of brew, cask, MAS	https://github.com/seungbemi/packageManager
+selfup/GoBrew: update brew and everything for you with binary or go	https://github.com/selfup/GoBrew
+heewa/glide-brew: Convert Go deps managed by glide to Homebrew resources	https://github.com/heewa/glide-brew
+machinebox/toys: Tools, scripts, toys, and utilities for Machine Box	https://github.com/machinebox/toys
+lytics/multibayes: Multiclass Naive Bayesian Classification	https://github.com/lytics/multibayes
+tkng/rakai: simple, strong baseline for multiclass document classification	https://github.com/tkng/rakai
+syou6162/go-active-learning: go-active-learning is a command line annotation tool for binary classification problem written in Go.	https://github.com/syou6162/go-active-learning
+hiro4bbh/sticker: Package sticker provides a framework for multi-label classification.	https://github.com/hiro4bbh/sticker
+ai-brasil/knngo: KNN library to classification problems	https://github.com/ai-brasil/knngo
+jbowles/wordlab: pre-processes and formats words, specifically for use in classification or clustering algorithms (knn, k-means, x-means, etc...)	https://github.com/jbowles/wordlab
+serkas/salias: Text classification engine with REST interface	https://github.com/serkas/salias
+jbeleno/mlclassifier-api: An API for text classification.	https://github.com/jbeleno/mlclassifier-api
+unixpickle/tweeters: Meta-learning ML to classify twitter users	https://github.com/unixpickle/tweeters
+sinlov/golang-open-project: This repository for collect and classify golang open project	https://github.com/sinlov/golang-open-project
+OhohLeo/Classify: Classify Collections Tool	https://github.com/OhohLeo/Classify
+olesho/classify	https://github.com/olesho/classify
+kkserver/kk-classify	https://github.com/kkserver/kk-classify
+lytics/multibayes: Multiclass Naive Bayesian Classification	https://github.com/lytics/multibayes
+Masterminds/structable: Golang struct-to-table database mapper	https://github.com/Masterminds/structable
+devfeel/mapper: Simple and easy go mapper for struct or map to struct, slice or map to slice	https://github.com/devfeel/mapper
+ngorm/ngorm: Neo GORM: The modern fork of gorm The fantastic ORM( Object Relational Mapper ) for Go	https://github.com/ngorm/ngorm
+pote/gohm: Go's Object Hash Mapper	https://github.com/pote/gohm
+nlf/boltons: a struct mapper wrapper for golang and boltdb	https://github.com/nlf/boltons
+goutils/structmapper: Mapper to map fields from one struct type to another	https://github.com/goutils/structmapper
+assertis/url-mapper	https://github.com/assertis/url-mapper
+moddyz/pokemapgo: Pokemon Mapper Service written in Golang	https://github.com/moddyz/pokemapgo
+zonkiie/rdb2om: rdb2om - Relational Database to Object Mapper	https://github.com/zonkiie/rdb2om
+ernestio/definition-mapper: Validates the input yaml definition and generates a workflow and service definition.	https://github.com/ernestio/definition-mapper
+wenj91/sql-mapper: golang sql mapper util	https://github.com/wenj91/sql-mapper
+jimmyfrasche/autoreadme: Automatically create github README.md's from Go source code	https://github.com/jimmyfrasche/autoreadme
+writroll/writroll.go at master · bobesa/writroll	https://github.com/bobesa/writroll/blob/master/writroll.go
+mutable/container-factory: container-factory produces Docker images from tarballs of application source code	https://github.com/mutable/container-factory
+jakewright/tutorials: Source code from Jake Wright's YouTube tutorials	https://github.com/jakewright/tutorials
+feyeleanor/GoNotebook: All source code from my golang book A Go Developer's Notebook	https://github.com/feyeleanor/GoNotebook
+jpoirier/algorithms: Go language implementation of selected algorithms from the "Algorithms in a Nutshell" book. The source code attempts to follow, as closely as possible, the algorithm pseudocode from the book. This is an ongoing project	https://github.com/jpoirier/algorithms
+kalyan02/go-getstructs: Extract struct types from a go source code directory	https://github.com/kalyan02/go-getstructs
+FidelityWires/elit: Generate elasticsearch index template from golang source code	https://github.com/FidelityWires/elit
+bobesa/writroll: Type source code automatically from given directory	https://github.com/bobesa/writroll
+yashrajsingh/Mastering-Concurrency-in-Go---Examples: Source code, exercises from the book "Mastering Concurrency in Go" by Nathan Kozyra	https://github.com/yashrajsingh/Mastering-Concurrency-in-Go---Examples
+docker images - Go libraries and applications	https://golanglibs.com/search?q=docker+images&sort=top
+openshift/source-to-image: A tool for building/building artifacts from source and injecting into docker images	https://github.com/openshift/source-to-image
+golang-open-project/build.go at master · sinlov/golang-open-project	https://github.com/sinlov/golang-open-project/blob/master/en/build.go
+openshift/source-to-image: A tool for building/building artifacts from source and injecting into docker images	https://github.com/openshift/source-to-image
+AnalogRepublic/kongctl: CLI tool to version & manage your Kong APIs, Plugins and Consumers. Supporting multiple contexts, exports and diffs.	https://github.com/AnalogRepublic/kongctl
+forj-oss/forjj-modules: FORJJ Go module to manage forjj cli and data to send out to FORJJ plugins	https://github.com/forj-oss/forjj-modules
+VividCortex/godaemon: Daemonize Go applications deviously.	https://github.com/VividCortex/godaemon
+tyranron/daemonigo: A simple wrapper to daemonize Go applications.	https://github.com/tyranron/daemonigo
+tim1020/godaemon: a tools for go app daemonize	https://github.com/tim1020/godaemon
+chaten/go-daemon: A library to Daemonize a go process	https://github.com/chaten/go-daemon
+joshlf/daemonize	https://github.com/joshlf/daemonize
+lime-tech/go-cli-stub: Golang daemon/CLI application boilerplate	https://github.com/lime-tech/go-cli-stub
+simeji/jid: json incremental digger	https://github.com/simeji/jid
+bfirsh/whalebrew: Homebrew, but with Docker images	https://github.com/bfirsh/whalebrew
+SimonWaldherr/golang-examples: Go(lang) examples - (explain the basics of golang)	https://github.com/SimonWaldherr/golang-examples
+assembla/svn2go: libsvn bindings to go	https://github.com/assembla/svn2go
+jkawamoto/fgo: Build, upload, and create brew formulae for golang applications.	https://github.com/jkawamoto/fgo
+Page not found · GitHub	https://github.com/themalkolm/brew-me
+TeamMacLean/BrewLink: Link tools installed with brew to a sourceable path	https://github.com/TeamMacLean/BrewLink
+seungbemi/packageManager: Alfred workflow utility for managing packages of brew, cask, MAS	https://github.com/seungbemi/packageManager
+selfup/GoBrew: update brew and everything for you with binary or go	https://github.com/selfup/GoBrew
+heewa/glide-brew: Convert Go deps managed by glide to Homebrew resources	https://github.com/heewa/glide-brew
+machinebox/toys: Tools, scripts, toys, and utilities for Machine Box	https://github.com/machinebox/toys
+lytics/multibayes: Multiclass Naive Bayesian Classification	https://github.com/lytics/multibayes
+tkng/rakai: simple, strong baseline for multiclass document classification	https://github.com/tkng/rakai
+syou6162/go-active-learning: go-active-learning is a command line annotation tool for binary classification problem written in Go.	https://github.com/syou6162/go-active-learning
+hiro4bbh/sticker: Package sticker provides a framework for multi-label classification.	https://github.com/hiro4bbh/sticker
+ai-brasil/knngo: KNN library to classification problems	https://github.com/ai-brasil/knngo
+jbowles/wordlab: pre-processes and formats words, specifically for use in classification or clustering algorithms (knn, k-means, x-means, etc...)	https://github.com/jbowles/wordlab
+serkas/salias: Text classification engine with REST interface	https://github.com/serkas/salias
+jbeleno/mlclassifier-api: An API for text classification.	https://github.com/jbeleno/mlclassifier-api
+unixpickle/tweeters: Meta-learning ML to classify twitter users	https://github.com/unixpickle/tweeters
+sinlov/golang-open-project: This repository for collect and classify golang open project	https://github.com/sinlov/golang-open-project
+OhohLeo/Classify: Classify Collections Tool	https://github.com/OhohLeo/Classify
+olesho/classify	https://github.com/olesho/classify
+kkserver/kk-classify	https://github.com/kkserver/kk-classify
+lytics/multibayes: Multiclass Naive Bayesian Classification	https://github.com/lytics/multibayes
+Masterminds/structable: Golang struct-to-table database mapper	https://github.com/Masterminds/structable
+devfeel/mapper: Simple and easy go mapper for struct or map to struct, slice or map to slice	https://github.com/devfeel/mapper
+ngorm/ngorm: Neo GORM: The modern fork of gorm The fantastic ORM( Object Relational Mapper ) for Go	https://github.com/ngorm/ngorm
+pote/gohm: Go's Object Hash Mapper	https://github.com/pote/gohm
+nlf/boltons: a struct mapper wrapper for golang and boltdb	https://github.com/nlf/boltons
+goutils/structmapper: Mapper to map fields from one struct type to another	https://github.com/goutils/structmapper
+assertis/url-mapper	https://github.com/assertis/url-mapper
+moddyz/pokemapgo: Pokemon Mapper Service written in Golang	https://github.com/moddyz/pokemapgo
+zonkiie/rdb2om: rdb2om - Relational Database to Object Mapper	https://github.com/zonkiie/rdb2om
+ernestio/definition-mapper: Validates the input yaml definition and generates a workflow and service definition.	https://github.com/ernestio/definition-mapper
+wenj91/sql-mapper: golang sql mapper util	https://github.com/wenj91/sql-mapper
+modular - Go libraries and applications	https://golanglibs.com/search?q=modular&sort=top&page=6
+schuyler/neural-go: A multilayer perceptron network implemented in Go, with training via backpropagation.	https://github.com/schuyler/neural-go
+google/googet: GooGet package manager	https://github.com/google/googet
+alexanderGugel/taker: simple, modular functions for working with asynchronous Golang code	https://github.com/alexanderGugel/taker
+npiganeau/yep: YEP is a proof of concept for a modular ERP written in go	https://github.com/npiganeau/yep
+pointlander/compress: parallelized modular compression library	https://github.com/pointlander/compress
+zhentaowang/go-learning: Go programming language learn. Go is expressive, concise, clean, and efficient. Its concurrency mechanisms make it easy to write programs that get the most out of multicore and networked machines, while its novel type system enables flexible and modular program construction. Go compiles quickly to machine code yet has the convenience of garbage collection and the power of run-time reflection. It's a fast, statically typed, compiled language that feels like a dynamically typed, interpreted language.	https://github.com/zhentaowang/go-learning
+yahelmanor/Mint: Mint is a Modular Compiler to GoLang	https://github.com/yahelmanor/Mint
+getlantern/events-pipeline: Modular processing library for events	https://github.com/getlantern/events-pipeline
+AlexsJones/kepler: Developer workflow in the CLI. Written to be modular, simple and powerful.	https://github.com/AlexsJones/kepler
+writroll/writroll.go at master · bobesa/writroll	https://github.com/bobesa/writroll/blob/master/writroll.go
+hug-go/trending.go at a5ce4f9de10935733a0bb9bc12acf9bff7ab59c8 · hugbotme/hug-go	https://github.com/hugbotme/hug-go/blob/a5ce4f9de10935733a0bb9bc12acf9bff7ab59c8/trending.go
+github-projector/hooks.go at ccbba4938eece75ce5d153879cb917edc9967755 · heroku/github-projector	https://github.com/heroku/github-projector/blob/ccbba4938eece75ce5d153879cb917edc9967755/hooks.go
+gopher/topic-create.go at ca25f50a331b0b974335d141d69821db7a29e865 · MacoTasu/gopher	https://github.com/MacoTasu/gopher/blob/ca25f50a331b0b974335d141d69821db7a29e865/commands/topic-create.go
+SommerEngineering/ModularMining-CLI: The command line interface (CLI) for the modular mining system.	https://github.com/SommerEngineering/ModularMining-CLI
+ModularMining-CLI/RepoList.go at 63b10955854ccb2c669071e663f61761d83b0ba4 · SommerEngineering/ModularMining-CLI	https://github.com/SommerEngineering/ModularMining-CLI/blob/63b10955854ccb2c669071e663f61761d83b0ba4/ModularMining/CMD/RepoList.go
+ghrepos/ghrepos.go at 7a4b9d9a7bf14d81a060d3daae9b232d2a48dc47 · seiffert/ghrepos	https://github.com/seiffert/ghrepos/blob/7a4b9d9a7bf14d81a060d3daae9b232d2a48dc47/ghrepos.go
+ghs/repository.go at e08fc725b7ce3514e8c85b611f512bc52061578b · lighttiger2505/ghs	https://github.com/lighttiger2505/ghs/blob/e08fc725b7ce3514e8c85b611f512bc52061578b/repository.go
+UnchartedSky/github-tools: Some ideas on GitHub	https://github.com/UnchartedSky/github-tools
+pawndex/core.go at 423270f4d62a3e7f689279d0564679a545ef965e · Southclaws/pawndex	https://github.com/Southclaws/pawndex/blob/423270f4d62a3e7f689279d0564679a545ef965e/core.go
+seaeye/trigger_hookbot.go at 4e2c7128dc631209cfe3b1f635f84548d13d5bbb · scraperwiki/seaeye	https://github.com/scraperwiki/seaeye/blob/4e2c7128dc631209cfe3b1f635f84548d13d5bbb/pkg/seaeye/trigger_hookbot.go
+scraperwiki/seaeye: A simple continuous integration server using Hookbot to subscribe to branch changes on Github hosted repositories.	https://github.com/scraperwiki/seaeye
+vossibility-collector/run.go at 20c3865d1875d67c8416218a6e780854dc02429f · icecrime/vossibility-collector	https://github.com/icecrime/vossibility-collector/blob/20c3865d1875d67c8416218a6e780854dc02429f/src/cmd/vossibility-collector/run.go
+love-a-paper/loveapaper.go at f66316be99cf6fada83b3e825d66b177b9a8ae61 · imwally/love-a-paper	https://github.com/imwally/love-a-paper/blob/f66316be99cf6fada83b3e825d66b177b9a8ae61/loveapaper.go
+WCAI-Github/processing.go at 5d0ce93fd86e823b504123f5e695f73097dab962 · DheerendraRathor/WCAI-Github	https://github.com/DheerendraRathor/WCAI-Github/blob/5d0ce93fd86e823b504123f5e695f73097dab962/wcai/processing.go
+chiefr/chiefr.go at 34c95b813b1a770e4d6b0ab998a6729e445a1e11 · asciimoo/chiefr	https://github.com/asciimoo/chiefr/blob/34c95b813b1a770e4d6b0ab998a6729e445a1e11/chiefr.go
+secping/main.go at 5b1fbe7a37392f1dcf939ddb20c207cef7ebf272 · jessfraz/secping	https://github.com/jessfraz/secping/blob/5b1fbe7a37392f1dcf939ddb20c207cef7ebf272/main.go
+mutable/container-factory: container-factory produces Docker images from tarballs of application source code	https://github.com/mutable/container-factory
+jakewright/tutorials: Source code from Jake Wright's YouTube tutorials	https://github.com/jakewright/tutorials
+feyeleanor/GoNotebook: All source code from my golang book A Go Developer's Notebook	https://github.com/feyeleanor/GoNotebook
+jpoirier/algorithms: Go language implementation of selected algorithms from the "Algorithms in a Nutshell" book. The source code attempts to follow, as closely as possible, the algorithm pseudocode from the book. This is an ongoing project	https://github.com/jpoirier/algorithms
+kalyan02/go-getstructs: Extract struct types from a go source code directory	https://github.com/kalyan02/go-getstructs
+FidelityWires/elit: Generate elasticsearch index template from golang source code	https://github.com/FidelityWires/elit
+bobesa/writroll: Type source code automatically from given directory	https://github.com/bobesa/writroll
+yashrajsingh/Mastering-Concurrency-in-Go---Examples: Source code, exercises from the book "Mastering Concurrency in Go" by Nathan Kozyra	https://github.com/yashrajsingh/Mastering-Concurrency-in-Go---Examples
+
 
 sniperkit/hub-search: Search repositories in github.com	https://github.com/sniperkit/hub-search
 Ink Master, : le meilleur tatoueur - Saison 4 - Numéro 23 | Numéro 23	http://www.numero23.fr/programmes/ink-master/
