@@ -1,0 +1,8 @@
+language: go
+go:
+  - 1.1
+  - tip
+before_install:
+  - go get launchpad.net/goyaml
+before_script:
+  - git submodule update --init
