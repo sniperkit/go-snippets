@@ -1,0 +1,16 @@
+> ./meetup
+Meetup is a tool for managing your meetup from the command line.
+Meetup allows you to create, delete and edit events on your meetup
+
+Usage:
+  meetup [command]
+
+Available Commands:
+  help        Help about any command
+  new         creates a new event
+
+Flags:
+  -c, --config string   path to config.yml (default "/var/app_config.yml")
+  -h, --help            help for meetup
+
+Use "meetup [command] --help" for more information about a command.
