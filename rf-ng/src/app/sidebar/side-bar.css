@@ -1,0 +1,40 @@
+.content > * {
+    margin-bottom: 4px;
+}
+.content > a {
+    display: flex;
+    font-size: 16px;
+}
+
+.items > a {
+    display: flex;
+    font-size: 13px;
+}
+
+.category {
+    display: flex;
+}
+
+.category > .expander {
+    padding-left: 8px;
+    padding-right: 8px;
+    min-width: 24px;
+    flex-shrink: 1;
+}
+
+.category > a {
+    flex-grow: 1;
+    text-align: start;
+}
+
+.category > .items {
+    flex: 0 1 100%;
+}
+
+.content hr {
+    margin: 0;
+}
+
+.favicon {
+    padding-right: 4px;
+}

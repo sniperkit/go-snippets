@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.search {
+    min-height: 0;
+    border: none;
+    background: transparent;
+}
+
+::ng-deep label {
+    margin-bottom: 0;
+}
