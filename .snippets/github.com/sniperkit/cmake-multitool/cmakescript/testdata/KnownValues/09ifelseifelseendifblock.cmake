@@ -1,0 +1,7 @@
+if(WIN32)
+	target_link_libraries(myapp somelib)
+elseif(UNIX)
+	target_link_library(myapp awesomelib)
+else()
+	target_link_libraries(myapp otherlib)
+endif()

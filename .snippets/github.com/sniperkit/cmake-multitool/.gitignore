@@ -1,0 +1,27 @@
+
+
+# xcode/mac files
+*~.nib/
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.mode1v3
+.DS_Store
+profile
+._*
+
+# backup files
+*~
+*.bak
+
+# compiled or object files
+*.o
+*.pyc
+*.pyo
+
+# Build/Output Files Directories
+build/
+
+# Anjuta files
+.anjuta/
+.anjuta_sym_db.db
