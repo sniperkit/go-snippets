@@ -1,0 +1,169 @@
+#!/bin/bash
+
+# Configuration
+DEVSTACK_PREFIX=${DEVSTACK_PREFIX:-devstack}
+DEVSTACK_DOCKER=${DEVSTACK_DOCKER:-~/.devstack/docker-compose.yml}
+DEVSTACK_USER=${DEVSTACK_USER:-dfx}
+DEVSTACK_VERSION=1.3
+
+# Functions
+usage() {
+cat << EOF
+Usage: ${0##*/} [-h]
+
+Control your LAMP devstack.
+
+Environment:
+    Version: $DEVSTACK_VERSION
+    User: $DEVSTACK_USER
+    Prefix: $DEVSTACK_PREFIX-[container]
+    Configuration: $DEVSTACK_DOCKER
+
+Commands:
+
+    -h | help   Display this help and exit.
+
+  Devstack: 
+      s | up | start            Start services
+      sl | start-logs           Start and follow logs
+      r | restart               Restart services
+      rl | restart-logs         Restart and follow logs
+      b | build                 Build services
+      ru | reup                 Build & Start
+      d | destroy               Destroy services
+      ps | list                 List services in devstack
+      u | upgrade               Upgrade devstack images
+
+  Services:
+      rb | rebuild [service]            Rebuild service
+      e | exec [service] [command]      Exec command in [service]
+      g | go [service] [command]        Attach to [service]
+      gu | go-user [service] [command]  Attach as predefined user
+EOF
+}
+
+call() {
+    docker-compose -p "$DEVSTACK_PREFIX" --file "$DEVSTACK_DOCKER" $*
+}
+
+up() {
+    call up -d --remove-orphans $@
+}
+
+build() {
+    call build
+}
+
+reup() {
+    build
+    up
+}
+
+restart() {
+    call up -d --force-recreate $@
+}
+
+stop() {
+    call stop
+}
+
+destroy() {
+    call stop
+    call rm
+}
+
+rebuild() {
+    destroy
+    build
+}
+
+list() {
+    call ps
+}
+
+logs() {
+    call logs --follow
+}
+
+fire() {
+    call exec $*
+}
+
+go() {
+    call exec $1 /bin/bash
+}
+
+gou() {
+    call exec $1 su "$DEVSTACK_USER"
+}
+
+upgrade() {
+    docker rmi --force $(docker images --filter=reference='dockette/devstack:*' -q)
+    call pull
+}
+
+# Main switch
+case "$1" in
+    s|up|start)
+        up
+        exit 0
+        ;;
+    sl|start-logs)
+        up && logs
+        exit 0
+        ;;
+    r|restart)
+        restart
+        exit 0
+        ;;
+    rl|restart-logs)
+        restart && logs
+        exit 0
+        ;;
+    b|build)
+        build
+        exit 0
+        ;;
+    ru|reup)
+        reup
+        exit 0
+        ;;
+    rb|rebuild)
+        rebuild $@
+        exit 0
+        ;;
+    d|destroy)
+        destroy
+        exit 0
+        ;;
+    ps|list)
+        list
+        exit 0
+        ;;
+    l|logs)
+        logs
+        exit 0
+        ;;
+    e|exec)
+        shift
+        fire $@
+        exit 0
+        ;;
+    g|go)
+        go $2 $3
+        exit 0
+        ;;
+    gu|gou)
+        gou $2
+        exit 0
+        ;;
+    u|upgrade)
+        upgrade
+        exit 0
+        ;;
+    *)
+        usage
+        exit 1
+        ;;
+esac
+shift
