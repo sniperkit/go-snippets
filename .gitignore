@@ -1,0 +1,11 @@
+*~
+*.swp
+*.prename
+.directory
+
+crawld
+crawld.conf
+!testdata/crawld.conf
+log
+pid
+tags
