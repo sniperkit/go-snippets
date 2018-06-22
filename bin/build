@@ -1,0 +1,13 @@
+#! /bin/sh
+
+# ------------------------
+#
+# build $1 dockerfile as qmu1's latest
+# 
+# $1 = container-name
+#
+# ------------------------
+
+cd `dirname $0`/../
+
+docker build -t qmu1/$1:latest src/$1/

@@ -1,0 +1,17 @@
+site_name: 'MkDocs Sample'
+repo_name: 'qmu/dockerfiles'
+repo_url: 'https://github.com/qmu/dockerfiles'
+docs_dir: ./doc
+site_dir: ./output
+copyright: 'copyright © qmu.CO.,LTD. All rights reserved.'
+theme: 'material'
+extra:
+  author:
+    github: 'qmu/dockerfiles'
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: True
+      separator: "_"
+pages:
+  - 'HOME' : 'sample.md'

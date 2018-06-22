@@ -1,0 +1,26 @@
+#! /bin/sh
+
+# ------------------------
+#
+# Run a container as an example
+#
+# ------------------------
+
+cd `dirname $0`/../
+HERE=$(pwd)
+
+echo ""
+echo "----------------------------"
+echo "Running an example"
+echo "----------------------------"
+echo ""
+
+docker run -it --rm \
+    qmu1/gulp:latest /bin/sh -c "
+        echo '[node version:]'
+        node -v
+        echo '[yarn version:]'
+        yarn -v
+        echo '[gulp version:]'
+        gulp -v
+"

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# ---------------------------
+#
+# export enviromental vars
+# (which actually consts)
+#
+# ---------------------------
+
+# absolute path of this repo's root
+export PROJECT_PATH=$(git rev-parse --show-toplevel)
+# get a prefix of container up by docker-compose
+export PROJECT=$(basename $PROJECT_PATH |  sed 's/[_|-]//g')
