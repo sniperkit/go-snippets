@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-poc-net
+  labels:
+    app: demo-labels
+    io.contiv.net-group: poc-epg
+    io.contiv.network: poc-net
+spec:
+  containers:
+  - name: bbox
+    image: contiv/nc-busybox
+    command:
+      - sleep
+      - "7200"
+
