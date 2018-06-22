@@ -1,0 +1,2 @@
+env:
+  GOPATH: "$ATOM_PROJECT_PATH/"

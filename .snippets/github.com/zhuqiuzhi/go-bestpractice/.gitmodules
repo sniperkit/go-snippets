@@ -1,0 +1,12 @@
+[submodule "client"]
+	path = client
+	url = https://github.com/google/go-github.git
+[submodule "broadcast"]
+	path = broadcast
+	url = https://github.com/dustin/go-broadcast.git
+[submodule "oauth"]
+	path = oauth
+	url = https://github.com/golang/oauth2.git
+[submodule "oauth2"]
+	path = oauth2
+	url = https://github.com/golang/oauth2.git
