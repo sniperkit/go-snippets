@@ -1,0 +1,80 @@
+{
+    "status": "ok",
+    "language": "typescript",
+    "errors": [],
+    "ast": {
+        "amdDependencies": [],
+        "bindDiagnostics": [],
+        "col": 1,
+        "comments": [],
+        "end": 28,
+        "flags": [],
+        "identifierCount": 2,
+        "identifiers": {},
+        "isDeclarationFile": false,
+        "kind": "SourceFile",
+        "languageVariant": 0,
+        "line": 1,
+        "nodeCount": 9,
+        "pos": 0,
+        "referencedFiles": [],
+        "scriptKind": 3,
+        "statements": [
+            {
+                "col": 1,
+                "end": 27,
+                "expression": {
+                    "arguments": [
+                        {
+                            "col": 13,
+                            "end": 25,
+                            "flags": [],
+                            "kind": "StringLiteral",
+                            "line": 1,
+                            "pos": 12,
+                            "text": "hello world"
+                        }
+                    ],
+                    "col": 1,
+                    "end": 26,
+                    "expression": {
+                        "col": 1,
+                        "end": 11,
+                        "expression": {
+                            "col": 1,
+                            "end": 7,
+                            "escapedText": "console",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 1,
+                            "pos": 0
+                        },
+                        "flags": [],
+                        "kind": "PropertyAccessExpression",
+                        "line": 1,
+                        "name": {
+                            "col": 9,
+                            "end": 11,
+                            "escapedText": "log",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 1,
+                            "pos": 8
+                        },
+                        "pos": 0
+                    },
+                    "flags": [],
+                    "kind": "CallExpression",
+                    "line": 1,
+                    "pos": 0
+                },
+                "flags": [],
+                "kind": "ExpressionStatement",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "pos": 0
+            }
+        ],
+        "typeReferenceDirectives": []
+    }
+}

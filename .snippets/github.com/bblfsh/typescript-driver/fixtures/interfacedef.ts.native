@@ -1,0 +1,216 @@
+{
+    "status": "ok",
+    "language": "typescript",
+    "errors": [],
+    "ast": {
+        "amdDependencies": [],
+        "bindDiagnostics": [],
+        "col": 1,
+        "comments": [],
+        "end": 120,
+        "flags": [],
+        "identifierCount": 8,
+        "identifiers": {},
+        "isDeclarationFile": false,
+        "kind": "SourceFile",
+        "languageVariant": 0,
+        "line": 1,
+        "nodeCount": 23,
+        "pos": 0,
+        "referencedFiles": [],
+        "scriptKind": 3,
+        "statements": [
+            {
+                "col": 1,
+                "end": 52,
+                "flags": [],
+                "kind": "InterfaceDeclaration",
+                "line": 1,
+                "members": [
+                    {
+                        "col": 16,
+                        "end": 32,
+                        "flags": [],
+                        "kind": "PropertySignature",
+                        "line": 1,
+                        "name": {
+                            "col": 16,
+                            "end": 23,
+                            "escapedText": "bar",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 1,
+                            "pos": 15
+                        },
+                        "pos": 15,
+                        "type": {
+                            "col": 9,
+                            "end": 31,
+                            "flags": [],
+                            "kind": "StringKeyword",
+                            "line": 2,
+                            "pos": 24
+                        }
+                    },
+                    {
+                        "col": 17,
+                        "end": 50,
+                        "flags": [],
+                        "kind": "PropertySignature",
+                        "line": 2,
+                        "name": {
+                            "col": 17,
+                            "end": 40,
+                            "escapedText": "baz",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 2,
+                            "pos": 32
+                        },
+                        "pos": 32,
+                        "questionToken": {
+                            "col": 8,
+                            "end": 41,
+                            "flags": [],
+                            "kind": "QuestionToken",
+                            "line": 3,
+                            "pos": 40
+                        },
+                        "type": {
+                            "col": 10,
+                            "end": 49,
+                            "flags": [],
+                            "kind": "NumberKeyword",
+                            "line": 3,
+                            "pos": 42
+                        }
+                    }
+                ],
+                "modifierFlagsCache": 536870912,
+                "name": {
+                    "col": 10,
+                    "end": 13,
+                    "escapedText": "Foo",
+                    "flags": [],
+                    "kind": "Identifier",
+                    "line": 1,
+                    "pos": 9
+                },
+                "pos": 0
+            },
+            {
+                "body": {
+                    "col": 26,
+                    "end": 82,
+                    "flags": [],
+                    "kind": "Block",
+                    "line": 6,
+                    "pos": 79,
+                    "statements": []
+                },
+                "col": 2,
+                "end": 82,
+                "flags": [],
+                "kind": "FunctionDeclaration",
+                "line": 4,
+                "modifierFlagsCache": 536870912,
+                "name": {
+                    "col": 9,
+                    "end": 69,
+                    "escapedText": "useFoo",
+                    "flags": [],
+                    "kind": "Identifier",
+                    "line": 6,
+                    "pos": 62
+                },
+                "parameters": [
+                    {
+                        "col": 17,
+                        "end": 78,
+                        "flags": [],
+                        "kind": "Parameter",
+                        "line": 6,
+                        "name": {
+                            "col": 17,
+                            "end": 73,
+                            "escapedText": "arg",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 6,
+                            "pos": 70
+                        },
+                        "pos": 70,
+                        "type": {
+                            "col": 21,
+                            "end": 78,
+                            "flags": [],
+                            "kind": "TypeReference",
+                            "line": 6,
+                            "pos": 74,
+                            "typeName": {
+                                "col": 21,
+                                "end": 78,
+                                "escapedText": "Foo",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 6,
+                                "pos": 74
+                            }
+                        }
+                    }
+                ],
+                "pos": 52
+            },
+            {
+                "col": 29,
+                "end": 119,
+                "flags": [],
+                "heritageClauses": [
+                    {
+                        "col": 17,
+                        "end": 115,
+                        "flags": [],
+                        "kind": "HeritageClause",
+                        "line": 8,
+                        "pos": 100,
+                        "token": 108,
+                        "types": [
+                            {
+                                "col": 28,
+                                "end": 115,
+                                "expression": {
+                                    "col": 28,
+                                    "end": 115,
+                                    "escapedText": "Foo",
+                                    "flags": [],
+                                    "kind": "Identifier",
+                                    "line": 8,
+                                    "pos": 111
+                                },
+                                "flags": [],
+                                "kind": "ExpressionWithTypeArguments",
+                                "line": 8,
+                                "pos": 111
+                            }
+                        ]
+                    }
+                ],
+                "kind": "ClassDeclaration",
+                "line": 6,
+                "members": [],
+                "modifierFlagsCache": 536870912,
+                "name": {
+                    "col": 6,
+                    "end": 100,
+                    "escapedText": "extendsFoo",
+                    "flags": [],
+                    "kind": "Identifier",
+                    "line": 8,
+                    "pos": 89
+                },
+                "pos": 82
+            }
+        ],
+        "typeReferenceDirectives": []
+    }
+}

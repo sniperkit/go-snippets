@@ -1,0 +1,237 @@
+Status:  ok
+Language:  typescript
+Errors: 
+UAST: 
+SourceFile {
+.  Roles: File
+.  StartPosition: {
+.  .  Offset: 0
+.  .  Line: 1
+.  .  Col: 1
+.  }
+.  EndPosition: {
+.  .  Offset: 16
+.  .  Line: 4
+.  .  Col: 1
+.  }
+.  Properties: {
+.  .  flags: null
+.  .  identifierCount: 3
+.  .  isDeclarationFile: false
+.  .  languageVariant: 0
+.  .  nodeCount: 13
+.  .  scriptKind: 3
+.  }
+.  Children: {
+.  .  0: ExpressionStatement {
+.  .  .  Roles: Unannotated
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 5
+.  .  .  .  Line: 1
+.  .  .  .  Col: 6
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  flags: null
+.  .  .  .  internalRole: statements
+.  .  .  .  modifierFlagsCache: 5.36870912e+08
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: BinaryExpression {
+.  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 5
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  flags: null
+.  .  .  .  .  .  internalRole: expression
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Identifier {
+.  .  .  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 1
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 1
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 2
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  escapedText: a
+.  .  .  .  .  .  .  .  flags: null
+.  .  .  .  .  .  .  .  internalRole: left
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: EqualsToken {
+.  .  .  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 1
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 2
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 3
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 4
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  flags: null
+.  .  .  .  .  .  .  .  internalRole: operatorToken
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: NumericLiteral {
+.  .  .  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  .  .  TOKEN "1"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 3
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 4
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 5
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 6
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  flags: null
+.  .  .  .  .  .  .  .  internalRole: right
+.  .  .  .  .  .  .  .  numericLiteralFlags: 0
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  1: ExpressionStatement {
+.  .  .  Roles: Unannotated
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 5
+.  .  .  .  Line: 1
+.  .  .  .  Col: 6
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 10
+.  .  .  .  Line: 2
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  flags: null
+.  .  .  .  internalRole: statements
+.  .  .  .  modifierFlagsCache: 5.36870912e+08
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: PostfixUnaryExpression {
+.  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 5
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 9
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 4
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  flags: null
+.  .  .  .  .  .  internalRole: expression
+.  .  .  .  .  .  operator: 43
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Identifier {
+.  .  .  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 5
+.  .  .  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  .  .  Col: 6
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 7
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 2
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  escapedText: a
+.  .  .  .  .  .  .  .  flags: null
+.  .  .  .  .  .  .  .  internalRole: operand
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  2: ExpressionStatement {
+.  .  .  Roles: Unannotated
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 10
+.  .  .  .  Line: 2
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 15
+.  .  .  .  Line: 3
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  flags: null
+.  .  .  .  internalRole: statements
+.  .  .  .  modifierFlagsCache: 5.36870912e+08
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: PostfixUnaryExpression {
+.  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 10
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 14
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 4
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  flags: null
+.  .  .  .  .  .  internalRole: expression
+.  .  .  .  .  .  operator: 44
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Identifier {
+.  .  .  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 10
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 12
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 2
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  escapedText: a
+.  .  .  .  .  .  .  .  flags: null
+.  .  .  .  .  .  .  .  internalRole: operand
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

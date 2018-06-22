@@ -1,0 +1,331 @@
+{
+    "status": "ok",
+    "language": "typescript",
+    "errors": [],
+    "ast": {
+        "amdDependencies": [],
+        "bindDiagnostics": [],
+        "col": 1,
+        "comments": [],
+        "end": 203,
+        "flags": [],
+        "identifierCount": 9,
+        "identifiers": {},
+        "isDeclarationFile": false,
+        "kind": "SourceFile",
+        "languageVariant": 0,
+        "line": 1,
+        "nodeCount": 38,
+        "pos": 0,
+        "referencedFiles": [],
+        "scriptKind": 3,
+        "statements": [
+            {
+                "col": 1,
+                "end": 165,
+                "flags": [],
+                "kind": "ClassDeclaration",
+                "line": 1,
+                "members": [
+                    {
+                        "col": 12,
+                        "end": 31,
+                        "flags": [],
+                        "kind": "PropertyDeclaration",
+                        "line": 1,
+                        "modifierFlagsCache": 536870912,
+                        "name": {
+                            "col": 12,
+                            "end": 22,
+                            "escapedText": "member",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 1,
+                            "pos": 11
+                        },
+                        "pos": 11,
+                        "type": {
+                            "col": 12,
+                            "end": 30,
+                            "flags": [],
+                            "kind": "StringKeyword",
+                            "line": 2,
+                            "pos": 23
+                        }
+                    },
+                    {
+                        "body": {
+                            "col": 33,
+                            "end": 103,
+                            "flags": [],
+                            "kind": "Block",
+                            "line": 3,
+                            "multiLine": true,
+                            "pos": 64,
+                            "statements": [
+                                {
+                                    "col": 35,
+                                    "end": 97,
+                                    "expression": {
+                                        "col": 35,
+                                        "end": 96,
+                                        "flags": [],
+                                        "kind": "BinaryExpression",
+                                        "left": {
+                                            "col": 35,
+                                            "end": 86,
+                                            "expression": {
+                                                "col": 35,
+                                                "end": 79,
+                                                "flags": [],
+                                                "kind": "ThisKeyword",
+                                                "line": 3,
+                                                "pos": 66
+                                            },
+                                            "flags": [],
+                                            "kind": "PropertyAccessExpression",
+                                            "line": 3,
+                                            "name": {
+                                                "col": 14,
+                                                "end": 86,
+                                                "escapedText": "member",
+                                                "flags": [],
+                                                "kind": "Identifier",
+                                                "line": 4,
+                                                "pos": 80
+                                            },
+                                            "pos": 66
+                                        },
+                                        "line": 3,
+                                        "operatorToken": {
+                                            "col": 20,
+                                            "end": 88,
+                                            "flags": [],
+                                            "kind": "EqualsToken",
+                                            "line": 4,
+                                            "pos": 86
+                                        },
+                                        "pos": 66,
+                                        "right": {
+                                            "col": 22,
+                                            "end": 96,
+                                            "escapedText": "message",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 4,
+                                            "pos": 88
+                                        }
+                                    },
+                                    "flags": [],
+                                    "kind": "ExpressionStatement",
+                                    "line": 3,
+                                    "pos": 66
+                                }
+                            ]
+                        },
+                        "col": 20,
+                        "end": 103,
+                        "flags": [],
+                        "kind": "Constructor",
+                        "line": 2,
+                        "parameters": [
+                            {
+                                "col": 17,
+                                "end": 63,
+                                "flags": [],
+                                "kind": "Parameter",
+                                "line": 3,
+                                "name": {
+                                    "col": 17,
+                                    "end": 55,
+                                    "escapedText": "message",
+                                    "flags": [],
+                                    "kind": "Identifier",
+                                    "line": 3,
+                                    "pos": 48
+                                },
+                                "pos": 48,
+                                "type": {
+                                    "col": 25,
+                                    "end": 63,
+                                    "flags": [],
+                                    "kind": "StringKeyword",
+                                    "line": 3,
+                                    "pos": 56
+                                }
+                            }
+                        ],
+                        "pos": 31
+                    },
+                    {
+                        "body": {
+                            "col": 12,
+                            "end": 163,
+                            "flags": [],
+                            "kind": "Block",
+                            "line": 6,
+                            "multiLine": true,
+                            "pos": 115,
+                            "statements": [
+                                {
+                                    "col": 14,
+                                    "end": 157,
+                                    "expression": {
+                                        "col": 15,
+                                        "end": 156,
+                                        "flags": [],
+                                        "kind": "BinaryExpression",
+                                        "left": {
+                                            "col": 15,
+                                            "end": 142,
+                                            "flags": [],
+                                            "kind": "StringLiteral",
+                                            "line": 7,
+                                            "pos": 132,
+                                            "text": "Hello, "
+                                        },
+                                        "line": 7,
+                                        "operatorToken": {
+                                            "col": 25,
+                                            "end": 144,
+                                            "flags": [],
+                                            "kind": "PlusToken",
+                                            "line": 7,
+                                            "pos": 142
+                                        },
+                                        "pos": 132,
+                                        "right": {
+                                            "col": 27,
+                                            "end": 156,
+                                            "expression": {
+                                                "col": 27,
+                                                "end": 149,
+                                                "flags": [],
+                                                "kind": "ThisKeyword",
+                                                "line": 7,
+                                                "pos": 144
+                                            },
+                                            "flags": [],
+                                            "kind": "PropertyAccessExpression",
+                                            "line": 7,
+                                            "name": {
+                                                "col": 33,
+                                                "end": 156,
+                                                "escapedText": "member",
+                                                "flags": [],
+                                                "kind": "Identifier",
+                                                "line": 7,
+                                                "pos": 150
+                                            },
+                                            "pos": 144
+                                        }
+                                    },
+                                    "flags": [],
+                                    "kind": "ReturnStatement",
+                                    "line": 6,
+                                    "pos": 117
+                                }
+                            ]
+                        },
+                        "col": 6,
+                        "end": 163,
+                        "flags": [],
+                        "kind": "MethodDeclaration",
+                        "line": 5,
+                        "modifierFlagsCache": 536870912,
+                        "name": {
+                            "col": 6,
+                            "end": 113,
+                            "escapedText": "greet",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 5,
+                            "pos": 103
+                        },
+                        "parameters": [],
+                        "pos": 103
+                    }
+                ],
+                "modifierFlagsCache": 536870912,
+                "name": {
+                    "col": 6,
+                    "end": 9,
+                    "escapedText": "Foo",
+                    "flags": [],
+                    "kind": "Identifier",
+                    "line": 1,
+                    "pos": 5
+                },
+                "pos": 0
+            },
+            {
+                "col": 2,
+                "declarationList": {
+                    "col": 2,
+                    "declarations": [
+                        {
+                            "col": 4,
+                            "end": 201,
+                            "flags": [],
+                            "initializer": {
+                                "arguments": [
+                                    {
+                                        "col": 27,
+                                        "end": 200,
+                                        "flags": [],
+                                        "kind": "StringLiteral",
+                                        "line": 11,
+                                        "pos": 193,
+                                        "text": "world"
+                                    }
+                                ],
+                                "col": 14,
+                                "end": 201,
+                                "expression": {
+                                    "col": 18,
+                                    "end": 192,
+                                    "escapedText": "Greeter",
+                                    "flags": [],
+                                    "kind": "Identifier",
+                                    "line": 11,
+                                    "pos": 184
+                                },
+                                "flags": [],
+                                "kind": "NewExpression",
+                                "line": 11,
+                                "pos": 180
+                            },
+                            "kind": "VariableDeclaration",
+                            "line": 11,
+                            "name": {
+                                "col": 4,
+                                "end": 178,
+                                "escapedText": "greeter",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 11,
+                                "pos": 170
+                            },
+                            "pos": 170
+                        }
+                    ],
+                    "end": 201,
+                    "flags": [
+                        "Let",
+                        "BlockScoped"
+                    ],
+                    "kind": "VariableDeclarationList",
+                    "line": 9,
+                    "pos": 165
+                },
+                "end": 202,
+                "flags": [],
+                "kind": "VariableStatement",
+                "line": 9,
+                "modifierFlagsCache": 536870912,
+                "pos": 165
+            }
+        ],
+        "typeReferenceDirectives": []
+    }
+}

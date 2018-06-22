@@ -1,0 +1,231 @@
+{
+    "status": "ok",
+    "language": "typescript",
+    "errors": [],
+    "ast": {
+        "amdDependencies": [],
+        "bindDiagnostics": [],
+        "col": 1,
+        "comments": [],
+        "end": 67,
+        "flags": [],
+        "identifierCount": 4,
+        "identifiers": {},
+        "isDeclarationFile": false,
+        "kind": "SourceFile",
+        "languageVariant": 0,
+        "line": 1,
+        "nodeCount": 24,
+        "pos": 0,
+        "referencedFiles": [],
+        "scriptKind": 3,
+        "statements": [
+            {
+                "col": 1,
+                "declarationList": {
+                    "col": 1,
+                    "declarations": [
+                        {
+                            "col": 4,
+                            "end": 9,
+                            "flags": [],
+                            "initializer": {
+                                "col": 8,
+                                "end": 9,
+                                "flags": [],
+                                "kind": "NumericLiteral",
+                                "line": 1,
+                                "numericLiteralFlags": 0,
+                                "pos": 7,
+                                "text": "1"
+                            },
+                            "kind": "VariableDeclaration",
+                            "line": 1,
+                            "name": {
+                                "col": 4,
+                                "end": 5,
+                                "escapedText": "a",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 1,
+                                "pos": 3
+                            },
+                            "pos": 3
+                        }
+                    ],
+                    "end": 9,
+                    "flags": [],
+                    "kind": "VariableDeclarationList",
+                    "line": 1,
+                    "pos": 0
+                },
+                "end": 10,
+                "flags": [],
+                "kind": "VariableStatement",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "pos": 0
+            },
+            {
+                "col": 11,
+                "declarationList": {
+                    "col": 11,
+                    "declarations": [
+                        {
+                            "col": 4,
+                            "end": 28,
+                            "flags": [],
+                            "initializer": {
+                                "col": 16,
+                                "end": 28,
+                                "flags": [],
+                                "kind": "NumericLiteral",
+                                "line": 2,
+                                "numericLiteralFlags": 0,
+                                "pos": 26,
+                                "text": "2"
+                            },
+                            "kind": "VariableDeclaration",
+                            "line": 2,
+                            "name": {
+                                "col": 4,
+                                "end": 16,
+                                "escapedText": "b",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 2,
+                                "pos": 14
+                            },
+                            "pos": 14,
+                            "type": {
+                                "col": 7,
+                                "end": 24,
+                                "flags": [],
+                                "kind": "NumberKeyword",
+                                "line": 2,
+                                "pos": 17
+                            }
+                        }
+                    ],
+                    "end": 28,
+                    "flags": [],
+                    "kind": "VariableDeclarationList",
+                    "line": 1,
+                    "pos": 10
+                },
+                "end": 29,
+                "flags": [],
+                "kind": "VariableStatement",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "pos": 10
+            },
+            {
+                "col": 19,
+                "declarationList": {
+                    "col": 19,
+                    "declarations": [
+                        {
+                            "col": 4,
+                            "end": 51,
+                            "flags": [],
+                            "initializer": {
+                                "col": 16,
+                                "end": 51,
+                                "flags": [],
+                                "kind": "StringLiteral",
+                                "line": 3,
+                                "pos": 45,
+                                "text": "foo"
+                            },
+                            "kind": "VariableDeclaration",
+                            "line": 3,
+                            "name": {
+                                "col": 4,
+                                "end": 35,
+                                "escapedText": "s",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 3,
+                                "pos": 33
+                            },
+                            "pos": 33,
+                            "type": {
+                                "col": 7,
+                                "end": 43,
+                                "flags": [],
+                                "kind": "StringKeyword",
+                                "line": 3,
+                                "pos": 36
+                            }
+                        }
+                    ],
+                    "end": 51,
+                    "flags": [
+                        "Let",
+                        "BlockScoped"
+                    ],
+                    "kind": "VariableDeclarationList",
+                    "line": 2,
+                    "pos": 29
+                },
+                "end": 52,
+                "flags": [],
+                "kind": "VariableStatement",
+                "line": 2,
+                "modifierFlagsCache": 536870912,
+                "pos": 29
+            },
+            {
+                "col": 23,
+                "declarationList": {
+                    "col": 23,
+                    "declarations": [
+                        {
+                            "col": 6,
+                            "end": 65,
+                            "flags": [],
+                            "initializer": {
+                                "col": 10,
+                                "end": 65,
+                                "flags": [],
+                                "kind": "NumericLiteral",
+                                "line": 4,
+                                "numericLiteralFlags": 0,
+                                "pos": 62,
+                                "text": "35"
+                            },
+                            "kind": "VariableDeclaration",
+                            "line": 4,
+                            "name": {
+                                "col": 6,
+                                "end": 60,
+                                "escapedText": "x",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 4,
+                                "pos": 58
+                            },
+                            "pos": 58
+                        }
+                    ],
+                    "end": 65,
+                    "flags": [
+                        "Const",
+                        "BlockScoped"
+                    ],
+                    "kind": "VariableDeclarationList",
+                    "line": 3,
+                    "pos": 52
+                },
+                "end": 66,
+                "flags": [],
+                "kind": "VariableStatement",
+                "line": 3,
+                "modifierFlagsCache": 536870912,
+                "pos": 52
+            }
+        ],
+        "typeReferenceDirectives": []
+    }
+}
