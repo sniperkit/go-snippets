@@ -1,0 +1,485 @@
+"""Miscellaneous rules that aren't language-specific."""
+
+
+def genrule(name:str, cmd:str|list|dict, srcs:list|dict=None, out:str=None, outs:list|dict=None, deps:list=None,
+            labels:list&features&tags=None, visibility:list=None, building_description:str='Building...',
+            hashes:list=None, timeout:int=0, binary:bool=False, sandbox:bool=None,
+            needs_transitive_deps:bool=False, output_is_complete:bool=True, test_only:bool&testonly=False,
+            secrets:list=None, requires:list=None, provides:dict=None, pre_build:function=None,
+            post_build:function=None, tools:list|dict=None):
+    """A general build rule which allows the user to specify a command.
+
+    Args:
+      name (str): Name of the rule
+      cmd (str | dict | list): Command to run.
+           If given as a string, it's a single command that's used always (the most common case).
+           If given as a list, it's a sequence of commands run one after another if the
+           preceding command is successful (i.e. it's equivalent to ' && '.join(cmd)).
+           If given as a dict, the keys correspond to the build config to run and the values
+           are the command to run in that config. The typical use case here is 'opt' vs. 'dbg'
+           but arbitrary names can be given and specified with `plz build -c name`.
+           See https://please.build/build_rules.html for more information about the sequence
+           replacements and environment variables that are made available to this rule.
+      srcs (list | dict): Sources of this rule. Can be a list of files or rules, or a dict of names
+                          to lists. In the latter case they can be accessed separately which is useful
+                          to be able to refer to them distinctly in the command.
+      outs (list | dict): Outputs of this rule. All are files relative to this package.
+                          If given as a dict, it declares a series of named outputs which work
+                          similarly to named srcs; they have separate environment variables and
+                          can be accessed directly by other rules.
+      out (str): A single output of this rule, as a string. Discouraged in favour of 'outs'.
+      deps (list): Dependencies of this rule.
+      tools (list | dict): Tools used to build this rule; similar to srcs but are not copied to the
+                           temporary build directory. Should be accessed via $(exe //path/to:tool)
+                           or similar.
+                           Entries that are not build labels are assumed to be system-level commands
+                           and resolved within the path given in the config file (note that the
+                           value of $PATH in the outside environment is not propagated to the build
+                           rule).
+                           If tools is given as a dict then the keys of the dict name the various
+                           tools and they can be accessed with $TOOLS_KEY.
+      secrets (list): Files containing secrets (credentials etc) used to build this rule. These are
+                      all absolute paths (beginning with / or ~) and are not copied to the build
+                      directory. They can be accessed through the environment variable $SECRETS.
+                      They don't contribute to the key used to retrieve outputs from the cache; this
+                      means it's possible for one machine to build a target with the secret and then
+                      share the output with others. That also implies that secrets are things like
+                      credentials or signing keys and shouldn't be copied directly to outputs, otherwise
+                      they might become more widely known.
+      labels (list): Labels to apply to this rule.
+      visibility (list): Visibility declaration of this rule
+      building_description (str): Description to display to the user while the rule is building.
+      hashes (list): List of hashes; if given the outputs must match one of these. They can be
+              optionally preceded by their method. Currently the only supported method is sha1.
+      timeout (int): Maximum time in seconds this rule can run for before being killed.
+      binary (bool): True to mark a rule that produces a runnable output. Its output will be placed into
+              plz-out/bin instead of plz-out/gen and can be run with 'plz run'. Binary rules
+              can only have a single output.
+      sandbox (bool): If True, the build action is sandboxed within a separate network and process
+                      namespace. Only works on Linux and requires plz_sandbox to be installed
+                      separately.
+                      If False, it opts the target out of sandboxing when that is turned on.
+      needs_transitive_deps (bool): If True, all transitive dependencies of the rule will be made
+                             available to it when it builds (although see below...). By default
+                             rules only get their immediate dependencies.
+      output_is_complete (bool): If this is true then the rule blocks downwards searches of transitive
+                          dependencies by other rules (ie. it will be available to them, but not
+                          its dependencies as well).
+      test_only (bool): If True it can only be used by test rules.
+      requires (list): A list of arbitrary strings that define kinds of output that this rule might want.
+                See 'provides' for more detail; it's mostly useful to match up rules with multiple
+                kinds of output with ones that only need one of them, eg. a proto_library with
+                a python_library that doesn't want the C++ or Java proto outputs.
+                Entries in 'requires' are also implicitly labels on the rule.
+      provides (dict): A map of arbitrary strings to dependencies of the rule that provide some specific
+                type of thing. For example:
+                  provides = {'py': ':python_rule', 'go': ':go_rule'},
+                A Python rule would have requires = ['py'] and so if it depended on a rule like
+                this it would pick up a dependency on :python_rule instead. See the proto rules
+                for an example of where this is useful.
+                Note that the keys of provides and entries in requires are arbitrary and
+                have no effect until a matched pair meet one another.
+      pre_build (function): A function to be executed immediately before the rule builds. It receives one
+                 argument, the name of the building rule. This is mostly useful to interrogate
+                 the metadata of dependent rules which isn't generally available at parse time;
+                 see the get_labels function for a motivating example.
+      post_build (function): A function to be executed immediately after the rule builds. It receives two
+                  arguments, the rule name and its command line output.
+                  This is significantly more useful than the pre_build function, it can be used
+                  to dynamically create new rules based on the output of another.
+    """
+    if out and outs:
+        raise TypeError('Can\'t specify both "out" and "outs".')
+    return build_rule(
+        name = name,
+        srcs = srcs,
+        outs = [out] if out else outs,
+        cmd = ' && '.join(cmd) if isinstance(cmd, list) else cmd,
+        deps = deps,
+        tools = tools,
+        secrets = secrets,
+        labels = labels,
+        visibility  =  visibility,
+        output_is_complete = output_is_complete,
+        building_description = building_description,
+        hashes = hashes,
+        post_build = post_build,
+        binary = binary,
+        sandbox = sandbox,
+        build_timeout = timeout,
+        needs_transitive_deps = needs_transitive_deps,
+        requires = requires,
+        provides = provides,
+        test_only = test_only,
+    )
+
+
+def gentest(name:str, test_cmd:str|dict, labels:list&features&tags=None, cmd:str|dict=None, srcs:list|dict=None, outs:list=None,
+            deps:list=None, tools:list|dict=None, data:list=None, visibility:list=None, timeout:int=0,
+            needs_transitive_deps:bool=False, flaky:bool|int=0, secrets:list=None, no_test_output:bool=False,
+            test_outputs:list=None, output_is_complete:bool=True, requires:list=None,
+            container:bool|dict=False, sandbox:bool=None, size:str=''):
+    """A rule which creates a test with an arbitrary command.
+
+    The command must return zero on success and nonzero on failure. Test results are written
+    to test.results (or not if no_test_output is True).
+    Most arguments are similar to genrule() so we cover them in less detail here.
+
+    Args:
+      name (str): Name of the rule
+      test_cmd (str | dict): Command to run for the test. It works similarly to the cmd attribute;
+                             see genrule for a more detailed discussion of its properties.
+      labels (list): Labels to apply to this test.
+      cmd (str | dict): Command to run to build the test.
+      srcs (list | dict): Source files for this rule.
+      outs (list): Output files of this rule.
+      deps (list): Dependencies of this rule.
+      tools (list): Tools used to build this rule; similar to srcs but are not copied to the temporary
+                    build directory. Should be accessed via $(exe //path/to:tool) or similar.
+      secrets (list): Secrets available to this rule while building.
+      data (list): Runtime data files for the test.
+      visibility (list): Visibility declaration of this rule.
+      timeout (int): Length of time in seconds to allow the test to run for before killing it.
+      needs_transitive_deps (bool): True if building the rule requires all transitive dependencies to
+                             be made available.
+      flaky (bool | int): If true the test will be marked as flaky and automatically retried.
+      no_test_output (bool): If true the test is not expected to write any output results, it's only
+                      judged on its return value.
+      test_outputs (list): List of optional additional test outputs.
+      output_is_complete (bool): If this is true then the rule blocks downwards searches of transitive
+                          dependencies by other rules.
+      requires (list): Kinds of output from other rules that this one requires.
+      container (bool | dict): If true the test is run in a container (eg. Docker).
+      sandbox (bool): If True, the test is run within a sandbox that restricts some cgroups
+                      including networking, process, IPC, etc. Only has an effect on Linux.
+                      If this is on by default then tests can opt out by setting this to False.
+      size (str): Test size (enormous, large, medium or small).
+    """
+    timeout, labels = _test_size_and_timeout(size, timeout, labels)
+    return build_rule(
+        name = name,
+        srcs = srcs,
+        outs = outs,
+        deps = deps,
+        data = data,
+        tools = tools,
+        secrets = secrets,
+        test_cmd  =  test_cmd,
+        cmd = cmd or 'true',  # By default, do nothing
+        visibility = visibility,
+        output_is_complete = output_is_complete,
+        labels = labels,
+        binary = True,
+        test = True,
+        test_timeout = timeout,
+        needs_transitive_deps = needs_transitive_deps,
+        requires = requires,
+        container = container,
+        test_sandbox = sandbox,
+        no_test_output = no_test_output,
+        test_outputs = test_outputs,
+        flaky = flaky,
+    )
+
+
+def export_file(name:str, src:str, visibility:list=None, binary:bool=False, test_only:bool&testonly=False):
+    """Essentially a single-file alias for filegroup.
+
+    Args:
+      name (str): Name of the rule
+      src (str): Source file for the rule
+      visibility (list): Visibility declaration
+      binary (bool): True to mark the rule outputs as binary
+      test_only (bool): If true the exported file can only be used by test targets.
+    """
+    filegroup(
+        name = name,
+        srcs = [src],
+        visibility = visibility,
+        binary = binary,
+        test_only = test_only,
+    )
+
+
+def filegroup(name:str, tag:str='', srcs:list=None, deps:list=None, exported_deps:list=None,
+              visibility:list=None, labels:list&features&tags=None, binary:bool=False, output_is_complete:bool=True,
+              requires:list=None, provides:dict=None, hashes:list=None, test_only:bool&testonly=False):
+    """Defines a collection of files which other rules can depend on.
+
+    Sources can be omitted entirely in which case it acts simply as a rule to collect other rules,
+    which is often more handy than you might think.
+
+    Args:
+      name (str): Name of the rule
+      tag (str): Tag applied to name; generates a private rule, for example name='a',tag='b' gives
+                 _a#b. Typically used for "private" rules.
+      srcs (list): Source files for the rule.
+      deps (list): Dependencies of the rule.
+      exported_deps (list): Dependencies that will become visible to any rules that depend on this rule.
+      visibility (list): Visibility declaration
+      labels (list): Labels to apply to this rule
+      binary (bool): True to mark the rule outputs as binary
+      output_is_complete (bool): If this is true then the rule blocks downwards searches of transitive
+                                 dependencies by other rules.
+      requires (list): Kinds of output from other rules that this one requires.
+      provides (dict): Kinds of output that this provides for other rules (see genrule() for a more
+                       in-depth discussion of this).
+      hashes (list): List of acceptable output hashes for this rule.
+      test_only (bool): If true the exported file can only be used by test targets.
+    """
+    return build_rule(
+        name=name,
+        tag=tag,
+        cmd='',
+        srcs=srcs,
+        deps=deps,
+        exported_deps=exported_deps,
+        visibility=visibility,
+        building_description='Copying...',
+        output_is_complete=output_is_complete,
+        requires=requires,
+        provides=provides,
+        test_only=test_only,
+        labels=labels,
+        binary=binary,
+        hashes=hashes,
+        _filegroup=True,
+    )
+
+
+def hash_filegroup(name:str, srcs:list=None, deps:list=None, exported_deps:list=None, visibility:list=None,
+                   labels:list&features&tags=None, test_only:bool&testonly=False, requires:list=None):
+    """Copies a set of files to output names which are uniquely hashed based on their contents.
+
+    For example, srcs = ["test.txt"] might output "test-b250cnf30f3h.txt".
+
+    Args:
+      name (str): Name of the rule.
+      srcs (list): Source files for the rule.
+      deps (list): Dependencies of the rule.
+      exported_deps (list): Dependencies that will become visible to any rules that depend on this rule.
+      visibility (list): Visibility declaration
+      labels (list): Labels to apply to this rule
+      test_only (bool): If true the exported file can only be used by test targets.
+      requires (list): Kinds of output from other rules that this one requires.
+    """
+    return build_rule(
+        name=name,
+        srcs=srcs,
+        cmd='',
+        deps=deps,
+        exported_deps=exported_deps,
+        visibility=visibility,
+        building_description='Copying...',
+        output_is_complete=True,
+        test_only=test_only,
+        labels=labels,
+        requires=requires,
+        _hash_filegroup=True,
+    )
+
+
+def system_library(name:str, srcs:list, deps:list=None, hashes:list=None,
+                   visibility:list=None, test_only:bool&testonly=False):
+    """Defines a rule to collect some dependencies from outside the build tree.
+
+    This is essentially the same as a filegroup; it will simply copy files from the system
+    into the build tree, you must add additional rules if compilation is necessary.
+
+    Args:
+      name (str): Name of the rule.
+      srcs (list): System-level sources. Should all be absolute paths.
+      deps (list): Dependencies of the rule.
+      hashes (list): List of hashes; the output must match at least one of these. This is not required
+                     but could be used to assert that the system lib is of some known version.
+      visibility (list): Visibility declaration of the rule.
+      test_only (bool): If true the rule is only visible to test targets.
+    """
+    build_rule(
+        name = name,
+        system_srcs = srcs,
+        outs = [basename(src) for src in srcs],
+        deps = deps,
+        cmd = 'cp $SRCS .',
+        hashes = hashes,
+        visibility = visibility,
+        test_only = test_only,
+        sandbox = False,
+    )
+
+
+def remote_file(name:str, url:str|list, hashes:list=None, out:str=None, binary:bool=False,
+                visibility:list=None, licences:list=None, test_only:bool&testonly=False,
+                labels:list=[], deps:list=None, exported_deps:list=None, _tag=''):
+    """Defines a rule to fetch a file over HTTP(S).
+
+    Args:
+      name (str): Name of the rule
+      url (str | list): URL or URLs to fetch. If multiple are passed then they will be tried
+                        in sequence until one succeeds.
+      hashes (list): List of hashes; the output must match at least one of these.
+      out (str): Output name of the file. Chosen automatically if not given.
+      binary (bool): True to mark the output as binary and runnable.
+      visibility (list): Visibility declaration of the rule.
+      licences (list): List of licences that apply to this rule.
+      test_only (bool): If true the rule is only visible to test targets.
+      labels (list): Labels to apply to this rule.
+      deps (list): List of extra dependencies for this rule.
+      exported_deps (list): Dependencies that will become visible to any rules that depend on this rule.
+    """
+    urls = [url] if isinstance(url, str) else url
+    url = urls[0]
+    return build_rule(
+        name = name,
+        tag = _tag,
+        cmd = '',
+        _urls = urls,
+        outs = [out or url[url.rfind('/') + 1:]],
+        binary = binary,
+        visibility = visibility,
+        hashes = hashes,
+        licences = licences,
+        building_description = 'Fetching...',
+        deps = deps,
+        exported_deps = exported_deps,
+        test_only = test_only,
+        labels = labels,
+        sandbox = False,
+    )
+
+
+def tarball(name:str, srcs:list, out:str=None, deps:list=None, subdir:str=None, gzip:bool=True,
+            test_only:bool=False, visibility:list=None, labels:list&features&tags=[]):
+    """Defines a rule to create a tarball containing outputs of other rules.
+
+    File mode and ownership are preserved. However, the atime and mtime of all
+    files will be set to 1 Jan 2000 00:00:00.
+
+    Args:
+      name (str): Rule name
+      srcs (list): Source files to include in the tarball
+      out (str): Name of output tarball (defaults to `name`.tar.gz, but see below re compression)
+      subdir (str): Subdirectory to create in. All files will be flattened into this directory.
+      gzip (bool): If True, the output will be gzipped. If False, it will just be a tarball.
+      deps (list): Dependencies
+      visibility (list): Visibility specification.
+      labels (list): Labels associated with this rule.
+    """
+    out = out or (name + ('.tar.gz' if gzip else '.tar'))
+    cmd = '$TOOL tar '
+    if gzip:
+        cmd += ' -z'
+    if subdir:
+        cmd += ' --prefix ' + subdir
+
+    return build_rule(
+        name = name,
+        cmd = cmd,
+        srcs = srcs,
+        tools = [CONFIG.JARCAT_TOOL],
+        outs = [out],
+        deps = deps,
+        visibility = visibility,
+        labels = labels + ['tar'],
+        output_is_complete = True,
+        test_only = test_only,
+    )
+
+
+def decompose(label:str):
+    """Decomposes a build label into the package and name parts.
+
+    Consider carefully when you should use this - command replacements may be more appropriate.
+    Most rules should be able to accept labels without having to know anything about their structure.
+
+    Args:
+      label (str): A build label in either relative or absolute form.
+    Raises:
+      ValueError: if the given label is not a correctly formatted build label.
+    """
+    if label.startswith(':'):
+        return get_base_path(), label.lstrip(':')
+    elif label.startswith('//'):
+        package, _, name = label.partition(':')
+        return package.lstrip('/'), name
+    else:
+        raise ValueError("%s doesn't look like a build label" % label)
+
+
+def check_config(key:str, section:str='buildconfig', rule:str='', example:str='...'):
+    """Checks the configuration for the given item and raises an exception if it's not set.
+
+    Args:
+      key (str): Config key that must be set, e.g. ANDROID_HOME
+      section (str): Section of the configuration that it must be set in.
+                     Defaults to buildconfig since most external rules will have to use that.
+      rule (str): Kind of rule that will be using this, e.g. "Android". Affects the output message.
+      example (str): Example that they might consider setting.
+    """
+    if not CONFIG.get(key):
+        key = key.lower().replace('_', '-')
+        rule_msg = (' to use %s rules' % rule) if rule else ''
+        msg = 'You must set %s.%s in your .plzconfig%s' % (section, key, rule_msg)
+        msg = '%s, e.g.\n[%s]\n%s = %s\n' % (msg, section, key, example)
+        raise ConfigError(msg)
+
+
+def _test_size_and_timeout(size, timeout, labels):
+    """Resolves size and timeout arguments for a test. For Buck compatibility."""
+    if size:
+        labels = labels or []
+        labels.append(size)
+        if not timeout:
+            timeout = _SIZE_TIMEOUTS.get(size, 0)
+    if isinstance(timeout, str):
+        timeout = _TIMEOUT_NAMES[timeout]
+    return timeout, labels
+
+
+_SIZE_TIMEOUTS = {
+    'enormous': 3600,
+    'large': 900,
+    'medium': 300,
+    'small': 60,
+}
+
+_TIMEOUT_NAMES = {
+    'eternal': 0,  # means unlimited
+    'long': 900,
+    'moderate': 300,
+    'short': 60,
+}
+
+
+if CONFIG.BAZEL_COMPATIBILITY:
+    def bind(name, actual=None):
+        """Mimics the Bazel bind() function which binds some target or sub-target into our repo.
+
+        TODO(peterebden): Remove, it seems to be deprecated in Bazel so may not be much value having it here.
+        """
+        if not actual:
+            return
+        if actual.startswith('@') and actual.endswith('//jar'):
+            actual = ':' + actual[:-len('//jar')].lstrip('@')
+        filegroup(
+            name = name,
+            srcs = [actual],
+            visibility = ['PUBLIC'],
+        )
+
+    def exports_files(srcs, name='exported_files', visibility=['PUBLIC'], licenses=None):
+        """Makes a bunch of files available as a filegroup.
+
+        Note that the semantics are not the same as Bazel; it lifts the restrictions on those
+        files being available to other packages, whereas we're just creating a rule. It's not
+        impossible to extend Please to support that but right now we're not bothering.
+        """
+        filegroup(
+            name = name,
+            srcs = srcs,
+            visibility = visibility,
+        )
+
+    def licenses(licences):
+        """Sets the default licences for the package."""
+        package(default_licences = licences)

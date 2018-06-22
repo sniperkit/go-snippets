@@ -1,0 +1,131 @@
+version: 2
+jobs:
+   build-linux:
+     working_directory: ~/please
+     docker:
+       - image: thoughtmachine/please_ubuntu:latest
+     environment:
+       PLZ_ARGS: "-p --profile ci"
+       PLZ_COVER: "cover"
+     steps:
+       - checkout
+       - restore_cache:
+           keys:
+             - bootstrap-linux-{{ checksum "bootstrap.sh" }}
+             - go-linux-{{ checksum "third_party/go/BUILD" }}
+             - python-linux-{{ checksum "third_party/python/BUILD" }}
+       - run:
+           name: Bootstrap & Build
+           command: ./bootstrap.sh --exclude no_circleci --test_results_file plz-out/results/test_results.xml
+       - store_test_results:
+           path: plz-out/results/test_results.xml
+       - store_test_results:
+           path: plz-out/surefire-reports
+       - run:
+           name: Lint
+           command: ./tools/misc/ci_lint.py
+       - run:
+           name: Package
+           command: |
+             ./plz-out/bin/src/please build //package:all --exclude asc &&
+             mkdir /tmp/artifacts &&
+             mv plz-out/gen/package/*.deb plz-out/gen/package/*.tar.gz /tmp/artifacts
+       - store_artifacts:
+           path: /tmp/artifacts
+       - store_artifacts:
+           path: plz-out/log
+       - save_cache:
+           key: bootstrap-linux-{{ checksum "bootstrap.sh" }}
+           paths: [ ".bootstrap" ]
+       - save_cache:
+           key: go-linux-{{ checksum "third_party/go/BUILD" }}
+           paths: [ ".plz-cache/third_party/go" ]
+       - save_cache:
+           key: python-linux-{{ checksum "third_party/python/BUILD" }}
+           paths: [ ".plz-cache/third_party/python" ]
+
+
+   build-linux-alt:
+     working_directory: ~/please
+     docker:
+       - image: thoughtmachine/please_ubuntu_alt:latest
+     environment:
+       PLZ_ARGS: "-p --profile ci"
+     steps:
+       - checkout
+       - restore_cache:
+           keys:
+             - bootstrap-linux-{{ checksum "bootstrap.sh" }}
+             - go-linux-{{ checksum "third_party/go/BUILD" }}
+             - python-linux-{{ checksum "third_party/python/BUILD" }}
+       - run:
+           name: Bootstrap & Build
+           command: ./bootstrap.sh --exclude no_circleci --test_results_file plz-out/results/test_results.xml
+       - store_test_results:
+           path: plz-out/results/test_results.xml
+       - store_test_results:
+           path: plz-out/surefire-reports
+       - store_artifacts:
+           path: plz-out/log
+       - run:
+           name: Lint
+           command: ./tools/misc/ci_lint.py
+       - save_cache:
+           key: bootstrap-linux-{{ checksum "bootstrap.sh" }}
+           paths: [ ".bootstrap" ]
+       - save_cache:
+           key: go-linux-{{ checksum "third_party/go/BUILD" }}
+           paths: [ ".plz-cache/third_party/go" ]
+       - save_cache:
+           key: python-linux-{{ checksum "third_party/python/BUILD" }}
+           paths: [ ".plz-cache/third_party/python" ]
+
+   build-darwin:
+      macos:
+        xcode: "9.0"
+      environment:
+        PLZ_ARGS: "-p --profile ci"
+      steps:
+       - checkout
+       - restore_cache:
+           keys:
+             - bootstrap-darwin-{{ checksum "bootstrap.sh" }}
+             - go-darwin-{{ checksum "third_party/go/BUILD" }}
+             - python-darwin-{{ checksum "third_party/python/BUILD" }}
+       - run:
+           name: Install deps
+           command: brew install go unittest-cpp nasm pkg-config && brew upgrade python
+       - run:
+           name: Bootstrap & Build
+           command: ./bootstrap.sh --exclude no_circleci --test_results_file plz-out/results/test_results.xml
+       - store_test_results:
+           path: plz-out/results/test_results.xml
+       - store_test_results:
+           path: plz-out/surefire-reports
+       - store_artifacts:
+           path: plz-out/log
+       - run:
+           name: Package
+           command: |
+             ./plz-out/bin/src/please build //package:all --exclude asc --exclude deb &&
+             mkdir /tmp/artifacts &&
+             mv plz-out/gen/package/*.tar.gz /tmp/artifacts
+       - store_artifacts:
+           path: /tmp/artifacts
+       - save_cache:
+           key: bootstrap-darwin-{{ checksum "bootstrap.sh" }}
+           paths: [ ".bootstrap" ]
+       - save_cache:
+           key: go-darwin-{{ checksum "third_party/go/BUILD" }}
+           paths: [ ".plz-cache/third_party/go" ]
+       - save_cache:
+           key: python-darwin-{{ checksum "third_party/python/BUILD" }}
+           paths: [ ".plz-cache/third_party/python" ]
+
+workflows:
+  version: 2
+  build-all:
+    jobs:
+      - build-linux
+      - build-linux-alt
+      - build-darwin
