@@ -1,0 +1,35 @@
+version: "3.4"
+services:
+  base:
+    image: nutshells/base
+    build: ./base
+
+  base-edge:
+    image: nutshells/base:edge
+    build:
+      context: ./base
+      dockerfile: Dockerfile-edge
+
+  base-centos:
+    image: nutshells/base:centos
+    build:
+      context: ./base
+      dockerfile: Dockerfile-centos
+
+  dnscrypt-wrapper:
+    image: nutshells/dnscrypt-wrapper
+    build: ./dnscrypt-wrapper
+
+  dnsmasq-fast-lookup:
+    image: nutshells/dnsmasq-fast-lookup
+    build: ./dnsmasq-fast-lookup
+
+  ss-obfs:
+    image: nutshells/ss-obfs
+    build: ./ss-obfs
+
+  ss-obfs-centos:
+    image: nutshells/ss-obfs:centos
+    build:
+      context: ./ss-obfs
+      dockerfile: Dockerfile-centos
