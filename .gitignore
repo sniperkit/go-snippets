@@ -1,0 +1,7 @@
+## ignore go build outputs
+/bin/
+/.gopath/pkg/
+/.gopath/tmp/
+
+## ignore raceway logs
+/.raceway/
