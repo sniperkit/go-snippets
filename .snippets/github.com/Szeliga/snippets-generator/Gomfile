@@ -1,0 +1,1 @@
+gom "github.com/go-yaml/yaml", :branch => "v2"
