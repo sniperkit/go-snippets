@@ -1,0 +1,18 @@
+# .goreleaser.yml
+# Build customization
+project_name: butler
+builds:
+  - binary: butler
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+archive:
+ files:
+    - LICENSE
+    - README.md
+    - butler.yml
+## snapshot:
+##  name_template: "0.0.3"
