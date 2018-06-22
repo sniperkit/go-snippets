@@ -1,0 +1,27 @@
+#toc-overlay {
+	position: fixed;
+	top: 15;
+	right: 15;
+	z-index: 1000;
+	opacity: 0.9;
+	border: 1px solid lightgray;
+
+	font-family: Menlo, monospace;
+	font-size: 12px;
+}
+
+div.toc-entry {
+	cursor: hand;
+}
+
+.toc-entry {
+	color: inherit;
+	background: white;
+}
+.toc-entry:hover {
+	background: rgb(92.5%, 92.5%, 92.5%);
+}
+.toc-highlighted, .toc-highlighted:hover, a.toc-highlighted:hover {
+	color: white;
+	background: rgb(21%, 45%, 84%);
+}
