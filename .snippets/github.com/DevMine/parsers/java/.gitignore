@@ -1,0 +1,6 @@
+parser-java.zip
+/target/
+/logs.txt
+/javaparser.sh
+/nbactions-release-profile.xml
+nb-configuration.xml
