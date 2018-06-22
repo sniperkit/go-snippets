@@ -1,0 +1,23 @@
+language: go
+sudo: false
+go:
+  - 1.7.x
+  - master
+
+addons:
+  apt:
+    sources:
+    - sourceline: ppa:masterminds/glide
+    packages:
+    - glide
+
+install:
+  - glide install
+  - go get github.com/bookerzzz/gocovmerge
+
+script:
+  - make test
+  - make cover
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
