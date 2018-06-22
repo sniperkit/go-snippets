@@ -1,0 +1,11 @@
+{{ define "doc" }}
+<div class="doc panel">
+	<div class="panel-heading">
+		<div class="name"> {{ .Name }} </div>
+		<div class="tags"> {{ GetTags .Tags }} </div>
+	</div>
+	<div class="panel-body">
+		{{ .Content }}
+	</div>
+</div>
+{{ end }}
