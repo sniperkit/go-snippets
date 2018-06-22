@@ -1,0 +1,12 @@
+{{ docker.from("php-apache", "5.6") }}
+
+{{ environment.web() }}
+{{ environment.webPhp() }}
+{{ environment.webDevelopment() }}
+
+{{ docker.copy('conf/', '/opt/docker/') }}
+
+RUN set -x \
+    {{ php.officialDevelopment(version="5.6") }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}

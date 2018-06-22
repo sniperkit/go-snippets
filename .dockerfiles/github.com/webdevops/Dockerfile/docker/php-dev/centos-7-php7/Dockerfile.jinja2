@@ -1,0 +1,8 @@
+{{ docker.from("php", "centos-7-php7") }}
+
+{{ docker.copy('conf/', '/opt/docker/') }}
+
+RUN set -x \
+    {{ php7dev.webtatic() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}

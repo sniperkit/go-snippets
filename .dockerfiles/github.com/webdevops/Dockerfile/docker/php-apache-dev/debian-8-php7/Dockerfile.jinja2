@@ -1,0 +1,12 @@
+{{ docker.from("php-apache", "debian-8-php7") }}
+
+{{ environment.web() }}
+{{ environment.webPhp() }}
+{{ environment.webDevelopment() }}
+
+{{ docker.copy('conf/', '/opt/docker/') }}
+
+RUN set -x \
+    {{ php7dev.debianSury() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}

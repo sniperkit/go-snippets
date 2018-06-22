@@ -1,0 +1,14 @@
+{{ docker.fromOfficial("java") }}
+
+{{ docker.version() }}
+
+{{ environment.liquibase('3.5.3', 'org.postgresql.Driver', '/usr/share/java/postgresql.jar') }}
+
+{{ docker.copy('conf/', '/opt/docker/') }}
+
+RUN set -x \
+    {{ liquibase.postgres() }}
+
+{{ docker.workdir("/liquibase") }}
+{{ docker.entrypoint("/entrypoint") }}
+
