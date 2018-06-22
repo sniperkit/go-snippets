@@ -8,3 +8,5 @@ rmd vendor
 rmd Godeps 
 rmd node_modules
 echo "Successfully removed all vendor dirs: vendor, Godeps, node_modules"
+
+# git config core.hooksPath .githooks
