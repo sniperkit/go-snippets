@@ -1,0 +1,99 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/aws/aws-sdk-go/aws",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"vcs": "git",
+			"revision": "d621b01e9d7ef5dcecbc323939ed97f9862cd6fd",
+			"branch": "master",
+			"path": "/aws",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/private/endpoints",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"vcs": "git",
+			"revision": "d621b01e9d7ef5dcecbc323939ed97f9862cd6fd",
+			"branch": "master",
+			"path": "/private/endpoints",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/private/protocol",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"vcs": "git",
+			"revision": "d621b01e9d7ef5dcecbc323939ed97f9862cd6fd",
+			"branch": "master",
+			"path": "/private/protocol",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/private/signer/v4",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"vcs": "git",
+			"revision": "d621b01e9d7ef5dcecbc323939ed97f9862cd6fd",
+			"branch": "master",
+			"path": "/private/signer/v4",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/private/waiter",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"vcs": "git",
+			"revision": "d621b01e9d7ef5dcecbc323939ed97f9862cd6fd",
+			"branch": "master",
+			"path": "/private/waiter",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/service/s3",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"vcs": "git",
+			"revision": "d621b01e9d7ef5dcecbc323939ed97f9862cd6fd",
+			"branch": "master",
+			"path": "/service/s3",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/codegangsta/cli",
+			"repository": "https://github.com/codegangsta/cli",
+			"vcs": "git",
+			"revision": "9f09b40642330881706afa9403c7b6332fa7c249",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/go-ini/ini",
+			"repository": "https://github.com/go-ini/ini",
+			"vcs": "git",
+			"revision": "12f418cc7edc5a618a51407b7ac1f1f512139df3",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/hashicorp/go-getter",
+			"repository": "https://github.com/hashicorp/go-getter",
+			"vcs": "git",
+			"revision": "3142ddc1d627a166970ddd301bc09cb510c74edc",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/jmespath/go-jmespath",
+			"repository": "https://github.com/jmespath/go-jmespath",
+			"vcs": "git",
+			"revision": "0b12d6b521d83fc7f755e7cfc1b1fbdd35a01a74",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "gopkg.in/yaml.v2",
+			"repository": "https://gopkg.in/yaml.v2",
+			"vcs": "git",
+			"revision": "a83829b6f1293c91addabc89d0571c246397bbf4",
+			"branch": "v2",
+			"notests": true
+		}
+	]
+}
