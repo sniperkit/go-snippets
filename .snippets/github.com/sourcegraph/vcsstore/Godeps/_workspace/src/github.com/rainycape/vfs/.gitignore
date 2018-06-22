@@ -1,6 +1,0 @@
-*.pyc
-*.so
-*.o
-*.a
-.libs/
-.*.swp
