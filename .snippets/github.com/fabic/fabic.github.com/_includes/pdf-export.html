@@ -1,0 +1,6 @@
+<div class="pdf-export-widget">
+  {% assign url = page.url | absolute_url | uri_escape %}
+  {% assign filename  = site.author.name | append: " - " | append: page.title | uri_escape %}
+    <a href="http://js.fabic.net/_/pdf/{{ url }}?fn={{ filename }}"
+       class="fa fa-file-pdf-o"></a>
+</div>

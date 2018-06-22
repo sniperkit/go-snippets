@@ -1,0 +1,110 @@
+{% if site.comments and jekyll.environment != "development" %}
+    <aside id="comments" class="disqus">
+        <div class="container">
+            <h3 class="alignable pull-left"></h3>
+            <h3 class="alignable pull-right">
+                <i class="icon-disqus"></i>
+            </h3>
+
+            <div id="disqus_thread">
+                <a id="disqus-load-button"
+                   class="center" href="#"title="Load Disqus comments.">
+                  Click to load comments (Disqus)</a>
+            </div>
+
+            <script>
+                /**
+                 * FABIC: This will load Disqus upon button click.
+                 */
+                (function(document) {
+                    var disqus_config = function () {
+                        this.page.url = "{{ page.url | absolute_url }}"; // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = "{{ page.url }}";
+                    };
+
+                    /* Original Disqus code :
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = '//fabic.disqus.com/embed.js'; // TODO: EDIT THIS
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })(); */
+
+                    /**
+                     * Actual Discus setup routine refactored here.
+                     */
+                    function _fabic_disqus_setup() {
+                        console.log("Dude, we're now setting up Disqus !");
+                        var s = document.createElement('script');
+                        s.src = '//fabic.disqus.com/embed.js'; // TODO: EDIT THIS
+                        s.setAttribute('data-timestamp', +new Date());
+                        document.body.appendChild( s );
+                    }
+
+                    // 2017-12: Have a "Load comments" button.
+                    if (true) {
+                        var loadBtn = document.getElementById('disqus-load-button');
+                        loadBtn.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            _fabic_disqus_setup();
+                        });
+                    }
+                    // 2017-12: Have Disqus do its stuff when DOM is ready.
+                    else if (false) {
+                      document.addEventListener("DOMContentLoaded", function(event) {
+                        _fabic_disqus_setup();
+                      });
+                    }
+
+                    /* Register a listener for scroll events so that we check
+                     * whether the div#disqus_thread is visible. And trigger
+                     * Disqus init. at this moment.
+                     *
+                     * Note that we also have to check whether the container is
+                     * already visible. */
+                    document.addEventListener("DOMContentLoaded", function(event) {
+                        // TODO: window.requestAnimationFrame ?
+                        // ^ see MDN Events.scroll doc. advice.
+                        // AUTO. setup disqus upon scroll into view.
+                        var _disqus_setup_done = false;
+
+                        if (Utils.isElementVisible('disqus_thread', document)) {
+                            _fabic_disqus_setup();
+                            _disqus_setup_done = true;
+                        }
+                        else {
+                            document.addEventListener("scroll",
+                                function _fabic_disqus_scroll_event_handler(event) {
+                                    console.log('!!');
+                                  var docu = event.target; // === this -_-
+                                  if (_disqus_setup_done)
+                                    return;
+                                  if (Utils.isElementVisible('disqus_thread', docu)) {
+                                    var window = docu.defaultView;
+                                    // Resorting to requestAnimationFrame() here is
+                                    // completely optional, but it feels better to
+                                    // know that we're returning quickly from this
+                                    // event handler.
+                                    window.requestAnimationFrame(function() {
+                                        _fabic_disqus_setup();
+                                        _disqus_setup_done = true;
+                                        // We won't need to process further scroll events.
+                                        document.removeEventListener("scroll", _fabic_disqus_scroll_event_handler);
+                                    });
+                                  }
+                                });
+                        }
+                    });
+                })(document);
+            </script>
+
+            <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                    comments powered by Disqus.</a>
+            </noscript>
+            <!--
+                End here
+            -->
+    </aside>
+{% endif %}
