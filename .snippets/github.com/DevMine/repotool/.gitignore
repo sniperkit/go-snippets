@@ -1,0 +1,16 @@
+*~
+*.json
+*.prename
+*.swp
+
+.directory
+.DS_Store
+
+repotool
+!cmd/repotool
+repotool-db
+!cmd/repotool-db
+repotool.conf
+log
+pid
+tags
