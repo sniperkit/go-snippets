@@ -1,0 +1,102 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 12,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 3
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "end": 5,
+                    "expression": {
+                        "end": 4,
+                        "loc": {
+                            "end": {
+                                "column": 4,
+                                "line": 1
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 1
+                            }
+                        },
+                        "start": 0,
+                        "type": "BooleanLiteral",
+                        "value": true
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 5,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "type": "ExpressionStatement"
+                },
+                {
+                    "end": 11,
+                    "expression": {
+                        "end": 11,
+                        "loc": {
+                            "end": {
+                                "column": 5,
+                                "line": 2
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 2
+                            }
+                        },
+                        "start": 6,
+                        "type": "BooleanLiteral",
+                        "value": false
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 5,
+                            "line": 2
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 2
+                        }
+                    },
+                    "start": 6,
+                    "type": "ExpressionStatement"
+                }
+            ],
+            "directives": [],
+            "end": 12,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 3
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

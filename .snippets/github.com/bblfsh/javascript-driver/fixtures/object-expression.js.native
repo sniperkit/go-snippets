@@ -1,0 +1,162 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 17,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 2
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "declarations": [
+                        {
+                            "end": 16,
+                            "id": {
+                                "end": 7,
+                                "loc": {
+                                    "end": {
+                                        "column": 7,
+                                        "line": 1
+                                    },
+                                    "identifierName": "x",
+                                    "start": {
+                                        "column": 6,
+                                        "line": 1
+                                    }
+                                },
+                                "name": "x",
+                                "start": 6,
+                                "type": "Identifier"
+                            },
+                            "init": {
+                                "end": 16,
+                                "loc": {
+                                    "end": {
+                                        "column": 16,
+                                        "line": 1
+                                    },
+                                    "start": {
+                                        "column": 10,
+                                        "line": 1
+                                    }
+                                },
+                                "properties": [
+                                    {
+                                        "computed": false,
+                                        "end": 15,
+                                        "key": {
+                                            "end": 12,
+                                            "loc": {
+                                                "end": {
+                                                    "column": 12,
+                                                    "line": 1
+                                                },
+                                                "identifierName": "a",
+                                                "start": {
+                                                    "column": 11,
+                                                    "line": 1
+                                                }
+                                            },
+                                            "name": "a",
+                                            "start": 11,
+                                            "type": "Identifier"
+                                        },
+                                        "loc": {
+                                            "end": {
+                                                "column": 15,
+                                                "line": 1
+                                            },
+                                            "start": {
+                                                "column": 11,
+                                                "line": 1
+                                            }
+                                        },
+                                        "method": false,
+                                        "shorthand": false,
+                                        "start": 11,
+                                        "type": "ObjectProperty",
+                                        "value": {
+                                            "end": 15,
+                                            "extra": {
+                                                "raw": "0",
+                                                "rawValue": 0
+                                            },
+                                            "loc": {
+                                                "end": {
+                                                    "column": 15,
+                                                    "line": 1
+                                                },
+                                                "start": {
+                                                    "column": 14,
+                                                    "line": 1
+                                                }
+                                            },
+                                            "start": 14,
+                                            "type": "NumericLiteral",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "start": 10,
+                                "type": "ObjectExpression"
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 16,
+                                    "line": 1
+                                },
+                                "start": {
+                                    "column": 6,
+                                    "line": 1
+                                }
+                            },
+                            "start": 6,
+                            "type": "VariableDeclarator"
+                        }
+                    ],
+                    "end": 16,
+                    "kind": "const",
+                    "loc": {
+                        "end": {
+                            "column": 16,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "type": "VariableDeclaration"
+                }
+            ],
+            "directives": [],
+            "end": 17,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 2
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

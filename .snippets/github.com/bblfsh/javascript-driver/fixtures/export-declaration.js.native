@@ -1,0 +1,299 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 82,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 6
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "declaration": {
+                        "async": false,
+                        "body": {
+                            "body": [],
+                            "directives": [],
+                            "end": 22,
+                            "loc": {
+                                "end": {
+                                    "column": 22,
+                                    "line": 1
+                                },
+                                "start": {
+                                    "column": 20,
+                                    "line": 1
+                                }
+                            },
+                            "start": 20,
+                            "type": "BlockStatement"
+                        },
+                        "end": 22,
+                        "generator": false,
+                        "id": {
+                            "end": 17,
+                            "loc": {
+                                "end": {
+                                    "column": 17,
+                                    "line": 1
+                                },
+                                "identifierName": "f",
+                                "start": {
+                                    "column": 16,
+                                    "line": 1
+                                }
+                            },
+                            "name": "f",
+                            "start": 16,
+                            "type": "Identifier"
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 22,
+                                "line": 1
+                            },
+                            "start": {
+                                "column": 7,
+                                "line": 1
+                            }
+                        },
+                        "params": [],
+                        "start": 7,
+                        "type": "FunctionDeclaration"
+                    },
+                    "end": 22,
+                    "exportKind": "value",
+                    "loc": {
+                        "end": {
+                            "column": 22,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "source": null,
+                    "specifiers": [],
+                    "start": 0,
+                    "type": "ExportNamedDeclaration"
+                },
+                {
+                    "declaration": {
+                        "end": 39,
+                        "extra": {
+                            "raw": "1",
+                            "rawValue": 1
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 16,
+                                "line": 2
+                            },
+                            "start": {
+                                "column": 15,
+                                "line": 2
+                            }
+                        },
+                        "start": 38,
+                        "type": "NumericLiteral",
+                        "value": 1
+                    },
+                    "end": 40,
+                    "loc": {
+                        "end": {
+                            "column": 17,
+                            "line": 2
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 2
+                        }
+                    },
+                    "start": 23,
+                    "type": "ExportDefaultDeclaration"
+                },
+                {
+                    "end": 61,
+                    "exportKind": "value",
+                    "loc": {
+                        "end": {
+                            "column": 20,
+                            "line": 3
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 3
+                        }
+                    },
+                    "source": {
+                        "end": 60,
+                        "extra": {
+                            "raw": "\"mod\"",
+                            "rawValue": "mod"
+                        },
+                        "loc": {
+                            "end": {
+                                "column": 19,
+                                "line": 3
+                            },
+                            "start": {
+                                "column": 14,
+                                "line": 3
+                            }
+                        },
+                        "start": 55,
+                        "type": "StringLiteral",
+                        "value": "mod"
+                    },
+                    "start": 41,
+                    "type": "ExportAllDeclaration"
+                },
+                {
+                    "declaration": null,
+                    "end": 80,
+                    "exportKind": "value",
+                    "loc": {
+                        "end": {
+                            "column": 18,
+                            "line": 4
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 4
+                        }
+                    },
+                    "source": null,
+                    "specifiers": [
+                        {
+                            "end": 73,
+                            "exported": {
+                                "end": 73,
+                                "loc": {
+                                    "end": {
+                                        "column": 11,
+                                        "line": 4
+                                    },
+                                    "identifierName": "foo",
+                                    "start": {
+                                        "column": 8,
+                                        "line": 4
+                                    }
+                                },
+                                "name": "foo",
+                                "start": 70,
+                                "type": "Identifier"
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 11,
+                                    "line": 4
+                                },
+                                "start": {
+                                    "column": 8,
+                                    "line": 4
+                                }
+                            },
+                            "local": {
+                                "end": 73,
+                                "loc": {
+                                    "end": {
+                                        "column": 11,
+                                        "line": 4
+                                    },
+                                    "identifierName": "foo",
+                                    "start": {
+                                        "column": 8,
+                                        "line": 4
+                                    }
+                                },
+                                "name": "foo",
+                                "start": 70,
+                                "type": "Identifier"
+                            },
+                            "start": 70,
+                            "type": "ExportSpecifier"
+                        },
+                        {
+                            "end": 78,
+                            "exported": {
+                                "end": 78,
+                                "loc": {
+                                    "end": {
+                                        "column": 16,
+                                        "line": 4
+                                    },
+                                    "identifierName": "bar",
+                                    "start": {
+                                        "column": 13,
+                                        "line": 4
+                                    }
+                                },
+                                "name": "bar",
+                                "start": 75,
+                                "type": "Identifier"
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 16,
+                                    "line": 4
+                                },
+                                "start": {
+                                    "column": 13,
+                                    "line": 4
+                                }
+                            },
+                            "local": {
+                                "end": 78,
+                                "loc": {
+                                    "end": {
+                                        "column": 16,
+                                        "line": 4
+                                    },
+                                    "identifierName": "bar",
+                                    "start": {
+                                        "column": 13,
+                                        "line": 4
+                                    }
+                                },
+                                "name": "bar",
+                                "start": 75,
+                                "type": "Identifier"
+                            },
+                            "start": 75,
+                            "type": "ExportSpecifier"
+                        }
+                    ],
+                    "start": 62,
+                    "type": "ExportNamedDeclaration"
+                }
+            ],
+            "directives": [],
+            "end": 82,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 6
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

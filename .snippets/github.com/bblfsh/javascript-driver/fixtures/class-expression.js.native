@@ -1,0 +1,123 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 18,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 2
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "declarations": [
+                        {
+                            "end": 16,
+                            "id": {
+                                "end": 5,
+                                "loc": {
+                                    "end": {
+                                        "column": 5,
+                                        "line": 1
+                                    },
+                                    "identifierName": "x",
+                                    "start": {
+                                        "column": 4,
+                                        "line": 1
+                                    }
+                                },
+                                "name": "x",
+                                "start": 4,
+                                "type": "Identifier"
+                            },
+                            "init": {
+                                "body": {
+                                    "body": [],
+                                    "end": 16,
+                                    "loc": {
+                                        "end": {
+                                            "column": 16,
+                                            "line": 1
+                                        },
+                                        "start": {
+                                            "column": 14,
+                                            "line": 1
+                                        }
+                                    },
+                                    "start": 14,
+                                    "type": "ClassBody"
+                                },
+                                "end": 16,
+                                "id": null,
+                                "loc": {
+                                    "end": {
+                                        "column": 16,
+                                        "line": 1
+                                    },
+                                    "start": {
+                                        "column": 8,
+                                        "line": 1
+                                    }
+                                },
+                                "start": 8,
+                                "superClass": null,
+                                "type": "ClassExpression"
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 16,
+                                    "line": 1
+                                },
+                                "start": {
+                                    "column": 4,
+                                    "line": 1
+                                }
+                            },
+                            "start": 4,
+                            "type": "VariableDeclarator"
+                        }
+                    ],
+                    "end": 17,
+                    "kind": "let",
+                    "loc": {
+                        "end": {
+                            "column": 17,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "type": "VariableDeclaration"
+                }
+            ],
+            "directives": [],
+            "end": 18,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 2
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

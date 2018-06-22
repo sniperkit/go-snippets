@@ -1,0 +1,92 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 29,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 2
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "async": true,
+                    "body": {
+                        "body": [],
+                        "directives": [],
+                        "end": 28,
+                        "loc": {
+                            "end": {
+                                "column": 28,
+                                "line": 1
+                            },
+                            "start": {
+                                "column": 26,
+                                "line": 1
+                            }
+                        },
+                        "start": 26,
+                        "type": "BlockStatement"
+                    },
+                    "end": 28,
+                    "generator": false,
+                    "id": {
+                        "end": 23,
+                        "loc": {
+                            "end": {
+                                "column": 23,
+                                "line": 1
+                            },
+                            "identifierName": "testfnc1",
+                            "start": {
+                                "column": 15,
+                                "line": 1
+                            }
+                        },
+                        "name": "testfnc1",
+                        "start": 15,
+                        "type": "Identifier"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 28,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "params": [],
+                    "start": 0,
+                    "type": "FunctionDeclaration"
+                }
+            ],
+            "directives": [],
+            "end": 29,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 2
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}
