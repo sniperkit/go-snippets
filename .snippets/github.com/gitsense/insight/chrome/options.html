@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitSense Configuration</title>
+    <style>
+        body { margin: 20px; font-size:13px;  }
+        code { background-color:#fafafa; border:1px solid #ccc; padding:1px; border-radius:3px; }
+        pre { font-size: 13px; font-family: monospace; }
+        h2 { margin-bottom: 10px; }
+        h3 { margin-top: 10px; margin-bottom: 5px; } 
+        p { line-height: 1.5; font-size: 13px; }
+        ol { line-height: 1.7; }
+        input { padding: 5px; }
+        input[type=button] { cursor: pointer; }
+        input[type=text], input[type=password] {
+            -webkit-appearance: none; 
+            border-radius: 3px; 
+            border: 1px solid #888;
+        }
+        select { padding: 3px; border-radius: 3px; border: 1px solid #888; }
+        .input-cell { display: table-cell }
+        .input-status { width: 30px; display: none; }
+        .button { padding-left: 10px; padding-right: 10px; }
+        .note { margin-bottom: 5px }
+        .reminder { 
+            margin-top: 15px;
+            margin-bottom: 20px;
+            padding: 10px; 
+            border: 1px solid #3c763d;
+            width: 388px; 
+            display: none;
+            line-height: 1.5;
+            background-color: #dff0d8;
+            color: #3c763d;
+            font-size: 13px;
+        }
+        .triangle {
+            font-size: 12px;
+            position: relative;
+            width: 12px;
+            text-align: center;
+        }
+        .plus-minus {
+            font-size: 1px;
+            position: relative;
+            top: -2px;
+            width: 12px;
+            text-align: center;
+        }
+        .error { 
+            width: 595px; 
+            color: #a94442; 
+            background-color: rgb(255, 234, 234); 
+            padding:10px; 
+            margin-top:20px; 
+        }
+        .rule { 
+            border:1px solid #666; 
+            border-bottom: 0px;
+            padding: 15px; 
+        }
+        .rules { 
+            width: 500px; 
+            height: 400px; 
+            font-family: monospace; 
+            margin-top: 5px; 
+        }
+        table { border-bottom: 0px; border-spacing: 0px; line-height: 1.7 }
+        td.attribute-name { 
+            text-align:right; 
+            padding: 10px;
+            padding-right: 10px; 
+            border-bottom: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            vertical-align: top;
+        }
+        td.attribute-desc {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        td.sub-attribute-name { 
+            text-align:right; 
+            padding: 5px;
+            padding-top: 0px;
+            vertical-align: top;
+        }
+        td.sub-attribute-desc { padding: 5px; padding-top: 0px; }
+        td.field-cell { padding-right: 20px; }
+        .row { }
+        fieldset { 
+            border: 1px solid #888; 
+            border-radius: 3px; 
+            margin-bottom: 20px; 
+            padding: 15px;
+            padding-top: 10px;
+        }
+        legend { 
+            color: black; 
+            font-weight: bold; 
+            font-size: 14px; 
+            padding-left: 7px; 
+            padding-right: 7px; 
+        }
+        .block-header { margin-top: 15px; }
+        .block-body { padding-top: 5px; font-size: 13px; }
+        .block-name { 
+            font-size: 15px;
+            font-weight: bold; 
+            margin-left: 5px; 
+            margin-right: 10px; 
+            cursor: pointer; 
+        }
+        .options { float: right; }
+        .option { cursor: pointer; font-size: 20px; color: #555;}
+        .option:hover { color: #4183c4; }
+        .restore { float: right; font-size: 12px; cursor: pointer; }
+        .restore:hover { color: #4183c4; }
+    </style> 
+    <link rel="stylesheet" type="text/css" href="3rdparty/octicons/octicons.css"> 
+</head>
+<body>
+    <div style="width:600px">
+        <h1>GitSense Configuration</h1>
+
+        <h2>
+            Routing Rules
+        </h2>
+        <div id=routingRules style="margin-bottom:30px;"></div> 
+        <input class=button id=new-rule-button type=button value="Create new rule">
+        <input class=button id=save-button type=button value="Save changes">
+        <span id=save-status style="margin-left:5px"></span>
+        <a id=restore class=restore>Restore default settings</a>
+        <div style="clear:both"></div>
+        <div id=save-error class=error style="display:none;"></div>
+    </div> 
+
+    <script src="3rdparty/js/jquery-2.1.4.min.js"></script>
+    <script src="js/arch.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/utils/variable.js"></script>
+    <script src="js/utils/html.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>
