@@ -1,0 +1,59 @@
+
+# https://circleci.com/docs/docker
+machine:
+  environment:
+    VERSION: 2.0.3
+    BUILD_DATE: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    VCS_REF: ${CIRCLE_SHA1:0:7}
+    TAG: ${VERSION}-cpu-alpine
+    TAG_MINOR: ${VERSION%.*}-cpu-alpine
+    TAG_MAJOR: ${VERSION%%.*}-cpu-alpine
+    BATS_VER: 0.4.0
+  services: 
+    - docker
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0  
+  post:
+    - ulimit -u 10000
+    - sudo service postgresql stop
+    - sudo service mongod stop
+    - sudo service memcached stop
+    - sudo service mysql stop
+#    - sudo service couchdb stop
+
+dependencies:
+  cache_directories:
+    - "~/deps"
+#  pre:
+    # - if [[ ! -e ~/deps/bats_v${BATS_VER}.tar.gz ]]; then mkdir -p ~/deps; curl -sSL -o ~/deps/bats_v${BATS_VER}.tar.gz https://github.com/sstephenson/bats/archive/v${BATS_VER}.tar.gz; fi
+    # - tar -xf ~/deps/bats_v${BATS_VER}.tar.gz
+    # - sudo bats-${BATS_VER}/install.sh /usr/local
+#    - sudo pip install docker-compose
+  override:
+    - docker info
+    - docker version
+    - make all:
+        timeout: 3600 
+
+test:
+  override:
+    - docker inspect smizy/keras-tensorflow:${TAG}
+    - make test
+
+# https://circleci.com/docs/configuration#deployment
+# https://circleci.com/docs/environment-variables
+deployment:
+  master:
+    branch: master
+    owner: smizy
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker tag smizy/keras-tensorflow:${TAG} smizy/keras-tensorflow
+      - docker tag smizy/keras-tensorflow:${TAG} smizy/keras-tensorflow:${TAG_MINOR}
+ #     - docker tag smizy/keras-tensorflow:${TAG} smizy/keras-tensorflow:${TAG_MAJOR}
+      - docker push smizy/keras-tensorflow:${TAG}
+      - docker push smizy/keras-tensorflow:${TAG_MINOR}
+ #     - docker push smizy/keras-tensorflow:${TAG_MAJOR}
+      - docker push smizy/keras-tensorflow:latest
+      - docker logout
+      - curl -X POST 'https://hooks.microbadger.com/images/smizy/keras-tensorflow/kZzvRF3AJodLAJeVZ8aVSKyupOI='
