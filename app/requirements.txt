@@ -1,0 +1,5 @@
+Django
+psycopg2
+lxml
+requests
+stripe
