@@ -1,0 +1,17 @@
+version: '3.6'
+services:
+  web:
+    build:
+      context: ./web/
+    ports:
+      - "80:80"
+      - "443:443"
+  app:
+    build:
+      context: ./app/
+  worker:
+    build:
+      context: ./worker/
+  db:
+    build:
+      context: ./db/
