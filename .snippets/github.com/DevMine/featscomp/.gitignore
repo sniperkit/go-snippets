@@ -1,0 +1,11 @@
+*~
+*.swp
+*.prename
+.directory
+.DS_Store
+
+featscomp
+featscomp.conf
+log
+pid
+tags
