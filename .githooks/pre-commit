@@ -1,5 +1,10 @@
 #!/bin/sh
 
-buildpath=./build/justgo
-go build -o "$buildpath"
-echo "Successfully built new binary at: $buildpath"
+# buildpath=./build/justgo
+# go build -o "$buildpath"
+# echo "Successfully built new binary at: $buildpath"
+
+rmd vendor 
+rmd Godeps 
+rmd node_modules
+echo "Successfully removed all vendor dirs: vendor, Godeps, node_modules"
