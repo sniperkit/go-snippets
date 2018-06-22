@@ -1,0 +1,10 @@
+{
+    "database": {
+        "hostname": "localhost",
+        "port": 5432,
+        "username": "devmine",
+        "password": "devmine",
+        "dbname": "devmine",
+        "ssl_mode": "disable"
+    }
+}
