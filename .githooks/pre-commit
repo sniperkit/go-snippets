@@ -1,12 +1,40 @@
 #!/bin/sh
 
-# buildpath=./build/justgo
-# go build -o "$buildpath"
-# echo "Successfully built new binary at: $buildpath"
+function fbs { 
+	local limit=${1:-"20"}
+	du -m . | sort -nr | head -n $limit
+}
+
+function fb { 
+	local limit=${1:-"20"}
+	du -h . | sort -hr | head -n $limit
+}
+
+function fbg { 
+	local pattern=${1:-"vendor"}
+	local limit=${2:-"50"}
+	du -h . | grep "$pattern" | sort -hr | head -n $limit
+}
+
+function fd { 
+	local pattern=${1:-"test"}
+	find . -name "$pattern" -type d -exec rm -rf {} +
+}
+
+function rmd { 
+	local pattern=${1:-"test"}
+	find . -name "$pattern" -type d -print -exec rm -rf {} +
+}
+
+# alias biggy="du -m . | sort -nr | head -n 50"
+
+export DEP_DIRNAMES="vendor;Godeps;node_modules"
 
 rmd vendor 
 rmd Godeps 
 rmd node_modules
 echo "Successfully removed all vendor dirs: vendor, Godeps, node_modules"
+
+# echo "Top 50 subtrees by size"
 
 # git config core.hooksPath .githooks
