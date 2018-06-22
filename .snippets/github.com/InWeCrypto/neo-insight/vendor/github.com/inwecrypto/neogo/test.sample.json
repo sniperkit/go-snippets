@@ -1,0 +1,4 @@
+{
+    "testnode": "http://localhost:20332",
+    "mainnode": "http://localhost:10332"
+}
