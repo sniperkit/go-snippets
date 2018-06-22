@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>doc/DevMine</title>
+  <meta name="description" content="DevMine - A developer search engine and source code analysis framework
+">
+  <meta name="author" content="Devmine team">
+
+  <link rel="shortcut icon" href="/assets/img/favicon.ico">
+
+  <link rel="stylesheet" href="/lib/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/assets/css/github-markdown.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="canonical" href="http://devmine.ch/doc/devmine/">
+  <link rel="alternate" type="application/rss+xml" title="DevMine" href="http://devmine.ch/feed.xml" />
+
+  <script type="text/javascript" src="/lib/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/assets/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="/assets/js/scripts.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="/img/devmine-logo.png">&nbsp;DevMine</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/news/">News</a>
+          </li>
+          <li>
+            <a href="/project/">Project</a>
+          </li>
+          <li>
+            <a href="/downloads/">Downloads</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation<strong class="caret"></strong></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/doc/devmine/">Devmine</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="/doc/crawld">Crawld</a>
+              </li>
+              <li>
+                <a href="/doc/ght2dm">Ght2dm</a>
+              </li>
+              <li>
+                <a href="/doc/srccat">Srccat</a>
+              </li>
+              <li>
+                <a href="/doc/parsers">Parsers</a>
+              </li>
+              <li>
+                <a href="/doc/srctool/">Srctool</a>
+              </li>
+              <li>
+                <a href="/doc/repotool/">Repotool</a>
+              </li>
+              <li>
+                <a href="/doc/srcanlzr/">Srcanlzr</a>
+              </li>
+              <li>
+                <a href="/doc/fluxio/">Fluxio</a>
+              </li>
+              <li>
+                <a href="/doc/featscomp/">Featscomp</a>
+              </li>
+              <li>
+                <a href="/doc/api-server/">API-server</a>
+              </li>
+              <li>
+                <a href="/doc/webapp/">Webapp</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/about/">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</style><span id="forkongithub"><a href="https://github.com/DevMine">Fork me on GitHub</a></span>
+</header>
+
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <div class="container markdown-body">
+        <h1 id="devmine">DevMine</h1>
+
+<p>A set of projects, combined together, make DevMine possible. Each of them has
+its own purpose and as such, the project is very modular.</p>
+
+<p>Most of the projects are implemented in the <a href="http://golang.org/">Go</a> programming
+language. An early prototype as well as the first version of DevMine were
+written in <a href="https://www.python.org/">Python</a> but all of this code base is now
+obsolete. DevMine uses <a href="http://www.postgresql.org/">PostgreSQL</a> as its database
+system and this component is essential to glue all sub-projects together.</p>
+
+<p>Current implementation of the DevMine project consists of 11 sub-projects:</p>
+
+<ul>
+  <li><a href="/doc/crawld" title="crawld documentation">crawld</a>: is responsible for collecting metadata about developers
+as well as cloning source code repositories.</li>
+  <li><a href="/doc/ght2dm" title="ght2dm documentation">ght2dm</a>: is a tool to import GHTorrent project BSON dumps into the
+DevMine database.</li>
+  <li><a href="/doc/parsers" title="parsers documentation">parsers</a>: are responsible for parsing source code and producing an
+abstract representation of it, in JSON.</li>
+  <li><a href="/doc/srccat" title="srccat documentation">srccat</a>: can create large tar archives from source code repositories
+to make them suitable for processing on <a href="http://hadoop.apache.org/">Hadoop</a>
+or <a href="https://spark.apache.org/">Spark</a>.</li>
+  <li><a href="/doc/srctool" title="srctool documentation">srctool</a>: is a tool to manage language parsers. It can install
+them and run them on source code.</li>
+  <li><a href="/doc/repotool" title="repotool documentation">repotool</a>: aggregates source code repositories metadata from
+version control systems (Git, Mercurial, …) and produces and abstract
+representation of it, in JSON.</li>
+  <li><a href="/doc/srcanlzr" title="srcanlzr documentation">srcanlzr</a>: analyzes source code, from the abstract
+representation produced by the various language parsers.</li>
+  <li><a href="/doc/fluxio" title="fluxio documentation">fluxio</a>: a tool for JSON/PostgreSQL-jsonb I/Os</li>
+  <li><a href="/doc/featscomp" title="featscomp documentation">featscomp</a>: computes <em>features</em> from all of the collected
+metadata and stores them into the database.</li>
+  <li><a href="/doc/api-server" title="api-server documentation">API-server</a>: serves all data produced by the tools mentioned
+above in the form of a JSON RESTful API.</li>
+  <li><a href="/doc/webapp" title="webapp documentation">webapp</a>: is a demo web interface that interacts with the
+API-server.</li>
+</ul>
+
+<h2 id="source-analysis-toolchain-architecture">Source analysis toolchain architecture</h2>
+
+<p>The tools from the source  analysis toolchain work much like standard UNIX tools
+in the sense that, generally speaking:</p>
+
+<ul>
+  <li>One tool does one thing.</li>
+  <li>JSON input and output of the tools are pipeable to each another.</li>
+</ul>
+
+<p>A schema is probably better at explaining that so here is one:</p>
+
+<p><img src="/img/source-analysis-toolchain-archi-schema.png" alt="Source analysis toolchain architecture schema" /></p>
+
+<p>From the schema, you can deduce that you may omit using some of the tools when
+running the analysis. However, using all of the tools leads to the most complete
+source analysis API output.</p>
+
+<p>Out of the source analysis API output, we are able to compute features with
+<code>featscomp</code> and insert the results into the database. However, <code>srcanlzr</code> does a
+good job at providing part of the features since it computes things such as the
+cyclomatic complexity (McCabe) over the source code or counts the lines of code
+for each projects for instance.</p>
+
+<h2 id="database-schema">Database schema</h2>
+
+<p>The PostgreSQL database is used by <a href="/doc/crawld" title="crawld documentation">crawld</a>, <a href="/doc/repotool" title="repotool documentation">repotool</a>,
+<a href="/doc/featscomp" title="featscomp documentation">featscomp</a> and <a href="/doc/api-server" title="api-server documentation">api-server</a>.</p>
+
+<p><img src="/img/db-schema.png" alt="Database schema" /></p>
+
+
+      </div>
+    </div>
+
+    <footer id="footer">
+  <div class="container">
+    <p>
+      Copyright &copy; 2014-2015 - The DevMine authors
+      <a href="https://github.com/orgs/DevMine/people"><i class="fa fa-github"></i></a>
+      - <a href="/about">contact us!</a>
+    </p>
+    <p>
+    <small>Last site update: 2015-06-12 10:49:08 +0200</small>
+    </p>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

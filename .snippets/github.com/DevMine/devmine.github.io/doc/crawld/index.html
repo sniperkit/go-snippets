@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>doc/crawld</title>
+  <meta name="description" content="DevMine - A developer search engine and source code analysis framework
+">
+  <meta name="author" content="Devmine team">
+
+  <link rel="shortcut icon" href="/assets/img/favicon.ico">
+
+  <link rel="stylesheet" href="/lib/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/assets/css/github-markdown.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="canonical" href="http://devmine.ch/doc/crawld/">
+  <link rel="alternate" type="application/rss+xml" title="DevMine" href="http://devmine.ch/feed.xml" />
+
+  <script type="text/javascript" src="/lib/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/assets/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="/assets/js/scripts.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="/img/devmine-logo.png">&nbsp;DevMine</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/news/">News</a>
+          </li>
+          <li>
+            <a href="/project/">Project</a>
+          </li>
+          <li>
+            <a href="/downloads/">Downloads</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation<strong class="caret"></strong></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/doc/devmine/">Devmine</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="/doc/crawld">Crawld</a>
+              </li>
+              <li>
+                <a href="/doc/ght2dm">Ght2dm</a>
+              </li>
+              <li>
+                <a href="/doc/srccat">Srccat</a>
+              </li>
+              <li>
+                <a href="/doc/parsers">Parsers</a>
+              </li>
+              <li>
+                <a href="/doc/srctool/">Srctool</a>
+              </li>
+              <li>
+                <a href="/doc/repotool/">Repotool</a>
+              </li>
+              <li>
+                <a href="/doc/srcanlzr/">Srcanlzr</a>
+              </li>
+              <li>
+                <a href="/doc/fluxio/">Fluxio</a>
+              </li>
+              <li>
+                <a href="/doc/featscomp/">Featscomp</a>
+              </li>
+              <li>
+                <a href="/doc/api-server/">API-server</a>
+              </li>
+              <li>
+                <a href="/doc/webapp/">Webapp</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/about/">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</style><span id="forkongithub"><a href="https://github.com/DevMine">Fork me on GitHub</a></span>
+</header>
+
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <div class="container markdown-body">
+        <p><span class="pull-right">
+<a class="dm-grey" href="https://github.com/DevMine/crawld">View on GitHub <i class="fa fa-github"></i></a>
+</span></p>
+
+<h1 id="crawld-a-data-crawler-and-repositories-fetcher">crawld: a data crawler and repositories fetcher</h1>
+
+<p><a href="https://travis-ci.org/DevMine/crawld"><img src="https://travis-ci.org/DevMine/crawld.png?branch=master" alt="Build Status" /></a>
+<a href="http://godoc.org/github.com/DevMine/crawld"><img src="http://godoc.org/github.com/DevMine/crawld?status.svg" alt="GoDoc" /></a>
+<a href="https://gowalker.org/github.com/DevMine/crawld"><img src="http://img.shields.io/badge/doc-gowalker-blue.svg?style=flat" alt="GoWalker" /></a></p>
+
+<p><code>crawld</code> is a metadata crawler and source code repository fetcher.
+Hence, <code>crawld</code> comprises two different parts: the crawlers and the fetcher.</p>
+
+<h2 id="crawlers">Crawlers</h2>
+
+<p><code>crawld</code> focuses on crawling repositories metadata and those of the users
+that contributed, or are directly related, to the repositories from code
+sharing platforms such as <a href="https://github.com">GitHub</a>.</p>
+
+<p>Only a GitHub crawler is currently implemented.
+However, the architecture of <code>crawld</code> has been designed in a way such that new
+crawlers (for instance a <a href="https://bitbucket.org/">BitBucket</a> crawler) can be
+added without hassle.</p>
+
+<p>All of the collected metadata is stored into a
+<a href="http://www.postgresql.org/">PostgreSQL</a> database. As <code>crawld</code> is designed to
+be able to crawl several code sharing platforms, common information is stored
+in two tables: <code>users</code> and <code>repositories</code>. For the rest of the information,
+specific tables are created (<code>gh_repositories</code>, <code>gh_users</code> and
+<code>gh_organizations</code> for now) and relations are established with the <code>users</code> and
+<code>repositories</code> tables.</p>
+
+<p>The table below gives information about what is collected. Bear in mind that
+some information might be incomplete (for instance, if a user does not provide
+any company information).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Repository</th>
+      <th>GitHub Repository</th>
+      <th>User</th>
+      <th>GitHub User</th>
+      <th>GitHub Organization</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>GitHub ID</td>
+      <td>Username</td>
+      <td>GitHub ID</td>
+      <td>GitHub ID</td>
+    </tr>
+    <tr>
+      <td>Primary language</td>
+      <td>Full name</td>
+      <td>Name</td>
+      <td>Login</td>
+      <td>Login</td>
+    </tr>
+    <tr>
+      <td>Clone URL</td>
+      <td>Description</td>
+      <td>Email</td>
+      <td>Bio</td>
+      <td>Avatar URL</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Homepage</td>
+      <td> </td>
+      <td>Blog</td>
+      <td>HTML URL</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Fork</td>
+      <td> </td>
+      <td>Company</td>
+      <td>Name</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Default branch</td>
+      <td> </td>
+      <td>Email</td>
+      <td>Company</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Master branch</td>
+      <td> </td>
+      <td>Hireable</td>
+      <td>Blog</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>HTML URL</td>
+      <td> </td>
+      <td>Location</td>
+      <td>Location</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Forks count</td>
+      <td> </td>
+      <td>Avatar URL</td>
+      <td>Email</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Open issues count</td>
+      <td> </td>
+      <td>HTML URL</td>
+      <td>Collaborators count</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Stargazers count</td>
+      <td> </td>
+      <td>Followers count</td>
+      <td>Creation date</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Subscribers count</td>
+      <td> </td>
+      <td>Following count</td>
+      <td>Update date</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Watchers count</td>
+      <td> </td>
+      <td>Collaborators count</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Size</td>
+      <td> </td>
+      <td>Creation date</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Creation date</td>
+      <td> </td>
+      <td>Update date</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Update date</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Last push date</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="fetcher">Fetcher</h2>
+
+<p>Aside from crawling metadata, <code>crawld</code> is able to clone and update
+repositories, using their clone URL stored into the database.</p>
+
+<p>Cloning and updating can be done regardless of the source code management
+system in use (<a href="http://git-scm.com/">git</a>,
+<a href="http://mercurial.selenic.com/">mercurial</a>,
+<a href="http://subversion.apache.org/">svn</a>, …), however only a <code>git</code> fetcher is
+currently implemented.</p>
+
+<p>As source code repositories usually contain a lot of files, <code>crawld</code> has an
+option that allows storing source code repositories as tar archives which makes
+things easier for the file system shall you clone a huge number of
+repositories.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p><code>crawld</code> uses <code>git2go</code>, a <code>ligit2</code> Go binding for its <code>git</code> operations. Hence,
+<code>libgit2</code> needs to be installed on your system unless you statically compile it
+with the <code>git2go</code> package.</p>
+
+<p>To install <code>crawld</code>, run this command in a terminal, assuming
+<a href="http://golang.org/">Go</a> is installed:</p>
+
+<pre><code>go get github.com/DevMine/crawld
+</code></pre>
+
+<p>Or you can download a binary for your platform from the DevMine project’s
+<a href="http://devmine.ch/downloads">downloads page</a>.</p>
+
+<p>You also need to setup a <a href="http://www.postgresql.org/">PostgreSQL</a> database.
+Look at the
+<a href="https://github.com/DevMine/crawld/blob/master/db/README.md">README file</a>
+in the <code>db</code> sub-folder for details.</p>
+
+<h2 id="usage-and-configuration">Usage and configuration</h2>
+
+<p>Copy <code>crawld.conf.sample</code> to <code>crawld.conf</code> and edit it according to your
+needs. The configuration file has several sections:</p>
+
+<ul>
+  <li><strong>database</strong>: allows you to configure access to your PostgreSQL
+database.
+    <ul>
+      <li><strong>hostname</strong>: hostname of the machine.</li>
+      <li><strong>port</strong>: PostgreSQL port.</li>
+      <li><strong>username</strong>: PostgreSQL user that has access to the database.</li>
+      <li><strong>password</strong>: password of the database user.</li>
+      <li><strong>dbname</strong>: database name.</li>
+      <li><strong>ssl_mode</strong>: takes any of these 4 values: “disable”,
+“require”, “verify-ca”, “verify-null”. Refer to PostgreSQL
+<a href="http://www.postgresql.org/docs/9.4/static/libpq-ssl.html">documentation</a>
+for details.</li>
+    </ul>
+  </li>
+  <li><strong>clone_dir</strong>: specify where you would like to clone the
+repositories.</li>
+  <li><strong>crawling_time_interval</strong>: specify the waiting time between 2
+full crawling periods. This is irrelevant for the crawlers where no
+limit is specified.</li>
+  <li><strong>fetch_time_interval</strong>: specify the waiting time between 2 full
+repositories cloning/updating periods. You shall preferably choose a
+small time period here since the repositories fetcher cannot usually
+keep up with the crawlers and you likely want it to update/clone the
+repositories continuously.</li>
+  <li><strong>fetch_languages</strong>: specify the list of languages the fetcher shall
+restrict to. If left empty, all languages are considered.</li>
+  <li><strong>tar_repositories</strong>: a boolean value indicating whether the repositories
+shall be stored as tar archives or not.</li>
+  <li><strong>tmp_dir</strong>: specify a temporary working directory. If left empty, the
+default temporary directory will be used. This directory is used on clone and
+update operations when the <em>tar_repositories</em> option is activated. It is
+recommended to use a ramdisk for increased performance.</li>
+  <li><strong>tmp_dir_file_size_limit</strong>: specify the maximum size in GB of an object
+to be temporarily placed in <em>tmp_dir</em> for processing. Files of size larger
+than this value will not be processed in <em>tmp_dir</em>.</li>
+  <li><strong>max_fetcher_workers</strong>: specify the maximum number of workers to use for
+the fetching task. It defaults to 1 but if your machine has good I/O
+throughput and a good CPU, you probably want to increase this conservative
+value for performance reasons. Note that fetching is I/O and networked bound
+more than CPU bound and hence you probably do not want to increase this
+value too much.</li>
+  <li><strong>throttler_wait_time</strong>: indicates how much time to wait, in seconds,
+before resuming normal operation after throttling.</li>
+  <li><strong>throttler_sliding_window_size</strong>: represents the size of the sliding
+window used by the error rate throttler. If you have no idea about what that
+means, it is safe to omit it since default value shall be sane.</li>
+  <li><strong>throttler_leak_interval</strong>: specify the time to wait, in milliseconds,
+before taking off a unit from the sliding window. Again, if you have no idea
+about what that means, it is safe to omit it since default value shall be
+sane.</li>
+  <li><strong>crawlers</strong>: allows you to configure options for the crawlers.
+    <ul>
+      <li><strong>type</strong>: specify crawler type. Currently, only “github” is
+implemented.</li>
+      <li><strong>languages</strong>: list of programming languages of the repositories
+you are interested into. All languages used in a repository are
+considered and not only the primary language.</li>
+      <li><strong>limit</strong>: set this value to 0 to not use a limit. Otherwise,
+crawling will stop when “limit” repositories have been fetched.
+Note that the behavior is slightly different whether you use the
+search API or not. When you use the search API, this limit
+correspond to the number of repositories to crawl <em>per language</em>
+listed in “languages” . When you do not use the search API, this
+is a global limit, regardless of the language.</li>
+      <li><strong>since_id</strong>: corresponds to the repository ID (eg: GitHub repository ID
+in the case of the github crawler) from which to start querying
+repositories. Note that this value is ignored when using the search API.</li>
+      <li><strong>fork</strong>: skip fork repositories if set to false.</li>
+      <li><strong>oauth_access_token</strong>: your API token. If not provided,
+<code>crawld</code> will work but the number of API call is usually limited
+to a low number. For instance, in the case of the GitHub
+crawler, unauthenticated requests are limited to 60 per hour
+where authenticated requests goes up to 5000 per hour.</li>
+      <li><strong>use_search_api</strong>: specify whether you want to use the search
+API or not. Bear in mind that results returned via the search
+API are usually limited so you probably not want this option set
+to true usually. In the case of the GitHub crawler, when set to
+true, the limit is 1000 results per search. This means that you
+will get at most the 1000 most popular projects (in terms of
+stars count) per language listed in “languages”.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Once the configuration file has been adjusted, you are ready to run <code>crawld</code>.
+You need to specify the path to the configuration file with the help of the <code>-c</code>
+option. Example:</p>
+
+<pre><code>crawld -c crawld.conf
+</code></pre>
+
+<p>Some command line options are also available, mainly where to store log files
+and whether to disable the data crawlers or repositories fetcher (by default,
+the crawlers and the fetcher run in parallel). See <code>crawld -h</code> for more
+information.</p>
+
+<h2 id="internals">Internals</h2>
+
+<p><code>crawld</code> consists of two main parts internally: the crawlers (only GitHub for
+now) and the repositories fetcher (which only supports git for now).</p>
+
+<p>The metadata crawled are put into the database whereas the repositories are
+cloned on physical storage.</p>
+
+<p>Note that the internal architecture of <code>crawld</code> has been thought to make it easy
+to implement new crawlers or VCS backends.</p>
+
+<p><img src="/img/crawld-internals.png" alt="crawld internals" /></p>
+
+      </div>
+    </div>
+
+    <footer id="footer">
+  <div class="container">
+    <p>
+      Copyright &copy; 2014-2015 - The DevMine authors
+      <a href="https://github.com/orgs/DevMine/people"><i class="fa fa-github"></i></a>
+      - <a href="/about">contact us!</a>
+    </p>
+    <p>
+    <small>Last site update: 2015-06-12 10:49:08 +0200</small>
+    </p>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>
