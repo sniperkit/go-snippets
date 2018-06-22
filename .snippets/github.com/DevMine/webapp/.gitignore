@@ -1,0 +1,5 @@
+*~
+*.swp
+*.prename
+.directory
+.DS_Store
