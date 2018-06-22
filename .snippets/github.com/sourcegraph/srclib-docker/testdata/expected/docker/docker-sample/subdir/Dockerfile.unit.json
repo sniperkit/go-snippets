@@ -1,0 +1,1 @@
+{"Name":"subdir","Type":"Dockerfile","Repo":"github.com/sgtest/docker-sample","Globs":null,"Files":["subdir/Dockerfile"],"Dir":"subdir","Dependencies":["postgres"],"Data":"FROM postgres\n\nRUN go get github.com/foo/bar\n\n# This is a comment containing a repo URI https://sourcegraph.com/foo/bar\n\nCMD [\"/bin/echo\", \"pg\"]\n","Ops":{"depresolve":null,"graph":null}}

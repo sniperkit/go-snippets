@@ -1,0 +1,84 @@
+{
+  "Defs": [
+    {
+      "Path": ".",
+      "TreePath": ".",
+      "Name": "Dockerfile",
+      "Kind": "",
+      "File": "subdir/Dockerfile",
+      "DefStart": 0,
+      "DefEnd": 144,
+      "Exported": true,
+      "Local": null,
+      "Data": "RlJPTSBwb3N0Z3JlcwoKUlVOIGdvIGdldCBnaXRodWIuY29tL2Zvby9iYXIKCiMgVGhpcyBpcyBhIGNvbW1lbnQgY29udGFpbmluZyBhIHJlcG8gVVJJIGh0dHBzOi8vc291cmNlZ3JhcGguY29tL2Zvby9iYXIKCkNNRCBbIi9iaW4vZWNobyIsICJwZyJdCg=="
+    }
+  ],
+  "Refs": [
+    {
+      "DefRepo": "dynamic-ref.srclib.org/x-docker-image",
+      "DefUnitType": "Dockerfile",
+      "DefUnit": "postgres",
+      "DefPath": ".",
+      "Def": false,
+      "Repo": "",
+      "File": "subdir/Dockerfile",
+      "Start": 5,
+      "End": 13
+    },
+    {
+      "DefRepo": "github.com/foo/bar",
+      "DefUnitType": "x-repo",
+      "DefUnit": ".",
+      "DefPath": ".",
+      "Def": false,
+      "Repo": "",
+      "File": "subdir/Dockerfile",
+      "Start": 26,
+      "End": 44
+    },
+    {
+      "DefRepo": "sourcegraph.com/foo/bar",
+      "DefUnitType": "x-repo",
+      "DefUnit": ".",
+      "DefPath": ".",
+      "Def": false,
+      "Repo": "",
+      "File": "subdir/Dockerfile",
+      "Start": 96,
+      "End": 119
+    },
+    {
+      "DefRepo": "github.com/docker/docker",
+      "DefUnitType": "x-link",
+      "DefUnit": ".",
+      "DefPath": "https://docs.docker.com/reference/builder/#cmd",
+      "Def": false,
+      "Repo": "",
+      "File": "subdir/Dockerfile",
+      "Start": 121,
+      "End": 124
+    },
+    {
+      "DefRepo": "github.com/docker/docker",
+      "DefUnitType": "x-link",
+      "DefUnit": ".",
+      "DefPath": "https://docs.docker.com/reference/builder/#from",
+      "Def": false,
+      "Repo": "",
+      "File": "subdir/Dockerfile",
+      "Start": 0,
+      "End": 4
+    },
+    {
+      "DefRepo": "github.com/docker/docker",
+      "DefUnitType": "x-link",
+      "DefUnit": ".",
+      "DefPath": "https://docs.docker.com/reference/builder/#run",
+      "Def": false,
+      "Repo": "",
+      "File": "subdir/Dockerfile",
+      "Start": 15,
+      "End": 18
+    }
+  ]
+}
