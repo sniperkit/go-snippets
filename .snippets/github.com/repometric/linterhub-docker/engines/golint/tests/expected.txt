@@ -1,0 +1,2 @@
+test.go:11:1: comment on exported type Response1 should be of the form "Response1 ..." (with optional leading article)
+test.go:17:6: exported type Response2 should have comment or be unexported
