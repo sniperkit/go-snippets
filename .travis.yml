@@ -1,0 +1,11 @@
+language: python
+sudo: false
+python:
+  - "2.7"
+  - "3.4"
+install:
+  - python -m pip install flake8
+script:
+  - python setup.py nosetests -s
+notifications:
+  email: false

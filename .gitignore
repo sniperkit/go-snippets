@@ -1,0 +1,4 @@
+*.egg-*
+*.pyc
+.eggs
+dist
