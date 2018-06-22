@@ -1,0 +1,221 @@
+package client
+
+import (
+	"bytes"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"net/http"
+	"net/url"
+	"strconv"
+	"time"
+
+	"github.com/cozy/cozy-stack/client/request"
+	"github.com/cozy/cozy-stack/pkg/consts"
+	"github.com/cozy/cozy-stack/pkg/permissions"
+)
+
+// AppManifest holds the JSON-API representation of an application.
+type AppManifest struct {
+	ID    string `json:"id"`
+	Rev   string `json:"rev"`
+	Attrs struct {
+		Name      string `json:"name"`
+		Editor    string `json:"editor"`
+		Slug      string `json:"slug"`
+		Developer struct {
+			Name string `json:"name"`
+			URL  string `json:"url,omitempty"`
+		} `json:"developer"`
+		ShortDescription string                 `json:"short_description"`
+		LongDescription  string                 `json:"long_description"`
+		Category         string                 `json:"category"`
+		Locales          map[string]interface{} `json:"locales"`
+		Langs            []string               `json:"langs"`
+		Tags             []string               `json:"tags"`
+		Icon             string                 `json:"icon"`
+		Screenshots      []string               `json:"screenshots"`
+		Platforms        []struct {
+			Type string `json:"type"`
+			URL  string `json:"url"`
+		} `json:"platforms,omitempty"`
+		License string `json:"license"`
+
+		State       string           `json:"state"`
+		Source      string           `json:"source"`
+		Version     string           `json:"version"`
+		Permissions *permissions.Set `json:"permissions"`
+		Intents     []struct {
+			Action string   `json:"action"`
+			Types  []string `json:"type"`
+			Href   string   `json:"href"`
+		} `json:"intents"`
+		Routes *map[string]struct {
+			Folder string `json:"folder"`
+			Index  string `json:"index"`
+			Public bool   `json:"public"`
+		} `json:"routes,omitempty"`
+		Services *map[string]struct {
+			Type           string `json:"type"`
+			File           string `json:"file"`
+			Debounce       string `json:"debounce"`
+			TriggerOptions string `json:"trigger"`
+			TriggerID      string `json:"trigger_id"`
+		} `json:"services"`
+
+		CreatedAt time.Time `json:"created_at"`
+		UpdatedAt time.Time `json:"updated_at"`
+
+		Error string `json:"error,omitempty"`
+
+		Parameters json.RawMessage `json:"parameters,omitempty"`
+	} `json:"attributes,omitempty"`
+}
+
+// AppOptions holds the options to install an application.
+type AppOptions struct {
+	AppType             string
+	Slug                string
+	SourceURL           string
+	Deactivated         bool
+	OverridenParameters *json.RawMessage
+}
+
+// ListApps is used to get the list of all installed applications.
+func (c *Client) ListApps(appType string) ([]*AppManifest, error) {
+	res, err := c.Req(&request.Options{
+		Method: "GET",
+		Path:   makeAppsPath(appType, ""),
+	})
+	if err != nil {
+		return nil, err
+	}
+	var mans []*AppManifest
+	if err := readJSONAPI(res.Body, &mans); err != nil {
+		return nil, err
+	}
+	return mans, nil
+}
+
+// GetApp is used to fetch an application manifest with specified slug
+func (c *Client) GetApp(opts *AppOptions) (*AppManifest, error) {
+	res, err := c.Req(&request.Options{
+		Method: "GET",
+		Path:   makeAppsPath(opts.AppType, url.PathEscape(opts.Slug)),
+	})
+	if err != nil {
+		return nil, err
+	}
+	return readAppManifest(res)
+}
+
+// InstallApp is used to install an application.
+func (c *Client) InstallApp(opts *AppOptions) (*AppManifest, error) {
+	q := url.Values{
+		"Source":      {opts.SourceURL},
+		"Deactivated": {strconv.FormatBool(opts.Deactivated)},
+	}
+	if opts.OverridenParameters != nil {
+		b, err := json.Marshal(opts.OverridenParameters)
+		if err != nil {
+			return nil, err
+		}
+		q["Parameters"] = []string{string(b)}
+	}
+	res, err := c.Req(&request.Options{
+		Method:  "POST",
+		Path:    makeAppsPath(opts.AppType, url.PathEscape(opts.Slug)),
+		Queries: q,
+		Headers: request.Headers{
+			"Accept": "text/event-stream",
+		},
+	})
+	if err != nil {
+		return nil, err
+	}
+	return readAppManifestStream(res)
+}
+
+// UpdateApp is used to update an application.
+func (c *Client) UpdateApp(opts *AppOptions) (*AppManifest, error) {
+	q := url.Values{
+		"Source": {opts.SourceURL},
+	}
+	if opts.OverridenParameters != nil {
+		b, err := json.Marshal(opts.OverridenParameters)
+		if err != nil {
+			return nil, err
+		}
+		q["Parameters"] = []string{string(b)}
+	}
+	res, err := c.Req(&request.Options{
+		Method:  "PUT",
+		Path:    makeAppsPath(opts.AppType, url.PathEscape(opts.Slug)),
+		Queries: q,
+		Headers: request.Headers{
+			"Accept": "text/event-stream",
+		},
+	})
+	if err != nil {
+		return nil, err
+	}
+	return readAppManifestStream(res)
+}
+
+// UninstallApp is used to uninstall an application.
+func (c *Client) UninstallApp(opts *AppOptions) (*AppManifest, error) {
+	res, err := c.Req(&request.Options{
+		Method: "DELETE",
+		Path:   makeAppsPath(opts.AppType, url.PathEscape(opts.Slug)),
+	})
+	if err != nil {
+		return nil, err
+	}
+	return readAppManifest(res)
+}
+
+func makeAppsPath(appType, path string) string {
+	switch appType {
+	case consts.Apps:
+		return "/apps/" + path
+	case consts.Konnectors:
+		return "/konnectors/" + path
+	}
+	panic(fmt.Errorf("Unknown application type %s", appType))
+}
+
+func readAppManifestStream(res *http.Response) (*AppManifest, error) {
+	evtch := make(chan *request.SSEEvent)
+	go request.ReadSSE(res.Body, evtch)
+	var lastevt *request.SSEEvent
+	// get the last sent event
+	for evt := range evtch {
+		if evt.Error != nil {
+			return nil, evt.Error
+		}
+		if evt.Name == "error" {
+			var stringError string
+			if err := json.Unmarshal(evt.Data, &stringError); err != nil {
+				return nil, fmt.Errorf("Could not parse error from event-stream: %s", err.Error())
+			}
+			return nil, errors.New(stringError)
+		}
+		lastevt = evt
+	}
+	if lastevt == nil {
+		return nil, errors.New("No application data was sent")
+	}
+	app := &AppManifest{}
+	if err := readJSONAPI(bytes.NewReader(lastevt.Data), &app); err != nil {
+		return nil, err
+	}
+	return app, nil
+}
+
+func readAppManifest(res *http.Response) (*AppManifest, error) {
+	app := &AppManifest{}
+	if err := readJSONAPI(res.Body, &app); err != nil {
+		return nil, err
+	}
+	return app, nil
+}
