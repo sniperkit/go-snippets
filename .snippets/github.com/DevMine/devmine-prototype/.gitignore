@@ -1,0 +1,8 @@
+# general patterns
+*.cache
+*.directory
+*.json
+*.pyc
+*.swp
+env/*
+!env/.keep
