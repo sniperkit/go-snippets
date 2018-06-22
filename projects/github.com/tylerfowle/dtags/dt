@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+dtags=~/go/src/github.com/tylerfowle/dtags/dtags
+declare -a arr=("" "add" "del" "tags" "list" "ls" "completion")
+found=0
+
+# check if arg is a single arg command in arr array
+for i in "${arr[@]}"; do
+    if [[ $i == $1 ]]; then
+        found=1
+        ${dtags} $@
+        false 1
+    fi
+done
+
+if [[ -d "$(${dtags} $1)" && ${found} -ne 1 ]]; then
+    cd "$(${dtags} $1)"
+elif [[ ${found} -ne 1 ]]; then
+    echo "no directory found for tag [$1]"
+    false 1
+fi
