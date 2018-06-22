@@ -1,0 +1,176 @@
+nav
+  background-color $ho-grey
+  font-size 0
+  margin 0 0 30px
+  position relative
+  width 100%
+
+  .tab 
+    transition background-color 0.3s ease
+    cursor pointer
+    display inline-block
+    height $block
+    text-align center
+    vertical-align top
+    width 25%
+
+    .tab-icon
+      transition opacity 0.3s ease
+      display inline-block
+      margin-top 20px
+
+    ~ .tab
+      border-left 1px solid $go-grey
+
+    &:hover
+    &.open
+      background-color $ge-grey
+
+
+  #logo-main
+    sprite-logo()
+
+  #logo-github
+    sprite-github()
+    margin-top 0px
+    margin-left 10px
+
+    #avatar
+      border 2px solid $go-grey
+      margin-left -10px;
+      width 80px
+      height 80px
+
+  .login_logout{
+    position relative
+    top 2px
+    color white
+  }
+
+  .userSettings
+    color $ho-grey
+    font $sans-ms
+    width 80px
+    height 20px
+
+    a
+      font-size 20px
+      position relative
+      bottom 20px
+
+    div
+      display block
+      position relative
+      left 0px
+      top 8px
+      width 76px
+      margin 0 auto
+      height 12px
+      background-color rgba(153,153,153,.5)
+      
+      i
+        font-size 20px
+        bottom 17px
+        position relative
+        margin 0 auto
+        text-shadow 0px 1px white 
+  #log-in
+    .popover.bottom
+      background-color $ho-grey
+      .popover-content
+        width 200px
+        .popover-close
+          position absolute
+          top 0
+          right 5px
+        .popover-text
+          text-align center
+          font $sans-xs-light
+          .user-stats
+            text-align center
+            padding-top 5px
+            padding-bottom 5px
+          .saved-links, submitted-links
+            &:hover
+              transition 0.3s ease
+              color $aa-grey
+            &:active
+              color $green-light
+      .arrow
+        left 65%
+      .arrow:after
+        border-bottom-color $ho-grey
+      .user-logout
+        text-align center
+        background-color $ee-grey
+        border-radius 2px
+        &:hover
+          transition 0.3s ease
+          background-color $de-grey
+        a
+        &:visited
+          color inherit
+
+  .dropdown-menu
+    font-size 2rem
+    left -70px
+    background-color $ge-grey
+    overflow hidden
+    width 100%
+    z-index 1
+
+  .dropdown-menu li a
+    @include transition("all 0.1s ease")
+    border-top 1px solid $fo-grey
+    color $bo-grey
+    font $sans-xs
+    padding 16px 20px
+    text-decoration none
+
+  #search-input-tab .tab-icon
+    sprite-search-white()
+
+  #paste-link-input-tab .tab-icon
+    sprite-plus-white()
+
+  #login
+    .tab-icon
+      sprite-twitter-white()
+      margin-top 16px
+
+    h1
+      transition all 0.3s ease
+      color white
+      font $sans-xxs
+      margin-top -7px
+
+@media screen-to-break-one
+  nav
+    padding 0 $block
+
+    .tab
+      position absolute
+      top 0
+      width $block
+
+    #main-menu
+      left 0
+
+    #search-input-tab
+    #paste-link-input-tab
+      display none
+
+    #log-in
+      right 0
+
+      .tab-icon
+        opacity 0.6
+
+      h1
+        color $eo-grey
+
+      :hover
+        span
+          opacity 1
+        h1
+          color white
