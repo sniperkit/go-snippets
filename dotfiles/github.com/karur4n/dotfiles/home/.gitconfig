@@ -1,0 +1,15 @@
+[user]
+	name = karur4n
+	email = karuran.f@gmail.com
+[color]
+  ui = auto
+[alias]
+  c = commit
+  cm = commit -m
+  co = checkout
+[merge]
+  ff = false
+[pull]
+  rebase = true
+[push]
+  default = current
