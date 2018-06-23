@@ -1,0 +1,12 @@
+order component takes id as prop to get ajax
+make ajax, call setstate on self on response
+
+order component to get info about order
+  has render, delegates to other component
+  render is smart enough to differentiate between states
+    if has info about order, show pack this order
+    if not, show loading
+  once has data, create new component and do things
+
+barcode, customevent, register event
+

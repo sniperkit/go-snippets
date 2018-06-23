@@ -1,0 +1,89 @@
+{
+    "shipper": {
+        "_required": false,
+        "_comment": [
+            "This should default to LR info if missing",
+            "for other shippers, who pays the carriers? LR still?"
+        ],
+
+        "name": "",
+        "company": "",
+        "phone": "",
+        "address_line_1": "",
+        "address_line_2": "",
+        "city": "",
+        "state": "",
+        "postal_code": ""
+    },
+    "ship_from": {
+        "_required": "false if return=false",
+        "_comment": [
+            "Most likely LR address or customer address, but could be some other address",
+            "would default to LR address if not supplied and direction is 'outbound'"
+        ],
+
+        "name": "Shipping Dept",
+        "company": "LensRentals",
+        "phone": "901-754-9100",
+        "address_line_1": "7730 Trinity Rd",
+        "address_line_2": "Suite #110",
+        "city": "Cordova",
+        "state": "TN",
+        "postal_code": "38018",
+        "type": "residential|commercial"
+    },
+    "ship_to": {
+        "_required": "false if return=true",
+        "_comment": [
+            "Most likely LR address or customer address, but could be some other address",
+            "would default to LR address if not supplied and direction is 'return'"
+        ],
+
+        "name": "Shipping Dept",
+        "company": "LensRentals",
+        "phone": "901-754-9100",
+        "address_line_1": "7730 Trinity Rd",
+        "address_line_2": "Suite #110",
+        "city": "Cordova",
+        "state": "TN",
+        "postal_code": "38018",
+        "type": "residential|commercial"
+    },
+
+    "po_number": "some identifier",
+    "packages": [
+        {
+            "reference": "some identifier",
+            "dimensions": {
+              "length": 10,
+              "width": 10,
+              "height": 10,
+              "type": "box|envelope"
+            },
+            "weight": 2,
+            "value": 10,
+            "contents": "stuff",
+            "signature_required": "Direct|Indirect|Adult|none (submitted as null, empty string, or omitting this field)"
+        }
+    ],
+    "label_format": "ZPL|PDF",
+    "_label_format_comment": "optional; default to ZPL",
+
+    "ship_date": "2006-01-02",
+    "_ship_date_comment": "optional; default today",
+
+    "service": {
+        "_comment": "All fields optional",
+
+        "carrier": "FedEx|UPS",
+        "name": "Ground|Priority Overnight|Three Day Select| etc...",
+        "required_speed": 1,
+        "arrival_deadline": "2006-01-02",
+
+        "return": false,
+        "_return_comment": "default false; flag for whether this is a return shipment or not",
+
+        "saturday_delivery": false,
+        "_saturday_delivery_comment": "default false"
+    }
+}

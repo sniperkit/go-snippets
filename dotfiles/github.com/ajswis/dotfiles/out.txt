@@ -1,0 +1,162 @@
+        "error": "Failed to ship request: no valid services available
+Available services were:
+	[FedEx] FedEx Ground
+	[FedEx] FedEx Express Saver
+	[FedEx] FedEx 2Day
+	[FedEx] FedEx Standard Overnight
+	[FedEx] FedEx Priority Overnight
+	[UPS] UPS Ground
+	[UPS] UPS 3 Day Select
+	[UPS] UPS 2nd Day Air
+	[UPS] UPS Next Day Air
+	[UPS] UPS Next Day Air Saver
+
+Rejected the following services:
+	Rejected [FedEx] FedEx First Overnight (Transit Time: 1,  Delivery By: 2017-08-24 00:00:00 +0000 UTC): service did not match any available option
+	Rejected [FedEx] FedEx Priority Overnight (Transit Time: 1,  Delivery By: 2017-08-24 00:00:00 +0000 UTC): time in transit was longer than required speed
+	Rejected [FedEx] FedEx Standard Overnight (Transit Time: 1,  Delivery By: 2017-08-24 00:00:00 +0000 UTC): time in transit was longer than required speed
+	Rejected [FedEx] FedEx 2Day A.M. (Transit Time: 2,  Delivery By: 2017-08-25 00:00:00 +0000 UTC): service did not match any available option
+	Rejected [FedEx] FedEx 2Day (Transit Time: 2,  Delivery By: 2017-08-25 00:00:00 +0000 UTC): time in transit was longer than required speed
+	Rejected [FedEx] FedEx Express Saver (Transit Time: 3,  Delivery By: 2017-08-28 00:00:00 +0000 UTC): arrival date was after arrival deadline
+	Rejected [FedEx] FedEx First Freight (Transit Time: 1,  Delivery By: 2017-08-24 00:00:00 +0000 UTC): service did not match any available option
+	Rejected [FedEx] FedEx 1Day Freight (Transit Time: 1,  Delivery By: 2017-08-24 00:00:00 +0000 UTC): service did not match any available option
+	Rejected [FedEx] FedEx 2Day Freight (Transit Time: 2,  Delivery By: 2017-08-25 00:00:00 +0000 UTC): service did not match any available option
+	Rejected [FedEx] FedEx 3Day Freight (Transit Time: 3,  Delivery By: 2017-08-28 00:00:00 +0000 UTC): service did not match any available option
+	Rejected [FedEx] FedEx Ground (Transit Time: 1,  Delivery By: 0001-01-01 00:00:00 +0000 UTC): time in transit was longer than required speed
+	Rejected [FedEx] FedEx Ground Home Delivery (Transit Time: 1,  Delivery By: 0001-01-01 00:00:00 +0000 UTC): service did not match any available option
+	Rejected [UPS] UPS Next Day Air Early (Transit Time: 1,  Delivery By: 2017-08-24 08:00:00 +0000 UTC): service did not match any available option
+	Rejected [UPS] UPS Next Day Air (Transit Time: 1,  Delivery By: 2017-08-24 10:30:00 +0000 UTC): time in transit was longer than required speed
+	Rejected [UPS] UPS Next Day Air Saver (Transit Time: 1,  Delivery By: 2017-08-24 15:00:00 +0000 UTC): time in transit was longer than required speed
+	Rejected [UPS] UPS Ground (Transit Time: 1,  Delivery By: 2017-08-24 23:00:00 +0000 UTC): time in transit was longer than required speed
+",
+
+FedEx First Overnight: service did not match any available option
+FedEx Priority Overnight: arrival date was after arrival deadline ('2017-08-24 00:00:00 +0000 UTC' after '2017-08-23 00:00:00 +0000 UTC')
+FedEx Standard Overnight: arrival date was after arrival deadline ('2017-08-24 00:00:00 +0000 UTC' after '2017-08-23 00:00:00 +0000 UTC')
+FedEx 2Day A.M.: service did not match any available option
+FedEx 2Day: arrival date was after arrival deadline ('2017-08-25 00:00:00 +0000 UTC' after '2017-08-23 00:00:00 +0000 UTC')
+FedEx Express Saver: arrival date was after arrival deadline ('2017-08-28 00:00:00 +0000 UTC' after '2017-08-23 00:00:00 +0000 UTC')
+FedEx First Freight: service did not match any available option
+FedEx 1Day Freight: service did not match any available option
+FedEx 2Day Freight: service did not match any available option
+FedEx 3Day Freight: service did not match any available option
+FedEx Ground Home Delivery: service did not match any available option
+UPS Next Day Air Early: service did not match any available option
+UPS Next Day Air: arrival date was after arrival deadline ('2017-08-24 10:30:00 +0000 UTC' after '2017-08-23 00:00:00 +0000 UTC')
+UPS Next Day Air Saver: arrival date was after arrival deadline ('2017-08-24 15:00:00 +0000 UTC' after '2017-08-23 00:00:00 +0000 UTC')
+UPS Ground: arrival date was after arrival deadline ('2017-08-24 23:00:00 +0000 UTC' after '2017-08-23 00:00:00 +0000 UTC')
+
+
+FedEx Priority Overnight: arrival date was after arrival deadline ('2017-08-24 00:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+FedEx Standard Overnight: arrival date was after arrival deadline ('2017-08-24 00:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+FedEx 2Day: arrival date was after arrival deadline ('2017-08-25 00:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+FedEx Express Saver: arrival date was after arrival deadline ('2017-08-28 00:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+UPS Next Day Air: arrival date was after arrival deadline ('2017-08-24 10:30:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+UPS Next Day Air Saver: arrival date was after arrival deadline ('2017-08-24 15:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+UPS Ground: arrival date was after arrival deadline ('2017-08-24 23:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+
+
+
+FedEx First Overnight: service did not match any available option
+FedEx 2Day A.M.: service did not match any available option
+FedEx 2Day: arrival date was after arrival deadline ('2017-08-25 00:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+FedEx Express Saver: arrival date was after arrival deadline ('2017-08-28 00:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+FedEx First Freight: service did not match any available option
+FedEx 1Day Freight: service did not match any available option
+FedEx 2Day Freight: service did not match any available option
+FedEx 3Day Freight: service did not match any available option
+FedEx Ground Home Delivery: service did not match any available option
+UPS Next Day Air Early: service did not match any available option
+UPS Next Day Air: arrival date was after arrival deadline ('2017-08-24 10:30:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+UPS Next Day Air Saver: arrival date was after arrival deadline ('2017-08-24 15:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+UPS Ground: arrival date was after arrival deadline ('2017-08-24 23:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+
+
+{FedEx First Overnight 1 2017-08-24 00:00:00 +0000 UTC}
+{FedEx Priority Overnight 1 2017-08-24 00:00:00 +0000 UTC}
+{FedEx Standard Overnight 1 2017-08-24 00:00:00 +0000 UTC}
+{FedEx 2Day A.M. 2 2017-08-25 00:00:00 +0000 UTC}
+{FedEx 2Day 2 2017-08-25 00:00:00 +0000 UTC}
+{FedEx Express Saver 3 2017-08-28 00:00:00 +0000 UTC}
+{FedEx First Freight 1 2017-08-24 00:00:00 +0000 UTC}
+{FedEx 1Day Freight 1 2017-08-24 00:00:00 +0000 UTC}
+{FedEx 2Day Freight 2 2017-08-25 00:00:00 +0000 UTC}
+{FedEx 3Day Freight 3 2017-08-28 00:00:00 +0000 UTC}
+{Service: FedEx Groundd, TimeInTranit: 1, DeliveryTime: 0001-01-01 00:00:00 +0000 UTC}
+{FedEx Ground Home Delivery 1 0001-01-01 00:00:00 +0000 UTC}
+{UPS Next Day Air Early 1 2017-08-24 08:00:00 +0000 UTC}
+{UPS Next Day Air 1 2017-08-24 10:30:00 +0000 UTC}
+{UPS Next Day Air Saver 1 2017-08-24 15:00:00 +0000 UTC}
+{UPS Ground 1 2017-08-24 23:00:00 +0000 UTC}
+
+
+=====
+
+{FedEx First Overnight 1 2017-08-24 00:00:00 +0000 UTC}
+{FedEx Priority Overnight 1 2017-08-24 00:00:00 +0000 UTC}
+{FedEx Standard Overnight 1 2017-08-24 00:00:00 +0000 UTC}
+{FedEx 2Day A.M. 2 2017-08-25 00:00:00 +0000 UTC}
+{FedEx 2Day 2 2017-08-25 00:00:00 +0000 UTC}
+{FedEx Express Saver 3 2017-08-28 00:00:00 +0000 UTC}
+{FedEx First Freight 1 2017-08-24 00:00:00 +0000 UTC}
+{FedEx 1Day Freight 1 2017-08-24 00:00:00 +0000 UTC}
+{FedEx 2Day Freight 2 2017-08-25 00:00:00 +0000 UTC}
+{FedEx 3Day Freight 3 2017-08-28 00:00:00 +0000 UTC}
+{FedEx Ground 1 2017-08-24 00:00:00 +0000 UTC}
+{FedEx Ground Home Delivery 1 0001-01-01 00:00:00 +0000 UTC}
+{UPS Next Day Air Early 1 2017-08-24 08:00:00 +0000 UTC}
+{UPS Next Day Air 1 2017-08-24 10:30:00 +0000 UTC}
+{UPS Next Day Air Saver 1 2017-08-24 15:00:00 +0000 UTC}
+{UPS Ground 1 2017-08-24 23:00:00 +0000 UTC}
+
+FedEx First Overnight: service did not match any available option
+FedEx 2Day A.M.: service did not match any available option
+FedEx 2Day: arrival date was after arrival deadline ('2017-08-25 00:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+FedEx Express Saver: arrival date was after arrival deadline ('2017-08-28 00:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+FedEx First Freight: service did not match any available option
+FedEx 1Day Freight: service did not match any available option
+FedEx 2Day Freight: service did not match any available option
+FedEx 3Day Freight: service did not match any available option
+FedEx Ground Home Delivery: service did not match any available option
+UPS Next Day Air Early: service did not match any available option
+UPS Next Day Air: arrival date was after arrival deadline ('2017-08-24 10:30:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+UPS Next Day Air Saver: arrival date was after arrival deadline ('2017-08-24 15:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+UPS Ground: arrival date was after arrival deadline ('2017-08-24 23:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+
+====
+[
+ {Service: FedEx First Overnight, DeliveryTime: 2017-08-24 00:00:00 +0000 UTC, TimeInTransit: 1},
+ {Service: FedEx Priority Overnight, DeliveryTime: 2017-08-24 00:00:00 +0000 UTC, TimeInTransit: 1},
+ {Service: FedEx Standard Overnight, DeliveryTime: 2017-08-24 00:00:00 +0000 UTC, TimeInTransit: 1},
+ {Service: FedEx 2Day A.M., DeliveryTime: 2017-08-25 00:00:00 +0000 UTC, TimeInTransit: 2},
+ {Service: FedEx 2Day, DeliveryTime: 2017-08-25 00:00:00 +0000 UTC, TimeInTransit: 2},
+ {Service: FedEx Express Saver, DeliveryTime: 2017-08-28 00:00:00 +0000 UTC, TimeInTransit: 3},
+ {Service: FedEx First Freight, DeliveryTime: 2017-08-24 00:00:00 +0000 UTC, TimeInTransit: 1},
+ {Service: FedEx 1Day Freight, DeliveryTime: 2017-08-24 00:00:00 +0000 UTC, TimeInTransit: 1},
+ {Service: FedEx 2Day Freight, DeliveryTime: 2017-08-25 00:00:00 +0000 UTC, TimeInTransit: 2},
+ {Service: FedEx 3Day Freight, DeliveryTime: 2017-08-28 00:00:00 +0000 UTC, TimeInTransit: 3},
+ {Service: FedEx Ground, DeliveryTime: 2017-08-24 00:00:00 +0000 UTC, TimeInTransit: 1},
+ {Service: FedEx Ground Home Delivery, DeliveryTime: 0001-01-01 00:00:00 +0000 UTC, TimeInTransit: 1},
+ {Service: UPS Next Day Air Early, DeliveryTime: 2017-08-24 08:00:00 +0000 UTC, TimeInTransit: 1},
+ {Service: UPS Next Day Air, DeliveryTime: 2017-08-24 10:30:00 +0000 UTC, TimeInTransit: 1},
+ {Service: UPS Next Day Air Saver, DeliveryTime: 2017-08-24 15:00:00 +0000 UTC, TimeInTransit: 1},
+ {Service: UPS Ground, DeliveryTime: 2017-08-24 23:00:00 +0000 UTC, TimeInTransit: 1}
+]
+
+[
+ FedEx First Overnight: service did not match any available option
+ FedEx 2Day A.M.: service did not match any available option
+ FedEx 2Day: arrival date was after arrival deadline ('2017-08-25 00:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+ FedEx Express Saver: arrival date was after arrival deadline ('2017-08-28 00:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+ FedEx First Freight: service did not match any available option
+ FedEx 1Day Freight: service did not match any available option
+ FedEx 2Day Freight: service did not match any available option
+ FedEx 3Day Freight: service did not match any available option
+ FedEx Ground Home Delivery: service did not match any available option
+ UPS Next Day Air Early: service did not match any available option
+ UPS Next Day Air: arrival date was after arrival deadline ('2017-08-24 10:30:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+ UPS Next Day Air Saver: arrival date was after arrival deadline ('2017-08-24 15:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+ UPS Ground: arrival date was after arrival deadline ('2017-08-24 23:00:00 +0000 UTC' after '2017-08-24 00:00:00 +0000 UTC')
+]
+
+

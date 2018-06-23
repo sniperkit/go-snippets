@@ -1,0 +1,44 @@
+todo:
+===
+rename validateAndPrepare appropriately
+integration tests for "hold for location"
+integration tests that ship to somewhere not 38018
+ups future date shipping is not supported because UPS reasons
+UPS hold at location not supported because I forgot, but is it really important?
+  maybe should error in these conditions
+re-evaluate transitTimeFromString(...) returning -1 (because of shipping reqs)
+maybe refactor fedex Client.ship() and tests
+should arrival deadline accept a time as well as date? >>NOT YET, ADD STORY/ASK DREW, FOR SIMPLICITY USE DATE FOR NOW<<
+what should we do if fedex/ups doesn't give us a transit time or delivery by date?
+  reject this service?
+  should we try to fish out/infer the information like time in transit requests do?
+  should we be more aggressive about inferring that information?
+
+
+
+we need to make a holiday list for FedEx Ground, document how to update/verify it, and note it in the README
+maybe wrap the holiday list into a `Calendar` type?
+move the current list to `DefaultCalendar`, add a separate list for `FedexGroundCalendar`?
+
+Calendar dates like this are bad, mmkay:
+Fri. Before Christmas Eve
+FedEx Ground: Modified Service [4]
+[4] FedEx Ground will make pickups and deliveries. For packages picked up on 12/22/2017, most of them will transit and be delivered as usual, while some of the packages with a standard transit time of 2 or more days may experience 1 additional transit day.
+we could model that by having `func (c Calendar) ModifyTimeInTransitByPickupDate(time_in_transit int, pickup_date time.Time)` which returns `time_in_transit` for all dates except that one
+having said that, I'd prefer to put that footnote on a TODO and defer it until after we've got more things working
+
+
+optimizations:
+===
+FAN OUT REQUESTS INTO GOROUTINES
+FAN OUT CARRIER REQUESTS (ie just shipping, since each package is shipped separately) INTO GOROUTINES
+don't rate if len(options) == 0
+rate similiar boxes only once
+should packages be evaluated separately or collectively?
+send shipments using multi-package shipments when possible (ie non-returns)
+
+features:
+===
+dry run on shipping
+asap option which is different from priority overnight >>NOT UNTIL WE ACTUALLY NEED IT<<
+budget based requirements on a shipment >>THIS WILL JUST BE PREFERENCE<<
