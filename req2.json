@@ -1,0 +1,27 @@
+{
+    "ship_to": {
+        "name": "Shipping Dept",
+        "company": "LensRentals",
+        "phone": "9017549100",
+        "address_line_1": "7730 Trinity Rd",
+        "address_line_2": "Suite #110",
+        "city": "Cordova",
+        "state": "TN",
+        "postal_code": "38018"
+    },
+    "packages": [
+        {
+            "reference": "box1",
+            "type": "box",
+            "dimensions": {
+              "length": 10,
+              "width": 10,
+              "height": 10
+            },
+            "weight": 2,
+            "value": 10,
+            "contents": "important stuff",
+            "signature_required": "Direct"
+        },
+    ]
+}

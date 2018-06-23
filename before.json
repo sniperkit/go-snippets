@@ -1,0 +1,64 @@
+{
+    "shipper": {
+        "_comment": "This should default to LR's address/info",
+        "name": "",
+        "company": "",
+        "phone": "",
+        "address_line_1": "",
+        "address_line_2": "",
+        "city": "",
+        "state": "",
+        "postal_code": "",
+        "type": ""
+    },
+    "ship_to": {
+        "_comment": "Either LR address or customer address",
+        "name": "",
+        "company": "",
+        "phone": "",
+        "address_line_1": "",
+        "address_line_2": "",
+        "city": "",
+        "state": "",
+        "postal_code": "",
+        "type": ""
+    },
+    "outbound": {
+      "_comment": "Departing LR",
+      "service": "E.G. FedEx Ground/UPS 3 Day Select",
+      "signature_required": "Direct/Indirect/Adult",
+      "value_dependant_signature": true,
+      "saturday_delivery": true,
+      "hold_at_location_phone": "",
+      "ship_date": ""
+    },
+    "return": {
+      "_comment": "returning to LR",
+      "service": "E.G.: FedEx Ground/UPS 3 Day Select",
+      "signature_required": "Direct/Indirect/Adult",
+      "saturday_delivery": true
+    },
+    "packages": [
+      {
+        "dimensions": "7x7x7,...,envelope",
+        "weight": "",
+        "value": "",
+        "contents": "",
+      }
+    ]
+}
+
+"sometimes we use other Shippers?":
+
+"arrival deadlines?":
+"  perhaps take required shipping speed instead of a service":
+
+"hidden purchase order #":
+"multiple shipments at once potentially, otherwise 1 at a time":
+"return service optional":
+
+"weekend shipments are weird":
+"returning a label is most important, no printing":
+
+"some amt of state saved b/t rate and ship button":
+"  for ups its a digest b/t rating and shipping":

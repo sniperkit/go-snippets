@@ -1,0 +1,40 @@
+== session keystore should contain:
+expiration time
+email
+user id
+
+== web should have:
+middleware should requireAuth
+/login should unconditional (re)authenticate via CAS
+
+== need things to:
+x require auth (if auth, do nothing, if not auth'd, force auth)
+x force auth (401 for httpbasic, 302 for cas)
+  - shipping can call require auth
+  - /login call force auth
+
+== Todo
+- check go cas library if `ST-` and `PT-` tickets are handled the same or whatever
+x 403 for xhr
+x 90 minutes expiration
+- scrub ticket from query params?
+
+== Note on configuration
+x configuration env vars
+x session expiration as env var
+
+== After shipping is configured for CAS
+1. map model using activemodel, hook it to a CRUD controller, expose via form
+2. automation comes after
+3. billing shipping to someone in backend app using standalone shipping via button of sorts?
+
+4. Where to put shipping link in navbar?
+5. How do we want to show non-printed labels?
+5. How do we want print labels?
+6. What other improvements?
+  - button to import order from somewhere
+  - `/shipping/:order_id/new` ?
+
+
+NB: write tests in shipping app
+

@@ -1,0 +1,71 @@
+{
+    "shipper": {
+        "name": "Shipping Dept",
+        "company": "LensRentals",
+        "phone": "9017549100",
+        "address_line_1": "7730 Trinity Rd",
+        "address_line_2": "Suite #110",
+        "city": "Cordova",
+        "state": "TN",
+        "postal_code": "38018"
+    },
+    "ship_from": {
+        "name": "Shipping Dept",
+        "company": "LensRentals",
+        "phone": "9017549100",
+        "address_line_1": "7730 Trinity Rd",
+        "address_line_2": "Suite #110",
+        "city": "Cordova",
+        "state": "TN",
+        "postal_code": "38018"
+    },
+    "ship_to": {
+        "name": "Shipping Dept",
+        "company": "LensRentals",
+        "phone": "9017549100",
+        "address_line_1": "7730 Trinity Rd",
+        "address_line_2": "Suite #110",
+        "city": "Cordova",
+        "state": "TN",
+        "postal_code": "38018"
+    },
+    "packages": [
+        {
+            "reference": "box1",
+            "type": "box",
+            "dimensions": {
+              "length": 10,
+              "width": 10,
+              "height": 10
+            },
+            "weight": 2,
+            "value": 10,
+            "contents": "important stuff",
+            "signature_required": "Direct"
+        },
+        {
+            "reference": "box2",
+            "dimensions": {
+              "length": 10,
+              "width": 10,
+              "height": 10
+            },
+            "contents": "more important stuff",
+            "weight": 2,
+            "value": 14
+        }
+    ],
+
+    "po_number": "test",
+    "_ship_date": "2017-08-19",
+    "label_format": "printer",
+
+    "service": {
+        "_carrier": "FedEx",
+        "_name": "FedEx non-existant",
+        "_required_speed": 2,
+        "_arrival_deadline": "2017-08-23",
+        "return": true,
+        "saturday_delivery": false
+    }
+}
