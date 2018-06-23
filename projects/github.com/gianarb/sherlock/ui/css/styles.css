@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: #4d4e4f;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+header {
+  margin: 50px auto;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.search-input {
+  width: 70%;
+  margin: 0 10px;
+  padding: 10px;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  font-size: 20px;
+  outline: none;
+}
+
+.submit-btn {
+  width: 15%;
+  padding: 10px;
+  background: teal;
+  border: 3px solid teal;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+}
+
+.submit-btn:hover {
+  background: #03dada;
+  border: 3px solid #03dada;
+}

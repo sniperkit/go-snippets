@@ -1,0 +1,7 @@
+[[outputs.influxdb]]
+  urls = ["http://influxdb:8086"]
+  database = "traces"
+  retention_policy = "weekly"
+[[inputs.zipkin]]
+  path = "/api/v1/spans" # URL path for span data
+  port = 9411 # Port on which Telegraf listens
