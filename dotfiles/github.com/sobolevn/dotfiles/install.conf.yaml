@@ -1,0 +1,59 @@
+- clean: ['~']
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
+- link:
+    # Terminal:
+    ~/.shell:
+      path: shell
+      create: true
+    ~/.shell_env: config/shell_env
+    ~/.bash_profile: config/bash_profile
+    ~/.bashrc: config/bashrc
+    ~/.zshrc: config/zshrc
+    ~/.hushlogin: config/hushlogin
+    ~/.antibody: config/antibody.txt
+
+    # Git:
+    ~/.gitconfig: config/gitconfig
+    ~/.gitignore_global: config/gitignore
+
+    # Tools:
+    ~/.httpie/config.json: config/httpie
+    ~/.psqlrc: config/psqlrc
+
+    # Editors:
+    ~/.editorconfig: config/editorconfig
+    ~/.nanorc: config/nanorc
+
+- brewfile:
+    file: Brewfile
+    no-upgrage: true
+
+- pip:
+    file: python/requirements.txt
+    binary: /usr/local/opt/python/libexec/bin/pip
+
+- pip:
+    file: python/requirements3.txt
+    binary: /usr/local/bin/pip3
+
+- pipsi:
+    file: python/requirements-pipsi.txt
+
+# These links should be created after everything is installed:
+- link:
+    ~/.gnupg/gpg-agent.conf: config/gpgagent
+
+- link:
+    # vscode:
+    "~/Library/Application Support/Code/User/settings.json":
+        path: vscode/settings.json
+        create: true
+    "~/Library/Application Support/Code/User/snippets":
+        path: vscode/snippets
+        create: true
+
+- shell:
+  - bash ./vscode/install.sh
