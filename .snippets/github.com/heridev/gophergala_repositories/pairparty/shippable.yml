@@ -1,8 +1,0 @@
-  # language setting
-language: go
-  # version numbers
-go:
-  - 1.2
-  - 1.3
-  # command to run tests
-script: go test -v ./

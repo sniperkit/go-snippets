@@ -1,8 +1,0 @@
-{
-    "package": "testcases",
-    "doc": "Voider does something and returns nothing.",
-    "type": "Voider",
-    "method": "Void",
-    "argument_types": [],
-    "return": []
-}

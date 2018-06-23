@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+${1:c} := time.Tick(${2:1 * time.Minute})
+for now := range ${1:c} {
+	${3:fmt.Printf("%v\n", now)}
+}
+]]></content>
+	<tabTrigger>time.Tick</tabTrigger>
+	<scope>source.go</scope>
+</snippet>

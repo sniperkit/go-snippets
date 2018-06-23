@@ -1,0 +1,17 @@
+.sdk
+build
+.rebar3
+.eunit
+*.beam
+*.plt
+*.swp
+*.swo
+.erlang.cookie
+ebin
+log
+erl_crash.dump
+.rebar
+logs
+_build
+.idea
+rebar3.crashdump

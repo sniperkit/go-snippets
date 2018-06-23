@@ -1,8 +1,0 @@
-if x:
-    pass
-elif y:
-    pass
-elif z:
-    pass
-else:
-    pass

@@ -1,6 +1,0 @@
-sut:
-  build: .
-  volumes:
-    - ./tests:/tests:ro
-  working_dir: /tests
-  command: sh run_compare.sh

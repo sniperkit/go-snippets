@@ -1,7 +1,0 @@
-package: github.com/appliedgo/messaging
-import:
-- package: github.com/go-mangos/mangos
-  subpackages:
-  - protocol/pair
-  - transport/ipc
-  - transport/tcp

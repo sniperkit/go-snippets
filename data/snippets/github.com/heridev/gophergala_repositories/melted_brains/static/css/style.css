@@ -1,0 +1,60 @@
+.arc {
+  color: gray;
+}
+
+.carret {
+  padding: 0;
+  margin: 0;
+  color: black;
+  width: 1px;
+  height: inherit;
+  border-left: 1px solid black;
+}
+.blink {
+  animation: blink 1s steps(2, start) infinite;
+  -webkit-animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+.orange {
+  background: orange;
+}
+.flag {
+  height: 50px;
+  padding: 1px 2px;
+  font-size: small;
+}
+.code_field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+}
+.another_users_field {
+  opacity: 0;
+  z-index: 100;
+}
+.board {
+  position: absolute;
+}
+.countdown {
+  position: absolute;
+  left: 50%;
+}
+.countdown div {
+  position: relative;
+  left: -50%;
+  border: dotted red 1px;
+}
+.counter {
+  width: 150px;
+  height: 150px;
+}

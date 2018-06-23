@@ -1,0 +1,107 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 16:30:03 -0500
+Received: (qmail 22064 invoked from network); 23 Jan 2015 13:05:27 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 13:05:27 -0800
+X-ASG-Debug-ID: 1422047125-017fd408af212dfe0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id 4t3pCCS4k6M0ETaF for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 13:05:25 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146378=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0NLIgCc015321
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 14:18:44 -0700 (MST)
+Received: from mail-ob0-f177.google.com (mail-ob0-f177.google.com [209.85.214.177])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0NLIUVe019573 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 14:18:31 -0700 (MST)
+Received: by mail-ob0-f177.google.com with SMTP id uy5so9082224obc.8
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 13:04:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=googlemail.com; s=20120113; h=message-id:date:from:to:subject:references:in-reply-to:mime-version :content-type:content-disposition:content-transfer-encoding :user-agent; bh=mi7s+yuYbO1dAOBrlb6bqgCbQ3/Z4mDPfrHigDYx79Q=; b=b/C3MnN/PmvuHciXlAyf7A7ArXOWiGPOVNcXTLzH5sEMbCuPqe+omglJ+k+SzbdTDu r1pI+lRb7jGH+dEEL8kcp6yE9CNV43d7kENv+BWso9PYoMBAETjL1iVQs5VlkRdc8VTN TJ9CaEFd1tEDmkC6cyavMlSs0S0EW8qRCa+/rUyKMLSsXXj4hNwR2/ts3vj1ee5DLh1k z/5Bo/y6jQqvCuMzUlMxDjeB1MYcJpb7tlhzepDB9QX0qmUWTuZ3aAIOAsrQmwsc9EMC kTeuPV8peNFKPfE6cI0E/sIfLLG22hr6fCYvlRy5wOkivr5NWtAW77ZnD9ToPmHLoXPs v/7A==
+X-Received: by 10.202.208.211 with SMTP id h202mr5402399oig.25.1422047080319; Fri, 23 Jan 2015 13:04:40 -0800 (PST)
+Received: from jorge.lopez.paramount@gmail.com ([187.194.239.73])
+	by mx.google.com with ESMTPSA id a6sm1350818obx.15.2015.01.23.13.04.37
+	for <misc@openbsd.org> (version=TLSv1 cipher=RC4-SHA bits=128/128); Fri, 23 Jan 2015 13:04:39 -0800 (PST)
+Received: by jorge.lopez.paramount@gmail.com (sSMTP sendmail emulation); Fri, 23 Jan 2015 15:04:36 -0600
+Received: from climene.localdomain (climene.localdomain [192.168.108.117])
+	by hestia.localdomain (Horde Framework) with HTTP; Fri, 23 Jan 2015 15:04:36 -0600
+Message-ID: <20150123150436.19194wsfr25s60e8@hestia.localdomain>
+Date: Fri, 23 Jan 2015 15:04:36 -0600
+From: Jorge Gabriel Lopez Paramount <jorge.lopez.paramount@googlemail.com>
+To: misc@openbsd.org
+Subject: Re: What are the disadvantages of soft updates?
+References: <20150123202400.htg6SHV5FSF8i0fq%punosevac72@gmail.com>
+X-ASG-Orig-Subj: Re: What are the disadvantages of soft updates?
+In-Reply-To: <20150123202400.htg6SHV5FSF8i0fq%punosevac72@gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; DelSp="Yes"; format="flowed"
+Content-Transfer-Encoding: 8bit
+User-Agent: Internet Messaging Program (IMP) H3 (4.3.7)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422047125
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO, MAILTO_TO_SPAM_ADDR
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14569
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+	0.00 MAILTO_TO_SPAM_ADDR    URI: Includes a link to a likely spammer email
+
+Quoting Predrag Punosevac <punosevac72@gmail.com>:
+
+> I was following this discussion with the great interest but without
+> intend to participate in it until today.
+>
+> Namely one of my OpenBSD servers (5.6 sparc64) runs Mollify and last
+> night I received an e-mail from an angry user who could not upload files
+> (the upload will fail or upload the file with file size zero). After
+> running df I noticed that /tmp was 100% full (4GB used) but the size of
+> individual files was only 12Kb. I thought for a second and I remember
+> seeing this with HAMMER on DF. Long story short I checked /etc/fstab and
+> sure enough I had rw,softdep next to each partition including tmp. I
+> removed softdep rebooted the sytem and /tmp usage dropped to 0%. More
+> importantly users could upload files again.
+
+Two things: UNIX servers like OpenBSD usually clean /tmp every reboot:
+
+$ ls -la /tmp
+total 20
+drwxrwxrwt   5 root  wheel  512 Jan 23 15:00 .
+drwxr-xr-x  16 root  wheel  512 Jan 23 14:58 ..
+drwxrwxrwt   2 root  wheel  512 Jan 23 15:00 .ICE-unix
+drwxrwxrwt   2 root  wheel  512 Jan 23 15:00 .X11-unix
+drwxr-xr-x   2 root  wheel  512 Jan 23 15:00 aucat
+$ uptime
+  3:00PM  up 1 min, 1 user, load averages: 1.11, 0.41, 0.16
+
+And one thing is space available and other different but related is  
+inodes available:
+
+$ df -i /tmp
+Filesystem  512-blocks      Used     Avail Capacity iused   ifree   
+%iused  Mounted on
+/dev/wd0a      1920764    126340   1698388     7%    2439  127479     2%   /
+
+If you have lots of small files you might have plenty of space  
+available, but will be unable to create more files if there are no  
+inodes available.
+
+-- 
+Best regards,
+Jorge Lopez.
+
+
+----------------------------------------------------------------
+This message was sent using IMP, the Internet Messaging Program.
+

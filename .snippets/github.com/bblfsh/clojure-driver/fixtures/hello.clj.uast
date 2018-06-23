@@ -1,6 +1,0 @@
-Status:  fatal
-Language:  clojure
-Errors: 
- .  unsupported: non-object root node
-UAST: 
-

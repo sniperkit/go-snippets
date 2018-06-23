@@ -1,0 +1,5 @@
+#!/bin/sh
+
+buildpath=./build/justgo
+go build -o "$buildpath"
+echo "Successfully built new binary at: $buildpath"

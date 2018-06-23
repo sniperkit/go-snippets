@@ -1,0 +1,15 @@
+{{ docker.from("php-nginx") }}
+
+{{ environment.mailbox() }}
+
+{{ docker.copy('conf/', '/opt/docker/') }}
+
+RUN set -x \
+    {{ mailsandbox.ubuntu() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}
+
+RUN set -x \
+    {{ mailsandbox.roundcube() }}
+
+{{ docker.expose('25 465 587 143 993') }}

@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+w := csv.NewWriter(${1:os.Stdout})
+
+for _, record := range records {
+	if err := w.Write(record); err != nil {
+		log.Fatalln("error writing record to csv:", err)
+	}
+}
+
+w.Flush()
+
+if err := w.Error(); err != nil {
+	log.Fatal(err)
+}
+]]></content>
+	<tabTrigger>csv.Write</tabTrigger>
+	<scope>source.go</scope>
+</snippet>

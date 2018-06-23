@@ -1,0 +1,7 @@
+.idea/
+.vagrant/
+testgame/
+*~
+.#*
+*.exe
+shark_sandwich

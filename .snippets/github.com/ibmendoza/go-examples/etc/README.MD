@@ -1,2 +1,0 @@
-- https://www.business-case-analysis.com/accrual-accounting.html
-- https://www.business-case-analysis.com/single-entry-accounting.html

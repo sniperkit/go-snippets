@@ -1,0 +1,29 @@
+package gevvent.service.event.attendees;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.marshaler_all) = true;
+
+message Request {
+	optional string ID = 1 [(gogoproto.nullable) = false];
+}
+
+message Response {
+	repeated User users = 1;
+}
+
+message User {
+	optional string ID = 1 [(gogoproto.nullable) = false];
+	optional string username = 2 [(gogoproto.nullable) = false];
+	optional Status status = 3 [(gogoproto.nullable) = false];
+}
+
+enum Status {
+	NOT_GOING = 0;
+	GOING = 1;
+	INVITED = 2;
+	SAVED = 3;
+}
+

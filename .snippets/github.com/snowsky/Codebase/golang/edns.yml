@@ -1,5 +1,0 @@
----
-firewall_network_rules:
-  rule1:
-    - value1
-    - value2

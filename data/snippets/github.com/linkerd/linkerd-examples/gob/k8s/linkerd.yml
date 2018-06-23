@@ -1,0 +1,32 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: linkerd-config
+  namespace: default
+data:
+  config.yml: |-
+    admin:
+      ip: 0.0.0.0
+      port: 9990
+
+    routers:
+    - protocol: http
+      servers:
+      - port: 4080
+        ip: 0.0.0.0
+      dtab: /svc => /$/inet/127.1/8080
+
+    - protocol: h2
+      servers:
+      - port: 4180
+        ip: 0.0.0.0
+      dstPrefix: /grpc
+      service:
+        totalTimeoutMs: 1000
+        responseClassifier:
+          kind: io.l5d.h2.retryableRead5XX
+      interpreter:
+        kind: io.l5d.namerd
+        dst: /$/inet/namerd-sync.default.svc.cluster.local/4100
+      identifier:
+        kind: io.l5d.header.path

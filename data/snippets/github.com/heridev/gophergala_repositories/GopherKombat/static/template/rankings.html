@@ -1,0 +1,60 @@
+{{ if .loggedIn }}
+<script>
+            $(".header .login").hide();
+            $(".header .logout").show();
+
+    </script>
+{{else}}
+<script>
+            $(".header .login").show();
+            $(".header .logout").hide();
+    </script>
+{{ end }}
+
+<div id="headline">Rankings</div>
+<p> Lorem ipsum... </p>
+<div class="rankings-wrapper">
+    <div class="column">
+        <div class="title head">Today</div>
+        <div class="name head cell">Username</div>
+        <div class="value head cell">Win %</div>
+        {{range $rec := .today}}
+            <div class="trow">
+                <div class="name cell">
+                    <a href="{{ $rec.User.Repo }}">{{ $rec.User.Name }}</a>
+                </div>
+                <div class="value cell">{{ $rec.Value }}</div>
+            </div>
+        {{ end }}
+    </div>
+    <div class="column">
+        <div class="title head">This month</div>
+        <div class="name head cell">Username</div>
+        <div class="value head cell">Win %</div>
+        {{range $rec := .month}}
+            <div class="trow">
+                <div class="name cell">
+                    <a href="{{ $rec.User.Repo }}">{{ $rec.User.Name }}</a>
+                </div>
+                <div class="value cell">{{ $rec.Value }}</div>
+            </div>
+        {{ end }}
+    </div>
+    <div class="column">
+        <div class="title head">All time</div>
+        <div class="thead">
+            <div class="name head cell">Username</div>
+            <div class="value head cell">Win %</div>
+        </div>
+        {{range $rec := .allTime}}
+            <div class="trow">
+                <div class="name cell">
+                    <a href="{{ $rec.User.Repo }}">{{ $rec.User.Name }}</a>
+                </div>
+                <div class="value cell">{{ $rec.Value }}</div>
+            </div>
+        {{ end }}
+    </div>
+</div>
+
+<script type="application/javascript" src="js/rankings.js" defer></script>

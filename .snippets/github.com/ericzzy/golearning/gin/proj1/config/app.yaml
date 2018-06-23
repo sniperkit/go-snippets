@@ -1,6 +1,0 @@
-logging:
-     level: debug
-     format: json
-
-database:
-     connection:

@@ -1,2 +1,0 @@
-#!/bin/sh
-exec python3 /opt/AutoMarkWatched/manage.py runserver 0:$PORT

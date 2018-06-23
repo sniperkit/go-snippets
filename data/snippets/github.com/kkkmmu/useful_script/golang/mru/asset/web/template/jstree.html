@@ -1,0 +1,105 @@
+|||template "vueheader"|||
+<!DOCTYPE html>
+<link rel="stylesheet" href="asset/web/static/jstree/dist/themes/default/style.min.css" />
+<!-- 3 setup a container element -->
+<div id="jstree">
+	<!-- in this example the tree is populated from inline HTML -->
+	<ul>
+		<li>Root node 1
+			<ul>
+				<li id="child_node_1">Child node 1</li>
+				<li id="child_node_1">Child node 1</li>
+				<li id="child_node_1">Child node 1</li>
+				<li id="child_node_1">Child node 1</li>
+				<li id="child_node_1">Child node 1</li>
+				<li>Child node 2
+					<ul>
+						<li id="child_node_4">Child node 1</li>
+						<li id="child_node_4">Child node 1</li>
+						<li id="child_node_4">Child node 1</li>
+						<li id="child_node_4">Child node 1</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>Root node 2</li>
+	</ul>
+</div>
+<button>demo button</button>
+<div id="container" class="col-sm-12"></div>
+<script>
+	$(function() {
+		$('#container').jstree({
+			'core' : {
+				'data' : [
+					{ "text" : "Root node", "children" : [
+						{ "text" : "Child node 1", "children": [
+							{ "text" : "Child node 2" },
+							{ "text" : "Child node 2" },
+							{ "text" : "Child node 2" },
+							{ "text" : "Child node 2" }
+						]},
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2", "children": [
+							{ "text" : "Child node 2" },
+							{ "text" : "Child node 2" },
+							{ "text" : "Child node 2" },
+							{ "text" : "Child node 2" },
+						]}
+					]
+					},
+					{ "text" : "Root node", "children" : [
+						{ "text" : "Child node 1" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" }
+					]
+					},
+					{ "text" : "Root node", "children" : [
+						{ "text" : "Child node 1" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" }
+					]
+					},
+					{ "text" : "Root node", "children" : [
+						{ "text" : "Child node 1" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" },
+						{ "text" : "Child node 2" }
+					]
+					}
+				]
+			}
+		});
+	});
+</script>
+
+<!-- 4 include the jQuery library -->
+<!-- 5 include the minified jstree source -->
+<script src="asset/web/static/jstree/dist/jstree.min.js"></script>
+<script>
+	$(function () {
+		// 6 create an instance when the DOM is ready
+		$('#jstree').jstree();
+		// 7 bind to events triggered on the tree
+		$('#jstree').on("changed.jstree", function (e, data) {
+			console.log(data.selected);
+		});
+		// 8 interact with the tree - either way is OK
+		$('button').on('click', function () {
+			$('#jstree').jstree(true).select_node('child_node_1');
+			$('#jstree').jstree('select_node', 'child_node_1');
+			$.jstree.reference('#jstree').select_node('child_node_1');
+		});
+	});
+</script>
+||| template "vuefooter"|||

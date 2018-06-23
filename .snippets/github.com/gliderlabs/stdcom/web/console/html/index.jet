@@ -1,6 +1,0 @@
-{{extends "__console.jet"}}
-{{block main()}}
-<div class="ui bottom attached segment">
-  <h2>Hello world!</h2>
-</div>
-{{end}}

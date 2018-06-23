@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+func handler${1:route}(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "...")
+}
+
+func init() {
+	http.HandleFunc("/${1:route}", handler${1:route})
+}
+]]></content>
+	<tabTrigger>http.Route</tabTrigger>
+	<scope>source.go</scope>
+</snippet>

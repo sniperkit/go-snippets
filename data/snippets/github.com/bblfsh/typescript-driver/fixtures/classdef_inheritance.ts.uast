@@ -1,0 +1,161 @@
+Status:  ok
+Language:  typescript
+Errors: 
+UAST: 
+SourceFile {
+.  Roles: File
+.  StartPosition: {
+.  .  Offset: 0
+.  .  Line: 1
+.  .  Col: 1
+.  }
+.  EndPosition: {
+.  .  Offset: 38
+.  .  Line: 3
+.  .  Col: 1
+.  }
+.  Properties: {
+.  .  flags: null
+.  .  identifierCount: 3
+.  .  isDeclarationFile: false
+.  .  languageVariant: 0
+.  .  nodeCount: 9
+.  .  scriptKind: 3
+.  }
+.  Children: {
+.  .  0: ClassDeclaration {
+.  .  .  Roles: Unannotated
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 12
+.  .  .  .  Line: 1
+.  .  .  .  Col: 13
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  flags: null
+.  .  .  .  internalRole: statements
+.  .  .  .  modifierFlagsCache: 5.36870912e+08
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Identifier {
+.  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 5
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 9
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 10
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  escapedText: Foo
+.  .  .  .  .  .  flags: null
+.  .  .  .  .  .  internalRole: name
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  1: ClassDeclaration {
+.  .  .  Roles: Unannotated
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 12
+.  .  .  .  Line: 1
+.  .  .  .  Col: 13
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 37
+.  .  .  .  Line: 2
+.  .  .  .  Col: 25
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  flags: null
+.  .  .  .  internalRole: statements
+.  .  .  .  modifierFlagsCache: 5.36870912e+08
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Identifier {
+.  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 18
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 22
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 10
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  escapedText: Bar
+.  .  .  .  .  .  flags: null
+.  .  .  .  .  .  internalRole: name
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: HeritageClause {
+.  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 22
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 10
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 34
+.  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  Col: 22
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  flags: null
+.  .  .  .  .  .  internalRole: heritageClauses
+.  .  .  .  .  .  token: 85
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: ExpressionWithTypeArguments {
+.  .  .  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 30
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 18
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 34
+.  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  Col: 22
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  flags: null
+.  .  .  .  .  .  .  .  internalRole: types
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: Identifier {
+.  .  .  .  .  .  .  .  .  Roles: Unannotated
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 30
+.  .  .  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  .  .  Col: 18
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 34
+.  .  .  .  .  .  .  .  .  .  Line: 2
+.  .  .  .  .  .  .  .  .  .  Col: 22
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  escapedText: Foo
+.  .  .  .  .  .  .  .  .  .  flags: null
+.  .  .  .  .  .  .  .  .  .  internalRole: expression
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

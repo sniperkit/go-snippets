@@ -1,0 +1,64 @@
+{{ partial "head.html" . }}
+    <body>
+       {{ partial "nav.html" . }}
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        {{ .Title }}
+                    </h1>
+                    {{ if .Draft }}
+                    <span class="draft-indicator--inverted">DRAFT</span>
+                    {{ end }}
+                    <h2 class="headline">
+                    {{ .Date.Format "Jan 2, 2006 15:04" }}
+                    · {{ if lt 1 .WordCount }}{{ .WordCount }} words{{ else }}{{ .WordCount }} word{{ end }}
+                    · {{ .ReadingTime }} minute read
+                      <span class="tags">
+                      {{ with .Params.tags }}
+                      {{ if ge (len .) 1 }}
+                          {{ range . }}
+                              <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
+                          {{ end }}
+                      {{ end }}
+                      {{ end}}
+                      </span>
+                    </h2>
+                </header>
+                {{ if .Site.Params.enableToc }}
+                  {{ if not .Params.disableToc }}
+	                  {{ if .TableOfContents }}
+	                    <div id="toc">
+						Table of Contents:
+	                      {{ .TableOfContents }}
+	                    </div>
+	                  {{ end }}
+	              {{ end }}
+                {{ end }}
+                <section id="post-body">
+                    {{ .Content }}
+                </section>
+            </article>
+
+            {{ if .Site.Params.enableShare }}
+                {{ partial "share.html" . }}
+            {{ end }}
+            {{ if and .Site.Params.enableDisqus }}
+        		{{ if not .Params.disableDisqus }}
+                	{{ partial "disqus.html" . }}
+                {{ end }}
+            {{ end }}
+
+            {{ if .Site.Params.showLatestPosts }}
+                {{ partial "latest-posts.html" . }}
+            {{ end }}
+
+            {{ partial "prev-next-posts.html" . }}
+
+            {{ partial "footer.html" . }}
+        </section>
+
+        {{ partial "js.html" . }}
+    </body>
+</html>

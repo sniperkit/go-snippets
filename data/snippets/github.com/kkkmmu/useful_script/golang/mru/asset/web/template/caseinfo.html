@@ -1,0 +1,391 @@
+|||template "vueheader"|||
+|||template "treenav"|||
+|||template "caseheader"|||
+<div id="caseinfo" class="container-fluid display-table v-align">
+	<form class="form-horizontal">
+	</form>
+	<div class="col-md-4">
+		<div class="md-lid">
+			<div class="tab-featured-image">
+				<div class="tab-content">
+					<img :src="topology" alt="tab1" class="img img-responsive">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 pull-right">
+		<button class="btn icon-btn btn-danger pull-right" @click.prevent="delCase">Delete</button>
+		<button class="btn icon-btn btn-primary pull-left" @click.prevent="newTask">NewTask</button>
+		<button class="btn icon-btn btn-info pull-left" @click.prevent="openLogSession">LOG</button>
+		<button class="btn icon-btn btn-warning pull-left" @click.prevent="openLogSession('full')">FULL</button>
+		<button class="btn icon-btn btn-success pull-left" @click.prevent="runCase">RUN</button>
+	</div>
+	<legend class="col-md-6 pull-right"></legend>
+	<div class="col-md-6 pull-right">
+		<div class="tab-featured-image">
+			<div class="tab-content">
+				<div class="form-group">
+					<div v-for="task in current.Tasks">
+						<div class="update-nag">
+							<button class="update-split update-success glyphicon glyphicon-play" @click.prevent="runTask(task.id)"></button>
+							<button class="update-split update-danger glyphicon glyphicon-remove" @click.prevent="DelTask(task.id)"></button>
+							<div class="update-text"><a :href="'taskinfo?id='+task.id">{{task.name}}</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<legend class="col-md-10 pull-right"></legend>
+	<div class="container">
+		<div class="row">
+		<div v-for="(res, i) in cresults">
+			<div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+				<div class="card">
+					<button v-if="res.Pass" class="btn btn-success ignore btn-block"><h4>Success</h4></button>
+					<button v-else class="btn btn-danger ignore btn-block"><h4>Failed</h4></button>
+					<div class="card-block">
+						<!--
+						<figure class="profile">
+							<img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+						</figure>
+						-->
+						<h4 class="card-title mt-3">Goup:     {{res.Group}}</h4>
+						<h4 class="card-title mt-3">SubGroup: {{res.SubGroup}}</h4>
+						<h4 class="card-title mt-3">Feature:  {{res.Feature}}</h4>
+						<h4 class="card-title mt-3">Case:     {{res.Case}}</h4>
+						<div class="meta">
+							<a>Message</a>
+						</div>
+						<div class="card-text">
+							{{res.Message}}
+						</div>
+					</div>
+					<div class="card-footer">
+						<small>For More Informations...</small>
+						<button class="btn btn-secondary float-right btn-sm pull-right" @click.prevent="openLogSession('full')">Go</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+<script>
+	function dumpCase(id) {
+		var caseinfo;
+		$.ajax({
+			type:"get",
+			url:"dumpcase?id="+id,
+			async:false,
+			success:function(data) {
+				caseinfo = data;
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				alert(XMLHttpRequest.responseText);
+				window.location="newcase"
+			},
+		});
+		return JSON.parse(caseinfo);
+	}
+
+	function　getCookie(name){
+		if (document.cookie.length>0)
+		{
+			start=document.cookie.indexOf(name + "=");
+			if (start!=-1)
+			{ 
+				start=start + name.length+1;
+				c_end=document.cookie.indexOf(";",start);
+				if (c_end==-1) c_end=document.cookie.length;
+				return unescape(document.cookie.substring(start,c_end));
+			} 
+		}
+		return "";
+	}
+
+	function setCookie(name,value,expiredays){
+		var exdate=new Date();
+		exdate.setDate(exdate.getDate()+expiredays);
+		document.cookie= name+ "=" +escape(value)+
+			((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+	}
+
+	function isReadyForRun(id) {
+		var ready = false
+		$.ajax({
+			type:"get",
+			url:"isinitialized",
+			async:false,
+			data: {
+				id: id
+			},
+			success:function(data) {
+				ready = JSON.parse(data).Ready
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				alert(XMLHttpRequest.responseText);
+			}
+		});
+		return ready
+	}
+
+	function doInitializeWork(id) {
+		window.location.href="setdutsbyid?id="+getCookie("CASEID");
+	}
+</script>
+<script>
+	var caseInfo = new Vue({
+		el: '#caseinfo',
+		data: {
+			current: dumpCase(getCookie("CASEID")),
+			topology: dumpCase(getCookie("CASEID")).Topology,
+			id: getCookie("CASEID"),
+			submitted:false,
+			cresults:[{
+				Group: "Sample",
+				SubGroup: "SampleSub",
+				Feature: "SampleFeature",
+				Pass: true,
+				Message: "hello"
+			}, {
+				Group: "Sample",
+				SubGroup: "SampleSub",
+				Feature: "SampleFeature",
+				Pass: false,
+				Message: "world"
+			}
+			],
+		},
+		methods: {
+			newTask: function(e) {
+				window.location.href="newtask?id="+getCookie("CASEID");
+			},
+
+			runCase: function(e) {
+				if (!isReadyForRun(this.id)){
+					doInitializeWork(this.id)
+					return
+				}
+				var res = this.cresults
+				$.ajax({
+					type:"post",
+					url:"runcases",
+					async:false,
+					data: {
+						type: "CASE",
+						id: getCookie("CASEID")
+					},
+					success:function(data) {
+						var conn = new WebSocket("ws://"+data+"/runcaseresultws");
+						conn.onclose = function(evt) {
+							data.textContent = 'Connection closed';
+						}
+						conn.onmessage = function(evt) {
+							res.push(JSON.parse(evt.data));
+						}
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
+						alert(XMLHttpRequest.responseText);
+					}
+
+				});
+				this.submitted = true;
+			},
+
+			delCase: function(e) {
+				$.ajax({
+					type:"post",
+					url:"delete",
+					async:false,
+					data: {
+						type: "CASE",
+						id: getCookie("CASEID")
+					},
+					success:function(data) {
+						window.location.href="caseinfo?id="+getCookie("CASEID");
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
+						alert(XMLHttpRequest.responseText);
+					}
+				});
+				this.submitted = true;
+			},
+
+			runTask: function(e) {
+				if (!isReadyForRun(this.id)){
+					doInitializeWork(this.id)
+					return
+				}
+
+				var res = this.cresults
+				$.ajax({
+					type:"post",
+					url:"runcases",
+					async:false,
+					data: {
+						type: "TASK",
+						id: e,
+					},
+					success:function(data) {
+						var conn = new WebSocket("ws://"+data+"/runcaseresultws");
+						conn.onclose = function(evt) {
+							data.textContent = 'Connection closed';
+						}
+						conn.onmessage = function(evt) {
+							res.push(JSON.parse(evt.data));
+						}
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
+						alert(XMLHttpRequest.responseText);
+					}
+				});
+				this.submitted = true;
+			},
+
+			DelTask: function(e) {
+				$.ajax({
+					type:"post",
+					url:"delete",
+					async:false,
+					data: {
+						type: "TASK",
+						id: e,
+					},
+					success:function(data) {
+						window.location.href="caseinfo?id="+getCookie("CASEID");
+					}, 
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
+						alert(XMLHttpRequest.responseText);
+					}
+				});
+				this.submitted = true;
+			},
+
+			openLogSession: function(e) {
+				var full
+				if (e == "full") {
+					full = 1;
+				} else {
+					full = 0;
+				}
+				var sess = getCookie("SESSIONID");
+				var url = "/log?id="+sess+"&full="+full
+				window.open(url)
+				this.submitted = true;
+			},
+		}
+	});
+</script>
+<style>
+h5 {
+	font-size: 1.28571429em;
+	font-weight: 700;
+	line-height: 1.2857em;
+	margin: 0;
+}
+
+		.card {
+			font-size: 1em;
+			overflow: hidden;
+			padding: 0;
+			border: none;
+			border-radius: .28571429rem;
+			box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+		}
+
+		.card-block {
+			font-size: 1em;
+			position: relative;
+			margin: 0;
+			padding: 1em;
+			border: none;
+			border-top: 1px solid rgba(34, 36, 38, .1);
+			box-shadow: none;
+		}
+
+		.card-img-top {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		.card-title {
+			font-size: 1.28571429em;
+			font-weight: 700;
+			line-height: 1.2857em;
+		}
+
+		.card-text {
+			clear: both;
+			margin-top: .5em;
+			color: rgba(0, 0, 0, .68);
+		}
+
+		.card-footer {
+			font-size: 1em;
+			position: static;
+			top: 0;
+			left: 0;
+			max-width: 100%;
+			padding: .75em 1em;
+			color: rgba(0, 0, 0, .4);
+			border-top: 1px solid rgba(0, 0, 0, .05) !important;
+			background: #fff;
+		}
+
+		.card-inverse .btn {
+			border: 1px solid rgba(0, 0, 0, .05);
+		}
+
+		.profile {
+			position: absolute;
+			top: -12px;
+			display: inline-block;
+			overflow: hidden;
+			box-sizing: border-box;
+			width: 25px;
+			height: 25px;
+			margin: 0;
+			border: 1px solid #fff;
+			border-radius: 50%;
+		}
+
+		.profile-avatar {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: 50%;
+		}
+
+		.profile-inline {
+			position: relative;
+			top: 0;
+			display: inline-block;
+		}
+
+		.profile-inline ~ .card-title {
+			display: inline-block;
+			margin-left: 4px;
+			vertical-align: top;
+		}
+
+		.text-bold {
+			font-weight: 700;
+		}
+
+		.meta {
+			font-size: 1em;
+			color: rgba(0, 0, 0, .4);
+		}
+
+		.meta a {
+			text-decoration: none;
+			color: rgba(0, 0, 0, .4);
+		}
+
+		.meta a:hover {
+			color: rgba(0, 0, 0, .87);
+		}
+</style>
+|||template "vuefooter"|||

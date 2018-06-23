@@ -1,0 +1,4 @@
+cron:
+- description: daily saved value deletion job
+  url: /update_saved_posts
+  schedule: every day 10:00

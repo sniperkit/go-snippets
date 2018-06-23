@@ -1,1 +1,0 @@
-- https://torusware.com/blog/2016/09/hands-on-orchestration-docker-1-12-swarm-vs-kubernetes/

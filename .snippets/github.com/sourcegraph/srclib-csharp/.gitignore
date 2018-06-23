@@ -1,6 +1,0 @@
-bin/
-testdata/actual/
-project.lock.json
-log.json
-log.txt
-.vs/

@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>创建子圈</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/business.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<style type="text/css">
+			body{background: #eee;}
+			.clearFix:after{content: "";display: block;clear: both;}
+			input{outline: none;border: none;}
+			/*聊天界面 开始*/
+			/*聊天顶部 开始*/
+			.chat-top-box{height: 45px;border-bottom: 1px solid #d9d9d9;}
+			.chat-top-box .seek-box{width: 189px;height: 27px;background: #fff;margin-top: 10px;margin-left: 6px;}
+			.chat-top-box .seek-box input{padding-left:10px;width: 152px;height: 27px;}
+			.chat-top-box .seek-box .seek-btn{width: 27px;height: 27px;}
+			.chat-top-box .seek-box .seek-btn a{display: block;height: 27px; background: url(../images/icons/layer_chat_seek-btn_icon.png) center center no-repeat;transition: 0.5s;}
+			.chat-top-box .seek-box .seek-btn a:hover{background: url(../images/icons/layer_chat_seek-btn_icon_on.png) center center no-repeat;}
+			.chat-top-box .chat-name{height: 36px;border-left:1px solid #d9d9d9 ;margin-top: 5px;margin-left: 6px;line-height: 36px;font-size: 18px;color: #333;padding-left: 20px;}
+			/*聊天顶部 结束*/
+			/*搜索 列表 开始*/
+			.layer-chat .seek-list{position: absolute;top:46px;left: 0;width: 200px;height: 520px;background: rgba(0,0,0,0.4);z-index: 999;}
+			.layer-chat .seek-list .result_list{width: 200px;height: 380px;overflow-y: auto;}
+			.layer-chat .seek-list .result_list .item{height: 49px;border-bottom:1px solid #ddd;background: #fff;padding-left: 16px;}
+			.layer-chat .seek-list .result_list .item:hover{background: #fafafa;cursor:pointer;}
+			.layer-chat .seek-list .result_list .item .pic{float: left;margin-right: 10px;}
+			.layer-chat .seek-list .result_list .item .pic img{width: 40px;height: 40px;border-radius: 20px;margin-top: 5px;}
+			.layer-chat .seek-list .result_list .item .name{padding-top: 8px; line-height: 16px;width: 110px;font-size: 16px;color: #333; word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+			.layer-chat .seek-list .result_list .item .other{font-size: 12px;color: #666;line-height: 12px;padding-top: 6px;width: 110px;word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+			/*搜索 列表 结束*/
+			
+			/*左侧切换 开始*/
+			.layer-chat{display: inline-block;border: 1px solid #ddd;border-radius: 3px;background: #d9d9d9;height: 520px;}
+			.layer-chat .tab-box{float: left; width: 190px;padding:5px;height: 510px;background:#d9d9d9 ;overflow-y: auto;position: relative;}
+			.layer-chat .tab-box .infos{height: 50px;margin-bottom: 5px;padding: 0 5px;cursor: pointer;position: relative;}
+			.layer-chat .tab-box .infos:hover{background: #fafafa;border-radius: 3px;}
+			.layer-chat .tab-box .infos .info-box{width: 110px;height: 50px;}
+			.layer-chat .tab-box .infos .pic{float: left;margin-right: 10px;}
+			.layer-chat .tab-box .infos .pic img{width: 40px;height: 40px;border-radius: 20px;margin-top: 5px;}
+			.layer-chat .tab-box .infos .name{padding-top: 8px; line-height: 16px;width: 110px;font-size: 16px;color: #333; word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+			.layer-chat .tab-box .infos .other{font-size: 12px;color: #666;line-height: 12px;padding-top: 6px;width: 110px;word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+			.layer-chat .tab-box .infos .close{position: absolute;top: 16px;right: 10px;}
+			.layer-chat .tab-box .infos:hover .close a{display: block; width: 17px;height: 17px;background: url(../images/icons/chat_close.png) no-repeat 0 0;}
+			.layer-chat .tab-box .infos:hover .close a:hover{background: url(../images/icons/chat_close.png) no-repeat -22px 0;}
+			.layer-chat .tab-box .curr{background: #fff;border-radius: 3px;}
+			.layer-chat .tab-box .curr:hover{background: #fff;border-radius: 3px;}
+			/*左侧切换 开始*/
+			
+			/*右侧聊天内容 开始*/
+			.layer-chat .chat-box{float: left; width: 600px;height: 520px; background: #fbfbfb;}
+			.layer-chat .chat-box .chat-title{height: 80px; background: #ececec;padding: 0 15px;position: relative;}
+			.layer-chat .chat-box .chat-title .pic{float: left;margin-right: 10px;}
+			.layer-chat .chat-box .chat-title .pic img{width: 50px;height: 50px;margin-top: 15px;}
+			.layer-chat .chat-box .chat-title .name{float: left;font-size: 18px;color:#333;width: 395px;line-height: 80px;}
+			.layer-chat .chat-box .chat-title .icon-group{position: absolute;right: 15px;top: 11px;}
+			.layer-chat .chat-box .chat-main{height: 349px;border-bottom: 1px solid #ddd;padding: 15px;overflow-y:auto;position: relative;}
+			.layer-chat .chat-box .chat-main .question{margin-bottom: 20px;}
+			.layer-chat .chat-box .chat-main .question .photo{float: left;width:30px;margin-right: 10px;}
+			.layer-chat .chat-box .chat-main .question .photo img{width: 28px;height: 28px;border: 1px solid #ddd;border-radius:2px;}
+			.layer-chat .chat-box .chat-main .question .infos{float: left;max-width:80%;}
+			.layer-chat .chat-box .chat-main .question .infos .tit{font-size: 12px;color: #999;margin-bottom: 3px;}
+			.layer-chat .chat-box .chat-main .question .infos .tit .time{margin-left: 8px;}
+			.layer-chat .chat-box .chat-main .question .infos .info{min-height:18px ; position: relative; border:1px solid #ddd;background: #edf1f5;border-radius: 2px; padding: 5px 10px;color:#333;word-break:break-all;font-size: 0;}
+			.layer-chat .chat-box .chat-main .question .infos .info span{font-size: 12px;color:#333;line-height: 18px;}
+			.layer-chat .chat-box .chat-main .question .infos .info .arrow{position: absolute;top:5px;left: -5px;z-index: 1; width: 5px;height: 8px;background:url(../images/icons/business_chat_left_arrow.png) no-repeat;}
+			.layer-chat .chat-box .chat-main .answer{margin-bottom: 20px;}
+			.layer-chat .chat-box .chat-main .answer .photo{float: right;width:30px;margin-left: 10px;}
+			.layer-chat .chat-box .chat-main .answer .photo img{width: 28px;height: 28px;border: 1px solid #ddd;border-radius:2px;}
+			.layer-chat .chat-box .chat-main .answer .infos{float: right;max-width:80%;}
+			.layer-chat .chat-box .chat-main .answer .infos .tit{text-align: right; font-size: 12px;color: #999;margin-bottom: 3px;}
+			.layer-chat .chat-box .chat-main .answer .infos .tit .time{margin-left: 8px;}
+			.layer-chat .chat-box .chat-main .answer .infos .info{min-height:18px ; position: relative; border:1px solid #a9ddf7;background: #b6e6ff;border-radius: 2px; padding: 5px 10px;color:#333;word-break:break-all;font-size: 0;}
+			.layer-chat .chat-box .chat-main .answer .infos .info span{font-size: 12px;color:#333;line-height: 18px;}
+			.layer-chat .chat-box .chat-main .answer .infos .info .arrow{position: absolute;top:5px;right: -5px;z-index: 1; width: 5px;height: 8px;background:url(../images/icons/business_chat_right_arrow.png) no-repeat;}
+			.layer-chat .chat-box .input-content{padding: 0 15px;background: #fff;height: 140px;}
+			.layer-chat .chat-box .input-content .input-area{}
+			.layer-chat .chat-box .input-content .input-area .function{height: 24px;line-height: 24px;padding-top: 10px;padding-bottom: 10px;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon{position:relative;float: left;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon a{display: inline-block;margin-right:15px;width: 18px;height: 18px;vertical-align: sub;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon .icon-face a{background: url(../images/icons/chat_icon_box.png) no-repeat 0 0;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon .icon-pic a{background: url(../images/icons/chat_icon_box.png) no-repeat -31px 0;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon .icon-file a{background: url(../images/icons/chat_icon_box.png) no-repeat -61px 0;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon .icon-audio a{background: url(../images/icons/chat_icon_box.png) no-repeat -131px 0;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon .icon-video a{background: url(../images/icons/chat_icon_box.png) no-repeat -175px 0;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon .icon-face a:hover{background: url(../images/icons/chat_icon_box_on.png) no-repeat 0 0;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon .icon-pic a:hover{background: url(../images/icons/chat_icon_box_on.png) no-repeat -31px 0;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon .icon-file a:hover{background: url(../images/icons/chat_icon_box_on.png) no-repeat -61px 0;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon .icon-audio a:hover{background: url(../images/icons/chat_icon_box_on.png) no-repeat -131px 0;}
+			.layer-chat .chat-box .input-content .input-area .function .tool-icon .icon-video a:hover{background: url(../images/icons/chat_icon_box_on.png) no-repeat -175px 0;}
+			.layer-chat .chat-box .input-content .input-area .function .chat-record{float: right;}
+			.layer-chat .chat-box .input-content .input-area .function .chat-record:hover a{border: 1px solid #4c9dfb;}
+			.layer-chat .chat-box .input-content .input-area .function .chat-record a{font-size: 12px;color: #666;border: 1px solid #ccc;height: 24px;display: block;border-radius:12px;padding: 0 10px;}
+			.layer-chat .chat-box .input-content .input-area .function .curr{}
+			.layer-chat .chat-box .input-content .input-area .function .curr a{color: #fff;border: 1px solid #4c9dfb;background:#4c9dfb ;}
+			.layer-chat .chat-box .input-content .input-area .function .curr a .icon{background: url(../images/icons/chat_icon_box_on.png) no-repeat -150px 0;}
+			.layer-chat .chat-box .input-content .input-area .function .chat-record .icon{display: inline-block;width: 22px;height: 22px;background: url(../images/icons/chat_icon_box.png) no-repeat -150px 0;vertical-align: middle;}
+			.layer-chat .chat-box .input-content .input-area .textarea{width: 100%;max-width: 100%;height: 57px;max-height: 57px;border: 0 none;background: 0 none; padding: 0;font-size: 12px;color:#333;line-height: 16px;}
+			.layer-chat .chat-box .input-content .button{text-align: right;}
+			.layer-chat .chat-box .input-content .button .btn-close a{display: inline-block;height: 26px;line-height: 26px;background: #4197EE;border-radius: 2px;color: #fff;padding: 0 20px;}
+			.layer-chat .chat-box .input-content .button .btn-send{position: relative;}
+			.layer-chat .chat-box .input-content .button .btn-send .send{display: inline-block;height: 26px;line-height: 26px;background: #4197EE;border-radius: 2px;color: #fff;padding: 0 20px 0 20px;}
+			.layer-chat .chat-box .input-content .button .btn-send .select-box{position: absolute;right: 0;top: -6px;}
+			.layer-chat .chat-box .input-content .button .btn-send .select-box a{display: block; background: url(../images/icons/chat_btn_arrow.png) no-repeat 0 0;width: 31px;height: 36px;}
+			.layer-chat .chat-box .input-content .button .btn-send .select-box .select{position: absolute;right: 0;top: 36px;width:165px;text-align: left;background: #fff;border: 1px solid #ddd;padding: 10px 5px;
+				box-shadow: 0 1px 4px rgba(34,25,25,0.2);
+				-moz-box-shadow: 0 1px 4px rgba(34,25,25,0.2);
+				-webkit-box-shadow: 0 1px 4px rgba(34,25,25,0.2);
+				-webkit-transition: top 1s ease, left 1s ease;
+				-moz-transition: top 1s ease, left 1s ease;
+				-o-transition: top 1s ease, left 1s ease;
+				-ms-transition: top 1s ease, left 1s ease;}
+			.layer-chat .chat-box .input-content .button .btn-send .select-box .select li{padding-left: 24px;font-size: 12px;color:#666;line-height: 24px;}
+			.layer-chat .chat-box .input-content .button .btn-send .select-box .select li.curr{background:url(../images/icons/chat_icon1.png) no-repeat 0 4px;}
+			
+			/*图片 开始*/
+			.layer-chat .chat-box .chat-main .infos .info .chat_img{overflow: hidden;width: 100%;height: 100%;position: relative;min-width: 40px;min-height: 40px;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_img .blow_up_btn{width: 14px;height: 14px;background:url(../images/icons/business_chat_blow_up_btn.png) left center no-repeat;position: absolute;bottom: 4px;right: 4px;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_img .blow_up_btn:hover{background:url(../images/icons/business_chat_blow_up_btn_on.png) left center no-repeat;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_img .blow_up_btn a{display: block;height: 14px;}
+			/*图片 结束*/
+			/*文件类型 开始*/
+			.layer-chat .chat-box .chat-main .infos .info .chat_file_box{width: 238px;height: 58px;border: 1px solid #ddd;border-radius: 4px;background: #fff;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_file_box .file_box_l{width: 40px;height: 40px;margin-top: 10px;margin-left: 10px;background: url(../images/icons/business_chat_file_box_class_doc.png) left center no-repeat;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_file_box .file_box_r{width: 172px;padding-top: 10px;padding-left: 6px;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_file_box .file_box_r .title{padding-bottom: 10px;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_file_box .file_box_r .title .file_tit{font-size: 12px;color: #333;line-height: 12px;max-width:140px;display: block; word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; vertical-align: bottom;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_file_box .file_box_r .title .file_class{padding-left:4px;font-size: 12px;color: #666;line-height: 12px; vertical-align: bottom;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_file_box .file_box_r .file_size span{color: #999;vertical-align: bottom;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_file_box .file_box_r .download_btn{width: 15px;height: 15px;background: url(../images/icons/business_chat_download_btn.png) center center no-repeat;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_file_box .file_box_r .download_btn a{display: block;height: 100%;}
+			.layer-chat .chat-box .chat-main .infos .info .chat_file_box .file_box_r .download_btn:hover{background: url(../images/icons/business_chat_download_btn_on.png) center center no-repeat;}
+			/*文件类型 结束*/
+			/*右侧聊天内容 结束*/
+			/*右侧信息区 开始*/
+			.layer-chat .r-infos-box{width: 260px;height: 520px;background: #fafafa;}
+			.layer-chat .r-infos-box .tab-btn{height: 20px;padding-left: 10px;padding-top: 10px;}
+			.layer-chat .r-infos-box .tab-btn .info-btn-01{width: 20px;height: 20px;padding-right: 6px;background: url(../images/icons/business_chat_basic-info_btn_icon_on.png) center center no-repeat;}
+			.layer-chat .r-infos-box .tab-btn .info-btn-01-curr{background: url(../images/icons/business_chat_basic-info_btn_icon_on.png) center center no-repeat;}
+			.layer-chat .r-infos-box .tab-btn .info-btn-02{width: 20px;height: 20px;background: url(../images/icons/business_chat_bargain_btn_icon.png) center center no-repeat;}
+			.layer-chat .r-infos-box .tab-btn .info-btn-02-curr{background: url(../images/icons/business_chat_bargain_btn_icon_on.png) center center no-repeat;}
+			.layer-chat .r-infos-box .tab-btn .info-btn-01:hover{background: url(../images/icons/business_chat_basic-info_btn_icon_on.png) center center no-repeat;}
+			.layer-chat .r-infos-box .tab-btn .info-btn-02:hover{background: url(../images/icons/business_chat_bargain_btn_icon_on.png) center center no-repeat;}
+			.layer-chat .r-infos-box .tab-btn .info-btn-01 a{display:block;height: 20px;}
+			.layer-chat .r-infos-box .tab-btn .info-btn-02 a{display: block;height: 20px;}
+			.layer-chat .r-infos-box .content-box{width: 240px;padding: 10px;height: 470px;}
+			.layer-chat .r-infos-box .content-box .content{}
+			.layer-chat .r-infos-box .content-box .iframe-box{width: 240px;height: 470px;}
+			.layer-chat .r-infos-box .content-box .content .img-info{width: 80px;height: 80px;border-radius: 40px;overflow: hidden;margin: 0 auto;}
+			.layer-chat .r-infos-box .content-box .content .name-info{text-align: center; font-weight: bold; font-size: 14px;color: #333;line-height: 14px;padding-top: 20px;margin: 0 auto;width:160px;word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+			.layer-chat .r-infos-box .content-box .content .honor-info{margin: 0 auto;font-size: 12px;text-align: center;color: #666;line-height: 12px;padding-top: 10px;margin: 0 auto;width:160px;word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+			.layer-chat .r-infos-box .content-box .content .line{border-top: 1px dashed #ddd ;margin-top: 10px;}
+			.layer-chat .r-infos-box .content-box .content .iphone-info{margin: 0 auto;padding-top: 10px;height: 14px;width: 106px;margin: 0 auto;}
+			.layer-chat .r-infos-box .content-box .content .iphone-info .iphone-num{padding-left: 4px; font-size: 12px;color: #333;line-height: 14px;text-align: center;}
+			/*右侧信息区 结束*/
+			/*右侧聊天记录 开始*/
+			.layer-chat .record-box{width: 260px;height: 520px;background: #fafafa;}
+			.layer-chat .record-box .tab-title{height:25px;font-size: 12px;line-height: 25px;padding-left: 10px;border-bottom: 1px solid #ddd;}
+			.layer-chat .record-box .tab-title .item{height: 24px;border-bottom: 1px solid #fafafa;padding: 0 10px;margin-right: 10px;}
+			.layer-chat .record-box .tab-title .item:hover a{color: #4c9dfb;}
+			.layer-chat .record-box .tab-title .item a{display: block;height: 24px;color: #666;}
+			.layer-chat .record-box .tab-title .curr{height: 24px;border-bottom: 1px solid #4c9dfb;padding: 0 10px;margin-right: 10px;}
+			.layer-chat .record-box .tab-title .curr a{display: block;height: 24px;color: #4c9dfb;}
+			.layer-chat .record-box{position: relative;}
+			.layer-chat .record-box .content-raion{background-color: #fff;width: 260px; padding-top: 15px;height: 470px;overflow-y: auto;overflow-x: hidden;}
+			.layer-chat .record-box .content-raion .item .infos{padding-bottom: 10px;margin: 0 10px;display: inline-block;}
+			.layer-chat .record-box .content-raion .item .infos:hover .info{background: #edf1f5;}
+			.layer-chat .record-box .content-raion .item .infos .tit{font-size: 12px;color: #4c9dfb;}
+			.layer-chat .record-box .content-raion .item .infos .tit .time{margin-left: 8px;color: #666;}
+			.layer-chat .record-box .content-raion .item .infos .info{min-height:18px ;border-radius: 2px;color:#333;word-break:break-all;font-size: 0;}
+			.layer-chat .record-box .content-raion .item .infos .info span{font-size: 12px;color:#333;line-height: 18px;}
+			/*图片 开始*/
+			.layer-chat .record-box .content-raion .item .infos .info .chat_img{overflow: hidden;width: 100%;height: 100%;position: relative;min-width: 40px;min-height: 40px;display: inline-block;max-width: 240px;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_img .blow_up_btn{width: 14px;height: 14px;background:url(../images/icons/business_chat_blow_up_btn.png) left center no-repeat;position: absolute;bottom: 4px;right: 4px;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_img .blow_up_btn:hover{background:url(../images/icons/business_chat_blow_up_btn_on.png) left center no-repeat;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_img .blow_up_btn a{display: block;height: 14px;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_img .img-box{max-width: 240px;overflow: hidden;}
+			/*图片 结束*/
+			/*文件类型 开始*/
+			.layer-chat .record-box .content-raion .item .infos .info .chat_file_box{width: 238px;height: 58px;border: 1px solid #ddd;border-radius: 4px;background: #fff;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_file_box .file_box_l{width: 40px;height: 40px;margin-top: 10px;margin-left: 10px;background: url(../images/icons/business_chat_file_box_class_doc.png) left center no-repeat;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_file_box .file_box_r{width: 172px;padding-top: 10px;padding-left: 6px;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_file_box .file_box_r .title{padding-bottom: 10px;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_file_box .file_box_r .title .file_tit{font-size: 12px;color: #333;line-height: 12px;max-width:140px;display: block; word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; vertical-align: bottom;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_file_box .file_box_r .title .file_class{padding-left:4px;font-size: 12px;color: #666;line-height: 12px; vertical-align: bottom;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_file_box .file_box_r .file_size span{color: #999;vertical-align: bottom;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_file_box .file_box_r .download_btn{width: 15px;height: 15px;background: url(../images/icons/business_chat_download_btn.png) center center no-repeat;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_file_box .file_box_r .download_btn a{display: block;height: 100%;}
+			.layer-chat .record-box .content-raion .item .infos .info .chat_file_box .file_box_r .download_btn:hover{background: url(../images/icons/business_chat_download_btn_on.png) center center no-repeat;}
+			/*文件类型 结束*/
+			/*图片列表 开始*/
+			.layer-chat .record-box .content-raion .img-list{padding: 0 10px;width: 240px;}
+			.layer-chat .record-box .content-raion .img-list .img-item{width: 78px;height: 78px;border: 1px solid #fafafa;position: relative;overflow: hidden;}
+			.layer-chat .record-box .content-raion .img-list .img-item a{display: block;}
+			.layer-chat .record-box .content-raion .img-list .img-item:hover{border: 1px solid #ddd;}
+			.layer-chat .record-box .content-raion .img-list .img-item:hover .download-btn{display: block;}
+			.layer-chat .record-box .content-raion .img-list .img-item .download-btn{display: none; width: 78px;height:20px;background:rgba(0,0,0,0.4);position: absolute;bottom: 0;left: 0;}
+			.layer-chat .record-box .content-raion .img-list .img-item .download-btn .download-icon{margin: 0 auto;height: 20px;width: 12px;background: url(../images/icons/my_business_download-icon.png) center center no-repeat;}
+			/*图片列表 结束*/
+			/*文件列表 开始*/
+			.layer-chat .record-box .content-raion .file-list {width: 260px;position: absolute;top: 0;left: 0;}
+			.layer-chat .record-box .content-raion .file-list .file-item{border-bottom: 1px solid #ccc;width: 260px;}
+			.layer-chat .record-box .content-raion .file-list .file-item:hover{background: #fff;}
+			.layer-chat .record-box .content-raion .file-list .file-item:hover .file_box_r .download_btn{display: block;}
+			.layer-chat .record-box .content-raion .file-list .chat_file_box{width: 238px;height: 58px;border-bottom: 1px dashed #ddd;margin:0 10px;}
+			.layer-chat .record-box .content-raion .file-list .chat_file_box .file_box_l{width: 40px;height: 40px;margin-top: 10px;background: url(../images/icons/business_chat_file_box_class_doc.png) left center no-repeat;}
+			.layer-chat .record-box .content-raion .file-list .chat_file_box .file_box_r{width: 192px;padding-top: 10px;padding-left: 6px;}
+			.layer-chat .record-box .content-raion .file-list .chat_file_box .file_box_r .title{padding-bottom: 10px;}
+			.layer-chat .record-box .content-raion .file-list .chat_file_box .file_box_r .title .file_tit{font-size: 12px;color: #333;line-height: 12px;max-width:140px;display: block; word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; vertical-align: bottom;}
+			.layer-chat .record-box .content-raion .file-list .chat_file_box .file_box_r .title .file_class{padding-left:4px;font-size: 12px;color: #666;line-height: 12px; vertical-align: bottom;}
+			.layer-chat .record-box .content-raion .file-list .chat_file_box .file_box_r .file_size span{color: #999;vertical-align: bottom;font-size: 12px;}
+			.layer-chat .record-box .content-raion .file-list .chat_file_box .file_box_r .download_btn{display: none; width: 15px;height: 15px;background: url(../images/icons/business_chat_download_btn.png) center center no-repeat;}
+			.layer-chat .record-box .content-raion .file-list .chat_file_box .file_box_r .download_btn a{display: block;height: 100%;}
+			.layer-chat .record-box .content-raion .file-list .chat_file_box .file_box_r .download_btn:hover{background: url(../images/icons/business_chat_download_btn_on.png) center center no-repeat;}
+			
+			.layer-chat .record-box .content-raion .file-list{position: relative;}
+			.layer-chat .record-box .content-raion .file-list .file-item .message-box{height: 24px;line-height: 24px;font-size: 12px;padding: 0 10px;}
+			.layer-chat .record-box .content-raion .file-list .file-item .message-box .people-name{width: 90px; word-break: keep-all;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align: right;}
+			/*文件列表 结束*/
+			
+			/*右侧聊天记录 结束*/
+			/*聊天界面 结束*/
+		</style>
+	</head>
+	<body>
+		<!--商圈聊天顶部 开始-->
+		<div class="chat-top-box">
+			<div class="seek-box fl">
+				<input class="fl" type="" name="" id="" value="搜索" />
+				<div class="seek-btn fl">
+					<a href="javascript:;"></a>
+				</div>
+			</div>
+			<div class="chat-name fl">刘猛</div>
+		</div>
+		<!--商圈聊天顶部 结束-->
+		<!--创建子圈开始-->
+		<div class="layer-chat">
+			<!--搜索列表 开始-->
+			<div class="seek-list" style="display: block;">
+				<div class="result_list">
+					<div class="item">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--搜索列表 结束-->
+			<div class="tab-box">
+				
+					<div class="infos curr clearFix">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="infos clearFix">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="infos clearFix">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="infos clearFix">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="infos clearFix">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="infos clearFix">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="infos clearFix">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="infos clearFix">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="infos clearFix">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="infos clearFix">
+						<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+						<div class="info-box fl">
+							<div class="name">张三</div>
+							<div class="other">商城订单合同</div>
+							<div class="close"><a href="#"></a></div>
+						</div>
+					</div>
+					<div class="infos clearFix">
+					<div class="pic fl"><img src="../images/icons/people_way.png"/></div>
+					<div class="info-box fl">
+						<div class="name">张三</div>
+						<div class="other">商城订单合同</div>
+						<div class="close"><a href="#"></a></div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="chat-box">
+				<div class="chat-main">
+					<ul>
+						<li class="question">
+							<div class="photo"><img src="../images/default/master_square.png"></div>
+							<div class="infos">
+								<div class="tit">（<span>子商圈名称</span>）<span>霍东庆</span><span class="time">20:23:10</span></div>
+								<div class="info">
+									<span>很开心能够加入这个大家庭，希望大家多多关注！很开心能够加入这个大家庭，希望大家多多关注！很开心能够加入这个大家庭，希望大家多多关注！</span>
+									<div class="arrow"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li class="answer">
+							<div class="photo"><img src="../images/default/member_square.png"></div>
+							<div class="infos">
+								<div class="tit"><span class="time">20:23:10</span></div>
+								<div class="info">
+									<span>很开心能够加入这个大家庭，希望大家多多关注！很开心能够加入这个大家庭，希望大家多多关注！很开心能够加入这个大家庭，希望大家多多关注！</span>
+									<div class="arrow"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li class="question">
+							<div class="photo"><img src="../images/default/master_square.png"></div>
+							<div class="infos">
+								<div class="tit">（<span>子商圈名称</span>）<span>霍东庆</span><span class="time">20:23:10</span></div>
+								<div class="info">
+									<span>很开心能够加入这个大家庭，希望大家多多关注！很开心能够加入这个大家庭，希望大家多多关注！很开心能够加入这个大家庭，希望大家多多关注！</span>
+									<div class="arrow"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li class="answer">
+							<div class="photo"><img src="../images/default/member_square.png"></div>
+							<div class="infos">
+								<div class="tit"><span class="time">20:23:10</span></div>
+								<div class="info">
+									<span>很开心能够加入这个大家庭，希望大家多多关注！很开心能够加入这个大家庭，希望大家多多关注！很开心能够加入这个大家庭，希望大家多多关注！</span>
+									<div class="arrow"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li class="answer">
+							<div class="photo"><img src="../images/default/member_square.png"/></div>
+							<div class="infos">
+								<div class="tit"><span class="time">20:23:10</span></div>
+								<div class="info">
+									<div class="chat_file_box clearFix">
+										<div class="file_box_l fl"></div>
+										<div class="file_box_r fl">
+											<div class="title clearfix">
+												<span class="file_tit fl" >中机商城编码规范...</span>
+												<span class="file_class fl">.doc</span>
+											</div>
+											<div class="bot_box clearfix">
+												<div class="file_size fl">
+													<span>[</span>
+													<span class="size_num">25.55</span>
+													<span>MB</span>
+													<span>]</span>
+												</div>
+												<div class="download_btn fr">
+													<a href="javascript:;"></a>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+									<div class="arrow"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li class="answer">
+							<div class="photo"><img src="../images/default/member_square.png"/></div>
+							<div class="infos">
+								<div class="tit"><span class="time">20:23:10</span></div>
+								<div class="info">
+									<div class="chat_file_box clearFix">
+										<div class="file_box_l fl"></div>
+										<div class="file_box_r fl">
+											<div class="title clearfix">
+												<span class="file_tit fl" >中机商城编码规范...</span>
+												<span class="file_class fl">.doc</span>
+											</div>
+											<div class="bot_box clearfix">
+												<div class="file_size fl">
+													<span>[</span>
+													<span class="size_num">25.55</span>
+													<span>MB</span>
+													<span>]</span>
+												</div>
+												<div class="download_btn fr">
+													<a href="javascript:;"></a>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+									<div class="arrow"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li class="question">
+							<div class="photo"><img src="../images/default/member_square.png"/></div>
+							<div class="infos">
+								<div class="tit"><span class="time">20:23:10</span></div>
+								<div class="info">
+									<div class="chat_file_box clearFix">
+										<div class="file_box_l fl"></div>
+										<div class="file_box_r fl">
+											<div class="title clearfix">
+												<span class="file_tit fl" >中机商城编码规范...</span>
+												<span class="file_class fl">.doc</span>
+											</div>
+											<div class="bot_box clearfix">
+												<div class="file_size fl">
+													<span>[</span>
+													<span class="size_num">25.55</span>
+													<span>MB</span>
+													<span>]</span>
+												</div>
+												<div class="download_btn fr">
+													<a href="javascript:;"></a>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+									<div class="arrow"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li class="answer">
+							<div class="photo"><img src="../images/default/member_square.png"/></div>
+							<div class="infos">
+								<div class="tit"><span class="time">20:23:10</span></div>
+								<div class="info">
+									<div class="chat_img">
+										<div class="blow_up_btn">
+											<a href="javascript:;"></a>
+										</div>
+										<img src="../images/my_business_chat_img.png"/>
+									</div>
+									<div class="arrow"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li class="question">
+							<div class="photo"><img src="../images/default/member_square.png"/></div>
+							<div class="infos">
+								<div class="tit"><span class="time">20:23:10</span></div>
+								<div class="info">
+									<div class="chat_img">
+										<div class="blow_up_btn">
+											<a href="javascript:;"></a>
+										</div>
+										<img src="../images/my_business_chat_img.png"/>
+									</div>
+									<div class="arrow"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						
+					</ul>
+				</div>
+				<div class="input-content">
+					<div class="input-area">
+						<div class="function">
+							<div class="tool-icon">
+								<span class="icon-face"><a href="#"></a></span>
+								<span class="icon-pic"><a href="#"></a></span>
+								<span class="icon-file"><a href="#"></a></span>
+								<!--<span class="icon-audio"><a href="#"></a></span>
+								<span class="icon-video"><a href="#"></a></span>-->
+							</div>
+							<div class="chat-record"><a href="#"><span class="icon"></span>谈判记录</a></div>
+							<div class="clear"></div>
+						</div>
+						<textarea placeholder="" class="textarea"></textarea>
+					</div>
+					<div class="button">
+						<!--<span class="btn-close"><a href="#">关闭</a></span>-->
+						<span class="btn-send">
+							<a href="#" class="send">发送</a>
+						</span>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<!--右侧信息区 开始-->
+			<div class="r-infos-box fl" style="display: block;">
+				<div class="tab-btn clearFix">
+					<div class="info-btn-01 curr fl">
+						<a href="javascript:;"></a>
+					</div>
+					<div class="info-btn-02 curr1 fl">
+						<a href="javascript:;"></a>
+					</div>
+				</div>
+				<div class="content-box">
+					<div class="content">
+						<div class="img-info">
+							<img src="../images/business_chat_head_portrait_img.png"/>
+						</div>
+						<div class="name-info">用户名称</div>
+						<div class="honor-info">头衔</div>
+						<div class="line"></div>
+						<div class="iphone-info">
+							<img class="fl" src="../images/icons/business_chat_iphone_icon.png" alt="" />
+							<div class="iphone-num fl">
+								186<span>-</span>0523<span>-</span>5523
+							</div>
+						</div>
+					</div>
+					<div class="content iframe-box" style="display: none;">
+						<iframe frameborder="no" name="stepFrame1" id="stepFrame" scrolling="auto" src="layer_chat_project_demand2.html" width="100%" height="100%" style="background:#fff;">
+	               			您的浏览器不支持嵌入式框架，或者当前配置为不显示嵌入式框架。
+           				</iframe>
+					</div>
+				</div>
+			</div>
+			<!--右侧信息区 结束-->
+			<!--右侧聊天记录 开始-->
+			<div class="record-box fl" style="display: none;">
+				<div class="tab-title clearFix">
+					<div class="fl item curr">
+						<a href="javascript:;">全部</a>
+					</div>
+					<div class="fl item">
+						<a href="javascript:;">图片</a>
+					</div>
+					<div class="fl item">
+						<a href="javascript:;">文件</a>
+					</div>
+				</div>
+				<div class="record-list">
+					<div class="content-raion" style="display: block;">
+						<div class="info_list">
+							<div class="item">
+								<div class="infos">
+									<div class="tit">（<span>子商圈名称</span>）<span>霍东庆</span><span class="time">20:23:10</span></div>
+									<div class="info">
+										<span>很开心能够加入这个大家庭，希望大家多多关注！很开心能够加入这个大家庭，希望大家多多关注！很开心能够加入这个大家庭，希望大家多多关注！</span>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="infos">
+									<div class="tit"><span class="time">20:23:10</span></div>
+									<div class="info">
+										<div class="chat_img">
+											<div class="blow_up_btn">
+												<a href="javascript:;"></a>
+											</div>
+											<div class="img-box">
+												<img src="../images/my_business_chat_img.png"/>
+											</div>
+										</div>
+										<div class="arrow"></div>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="infos">
+									<div class="tit"><span class="time">20:23:10</span></div>
+									<div class="info">
+										<div class="chat_file_box">
+											<div class="file_box_l fl"></div>
+											<div class="file_box_r fl">
+												<div class="title clearfix">
+													<span class="file_tit fl" >中机商城编码规范...</span>
+													<span class="file_class fl">.doc</span>
+												</div>
+												<div class="bot_box clearfix">
+													<div class="file_size fl">
+														<span>[</span>
+														<span class="size_num">25.55</span>
+														<span>MB</span>
+														<span>]</span>
+													</div>
+													<div class="download_btn fr">
+														<a href="javascript:;"></a>
+													</div>
+												</div>
+												
+											</div>
+										</div>
+										<div class="arrow"></div>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="infos">
+									<div class="tit"><span class="time">20:23:10</span></div>
+									<div class="info">
+										<div class="chat_file_box">
+											<div class="file_box_l fl"></div>
+											<div class="file_box_r fl">
+												<div class="title clearfix">
+													<span class="file_tit fl" >中机商城编码规范...</span>
+													<span class="file_class fl">.doc</span>
+												</div>
+												<div class="bot_box clearfix">
+													<div class="file_size fl">
+														<span>[</span>
+														<span class="size_num">25.55</span>
+														<span>MB</span>
+														<span>]</span>
+													</div>
+													<div class="download_btn fr">
+														<a href="javascript:;"></a>
+													</div>
+												</div>
+												
+											</div>
+										</div>
+										<div class="arrow"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="content-raion" style="display: none;">
+						<div class="img-list clearFix">
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							<div class="img-item fl">
+								<a href="javascript:;">
+									<img src="../images/my_business_chat_img.png"/>
+									<div class="download-btn">
+										<div class="download-icon"></div>
+									</div>
+								</a>
+							</div>
+							
+							
+							
+							
+						</div>
+					</div>
+					<div class="content-raion" style="padding-top: 0px;height: 485px;display: none;">
+						<div class="file-list" id="roll_list3">
+							<div class="file-item">
+								<div class="chat_file_box clearFix">
+									<div class="file_box_l fl"></div>
+									<div class="file_box_r fl">
+										<div class="title clearfix">
+											<span class="file_tit fl" >中机商城编码规范...</span>
+											<span class="file_class fl">.doc</span>
+										</div>
+										<div class="bot_box clearfix">
+											<div class="file_size fl">
+												<span>[</span>
+												<span class="size_num">25.55</span>
+												<span>MB</span>
+												<span>]</span>
+											</div>
+											<div class="download_btn fr">
+												<a href="javascript:;"></a>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="message-box clearFix">
+									<div class="file-time fl">2017-05-18 19:31:15</div>
+									<div class="people-name fr">刘猛</div>
+								</div>
+							</div>
+							<div class="file-item">
+								<div class="chat_file_box clearFix">
+									<div class="file_box_l fl"></div>
+									<div class="file_box_r fl">
+										<div class="title clearfix">
+											<span class="file_tit fl" >中机商城编码规范...</span>
+											<span class="file_class fl">.doc</span>
+										</div>
+										<div class="bot_box clearfix">
+											<div class="file_size fl">
+												<span>[</span>
+												<span class="size_num">25.55</span>
+												<span>MB</span>
+												<span>]</span>
+											</div>
+											<div class="download_btn fr">
+												<a href="javascript:;"></a>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="message-box clearFix">
+									<div class="file-time fl">2017-05-18 19:31:15</div>
+									<div class="people-name fr">刘猛</div>
+								</div>
+							</div>
+							<div class="file-item">
+								<div class="chat_file_box clearFix">
+									<div class="file_box_l fl"></div>
+									<div class="file_box_r fl">
+										<div class="title clearfix">
+											<span class="file_tit fl" >中机商城编码规范...</span>
+											<span class="file_class fl">.doc</span>
+										</div>
+										<div class="bot_box clearfix">
+											<div class="file_size fl">
+												<span>[</span>
+												<span class="size_num">25.55</span>
+												<span>MB</span>
+												<span>]</span>
+											</div>
+											<div class="download_btn fr">
+												<a href="javascript:;"></a>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="message-box clearFix">
+									<div class="file-time fl">2017-05-18 19:31:15</div>
+									<div class="people-name fr">刘猛</div>
+								</div>
+							</div>
+							<div class="file-item">
+								<div class="chat_file_box clearFix">
+									<div class="file_box_l fl"></div>
+									<div class="file_box_r fl">
+										<div class="title clearfix">
+											<span class="file_tit fl" >中机商城编码规范...</span>
+											<span class="file_class fl">.doc</span>
+										</div>
+										<div class="bot_box clearfix">
+											<div class="file_size fl">
+												<span>[</span>
+												<span class="size_num">25.55</span>
+												<span>MB</span>
+												<span>]</span>
+											</div>
+											<div class="download_btn fr">
+												<a href="javascript:;"></a>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="message-box clearFix">
+									<div class="file-time fl">2017-05-18 19:31:15</div>
+									<div class="people-name fr">刘猛</div>
+								</div>
+							</div>
+							<div class="file-item">
+								<div class="chat_file_box clearFix">
+									<div class="file_box_l fl"></div>
+									<div class="file_box_r fl">
+										<div class="title clearfix">
+											<span class="file_tit fl" >中机商城编码规范...</span>
+											<span class="file_class fl">.doc</span>
+										</div>
+										<div class="bot_box clearfix">
+											<div class="file_size fl">
+												<span>[</span>
+												<span class="size_num">25.55</span>
+												<span>MB</span>
+												<span>]</span>
+											</div>
+											<div class="download_btn fr">
+												<a href="javascript:;"></a>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="message-box clearFix">
+									<div class="file-time fl">2017-05-18 19:31:15</div>
+									<div class="people-name fr">刘猛</div>
+								</div>
+							</div>
+							<div class="file-item">
+								<div class="chat_file_box clearFix">
+									<div class="file_box_l fl"></div>
+									<div class="file_box_r fl">
+										<div class="title clearfix">
+											<span class="file_tit fl" >中机商城编码规范...</span>
+											<span class="file_class fl">.doc</span>
+										</div>
+										<div class="bot_box clearfix">
+											<div class="file_size fl">
+												<span>[</span>
+												<span class="size_num">25.55</span>
+												<span>MB</span>
+												<span>]</span>
+											</div>
+											<div class="download_btn fr">
+												<a href="javascript:;"></a>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="message-box clearFix">
+									<div class="file-time fl">2017-05-18 19:31:15</div>
+									<div class="people-name fr">刘猛</div>
+								</div>
+							</div>
+							<div class="file-item">
+								<div class="chat_file_box clearFix">
+									<div class="file_box_l fl"></div>
+									<div class="file_box_r fl">
+										<div class="title clearfix">
+											<span class="file_tit fl" >中机商城编码规范...</span>
+											<span class="file_class fl">.doc</span>
+										</div>
+										<div class="bot_box clearfix">
+											<div class="file_size fl">
+												<span>[</span>
+												<span class="size_num">25.55</span>
+												<span>MB</span>
+												<span>]</span>
+											</div>
+											<div class="download_btn fr">
+												<a href="javascript:;"></a>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="message-box clearFix">
+									<div class="file-time fl">2017-05-18 19:31:15</div>
+									<div class="people-name fr">刘猛</div>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+					
+				
+			</div>
+			
+			<!--右侧聊天记录 结束-->
+			<div class="clear"></div>
+		</div>
+		<!--创建子圈结束-->
+	</body>
+	<script>
+
+    //右侧谈判记录-切换
+    
+    $('.tab-title > .item').on('click',function(){
+    	$(this).addClass('curr').siblings().removeClass('curr');
+    	$('.record-list > .content-raion').eq($(this).index()).show().siblings().hide();
+    });
+    //右侧信息列表-切换
+	$('.tab-btn > div').on('click',function(){
+    	$('.content-box > .content').eq($(this).index()).show().siblings().hide();
+    });
+    $('.tab-btn > div').eq(1).on('click',function(){
+    	$(this).css('background','url(../images/icons/business_chat_bargain_btn_icon_on.png) center center no-repeat');
+    	$('.tab-btn > div').eq(0).css('background','url(../images/icons/business_chat_basic-info_btn_icon.png) center center no-repeat');
+    })
+    $('.tab-btn > div').eq(0).on('click',function(){
+    	$(this).css('background','url(../images/icons/business_chat_basic-info_btn_icon_on.png) center center no-repeat');
+    	$('.tab-btn > div').eq(1).css('background','url(../images/icons/business_chat_bargain_btn_icon.png) center center no-repeat');
+    });
+    var onOff = true;
+    $('.chat-record').on('click',function(){
+    	if(onOff){
+    		$('.r-infos-box').hide();
+    		$('.record-box').show();
+    		$(this).addClass('curr');
+    		onOff = false;
+    	}else{
+    		$(this).removeClass('curr');
+    		$('.r-infos-box').show();
+    		$('.record-box').hide();
+    		onOff = true;
+    	}
+    	
+    })
+	</script>
+</html>

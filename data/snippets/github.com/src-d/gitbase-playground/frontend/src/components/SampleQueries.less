@@ -1,0 +1,32 @@
+@import '../variables.less';
+
+.sample-queries {
+    .title {
+        letter-spacing: 0.5px;
+        color: @primary;
+        text-align: center;
+        text-transform: uppercase;
+
+        font-size: 14px;
+
+        padding: 12px 0;
+        margin-bottom: 19px;
+
+        background-color: @query-examples-bock;
+    }
+
+    .query {
+        padding-left: @big-spacing;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        padding-right: 40px;
+
+        .icon-container-variant(@primary-tint-2);
+
+        &:hover {
+            color: darken(@primary, 10%);
+        }
+    }
+}

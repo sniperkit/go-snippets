@@ -1,0 +1,53 @@
+{% extends "layouts/default.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <style>
+        .input-group.location .input-group-addon {
+          cursor: pointer;
+        }
+
+        .event-meta {
+            color: #999;
+        }
+        .event-meta p {
+            margin-bottom: 0;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if not authenticated %}
+    <div class="jumbotron">
+        <h1>Welcome to Gevvent!</h1>
+        <p>Gevvent allows you to easily organise events with your friends</p>
+        <p>
+            <a class="btn btn-lg btn-primary" href="/login" role="button">Login</a>
+            <a class="btn btn-lg btn-primary" href="/register" role="button">Register</a>
+        </p>
+    </div>
+    {% endif %}
+
+    <div class="event-list event-search-results">
+        <h2>Latest Public Events</h2>
+        <hr />
+        {% if events|length > 0 %}
+            {% for event in events %}
+                <div class="panel panel-default">
+                    <div class="panel-heading"><a href="/event/{{event.ID}}">{{event.Name}}</a></div>
+                    <div class="panel-body">
+                        <p>{{event.Description|markdown|truncatewords_html:30}}</p>
+                        <div class="event-meta">
+                            <p class="small"><strong>When</strong>: {{event.When.From|timestamp|naturaltime}} - {{event.When.To|timestamp|naturaltime}}</p>
+                            <p class="small"><strong>Where</strong>: {{event.Where.Address}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>You have no events</p>
+        {% endif %}
+    </div>
+</div><!-- /container -->
+{% endblock %}

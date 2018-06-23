@@ -1,0 +1,75 @@
+[submodule ".gopath/src/github.com/smartystreets/goconvey"]
+	path = .gopath/src/github.com/smartystreets/goconvey
+	url = https://github.com/smartystreets/goconvey
+[submodule ".gopath/src/github.com/jtolds/gls"]
+	path = .gopath/src/github.com/jtolds/gls
+	url = https://github.com/jtolds/gls
+[submodule ".gopath/src/github.com/smartystreets/assertions"]
+	path = .gopath/src/github.com/smartystreets/assertions
+	url = https://github.com/smartystreets/assertions
+[submodule ".gopath/src/github.com/polydawn/refmt"]
+	path = .gopath/src/github.com/polydawn/refmt
+	url = https://github.com/polydawn/refmt
+[submodule ".gopath/src/xi2.org/x/xz"]
+	path = .gopath/src/xi2.org/x/xz
+	url = https://github.com/xi2/xz
+[submodule ".gopath/src/github.com/syndtr/gocapability"]
+	path = .gopath/src/github.com/syndtr/gocapability
+	url = https://github.com/syndtr/gocapability
+[submodule ".gopath/src/gopkg.in/alecthomas/kingpin.v2"]
+	path = .gopath/src/gopkg.in/alecthomas/kingpin.v2
+	url = https://github.com/alecthomas/kingpin
+[submodule ".gopath/src/github.com/alecthomas/template"]
+	path = .gopath/src/github.com/alecthomas/template
+	url = https://github.com/alecthomas/template
+[submodule ".gopath/src/github.com/alecthomas/units"]
+	path = .gopath/src/github.com/alecthomas/units
+	url = https://github.com/alecthomas/units
+[submodule ".gopath/src/github.com/warpfork/go-errcat"]
+	path = .gopath/src/github.com/warpfork/go-errcat
+	url = https://github.com/warpfork/go-errcat
+[submodule ".gopath/src/go.polydawn.net/go-timeless-api"]
+	path = .gopath/src/go.polydawn.net/go-timeless-api
+	url = https://github.com/polydawn/go-timeless-api
+[submodule ".gopath/src/gopkg.in/warnings.v0"]
+	path = .gopath/src/gopkg.in/warnings.v0
+	url = https://github.com/go-warnings/warnings
+[submodule ".gopath/src/gopkg.in/src-d/go-billy.v4"]
+	path = .gopath/src/gopkg.in/src-d/go-billy.v4
+	url = https://github.com/src-d/go-billy
+[submodule ".gopath/src/gopkg.in/src-d/go-git.v4"]
+	path = .gopath/src/gopkg.in/src-d/go-git.v4
+	url = https://github.com/src-d/go-git
+[submodule ".gopath/src/golang.org/x/crypto"]
+	path = .gopath/src/golang.org/x/crypto
+	url = https://go.googlesource.com/crypto
+[submodule ".gopath/src/golang.org/x/net"]
+	path = .gopath/src/golang.org/x/net
+	url = https://go.googlesource.com/net
+[submodule ".gopath/src/github.com/sergi/go-diff"]
+	path = .gopath/src/github.com/sergi/go-diff
+	url = https://github.com/sergi/go-diff
+[submodule ".gopath/src/github.com/xanzy/ssh-agent"]
+	path = .gopath/src/github.com/xanzy/ssh-agent
+	url = https://github.com/xanzy/ssh-agent
+[submodule ".gopath/src/github.com/jbenet/go-context"]
+	path = .gopath/src/github.com/jbenet/go-context
+	url = https://github.com/jbenet/go-context
+[submodule ".gopath/src/github.com/src-d/gcfg"]
+	path = .gopath/src/github.com/src-d/gcfg
+	url = https://github.com/src-d/gcfg
+[submodule ".gopath/src/github.com/mitchellh/go-homedir"]
+	path = .gopath/src/github.com/mitchellh/go-homedir
+	url = https://github.com/mitchellh/go-homedir
+[submodule ".gopath/src/golang.org/x/text"]
+	path = .gopath/src/golang.org/x/text
+	url = https://go.googlesource.com/text
+[submodule ".gopath/src/github.com/kevinburke/ssh_config"]
+	path = .gopath/src/github.com/kevinburke/ssh_config
+	url = https://github.com/kevinburke/ssh_config
+[submodule ".gopath/src/github.com/pelletier/go-buffruneio"]
+	path = .gopath/src/github.com/pelletier/go-buffruneio
+	url = https://github.com/pelletier/go-buffruneio
+[submodule ".gopath/src/github.com/emirpasic/gods"]
+	path = .gopath/src/github.com/emirpasic/gods
+	url = https://github.com/emirpasic/gods

@@ -1,5 +1,0 @@
-rehook
-log/*.log
-tmp
-*.db
-rehook-*.tar.gz

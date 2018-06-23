@@ -1,7 +1,0 @@
-app:
-  image: postgres:latest
-  ports:
-   - "7705:5432"
-  environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=root

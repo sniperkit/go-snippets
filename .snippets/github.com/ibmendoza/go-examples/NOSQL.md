@@ -1,8 +1,0 @@
-- https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d
-- https://github.com/graphql-go/graphql
-- https://github.com/soundcloud/roshi
-- http://grisha.org/blog/2016/07/29/state-of-tgres-2016
-- http://www.xaprb.com/blog/2014/06/08/time-series-database-requirements
-- http://jmoiron.net/blog/thoughts-on-timeseries-databases
-- http://www.xaprb.com/blog/2014/03/02/time-series-databases-influxdb
-- http://www.xaprb.com/blog/2015/10/16/time-series-tagging

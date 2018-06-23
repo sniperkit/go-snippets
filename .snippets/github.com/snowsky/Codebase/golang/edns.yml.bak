@@ -1,3 +1,0 @@
----
-dns_server: 8.8.8.8
-redis_server: localhost

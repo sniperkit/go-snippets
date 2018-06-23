@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Vue and Bootstrap</title>
+        <link rel="stylesheet" href="/asset/web/css/bootstrap.min.css">
+        <script src="/asset/web/js/jquery.min.js"></script>
+        <script src="/asset/web/js/bootstrap.min.js"></script>
+        <script src="/asset/web/js/vue.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h1> Stories </h1>
+                <ul class="list-group">
+                    <li v-for="(story, index) in stories" class="list-group-item">
+                    {{index}}: Someone said: "{{story}}"
+                    </li>
+                </ul>
+            </div>
+            <pre>
+            {{$data | json}}
+            </pre>
+        </div>
+    </body>
+    <script>
+    new Vue({
+            el: '.container',
+            data: {
+                stories: [
+                    "I crashed my car today!",
+                    "Yestoday, someone stole my bag!",
+                    "Someone ate my chocolate...",
+                    ]
+            }
+    })
+    </script>
+</html>

@@ -1,6 +1,0 @@
-package: github.com/tralus/machinery-util
-import:
-- package: github.com/RichardKnop/machinery
-  subpackages:
-  - v1
-  - v1/config

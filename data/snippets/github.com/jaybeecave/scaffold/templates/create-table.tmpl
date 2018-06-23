@@ -1,0 +1,7 @@
+CREATE TABLE "{{.Data.TableName}}" (
+    "{{.Data.TableName}}_id" serial,
+    {{range $field := .Data.Fields}}"{{$field.FieldName}}" {{$field.FieldType}},{{end}}
+    "date_created" timestamptz,
+    "date_modified" timestamptz,
+    PRIMARY KEY ("{{.Data.TableName}}_id")
+);

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<opml version="1.0">
+    <head>
+        <title>Test opml</title>
+    </head>
+    <body>
+        <outline text="Tech" title="Tech">
+            <outline type="rss" text="The Next Web" title="The Next Web" xmlUrl="http://feeds2.feedburner.com/thenextweb" htmlUrl="http://thenextweb.com"/>
+            <outline type="rss" text="Ars Technica" title="Ars Technica" xmlUrl="http://feeds.arstechnica.com/arstechnica/index/" htmlUrl="http://arstechnica.com"/>
+            <outline type="rss" text="Re/code" title="Re/code" xmlUrl="http://recode.net/feed/" htmlUrl="http://www.recode.net/"/>
+            <outline type="rss" text="ReadWrite" title="ReadWrite" xmlUrl="http://www.readwriteweb.com/rss.xml" htmlUrl="http://readwrite.com"/>
+            <outline type="rss" text="The Next Web" title="The Next Web" xmlUrl="http://feeds2.feedburner.com/thenextweb" htmlUrl="http://thenextweb.com"/>
+            <outline type="rss" text="The New Stack" title="The New Stack" xmlUrl="http://thenewstack.io/feed/" htmlUrl="http://thenewstack.io"/>
+        </outline>
+        <outline text="Publishing" title="Publishing">
+            <outline type="rss" text="Digiday" title="Digiday" xmlUrl="http://www.digiday.com/feed/" htmlUrl="http://digiday.com"/>
+            <outline type="rss" text="Adweek" title="Adweek" xmlUrl="http://feeds.feedburner.com/Adfreak" htmlUrl="http://www.adweek.com/adfreak-media-feed.xml"/>
+            <outline type="rss" text="Nieman Lab" title="Nieman Lab" xmlUrl="http://www.niemanlab.org/feed/" htmlUrl="http://www.niemanlab.org"/>
+            <outline type="rss" text="Advertising Age" title="Advertising Age" xmlUrl="http://adage.com/rss-feed?section_id=32" htmlUrl="http://adage.com/rss-feed.php?section_id=32"/>
+        </outline>
+    </body>
+</opml>

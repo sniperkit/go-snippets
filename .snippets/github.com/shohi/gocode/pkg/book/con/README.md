@@ -1,2 +1,0 @@
-# README
-Concurrency in Go

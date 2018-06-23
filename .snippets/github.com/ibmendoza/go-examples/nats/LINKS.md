@@ -1,2 +1,0 @@
-- http://brianyang.com/building-a-microservices-control-plane-using-nats-and-docker-engine-v1-12/
-- https://nats.io/blog/docker-swarm-plus-nats/

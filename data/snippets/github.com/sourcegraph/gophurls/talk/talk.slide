@@ -1,0 +1,151 @@
+gophurls
+GoSF Go Session 1
+18:15 5 Mar 2014
+Tags: gophurls, gosf, gosession
+
+Quinn Slack
+Co-creator, Sourcegraph
+sqs@sourcegraph.com
+https://sourcegraph.com/sqs
+@sqs
+
+
+* Agenda
+
+- Networking
+- Intros (Francesc from the Go team, Iron.io, Rackspace, Sourcegraph)
+
+*Build*GophURLs*
+
+- Build a tiny link sharing app.
+- Improve it to fetch link titles.
+- Connect the apps together so they synchronize links automatically.
+- See how it all scales.
+
+
+* TODO
+
+We're going to build *GophURLs*, a link sharing site for Gophers.
+
+The starter code is at:
+
+.link https://github.com/sourcegraph/gophurls
+
+Working code is on the `solutions` branch in case you get stuck.
+
+
+* Setup
+
+- Connect to the WiFi network.
+- Allow listeners on `*:7000/tcp` (or disable your firewall).
+- Fork [[https://github.com/sourcegraph/gophurls]].
+- `go`get`github.com/$USER/gophurls`
+- `cd`$GOPATH/src/github.com/$USER/gophurls`
+
+
+* Part 1: link-sharing app and REST API
+
+.image part1-browser.png 500 486
+
+
+* Part 1: specs
+
+Make an HTTP server program that displays and allows submission of link URLs.
+
+The server should listen on the address provided by the `-http` flag (default `:7000`).
+
+*Endpoints:*
+
+- `POST`/links`: adds a link (a JSON object with a `URL` key) to the in-memory list of links.
+  $ curl -X POST -d '{"URL":"http://example.com"}' http://localhost:7000/links
+
+- `GET`/`: returns an HTML listing of URLs that have been submitted.
+  $ curl http://localhost:7000
+  <h1>GophURLs</h1>
+  <h2>Links</h2>
+  <ol>
+    <li><a href="http://example.com">http://example.com</a></li>
+  </ol>
+
+
+* Part 1: tips
+
+Tips:
+
+- Start with the code in `part1_app/server.go`. 
+- Test with `go`test`./part1_app`. Refer to the test code for detailed specs.
+- Be sure to synchronize access to the list of URLs (using the `sync` package).
+- Use the `text/template` package to generate HTML.
+* Part 2: fetch and display link titles, not URLs
+
+The chief gopher doesn't like seeing URLs because they remind it of the supremacy of `http://` over `gopher://`. Let's make the chief happy!
+
+.image part2-browser.png 450 486
+
+
+* Part 2: specs
+
+Same as in part 1, except:
+
+- The `/links` POST data JSON now has an optional `Title` field. Both are now valid:
+  $ curl -X POST -d '{"URL":"http://example.com"}' http://localhost:7000/links
+  $ curl -X POST -d '{"URL":"http://example.com","Title":"Example"}' http://localhost:7000/links
+
+- If a link is submitted with an empty or missing `Title`, go fetch it and find its <title>. Don't display the link on the listing page until the title is known.
+
+- Show link titles, not URLs, on the homepage.
+
+
+* Part 2: tips
+
+- Use your code from part 1, or start with `part1_app/server.go` on the `solutions` branch.
+- Test with `go`test`./part2_fetch`. Refer to the test code for detailed specs.
+- Fetch the links asynchronously so the API client doesn't have to wait.
+- You can use channels to rate-limit fetches. What are the tradeoffs vs. unlimited concurrent fetches?
+- For simple jQuery-like HTML parsing, use `github.com/PuerkitoBio/goquery` [[https://sourcegraph.com/github.com/PuerkitoBio/goquery/symbols/go/github.com/PuerkitoBio/goquery/NewDocument][NewDocument]].
+
+- If your tests pass, you're done!
+
+
+* Part 3: sharing links with peers
+
+The chief gopher wants to stay in touch with nearby gopher colonies. Let's connect our apps so they automatically share links. [[http://en.wikipedia.org/wiki/File:Pocket-Gopher_Ano-Nuevo-SP.jpg][Photo credit]]
+
+.image gopher.jpg 451 500
+
+* Part 3: spec
+
+Same as in part 2, except now we will maintain a list of peers (other GophURLs servers) and pass along new links to them.
+
+*New*endpoint:*
+
+- `POST`/peers`: adds peers (specified as a JSON array of `host:port` strings)
+  $ curl -X POST -d '["foo.com:7000","bar.com:1234"]' http://localhost:7000/peers
+
+*New*behavior:*
+When a link with a title is added, or when we've successfully fetched the title for a link that was added without a title,  our server should now add it to all known peers by POSTing to their `/links` endpoints.
+
+For example, if https://google.com were added to a host with the above list of peers, the host would effectively perform:
+
+ $ curl -X POST -d '{"URL":"https://google.com","Title":Google"}' http://foo.com:7000
+ $ curl -X POST -d '{"URL":"https://google.com","Title":Google"}' http://bar.com:1234
+
+
+* Part 3: tips
+
+- Use your code from part 2, or from `part2_app/*.go` on the `solutions` branch.
+- Test with `go`test`./part3_network`. Refer to the test code for detailed specs.
+- The test assumes you store peers in a package-level `var peers map[string]struct{}`.
+- To test and benchmark your code, run the included `gophurls-stress-test`-cmd=part3_network` command (after running `go install ./part3_network` in the graphurls root.
+
+
+* Live demo
+
+Do a live demo that synchronizes a link across everyone's computer. Show benchmarks.
+
+
+* Optimize
+
+- Take the remaining time to improve your solution's reliability, performance, and robustness (in the face of external host failures).
+
+- We'll do another benchmark after this.

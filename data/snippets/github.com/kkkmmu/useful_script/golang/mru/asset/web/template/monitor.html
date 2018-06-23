@@ -1,0 +1,77 @@
+|||template "vueheader" .|||
+<div id="connecttodevice" class="container">
+	<form class="form-horizontal" id="productform" role="form">
+		<fieldset>
+			<legend>Connect to a product</legend>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="device">Name</label>
+				<div class="col-sm-4">
+					<input class="form-control required" type="text" v-model="device.device" type="text" placeholder="V8500"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="ip">IP</label>
+				<div class="col-sm-4">
+					<input class="form-control required" type="text" v-model="device.ip" placeholder="10.71.20.115"/>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="group">UserName</label>
+				<div class="col-sm-4">
+					<input class="form-control required" type="text" v-model="device.username" placeholder="admin"/>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="password">password</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text" v-model="device.password" placeholder="Dasan123456"/>
+				</div>
+			</div>
+		</fieldset>     
+		<fieldset>
+			<legend></legend>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-4">
+				<button type="submit" name="submit" class="btn btn-block" @click.prevent="connectToDevice">Connect</button>
+			</div>
+		</fieldset>
+	</form>
+</div>
+<link rel="stylesheet" href="static/css/product.css">
+<script>
+	var connectToDevice = new Vue({
+		el: '#connecttodevice',
+		data: {
+			device: {
+				index: "1",
+				device: "V8500",
+				ip: "10.71.20.198",
+				port: "23",
+				username: "admin",
+				password: ""
+			},
+			submitted:false,
+		},
+		methods: {
+			connectToDevice: function(e) {
+				this.device.index = +this.device.index;
+				$.ajax({
+					type:"post",
+					url:"monitor",
+					async:false,
+					data: {
+						Device: JSON.stringify(this.device)
+					},
+
+					success:function(data) {
+						window.location.href="monitormain"
+					}
+				});
+				this.submitted = true;
+			},
+		}
+	});
+</script>
+|||template "vuefooter"|||

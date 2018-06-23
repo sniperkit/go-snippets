@@ -1,0 +1,64 @@
+{
+  "seedVersion": "1.0.0",
+  "job": {
+    "name": "my-job",
+    "jobVersion": "0.0.1",
+    "packageVersion": "0.0.1",
+    "title": "My first job",
+    "description": "Skeleton job; currently does nothing",
+    "tags": [
+    ],
+    "maintainer": {
+      "name": "John Doe",
+      "organization": "E-corp",
+      "email": "jdoe@example.com",
+      "url": "http://www.example.com",
+      "phone": "666-555-4321"
+    },
+    "timeout": 3600,
+    "interface": {
+      "command": "${INPUT_FILE} ${OUTPUT_DIR}",
+      "inputs": {
+        "files": [
+        ]
+      },
+      "outputs": {
+      },
+      "mounts": [
+        {
+          "name": "MOUNT_PATH",
+          "path": "/the/container/path",
+          "mode": "ro"
+        }
+      ],
+      "settings": [
+        {
+          "name": "DB_HOST",
+          "secret": false
+        }
+      ]
+    },
+    "resources": {
+      "scalar": [
+        { "name": "cpus", "value": 10.0 },
+        { "name": "mem", "value": 10240.0 },
+        { "name": "sharedMem", "value": 0.0 },
+        { "name": "disk", "value": 10.0, "inputMultiplier": 4.0 }
+      ]
+    },
+    "errors": [
+      {
+        "code": 1,
+        "title": "Error Name",
+        "description": "Error Description",
+        "category": "data"
+      },
+      {
+        "code": 2,
+        "title": "Error Name",
+        "description": "Error Description",
+        "category": "job"
+      }
+    ]
+  }
+}

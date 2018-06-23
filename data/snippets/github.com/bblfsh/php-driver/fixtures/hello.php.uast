@@ -1,0 +1,58 @@
+Status:  ok
+Language:  php
+Errors: 
+UAST: 
+Module {
+.  Roles: Module
+.  Children: {
+.  .  0: Stmt_Echo {
+.  .  .  Roles: Call,Statement
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 46
+.  .  .  .  Line: 3
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 65
+.  .  .  .  Line: 3
+.  .  .  .  Col: 20
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Comment {
+.  .  .  .  .  Roles: Comment,Noop
+.  .  .  .  .  TOKEN " this is a simple hello world example
+"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 0
+.  .  .  .  .  .  Line: 1
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: comments
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Scalar_String {
+.  .  .  .  .  Roles: Expression,Literal,String
+.  .  .  .  .  TOKEN "Hello World!"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 51
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 64
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 19
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: exprs
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

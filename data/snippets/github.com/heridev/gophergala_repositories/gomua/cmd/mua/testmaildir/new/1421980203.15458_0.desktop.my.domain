@@ -1,0 +1,96 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Thu, 22 Jan 2015 21:30:03 -0500
+Received: (qmail 22334 invoked from network); 22 Jan 2015 18:23:58 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 22 Jan 2015 18:23:58 -0800
+X-ASG-Debug-ID: 1421979836-017fd408af20f17e0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id MNpCBGwa7znqAZMX for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 18:23:56 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146363=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0N2b0jE009293
+	for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 19:37:02 -0700 (MST)
+Received: from mail.customhosting.ca (mail.customhosting.ca [198.51.75.14])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0N2alYV007796 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=FAIL)
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 19:36:48 -0700 (MST)
+Received: from [IPv6:2620:42:c000:1::21] (t5400.customhosting.ca [IPv6:2620:42:c000:1::21]);
+	by mail.customhosting.ca (OpenSMTPD) with ESMTPSA id 188469c2; TLS version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO;
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 20:22:57 -0600 (CST)
+Message-ID: <54C1B085.2000701@athompso.net>
+Date: Thu, 22 Jan 2015 20:23:01 -0600
+From: Adam Thompson <athompso@athompso.net>
+Reply-To: athompso@athompso.net
+Organization: CustomHosting.ca
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Thunderbird/33.0
+MIME-Version: 1.0
+To: misc@openbsd.org
+Subject: Re: 1U / 2 Computers? For redundant FW pair
+References: <CAH8ZPGmaZwn5JtuD_zn0bsVmLcy9gDy4ZVxpbdjLhEs3d8O7TA@mail.gmail.com> <CAPDERwrOZKdu8T1WZgkKjk6GiqyHBTrtFyZ6re-WTFcYmFETEw@mail.gmail.com> <54C1020B.2050804@shockley.net>
+X-ASG-Orig-Subj: Re: 1U / 2 Computers? For redundant FW pair
+In-Reply-To: <54C1020B.2050804@shockley.net>
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421979836
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14549
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+On 2015-01-22 07:58 AM, Steve Shockley wrote:
+> On 1/21/2015 8:50 AM, Brent Cook wrote:
+>> I think Dell used to have servers in its 'Cloud' line that fit 2
+>> machines in 1U, though IIRC they were a little pricey. I couldn't find
+>> them again when searching.
+>
+> The C6100 was a 2U 4-server "cloud-dense" device, sort of like a 2U 
+> blade chassis.  I've considered getting one, but I'm not sure if I 
+> could stand the reported noise.  IIRC they have two power supplies per 
+> chassis and the blades are individually removable, so that may or may 
+> not meet your definition of redundancy.  It looks like the C6220-II is 
+> the current model, but I haven't looked at those since they're not 
+> cheap on ebay.
+>
+I'm running a pair of redundant OpenBSD firewalls/routers on C6100 
+blades.  I can confirm, having had to strip and repair one of mine, that 
+the only shared components common to all 4 slots are:
+     1. The metal shell
+     2. The fan control board
+     3. the SATA backplane, at least physically.
+
+The backplane the blades plug into is split into (independent) top and 
+bottom halves.
+The power distribution/sharing system is split into (1+1 redundant, 
+connected) top and bottom halves.
+The SATA backplane, although shared, appears to be 99% passive and 
+signal traces appear to be highly localized; power is another story for 
+obvious reasons; a catastrophic failure in one SATA drive could 
+propagate to other drives, but would be fused at the power distribution 
+board(s).
+
+It's inaccurate to characterize the 4 servers in a C6100 chassis as 
+**completely** indepedent, but I can confirm that you definitely can 
+pull and replace individual blades without affecting the others.
+In my case, I have enough 6 other servers running at that site, so I can 
+put one router in each chassis, thus ensuring complete separation all 
+the way out to the ethernet switch and/or the shared UPS (take your pick).
+
+-- 
+-Adam Thompson
+  athompso@athompso.net
+

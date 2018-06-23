@@ -1,0 +1,61 @@
+uri	description
+github.com/BirdBolt/NGINX-uwsgi-Django A multi container setup for a nginx-uwsgi-django stack mostly built on Alpine linux
+github.com/andreyk0/docker-haskell-platform-alpine Dockerfile / scripts around alpine-linux based GHC/stack compiler toolchain
+github.com/tolstoyevsky/mmb Set of Dockerfiles and assets related to them for building Docker images with different services
+github.com/Starbix/dockerimages 🐳 Some dockerfiles based on alpine
+github.com/bitwalker/alpine-elixir A Dockerfile based on my alpine-erlang image for Elixir applications
+github.com/dockette/adminer :whale: Tiniest boxed dockerized Adminer (MySQL/PostgreSQL,SQLite,Mongo,Oracle) Dockerfiles
+github.com/dweomer/dockerfiles-consul Consul on Alpine
+github.com/dweomer/dockerfiles-vault Vault on Alpine
+github.com/dockette/alpine :whale: Dockette Alpine Linux Dockerfiles
+github.com/dockette/nodejs :whale: Dockette NodeJS (Debian/Alpine) Dockerfiles
+github.com/JermineHu/docker-opencv Dockerfile for CV and contains the x86_64, armhf, and arm64 architecture images of Ubuntu and Alpine distributions, including opencv3.4.1 and python3.6 . burakince/docker-dredd Dredd with Alpine Node Dockerfile
+github.com/vincentchalamon/docker A Dockerfile implementing php:7.1-fpm-alpine with dependencies for PHP projects.
+github.com/webdevops/Dockerfile :package: Dockerfiles from WebDevOps for PHP, Apache and Nginx (with PHP5 and PHP7)
+github.com/halter73/alpine-investigation 2.1.0-rc1 ASP.NET Core App w/ Dockerfile targeting Alpine
+github.com/dweomer/dockerfiles-serf Serf on Alpine
+github.com/edv/docker-spotweb Dockerfile to set up Spotweb on ARM (like Raspberry Pi 2/3) and X86 based systems based on Alpine Linux
+github.com/nrobinaubertin/dockerfiles Easy to install, secure and lightweight dockerfiles.
+github.com/kangaechu/docker-alpine-nlp-jp-jupyter Alpine Linuxの自然言語処理Python+Jupyter Notebook実行パッケージ Dockerfile
+github.com/pad92/hugo-build Dockerfile for build hugo and minify on alpine. Mirror of https://git.depad.fr/github/hugo-build
+github.com/kangaechu/docker-alpine-nlp-jp Alpineで自然言語処理を実行するためのDockerfile
+github.com/Zenika/alpine-chrome Chrome Headless docker images built upon alpine official image and zenika node image
+github.com/generiklimited/ansible-docker Dockerfile for ansible in a docker on Alpine Linux
+github.com/michellabbe/docker-ts3server Dockerfile to setup a Team Speak 3 server based on Alpine
+github.com/saitas/alpine-cloud9 Dockerfile for cloud9
+github.com/quchao/nutshells Project Nutshells contains a bunch of docker images all based on the lightweight Alpine, a few of them offer a variant based on CentOS alternatively.
+github.com/danilofalcao/dockerfiles Dockerfiles based on Alpine Linux
+github.com/Zenika/alpine-kotlin Kotlin docker images built upon official openjdk alpine images.
+github.com/syldexiahime/alpine-clang-docker Just a dockerfile for clang on alpine
+github.com/ngchianglin/Docker-Alpine-NginxContentFilter Dockerfile and Script to build a Alpine Linux Based Nginx with Content Filter Module
+github.com/gounthar/alpine-linux-curl Repository to hold the Dockerfile that will give me an alpine-linux with curl container for armv7
+github.com/AlexMasterov/dockerfiles :whale: Common docker containers, used for development
+github.com/nreymundo/custom-telegraf-docker-image Dockerfile using telegraf:alpine as the base image and adding extra stuff on top
+github.com/{}
+github.com/artus/alpine-bigchaindb Dockerfile for the bigchaindb docker image running on alpine and python3
+github.com/labulaka521/docker_alpine dockerfile python3,redis,haproxy,django
+github.com/basistime/netcdf-dockerfiles A collection of dockerfiles for creating containers that run NetCDF programs in CentOS7 or Alpine
+github.com/WinstonH/dockerhub Many Dockerfiles
+github.com/khs1994-docker/php-fpm Extend Official PHP-FPM Docker Image || Based Alpine
+github.com/rvernica/docker-library Collection of Dockerfiles
+github.com/matsuu/docker-azure-cli Dockerfile for azure-cli on Alpine Linux
+github.com/stawidy/shadowsocks-libev-docker Dockerfile of shadowsocks-libev forked from https://github.com/shadowsocks/shadowsocks-libev/tree/master/docker/alpine
+github.com/luisg595/Dockerfile-php7.2-nginx-alpine Dockerfile for Docker Php7.2 with Nginx based on image alpine:edge
+github.com/equanz/golang-alpine-node A Dockerfile that bundle node from golang-alpine
+github.com/nmvalera/mythril-alpine Dockerfile for building a Mythril docker image using Alpine distribution
+github.com/vimond/vimond-base-java-8 Base dockerfile for Vimond pwittchen/dockerfiles-java various docker images with java
+github.com/royge/python-docker Python 3 alpine dockerfile (https://hub.docker.com/r/royge/python/)
+github.com/mvertes/docker-alpine-mongo MongoDB Dockerfile based on light alpine container
+github.com/batch9703/dockerfile-alpine-rails dockerfile-alpine-rails
+github.com/ToeiRei/etherpad-docker Dockerfile for Etherpad Lite
+github.com/dockette/ci :whale: Dockette dockerized Alpine linux continuous integration [CI] Dockerfiles for web application
+github.com/batch9703/dockerfile-alpine-redis Dockerレジストリ登録用Dockerfile
+github.com/n0b0dyvn/Docker-alpine-php-apache2 Dockerfile for deploy stuff
+github.com/esycat/docker-upsource Dockerfile for Upsource.
+github.com/arukasio/arukas-alpine Alpine Linux Dockerfile
+github.com/Jiri-Kremser/hawkular-services-mini-dockerfiles dockerfiles for hawkular-services based on Alpine linux
+github.com/Horgix/docker-salt-master Dockerfile - SalStack master based on alpine
+github.com/JohannesEH/yarn-alpine A dockerfile for making an alpine yarn image.
+github.com/michellabbe/docker-openspeedtest Dockerfile to setup OpenSpeedTest server based on Alpine
+github.com/michellabbe/docker-iperf Dockerfile to setup a simple iperf2 server based on Alpine
+github.com/ztyhehe/mongo-alpine Dockerfile mongo:alpine

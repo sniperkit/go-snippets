@@ -1,0 +1,16 @@
+.vs/*
+bin/
+obj/
+packages/
+browser/hostapp/manifest.windows.json
+browser/chrome/chrome.zip
+output/
+netcode.io.wininstall/package.zip
+*.user
+netcode.io.demoserver/.kube/
+netcode.io.wininstall/.vs/
+/browser/webext-selfdist/*.js
+
+/netcode.io.host/netcode.io.host.exe
+/netcode.io.host/netcode.io.host
+/netcode.io.demoserver/.vs/

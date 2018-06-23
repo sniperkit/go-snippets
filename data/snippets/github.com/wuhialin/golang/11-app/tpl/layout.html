@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{{title}}Home{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        {% block breadcrumb %}
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+        {% endblock %}
+
+        {% block content %}
+        content
+        {% endblock %}
+    </div>
+
+    {% block footer %}
+    footer
+    {% endblock %}
+<script defer async src="/static/js/require.js" data-main="/static/js/main" id="current-page" data-page="{% block current_page %}index{% endblock %}"></script>
+</body>
+</html>

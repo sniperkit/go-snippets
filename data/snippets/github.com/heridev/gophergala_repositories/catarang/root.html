@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Catarang!</title>
+	</head>
+	<body>
+		This is catarang, a Continuous Integration Server being written for <a href="http://gophergala.com/">Gopher Gala</a>
+		<br><br>
+
+		<strong>Jobs:</strong>
+		<ul>
+			{{ range $key, $value := .Jobs }}
+				<li>{{ $value.Name }} (
+				{{ if $value.Enabled }}
+					Enabled
+				{{ else }}
+					Disabled 
+				{{ end }} )
+				<br>
+				git URL: {{ $value.Config.Repo }}
+				<br>
+				Build Config: {{ $value.Config.BuildConfig }}</li>
+			{{ end }}
+		</ul>
+		<br>
+		<strong>Add a new job:</strong>
+		<form action="/addjob" method="POST">
+			Name: <input type="text" name="name" required><br>
+			git URL: <input type="text" name="repo" required><br>
+			Build Config: <input type="text" name="build_config" required><br>
+			<input type="submit" value="Add New Job">
+		</form>
+	</body>
+</html>

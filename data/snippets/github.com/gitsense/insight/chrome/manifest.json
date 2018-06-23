@@ -1,0 +1,32 @@
+{
+    "name": "GitSense",
+    "version": "1.3",
+    "manifest_version": 2,
+    "description": "Makes searching, analyzing and reviewing code in GitHub, GitLab and VSTS better",
+    "homepage_url": "https://gitsense.com",
+    "options_ui": {
+        "page" : "options.html",
+        "chrome_style": false
+    },
+    "icons": {
+        "128": "images/icon-128.png"
+    },
+    "web_accessible_resources": [
+        "frame.html",
+        "3rdparty/octicons/*"
+    ],
+    "background": {
+      "scripts": [ "background.js" ],
+      "persistent": false
+    },
+    "optional_permissions": [
+        "<all_urls>"
+    ],
+    "permissions": [
+        "https://api.github.com/*",
+        "https://github.com/*",
+        "https://gitlab.com/*",
+        "https://public.gitsense.com/*",
+        "storage"
+    ]
+}

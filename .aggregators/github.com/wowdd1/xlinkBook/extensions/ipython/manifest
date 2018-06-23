@@ -1,6 +1,0 @@
-{
-    "name" : "ipython",
-    "module" : "ipython",
-    "class" : "Ipython",
-    "version" : "0.1"
-}

@@ -1,0 +1,5 @@
+/bin
+/tmp
+/image_builder/stacker
+/conf.d
+*.toml

@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package qtypes;
+option go_package = "github.com/piotrkowalczuk/qtypes";
+
+import "google/protobuf/timestamp.proto";
+
+enum QueryType {
+    NULL = 0;
+    EQUAL = 1;
+    GREATER = 2;
+    GREATER_EQUAL = 3;
+    LESS = 4;
+    LESS_EQUAL = 5;
+    IN = 6;
+    BETWEEN = 7;
+    HAS_PREFIX = 8;
+    HAS_SUFFIX = 9;
+    SUBSTRING = 10;
+    PATTERN = 11;
+    MIN_LENGTH = 12;
+    MAX_LENGTH = 13;
+    OVERLAP = 14;
+    CONTAINS = 15;
+    IS_CONTAINED_BY = 16;
+    HAS_ELEMENT = 17;
+    HAS_ANY_ELEMENT = 18;
+    HAS_ALL_ELEMENTS = 19;
+}
+
+// String ...
+message String {
+    repeated string values = 1;
+    bool valid = 2;
+    bool negation = 3;
+    QueryType type = 4;
+    bool insensitive = 5;
+}
+
+// Int64 ...
+message Int64 {
+    repeated int64 values = 1;
+    bool valid = 2;
+    bool negation = 3;
+    QueryType type = 4;
+}
+
+// Uint64 ...
+message Uint64 {
+    repeated uint64 values = 1;
+    bool valid = 2;
+    bool negation = 3;
+    QueryType type = 4;
+}
+
+// Float64 ...
+message Float64 {
+    repeated double values = 1;
+    bool valid = 2;
+    bool negation = 3;
+    QueryType type = 4;
+}
+
+// Timestamp ...
+message Timestamp {
+    repeated google.protobuf.Timestamp values = 1;
+    bool valid = 2;
+    bool negation = 3;
+    QueryType type = 4;
+}

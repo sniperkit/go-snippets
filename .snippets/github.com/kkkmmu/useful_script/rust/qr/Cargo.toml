@@ -1,7 +1,0 @@
-[package]
-name = "qr"
-version = "0.1.0"
-authors = ["lamproae <lwnope@163.com>"]
-
-[dependencies]
-qrcodegen="1.2.1"

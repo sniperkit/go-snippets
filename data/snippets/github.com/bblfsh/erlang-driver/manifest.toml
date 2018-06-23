@@ -1,0 +1,15 @@
+language = "erlang"
+
+
+status = "planning"
+
+[documentation]
+description  = """
+erlang driver for [babelfish](https://github.com/bblfsh/server).
+"""
+
+[runtime]
+
+os = "alpine"
+go_version = "1.8"
+native_version = ["erts-8.3"]

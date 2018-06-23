@@ -1,0 +1,5 @@
+extensions:
+	.go
+
+names:
+	comments: /* $comment */|//$comment

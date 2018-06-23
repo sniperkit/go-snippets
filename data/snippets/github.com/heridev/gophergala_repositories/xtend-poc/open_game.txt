@@ -1,0 +1,11 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Test cases ***
+Open 2 Browsers For Testing Game
+    Open Browser    http://localhost:4000    gc
+    Input Text    player_name    Player1
+    Click Button    OK
+    Open Browser    http://localhost:4000    gc
+    Input Text    player_name    Player2
+    Click Button    OK

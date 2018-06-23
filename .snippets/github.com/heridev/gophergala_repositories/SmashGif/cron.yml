@@ -1,4 +1,0 @@
-cron:
-- description: scrape reddit
-  url: /scrape
-  schedule: every 24 hours

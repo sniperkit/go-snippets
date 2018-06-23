@@ -1,6 +1,0 @@
-**/*.java
-/src/com/goandroidrpc
-/src/go
-/libs/
-/gen/
-/bin/

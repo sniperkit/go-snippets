@@ -1,2 +1,0 @@
-pandas>=0.20
-ast2vec[tf]>=0.2.6-alpha

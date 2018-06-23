@@ -1,1 +1,0 @@
-type celsius float64

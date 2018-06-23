@@ -1,0 +1,67 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 34,
+                    "endLine": 5,
+                    "endTokenPos": 17,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "cond": {
+                    "attributes": {
+                        "endFilePos": 14,
+                        "endLine": 3,
+                        "endTokenPos": 5,
+                        "startFilePos": 11,
+                        "startLine": 3,
+                        "startTokenPos": 5
+                    },
+                    "name": {
+                        "attributes": {
+                            "endFilePos": 14,
+                            "endLine": 3,
+                            "endTokenPos": 5,
+                            "startFilePos": 11,
+                            "startLine": 3,
+                            "startTokenPos": 5
+                        },
+                        "nodeType": "Name",
+                        "parts": [
+                            "true"
+                        ]
+                    },
+                    "nodeType": "Expr_ConstFetch"
+                },
+                "else": null,
+                "elseifs": [],
+                "nodeType": "Stmt_If",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 32,
+                            "endLine": 4,
+                            "endTokenPos": 15,
+                            "startFilePos": 23,
+                            "startLine": 4,
+                            "startTokenPos": 10
+                        },
+                        "extends": null,
+                        "flags": 0,
+                        "implements": [],
+                        "name": "A",
+                        "nodeType": "Stmt_Class",
+                        "stmts": [],
+                        "type": 0
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

@@ -1,0 +1,2 @@
+fun() -> io:format("blah~n") end. 
+io:format("blah~n").

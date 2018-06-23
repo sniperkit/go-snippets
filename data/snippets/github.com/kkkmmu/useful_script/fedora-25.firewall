@@ -1,0 +1,5 @@
+firewall-cmd --list-all
+firewall-cmd --zone=FedoraServer --new-service=http --permanent
+firewall-cmd --zone=FedoraServer --add-port=80/tcp --permanent
+firewall-cmd --reload
+sudo systemctl stop firewalld  //关闭Fedora防火墙

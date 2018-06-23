@@ -1,0 +1,61 @@
+|||template "vueheader"|||
+<div class="tree well col-sm-3">
+	<span>|||.Device|||</span>
+	|||$glen := len .Groups|||
+	|||if ne $glen 0|||
+	<ul>
+		|||range .Groups|||
+		<li>
+			<span><i class="icon-folder-open"></i> |||.Name||| </span> <a href="runtestcases?root=l2">Run</a>
+			|||$sglen := len .SubGroups|||
+			|||$gname := .Name|||
+			|||if ne $sglen 0|||
+			<ul>
+				|||range .SubGroups|||
+				<li>
+					<span><i class="icon-minus-sign"></i> |||.Name||| </span> <a href="">Run</a>
+					|||$flen := len .Features|||
+					|||$sgname := .Name|||
+					|||if ne $flen 0|||
+					<ul>
+						|||range .Features|||
+						<li>
+							<span><i class="icon-minus-sign"></i> |||.Name||| </span> <a href="">Run</a>
+							|||$clen := len .Cases|||
+							|||$fname := .Name|||
+							|||if ne $clen 0|||
+							<ul>
+								|||range .Cases|||
+								<li>
+									<span><i class="icon-minus-sign"></i> <a href='dumpcase?group=|||$gname|||&&sgroup=|||$sgname|||&&feature=|||$fname|||&&name=|||.Name|||'>|||.Name|||</a></span> <a href="">Run</a>
+									|||$cname := .Name|||
+									|||$tlen := len .Tasks|||
+									|||if ne $tlen 0|||
+									<ul>
+										|||range .Tasks|||
+										<li>
+											<span id="task"><i class="icon-leaf"></i>|||.Name|||</span> <a href='dumptask?group=|||$gname|||&&sgroup=|||$sgname|||&&feature=|||$fname|||&&case=|||$cname|||&&task=|||.Name|||'>Run</a>
+										</li>
+										|||end|||
+									</ul>
+									|||end|||
+								</li>
+								|||end|||
+							</ul>
+							|||end|||
+						</li>
+						|||end|||
+					</ul>
+					|||end|||
+				</li>
+				|||end|||
+			</ul>
+			|||end|||
+		</li>
+		|||end|||
+	</ul>
+	|||end|||
+</div>
+<link rel="stylesheet" href="asset/web/static/css/casenavigator.css">
+<script type="text/javascript" src="asset/web/static/js/casenavigator.js"></script>
+||| template "vuefooter"|||

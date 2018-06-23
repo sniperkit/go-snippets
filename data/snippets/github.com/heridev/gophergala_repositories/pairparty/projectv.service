@@ -1,0 +1,12 @@
+[Service]
+ExecStart=/home/kmulvey/code/src/prod/Project-V
+WorkingDirectory=/home/kmulvey/code/src/prod/
+StandardOutput=syslog
+Restart=always
+SyslogIdentifier=projectv
+User=nobody
+Group=nobody
+Environment=GOPATH=/home/kmulvey/code/
+
+[Install]
+WantedBy=multi-user.target

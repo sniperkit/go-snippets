@@ -1,0 +1,54 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="save()" novalidate autocomplete="off">
+        <p i18n>
+            Filters can be applied to article URLs and title. At least one target must be selected:
+        </p>
+        <mat-input-container>
+            <input matInput i18n-placeholder placeholder="Filter by title" formControlName="titleTerm">
+        </mat-input-container>
+        <br>
+        <mat-checkbox formControlName="inverseTitle" i18n>
+            Match filter if title term does not match.
+        </mat-checkbox>
+        <mat-input-container>
+            <input matInput i18n-placeholder placeholder="Filter by URL" formControlName="urlTerm">
+        </mat-input-container>
+        <br>
+        <mat-checkbox formControlName="inverseURL" i18n>
+            Match filter if URL term does not match.
+        </mat-checkbox>
+        <mat-error *ngIf="form.hasError('nomatch')" i18n>
+            A filter must match at least a URL or title
+        </mat-error>
+        <br>
+        <p i18n>
+            Optional parameters
+        </p>
+        <mat-slide-toggle formControlName="useFeeds">
+            <span *ngIf="form.value.useFeeds" i18n>Limit to feeds</span>
+            <span *ngIf="!form.value.useFeeds" i18n>Limit to tag</span>
+        </mat-slide-toggle>
+        <mat-form-field *ngIf="form.value.useFeeds">
+            <mat-select multiple formControlName="feeds" i18n-placeholder placeholder="Feeds">
+                <mat-option *ngFor="let feed of feeds" [value]="feed.id">
+                    {{ feed.title }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field *ngIf="!form.value.useFeeds">
+            <mat-select formControlName="tag" i18n-placeholder placeholder="Tag">
+                <mat-option *ngFor="let tag of tags" [value]="tag.id">
+                    {{ tag.value }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-checkbox formControlName="inverseFeeds" i18n>
+            Match filter if article is not part of the selected feeds/tag.
+        </mat-checkbox>
+    </form>
+</div>
+<div class="footer">
+    <button mat-raised-button (click)="save()" i18n>Save</button>
+    <button mat-raised-button (click)="close()" i18n>Close</button>
+</div>

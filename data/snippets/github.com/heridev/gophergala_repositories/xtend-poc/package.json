@@ -1,0 +1,28 @@
+{
+  "name": "xtend",
+  "version": "1.0.0",
+  "description": "Xtend is a game to rule the world",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/j4cksw/xtend-poc.git"
+  },
+  "keywords": [
+    "phaser"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/j4cksw/xtend-poc/issues"
+  },
+  "homepage": "https://github.com/j4cksw/xtend-poc",
+  "dependencies": {
+    "bower": "^1.3.12"
+  },
+  "scripts": {
+    "postinstall": "cd web && ../node_modules/.bin/bower install"
+  }
+}

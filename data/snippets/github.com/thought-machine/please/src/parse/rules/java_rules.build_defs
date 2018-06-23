@@ -1,0 +1,631 @@
+"""Built-in rules to compile Java code."""
+
+
+def java_library(name:str, srcs:list=None, src_dir:str=None, resources:list=None, resources_root:str=None,
+                 deps:list=[], modular:bool=False, exported_deps:list=None, visibility:list=None,
+                 test_only:bool&testonly=False, javac_flags:list&javacopts=None, labels:list=[]):
+    """Compiles Java source to a .jar which can be collected by other rules.
+
+    Args:
+      name (str): Name of the rule
+      srcs (list): Java source files to compile for this library
+      src_dir (str): Directory containing Java source files to compile.
+      resources (list): Resources to include in the .jar file
+      resources_root (str): Root directory to treat resources relative to; ie. if we are in
+                            //project/main/resources and resources_root is project/main then
+                            the resources in the .jar will be in the subdirectory 'resources'.
+      deps (list): Dependencies of this rule.
+      modular (bool): Whether the produced file should be modular. Only supported with java 9+.
+      exported_deps (list): Exported dependencies, ie. dependencies that other things depending on this
+                            rule will also receive when they're compiling. This is quite important for
+                            Java; any dependency that forms part of the public API for your classes
+                            should be an exported dependency.
+      visibility (list): Visibility declaration of this rule.
+      test_only (bool): If True, this rule can only be depended on by tests.
+      javac_flags (list): List of flags passed to javac.
+      labels (list): Additional labels to apply to this rule.
+    """
+    if srcs and src_dir:
+        raise ParseError('You cannot pass both srcs and src_dir to java_library')
+    if srcs or src_dir:
+        if resources:
+            # Split up resources into a separate rule so we don't have to try to build them here.
+            res_rule = java_library(
+                name = '_%s#res' % name,
+                resources = resources,
+                resources_root = resources_root,
+                test_only=test_only,
+            )
+            deps += [res_rule]
+
+        if javac_flags:
+            # See http://bazel.io/blog/2015/06/25/ErrorProne.html for more info about this flag;
+            # it doesn't mean anything to us so we must filter it out.
+            # TODO(peterebden): Push this nonsense down into the javac_worker binary so we don't have to know about it here.
+            javac_flags = ' '.join([flag for flag in javac_flags if flag != '-extra_checks:off'])
+        else:
+            javac_flags = CONFIG.JAVAC_TEST_FLAGS if test_only else CONFIG.JAVAC_FLAGS
+
+        javac_flags = '-encoding utf8 %s' % javac_flags
+
+        if CONFIG.JAVA_RELEASE_LEVEL:
+            javac_flags = '--release %s %s' % (CONFIG.JAVA_RELEASE_LEVEL, javac_flags)
+        else:
+            javac_flags = '-encoding utf8 -source %s -target %s -g %s' % (
+                CONFIG.JAVA_SOURCE_LEVEL,
+                CONFIG.JAVA_TARGET_LEVEL,
+                javac_flags,
+            )
+
+        if not CONFIG.JAVAC_TOOL:
+            javac_cmd = '$(worker %s) %s %s %s' % (CONFIG.JAVAC_WORKER, javac_flags, '--modular' if modular else '', '--src_dir' if src_dir else '')
+        else:
+            javac_cmd = 'mkdir -p _tmp/META-INF && $TOOLS_JAVAC %s -classpath .:%s -d _tmp %s' % (
+                javac_flags,
+                r'`find $TMP_DIR -name "*.jar" | tr \\\\n :`',
+                '$SRCS' if srcs else '`find $SRCS -name "*.java"`',
+            )
+
+        cmd = ' && '.join([
+            javac_cmd,
+            'find _tmp -name "*.class" | sed -e "s|_tmp/|${PKG} |g" -e "s/\\.class/.java/g" | sort > _tmp/META-INF/please_sourcemap',
+            'cd _tmp',
+            '$TOOLS_JARCAT z -d -o $OUT -i .',
+        ])
+        return build_rule(
+            name=name,
+            srcs=srcs or [src_dir],
+            deps=deps,
+            exported_deps=exported_deps,
+            outs=[name + '.jar'],
+            visibility=visibility,
+            cmd=cmd,
+            building_description="Compiling...",
+            requires=['java'],
+            labels = labels,
+            test_only=test_only,
+            tools={
+                'javac': [CONFIG.JAVAC_TOOL or CONFIG.JAVAC_WORKER],
+                'jarcat': [CONFIG.JARCAT_TOOL],
+            },
+        )
+    elif resources:
+        # Can't run javac since there are no java files.
+        if resources_root:
+            cmd = 'cd ${PKG}/%s && $TOOL z -d -o ${OUT} -i .' % resources_root
+        else:
+            cmd = '$TOOL z -d -o ${OUTS} -i .'
+        return build_rule(
+            name=name,
+            srcs=resources,
+            deps=deps,
+            exported_deps=exported_deps,
+            outs=[name + '.jar'],
+            visibility=visibility,
+            cmd=cmd,
+            building_description="Linking...",
+            requires=['java'],
+            labels = labels,
+            test_only=test_only,
+            tools=[CONFIG.JARCAT_TOOL],
+        )
+    else:
+        # If input is only jar files (as maven_jar produces in some cases) we simply collect them
+        # all up for other rules to use.
+        return filegroup(
+            name=name,
+            deps=deps,
+            exported_deps=exported_deps,
+            visibility=visibility,
+            output_is_complete=False,
+            requires=['java'],
+            labels = labels,
+            test_only=test_only,
+        )
+
+
+def java_module(name:str, srcs:list=None, src_dir:str=None, resources:list=None, resources_root:str=None,
+                deps:list=None, visibility:list=None, test_only:bool&testonly=False, javac_flags:list&javacopts=None):
+    """Compiles Java source to a modular .jar which can be collected by other rules.
+
+    Args:
+      name (str): Name of the rule
+      srcs (list): Java source files to compile for this library
+      src_dir (str): Directory containing Java source files to compile.
+      resources (list): Resources to include in the .jar file
+      resources_root (str): Root directory to treat resources relative to; ie. if we are in
+                            //project/main/resources and resources_root is project/main then
+                            the resources in the .jar will be in the subdirectory 'resources'.
+      deps (list): Dependencies of this rule.
+      exported_deps (list): Exported dependencies, ie. dependencies that other things depending on this
+                            rule will also receive when they're compiling. This is quite important for
+                            Java; any dependency that forms part of the public API for your classes
+                            should be an exported dependency.
+      visibility (list): Visibility declaration of this rule.
+      test_only (bool): If True, this rule can only be depended on by tests.
+      javac_flags (list): List of flags passed to javac.
+    """
+    return java_library(name=name,
+                        srcs=srcs,
+                        src_dir=src_dir,
+                        resources=resources,
+                        resources_root=resources_root,
+                        deps=deps,
+                        visibility=visibility,
+                        test_only=test_only,
+                        javac_flags=javac_flags,
+                        modular=True)
+
+
+def java_runtime_image(name:str, main_module:str, main_class:str, modules:list, out:str=None,
+                       deps:list=[], data:list=None, visibility:list=None,
+                       jlink_args:str='--strip-debug --compress=2'):
+    """Assembles a set of modules into an executable java runtime image.
+
+    Args:
+      name (str): Name of the rule.
+      main_module (str): Main module to set in the manifest. Has to be included in 'modules'.
+      main_class (str): Main class to set in the manifest. Has to belong to 'main_module'.
+      modules (list): Modules to be included in the runtime image.
+      out (str): Name of the folder that contains the runtime image and the binary contained by it. Defaults to 'name'.
+      deps (list): Dependencies of this rule.
+      data (list): Runtime data files for this rule.
+      visibility (list): Visibility declaration of this rule.
+      jlink_args (str): Arguments to pass to the JVM in the run script.
+    """
+    if not CONFIG.JAVA_HOME:
+        raise Exception('Java home needs to be set to link java runtime images against jmods.')
+    if not CONFIG.JLINK_TOOL:
+        raise Exception('A jlink tool is required to build java runtime images.')
+    if not modules:
+        raise Exception('You cannot assemble a java runtime image without specifying any modules.')
+    out = out or name
+    cmd = ("$TOOL --module-path {deps}:{java_home}/jmods " +
+           "--add-modules {modules} --launcher {name}={main_module}/{main_class} " +
+           "--output {out_dir} {jlink_args}").format(
+               deps=r'`find $TMP_DIR -name "*.jar" | tr \\\\n :`',
+               java_home=CONFIG.JAVA_HOME,
+               modules=','.join(modules),
+               name=name,
+               main_module=main_module,
+               main_class=main_class,
+               out_dir=out,
+               jlink_args=jlink_args)
+
+    build_rule(
+        name=name,
+        deps=deps,
+        data=data,
+        outs=[out],
+        cmd=cmd,
+        needs_transitive_deps=True,
+        output_is_complete=True,
+        binary=True,
+        building_description="Creating runtime image...",
+        requires=['java'],
+        visibility=visibility,
+        tools=[CONFIG.JLINK_TOOL],
+    )
+
+
+def java_binary(name:str, main_class:str=None, out:str=None, srcs:list=None, deps:list=[],
+                data:list=None, visibility:list=None, jvm_args:str=None,
+                self_executable:bool=False, manifest:str=None):
+    """Compiles a .jar from a set of Java libraries.
+
+    Args:
+      name (str): Name of the rule.
+      main_class (str): Main class to set in the manifest.
+      out (str): Name of output .jar file. Defaults to name + .jar.
+      srcs (list): Source files to compile.
+      deps (list): Dependencies of this rule.
+      data (list): Runtime data files for this rule.
+      visibility (list): Visibility declaration of this rule.
+      jvm_args (str): Arguments to pass to the JVM in the run script.
+      self_executable (bool): True to make the jar self executable.
+      manifest (str): Manifest file to put into the jar. Can't be passed at the same time as
+                      main_class.
+    """
+    if main_class and manifest:
+        raise ParseError("Can't pass both main_class and manifest to java_binary")
+    if srcs:
+        lib_rule = java_library(
+            name = '_%s#lib' % name,
+            srcs = srcs,
+            deps = deps,
+        )
+        deps.append(lib_rule)
+    if self_executable:
+        preamble = '#!/bin/sh\nexec java %s -jar $0 ${@}' % (jvm_args or '')
+        cmd, tools = _jarcat_cmd(main_class, preamble, manifest=manifest)
+    else:
+        # This is essentially a hack to get past some Java things (notably Jersey) failing
+        # in subtle ways when the jar has a preamble (srsly...).
+        cmd, tools = _jarcat_cmd(main_class, manifest=manifest)
+    build_rule(
+        name=name,
+        deps=deps,
+        data=data,
+        outs=[out or name + '.jar'],
+        srcs=[manifest],
+        cmd=cmd,
+        needs_transitive_deps=True,
+        output_is_complete=True,
+        binary=True,
+        building_description="Creating jar...",
+        requires=['java'],
+        visibility=visibility,
+        tools=tools,
+        labels=None if self_executable else ['java_non_exe'],
+    )
+
+
+def java_test(name:str, srcs:list, resources:list=None, data:list=None, deps:list=None, worker:str='',
+              labels:list&features&tags=None, visibility:list=None, flags:str='', container:bool|dict=False,
+              sandbox:bool=None, timeout:int=0, flaky:bool|int=0, test_outputs:list=None, size:str=None,
+              test_package:str=CONFIG.DEFAULT_TEST_PACKAGE, jvm_args:str=''):
+    """Defines a Java test.
+
+    Args:
+      name (str): Name of the rule.
+      srcs (list): Java files containing the tests.
+      resources (list): Resources to include in the .jar file
+      data (list): Runtime data files for this rule.
+      deps (list): Dependencies of this rule.
+      worker(str): Reference to worker script, A persistent worker process that is used to set up the test.
+      labels (list): Labels to attach to this test.
+      visibility (list): Visibility declaration of this rule.
+      flags (str): Flags to pass to the test invocation.
+      container (bool | dict): True to run this test within a container (eg. Docker).
+      sandbox (bool): Sandbox the test on Linux to restrict access to namespaces such as network.
+      timeout (int): Maximum length of time, in seconds, to allow this test to run for.
+      flaky (int | bool): True to mark this as flaky and automatically rerun.
+      test_outputs (list): Extra test output files to generate from this test.
+      size (str): Test size (enormous, large, medium or small).
+      test_package (str): Java package to scan for test classes to run.
+      jvm_args (str): Arguments to pass to the JVM in the run script.
+    """
+    timeout, labels = _test_size_and_timeout(size, timeout, labels)
+    # It's a bit sucky doing this in two separate steps, but it is
+    # at least easy and reuses the existing code.
+    java_library(
+        name='_%s#lib' % name,
+        srcs=srcs,
+        resources=resources,
+        deps=deps,
+        test_only=True,
+        # Deliberately not visible outside this package.
+    )
+    # As above, would be nicer if we could make the jars self-executing again.
+    cmd, tools = _jarcat_cmd('build.please.main.TestMain')
+    tools['junit'] = [CONFIG.JUNIT_RUNNER]
+    cmd = 'ln -s $TOOLS_JUNIT . && ' + cmd
+    test_cmd = 'java -Dbuild.please.testpackage=%s %s -jar $(location :%s) %s' % (
+        test_package, jvm_args, name, flags)
+
+    deps = [':_%s#lib' % name]
+    if worker:
+        test_cmd = '$(worker %s) && %s ' % (worker, test_cmd)
+        deps += [worker]
+
+    build_rule(
+        name=name,
+        cmd=cmd,
+        test_cmd=test_cmd,
+        data=data,
+        outs=[name + '.jar'],
+        deps=deps,
+        visibility=visibility,
+        container=container,
+        test_sandbox=sandbox,
+        labels=labels,
+        test_timeout=timeout,
+        flaky=flaky,
+        test_outputs=test_outputs,
+        requires=['java'],
+        needs_transitive_deps=True,
+        output_is_complete=True,
+        test=True,
+        binary=True,
+        building_description="Creating jar...",
+        tools=tools,
+    )
+
+
+def maven_jars(name:str, id:str='', ids:list=[], repository:str|list=None, exclude:list=[],
+               hashes:list=None, combine:bool=False, hash:str|list=None, deps:list=[],
+               visibility:list=None, filename:str=None, deps_only:bool=False, optional:list=None):
+    """Fetches a transitive set of dependencies from Maven.
+
+    Args:
+      name (str): Name of the output rule.
+      id (str): Maven id of the artifact (e.g. org.junit:junit:4.1.0)
+      ids (list): Maven ids of artifacts to fetch (e.g. org.junit:junit:4.1.0, io.grpc:grpc-all:1.4.0)
+      repository (str | list): Maven repositories to fetch deps from.
+      exclude (list): Dependencies to ignore when fetching this one.
+      hashes (dict): Map of Maven id -> rule hash for each rule produced.
+      combine (bool): If True, we combine all downloaded .jar files into one uberjar.
+      hash (str | list): Hash of final produced .jar. For brevity, implies combine=True.
+      deps (list): Labels of dependencies, as usual.
+      visibility (list): Visibility label.
+      filename (str): Filename we attempt to download. Defaults to standard Maven name.
+      deps_only (bool): If True we fetch only dependent rules, not this one itself. Useful for some that
+                        have a top-level target as a facade which doesn't have actual code.
+      optional (list): List of optional dependencies to fetch. By default we fetch none of them.
+    """
+    if id:
+        ids.append(id)
+    for id in ids:
+        if id.count(':') != 2:
+            raise ValueError('Bad Maven id string: %s. Must be in the format group:artifact:id' % id)
+    combine = combine or hash
+    source_name = '_%s#src' % name
+    repository = repository or CONFIG.DEFAULT_MAVEN_REPO
+    repos = [repository] if isinstance(repository, str) else repository
+
+    def get_hash(id, artifact=None):
+        if hashes is None:
+            return None
+        artifact = artifact or id.split(':')[1]
+        return hashes.get(id, hashes.get(artifact, '<not given>'))
+
+    def create_maven_deps(_, output):
+        for line in output:
+            if not line:
+                continue
+            group, artifact, version, sources, licences = _parse_maven_artifact(line)
+            if artifact in exclude:
+                continue
+            maven_jar(
+                name=artifact,
+                id=line,
+                repository=repos,
+                hash=get_hash(id, artifact),
+                licences=licences,
+                sources=sources,
+                # We deliberately don't make this rule visible externally.
+            )
+            # Have to account for require/provide on final rule if it's a jar
+            final_name = name if deps_only or combine else '_%s#bin' % name
+            add_exported_dep(final_name, ':' + artifact)
+            if combine:
+                add_exported_dep(source_name, ':' + artifact)
+
+    exclusions = ' '.join(['-e ' + excl for excl in exclude])
+    options = ' '.join(['-o ' + option for option in optional]) if optional else ''
+    repo_flags = ' '.join(['-r ' + repo for repo in repos])
+    build_rule(
+        name='_%s#deps' % name,
+        cmd='$TOOL %s %s %s %s' % (repo_flags, ' '.join(ids), exclusions, options),
+        post_build=create_maven_deps,
+        building_description='Finding dependencies...',
+        tools=[CONFIG.PLEASE_MAVEN_TOOL],
+        sandbox=False,
+    )
+    if combine:
+        download_name = '_%s#download' % name
+        maven_jar(
+            name=download_name,
+            id=id,
+            repository=repos,
+            hash=get_hash(id),
+            deps = deps,
+            visibility=visibility,
+            filename=filename,
+        )
+        # Combine the sources into a separate uberjar
+        cmd, tools = _jarcat_cmd()
+        build_rule(
+            name=source_name,
+            output_is_complete=True,
+            needs_transitive_deps=True,
+            building_description="Creating source jar...",
+            deps=[':' + download_name, ':_%s#deps' % name] + deps,
+            outs=[name + '_src.jar'],
+            cmd=cmd + ' -s src.jar -e ""',
+            tools=tools,
+        )
+        return build_rule(
+            name=name,
+            hashes=hash if isinstance(hash, list) else [hash] if hash else None,
+            output_is_complete=True,
+            needs_transitive_deps=True,
+            building_description="Creating jar...",
+            deps=[':' + download_name, ':' + source_name, ':_%s#deps' % name] + deps,
+            outs=[name + '.jar'],
+            requires=['java'],
+            visibility=visibility,
+            cmd=cmd + ' -e "_src.jar"',
+            tools=tools,
+        )
+    elif not deps_only:
+        return maven_jar(
+            name=name,
+            id=id,
+            repository=repos,
+            hash=get_hash(id),
+            deps = deps + [':_%s#deps' % name],
+            visibility=visibility,
+            filename=filename,
+        )
+    else:
+        return build_rule(
+            name=name,
+            deps=[':_%s#deps' % name],
+            exported_deps=deps,
+            cmd='true',  # do nothing!
+            visibility=visibility,
+            requires=['java'],
+        )
+
+
+def maven_jar(name:str, id:str, repository:str|list=None, hash:str=None, hashes:list=None, deps:list=None,
+              visibility:list=None, filename:str=None, sources:bool=True, licences:list=None,
+              native:bool=False, artifact_type:str=None, test_only:bool&testonly=False,
+              binary:bool=False, classifier:str='', classifier_sources_override:str=''):
+    """Fetches a single Java dependency from Maven.
+
+    Args:
+      name (str): Name of the output rule.
+      id (str): Maven id of the artifact (eg. org.junit:junit:4.1.0)
+      repository (str | list): Maven repositories to fetch deps from.
+      hash (str): Hash for produced rule.
+      hashes (list): List of hashes for produced rule.
+      deps (list): Labels of dependencies, as usual.
+      visibility (list): Visibility label.
+      filename (str): Filename we attempt to download. Defaults to standard Maven name.
+      sources (bool): True to download source jars as well.
+      licences (list): Licences this package is subject to.
+      native (bool): Attempt to download a native jar (i.e. add "-linux-x86_64" etc to the URL).
+      artifact_type (str): Type of artifact to download (defaults to jar but could be e.g. aar).
+      test_only (bool): If True, this target can only be used by tests or other test_only rules.
+      binary (bool): If True, we attempt to fetch and download an executable binary. The output
+                     is marked as such. Implies native=True and sources=False.
+      classifier (str): Maven classifier, allows to distinguish artifacts that were built from
+                     the same POM but differ in their content.
+      classifier_sources_override (str): Allows to override the classifier used to fetch the
+                     source artifact.
+                     e.g. logback-core-1.1.3-tests.jar and logback-core-1.1.3-test-sources.jar
+    """
+    if hash and hashes:
+        raise ParseError('You can pass only one of hash or hashes to maven_jar')
+    if not artifact_type:
+        id, _, artifact_type = id.partition('@')
+        artifact_type = artifact_type or 'jar'
+    group, artifact, version, sources, licences = _parse_maven_artifact(id, sources, licences)
+    artifact_type = '.' + artifact_type
+    out_artifact_type = artifact_type
+    repository = repository or CONFIG.DEFAULT_MAVEN_REPO
+    repos = [repository] if isinstance(repository, str) else repository
+    if classifier:
+        classifier = '-' + classifier
+    if binary:
+        native = True
+        sources = False
+        artifact_type = '.exe'  # Maven always describes them this way, even for Linux :(
+        out_artifact_type = ''  # But we're not peasants so we won't do the same.
+    if native:
+        filename = filename or '%s-%s-%s${XOS}-${XARCH}%s' % (artifact, version, classifier, artifact_type)
+    else:
+        filename = filename or '%s-%s%s%s' % (artifact, version, classifier, artifact_type)
+
+    group = group.replace('.', '/')
+    urls = ['/'.join([repo, group, artifact, version, filename]) for repo in repos]
+    bin_rule  =  remote_file(
+        name = name,
+        _tag = 'bin',
+        url = urls,
+        out = name + out_artifact_type,
+        licences = licences,
+        exported_deps = deps,  # easiest to assume these are always exported.
+        test_only = test_only,
+        binary = binary,
+    )
+    provides = {'java': bin_rule}
+    srcs = [bin_rule]
+
+    if sources:
+        if classifier_sources_override:
+            classifier = '-' + classifier_sources_override
+        filename = '%s-%s%s-sources.jar' % (artifact, version, classifier)
+        urls = ['/'.join([repo, group, artifact, version, filename]) for repo in repos]
+        src_rule = remote_file(
+            name = name,
+            _tag = 'src',
+            url = urls,
+            out = name + '_src' + artifact_type,
+            licences = licences,
+            test_only = test_only,
+        )
+        srcs.append(src_rule)
+
+    # .aar's have an embedded classes.jar in them. Pull that out so other rules can use it.
+    if artifact_type == '.aar':
+        classes_rule = build_rule(
+            name = name,
+            tag = 'classes',
+            srcs = [bin_rule],
+            cmd = '$TOOL x $SRC classes.jar',
+            outs = [name + '.jar'],
+            visibility = visibility,
+            licences = licences,
+            requires = ['java'],
+            exported_deps = deps,
+            test_only=test_only,
+            tools = [CONFIG.JARCAT_TOOL],
+        )
+        provides = {
+            'java': classes_rule,
+            'android': bin_rule,
+        }
+        local_deps = [classes_rule]
+    else:
+        local_deps = None
+
+    return filegroup(
+        name = name,
+        srcs = srcs,
+        provides = provides,
+        exported_deps=deps,  # easiest to assume these are always exported.
+        deps = local_deps,  # ensure the classes_rule gets built correctly if there is one.
+        hashes = hashes if hashes else [hash] if hash else None,
+        labels = ['mvn:' + id],
+        visibility = visibility,
+        test_only=test_only,
+        output_is_complete = False,
+        binary = binary,
+    )
+
+
+def _parse_maven_artifact(id, sources=True, licences=None):
+    """Parses a Maven artifact in group:artifact:version format, with possibly some extras."""
+    parts = id.split(':')
+    if len(parts) == 5:
+        group, artifact, version = parts[:3]
+        sources = parts[3] == 'src'
+        licences = parts[4].split('|')
+    elif len(parts) == 4:
+        group, artifact, version = parts[:3]
+        sources = parts[3] == 'src'
+    elif len(parts) == 3:
+        group, artifact, version = parts
+    else:
+        raise ParseError('Unknown artifact format: %s (should be group:artifact:version)' % id)
+    return group, artifact, version, sources, licences
+
+
+def _jarcat_cmd(main_class=None, preamble=None, manifest=None):
+    """Returns the command we'd use to invoke jarcat, and the tool paths required."""
+    cmd = '$TOOLS_JARCAT z -i . -o ${OUTS} -j'
+    if main_class:
+        cmd += ' -m "%s"' % main_class
+    if preamble:
+        cmd += " -p '%s'" % preamble
+    if manifest:
+        cmd += ' --manifest "$SRCS"'
+    return cmd, {'jarcat': [CONFIG.JARCAT_TOOL]}
+
+
+if CONFIG.BAZEL_COMPATIBILITY:
+    def java_toolchain(javac=None, source_version=None, target_version=None):
+        """Mimics some effort at Bazel compatibility.
+
+        This doesn't really have the same semantics and ignores a bunch of arguments but it
+        isn't easy for us to behave the same way that they do.
+        """
+        package(
+            javac_tool = javac,
+            java_source_level = source_version,
+            java_target_level = target_version,
+        )
+
+    def java_import(name, jars, deps=None, exports=None, test_only=False, visibility=None):
+        """Mimics java_import, as far as I can tell we don't need to do much here."""
+        filegroup(
+            name = name,
+            srcs = jars,
+            deps = deps,
+            exported_deps = exports,
+            test_only = test_only,
+            visibility = visibility,
+        )

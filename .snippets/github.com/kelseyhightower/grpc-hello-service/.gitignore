@@ -1,8 +1,0 @@
-bin/
-*.pem
-*.csr
-auth.db
-
-auth-server/auth-admin
-auth-server/auth-server
-hello-server/hello-server

@@ -1,0 +1,196 @@
+|||template "vueheader" |||
+|||template "treenav" .|||
+<div id="form-newcase">
+		<div class="form-horizontal col-sm-8">
+			<fieldset class="col-sm-offset-1">
+				<legend>Create a New Case</legend>
+			</fieldset>
+			<fieldset class="col-sm-offset-3">
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="case_group">Group</label>
+					<div class="col-sm-4">
+						<input id="group" type="text" v-model="ncase.Group" class="form-control required" placeholder="L2">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="case_subgroup">Sub Group</label>
+					<div class="col-sm-4">
+						<input id="subgroup" type="text" v-model="ncase.SubGroup" class="form-control required" placeholder="Bridge">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="case_feature">Feature</label>
+					<div class="col-sm-4">
+						<input id="feature" type="text" v-model="ncase.Feature" class="form-control required" placeholder="VLAN">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="case_name">Name</label>
+					<div class="col-sm-4">
+						<input type="text" v-model="ncase.Name" class="form-control required" placeholder="VLAN Create">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="dut_count">DUT Count</label>
+					<div class="col-sm-4">
+						<input type="text" v-model="ncase.DUTCount" class="form-control required" placeholder="2">
+					</div>
+				</div>
+				<form id="topologyform" enctype="multipart/form-data" action="/uploadtopology" method="post"> 
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="case_topology">Topology</label>
+					<div class="col-sm-4">
+						<input type="file" name="topology" id="topology" class="form-control required" placeholder="Topology.jpg">
+						<input type="submit" class="hidden" id="uploadtopology" @click.prevent="realUpload()" value="upload" /> 
+					</div>
+				</div>
+				</form>
+			</fieldset>     
+			<fieldset class="col-sm-offset-3">
+				<legend></legend>
+				<div class="col-sm-2"></div>
+				<div class="col-sm-4">
+					<button class="btn btn-success btn-block" @click.prevent="submitForm">Submit</button>
+				</div>
+			</fieldset>
+		</div>
+</div>
+<script>
+	function　getCookie(name){
+		if (document.cookie.length>0)
+		{
+			start=document.cookie.indexOf(name + "=");
+			if (start!=-1)
+			{ 
+				start=start + name.length+1;
+				c_end=document.cookie.indexOf(";",start);
+				if (c_end==-1) c_end=document.cookie.length;
+				return unescape(document.cookie.substring(start,c_end));
+			} 
+		}
+		return "";
+	}
+
+	function InitializeInputTable(ncase) {
+		var e
+		if (getCookie("GROUPID") == getCookie("UNIQUE")) {
+			var groupinfo;
+			$.ajax({
+				type:"get",
+				url:"dumpgroup?id="+getCookie("UNIQUE"),
+				async:false,
+				success:function(data) {
+					groupinfo = data;
+				}
+			});
+			e =  JSON.parse(groupinfo);
+			$("#group").attr("disabled", true);
+			ncase.Group=e.Name;
+		} else if (getCookie("SGID") == getCookie("UNIQUE")) {
+			var subgroupinfo
+			$.ajax({
+				type:"get",
+				url:"dumpsubgroup?id="+getCookie("UNIQUE"),
+				async:false,
+				success:function(data) {
+					subgroupinfo = data;
+				}
+			});
+			e =  JSON.parse(subgroupinfo);
+			$("#subgroup").attr("disabled", true);
+			ncase.SubGroup=e.Name;
+			$("#group").attr("disabled", true);
+			ncase.Group=e.Group;
+		} else if (getCookie("FEATUREID") == getCookie("UNIQUE")) {
+			var featureinfo;
+			$.ajax({
+				type:"get",
+				url:"dumpfeature?id="+getCookie("UNIQUE"),
+				async:false,
+				success:function(data) {
+					featureinfo = data;
+				}
+			});
+			e =  JSON.parse(featureinfo);
+			$("#group").attr("disabled", true);
+			ncase.Group=e.Group;
+			$("#subgroup").attr("disabled", true);
+			ncase.SubGroup=e.SubGroup;
+			$("#feature").attr("disabled", true);
+			$("#feature").attr("value", e.Name);
+			ncase.Feature=e.Name;
+		}
+	}
+
+	function uploadTopology() {
+		$("#uploadtopology").click();
+	}
+
+	function realUpload() {
+		var reader = new FileReader();
+		var fs = document.querySelector("input[type=file]").files;
+		var file = fs[0];
+
+		reader.onload = function() {
+			var Content = this.result;
+			$.ajax({
+				type: "post",
+				url: "uploadtopology",
+				async: false,
+				data: {
+					name: file.name,
+					content: Content,
+				},
+				success: function(d) {
+					window.location="caseinfo?id="+getCookie("CASEID");
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					alert(XMLHttpRequest.responseText);
+				}
+			});
+
+		};
+		reader.readAsDataURL(file);
+		return true;
+	}
+</script>
+<script>
+	var newCase = new Vue({
+		el: '#form-newcase',
+		data: {
+			ncase: {
+				Group: "",
+				SubGroup: "",
+				Feature: "",
+				Name: "",
+				DUTCount: 0,
+				Topology:""
+			},
+			submitted:false
+		},
+		methods: {
+			submitForm: function(e) {
+				this.ncase.DUTCount = +this.ncase.DUTCount //Convert text value into number for server to decode
+				$.ajax({
+					type:"post",
+					url:"newcase",
+					async:false,
+					data: {newcase: JSON.stringify(this.ncase)},
+					success:function(data) {
+						uploadTopology();
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
+						alert(XMLHttpRequest.responseText);
+						window.location="newcase"
+					},
+				});
+				this.submitted = true;
+			},
+		},
+
+		mounted: function() {
+			InitializeInputTable(this.ncase);
+		}
+	});
+</script>
+|||template "vuefooter"|||

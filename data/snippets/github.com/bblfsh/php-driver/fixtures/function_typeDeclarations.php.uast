@@ -1,0 +1,168 @@
+Status:  ok
+Language:  php
+Errors: 
+UAST: 
+Module {
+.  Roles: Module
+.  Children: {
+.  .  0: Stmt_Function {
+.  .  .  Roles: Declaration,Function
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 7
+.  .  .  .  Line: 3
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 52
+.  .  .  .  Line: 3
+.  .  .  .  Col: 46
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  byRef: false
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Function.returnType {
+.  .  .  .  .  Roles: Declaration,Function,Return,Type
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: returnType
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Function.body {
+.  .  .  .  .  Roles: Body,Declaration,Function
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: stmts
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: Param {
+.  .  .  .  .  Roles: Argument
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 18
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 12
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 19
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 13
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  byRef: false
+.  .  .  .  .  .  internalRole: params
+.  .  .  .  .  .  variadic: false
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "b"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  3: Param {
+.  .  .  .  .  Roles: Argument
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 22
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 16
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 29
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 23
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  byRef: false
+.  .  .  .  .  .  internalRole: params
+.  .  .  .  .  .  type: array
+.  .  .  .  .  .  variadic: false
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "c"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  4: Param {
+.  .  .  .  .  Roles: Argument
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 32
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 26
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 42
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 36
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  byRef: false
+.  .  .  .  .  .  internalRole: params
+.  .  .  .  .  .  type: callable
+.  .  .  .  .  .  variadic: false
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "d"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  5: Param {
+.  .  .  .  .  Roles: Argument
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 45
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 39
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 48
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 42
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  byRef: false
+.  .  .  .  .  .  internalRole: params
+.  .  .  .  .  .  variadic: false
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "f"
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "E"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 45
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 39
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 45
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 39
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: type
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

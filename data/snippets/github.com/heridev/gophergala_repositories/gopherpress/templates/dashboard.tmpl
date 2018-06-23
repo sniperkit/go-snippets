@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{.Title}} - Dashboard</title>
+</head>
+<body>
+  <h1>{{.Title}} dashboard</h1>
+  Howdy, {{.User.HumanizedName}}
+	<ul>
+		<li><a data-name="home">Home</a></li>
+		<li>Posts</li>
+		<ul>
+			<li><a data-name="posts_all">All posts</a></li>
+			<li><a data-name="posts_new">Add new</a></li>
+			<li><a data-name="posts_categories">Categories</a></li>
+			<li><a data-name="posts_tags">Tags</a></li>
+		</ul>
+		<li><a>Home</a></li>
+		<li><a>Home</a></li>
+	</ul>
+
+  <div data-name="home" data-shown="shown">
+		This is the dashboard.
+  </div>
+
+  <div data-name="posts_all" style="display:none;">
+		<table>
+			<thead>
+				<tr align="left">
+					<th></th>
+					<th width="20%">Title</th>
+					<th width="20%">Author</th>
+					<th width="20%">Categories</th>
+					<th width="20%">Tags</th>
+					<th width="20%">Date</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+
+  <div data-name="posts_edit" style="display:none;">
+		<form id="posts_edit-form">
+			<input type="text" name="title" style="width:100%;" /><br />
+			<textarea name="content" id="edit" autocomplete="off" style="width:100%;height:200px;"></textarea><br />
+			<input type="submit" />
+			<input type="hidden" name="id" />
+		</form>
+	</div>
+
+	<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+
+	<script type="text/javascript">
+	[].forEach.call(document.querySelectorAll("ul li a[data-name]"), function(el) {
+		el.addEventListener("click", function() {
+			var name = this.getAttribute("data-name");
+
+			switch(name) {
+			case "posts_all":
+				pagePostsAll();
+				break;
+			case "posts_new":
+				pagePostNew();
+				break;
+			default:
+				displayPage("home");
+			}
+		});
+	});
+
+	function pagePostsAll() {
+		xhr("/posts/all.json", "GET", {}, function(data) {
+			displayPage("posts_all");
+			var posts = JSON.parse(data);
+			var table = "";
+			posts.forEach(function(post) {
+				table += "<tr><td rowspan='2'><input type='checkbox' /></td><td>" + post.Title + "</td><td>" + post.UserId + "</td><td>categories</td><td>tags</td><td>" + post.PostDate + "</td></tr><tr><td data-id='" + post.Id + "' colspan='5'><a data-action='edit'>Edit</a> - <a data-action='remove'>Remove</a></td></tr>";
+			});
+			var tb = document.querySelector("div[data-name='posts_all'] table tbody");
+			tb.innerHTML = table;
+			Array.prototype.forEach.call(tb.querySelectorAll("tr td a[data-action='edit']"), function(a) {
+				a.addEventListener("click", function() {
+					pageEditPost(a.parentNode.getAttribute("data-id"));
+				});
+			});
+		});
+	}
+
+	function pageEditPost(id) {
+		xhr("/posts/" + id + ".json", "GET", {}, function(data) {
+			displayPage("posts_edit");
+			var form = document.querySelector("div[data-name='posts_edit'] form");
+			var post = JSON.parse(data);
+			form.querySelector("input[name='title']").value = post.Title;
+			form.querySelector("textarea[name='content']").value = post.Content;
+			form.querySelector("input[name='id']").value = post.Id;
+			tinymce.get("edit").getBody().innerHTML = post.Content;
+		});
+	}
+
+	function pagePostNew() {
+		displayPage("posts_edit");
+		var form = document.querySelector("div[data-name='posts_edit'] form");
+		form.querySelector("input[name='title']").value = "";
+		form.querySelector("textarea[name='content']").value = "";
+		form.querySelector("input[name='id']").value = "0"; // Id 0 for create new post
+		tinymce.get("edit").getBody().innerHTML = "";
+	}
+
+	function displayPage(name) {
+		var old = document.querySelector("div[data-shown]");
+		old.style.display = "none";
+		old.removeAttribute("data-shown");
+		var nw = document.querySelector("div[data-name='" + name + "']")
+		nw.style.display = "block";
+		nw.setAttribute("data-shown", "shown");
+	}
+
+	function xhr(url, type, vars, callback) {
+		var request = new XMLHttpRequest();
+		request.onreadystatechange = function() {
+			if (request.readyState == 4 && request.status == 200){
+			    callback(request.responseText);
+			}
+		};
+		request.open(type, url);
+		request.send(vars);
+	}
+
+	document.querySelector("#posts_edit-form").addEventListener("submit", function(e) {
+		e.preventDefault();
+		console.log(this.querySelector("input[name='id']").value);
+		var fData = new FormData();
+		fData.append("title", this.querySelector("input[name='title']").value);
+		fData.append("content", tinymce.get("edit").getBody().innerHTML/*this.querySelector("textarea").value*/);
+		fData.append("id", this.querySelector("input[name='id']").value)
+		xhr("/dashboard/post", "PUT", fData, function(data) {
+			console.log("Send", data, fData);
+			displayPage("home");
+		});
+	});
+
+  tinymce.init({
+    selector: "textarea"
+	});
+ 	</script>
+</body>
+</html>

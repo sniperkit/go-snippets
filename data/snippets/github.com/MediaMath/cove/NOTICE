@@ -1,0 +1,7 @@
+This is a small set of wrapper libraries and cli's that wrap around the golang go command.
+
+3rd Party Depedencies:
+
+golang
+BSD License
+https://golang.org/LICENSE

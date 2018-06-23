@@ -1,3 +1,0 @@
-# gocode
-
-Golang Codebase

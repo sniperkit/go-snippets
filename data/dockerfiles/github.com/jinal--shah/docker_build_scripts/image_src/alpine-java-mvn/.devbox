@@ -1,0 +1,5 @@
+# vim: et sr si ts=4 sw=4:
+# ... source this file
+PROJECT_NAME=alpine-java-mvn
+PROJECT_DIR=$HOME/core-01-projects/builds/docker/images/$PROJECT_NAME
+alias $PROJECT_NAME="devbox $PROJECT_NAME $PROJECT_DIR dev_basic:0.0.3"

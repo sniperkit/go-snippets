@@ -1,0 +1,13 @@
+{{ docker.from("base-app", "ubuntu-16.04") }}
+
+{{ environment.web() }}
+
+{{ docker.copy('conf/', '/opt/docker/') }}
+
+RUN set -x \
+    {{ hhvm.ubuntu16() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}
+
+{{ docker.expose('9000') }}
+

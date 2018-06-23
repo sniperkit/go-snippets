@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Login to a chat server</title>
+		<style>
+			body {
+				background-color: #303F9F;
+				color: #FFFFFF;
+			}
+			.container {
+				max-width: 80%;
+				margin: 0 auto;
+				text-align: center;
+			}
+			h1 {
+				font-size: 45px;
+				margin: 40px 0 0 0;
+			}
+			h1 span.chepp {
+				font-style: italic;
+			}
+			h3 {
+				width: 200px;
+				text-align: left;
+				margin: 5px;
+			}
+			form {
+				width: 210px;
+				margin: 0 auto;
+			}
+      form label {
+        margin-left: 5px;
+      }
+			input {
+				padding: 5px;
+				margin: 5px 0;
+				width: 200px;
+				border: none;
+				border-radius: 1px 1px 1px 1px;
+				-moz-border-radius: 1px 1px 1px 1px;
+				-webkit-border-radius: 1px 1px 1px 1px;
+				border: 0px solid #000000;
+      }
+			#ssl {
+				width: auto;
+			}
+			#connect {
+				background-color: #FF9800;
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1><span class="chepp">Chepp</span><span class="irc">IRC</span></h1>
+			<p id="status-box">&nbsp;</p>
+			<form id="connect-form">
+				<input id="nick" name="nick" label="nick" placeholder="Nickname"><br/>
+				<input id="channel" name="channel" label="channel" placeholder="Channel"><br/>
+				<h3>Server and network</h3>
+				<input id="server" name="server" label="server" placeholder="Server"><br/>
+				<input id="port" name="port" label="port" placeholder="Port"><br/>
+				<input id="ssl" type="checkbox" label="SSL" name="ssl"><label for="ssl">SSL</label><br/>
+				<input id="connect" type="button" value="Connect" name="connect">
+			</form>
+		</div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript">
+			$("#connect").click(function() {
+				$("#status-box").html("Connecting...")
+				$.ajax({
+					type: "POST",
+					url: "/connect",
+					data: $("#connect-form").serialize(),
+					success: function(data)
+						{
+							var response = jQuery.parseJSON(data);
+							$("#status-box").html("Connected: " + response.success + " Message: " + response.message + " raw: " + data)
+							//alert("debug")
+							window.location.replace("/chat?session=" + response.message)
+						},
+					//dataType: dataType
+				});
+			});
+		</script>
+	</body>
+</html>
+

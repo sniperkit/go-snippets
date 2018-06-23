@@ -1,0 +1,72 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 59,
+                    "endLine": 5,
+                    "endTokenPos": 24,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "extends": [
+                    {
+                        "attributes": {
+                            "endFilePos": 27,
+                            "endLine": 3,
+                            "endTokenPos": 8,
+                            "startFilePos": 27,
+                            "startLine": 3,
+                            "startTokenPos": 8
+                        },
+                        "nodeType": "Name",
+                        "parts": [
+                            "C"
+                        ]
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 30,
+                            "endLine": 3,
+                            "endTokenPos": 11,
+                            "startFilePos": 30,
+                            "startLine": 3,
+                            "startTokenPos": 11
+                        },
+                        "nodeType": "Name",
+                        "parts": [
+                            "D"
+                        ]
+                    }
+                ],
+                "name": "A",
+                "nodeType": "Stmt_Interface",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 57,
+                            "endLine": 4,
+                            "endTokenPos": 22,
+                            "startFilePos": 38,
+                            "startLine": 4,
+                            "startTokenPos": 15
+                        },
+                        "byRef": false,
+                        "flags": 1,
+                        "name": "a",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": null,
+                        "type": 1
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

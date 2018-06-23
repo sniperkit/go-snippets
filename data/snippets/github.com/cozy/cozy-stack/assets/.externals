@@ -1,0 +1,32 @@
+# This files contains all the external assets that are required
+# for a release of cozy-stack
+#
+# Assets should be declared using the following format, with one or more
+# newlines between each asset declaration. Lines starting with # or empty
+# lines are ignored
+#
+#  name     ./text/myasset.txt
+#  url      http://foobar.com/assetpath.txt
+#  sha256   ad414b6b70f583168d2de14c0b7479e1a4ddda3427ea17064ace9e5fbf1b42be
+#
+
+name    ./js/cozy-client.min.js
+url     https://raw.githubusercontent.com/cozy/cozy-client-js/v0.9.0/dist/cozy-client.min.js
+sha256  2777e25cc183b6e06ff3825856abb865fc3e2041f913fb323c66ac9016f93e2a
+
+name    ./js/cozy-client.min.js.map
+url     https://raw.githubusercontent.com/cozy/cozy-client-js/v0.9.0/dist/cozy-client.min.js.map
+sha256  5f1d28c9d74d31a41ed55093db54907b3b42a2537a96c54b55479c9a3f792a62
+
+name    ./js/cozy-bar.min.js
+url     https://unpkg.com/cozy-bar@5.0.6/dist/cozy-bar.min.js
+sha256  ec62e523068fa66ab8dc8b5f8a379d1c444941305f26c058544059e802b64b6a
+
+name    ./css/cozy-bar.min.css
+url     https://unpkg.com/cozy-bar@5.0.6/dist/cozy-bar.min.css
+sha256  5ce2694fc838fcb200f998903d80acccca4f1c382a08d7052d42e4a81d98267b
+
+
+name    ./js/piwik.js
+url     https://piwik.cozycloud.cc/piwik.js
+sha256  af256878a3ed52614189b6e2031e5c9cfd5aa57491a48b13905836fb8217069e

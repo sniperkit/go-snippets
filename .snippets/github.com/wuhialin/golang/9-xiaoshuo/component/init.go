@@ -1,5 +1,0 @@
-package component
-
-func init() {
-	//
-}

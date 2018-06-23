@@ -1,9 +1,0 @@
-shadowsocks:
-  image: stawidy/shadowsocks-libev
-  ports:
-    - "8388:8388/tcp"
-    - "8388:8388/udp"
-  environment:
-    - METHOD=aes-128-cfb
-    - PASSWORD=9MLSpPmNt
-  restart: always

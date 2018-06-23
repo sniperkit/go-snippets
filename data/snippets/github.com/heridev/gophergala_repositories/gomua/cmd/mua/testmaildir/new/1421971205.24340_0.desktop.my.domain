@@ -1,0 +1,87 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Thu, 22 Jan 2015 19:00:05 -0500
+Received: (qmail 19537 invoked from network); 22 Jan 2015 15:59:37 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 22 Jan 2015 15:59:37 -0800
+X-ASG-Debug-ID: 1421971176-017fd408af20eb5c0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id eFE6y8dBGEgdjWih for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 15:59:36 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146361=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0N0DGZc022455
+	for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 17:13:19 -0700 (MST)
+Received: from mail-we0-f178.google.com (mail-we0-f178.google.com [74.125.82.178])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0N0D3Bb014482 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 17:13:04 -0700 (MST)
+Received: by mail-we0-f178.google.com with SMTP id k48so4718593wev.9
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 15:59:13 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=1e100.net; s=20130820; h=x-gm-message-state:mime-version:sender:in-reply-to:references:from :date:message-id:subject:to:cc:content-type; bh=HDP89qvw51xH5baCvhsIVMu7+sy7reNbiwQuIFuShHM=; b=A2xKqQP+exMCgcH40YNTv1/+++l0bO9W71Ozj2Zgvn1n5hUACns1bIZszwG5/QJEoa aYn/9laZEr/vmKc54+6/4pTR0SFXYWkMBiVVWz1Ul18s3O0lGsGXDcwHRVFgoP2RUyPi 5OUe8liKwLoD8kd0wkQGHKpD88+20cpVf6g4rhOQL/5ucM3mrJv/F1v3zrwjINk8THwL F09tR/yJ5D2hFivPornP5PwlNQ/wZRJOo5Yl9Kdy8CAkhMFHMib7K8k9/Wey22GWTR6i n15MuGlY4FqlBTKvyVj2OzaRTYfL7aYE2EHVxOUDwB4aAfh95n9ISRCIcfJ/1FeMhOF7 t8BQ==
+X-Gm-Message-State: ALoCoQnz5ZrCAK0SCPYfDEGgy9zrBc17qh0IFjhrv5tq80rTRoSJm2JEXmDmu0hFY6pelQQzP0KF
+X-Received: by 10.194.203.234 with SMTP id kt10mr8442192wjc.88.1421971153473; Thu, 22 Jan 2015 15:59:13 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.216.60.67 with HTTP; Thu, 22 Jan 2015 15:58:53 -0800 (PST)
+In-Reply-To: <CAOh3dDbqOMLFU32nRmToOvyHxO9p43bHSLxtovcfpcZgK7fUsA@mail.gmail.com>
+References: <CAOh3dDbqOMLFU32nRmToOvyHxO9p43bHSLxtovcfpcZgK7fUsA@mail.gmail.com>
+From: Vladislav Manchev <v@bin.bz>
+Date: Fri, 23 Jan 2015 01:58:53 +0200
+X-Google-Sender-Auth: 8oFqAot1DqHhTCWJQBTWkg91eAI
+Message-ID: <CAL=TBtzJBRqPs7=nzDLvLtud9nMTWQWiccCda+Wkefa-78gWWA@mail.gmail.com>
+Subject: Re: Using WiFi hotspots with OpenBSD?
+To: Alan Corey <alan01346@gmail.com>
+X-ASG-Orig-Subj: Re: Using WiFi hotspots with OpenBSD?
+Cc: misc@openbsd.org
+Content-Type: text/plain; charset="us-ascii"
+X-Converted-To-Plain-Text: from multipart/alternative by demime 1.01d
+X-Converted-To-Plain-Text: Alternative section used was text/plain
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421971176
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.50
+X-Barracuda-Spam-Status: No, SCORE=0.50 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_SA620b, MAILTO_TO_SPAM_ADDR
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14543
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 MAILTO_TO_SPAM_ADDR    URI: Includes a link to a likely spammer email
+	0.50 BSF_SC0_SA620b         Custom Rule SA620b
+
+Works fine here using something like:
+
+sudo ifconfig iwn0 nwid AP_NAME wpakey WPA_KEY
+
+WPA/WPA2 both work fine for me.
+
+Don't think there's any difference between a hotspot and an AP.
+
+If your nwid has spaces you should put it in quotes though.
+
+
+Best,
+Vladislav
+
+On Fri, Jan 23, 2015 at 1:41 AM, Alan Corey <alan01346@gmail.com> wrote:
+
+> OK, I'm new to the concept of hotspots and why they're different from
+> regular APs.  I just got a phone that I can set to be a hotspot to
+> relay the phone's data stream over WiFi.  It works fine when I'm
+> booted into Windows, works like any other AP.  Under OpenBSD no luck
+> so far.  I can set the nwid, the bssid, the gateway (copied from
+> Windows) but when I run dhclient nothing.  It's like there's no DHCP
+> server out there, dhclient times out looking.  The phone is an Android
+> (4.4.2) so if I knew what I was doing I could look there.  It is
+> rooted and I could poke around in it.
+>
+> --
+> Credit is the root of all evil.  - AB1JX
+

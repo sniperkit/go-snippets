@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" ng-app="Groupify">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Groupify</title>
+  <link rel="stylesheet" href="/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/vendor/spotify.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body ng-controller="MainCtrl">
+
+<div class="container-fluid">
+
+  <div class="now-playing row" ng-show="current_track.name">
+    <div class="col-md-10 col-md-offset-1">
+
+        <div class="container">
+          <img class="logo" src="/images/groupify.go-logo.png"/>
+          <div class="rightside">
+
+            <img ng-src="{{ current_track.album_art }}" class="cover"/>
+            <div class="meta-name">
+              <div class="is-playing">
+                <img class="avatar" ng-src="{{ current_track.queued_by_avatar }}" /> is subjecting you to:
+              </div>
+              <div class="track_name">Song: <strong>{{ current_track.name }}</strong></div>
+              <div class="artist_name">Artist: <strong>{{ current_track.artist }}</strong></div>
+            </div>
+          </div>
+        </div>
+          <!--
+          <small><b>[{{ current_track.time_remaining | secondsToMinutes }}]</b></small>
+          -->
+
+    </div>
+  </div>
+
+  <div class="playback-controls row">
+    <div class="col-md-10 col-md-offset-1">
+      <p class="volume pull-left secondary-control">
+        <span class="glyphicon glyphicon-volume-off"></span>
+        <span class="glyphicon glyphicon-volume-down"></span>
+        <span class="glyphicon glyphicon-volume-up"></span>
+      </p>
+
+      <p class="text-center control">
+        <span class="glyphicon glyphicon-step-backward"></span>
+        <span class="glyphicon glyphicon-play"></span>
+        <span ng-click="next()" class="glyphicon glyphicon-step-forward"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="queue row">
+    <div class="col-md-10 col-md-offset-1">
+    <h2>Coming next:</h2>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <th>#</th>
+            <th>Time to Play</th>
+            <th><!-- album art --></th>
+            <th>Track</th>
+            <th class="artist_column">Artist</th>
+            <th>Album</th>
+            <th>Queued by</th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="track in queue">
+              <td>{{ $index + 1 }}</td>
+              <td>{{ track.time_to_play | secondsToTime }}</td>
+              <td class="artwork"><img ng-src="{{ track.album_art }}" /></td>
+              <td>{{ track.name }}</td>
+              <td>{{ track.artist }}</td>
+              <td>{{ track.album }}</td>
+              <td>
+                <img class="avatar" ng-src="{{ track.queued_by_avatar }}" />
+                {{ track.user }}</td>
+              <!--td ng-click="dequeue(track)">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              </td-->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-box row">
+    <div class="col-md-10 col-md-offset-1">
+    <h2>Queue a new song:</h2>
+    <p>Type a song name and click "Search".</p>
+    <form id="search-form" ng-submit="search()">
+      <div class="input-group">
+        <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+        <input type="text" id="query" ng-model="query" autofocus class="form-control" placeholder="Type a song name"/>
+      </div>
+      <input type="submit" id="search" class="btn btn-primary" value="Search" />
+    </form>
+
+    <div id="results">
+      <div ng-repeat="track in trackResults">
+        <div ng-click="enqueue(track)" class="search-result">
+          <img ng-src="{{ track.album.images[0].url }}" class="cover"/>
+          <span><b>{{ track.artists[0].name }}</b> - {{ track.name }}</span>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+<script src="/javascript/vendor/spotify-web-api.js"></script>
+<script src="/javascript/main.js"></script>
+</body>
+</html>

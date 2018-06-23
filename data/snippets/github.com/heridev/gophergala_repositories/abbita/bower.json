@@ -1,0 +1,26 @@
+{
+  "name": "abbita",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gophergala/abbita",
+  "authors": [
+    "James Muranga <jmured@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootswatch": "~3.3.2",
+    "angular": "~1.3.10",
+    "angular-file-upload": "~1.1.5",
+    "angular-ui-router": "~0.2.13"
+  },
+  "resolutions": {
+    "angular": "~1.3.10"
+  }
+}

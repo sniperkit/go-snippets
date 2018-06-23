@@ -1,0 +1,62 @@
+{{define "content"}}
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li class="active">{{.job.Title}}</li>
+</ol>
+<div itemscope itemtype="http://schema.org/JobPosting">
+	<h2><span itemprop="title">{{.job.Title}}</span> at <a href="{{.job.CompanyURL}}"  rel="nofollow">{{.job.CompanyName}}</a></h2>
+	<hr />
+	<h3>Description</h3>
+	<p itemprop="description">
+		{{.job.Description}}
+	</p>
+
+	<h3>Skills</h3>
+		<ul itemprop="skills">
+		{{range $skill := .job.Skills}}
+			<li>{{$skill}}</li>
+		{{end}}
+		</ul>
+
+	<h3>Details</h3>
+		<dl class="dl-horizontal">
+			<dt>Position</dt>
+				<dd>{{.job.Position}}</dd>
+			<dt>Type</dt>
+				<dd itemprop="employmentType">{{.job.Type}}</dd>
+			<dt>Location</dt>
+				<dd itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">{{.job.Location}}</dd>
+			<dt>Salary</dt>
+				<dd>from {{.job.SalaryRangeFrom}} {{.job.SalaryRangeCurrency}} to <span itemprop="baseSalary">{{.job.SalaryRangeTo}}</span> <span itemprop="salaryCurrency">{{.job.SalaryRangeCurrency}}</span></dd>
+			<dt>Equity</dt>
+				<dd>from {{.job.EquityFrom}} to {{.job.EquityTo}}</dd>
+			<dt>Posted</dt>
+				<dd itemprop="datePosted">{{.job.Posted}}</dd>
+			<dt>Details</dt>
+				<dd><a href="{{.job.URL}}"  rel="nofollow">{{.job.URL}}</a></dd>
+		</dl>
+
+	<h3>Perks</h3>
+		<ul itemprop="incentives">
+		{{range $perk := .job.Perks}}
+			<li>{{$perk}}</li>
+		{{end}}
+		</ul>
+
+	<h3>Company</h3>
+		<dl class="dl-horizontal">
+			<dt>Name</dt>
+				<dd>{{.job.CompanyName}}</dd>
+			<dt>Remote Friendly</dt>
+				<dd>{{if .job.CompanyRemoteFriendly}}yes{{else}}no{{end}}</dd>
+			<dt>Market</dt>
+				<dd itemprop="industry">{{.job.CompanyMarket}}</dd>
+			<dt>Size</dt>
+				<dd>{{.job.CompanySize}}</dd>
+		</dl>
+
+	<h3>Apply</h3>
+	Apply here: <a href="{{.job.Apply}}" rel="nofollow">{{.job.Apply}}</a>
+	<hr />
+</div>
+{{end}}

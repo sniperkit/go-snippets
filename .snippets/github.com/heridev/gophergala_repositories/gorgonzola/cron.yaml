@@ -1,4 +1,0 @@
-cron:
-- description: Job links update
-  url: /tasks/update
-  schedule: every 12 hours

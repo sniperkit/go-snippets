@@ -1,0 +1,42 @@
+global:
+  scrape_interval:     5s
+  evaluation_interval: 5s
+
+scrape_configs:
+- job_name: 'linkerd'
+  metrics_path: /admin/metrics/prometheus
+  static_configs:
+  - targets:
+    - 'linkerd:9990'
+  relabel_configs:
+  - source_labels: [__address__]
+    action: replace
+    target_label: instance
+    regex: (.+)(?::\d+)
+    replacement: $1
+  metric_relabel_configs:
+  - source_labels: [client]
+    action:        replace
+    target_label:  client
+    regex:         .*\/([^/]+)
+    replacement:   $1
+  - source_labels: [service]
+    action:        replace
+    target_label:  service
+    regex:         .*\/([^/]+)
+    replacement:   $1
+
+- job_name: 'linkerd-tcp'
+  static_configs:
+  - targets:
+    - 'linkerd-tcp:9992'
+
+- job_name: 'redis1'
+  static_configs:
+  - targets:
+    - 'redisexporter1:9121'
+
+- job_name: 'redis2'
+  static_configs:
+  - targets:
+    - 'redisexporter2:9121'

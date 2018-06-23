@@ -1,0 +1,365 @@
+---
+# This is important for having Jekyll to process this file.
+---
+
+/* http://fontawesome.io/get-started/
+   See _config.yml from whence the Ruby GEM is declared.
+
+@import "font-awesome";
+*/
+
+/*
+   See /_sass/_main.scss  (everything happens there).
+ */
+@import "main";
+
+body {
+  // margin-bottom: 2em;
+  // background-color: #202020;
+}
+
+.wrap {
+  background-color: #202020;
+}
+
+.masthead-title small {
+  color: #b0b0b0;
+}
+
+.container.content {
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  background-color: #303030;
+  border-radius: 7px;
+}
+
+// fabic/2017: Wide page container (Laynon/Poole didn't provide one).
+.container-wide {
+  padding-left:  4.5rem;
+  padding-right: 1rem;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+// 2017-12-22 : Wide-page for displaying big images
+//              (API doc. for Clang notes).
+.container.content-wide {
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  background-color: #303030;
+  border-radius: 7px;
+}
+
+#sidebar {
+  border-right: 1px solid white;
+}
+
+/* Sidebar: align my contact info. rendered as images. */
+.sidebar-social-links img.my-email-address,
+.sidebar-social-links img.my-telephone-number {
+  margin: 0;
+  display: inline;
+  // position: absolute;
+  right: 0;
+}
+
+footer#site-footer {
+  position: relative;
+  font-size: .9em;
+  min-height: 10em;
+  background-color: #202020;
+  color: #ccc;
+  padding: .25em .25em 1em .25em;
+}
+
+#site-footer-copyright {
+  font-size: .8em;
+}
+
+.warm-thanks-bbox {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  width: fit-content;
+  border: 1px dashed #7a7a7a;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: small;
+  background-color: #282828;
+}
+
+.frontpage-disclaimer {
+  font-size: .9em;
+  color: #111;
+  background-color: #fdfae0;
+  // border: 1px solid #eee;
+  padding: .5em 1em;
+  margin: 0 0 .75em 0;
+  position: relative;
+}
+
+.available-for-hire-notice {
+  color: black;
+  background-color: #deebff;
+  border: 1px solid #cddaee;
+  border-radius: 5px;
+  padding: .5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* https://stackoverflow.com/a/7324826 */
+.available-for-hire-notice:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    border-top:  20px solid #303030;
+    border-left: 20px solid #bcc9dd;
+    width: 0;
+}
+
+
+.page, .post {
+  margin: 0;
+  position: relative;
+}
+
+.page.dark, .post.dark {
+  margin: 0;
+  background: inherit;
+  color: #e0e0e0;
+  border: 0;
+}
+
+.page.dark .page-title, .post.dark .post-title {
+  color: #e0e0e0;
+}
+
+// DEBUG: pages list at top of index.html
+section.pages {
+  background-color: white;
+  font-size: .75em;
+}
+section.pages ul {
+  margin: 0;
+  padding: .5em;
+}
+
+.posts article.note,
+.posts article.post-link {
+  position: relative;
+  font-size: .85em;
+  background-color: white;
+  // border: 1px solid #eee;
+  padding: .5em 0 .5em 1em;
+  margin: .75em 0;
+}
+
+.post-link .post-tagline {
+  font-size: .8em;
+}
+
+.page-tagline {
+  font-size: .8em;
+}
+
+/* https://stackoverflow.com/a/7324826 */
+.posts article.note:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    border-top:  20px solid #303030;
+    border-left: 20px solid #505050;
+    width: 0;
+}
+
+.posts article.note.dark {
+  background-color: #404040;
+  color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.posts .note .note-meta {
+  position: absolute;
+  right:  0px;
+  bottom: 0px;
+  border: 1px solid #eee;
+  border-top-left-radius: 5px;
+  padding: 0 .33em;
+  background-color: #fafafa;
+}
+
+.posts article.note.dark .note-meta {
+  background-color: #303030;
+  border: 0;
+}
+
+.posts article.note.dark .note-meta a {
+  color: #56bbf2;
+}
+
+.page, .post, .related-posts, .posts.old-posts {
+  background-color: white;
+  border: 1px solid #eee;
+  padding: .5em 1em;
+}
+
+a.widget.previous-post {
+  position: absolute;
+  z-index: 10;
+  left: -30px;
+  bottom: .25em;
+  width: 30px;
+  height: 60px;
+  border-top-left-radius:    8px;
+  border-bottom-left-radius: 8px;
+  background-color: white;
+  text-align: center;
+  line-height: 60px;
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+  /*color: #56bbf2;*/
+}
+
+a.widget.next-post {
+  position: absolute;
+  z-index: 10;
+  right: -30px;
+  bottom: .25em;
+  width: 30px;
+  height: 60px;
+  border-top-right-radius:    8px;
+  border-bottom-right-radius: 8px;
+  background-color: white;
+  text-align: center;
+  line-height: 60px;
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+  /*color: #56bbf2;*/
+}
+
+.page .widget.previous-post a {
+  content: "X";
+}
+
+/* UTILITY */
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fs-small   { font-size: .75em; }
+.fs-smaller { font-size: .66em; }
+.fs-x-small { font-size: .33em; }
+.pre { white-space: pre; }
+.pre-wrap { white-space: pre-wrap; }
+
+ul.no-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+
+/*
+    Embeded videos
+
+    FIXME: incomplete.
+ */
+
+/* iPhone 5/5S */
+@media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 568px)
+{
+    div.video-embed > iframe {
+      width: 230px;
+      height: 140px;
+    }
+
+    @media (orientation : landscape) {
+      div.video-embed > iframe {
+        width: 356px;
+        height: 204px;
+      }
+    }
+}
+
+/* iPhone 6 */
+@media only screen
+  and (min-device-width : 375px)
+  and (max-device-width : 667px)
+{
+    div.video-embed > iframe {
+      width: 290px;
+      height: 162px;
+    }
+
+    @media (orientation : landscape) {
+      div.video-embed > iframe {
+        width: 500px;
+        height: 282px;
+      }
+    }
+}
+
+/* Youtube-TV player thing */
+#youtube-tv-wrapper > h3:first-child {
+  background-color: #505050;
+  color: #fafafa;
+  text-align: center;
+}
+
+#youtube-tv-wrapper > h3:first-child a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#youtube-tv-cntr {
+  height: 283px; /* Must set height or nothing will appear. */
+  position: relative;
+}
+
+#youtube-tv-load-button {
+  position: absolute;
+  display: block;
+  top: 42%; /* fixme: not clean indeed (approx. centering) */;
+  left: 48%;
+  background-color: #404040;
+  padding: .125em .25em;
+  border: 1px solid #555;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+#diigo-tags-wrapper {
+  background-color: white;
+  border: 1px solid #eee;
+  padding: .5em 1em;
+  margin-top: 1.5em;
+}
+
+#diigo-tags-wrapper .diigo-banner {
+  background-color: #f0faff;
+  padding: .25em;
+}
+
+/* See `_includes/disqus.html` for the related JS code. */
+#disqus-load-button {
+  display: block;
+  background-color: #f0f0f0;
+  font-size: 1.2em;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1em 0;
+  margin: 1em 0;
+}
+
+/*
+   FABIC « phi » customizations.
+ */
+table.phi td.separator {
+  padding: 0;
+  height: .25em;
+  background-color: #999;
+}

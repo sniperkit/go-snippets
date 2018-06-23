@@ -1,0 +1,59 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 7,
+                    "endLine": 2,
+                    "endTokenPos": 1,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "name": "a",
+                "nodeType": "Expr_Variable"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 14,
+                    "endLine": 5,
+                    "endTokenPos": 5,
+                    "hasLeadingNewline": true,
+                    "startFilePos": 13,
+                    "startLine": 4,
+                    "startTokenPos": 5
+                },
+                "nodeType": "Stmt_InlineHTML",
+                "value": "B\n"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 22,
+                    "endLine": 6,
+                    "endTokenPos": 7,
+                    "startFilePos": 21,
+                    "startLine": 6,
+                    "startTokenPos": 7
+                },
+                "name": "c",
+                "nodeType": "Expr_Variable"
+            },
+            {
+                "attributes": {
+                    "endFilePos": 35,
+                    "endLine": 9,
+                    "endTokenPos": 12,
+                    "startFilePos": 34,
+                    "startLine": 9,
+                    "startTokenPos": 12
+                },
+                "name": "d",
+                "nodeType": "Expr_Variable"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

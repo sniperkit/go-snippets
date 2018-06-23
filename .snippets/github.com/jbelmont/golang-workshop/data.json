@@ -1,9 +1,0 @@
-{
-    "results": {
-        "names": ["John", "Joan", "Jacob", "JingleHeimer"],
-        "states": {
-            "count": 50,
-            "hottest": ["California", "Florida", "Nevada", "Texas", "Alabama", "New Mexico"]
-        }
-    }
-}

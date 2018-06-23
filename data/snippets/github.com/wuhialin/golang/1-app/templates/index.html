@@ -1,0 +1,38 @@
+<table class="table table-bordered table-hover table-condensed table-responsive">
+    <thead>
+    <tr>
+        <th class="text-center">小区名称</th>
+        <th class="text-center">小区域名</th>
+        <th class="text-center">地区</th>
+        <th class="text-center">组织架构</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{ range .list }}
+    <tr>
+        <td class="text-center">{{.name}}</td>
+        <td class="text-center">{{.domain}}</td>
+        <td class="text-center">{{.branch_name}}</td>
+        <td class="text-center">{{.region_name}}</td>
+    </tr>
+    {{ end }}
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        {{ range $i, $p := .pages}}
+        <li><a href="?page={{ $p }}">{{ $p }}</a></li>
+        {{ end }}
+        <li>
+            <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

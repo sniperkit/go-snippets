@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# RUN !
-supervisord -c /etc/supervisor/supervisord.conf

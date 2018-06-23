@@ -1,0 +1,35 @@
+to query for tweets:
+
+client opens tcp port 12315, sends:
+
+OT v1\r\n
+<name>\r\n
+<from>\r\n
+<to>\r\n
+
+\r\n, aka CRLF, is 0x0D0A
+name is plain ascii name, printable chars (0x20-0x7E), max 32 chars
+from is unix epoch time
+to is unix epoch time
+
+unix epoch time is a sequence of ASCII digits (0x30-0x39), nothing else
+max 11 digits
+
+sever returns:
+
+<timestamp>\r\n
+<tweet text>\r\n
+
+from 0-n times
+
+close connection
+
+tweets may never have \r\n in them
+may have:
+  printable ASCII 0x20-0x7E
+  LF 0x0A (\n)
+  TAB 0x09
+max 140 chars
+
+tweets shall be all tweets from user "name" between time "from"
+(inclusive) to time "to" (exclusive), for which the server is storing

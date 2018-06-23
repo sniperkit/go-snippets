@@ -1,0 +1,4 @@
+  729  docker run -d --rm -P --name pg_test eg_postgresql
+  730  docker run --rm -t -i --link pg_test:pg eg_postgresql bash
+  736  docker run --rm --volumes-from pg_test -t -i busybox sh
+       ls /etc/postgresql

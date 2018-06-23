@@ -1,0 +1,321 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+
+def e(s)
+  s.sub(/"/, '\\"')
+end
+
+class Food
+  attr_accessor :id, :nutrient_qtys
+
+  def initialize(l)
+    @id = l[0].to_i
+    @food_group_id = l[1].to_i
+    @description = e l[2]
+    @brief_description = e l[3]
+    @common_name = e l[4]
+    @manufacturer_name = e l[5]
+    @refuse_description = e l[7]
+    @refuse = l[8].to_i
+    @scientific_name = e l[9]
+    @nitrogen_factor = l[10].to_f
+    @protein_factor = l[11].to_f
+    @fat_factor = l[12].to_f
+    @carbohydrate_factor = l[13].to_f
+    @nutrient_qtys = []
+  end
+
+  def to_s
+    %|{#@id, "#@description", "#@brief_description", "#@common_name", | +
+      %|"#@manufacturer_name", "#@refuse_description", #@refuse, | +
+      %|"#@scientific_name", #@nitrogen_factor, #@protein_factor, | +
+      %|#@fat_factor, #@carbohydrate_factor, | +
+      %|[]NutrientQty{}}|
+      #%|[]NutrientQty{#{@nutrient_qtys.join(', ')}}}|
+  end
+end
+
+class Nutrient
+  attr_accessor :id, :sort_order
+
+  def initialize(l)
+    @id = l[0].to_i
+    @units = e l[1]
+    @tag_name = e l[2]
+    @description = e l[3]
+    @precision = l[4].to_i
+    @sort_order = l[5].to_i
+  end
+
+  def to_s
+    %|{#@id, "#@units", "#@description"}|
+  end
+end
+
+food_db = []
+food_key_map = {}
+CSV::read('data/nuttxt/FOOD_DES.txt', encoding: 'windows-1251:utf-8', col_sep: '^', quote_char: '~').each do |l|
+  food = Food.new(l)
+  food_key_map[food.id] = food_db.size
+  food.id = food_db.size
+  food_db << food
+end
+
+nutrient_db = []
+CSV::read('data/nuttxt/NUTR_DEF.txt', encoding: 'windows-1251:utf-8', col_sep: '^', quote_char: '~').each do |l|
+  nutrient = Nutrient.new(l)
+  nutrient_db << nutrient
+end
+nutrient_db.sort_by! {|n| n.sort_order}
+$nutrient_key_map = {}
+nutrient_db.each_with_index do |n, i|
+  $nutrient_key_map[n.id] = i
+  n.id = i
+end
+
+class NutrientQty
+  attr_accessor :nutrient_id, :quantity
+  def initialize(l)
+    @nutrient_id = $nutrient_key_map[l[1].to_i]
+    @quantity = l[2].to_f
+  end
+
+  def nonzero?
+    @quantity > 0.0
+  end
+
+  def to_s
+    "{#@nutrient_id, #@quantity}"
+  end
+end
+
+fid = -1
+nutrient_qtys = []
+CSV::read('data/nuttxt/NUT_DATA.txt', encoding: 'windows-1251:utf-8', col_sep: '^', quote_char: '~').each do |l|
+  next_fid = l[0].to_i
+  if next_fid != fid
+    if fid >= 0
+      food_db[food_key_map[fid]].nutrient_qtys =
+        nutrient_qtys.sort_by {|nq| nq.nutrient_id}
+      nutrient_qtys = []
+    end
+    fid = next_fid
+  end
+  nqty = NutrientQty.new(l)
+  nutrient_qtys << nqty if nqty.nonzero?
+end
+food_db[food_key_map[fid]].nutrient_qtys =
+  nutrient_qtys.sort_by {|nq| nq.nutrient_id}
+
+# write nutdb.go
+File.open('src/nutdb/nutdb.go', 'w') do |f|
+  f.write(DATA.read)
+  f.write("var FoodDb = []Food{\n\t#{food_db.join(",\n\t")},\n}")
+  f.write("\n")
+  f.write("var NutrientDb = []Nutrient{\n\t#{nutrient_db.join(",\n\t")},\n}\n")
+end
+
+# write the nutrition data to csv. Can't be compiled into file unfortunately
+CSV.open('data/nutcsv/nutrient-quantities.csv', 'w') do |out|
+  food_db.each do |food|
+    food.nutrient_qtys.each do |nq|
+      out << [food.id, nq.nutrient_id, nq.quantity]
+    end
+  end
+end
+__END__
+package nutdb
+
+import (
+	"encoding/csv"
+	"log"
+	"os"
+	"strconv"
+)
+
+type NutrientQty struct {
+	// // 5-digit Nutrient Databank number.
+	// FoodId int32 // %5d
+	// Unique 3-digit identifier code for a nutrient.
+	NutrientId int16 // %3d
+	// Amount in 100 grams, edible portion.
+	Quantity float32 // %10.3f
+	// // Number of data points (previously called Sample_Ct) is the number of
+	// // analyses used to calculate the nutrient value. If the number of data
+	// // points is 0, the value was calculated or imputed.
+	// NumDataPoints int32 // %5d
+	// // Standard error of the mean. Null if cannot be calculated. The standard
+	// // error is also not given if the number of data points is less than three.
+	// StdError float32 // %8.3f Nil
+	// // Code indicating type of data.
+	// SrcCode string // %2s
+	// // Data Derivation Code giving specific information on how the value is
+	// // determined. This field is populated only for items added or updated
+	// // starting with SR14.
+	// DerivationCode string // %4s Nil
+	// // NDB number of the item used to calculate a missing value. Populated only
+	// // for items added or updated starting with SR14.
+	// RefFoodId int32 // %5d Nil
+	// // Indicates a vitamin or mineral added for fortification or enrichment.
+	// // This field is populated for ready-toeat breakfast cereals and many
+	// // brand-name hot cereals in food group 8.
+	// AdditionalNutrients bool // %b Nil
+	// // Number of studies.
+	// NumStudies int32 // %2d Nil
+	// // Minimum value.
+	// MinQuantity float32 // %10.3f Nil
+	// // Maximum value.
+	// MaxQuantity float32 // %10.3f Nil
+	// // Degrees of freedom.
+	// DF int32 // %4d Nil
+	// // Lower 95% error bound.
+	// LowerErrorBound float32 // %10.3f Nil
+	// // Upper 95% error bound.
+	// UpperErrorBound float32 // %10.3f Nil
+	// // Statistical comments. See definitions below.
+	// StatisticalComments string // %10s
+	// // Indicates when a value was either added to the database or last modified.
+	// LastModified Time
+	// // Confidence Code indicating data quality, based on evaluation of sample
+	// // plan, sample handling, analytical method, analytical quality control, and
+	// // number of samples analyzed. Not included in this release, but is planned
+	// // for future releases.
+	// ConfidenceCode string // A 1 Y
+}
+
+type Food struct {
+	// 5-digit Nutrient Databank number that uniquely identifies a food item. If
+	// this field is defined as numeric, the leading zero will be lost.
+	Id int32 // %5d
+
+	// 4-digit code indicating food group to which a food item belongs.
+	// FoodGroupId int32 // %4d
+
+	// 200-character description of food item.
+	Description string // %200s
+
+	// 60-character abbreviated description of food item.  Generated from the
+	// 200-character description using abbreviations in Appendix A. If short
+	// description is longer than 60 characters, additional abbreviations are
+	// made.
+	BriefDescription string // %60s
+
+	// Other names commonly used to describe a food, including local or regional
+	// names for various foods, for example, “soda” or “pop” for “carbonated
+	// beverages.”
+	CommonName string // %100s Nil
+
+	// Indicates the company that manufactured the product, when appropriate.
+	ManufacturerName string // %65s Nil
+
+	// Indicates if the food item is used in the USDA Food and Nutrient Database
+	// for Dietary Studies (FNDDS) and thus has a complete nutrient profile for
+	// the 65 FNDDS nutrients.
+	// IsSurvey bool // %b Nil
+
+	// Description of inedible parts of a food item (refuse), such as seeds or
+	// bone.
+	RefuseDescription string // %135s Nil
+
+	// Percentage of refuse.
+	Refuse int32 // %2d Nil
+
+	// Scientific name of the food item. Given for the least processed form of
+	// the food (usually raw), if applicable.
+	ScientificName string // %65s Nil
+
+	// Factor for converting nitrogen to protein.
+	NitrogenFactor float32 // %4.2f Nil
+
+	// Factor for calculating calories from protein.
+	ProteinFactor float32 // %4.2f Nil
+
+	// Factor for calculating calories from fat (see p. 13).
+	FatFactor float32 // %4.2f Nil
+
+	// Factor for calculating calories from carbohydrates
+	CarbohydrateFactor float32 // %4.2f Nil
+
+	// Array of nutrients contained in this food
+	NutrientQtys []NutrientQty
+}
+
+type Nutrient struct {
+	// Unique 3-digit identifier code for a nutrient.
+	Id int32 // %3d
+
+	// Units of measure (mg, g, µg, and so on).
+	Units string // %7s
+
+	// International Network of Food Data Systems (INFOODS) Tagnames. A unique
+	// abbreviation for a nutrient/food component developed by INFOODS to aid in
+	// the interchange of data.
+	// Tagname string // %20s Nil
+
+	// Name of nutrient/food component.
+	Description string // %60s
+
+	// Number of decimal places to which a nutrient value is rounded.
+	// Precision int32 // %1d
+
+	// Used to sort nutrient records in the same order as various reports
+	// produced from SR.
+	// SortOrder int32 // %6d
+}
+
+func fieldToInt32(s string) int32 {
+	i, _ := strconv.ParseInt(s, 10, 32)
+	return int32(i)
+}
+
+func fieldToInt16(s string) int16 {
+	i, _ := strconv.ParseInt(s, 10, 16)
+	return int16(i)
+}
+
+func fieldToFloat32(s string) float32 {
+	f, _ := strconv.ParseFloat(s, 32)
+	return float32(f)
+}
+
+func InitializeFoodDb() {
+	datafile, err := os.Open("data/nutcsv/nutrient-quantities.csv")
+	if err != nil {
+		log.Fatalf("Error opening data file \"nutrient-quantities.csv\": %v", err)
+	}
+	defer datafile.Close()
+
+	reader := csv.NewReader(datafile)
+	rawCSV, err := reader.ReadAll()
+	if err != nil {
+		log.Fatalf("Error reading data file", err)
+	}
+
+	var currentFoodId = int32(-1)
+	var nc = 0
+	var nutrientQtys [200]NutrientQty
+
+	copyNutrients := func() {
+		if currentFoodId < 0 {
+			return // no need to copy just yet
+		}
+		food := &FoodDb[currentFoodId]
+		food.NutrientQtys = make([]NutrientQty, nc)
+		copy(food.NutrientQtys, nutrientQtys[0:nc])
+	}
+
+	for _, r := range rawCSV {
+		foodId := fieldToInt32(r[0])
+		if foodId != currentFoodId {
+			copyNutrients()
+			currentFoodId = foodId
+			nc = 0
+		}
+		nutrientQtys[nc].NutrientId = fieldToInt16(r[1])
+		nutrientQtys[nc].Quantity = fieldToFloat32(r[2])
+		nc++
+	}
+	copyNutrients()
+}
+

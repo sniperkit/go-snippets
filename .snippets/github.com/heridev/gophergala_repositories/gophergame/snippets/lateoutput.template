@@ -1,9 +1,0 @@
-package main
-
-import "fmt"
-
-func main() {
-	var a int = 5 + 6;
-	{{%s}}
-	fmt.Print("The sum of 5 and 6 is ")
-}

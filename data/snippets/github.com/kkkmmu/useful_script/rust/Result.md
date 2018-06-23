@@ -1,0 +1,1 @@
+iThe purpose of these Result types is to encode error handling information. Values of the Result type, like any type, have methods defined on them. In this case, io::Result has an expect() method that takes a value it’s called on, and if it isn’t a successful one, panic!s with a message you passed it. A panic! like this will cause our program to crash, displaying the message.

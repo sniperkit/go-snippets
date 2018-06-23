@@ -1,0 +1,45 @@
+//http://adampresley.com/2015/02/16/waiting-for-goroutines-to-finish-running-before-exiting.html
+package main
+
+import (
+	"github.com/nsqio/go-nsq"
+	"log"
+	"os"
+	"os/signal"
+	"sync"
+	"syscall"
+)
+
+func main() {
+	log.Println("Starting application...")
+
+	//When SIGINT or SIGTERM is caught write to the quitChannel
+
+	quitChannel := make(chan os.Signal)
+	signal.Notify(quitChannel, syscall.SIGINT, syscall.SIGTERM)
+
+	wg := &sync.WaitGroup{}
+
+	wg.Add(1)
+	defer wg.Done()
+	//start of producer code block
+	config := nsq.NewConfig()
+	w, _ := nsq.NewProducer("127.0.0.1:4150", config)
+
+	err := w.Publish("write_test", []byte("test"))
+	if err != nil {
+		log.Panic("Could not connect")
+	}
+	w.Stop()
+	//end of producer code block
+
+	//Wait until we get the quit message
+	<-quitChannel
+	log.Println("Received quit. Sending shutdown and waiting on goroutines...")
+
+	/*
+	* Block until wait group counter gets to zero
+	 */
+	wg.Wait()
+	log.Println("Done.")
+}

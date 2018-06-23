@@ -1,7 +1,0 @@
-node_modules
-.nodemonignore
-start.sh
-:.DS_Store
-build
-public/css/styles.css
-public/item_images/

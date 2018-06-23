@@ -1,0 +1,439 @@
+Status:  ok
+Language:  php
+Errors: 
+UAST: 
+Module {
+.  Roles: Module
+.  Children: {
+.  .  0: Stmt_Use {
+.  .  .  Roles: Alias
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 7
+.  .  .  .  Line: 3
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 14
+.  .  .  .  Line: 3
+.  .  .  .  Col: 8
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  .  type: 1
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Stmt_UseUse {
+.  .  .  .  .  Roles: Alias
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 11
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 13
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 7
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias: B
+.  .  .  .  .  .  internalRole: uses
+.  .  .  .  .  .  type: 0
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "A\B"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 11
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 13
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 7
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  1: Stmt_Use {
+.  .  .  Roles: Alias
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 16
+.  .  .  .  Line: 4
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 28
+.  .  .  .  Line: 4
+.  .  .  .  Col: 13
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  .  type: 1
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Stmt_UseUse {
+.  .  .  .  .  Roles: Alias
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 20
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 27
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 12
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias: E
+.  .  .  .  .  .  internalRole: uses
+.  .  .  .  .  .  type: 0
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "C\D"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 20
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 22
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 7
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  2: Stmt_Use {
+.  .  .  Roles: Alias
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 30
+.  .  .  .  Line: 5
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 45
+.  .  .  .  Line: 5
+.  .  .  .  Col: 16
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  .  type: 1
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Stmt_UseUse {
+.  .  .  .  .  Roles: Alias
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 34
+.  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  Col: 5
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 41
+.  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  Col: 12
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias: H
+.  .  .  .  .  .  internalRole: uses
+.  .  .  .  .  .  type: 0
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "F\G"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 34
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 5
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 36
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 7
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Stmt_UseUse {
+.  .  .  .  .  Roles: Alias
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 44
+.  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  Col: 15
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 44
+.  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  Col: 15
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias: J
+.  .  .  .  .  .  internalRole: uses
+.  .  .  .  .  .  type: 0
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "J"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 44
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 15
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 44
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 15
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  3: Stmt_Use {
+.  .  .  Roles: Alias
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 48
+.  .  .  .  Line: 7
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 68
+.  .  .  .  Line: 7
+.  .  .  .  Col: 21
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  .  type: 2
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Stmt_UseUse {
+.  .  .  .  .  Roles: Alias
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 61
+.  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  Col: 14
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 67
+.  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  Col: 20
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias: bar
+.  .  .  .  .  .  internalRole: uses
+.  .  .  .  .  .  type: 0
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "foo\bar"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 61
+.  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  Col: 14
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 67
+.  .  .  .  .  .  .  .  Line: 7
+.  .  .  .  .  .  .  .  Col: 20
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  4: Stmt_Use {
+.  .  .  Roles: Alias
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 70
+.  .  .  .  Line: 8
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 97
+.  .  .  .  Line: 8
+.  .  .  .  Col: 28
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  .  type: 2
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Stmt_UseUse {
+.  .  .  .  .  Roles: Alias
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 83
+.  .  .  .  .  .  Line: 8
+.  .  .  .  .  .  Col: 14
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 96
+.  .  .  .  .  .  Line: 8
+.  .  .  .  .  .  Col: 27
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias: baz
+.  .  .  .  .  .  internalRole: uses
+.  .  .  .  .  .  type: 0
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "foo\bar"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 83
+.  .  .  .  .  .  .  .  Line: 8
+.  .  .  .  .  .  .  .  Col: 14
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 89
+.  .  .  .  .  .  .  .  Line: 8
+.  .  .  .  .  .  .  .  Col: 20
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  5: Stmt_Use {
+.  .  .  Roles: Alias
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 99
+.  .  .  .  Line: 9
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 116
+.  .  .  .  Line: 9
+.  .  .  .  Col: 18
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  .  type: 3
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Stmt_UseUse {
+.  .  .  .  .  Roles: Alias
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 109
+.  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  Col: 11
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 115
+.  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  Col: 17
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias: BAR
+.  .  .  .  .  .  internalRole: uses
+.  .  .  .  .  .  type: 0
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "foo\BAR"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 109
+.  .  .  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  .  .  Col: 11
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 115
+.  .  .  .  .  .  .  .  Line: 9
+.  .  .  .  .  .  .  .  Col: 17
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  6: Stmt_Use {
+.  .  .  Roles: Alias
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 118
+.  .  .  .  Line: 10
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 142
+.  .  .  .  Line: 10
+.  .  .  .  Col: 25
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  .  type: 3
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Stmt_UseUse {
+.  .  .  .  .  Roles: Alias
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 128
+.  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  Col: 11
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 141
+.  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  Col: 24
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  alias: BAZ
+.  .  .  .  .  .  internalRole: uses
+.  .  .  .  .  .  type: 0
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: Name {
+.  .  .  .  .  .  .  Roles: Expression,Identifier
+.  .  .  .  .  .  .  TOKEN "foo\BAR"
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 128
+.  .  .  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  .  .  Col: 11
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 134
+.  .  .  .  .  .  .  .  Line: 10
+.  .  .  .  .  .  .  .  Col: 17
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: name
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

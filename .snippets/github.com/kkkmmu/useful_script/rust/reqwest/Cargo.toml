@@ -1,7 +1,0 @@
-[package]
-name = "reqwest"
-version = "0.1.0"
-authors = ["lamproae <lwnope@163.com>"]
-
-[dependencies]
-reqwest="0.8.0"

@@ -1,0 +1,290 @@
+{
+    "status": "ok",
+    "language": "go",
+    "errors": [],
+    "ast": {
+        "@end": {
+            "@type": "ast:Position",
+            "col": 0,
+            "line": 0,
+            "off": 68
+        },
+        "@start": {
+            "@type": "ast:Position",
+            "col": 0,
+            "line": 0,
+            "off": 1
+        },
+        "@type": "File",
+        "Comments": null,
+        "Decls": [
+            {
+                "@end": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 43
+                },
+                "@start": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 19
+                },
+                "@type": "GenDecl",
+                "Doc": null,
+                "Lparen": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 0
+                },
+                "Rparen": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 0
+                },
+                "Specs": [
+                    {
+                        "@end": {
+                            "@type": "ast:Position",
+                            "col": 0,
+                            "line": 0,
+                            "off": 43
+                        },
+                        "@start": {
+                            "@type": "ast:Position",
+                            "col": 0,
+                            "line": 0,
+                            "off": 24
+                        },
+                        "@type": "TypeSpec",
+                        "Assign": {
+                            "@type": "ast:Position",
+                            "col": 0,
+                            "line": 0,
+                            "off": 0
+                        },
+                        "Comment": null,
+                        "Doc": null,
+                        "Name": {
+                            "@end": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 33
+                            },
+                            "@start": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 24
+                            },
+                            "@type": "Ident",
+                            "Name": "Testtype1",
+                            "NamePos": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 24
+                            }
+                        },
+                        "Type": {
+                            "@end": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 43
+                            },
+                            "@start": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 34
+                            },
+                            "@type": "StructType",
+                            "Fields": {
+                                "@end": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 43
+                                },
+                                "@start": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 41
+                                },
+                                "@type": "FieldList",
+                                "Closing": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 42
+                                },
+                                "List": null,
+                                "Opening": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 41
+                                }
+                            },
+                            "Incomplete": false,
+                            "Struct": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 34
+                            }
+                        }
+                    }
+                ],
+                "Tok": "type",
+                "TokPos": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 19
+                }
+            },
+            {
+                "@end": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 68
+                },
+                "@start": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 44
+                },
+                "@type": "GenDecl",
+                "Doc": null,
+                "Lparen": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 0
+                },
+                "Rparen": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 0
+                },
+                "Specs": [
+                    {
+                        "@end": {
+                            "@type": "ast:Position",
+                            "col": 0,
+                            "line": 0,
+                            "off": 68
+                        },
+                        "@start": {
+                            "@type": "ast:Position",
+                            "col": 0,
+                            "line": 0,
+                            "off": 49
+                        },
+                        "@type": "TypeSpec",
+                        "Assign": {
+                            "@type": "ast:Position",
+                            "col": 0,
+                            "line": 0,
+                            "off": 0
+                        },
+                        "Comment": null,
+                        "Doc": null,
+                        "Name": {
+                            "@end": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 58
+                            },
+                            "@start": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 49
+                            },
+                            "@type": "Ident",
+                            "Name": "Testtype2",
+                            "NamePos": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 49
+                            }
+                        },
+                        "Type": {
+                            "@end": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 68
+                            },
+                            "@start": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 59
+                            },
+                            "@type": "Ident",
+                            "Name": "Testtype1",
+                            "NamePos": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 59
+                            }
+                        }
+                    }
+                ],
+                "Tok": "type",
+                "TokPos": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 44
+                }
+            }
+        ],
+        "Doc": null,
+        "Imports": null,
+        "Name": {
+            "@end": {
+                "@type": "ast:Position",
+                "col": 0,
+                "line": 0,
+                "off": 17
+            },
+            "@start": {
+                "@type": "ast:Position",
+                "col": 0,
+                "line": 0,
+                "off": 9
+            },
+            "@type": "Ident",
+            "Name": "fixtures",
+            "NamePos": {
+                "@type": "ast:Position",
+                "col": 0,
+                "line": 0,
+                "off": 9
+            }
+        },
+        "Package": {
+            "@type": "ast:Position",
+            "col": 0,
+            "line": 0,
+            "off": 1
+        },
+        "Unresolved": null
+    }
+}

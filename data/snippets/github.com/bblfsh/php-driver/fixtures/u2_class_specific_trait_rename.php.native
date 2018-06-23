@@ -1,0 +1,104 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 59,
+                    "endLine": 4,
+                    "endTokenPos": 18,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "name": "testtrait1",
+                "nodeType": "Stmt_Trait",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 57,
+                            "endLine": 3,
+                            "endTokenPos": 16,
+                            "startFilePos": 29,
+                            "startLine": 3,
+                            "startTokenPos": 7
+                        },
+                        "byRef": false,
+                        "flags": 1,
+                        "name": "testfnc1",
+                        "nodeType": "Stmt_ClassMethod",
+                        "params": [],
+                        "returnType": null,
+                        "stmts": [],
+                        "type": 1
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "endFilePos": 133,
+                    "endLine": 7,
+                    "endTokenPos": 43,
+                    "startFilePos": 61,
+                    "startLine": 5,
+                    "startTokenPos": 20
+                },
+                "extends": null,
+                "flags": 0,
+                "implements": [],
+                "name": "testcls1",
+                "nodeType": "Stmt_Class",
+                "stmts": [
+                    {
+                        "adaptations": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 129,
+                                    "endLine": 6,
+                                    "endTokenPos": 39,
+                                    "startFilePos": 99,
+                                    "startLine": 6,
+                                    "startTokenPos": 32
+                                },
+                                "method": "testfnc1",
+                                "newModifier": 2,
+                                "newName": "testfnc2",
+                                "nodeType": "Stmt_TraitUseAdaptation_Alias",
+                                "trait": null
+                            }
+                        ],
+                        "attributes": {
+                            "endFilePos": 131,
+                            "endLine": 6,
+                            "endTokenPos": 41,
+                            "startFilePos": 82,
+                            "startLine": 6,
+                            "startTokenPos": 26
+                        },
+                        "nodeType": "Stmt_TraitUse",
+                        "traits": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 95,
+                                    "endLine": 6,
+                                    "endTokenPos": 28,
+                                    "startFilePos": 86,
+                                    "startLine": 6,
+                                    "startTokenPos": 28
+                                },
+                                "nodeType": "Name",
+                                "parts": [
+                                    "testtrait1"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "type": 0
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

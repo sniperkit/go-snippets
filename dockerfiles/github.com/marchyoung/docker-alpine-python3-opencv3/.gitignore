@@ -1,9 +1,0 @@
-.DS_Store
-log/*
-tmp/*
-doc/*
-spec/*
-*~
-.git/
-.bundle*
-.idea/

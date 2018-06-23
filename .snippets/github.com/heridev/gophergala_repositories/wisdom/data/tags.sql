@@ -1,4 +1,0 @@
-CREATE TABLE IF NOT EXISTS tags (
-    id SERIAL PRIMARY KEY,
-    label varchar(50) UNIQUE NOT NULL
-);

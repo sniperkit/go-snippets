@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Gogalamon</title>
+
+		<!-- Main site stylesheet -->
+		<link rel="stylesheet" type="text/css" href="css/main.css"></link>
+
+		<script src="https://code.createjs.com/createjs-2014.12.12.min.js"></script>
+		<!-- Load Keypress library -->
+		<script src="libs/js/keypress-2.1.0.min.js"></script>
+
+		<!-- Load our main script -->
+		<script src="js/app.js"></script>
+	</head>
+	<body onload="welcome();">
+		<canvas id="mainCanvas" width="900" height="600"></canvas>
+
+		<canvas id="miniMap" width="200" height="200"></canvas>
+
+		<canvas id="health" width="320" height="32"></canvas>
+
+		<canvas id="capture" width="320" height="32"></canvas>
+
+		<div id="chat_box">
+			<div id="chat_output">
+				
+			</div>
+					
+			<input id="chat_input" placeholder="Send a message..."/>
+		</div>
+
+		<div id="popups">
+			<div id="welcome_message" class="popup">
+				<h1>Gogalamon</h1>
+				<br>
+				<p>Capture all the planets in the sector!</p>
+				<br>
+				<p>W/A/S/D to move, J to shoot.</p>
+				<br>
+				<p>Press shoot to continue.</p>
+			</div>
+
+			<div id="choose_captain_name" class="popup">
+				<h1>Choose your captain's name!</h1>
+				<input id="captain_name_input" placeholder="Choose something cool... or not"/>
+			</div>
+
+			<div id="choose_team" class="popup">
+				<h1>Choose a team</h1>
+				<button id="choose_gophers">Gophers</button>
+				<button id="choose_pythons">Pythons</button>
+			</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,7 +1,0 @@
-runtime: go
-api_version: go1
-
-handlers:
-- url: /hello
-  static_files: hello.html
-  upload: hello.html

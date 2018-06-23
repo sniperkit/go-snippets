@@ -1,0 +1,186 @@
+syntax = "proto3";
+
+// TODO: document more of this file
+
+// Package pawd contains types and interfaces for the API to interact with pawd,
+// a very fuzzy package repository server.
+package pawd;
+
+// Nil is nothing.
+message Nil {}
+
+// Auth manages login, logout and registration.
+service Auth {
+  // Register allows any unauthenticated client to create a new account with
+  // a given set of credentials. If the user wants they can force all actions
+  // to require a TOTP challenge in each api call.
+  rpc Register(RegisterInfo) returns (UserToken) {}
+
+  // Login allows any unauthenticated client to attempt to create a new access
+  // token given the email address, password and totp challenge (if applicable)
+  // are set.
+  rpc Login(LoginInfo) returns (UserToken) {}
+
+  // Logout allows any authenticated client to destroy its API token, making it
+  // unusable in the future.
+  rpc Logout(UserToken) returns (Nil) {}
+}
+
+message RegisterInfo {
+  string email = 1;
+  string password = 2;
+  bool want_totp = 3;
+}
+
+message RegisterResponse {
+  UserToken token = 1;
+  string email = 2;
+  string totp_secret = 3;
+}
+
+message LoginInfo {
+  string email = 1;
+  string password = 2;
+  string totp_challenge = 3;
+}
+
+message UserToken {
+  string token = 1;
+  repeated string flags = 2;
+  int64 expiry_unix_gmt = 3;
+}
+
+// Repos manages package repositories.
+service Repos {
+  rpc Create(RepoCreate) returns (Repo) {}
+  rpc Delete(RepoName) returns (Nil) {}
+  rpc Info(RepoName) returns (Repo) {}
+  rpc UpdateInfo(RepoMeta) returns (Repo) {}
+
+  rpc Packages(RepoName) returns (RepoPackages) {}
+  rpc AddPackage(RepoAddPackage) returns (PackageBuild) {}
+  //rpc DelPackage(RepoDelPackage) returns (Nil) {}
+  rpc UpdatePackage(RepoUpdatePackage) returns (PackageBuild) {}
+  rpc Builds(PackageName) returns (PackageBuildHistory) {}
+
+  rpc CheckBuild(PackageBuildID) returns (PackageBuild) {}
+}
+
+enum Distro {
+  None = 0; // should never be accepted
+
+  AlpineEdge = 10;
+  Alpine33 = 11;
+  Alpine34 = 12;
+  Alpine35 = 13;
+  Alpine36 = 14;
+  Alpine37 = 15;
+
+  AdelieEdge = 110;
+  //Adelie1 = 111; // doesn't exist yet
+}
+
+message RepoCreate {
+  string name = 1;
+  string description = 2;
+  repeated Distro distros = 3;
+  bool personal_hack = 4;
+}
+
+message Repo {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  repeated Distro distros = 4;
+  bool personal_hack = 5;
+  int64 creation_date_unix_gmt = 6;
+}
+
+message Package {
+  string id = 1;
+  string name = 2;
+  string version = 3;
+  string pkgrel = 4;
+  string pkgdesc = 5;
+  string license = 6;
+}
+
+message PackageName {
+  string name = 1;
+  string user = 2;
+  string repo_name = 3;
+}
+
+message RepoName {
+  string name = 1;
+  string user = 2;
+}
+
+message RepoMeta {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  repeated Distro distros = 4;
+  bool personal_hack = 5;
+}
+
+message RepoPackages {
+  Repo repo = 1;
+  repeated Package packages = 2;
+}
+
+message PackageTemplate {
+  enum Kind {
+    GoTag = 0;
+    GoLatestCommit = 1;
+    // TODO: add more
+  }
+
+  Package meta = 1;
+  Kind kind = 2;
+  string source_url = 3;
+  string git_repo = 4;
+  repeated string depends = 5;
+  repeated string dev_depends = 6;
+
+  // only relevant for go packages
+  string go_import = 100; // full import path
+  string go_pkg = 101; // package name when imported
+  repeated string go_install = 102; // paths to build binaries
+}
+
+message RepoAddPackage {
+  //PackageTemplate template = 1; // if set, create initial APKBUILD from these template options
+
+  // the gzipped tarballed bytes of the APKBUILD and files it depends on. Limit 5 MB.
+  bytes build_tarball_gzipped = 2;
+}
+
+message RepoUpdatePackage {
+  // version numbers must be increased
+  Package meta = 1;
+  //PackageTemplate template = 2; // if set, create initial APKBUILD from these template options
+
+  // the gzipped tarballed bytes of the APKBUILD and files it depends on. Limit 5 MB.
+  bytes build_tarball_gzipped = 3;
+}
+
+message PackageBuildID {
+  string id = 1;
+}
+
+message PackageBuild {
+  string id = 1;
+  Package pkg = 2;
+  string user = 3;
+  int64 start_date_unix_gmt = 4; // 0 if build hasn't started yet
+  int64 end_date_unix_gmt = 5; // 0 if build is still running
+  bool passed = 6;
+  bytes build_output = 7; // not set until build is complete w.w
+  Distro distro = 8;
+}
+
+message PackageBuildHistory {
+  int64 as_of_unix_gmt = 1;
+  repeated PackageBuild builds = 2;
+}

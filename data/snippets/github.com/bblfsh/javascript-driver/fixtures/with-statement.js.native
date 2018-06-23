@@ -1,0 +1,190 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 37,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 4
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "body": {
+                        "body": [
+                            {
+                                "declarations": [
+                                    {
+                                        "end": 33,
+                                        "id": {
+                                            "end": 23,
+                                            "loc": {
+                                                "end": {
+                                                    "column": 9,
+                                                    "line": 2
+                                                },
+                                                "identifierName": "pi2",
+                                                "start": {
+                                                    "column": 6,
+                                                    "line": 2
+                                                }
+                                            },
+                                            "name": "pi2",
+                                            "start": 20,
+                                            "type": "Identifier"
+                                        },
+                                        "init": {
+                                            "end": 33,
+                                            "left": {
+                                                "end": 28,
+                                                "loc": {
+                                                    "end": {
+                                                        "column": 14,
+                                                        "line": 2
+                                                    },
+                                                    "identifierName": "PI",
+                                                    "start": {
+                                                        "column": 12,
+                                                        "line": 2
+                                                    }
+                                                },
+                                                "name": "PI",
+                                                "start": 26,
+                                                "type": "Identifier"
+                                            },
+                                            "loc": {
+                                                "end": {
+                                                    "column": 19,
+                                                    "line": 2
+                                                },
+                                                "start": {
+                                                    "column": 12,
+                                                    "line": 2
+                                                }
+                                            },
+                                            "operator": "*",
+                                            "right": {
+                                                "end": 33,
+                                                "loc": {
+                                                    "end": {
+                                                        "column": 19,
+                                                        "line": 2
+                                                    },
+                                                    "identifierName": "PI",
+                                                    "start": {
+                                                        "column": 17,
+                                                        "line": 2
+                                                    }
+                                                },
+                                                "name": "PI",
+                                                "start": 31,
+                                                "type": "Identifier"
+                                            },
+                                            "start": 26,
+                                            "type": "BinaryExpression"
+                                        },
+                                        "loc": {
+                                            "end": {
+                                                "column": 19,
+                                                "line": 2
+                                            },
+                                            "start": {
+                                                "column": 6,
+                                                "line": 2
+                                            }
+                                        },
+                                        "start": 20,
+                                        "type": "VariableDeclarator"
+                                    }
+                                ],
+                                "end": 34,
+                                "kind": "let",
+                                "loc": {
+                                    "end": {
+                                        "column": 20,
+                                        "line": 2
+                                    },
+                                    "start": {
+                                        "column": 2,
+                                        "line": 2
+                                    }
+                                },
+                                "start": 16,
+                                "type": "VariableDeclaration"
+                            }
+                        ],
+                        "directives": [],
+                        "end": 36,
+                        "loc": {
+                            "end": {
+                                "column": 1,
+                                "line": 3
+                            },
+                            "start": {
+                                "column": 12,
+                                "line": 1
+                            }
+                        },
+                        "start": 12,
+                        "type": "BlockStatement"
+                    },
+                    "end": 36,
+                    "loc": {
+                        "end": {
+                            "column": 1,
+                            "line": 3
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "object": {
+                        "end": 10,
+                        "loc": {
+                            "end": {
+                                "column": 10,
+                                "line": 1
+                            },
+                            "identifierName": "Math",
+                            "start": {
+                                "column": 6,
+                                "line": 1
+                            }
+                        },
+                        "name": "Math",
+                        "start": 6,
+                        "type": "Identifier"
+                    },
+                    "start": 0,
+                    "type": "WithStatement"
+                }
+            ],
+            "directives": [],
+            "end": 37,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 4
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "script",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

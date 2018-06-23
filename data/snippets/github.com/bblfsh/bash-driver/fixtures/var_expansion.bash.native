@@ -1,0 +1,299 @@
+{
+    "status": "ok",
+    "language": "bash",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "elementType": "[Bash] variable",
+                                                "startOffset": 0,
+                                                "text": "$A",
+                                                "textLength": 2
+                                            }
+                                        ],
+                                        "elementType": "var-use-element",
+                                        "startOffset": 0,
+                                        "text": "$A",
+                                        "textLength": 2
+                                    }
+                                ],
+                                "elementType": "[Bash] combined word",
+                                "startOffset": 0,
+                                "text": "$A",
+                                "textLength": 2
+                            }
+                        ],
+                        "elementType": "[Bash] generic bash command",
+                        "startOffset": 0,
+                        "text": "$A",
+                        "textLength": 2
+                    }
+                ],
+                "elementType": "simple-command",
+                "startOffset": 0,
+                "text": "$A",
+                "textLength": 2
+            },
+            {
+                "children": [],
+                "elementType": "[Bash] linefeed",
+                "startOffset": 2,
+                "text": "\n",
+                "textLength": 1
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "elementType": "[Bash] $",
+                                                "startOffset": 3,
+                                                "text": "$",
+                                                "textLength": 1
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "elementType": "[Bash] {",
+                                                        "startOffset": 4,
+                                                        "text": "{",
+                                                        "textLength": 1
+                                                    },
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "children": [],
+                                                                "elementType": "[Bash] word",
+                                                                "startOffset": 5,
+                                                                "text": "B",
+                                                                "textLength": 1
+                                                            }
+                                                        ],
+                                                        "elementType": "var-use-element",
+                                                        "startOffset": 5,
+                                                        "text": "B",
+                                                        "textLength": 1
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "elementType": "[Bash] }",
+                                                        "startOffset": 6,
+                                                        "text": "}",
+                                                        "textLength": 1
+                                                    }
+                                                ],
+                                                "elementType": "[Bash] var substitution",
+                                                "startOffset": 4,
+                                                "text": "{B}",
+                                                "textLength": 3
+                                            }
+                                        ],
+                                        "elementType": "[Bash] composed variable, like subshell",
+                                        "startOffset": 3,
+                                        "text": "${B}",
+                                        "textLength": 4
+                                    }
+                                ],
+                                "elementType": "[Bash] combined word",
+                                "startOffset": 3,
+                                "text": "${B}",
+                                "textLength": 4
+                            }
+                        ],
+                        "elementType": "[Bash] generic bash command",
+                        "startOffset": 3,
+                        "text": "${B}",
+                        "textLength": 4
+                    }
+                ],
+                "elementType": "simple-command",
+                "startOffset": 3,
+                "text": "${B}",
+                "textLength": 4
+            },
+            {
+                "children": [],
+                "elementType": "[Bash] linefeed",
+                "startOffset": 7,
+                "text": "\n",
+                "textLength": 1
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "elementType": "[Bash] string begin",
+                                        "startOffset": 8,
+                                        "text": "\"",
+                                        "textLength": 1
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "elementType": "[Bash] variable",
+                                                "startOffset": 9,
+                                                "text": "$C",
+                                                "textLength": 2
+                                            }
+                                        ],
+                                        "elementType": "var-use-element",
+                                        "startOffset": 9,
+                                        "text": "$C",
+                                        "textLength": 2
+                                    },
+                                    {
+                                        "children": [],
+                                        "elementType": "[Bash] string end",
+                                        "startOffset": 11,
+                                        "text": "\"",
+                                        "textLength": 1
+                                    }
+                                ],
+                                "elementType": "[Bash] string",
+                                "startOffset": 8,
+                                "text": "\"$C\"",
+                                "textLength": 4
+                            }
+                        ],
+                        "elementType": "[Bash] generic bash command",
+                        "startOffset": 8,
+                        "text": "\"$C\"",
+                        "textLength": 4
+                    }
+                ],
+                "elementType": "simple-command",
+                "startOffset": 8,
+                "text": "\"$C\"",
+                "textLength": 4
+            },
+            {
+                "children": [],
+                "elementType": "[Bash] linefeed",
+                "startOffset": 12,
+                "text": "\n",
+                "textLength": 1
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "elementType": "[Bash] string begin",
+                                        "startOffset": 13,
+                                        "text": "\"",
+                                        "textLength": 1
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "elementType": "[Bash] $",
+                                                "startOffset": 14,
+                                                "text": "$",
+                                                "textLength": 1
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "elementType": "[Bash] {",
+                                                        "startOffset": 15,
+                                                        "text": "{",
+                                                        "textLength": 1
+                                                    },
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "children": [],
+                                                                "elementType": "[Bash] word",
+                                                                "startOffset": 16,
+                                                                "text": "D",
+                                                                "textLength": 1
+                                                            }
+                                                        ],
+                                                        "elementType": "var-use-element",
+                                                        "startOffset": 16,
+                                                        "text": "D",
+                                                        "textLength": 1
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "elementType": "[Bash] }",
+                                                        "startOffset": 17,
+                                                        "text": "}",
+                                                        "textLength": 1
+                                                    }
+                                                ],
+                                                "elementType": "[Bash] var substitution",
+                                                "startOffset": 15,
+                                                "text": "{D}",
+                                                "textLength": 3
+                                            }
+                                        ],
+                                        "elementType": "[Bash] composed variable, like subshell",
+                                        "startOffset": 14,
+                                        "text": "${D}",
+                                        "textLength": 4
+                                    },
+                                    {
+                                        "children": [],
+                                        "elementType": "[Bash] string end",
+                                        "startOffset": 18,
+                                        "text": "\"",
+                                        "textLength": 1
+                                    }
+                                ],
+                                "elementType": "[Bash] string",
+                                "startOffset": 13,
+                                "text": "\"${D}\"",
+                                "textLength": 6
+                            }
+                        ],
+                        "elementType": "[Bash] generic bash command",
+                        "startOffset": 13,
+                        "text": "\"${D}\"",
+                        "textLength": 6
+                    }
+                ],
+                "elementType": "simple-command",
+                "startOffset": 13,
+                "text": "\"${D}\"",
+                "textLength": 6
+            },
+            {
+                "children": [],
+                "elementType": "[Bash] linefeed",
+                "startOffset": 19,
+                "text": "\n",
+                "textLength": 1
+            }
+        ],
+        "elementType": "FILE",
+        "startOffset": 0,
+        "text": "$A\n${B}\n\"$C\"\n\"${D}\"\n",
+        "textLength": 20
+    }
+}

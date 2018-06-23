@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: gke-pipeline
+spec:
+  replicas: 2
+  revisionHistoryLimit: 4
+  progressDeadlineSeconds: 90
+  template:
+    metadata:
+      labels:
+        app: gke-pipeline
+    spec:
+      containers:
+        - name: demo
+          image: us.gcr.io/gliderlabs/gke-pipeline:latest
+          ports:
+            - name: ssh
+              containerPort: 2222
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: gke-pipeline
+spec:
+  type: LoadBalancer
+  selector:
+    app: gke-pipeline
+  ports:
+    - name: ssh
+      port: 22
+      targetPort: 2222

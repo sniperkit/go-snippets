@@ -1,2 +1,0 @@
-include README.md version.txt
-recursive-include jars *.jar

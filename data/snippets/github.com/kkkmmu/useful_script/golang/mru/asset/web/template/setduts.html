@@ -1,0 +1,132 @@
+|||template "vueheader" .|||
+|||template "treenav" .|||
+|||template "caseheader" |||
+<div id="setduts">
+<fieldset>
+	<div id="form-newtask" class="col-sm-offset-1">
+		<div class="form-horizontal">
+			<div class="form-group">
+				<legend>Setup Init Configurations </legend>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-9">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th class="text-center col-sm-1">DUT</th>
+								<th class="text-center col-sm-1">Device</th>
+								<th class="text-center col-sm-1">HostName</th>
+								<th class="text-center col-sm-2">IP</th>
+								<th class="text-center col-sm-1">Port</th>
+								<th class="text-center col-sm-2">Username</th>
+								<th class="text-center col-sm-2">Password</th>
+							</tr>
+						</thead>
+						<tbody v-for="(dut, index) in duts">
+							<tr>
+								<td class="text-center"><input type="text" v-model="dut.index" placeholder='1' class="form-control required"/></td>
+								<td class="text-center"><input type="text" v-model="dut.device" placeholder='V8' class="form-control  required"/></td>
+								<td class="text-center"><input type="text" v-model="dut.hostname" placeholder='V8500' class="form-control  required"/></td>
+								<td class="text-center"><input type="text" v-model="dut.ip" placeholder='10.71.20.198' class="form-control required"/></td>
+								<td class="text-center"><input type="text" v-model="dut.port" placeholder='23' class="form-control required"/></td>
+								<td class="text-center"><input type="text" v-model="dut.username" placeholder='admin' class="form-control required"/></td>
+								<td class="text-center"><input type="text" v-model="dut.password" placeholder='' class="form-control required"/></td>
+							</tr>
+						</tbody>
+					</table>
+					<button class="btn icon-btn btn-primary pull-right" id= "setduts" @click.prevent="setDUTs">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</fieldset>
+</div>
+<script>
+	function getDUTCount(id) {
+		var info;
+		$.ajax({
+			type:"get",
+			url:"getdutcountbyid?id="+id,
+			async:false,
+			success:function(data) {
+				info = data;
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				alert(XMLHttpRequest.responseText);
+			}
+		});
+		return JSON.parse(info).DUTCount;
+	}
+
+	function　getCookie(name){
+		if (document.cookie.length>0)
+		{
+			start=document.cookie.indexOf(name + "=");
+			if (start!=-1)
+			{ 
+				start=start + name.length+1;
+				c_end=document.cookie.indexOf(";",start);
+				if (c_end==-1) c_end=document.cookie.length;
+				return unescape(document.cookie.substring(start,c_end));
+			} 
+		}
+		return "";
+	}
+
+	function makeInitDutsByCount(dc) {
+		var duts = new Array(); 
+		for (i = 0; i< dc; i++) {
+			duts.push({
+				index: i,
+				device: "V8",
+				hostname: "V8500",
+				ip:"10.71.20.198",
+				port: "23",
+				username:"admin",
+				password:""
+			})
+		}
+		return duts
+	}
+</script>
+<script>
+	var SetDUTs = new Vue({
+		el: '#setduts',
+		data: {
+			dutcount: getDUTCount(getCookie("UNIQUE")),
+			id: getCookie("UNIQUE"),
+			duts: makeInitDutsByCount(getDUTCount(getCookie("UNIQUE"))),
+			submitted:false,
+		},
+		methods: {
+			setDUTs: function(e) {
+				if (this.duts.length != this.dutcount) {
+					alert("Require: "+this.dutcount+"duts");
+					return;
+				}
+				var res = this.results;
+				$.ajax({
+					type:"post",
+					url:"setdutsbyid",
+					async:false,
+					data: {
+						id: this.id,
+						duts: JSON.stringify(this.duts)
+					},
+
+					success:function(data) {
+						alert("Initialized");
+						window.location="caseinfo?id="+getCookie("CASEID");
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
+						alert(XMLHttpRequest.responseText);
+						$("setduts").attr("disabled",""); 
+					},
+				});
+				this.submitted = true;
+				$("setduts").attr("disabled","disabled"); 
+			},
+		}
+	});
+</script>
+|||template "vuefooter"|||

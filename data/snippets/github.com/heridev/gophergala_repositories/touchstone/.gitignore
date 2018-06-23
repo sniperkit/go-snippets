@@ -1,0 +1,9 @@
+public/.sass-cache
+public/.sass-cache/**
+*.swp
+.DS_Store
+*.swo
+*.swn
+*.sass-cache*
+public/.sass-cache
+public/.sass-cache/*

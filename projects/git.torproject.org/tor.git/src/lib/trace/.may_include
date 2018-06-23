@@ -1,5 +1,0 @@
-orconfig.h
-lib/trace/*.h
-
-# XXXX
-common/torlog.h

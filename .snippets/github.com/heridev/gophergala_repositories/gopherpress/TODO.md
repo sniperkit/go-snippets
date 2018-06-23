@@ -1,2 +1,0 @@
-- Implement JSON-RPC backend to communicate with Wordpress plugins
-- Finish password hashing

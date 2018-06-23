@@ -1,0 +1,4 @@
+.list-group.judge-list-group
+  &.Lobby.Instance.CurrentPlays:$card:$pid
+    a.list-group-item id="card_{{ $pid }}"
+      h3= $.Lobby.Instance.CurrentWith $card

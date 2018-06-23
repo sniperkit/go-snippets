@@ -1,0 +1,9 @@
+r.db("gevvent").tableCreate("users");
+r.db("gevvent").table("users").indexCreate("username");
+r.db("gevvent").tableCreate("sessions");
+r.db("gevvent").table("sessions").indexCreate("session", [r.row("user_id"), r.row("secret")]);
+r.db("gevvent").tableCreate("events");
+r.db("gevvent").table("events").indexCreate('where', {geo: true});
+r.db("gevvent").tableCreate("user_events");
+r.db("gevvent").table("user_events").indexCreate("lookup", [r.row("event_id"), r.row("user_id")]);
+r.db("gevvent").table("user_events").indexCreate("event", r.row("event_id"));

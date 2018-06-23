@@ -1,0 +1,52 @@
+|||define "subgroupheader"|||
+<fieldset>
+<div id="subgroupheader" class="container pull-left">
+	<button class="btn btn-danger ignore"><h4>{{current.Group}}</h4></button>
+	<button class="btn btn-success ignore"><h4>{{current.Name}}</h4></button>
+	<legend></legend>
+</div>
+</fieldset>
+<link rel="stylesheet" href="asset/web/static/css/caseheader.css">
+<script type="text/javascript" src="asset/web/static/js/caseheader.js"></script>
+<script>
+	function dumpCase(id) {
+		var caseinfo;
+		$.ajax({
+			type:"get",
+			url:"dumpsubgroup?id="+id,
+			async:false,
+			success:function(data) {
+				caseinfo = data;
+			}
+		});
+
+		return JSON.parse(caseinfo);
+	}
+
+	function　getCookie(name){
+		if (document.cookie.length>0)
+		{
+			start=document.cookie.indexOf(name + "=");
+			if (start!=-1)
+			{ 
+				start=start + name.length+1;
+				c_end=document.cookie.indexOf(";",start);
+				if (c_end==-1) c_end=document.cookie.length;
+				return unescape(document.cookie.substring(start,c_end));
+			} 
+		}
+		return "";
+	}
+</script>
+<script>
+	var caseInfo = new Vue({
+		el: '#subgroupheader',
+		data: {
+			current: dumpCase(getCookie("SGID")),
+			id: getCookie("SGID"),
+			submitted:false,
+		}
+	});
+</script>
+
+|||end|||

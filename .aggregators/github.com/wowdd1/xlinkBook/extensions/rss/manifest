@@ -1,6 +1,0 @@
-{
-    "name" : "rss",
-    "module" : "rss",
-    "class" : "Rss",
-    "version" : "0.1"
-}

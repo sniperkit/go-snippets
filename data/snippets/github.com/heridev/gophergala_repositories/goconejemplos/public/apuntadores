@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-eqiv="content-type" content="text/html;charset=utf-8">
+    <title>Go con Ejemplos: Apuntadores</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
+  </script>
+  <body>
+    <div class="example" id="apuntadores">
+      <h2><a href="./">Go con Ejemplos</a>: Apuntadores</h2>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>Go soporta <em><a href="http://es.wikipedia.org/wiki/Puntero_(inform%C3%A1tica)">apuntadores</a></em>,
+lo cual nos permite pasar referencias de valores y datos entre
+las funciones de nuestro programa.</p>
+
+          </td>
+          <td class="code empty leading">
+          
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          <a href="http://play.golang.org/p/bSpn50XZfI"><img title="Run code" src="play.png" class="run" /></a>
+            <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Veamos como los apuntadores funcionan en contraste con los valores directos
+utilizando dos funciones: <code>zeroval</code> y <code>zeroptr</code>. <code>zeroval</code> recibe
+un parametro <code>int</code>, así que los argumentos serán pasados por valor.
+<code>zeroval</code> va a recibir una copia de <code>ival</code> distinta a la de la función
+donde se llama.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">func</span> <span class="nx">zeroval</span><span class="p">(</span><span class="nx">ival</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ival</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p><code>zeroptr</code> recibe un parametro <code>*int</code>, lo que significa
+que recibe un apuntador a un valor <code>int</code>. El código <code>*iptr</code> en el
+cuerpo de la función <em>dereferencía</em> el apuntador de su dirección de
+memoria a el valor actual de esa dirección.
+Si asignamos un valor a un apuntador dereferenciado se cambia el valor
+que se está almacenando en dicha dirección de memoria.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">func</span> <span class="nx">zeroptr</span><span class="p">(</span><span class="nx">iptr</span> <span class="o">*</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">*</span><span class="nx">iptr</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;initial:&quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="nx">zeroval</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;zeroval:&quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>La sintaxis <code>&amp;i</code> devuelve la dirección en memoria de <code>i</code>,
+i.e. un apuntador a <code>i</code>.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="nx">zeroptr</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">i</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;zeroptr:&quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Los apuntadores también pueden mostrarse en pantalla</p>
+
+          </td>
+          <td class="code">
+          
+            <div class="highlight"><pre>    <span class="nx">ft</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;pointer:&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">i</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+      </table>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p><code>zeroval</code> no cambia el valor de <code>i</code> en <code>main</code>.
+<code>zeroptr</code> si porque tiene una referencia a la dirección
+en memoria de esa variable.</p>
+
+          </td>
+          <td class="code">
+          
+            <div class="highlight"><pre><span class="gp">$</span> go run pointers.go
+<span class="go">initial: 1</span>
+<span class="go">zeroval: 1</span>
+<span class="go">zeroptr: 0</span>
+<span class="go">pointer: 0x42131100</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+      </table>
+      
+      
+      <p class="next">
+        Siguiente ejemplo: <a href="structs">Structs</a>.
+      </p>
+      
+      <p class="footer">
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/apuntadores">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      </p>
+    </div>
+  </body>
+</html>

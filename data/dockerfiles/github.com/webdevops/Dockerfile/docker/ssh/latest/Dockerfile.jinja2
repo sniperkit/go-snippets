@@ -1,0 +1,8 @@
+{{ docker.from("base-app") }}
+
+RUN set -x \
+    {{ ssh.ubuntu() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}
+
+{{ docker.expose('22') }}

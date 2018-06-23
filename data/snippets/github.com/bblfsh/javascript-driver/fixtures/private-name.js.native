@@ -1,0 +1,159 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 22,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 4
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "body": {
+                        "body": [
+                            {
+                                "end": 19,
+                                "key": {
+                                    "end": 14,
+                                    "id": {
+                                        "end": 14,
+                                        "loc": {
+                                            "end": {
+                                                "column": 4,
+                                                "line": 2
+                                            },
+                                            "identifierName": "a",
+                                            "start": {
+                                                "column": 3,
+                                                "line": 2
+                                            }
+                                        },
+                                        "name": "a",
+                                        "start": 13,
+                                        "type": "Identifier"
+                                    },
+                                    "loc": {
+                                        "end": {
+                                            "column": 4,
+                                            "line": 2
+                                        },
+                                        "start": {
+                                            "column": 2,
+                                            "line": 2
+                                        }
+                                    },
+                                    "start": 12,
+                                    "type": "PrivateName"
+                                },
+                                "loc": {
+                                    "end": {
+                                        "column": 9,
+                                        "line": 2
+                                    },
+                                    "start": {
+                                        "column": 2,
+                                        "line": 2
+                                    }
+                                },
+                                "start": 12,
+                                "static": false,
+                                "type": "ClassPrivateProperty",
+                                "value": {
+                                    "end": 18,
+                                    "extra": {
+                                        "raw": "3",
+                                        "rawValue": 3
+                                    },
+                                    "loc": {
+                                        "end": {
+                                            "column": 8,
+                                            "line": 2
+                                        },
+                                        "start": {
+                                            "column": 7,
+                                            "line": 2
+                                        }
+                                    },
+                                    "start": 17,
+                                    "type": "NumericLiteral",
+                                    "value": 3
+                                },
+                                "variance": null
+                            }
+                        ],
+                        "end": 21,
+                        "loc": {
+                            "end": {
+                                "column": 1,
+                                "line": 3
+                            },
+                            "start": {
+                                "column": 8,
+                                "line": 1
+                            }
+                        },
+                        "start": 8,
+                        "type": "ClassBody"
+                    },
+                    "end": 21,
+                    "id": {
+                        "end": 7,
+                        "loc": {
+                            "end": {
+                                "column": 7,
+                                "line": 1
+                            },
+                            "identifierName": "A",
+                            "start": {
+                                "column": 6,
+                                "line": 1
+                            }
+                        },
+                        "name": "A",
+                        "start": 6,
+                        "type": "Identifier"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 1,
+                            "line": 3
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "superClass": null,
+                    "type": "ClassDeclaration"
+                }
+            ],
+            "directives": [],
+            "end": 22,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 4
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

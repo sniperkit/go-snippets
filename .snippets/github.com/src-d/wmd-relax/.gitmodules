@@ -1,3 +1,0 @@
-[submodule "or-tools"]
-	path = or-tools
-	url = https://github.com/src-d/or-tools.git

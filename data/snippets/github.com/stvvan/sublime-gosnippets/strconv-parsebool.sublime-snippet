@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+${1:v}, err := strconv.ParseBool(${2:str})
+if err != nil {
+	log.Fatal(err)
+}
+]]></content>
+	<tabTrigger>strconv.ParseBool</tabTrigger>
+	<scope>source.go</scope>
+</snippet>

@@ -1,0 +1,42 @@
+{
+    "master": [
+        {
+            "contiv_control_if": "eth0",
+            "contiv_control_ip": "172.18.14.118",
+            "contiv_network_if": "tap0",
+            "contiv_network_ip": "2.2.2.2",
+            "management_ip": "54.88.155.42",
+            "name": "ip-172-18-14-118.ec2.internal"
+        }
+    ],
+    "nodes": [
+        {
+            "contiv_control_if": "eth0",
+            "contiv_control_ip": "172.18.10.82",
+            "contiv_network_if": "tun0",
+            "contiv_network_ip": "2.2.2.4",
+            "management_ip": "52.90.202.203",
+            "max_pods": "40",
+            "name": "ip-172-18-10-82.ec2.internal"
+        },
+        {
+            "contiv_control_if": "eth0",
+            "contiv_control_ip": "172.18.10.81",
+            "contiv_network_if": "tun0",
+            "contiv_network_ip": "2.2.2.5",
+            "management_ip": "52.23.152.30",
+            "max_pods": "40",
+            "name": "ip-172-18-10-81.ec2.internal"
+        },
+	{
+            "contiv_control_if": "eth0",
+            "contiv_control_ip": "172.18.4.158",
+            "contiv_network_if": "tun0",
+            "contiv_network_ip": "2.2.2.5",
+            "management_ip": "54.210.231.151",
+            "max_pods": "40",
+            "name": "ip-172-18-4-158.ec2.internal"
+        }
+    ]
+}
+

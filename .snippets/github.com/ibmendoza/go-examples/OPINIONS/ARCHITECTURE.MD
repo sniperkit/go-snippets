@@ -1,1 +1,0 @@
-- https://medium.com/openwhisk/uncovering-the-magic-how-serverless-platforms-really-work-3cb127b05f71

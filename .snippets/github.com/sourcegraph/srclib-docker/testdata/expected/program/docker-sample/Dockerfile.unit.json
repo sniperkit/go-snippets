@@ -1,1 +1,0 @@
-{"Name":".","Type":"Dockerfile","Repo":"github.com/sgtest/docker-sample","Globs":null,"Files":["Dockerfile"],"Dir":".","Dependencies":["ubuntu:14.04"],"Data":"FROM ubuntu:14.04\nMAINTAINER m\n\nRUN echo hello\nENV k v\n\nUSER root\n\nWORKDIR /tmp\n\nVOLUME /var/log\n\nADD Dockerfile dst\n\nCMD [\"/bin/echo\", \"ok\"] \n","Ops":{"depresolve":null,"graph":null}}

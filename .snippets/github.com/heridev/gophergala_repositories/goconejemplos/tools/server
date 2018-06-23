@@ -1,4 +1,0 @@
-#!/bin/bash
-
-go run tools/server.go -listen :8000
-

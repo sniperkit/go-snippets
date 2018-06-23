@@ -1,8 +1,0 @@
-.row-fluid
-  .col-md-12
-    h1 Who Are You?
-    form action="/players" method="post"
-      .form-group
-        label.control-label for="name" Name:
-        input.form-control type="text" name="name" value=.Player.Name
-      button.btn.btn-primary.btn-block type="submit" I'm Ready

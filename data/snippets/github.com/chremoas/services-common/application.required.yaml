@@ -1,0 +1,6 @@
+#Represents the absolute minimum configuration options that the config.NewService will use to initialize the service.
+namespace: your.namespace.to.register
+name: yourappname
+registry:
+  hostname: localhost
+  port: 8500

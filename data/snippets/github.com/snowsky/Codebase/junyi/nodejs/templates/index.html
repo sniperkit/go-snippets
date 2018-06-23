@@ -1,0 +1,17 @@
+<!doctype html>
+<link href="{{ url_for('static', filename = "bootstrap/dist/css/bootstrap.min.css") }}" rel="stylesheet">
+<link href="{{ url_for('static', filename = "css/mycss.css") }}" rel="stylesheet">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ url_for('static', filename = "bootstrap/dist/js/bootstrap.min.js") }}"></script>
+<html>
+<title>Hello Arithmetic!</title>
+<body>
+    <h3 id = 'center'><span class="label label-primary">Your Name:</span></h3>
+    <div class = 'input-group'>
+	<span class="input-group-addon">=</span>
+	<input type="text" class="form-control" placeholder="Result">
+    </div>
+</body>
+</html>

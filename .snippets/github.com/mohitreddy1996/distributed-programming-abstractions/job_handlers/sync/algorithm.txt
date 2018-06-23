@@ -1,7 +1,0 @@
-Sync Job Handler Algorithm.
-
-jh is an instance of Job Handler.
-
-1. <jh, Submit | Job>
-	process(job)
-	trigger<jh, Confirm | Job>

@@ -1,0 +1,163 @@
+{
+    "status": "ok",
+    "language": "javascript",
+    "errors": [],
+    "ast": {
+        "comments": [],
+        "end": 41,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 4
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "program": {
+            "body": [
+                {
+                    "async": false,
+                    "body": {
+                        "body": [
+                            {
+                                "argument": {
+                                    "end": 38,
+                                    "extra": {
+                                        "raw": "1",
+                                        "rawValue": 1
+                                    },
+                                    "loc": {
+                                        "end": {
+                                            "column": 12,
+                                            "line": 2
+                                        },
+                                        "start": {
+                                            "column": 11,
+                                            "line": 2
+                                        }
+                                    },
+                                    "start": 37,
+                                    "type": "NumericLiteral",
+                                    "value": 1
+                                },
+                                "end": 38,
+                                "loc": {
+                                    "end": {
+                                        "column": 12,
+                                        "line": 2
+                                    },
+                                    "start": {
+                                        "column": 4,
+                                        "line": 2
+                                    }
+                                },
+                                "start": 30,
+                                "type": "ReturnStatement"
+                            }
+                        ],
+                        "directives": [],
+                        "end": 40,
+                        "loc": {
+                            "end": {
+                                "column": 1,
+                                "line": 3
+                            },
+                            "start": {
+                                "column": 24,
+                                "line": 1
+                            }
+                        },
+                        "start": 24,
+                        "type": "BlockStatement"
+                    },
+                    "end": 40,
+                    "generator": false,
+                    "id": {
+                        "end": 17,
+                        "loc": {
+                            "end": {
+                                "column": 17,
+                                "line": 1
+                            },
+                            "identifierName": "testfnc1",
+                            "start": {
+                                "column": 9,
+                                "line": 1
+                            }
+                        },
+                        "name": "testfnc1",
+                        "start": 9,
+                        "type": "Identifier"
+                    },
+                    "loc": {
+                        "end": {
+                            "column": 1,
+                            "line": 3
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "params": [
+                        {
+                            "end": 19,
+                            "loc": {
+                                "end": {
+                                    "column": 19,
+                                    "line": 1
+                                },
+                                "identifierName": "a",
+                                "start": {
+                                    "column": 18,
+                                    "line": 1
+                                }
+                            },
+                            "name": "a",
+                            "start": 18,
+                            "type": "Identifier"
+                        },
+                        {
+                            "end": 22,
+                            "loc": {
+                                "end": {
+                                    "column": 22,
+                                    "line": 1
+                                },
+                                "identifierName": "b",
+                                "start": {
+                                    "column": 21,
+                                    "line": 1
+                                }
+                            },
+                            "name": "b",
+                            "start": 21,
+                            "type": "Identifier"
+                        }
+                    ],
+                    "start": 0,
+                    "type": "FunctionDeclaration"
+                }
+            ],
+            "directives": [],
+            "end": 41,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 4
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "sourceType": "module",
+            "start": 0,
+            "type": "Program"
+        },
+        "start": 0,
+        "type": "File"
+    }
+}

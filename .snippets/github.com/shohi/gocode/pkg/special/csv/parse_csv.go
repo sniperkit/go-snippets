@@ -1,5 +1,0 @@
-package csv
-
-func parseCSV() {
-
-}

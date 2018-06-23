@@ -1,1 +1,0 @@
-[('if', 'WIN32', None, [('target_link_libraries', 'myapp somelib', None, None)]), ('endif', None, None, None)]

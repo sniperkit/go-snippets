@@ -1,9 +1,0 @@
-name = "Go"
-language = "go"
-status = "beta"
-features = ["ast","uast","roles"]
-
-[runtime]
-  os = "alpine"
-  go_version = "1.9"
-  native_version = ["1.9"]

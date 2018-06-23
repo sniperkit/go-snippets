@@ -1,8 +1,0 @@
-{
-    "maxProc" : 10,
-    "path" : {
-        "tmp" : {
-            "linux" : "/tmp"
-        }
-    }
-}

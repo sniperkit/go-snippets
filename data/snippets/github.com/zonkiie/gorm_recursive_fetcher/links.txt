@@ -1,0 +1,3 @@
+http://stackoverflow.com/questions/23030884/is-there-a-way-to-create-an-instance-of-a-struct-from-a-string
+http://stackoverflow.com/questions/7850140/how-do-you-create-a-new-instance-of-a-struct-from-its-type-at-runtime-in-go
+http://stackoverflow.com/questions/29435783/gorm-golang-orm-associations

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "A Week of A-Frame Weekly Series",
+    "url": "https://aframe.io/blog/"
+  },
+  {
+    "name": "Official Site",
+    "url": "https://aframe.io/"
+  },
+  {
+    "name": "Community",
+    "url": "https://aframe.io/community/"
+  },
+  {
+    "name": "Components",
+    "url": "https://www.npmjs.com/search?q=keywords:aframe&page=1&ranking=optimal"
+  },
+  {
+    "name": "Twitter",
+    "url": "https://twitter.com/aframevr/"
+  }
+]

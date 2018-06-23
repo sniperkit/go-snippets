@@ -1,0 +1,14 @@
+[root]
+name = "qr"
+version = "0.1.0"
+dependencies = [
+ "qrcodegen 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "qrcodegen"
+version = "1.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[metadata]
+"checksum qrcodegen 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "f0d482788c1547728e2623c353180ed689fc366ccdf2368553c099af0b01ba7f"

@@ -1,0 +1,503 @@
+CS231N-1 | archive.org <a>video</a> | https://archive.org/details/cs231n-CNNs | parentid:CS231N 
+CS231N-2 | academictorrents torrents | http://academictorrents.com/details/46c5af9e2075d9af06f280b55b65cf9b44eb9fe7 | parentid:CS231N
+CS229-1 | The Motivation & Applications of Machine Learning | | parentid:CS229
+CS229-2 | An Application of Supervised Learning - Autonomous Deriving | | parentid:CS229
+CS229-3 | The Concept of Underfitting and Overfitting | | parentid:CS229
+CS229-4 | Newton's Method | | parentid:CS229
+CS229-5 | Discriminative Algorithms | | parentid:CS229
+CS229-6 | Multinomial Event Model | | parentid:CS229
+CS229-7 | Optimal Margin Classifier | | parentid:CS229
+CS229-8 | Kernels, Mercer's Theorem... | | parentid:CS229
+CS229-9 | Bias/variance Tradeoff | | parentid:CS229
+CS229-10 | Uniform Convergence - The Case of Infinite H | | parentid:CS229
+CS229-11 | Bayesian Statistics and Regularization | | parentid:CS229
+CS229-12 | The Concept of Unsupervised Learning | | parentid:CS229
+CS229-13 | Mixture of Gaussian | | parentid:CS229
+CS229-14 | The Factor Analysis Model | | parentid:CS229
+CS229-15 | Latent Semantic Indexing (LSI) | | parentid:CS229
+CS229-16 | Applications of Reinforcement Learning | | parentid:CS229
+CS229-17 | Generalization to Continuous States | | parentid:CS229
+CS229-18 | State-action Rewards | | parentid:CS229
+CS229-19 | Advice for Applying Machine Learning | | parentid:CS229
+CS229-20 | Partially Observable MDPs (POMDPs) | | parentid:CS229
+CS334A-1 | Introduction | | parentid:CS334A
+CS334A-2 | Convex sets | | parentid:CS334A
+CS334A-3 | Convex functions | | parentid:CS334A
+CS334A-4 | Convex optimization problems | | parentid:CS334A
+CS334A-5 | Duality | | parentid:CS334A
+CS334A-6 | Approximation and fitting | | parentid:CS334A
+CS334A-7 | Statistical estimation | | parentid:CS334A
+CS334A-8 | Geometrical problems | | parentid:CS334A
+CS334A-9 | Unconstrained minimization | | parentid:CS334A
+CS334A-10 | Equality constrained minimization | | parentid:CS334A
+CS334A-11 | Interior-point methods | | parentid:CS334A
+CS205A-1 | Mathematics Review | | parentid:CS205A
+CS205A-1.1 | PRELIMINARIES: NUMBERS AND SETS | | parentid:CS205A-1
+CS205A-1.2 | VECTOR SPACES | | parentid:CS205A-1
+CS205A-1.3 | LINEARITY | | parentid:CS205A-1
+CS205A-1.4 | NONLINEARITY: DIFFERENTIAL CALCULUS | | parentid:CS205A-1
+CS205A-2 | Numerics and Error Analysis | | parentid:CS205A
+CS205A-2.1 | STORING NUMBERS WITH FRACTIONAL PARTS | | parentid:CS205A-2
+CS205A-2.2 | UNDERSTANDING ERROR | | parentid:CS205A-2
+CS205A-2.3 | PRACTICAL ASPECTS | | parentid:CS205A-2
+CS205A-3 | Linear Algebra | | parentid:CS205A
+CS205A-3.1 | Linear Systems and the LU Decomposition | | parentid:CS205A-3
+CS205A-3.2 | SOLVABILITY OF LINEAR SYSTEMS | | parentid:CS205A-3
+CS205A-3.3 | ADHOC SOLUTION STRATEGIES | | parentid:CS205A-3
+CS205A-3.4 | ENCODING ROW OPERATIONS | | parentid:CS205A-3
+CS205A-3.5 | GAUSSIAN ELIMINATION | | parentid:CS205A-3
+CS205A-3.6 | LU FACTORIZATION | | parentid:CS205A-3
+CS205A-4 | Designing and Analyzing Linear Systems | | parentid:CS205A
+CS205A-4.1 | SOLUTION OF SQUARE SYSTEMS | | parentid:CS205A-4
+CS205A-4.2 | SPECIAL PROPERTIES OF LINEAR SYSTEMS | | parentid:CS205A-4
+CS205A-4.3 | SENSITIVITY ANALYSIS | | parentid:CS205A-4
+CS205A-5 | Column Spaces and QR | | parentid:CS205A
+CS205A-5.1 | THE STRUCTURE OF THE NORMAL EQUATIONS | | parentid:CS205A-5
+CS205A-5.2 | ORTHOGONALITY | | parentid:CS205A-5
+CS205A-5.3 | STRATEGY FOR NONORTHOGONAL MATRICES | | parentid:CS205A-5
+CS205A-5.4 | GRAMSCHMIDT ORTHOGONALIZATION | | parentid:CS205A-5
+CS205A-5.5 | HOUSEHOLDER TRANSFORMATIONS | | parentid:CS205A-5
+CS205A-5.6 | REDUCED QR FACTORIZATION | | parentid:CS205A-5
+CS205A-6 | Eigenvectors | | parentid:CS205A
+CS205A-6.1 | MOTIVATION | | parentid:CS205A-6
+CS205A-6.2 | PROPERTIES OF EIGENVECTORS | | parentid:CS205A-6
+CS205A-6.3 | COMPUTING A SINGLE EIGENVALUE | | parentid:CS205A-6
+CS205A-6.4 | FINDING MULTIPLE EIGENVALUES | | parentid:CS205A-6
+CS205A-6.5 | SENSITIVITY AND CONDITIONING | | parentid:CS205A-6
+CS205A-7 | Singular Value Decomposition | | parentid:CS205A
+CS205A-7.1 | DERIVING THE SVD | | parentid:CS205A-7
+CS205A-7.2 | APPLICATIONS OF THE SVD | | parentid:CS205A-7
+CS205A-8 | Nonlinear Techniques | | parentid:CS205A
+CS205A-8.1 | Nonlinear Systems | | parentid:CS205A-8
+CS205A-8.2 | ROOTFINDING IN A SINGLE VARIABLE | | parentid:CS205A-8
+CS205A-8.3 | MULTIVARIABLE PROBLEMS | | parentid:CS205A-8
+CS205A-8.4 | CONDITIONING | | parentid:CS205A-8
+CS205A-9 | Unconstrained Optimization | | parentid:CS205A
+CS205A-9.1 | UNCONSTRAINED OPTIMIZATION: MOTIVATION | | parentid:CS205A-9
+CS205A-9.2 | OPTIMALITY | | parentid:CS205A-9
+CS205A-9.3 | ONE-DIMENSIONAL STRATEGIES | | parentid:CS205A-9
+CS205A-9.4 | MULTIVARIABLE STRATEGIES | | parentid:CS205A-9
+CS205A-10 | Constrained Optimization | | parentid:CS205A
+CS205A-10.1 | MOTIVATION | | parentid:CS205A-10
+CS205A-10.2 | THEORY OF CONSTRAINED OPTIMIZATION | | parentid:CS205A-10
+CS205A-10.3 | OPTIMIZATION ALGORITHMS | | parentid:CS205A-10
+CS205A-10.4 | CONVEX PROGRAMMING | | parentid:CS205A-10
+CS205A-11 | Iterative Linear Solvers | | parentid:CS205A
+CS205A-11.1 | GRADIENT DESCENT | | parentid:CS205A-11
+CS205A-11.2 | CONJUGATE GRADIENTS | | parentid:CS205A-11
+CS205A-11.3 | PRECONDITIONING | | parentid:CS205A-11
+CS205A-11.4 | OTHER ITERATIVE ALGORITHMS | | parentid:CS205A-11
+CS205A-12 | Specialized Optimization Methods | | parentid:CS205A
+CS205A-12.1 | NONLINEAR LEAST SQUARES | | parentid:CS205A-12
+CS205A-12.2 | ITERATIVELYREWEIGHTED LEAST SQUARES | | parentid:CS205A-12
+CS205A-12.3 | COORDINATE DESCENT AND ALTERNATION | | parentid:CS205A-12
+CS205A-12.4 | GLOBAL OPTIMIZATION | | parentid:CS205A-12
+CS205A-12.5 | ONLINE OPTIMIZATION | | parentid:CS205A-12
+CS205A-13 | Functions, Derivatives, and Integrals | | parentid:CS205A
+CS205A-13.1 | Interpolation | | parentid:CS205A-13
+CS205A-13.2 | INTERPOLATION IN A SINGLE VARIABLE | | parentid:CS205A-13
+CS205A-13.3 | MULTIVARIABLE INTERPOLATION | | parentid:CS205A-13
+CS205A-13.4 | THEORY OF INTERPOLATION | | parentid:CS205A-13
+CS205A-14 | Integration and Differentiation | | parentid:CS205A
+CS205A-14.1 | MOTIVATION | | parentid:CS205A-14
+CS205A-14.2 | QUADRATURE | | parentid:CS205A-14
+CS205A-14.3 | DIFFERENTIATION | | parentid:CS205A-14
+CS205A-15 | Ordinary Differential Equations | | parentid:CS205A
+CS205A-15.1 | MOTIVATION | | parentid:CS205A-15
+CS205A-15.2 | THEORY OF ODES | | parentid:CS205A-15
+CS205A-15.3 | TIMESTEPPING SCHEMES | | parentid:CS205A-15
+CS205A-15.4 | MULTIVALUE METHODS | | parentid:CS205A-15
+CS205A-15.5 | COMPARISON OF INTEGRATORS | | parentid:CS205A-15
+CS205A-16 | Partial Differential Equations | | parentid:CS205A
+CS205A-16.1 | MOTIVATION | | parentid:CS205A-16
+CS205A-16.2 | STATEMENT AND STRUCTURE OF PDES | | parentid:CS205A-16
+CS205A-16.3 | REPRESENTING DERIVATIVE OPERATORS | | parentid:CS205A-16
+CS205A-16.4 | SOLVING PARABOLIC AND HYPERBOLIC EQUATIONS | | parentid:CS205A-16
+CS205A-16.5 | NUMERICAL CONSIDERATIONS | | parentid:CS205A-16
+CS231A-1 | Introduction | | parentid:CS231A
+CS231A-1.1 | What is computer vision? | | parentid:CS231A-1
+CS231A-1.2 | A brief history | | parentid:CS231A-1
+CS231A-1.3 | Book overview | | parentid:CS231A-1
+CS231A-1.4 | Sample syllabus | | parentid:CS231A-1
+CS231A-1.5 | A note on notation | | parentid:CS231A-1
+CS231A-1.6 | Additional reading | | parentid:CS231A-1
+CS231A-2 | Image formation | | parentid:CS231A
+CS231A-2.1 | Geometric primitives and transformations | | parentid:CS231A-2
+CS231A-2.2 | Geometric primitives | | parentid:CS231A-2
+CS231A-2.3 | 2D transformations | | parentid:CS231A-2
+CS231A-2.4 | 3D transformations | | parentid:CS231A-2
+CS231A-2.5 | 3D rotations | | parentid:CS231A-2
+CS231A-2.6 | 3D to 2D projections | | parentid:CS231A-2
+CS231A-2.7 | Lens distortions | | parentid:CS231A-2
+CS231A-2.8 | Photometric image formation | | parentid:CS231A-2
+CS231A-2.9 | Lighting | | parentid:CS231A-2
+CS231A-2.10 | Reflectance and shading | | parentid:CS231A-2
+CS231A-2.11 | Optics | | parentid:CS231A-2
+CS231A-2.12 | The digital camera | | parentid:CS231A-2
+CS231A-2.13 | Sampling and aliasing | | parentid:CS231A-2
+CS231A-2.14 | Color | | parentid:CS231A-2
+CS231A-2.15 | Compression | | parentid:CS231A-2
+CS231A-2.16 | Additional reading | | parentid:CS231A-2
+CS231A-2.17 | Exercises | | parentid:CS231A-2
+CS231A-3 | Image processing | | parentid:CS231A
+CS231A-3.1 | Point operators | | parentid:CS231A-3
+CS231A-3.2 | Pixel transforms | | parentid:CS231A-3
+CS231A-3.3 | Color transforms | | parentid:CS231A-3
+CS231A-3.4 | Compositing and matting | | parentid:CS231A-3
+CS231A-3.5 | Histogram equalization | | parentid:CS231A-3
+CS231A-3.6 | Application: Tonal adjustment | | parentid:CS231A-3
+CS231A-3.7 | Linear filtering | | parentid:CS231A-3
+CS231A-3.8 | Separable filtering | | parentid:CS231A-3
+CS231A-3.9 | Examples of linear filtering | | parentid:CS231A-3
+CS231A-3.10 | Band-pass and steerable filters | | parentid:CS231A-3
+CS231A-3.11 | More neighborhood operators | | parentid:CS231A-3
+CS231A-3.12 | Non-linear filtering | | parentid:CS231A-3
+CS231A-3.13 | Morphology | | parentid:CS231A-3
+CS231A-3.14 | Distance transforms | | parentid:CS231A-3
+CS231A-3.15 | Connected components | | parentid:CS231A-3
+CS231A-3.16 | Fourier transforms | | parentid:CS231A-3
+CS231A-3.17 | Fourier transform pairs | | parentid:CS231A-3
+CS231A-3.18 | Two-dimensional Fourier transforms | | parentid:CS231A-3
+CS231A-3.19 | Wiener filtering | | parentid:CS231A-3
+CS231A-3.20 | Application: Sharpening, blur, and noise removal | | parentid:CS231A-3
+CS231A-3.21 | Pyramids and wavelets | | parentid:CS231A-3
+CS231A-3.22 | Interpolation | | parentid:CS231A-3
+CS231A-3.23 | Decimation | | parentid:CS231A-3
+CS231A-3.24 | Multi-resolution representations | | parentid:CS231A-3
+CS231A-3.25 | Wavelets | | parentid:CS231A-3
+CS231A-3.26 | Application: Image blending | | parentid:CS231A-3
+CS231A-3.27 | Geometric transformations | | parentid:CS231A-3
+CS231A-3.28 | Parametric transformations | | parentid:CS231A-3
+CS231A-3.29 | Mesh-based warping | | parentid:CS231A-3
+CS231A-3.30 | Application: Feature-based morphing | | parentid:CS231A-3
+CS231A-3.31 | Global optimization | | parentid:CS231A-3
+CS231A-3.32 | Regularization | | parentid:CS231A-3
+CS231A-3.33 | Markov random fields | | parentid:CS231A-3
+CS231A-3.34 | Application: Image restoration | | parentid:CS231A-3
+CS231A-3.35 | Additional reading | | parentid:CS231A-3
+CS231A-3.36 | Exercises | | parentid:CS231A-3
+CS231A-4 | Feature detection and matching | | parentid:CS231A
+CS231A-4.1 | Points and patches | | parentid:CS231A-4
+CS231A-4.2 | Feature detectors | | parentid:CS231A-4
+CS231A-4.3 | Feature descriptors | | parentid:CS231A-4
+CS231A-4.4 | Feature matching | | parentid:CS231A-4
+CS231A-4.5 | Feature tracking | | parentid:CS231A-4
+CS231A-4.6 | Application: Performance-driven animation | | parentid:CS231A-4
+CS231A-4.7 | Edges | | parentid:CS231A-4
+CS231A-4.8 | Edge detection | | parentid:CS231A-4
+CS231A-4.9 | Edge linking | | parentid:CS231A-4
+CS231A-4.10 | Application: Edge editing and enhancement | | parentid:CS231A-4
+CS231A-4.11 | Lines | | parentid:CS231A-4
+CS231A-4.12 | Successive approximation | | parentid:CS231A-4
+CS231A-4.13 | Hough transforms | | parentid:CS231A-4
+CS231A-4.14 | Vanishing points | | parentid:CS231A-4
+CS231A-4.15 | Application: Rectangle detection | | parentid:CS231A-4
+CS231A-4.16 | Additional reading | | parentid:CS231A-4
+CS231A-4.17 | Exercises | | parentid:CS231A-4
+CS231A-5 | Segmentation | | parentid:CS231A
+CS231A-5.1 | Active contours | | parentid:CS231A-5
+CS231A-5.2 | Snakes | | parentid:CS231A-5
+CS231A-5.3 | Dynamic snakes and CONDENSATION | | parentid:CS231A-5
+CS231A-5.4 | Scissors | | parentid:CS231A-5
+CS231A-5.5 | Level Sets | | parentid:CS231A-5
+CS231A-5.6 | Application: Contour tracking and rotoscoping | | parentid:CS231A-5
+CS231A-5.7 | Split and merge | | parentid:CS231A-5
+CS231A-5.8 | Watershed | | parentid:CS231A-5
+CS231A-5.9 | Region splitting (divisive clustering) | | parentid:CS231A-5
+CS231A-5.10 | Region merging (agglomerative clustering) | | parentid:CS231A-5
+CS231A-5.11 | Graph-based segmentation | | parentid:CS231A-5
+CS231A-5.12 | Probabilistic aggregation | | parentid:CS231A-5
+CS231A-5.13 | Mean shift and mode finding | | parentid:CS231A-5
+CS231A-5.14 | K-means and mixtures of Gaussians | | parentid:CS231A-5
+CS231A-5.15 | Mean shift | | parentid:CS231A-5
+CS231A-5.16 | Normalized cuts | | parentid:CS231A-5
+CS231A-5.17 | Graph cuts and energy-based methods | | parentid:CS231A-5
+CS231A-5.18 | Application: Medical image segmentation | | parentid:CS231A-5
+CS231A-5.19 | Additional reading | | parentid:CS231A-5
+CS231A-5.20 | Exercises | | parentid:CS231A-5
+CS231A-6 | Feature-based alignment | | parentid:CS231A
+CS231A-6.1 | 2D and 3D feature-based alignment | | parentid:CS231A-6
+CS231A-6.2 | 2D alignment using least squares | | parentid:CS231A-6
+CS231A-6.3 | Application: Panography | | parentid:CS231A-6
+CS231A-6.4 | Iterative algorithms | | parentid:CS231A-6
+CS231A-6.5 | Robust least squares and RANSAC | | parentid:CS231A-6
+CS231A-6.6 | 3D alignment | | parentid:CS231A-6
+CS231A-6.7 | Pose estimation | | parentid:CS231A-6
+CS231A-6.8 | Linear algorithms | | parentid:CS231A-6
+CS231A-6.9 | Iterative algorithms | | parentid:CS231A-6
+CS231A-6.10 | Application: Augmented reality | | parentid:CS231A-6
+CS231A-6.11 | Geometric intrinsic calibration | | parentid:CS231A-6
+CS231A-6.12 | Calibration patterns | | parentid:CS231A-6
+CS231A-6.13 | Vanishing points | | parentid:CS231A-6
+CS231A-6.14 | Application: Single view metrology | | parentid:CS231A-6
+CS231A-6.15 | Rotational motion | | parentid:CS231A-6
+CS231A-6.16 | Radial distortion | | parentid:CS231A-6
+CS231A-6.17 | Additional reading | | parentid:CS231A-6
+CS231A-6.18 | Exercises | | parentid:CS231A-6
+CS231A-7 | Structure from motion | | parentid:CS231A
+CS231A-7.1 | Triangulation | | parentid:CS231A-7
+CS231A-7.2 | Two-frame structure from motion | | parentid:CS231A-7
+CS231A-7.3 | Projective (uncalibrated) reconstruction | | parentid:CS231A-7
+CS231A-7.4 | Self-calibration | | parentid:CS231A-7
+CS231A-7.5 | Application: View morphing | | parentid:CS231A-7
+CS231A-7.6 | Factorization | | parentid:CS231A-7
+CS231A-7.7 | Perspective and projective factorization | | parentid:CS231A-7
+CS231A-7.8 | Application: Sparse 3D model extraction | | parentid:CS231A-7
+CS231A-7.9 | Bundle adjustment | | parentid:CS231A-7
+CS231A-7.10 | Exploiting sparsity | | parentid:CS231A-7
+CS231A-7.11 | Application: Match move and augmented reality | | parentid:CS231A-7
+CS231A-7.12 | Uncertainty and ambiguities | | parentid:CS231A-7
+CS231A-7.13 | Application: Reconstruction from Internet photos | | parentid:CS231A-7
+CS231A-7.14 | Constrained structure and motion | | parentid:CS231A-7
+CS231A-7.15 | Line-based techniques | | parentid:CS231A-7
+CS231A-7.16 | Plane-based techniques | | parentid:CS231A-7
+CS231A-7.17 | Additional reading | | parentid:CS231A-7
+CS231A-7.18 | Exercises | | parentid:CS231A-7
+CS231A-8 | Dense motion estimation | | parentid:CS231A
+CS231A-8.1 | Translational alignment | | parentid:CS231A-8
+CS231A-8.2 | Hierarchical motion estimation | | parentid:CS231A-8
+CS231A-8.3 | Fourier-based alignment | | parentid:CS231A-8
+CS231A-8.4 | Incremental refinement | | parentid:CS231A-8
+CS231A-8.5 | Parametric motion | | parentid:CS231A-8
+CS231A-8.6 | Application: Video stabilization | | parentid:CS231A-8
+CS231A-8.7 | Learned motion models | | parentid:CS231A-8
+CS231A-8.8 | Spline-based motion | | parentid:CS231A-8
+CS231A-8.9 | Application: Medical image registration | | parentid:CS231A-8
+CS231A-8.10 | Optical flow | | parentid:CS231A-8
+CS231A-8.11 | Multi-frame motion estimation | | parentid:CS231A-8
+CS231A-8.12 | Application: Video denoising | | parentid:CS231A-8
+CS231A-8.13 | Application: De-interlacing | | parentid:CS231A-8
+CS231A-8.14 | Layered motion | | parentid:CS231A-8
+CS231A-8.15 | Application: Frame interpolation | | parentid:CS231A-8
+CS231A-8.16 | Transparent layers and reflections | | parentid:CS231A-8
+CS231A-8.17 | Additional reading | | parentid:CS231A-8
+CS231A-8.18 | Exercises | | parentid:CS231A-8
+CS231A-9 | Image stitching | | parentid:CS231A
+CS231A-9.1 | Motion models | | parentid:CS231A-9
+CS231A-9.2 | Planar perspective motion | | parentid:CS231A-9
+CS231A-9.3 | Application: Whiteboard and document scanning | | parentid:CS231A-9
+CS231A-9.4 | Rotational panoramas | | parentid:CS231A-9
+CS231A-9.5 | Gap closing | | parentid:CS231A-9
+CS231A-9.6 | Application: Video summarization and compression | | parentid:CS231A-9
+CS231A-9.7 | Cylindrical and spherical coordinates | | parentid:CS231A-9
+CS231A-9.8 | Global alignment | | parentid:CS231A-9
+CS231A-9.9 | Bundle adjustment | | parentid:CS231A-9
+CS231A-9.10 | Parallax removal | | parentid:CS231A-9
+CS231A-9.11 | Recognizing panoramas | | parentid:CS231A-9
+CS231A-9.12 | Direct vs. feature-based alignment | | parentid:CS231A-9
+CS231A-9.13 | Compositing | | parentid:CS231A-9
+CS231A-9.14 | Choosing a compositing surface | | parentid:CS231A-9
+CS231A-9.15 | Pixel selection and weighting (de-ghosting) | | parentid:CS231A-9
+CS231A-9.16 | Application: Photomontage | | parentid:CS231A-9
+CS231A-9.17 | Blending | | parentid:CS231A-9
+CS231A-9.18 | Additional reading | | parentid:CS231A-9
+CS231A-9.19 | Exercises | | parentid:CS231A-9
+CS231A-10 | Computational photography | | parentid:CS231A
+CS231A-10.1 | Photometric calibration | | parentid:CS231A-10
+CS231A-10.2 | Radiometric response function | | parentid:CS231A-10
+CS231A-10.3 | Noise level estimation | | parentid:CS231A-10
+CS231A-10.4 | Vignetting | | parentid:CS231A-10
+CS231A-10.5 | Optical blur (spatial response) estimation | | parentid:CS231A-10
+CS231A-10.6 | High dynamic range imaging | | parentid:CS231A-10
+CS231A-10.7 | Tone mapping | | parentid:CS231A-10
+CS231A-10.8 | Application: Flash photography | | parentid:CS231A-10
+CS231A-10.9 | Super-resolution and blur removal | | parentid:CS231A-10
+CS231A-10.10 | Color image demosaicing | | parentid:CS231A-10
+CS231A-10.11 | Application: Colorization | | parentid:CS231A-10
+CS231A-10.12 | Image matting and compositing | | parentid:CS231A-10
+CS231A-10.13 | Blue screen matting | | parentid:CS231A-10
+CS231A-10.14 | Natural image matting | | parentid:CS231A-10
+CS231A-10.15 | Optimization-based matting | | parentid:CS231A-10
+CS231A-10.16 | Smoke, shadow, and flash matting | | parentid:CS231A-10
+CS231A-10.17 | Video matting | | parentid:CS231A-10
+CS231A-10.18 | Texture analysis and synthesis | | parentid:CS231A-10
+CS231A-10.19 | Application: Hole filling and inpainting | | parentid:CS231A-10
+CS231A-10.20 | Application: Non-photorealistic rendering | | parentid:CS231A-10
+CS231A-10.21 | Additional reading | | parentid:CS231A-10
+CS231A-10.22 | Exercises | | parentid:CS231A-10
+CS231A-11 | Stereo correspondence | | parentid:CS231A
+CS231A-11.1 | Epipolar geometry | | parentid:CS231A-11
+CS231A-11.2 | Rectification | | parentid:CS231A-11
+CS231A-11.3 | Plane sweep | | parentid:CS231A-11
+CS231A-11.4 | Sparse correspondence | | parentid:CS231A-11
+CS231A-11.5 | 3D curves and profiles | | parentid:CS231A-11
+CS231A-11.6 | Dense correspondence | | parentid:CS231A-11
+CS231A-11.7 | Similarity measures | | parentid:CS231A-11
+CS231A-11.8 | Local methods | | parentid:CS231A-11
+CS231A-11.9 | Sub-pixel estimation and uncertainty | | parentid:CS231A-11
+CS231A-11.10 | Application: Stereo-based head tracking | | parentid:CS231A-11
+CS231A-11.11 | Global optimization | | parentid:CS231A-11
+CS231A-11.12 | Dynamic programming | | parentid:CS231A-11
+CS231A-11.13 | Segmentation-based techniques | | parentid:CS231A-11
+CS231A-11.14 | Application: Z-keying and background replacement | | parentid:CS231A-11
+CS231A-11.15 | Multi-view stereo | | parentid:CS231A-11
+CS231A-11.16 | Volumetric and 3D surface reconstruction | | parentid:CS231A-11
+CS231A-11.17 | Shape from silhouettes | | parentid:CS231A-11
+CS231A-11.18 | Additional reading | | parentid:CS231A-11
+CS231A-11.19 | Exercises | | parentid:CS231A-11
+CS231A-12 | 3D reconstruction | | parentid:CS231A
+CS231A-12.1 | Shape from X | | parentid:CS231A-12
+CS231A-12.2 | Shape from shading and photometric stereo | | parentid:CS231A-12
+CS231A-12.3 | Shape from texture | | parentid:CS231A-12
+CS231A-12.4 | Shape from focus | | parentid:CS231A-12
+CS231A-12.5 | Active rangefinding | | parentid:CS231A-12
+CS231A-12.6 | Range data merging | | parentid:CS231A-12
+CS231A-12.7 | Application: Digital heritage | | parentid:CS231A-12
+CS231A-12.8 | Surface representations | | parentid:CS231A-12
+CS231A-12.9 | Surface interpolation | | parentid:CS231A-12
+CS231A-12.10 | Surface simplification | | parentid:CS231A-12
+CS231A-12.11 | Geometry images | | parentid:CS231A-12
+CS231A-12.12 | Point-based representations | | parentid:CS231A-12
+CS231A-12.13 | Volumetric representations | | parentid:CS231A-12
+CS231A-12.14 | Implicit surfaces and level sets | | parentid:CS231A-12
+CS231A-12.15 | Model-based reconstruction | | parentid:CS231A-12
+CS231A-12.16 | Architecture | | parentid:CS231A-12
+CS231A-12.17 | Heads and faces | | parentid:CS231A-12
+CS231A-12.18 | Application: Facial animation | | parentid:CS231A-12
+CS231A-12.19 | Whole body modeling and tracking | | parentid:CS231A-12
+CS231A-12.20 | Recovering texture maps and albedos | | parentid:CS231A-12
+CS231A-12.21 | Estimating BRDFs | | parentid:CS231A-12
+CS231A-12.22 | Application: 3D photography | | parentid:CS231A-12
+CS231A-12.23 | Additional reading | | parentid:CS231A-12
+CS231A-12.24 | Exercises | | parentid:CS231A-12
+CS231A-13 | Image-based rendering | | parentid:CS231A
+CS231A-13.1 | View interpolation | | parentid:CS231A-13
+CS231A-13.2 | View-dependent texture maps | | parentid:CS231A-13
+CS231A-13.3 | Application: Photo Tourism | | parentid:CS231A-13
+CS231A-13.4 | Layered depth images | | parentid:CS231A-13
+CS231A-13.5 | Impostors, sprites, and layers | | parentid:CS231A-13
+CS231A-13.6 | Light fields and Lumigraphs | | parentid:CS231A-13
+CS231A-13.7 | Unstructured Lumigraph | | parentid:CS231A-13
+CS231A-13.8 | Surface light fields | | parentid:CS231A-13
+CS231A-13.9 | Application: Concentric mosaics | | parentid:CS231A-13
+CS231A-13.10 | Environment mattes | | parentid:CS231A-13
+CS231A-13.11 | Higher-dimensional light fields | | parentid:CS231A-13
+CS231A-13.12 | The modeling to rendering continuum | | parentid:CS231A-13
+CS231A-13.13 | Video-based rendering | | parentid:CS231A-13
+CS231A-13.14 | Video-based animation | | parentid:CS231A-13
+CS231A-13.15 | Video textures | | parentid:CS231A-13
+CS231A-13.16 | Application: Animating pictures | | parentid:CS231A-13
+CS231A-13.17 | 3D Video | | parentid:CS231A-13
+CS231A-13.18 | Application: Video-based walkthroughs | | parentid:CS231A-13
+CS231A-13.19 | Additional reading | | parentid:CS231A-13
+CS231A-13.20 | Exercises | | parentid:CS231A-13
+CS231A-14 | Recognition | | parentid:CS231A
+CS231A-14.1 | Object detection | | parentid:CS231A-14
+CS231A-14.2 | Face detection | | parentid:CS231A-14
+CS231A-14.3 | Pedestrian detection | | parentid:CS231A-14
+CS231A-14.4 | Face recognition | | parentid:CS231A-14
+CS231A-14.5 | Eigenfaces | | parentid:CS231A-14
+CS231A-14.6 | Active appearance and 3D shape models | | parentid:CS231A-14
+CS231A-14.7 | Application: Personal photo collections | | parentid:CS231A-14
+CS231A-14.8 | Instance recognition | | parentid:CS231A-14
+CS231A-14.9 | Geometric alignment | | parentid:CS231A-14
+CS231A-14.10 | Large databases | | parentid:CS231A-14
+CS231A-14.11 | Application: Location recognition | | parentid:CS231A-14
+CS231A-14.12 | Category recognition | | parentid:CS231A-14
+CS231A-14.13 | Bag of words | | parentid:CS231A-14
+CS231A-14.14 | Part-based models | | parentid:CS231A-14
+CS231A-14.15 | Recognition with segmentation | | parentid:CS231A-14
+CS231A-14.16 | Application: Intelligent photo editing | | parentid:CS231A-14
+CS231A-14.17 | Context and scene understanding | | parentid:CS231A-14
+CS231A-14.18 | Learning and large image collections | | parentid:CS231A-14
+CS231A-14.19 | Application: Image search | | parentid:CS231A-14
+CS231A-14.20 | Recognition databases and test sets | | parentid:CS231A-14
+CS231A-14.21 | Additional reading | | parentid:CS231A-14
+CS231A-14.22 | Exercises | | parentid:CS231A-14
+CS231A-15 | Conclusion | | parentid:CS231A
+CS231A-15.1 | Linear algebra and numerical techniques | | parentid:CS231A-15
+CS231A-15.2 | Matrix decompositions | | parentid:CS231A-15
+CS231A-15.3 | Singular value decomposition | | parentid:CS231A-15
+CS231A-15.4 | Eigenvalue decomposition | | parentid:CS231A-15
+CS231A-15.5 | QR factorization | | parentid:CS231A-15
+CS231A-15.6 | Cholesky factorization | | parentid:CS231A-15
+CS231A-15.7 | Linear least squares | | parentid:CS231A-15
+CS231A-15.8 | Total least squares | | parentid:CS231A-15
+CS231A-15.9 | Non-linear least squares | | parentid:CS231A-15
+CS231A-15.10 | Direct sparse matrix techniques | | parentid:CS231A-15
+CS231A-15.11 | Variable reordering | | parentid:CS231A-15
+CS231A-15.12 | Iterative techniques | | parentid:CS231A-15
+CS231A-15.13 | Conjugate gradient | | parentid:CS231A-15
+CS231A-15.14 | Preconditioning | | parentid:CS231A-15
+CS231A-15.15 | Multigrid | | parentid:CS231A-15
+CS231A-15.16 | Bayesian modeling and inference | | parentid:CS231A-15
+CS231A-15.17 | Estimation theory | | parentid:CS231A-15
+CS231A-15.18 | Likelihood for multivariate Gaussian noise | | parentid:CS231A-15
+CS231A-15.19 | Maximum likelihood estimation and least squares | | parentid:CS231A-15
+CS231A-15.20 | Robust statistics | | parentid:CS231A-15
+CS231A-15.21 | Prior models and Bayesian inference | | parentid:CS231A-15
+CS231A-15.22 | Markov random fields | | parentid:CS231A-15
+CS231A-15.23 | Gradient descent and simulated annealing | | parentid:CS231A-15
+CS231A-15.24 | Dynamic programming | | parentid:CS231A-15
+CS231A-15.25 | Belief propagation | | parentid:CS231A-15
+CS231A-15.26 | Graph cuts | | parentid:CS231A-15
+CS231A-15.27 | Linear programming | | parentid:CS231A-15
+CS231A-15.28 | Uncertainty estimation (error analysis) | | parentid:CS231A-15
+CS131-1 | Introduction | | parentid:CS131
+CS131-2 | Images as functions | | parentid:CS131
+CS131-3 | Filtering | | parentid:CS131
+CS131-4 | Linearity and convolution | | parentid:CS131
+CS131-5 | Filters as templates | | parentid:CS131
+CS131-6 | Edge detection: Gradients | | parentid:CS131
+CS131-7 | Edge detection: 2D operators | | parentid:CS131
+CS131-8 | Hough transform: Lines | | parentid:CS131
+CS131-9 | Hough transform: Circles | | parentid:CS131
+CS131-10 | Generalized Hough transform | | parentid:CS131
+CS131-11 | Fourier transform | | parentid:CS131
+CS131-12 | Convolution in frequency domain | | parentid:CS131
+CS131-13 | Aliasing | | parentid:CS131
+CS131-14 | Cameras and images | | parentid:CS131
+CS131-15 | Perspective imaging | | parentid:CS131
+CS131-16 | Stereo geometry | | parentid:CS131
+CS131-17 | Epipolar geometry | | parentid:CS131
+CS131-18 | Stereo correspondence | | parentid:CS131
+CS131-19 | Extrinsic camera parameters | | parentid:CS131
+CS131-20 | Instrinsic camera parameters | | parentid:CS131
+CS131-21 | Calibrating cameras | | parentid:CS131
+CS131-22 | Image to image projections | | parentid:CS131
+CS131-23 | Homographies and mosaics | | parentid:CS131
+CS131-24 | Projective geometry | | parentid:CS131
+CS131-25 | Essential matrix | | parentid:CS131
+CS131-26 | Fundamental matrix | | parentid:CS131
+CS131-27 | Introduction to "features" | | parentid:CS131
+CS131-28 | Finding corners | | parentid:CS131
+CS131-29 | Scale invariance | | parentid:CS131
+CS131-30 | SIFT descriptor | | parentid:CS131
+CS131-31 | Matching feature points | | parentid:CS131
+CS131-32 | Robust error functions | | parentid:CS131
+CS131-33 | RANSAC | | parentid:CS131
+CS131-34 | Photometry | | parentid:CS131
+CS131-35 | Lightness | | parentid:CS131
+CS131-36 | Shape from shading | | parentid:CS131
+CS131-37 | Introduction to motion | | parentid:CS131
+CS131-38 | Dense flow: Brightness constraint | | parentid:CS131
+CS131-39 | Dense flow: Lucas and Kanade | | parentid:CS131
+CS131-40 | Hierarchical LK | | parentid:CS131
+CS131-41 | Motion models | | parentid:CS131
+CS131-42 | Introduction to tracking | | parentid:CS131
+CS131-43 | Tracking as inference | | parentid:CS131
+CS131-44 | The Kalman filter | | parentid:CS131
+CS131-45 | Bayes filters | | parentid:CS131
+CS131-46 | Particle filters | | parentid:CS131
+CS131-47 | Particle filters for localization | | parentid:CS131
+CS131-48 | Particle filters for real | | parentid:CS131
+CS131-49 | Tracking considerations | | parentid:CS131
+CS131-50 | Introduction to recognition | | parentid:CS131
+CS131-51 | Classification: Generative models | | parentid:CS131
+CS131-52 | Principle Component Analysis | | parentid:CS131
+CS131-53 | Appearance-based tracking | | parentid:CS131
+CS131-54 | Discriminative classifiers | | parentid:CS131
+CS131-55 | Boosting and face detection | | parentid:CS131
+CS131-56 | Support Vector Machines | | parentid:CS131
+CS131-57 | Bag of visual words | | parentid:CS131
+CS131-58 | Introduction to video analysis | | parentid:CS131
+CS131-59 | Activity recognition | | parentid:CS131
+CS131-60 | Hidden Markov Models | | parentid:CS131
+CS131-61 | Color spaces | | parentid:CS131
+CS131-62 | Segmentation | | parentid:CS131
+CS131-63 | Mean shift segmentation | | parentid:CS131
+CS131-64 | Segmentation by graph partitioning | | parentid:CS131
+CS131-65 | Binary morphology | | parentid:CS131
+CS131-66 | 3D perception | | parentid:CS131
+CS131-67 | The retina | | parentid:CS131
+CS131-68 | Vision in the brain | | parentid:CS131

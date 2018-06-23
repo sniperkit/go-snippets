@@ -1,8 +1,0 @@
-name = "C++"
-language = "cpp"
-status = "pre-alpha"
-
-[runtime]
-  os = "alpine"
-  go_version = "1.8"
-  native_version = ["8.121.13-r0"]

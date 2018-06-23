@@ -1,7 +1,0 @@
-h1 Join a Game
-
-form action="/games/join" method="post"
-  .form-group
-    label for="game_code" Game Code
-    input type="text" inputmode="numeric" name="game_code"
-  button.btn.btn-primary.btn-block type="submit" Join Game

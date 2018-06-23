@@ -1,0 +1,18 @@
+# vim:set ft=ldif:
+#
+dn: ${LDAP_SUFFIX}
+objectClass: ${LDAP_DOMAIN_OBJECTCLASS}
+dc: ${LDAP_DOMAIN_RDC}
+o: ${LDAP_ORGANIZATION}
+
+dn: cn=admin,${LDAP_SUFFIX}
+objectClass: organizationalRole
+cn: admin
+
+dn: ou=users,${LDAP_SUFFIX}
+objectClass: organizationalUnit
+ou: users
+
+dn: ou=groups,${LDAP_SUFFIX}
+objectClass: organizationalUnit
+ou: groups

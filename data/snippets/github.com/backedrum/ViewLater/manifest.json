@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "ViewLater Chrome extension",
+  "description": "Chrome extension that is used to store links in order to revisit them later",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"
+  ],
+  "web_accessible_resources": [
+    "css/*.css",
+    "js/*.js",
+    "fonts/*.otf",
+    "fonts/*.eot",
+    "fonts/*.svg",
+    "fonts/*.ttf",
+    "fonts/*.woff",
+    "fonts/*.woff2"
+  ]
+}

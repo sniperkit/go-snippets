@@ -1,1 +1,0 @@
-curl -i -d @./tweet.json test:1234@localhost:8080/tweet

@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+select {
+case <-time.After(${1:5 * time.Minute}):
+	${2:fmt.Println("timed out")}
+${3:case m := <-c:
+	handle(m)
+}
+}
+]]></content>
+	<tabTrigger>time.After</tabTrigger>
+	<scope>source.go</scope>
+</snippet>

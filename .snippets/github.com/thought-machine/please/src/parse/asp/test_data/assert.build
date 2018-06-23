@@ -1,1 +1,0 @@
-assert isinstance(name, str), "Argument name to cc_library must be a str"

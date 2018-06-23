@@ -1,3 +1,0 @@
-#!/bin/sh
-cd /mastodon
-exec npm run start > ./log/streaming.log 2>&1

@@ -1,0 +1,131 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  text-align: center;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+body {
+  padding-top: 50px;
+}
+
+.home-header,
+.error-header {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.checks-header {
+  padding: 40px 0px;
+}
+
+.flag {
+  width: 24px;
+}
+
+#homepic {
+  margin-top: 32px;
+  max-width: 100%;
+  max-height: 305px;
+}
+
+.home-header h1 {
+  font-size: 64px;
+}
+
+.info {
+  font-size: 34px;
+  margin-top: 50px;
+}
+
+#home-bottom {
+  font-size: 24px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .home-header h1 {
+    margin-top: 0px;
+    font-size: 40px;
+  }
+
+  .info {
+    font-size: 16px;
+    margin-top: 50px;
+  }
+
+  #homepic {
+    margin-top: 20px;
+    max-height: 252px;
+  }
+}
+
+.modal-body img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+#home-thumbnails .caption {
+  min-height: 152px;
+}
+
+.country-name {
+  vertical-align: middle;
+}
+
+#github-button img {
+  width: 32px;
+  height: 32px;
+}
+
+#github-button .text {
+  vertical-align: middle;
+}
+
+#diagram img {
+  margin: 0 auto;
+  display: block;
+  width: 800px;
+  max-width: 100%;
+}
+
+#diagram dd {
+  margin-bottom: 1em;
+}
+
+.gosticker {
+  color: white;
+  font-weight: bold;
+  padding: 1px 6px 2px 6px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  font-size: 10px;
+  position: relative;
+  top:-1px;
+  font-weight: bold;
+}
+
+.gocolor {
+  background-color: #5bcfe0;
+}
+
+.htmlcolor,
+.jscolor,
+.sqlcolor {
+  background-color: #999999;
+}

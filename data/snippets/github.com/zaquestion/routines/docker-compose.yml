@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+        routines:
+                image: golang:alpine
+                ports:
+                        - "9999:9999"
+                volumes:
+                        - $GOPATH/src/github.com/zaquestion/:/go/src/github.com/zaquestion/
+                working_dir: /go/src/github.com/zaquestion/routines
+                command: /bin/sh -c "(cd routines-service/routines-server && go build -o run . && ./run)"
+                environment:
+                        GOPATH: /go
+                        TRELLO_DEV_KEY: "434dcc9689f688fa607ec348b9ff25f3"
+                        TRELLO_DEV_SECRET: "29948509808c3c2a96b42a6301f17cd8b1566620c21e97cb69d63312aec10d16a"
+                        PORT: "9999"
+                        MYSQL_USER: "routines"
+                        MYSQL_PASS: "routines"
+        trello_auth:
+                image: golang:alpine
+                ports:
+                        - "9999:9999"
+                volumes:
+                        - $GOPATH/src/github.com/zaquestion/:/go/src/github.com/zaquestion/
+                working_dir: /go/src/github.com/zaquestion/routines/trelloAuth
+                command: /bin/sh -c "go build -o run . && ./run"
+                environment:
+                        GOPATH: /go
+                        TRELLO_DEV_KEY: "434dcc9689f688fa607ec348b9ff25f3"
+                        TRELLO_DEV_SECRET: "29948509808c3c2a96b42a6301f17cd8b1566620c21e97cb69d63312aec10d16a"
+                        PORT: "9999"
+                        MYSQL_HOST: "mysql"
+                        MYSQL_USER: "routines"
+                        MYSQL_PASS: "routines"
+                        MYSQL_DB: "routines"
+        mysql:
+                image: mysql:8
+                ports:
+                        - "3306:3306"
+                environment:
+                        MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+                        MYSQL_USER: "routines"
+                        MYSQL_PASSWORD: "routines"
+

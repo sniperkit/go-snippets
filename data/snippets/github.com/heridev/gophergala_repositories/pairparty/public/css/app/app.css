@@ -1,0 +1,101 @@
+body{
+	background: #222;
+	color: #ddd;
+}
+
+/* navbar */
+.navbar-default{
+	background-color: inherit;
+	border: 0;
+}
+.navbar-default .navbar-brand{
+	color: #fff;
+}
+.navbar-form .form-control{
+	background: inherit;
+	border: 0;
+	border-radius: 0;
+	color: #999;
+}
+.navbar-form .form-control:focus{
+	border-bottom: 1px solid #555;
+	color: #fff;
+	padding-left: 0;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.navbar-default .navbar-nav>li>a, 
+.navbar-default .navbar-text{
+	color: #999;
+}
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>.open>a, 
+.navbar-default .navbar-nav>.open>a:focus, 
+.navbar-default .navbar-nav>.open>a:hover{
+	color: #fff;
+	background: inherit;
+}
+
+/* popover */
+.dropdown-menu, .dropdown-menu>li>a, .popover{
+	background: #333;
+	color: #fff;
+}
+.popover.right > .arrow:after{
+	border-right-color: #333;
+}
+.dropdown-menu, .popover{
+	border-radius: 0;
+}
+.dropdown-menu{
+	top: 80%;
+}
+.dropdown-menu .divider{
+	background-color: #555;
+}
+
+
+/* forms */
+.form-control{
+	transition: border-color ease-in-out 2s;
+}
+.form-control, .btn{
+	border-radius: 0;
+}
+/* buttons */
+
+
+/* main app page */
+.content{
+	margin-top: 10px;
+}
+.right-pane{
+	border-right: 1px solid #555;
+	background: #191919;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+.right-pane ul{
+	margin-bottom: 0;
+}
+.right-pane .btn{
+	color: #fff;
+	padding-left: 0;
+	font-size: 14px;
+}
+.right-pane .btn:focus{
+	outline: none;
+}
+.right-pane .label{
+	margin-top: 4px;
+}
+
+/* login page */
+.login-form{
+	margin-top: 40%;
+}
+.forgot{
+	margin-top: 15px;
+}

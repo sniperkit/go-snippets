@@ -1,0 +1,7 @@
+{
+  "name": "{{cookiecutter.agent_name}}",
+  "title": "{{cookiecutter.agent_title}}",
+  "description" : "{{cookiecutter.agent_description}}",
+  "version": "{{cookiecutter.agent_version}}",
+  "keyword": ["go", "agent"]
+}

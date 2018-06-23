@@ -1,5 +1,0 @@
-[metrics]
-pushgatewayurl = http://localhost:9091
-
-[custommetriclabels]
-branch = git rev-parse --abbrev-ref HEAD

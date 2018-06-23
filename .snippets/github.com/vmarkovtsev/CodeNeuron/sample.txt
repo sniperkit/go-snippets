@@ -1,8 +1,0 @@
-Here is my Python code, it is awesome and easy to read:
-def main():
-    print("Hello, world!")
-Please say what you think about it. Mad skills. Here is another one,
-func main() {
-  println("Hello, world!")
-}
-As you see, I know Go too. Some more text to provide enough context.

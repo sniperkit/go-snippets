@@ -1,2 +1,0 @@
-ast2vec>=0.3.8-alpha
-wmd>=1.2.6

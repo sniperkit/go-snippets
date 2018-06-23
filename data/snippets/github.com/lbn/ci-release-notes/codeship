@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+ORG=$(echo $CI_REPO_NAME | cut -d'/' -f1)
+REPO_NAME=$(echo $CI_REPO_NAME | cut -d'/' -f2)
+./get-prs | ./ci-release-notes -repo $REPO_NAME -tag $CI_BRANCH -owner $ORG -token $GITHUB_ACCESS_TOKEN

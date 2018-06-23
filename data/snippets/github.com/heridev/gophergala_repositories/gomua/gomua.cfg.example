@@ -1,0 +1,14 @@
+// Fill in the relevant data, and move this file to ~/.gomua/gomua.cfg
+
+[smtp]
+Name=smtp.gmail.com
+Username=username@gmail.com
+Password=password
+Address=smtp.gmail.com
+Port=587
+TLS=true
+
+[client]
+Maildir=./testmaildir
+DisplayN=25
+User=User <user@example.com>

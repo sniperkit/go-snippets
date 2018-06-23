@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+${1:i64}, err := strconv.ParseInt(${2:str}, ${3:10}, ${4:64})
+if err != nil {
+	log.Fatal(err)
+}
+]]></content>
+	<tabTrigger>strconv.ParseInt</tabTrigger>
+	<scope>source.go</scope>
+</snippet>

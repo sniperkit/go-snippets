@@ -1,4 +1,0 @@
-def f(x:int, y:int&z&w):
-    return x + y
-
-v = f(x=40, z=2)

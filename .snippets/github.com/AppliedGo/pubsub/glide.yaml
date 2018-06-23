@@ -1,8 +1,0 @@
-package: github.com/appliedgo/pubsub
-import:
-- package: github.com/go-mangos/mangos
-  subpackages:
-  - protocol/pub
-  - protocol/sub
-  - transport/ipc
-  - transport/tcp

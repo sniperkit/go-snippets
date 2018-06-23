@@ -1,0 +1,147 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 68,
+                    "endLine": 7,
+                    "endTokenPos": 30,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "byRef": false,
+                "name": "gen",
+                "nodeType": "Stmt_Function",
+                "params": [],
+                "returnType": null,
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 35,
+                            "endLine": 4,
+                            "endTokenPos": 13,
+                            "startFilePos": 28,
+                            "startLine": 4,
+                            "startTokenPos": 10
+                        },
+                        "key": null,
+                        "nodeType": "Expr_Yield",
+                        "value": {
+                            "attributes": {
+                                "endFilePos": 35,
+                                "endLine": 4,
+                                "endTokenPos": 13,
+                                "startFilePos": 34,
+                                "startLine": 4,
+                                "startTokenPos": 12
+                            },
+                            "expr": {
+                                "attributes": {
+                                    "endFilePos": 35,
+                                    "endLine": 4,
+                                    "endTokenPos": 13,
+                                    "kind": 10,
+                                    "startFilePos": 35,
+                                    "startLine": 4,
+                                    "startTokenPos": 13
+                                },
+                                "nodeType": "Scalar_LNumber",
+                                "value": 1
+                            },
+                            "nodeType": "Expr_UnaryPlus"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 49,
+                            "endLine": 5,
+                            "endTokenPos": 19,
+                            "startFilePos": 42,
+                            "startLine": 5,
+                            "startTokenPos": 16
+                        },
+                        "key": null,
+                        "nodeType": "Expr_Yield",
+                        "value": {
+                            "attributes": {
+                                "endFilePos": 49,
+                                "endLine": 5,
+                                "endTokenPos": 19,
+                                "startFilePos": 48,
+                                "startLine": 5,
+                                "startTokenPos": 18
+                            },
+                            "expr": {
+                                "attributes": {
+                                    "endFilePos": 49,
+                                    "endLine": 5,
+                                    "endTokenPos": 19,
+                                    "kind": 10,
+                                    "startFilePos": 49,
+                                    "startLine": 5,
+                                    "startTokenPos": 19
+                                },
+                                "nodeType": "Scalar_LNumber",
+                                "value": 1
+                            },
+                            "nodeType": "Expr_UnaryMinus"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 65,
+                            "endLine": 6,
+                            "endTokenPos": 27,
+                            "startFilePos": 56,
+                            "startLine": 6,
+                            "startTokenPos": 22
+                        },
+                        "left": {
+                            "attributes": {
+                                "endFilePos": 60,
+                                "endLine": 6,
+                                "endTokenPos": 22,
+                                "startFilePos": 56,
+                                "startLine": 6,
+                                "startTokenPos": 22
+                            },
+                            "key": null,
+                            "nodeType": "Expr_Yield",
+                            "value": null
+                        },
+                        "nodeType": "Expr_BinaryOp_Mul",
+                        "right": {
+                            "attributes": {
+                                "endFilePos": 65,
+                                "endLine": 6,
+                                "endTokenPos": 27,
+                                "startFilePos": 64,
+                                "startLine": 6,
+                                "startTokenPos": 26
+                            },
+                            "expr": {
+                                "attributes": {
+                                    "endFilePos": 65,
+                                    "endLine": 6,
+                                    "endTokenPos": 27,
+                                    "kind": 10,
+                                    "startFilePos": 65,
+                                    "startLine": 6,
+                                    "startTokenPos": 27
+                                },
+                                "nodeType": "Scalar_LNumber",
+                                "value": 1
+                            },
+                            "nodeType": "Expr_UnaryMinus"
+                        }
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

@@ -1,0 +1,175 @@
+html {
+
+}
+
+/* header */
+
+div#header {
+  text-align: center;
+}
+
+/* menu */
+
+div#menu-wrap {
+}
+
+div#menu-wrap div.menu-content {
+  min-height: 110px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+ul#menu {
+  margin-top: 0px;
+  text-align: center;
+}
+
+ul#menu li {
+  padding: 10px;
+  display: inline;
+}
+
+ul#menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 12px;
+  border-bottom: 3px solid #fff;
+}
+
+ul#menu li a.selected {
+  color: #000;
+  border-bottom: 3px solid #f60;
+  font-size: 12px;
+}
+
+
+/* post box */
+
+div#postbox {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+div.curl {
+  font-family: "courier new";
+  font-size: 11px;
+  margin: 5px;
+}
+
+div.demoform {
+  padding: 20px;
+  background-color: #000;
+  color: #9f9;
+  font-family: "courier new";
+  font-size: 13px
+}
+
+div.demoform input {
+  width: 8em;
+  background-color: #000;
+  font-family: "courier new";
+  font-size: 13px;
+  color: #3f3;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-raius: 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
+div.demoform input.sm {
+    width: 3em;
+}
+
+div.demoform input:focus {
+  background-color: #333;
+  border-bottom: 1px solid #3f3;
+}
+
+.submitbutton {
+  font-size: 16px;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-raius: 0;
+  border: 1px solid #888;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
+/* upbox rows */
+
+div#upbox-rows {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.upbox-row {
+  margin: 10px auto 10px auto;
+  padding: 10px;
+  background-color: #fff;
+  clear: both;
+  clear: all;
+}
+
+div.status-up {
+  box-shadow: 0px 0px 5px 1px #090;
+}
+
+div.status-up .upbox-status {
+  color: #090;
+}
+
+div.status-down {
+  box-shadow: 0px 0px 5px 1px #900;
+}
+
+div.status-down .upbox-status {
+  color: #900;
+}
+
+div.upbox-row .upbox-name {
+  font-size: 28px;
+  width: 25%;
+}
+
+div.upbox-row .upbox-right {
+  float: right;
+  width: 70%;
+  text-align: right;
+}
+
+div.upbox-row .upbox-status {
+  display: inline-block;
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+.submit-div {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Phone Form */
+
+div#phone-form {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+}
+
+/* contact */
+
+div#contact {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+}

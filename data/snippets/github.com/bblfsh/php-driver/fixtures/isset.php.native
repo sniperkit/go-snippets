@@ -1,0 +1,252 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 29,
+                    "endLine": 3,
+                    "endTokenPos": 20,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "nodeType": "Expr_Isset",
+                "vars": [
+                    {
+                        "attributes": {
+                            "endFilePos": 28,
+                            "endLine": 3,
+                            "endTokenPos": 19,
+                            "startFilePos": 13,
+                            "startLine": 3,
+                            "startTokenPos": 4
+                        },
+                        "dim": {
+                            "attributes": {
+                                "endFilePos": 27,
+                                "endLine": 3,
+                                "endTokenPos": 18,
+                                "kind": 10,
+                                "startFilePos": 27,
+                                "startLine": 3,
+                                "startTokenPos": 18
+                            },
+                            "nodeType": "Scalar_LNumber",
+                            "value": 0
+                        },
+                        "nodeType": "Expr_ArrayDimFetch",
+                        "var": {
+                            "attributes": {
+                                "endFilePos": 24,
+                                "endLine": 3,
+                                "endTokenPos": 15,
+                                "startFilePos": 14,
+                                "startLine": 3,
+                                "startTokenPos": 5
+                            },
+                            "left": {
+                                "attributes": {
+                                    "endFilePos": 19,
+                                    "endLine": 3,
+                                    "endTokenPos": 10,
+                                    "kind": 2,
+                                    "startFilePos": 14,
+                                    "startLine": 3,
+                                    "startTokenPos": 5
+                                },
+                                "items": [
+                                    {
+                                        "attributes": {
+                                            "endFilePos": 15,
+                                            "endLine": 3,
+                                            "endTokenPos": 6,
+                                            "startFilePos": 15,
+                                            "startLine": 3,
+                                            "startTokenPos": 6
+                                        },
+                                        "byRef": false,
+                                        "key": null,
+                                        "nodeType": "Expr_ArrayItem",
+                                        "value": {
+                                            "attributes": {
+                                                "endFilePos": 15,
+                                                "endLine": 3,
+                                                "endTokenPos": 6,
+                                                "kind": 10,
+                                                "startFilePos": 15,
+                                                "startLine": 3,
+                                                "startTokenPos": 6
+                                            },
+                                            "nodeType": "Scalar_LNumber",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "attributes": {
+                                            "endFilePos": 18,
+                                            "endLine": 3,
+                                            "endTokenPos": 9,
+                                            "startFilePos": 18,
+                                            "startLine": 3,
+                                            "startTokenPos": 9
+                                        },
+                                        "byRef": false,
+                                        "key": null,
+                                        "nodeType": "Expr_ArrayItem",
+                                        "value": {
+                                            "attributes": {
+                                                "endFilePos": 18,
+                                                "endLine": 3,
+                                                "endTokenPos": 9,
+                                                "kind": 10,
+                                                "startFilePos": 18,
+                                                "startLine": 3,
+                                                "startTokenPos": 9
+                                            },
+                                            "nodeType": "Scalar_LNumber",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "nodeType": "Expr_Array"
+                            },
+                            "nodeType": "Expr_BinaryOp_Plus",
+                            "right": {
+                                "attributes": {
+                                    "endFilePos": 24,
+                                    "endLine": 3,
+                                    "endTokenPos": 15,
+                                    "kind": 2,
+                                    "startFilePos": 23,
+                                    "startLine": 3,
+                                    "startTokenPos": 14
+                                },
+                                "items": [],
+                                "nodeType": "Expr_Array"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "endFilePos": 53,
+                    "endLine": 4,
+                    "endTokenPos": 34,
+                    "startFilePos": 32,
+                    "startLine": 4,
+                    "startTokenPos": 23
+                },
+                "nodeType": "Expr_Isset",
+                "vars": [
+                    {
+                        "attributes": {
+                            "endFilePos": 52,
+                            "endLine": 4,
+                            "endTokenPos": 33,
+                            "startFilePos": 38,
+                            "startLine": 4,
+                            "startTokenPos": 25
+                        },
+                        "name": "a",
+                        "nodeType": "Expr_PropertyFetch",
+                        "var": {
+                            "attributes": {
+                                "endFilePos": 49,
+                                "endLine": 4,
+                                "endTokenPos": 31,
+                                "kind": 2,
+                                "startFilePos": 38,
+                                "startLine": 4,
+                                "startTokenPos": 25
+                            },
+                            "items": [
+                                {
+                                    "attributes": {
+                                        "endFilePos": 48,
+                                        "endLine": 4,
+                                        "endTokenPos": 30,
+                                        "startFilePos": 39,
+                                        "startLine": 4,
+                                        "startTokenPos": 26
+                                    },
+                                    "byRef": false,
+                                    "key": {
+                                        "attributes": {
+                                            "endFilePos": 41,
+                                            "endLine": 4,
+                                            "endTokenPos": 26,
+                                            "kind": 1,
+                                            "startFilePos": 39,
+                                            "startLine": 4,
+                                            "startTokenPos": 26
+                                        },
+                                        "nodeType": "Scalar_String",
+                                        "value": "a"
+                                    },
+                                    "nodeType": "Expr_ArrayItem",
+                                    "value": {
+                                        "attributes": {
+                                            "endFilePos": 48,
+                                            "endLine": 4,
+                                            "endTokenPos": 30,
+                                            "kind": 1,
+                                            "startFilePos": 46,
+                                            "startLine": 4,
+                                            "startTokenPos": 30
+                                        },
+                                        "nodeType": "Scalar_String",
+                                        "value": "b"
+                                    }
+                                }
+                            ],
+                            "nodeType": "Expr_Array"
+                        }
+                    }
+                ]
+            },
+            {
+                "attributes": {
+                    "endFilePos": 70,
+                    "endLine": 5,
+                    "endTokenPos": 42,
+                    "startFilePos": 56,
+                    "startLine": 5,
+                    "startTokenPos": 37
+                },
+                "nodeType": "Expr_Isset",
+                "vars": [
+                    {
+                        "attributes": {
+                            "endFilePos": 69,
+                            "endLine": 5,
+                            "endTokenPos": 41,
+                            "startFilePos": 62,
+                            "startLine": 5,
+                            "startTokenPos": 39
+                        },
+                        "name": "a",
+                        "nodeType": "Expr_PropertyFetch",
+                        "var": {
+                            "attributes": {
+                                "endFilePos": 66,
+                                "endLine": 5,
+                                "endTokenPos": 39,
+                                "kind": 2,
+                                "startFilePos": 62,
+                                "startLine": 5,
+                                "startTokenPos": 39
+                            },
+                            "nodeType": "Scalar_String",
+                            "value": "str"
+                        }
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

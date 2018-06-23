@@ -1,5 +1,0 @@
-*.test
-the_platinum_searcher
-pt
-!cmd/pt
-Godeps/_workspace/

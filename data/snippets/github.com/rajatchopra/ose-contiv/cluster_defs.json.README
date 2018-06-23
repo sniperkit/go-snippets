@@ -1,0 +1,29 @@
+This cluster_defs.json defines your k8s cluster. There needs to be one master
+and 2 or more nodes. You need to edit the cluster_defs.json file and fill in
+the information on the right side of each ":" character. To add more nodes,
+just copy the middle node line and update the information.
+
+Fields
+======
+"name": This is the hostname that will be used as the DNS hostname within
+        the cluster. Convention is to use k8master for the master and
+        k8node-xx for the nodes. However, you are free to follow your own
+        nomenclature.
+
+"management_ip": This is the IP address used for SSH into each host for provisioning. If you have DNS on your management network, you could use the DNS name here as well.
+
+"contiv_control_if": This is the interface name (as seen on ifconfig) that should be used for control communication. You can either use a separate interface for control or you can use the management interface for this purpose in case there is a shortage of interfaces on the machine.
+
+"contiv_control_ip": This is the ip address of the interface used for control communication. During the prepare step, this address will be assigned to the interface. If you are using the management interface for control as well, you should provide management ip here(you cannot use the DNS name for this field).
+
+"contiv_network_if": This is the interface name (as seen on ifconfig) that should be used for tenant traffic. This interface MUST be dedicated. It CANNOT be shared with control or management.
+
+"contiv_network_ip": This is the ip address of the interface used for tenant traffic. You can assign any private IP address here.
+
+"max_pods": This is the maximum number of pods supported on a node. Kuberenetes defaults this value to 40. You should change it only if you're sure there are enough resources to allow a higher number of pods.
+
+{"master": [{"name": "k8master", "management_ip": "<ip_address>", "contiv_control_if": "<if-name>", "contiv_control_ip": "<ip_address>", "contiv_network_if": "<if-name>", "contiv_network_ip": "<ip_address>"}],
+ "nodes" : [{"name": "k8node-01", "management_ip": "<ip_address>", "contiv_control_if": "<if-name>", "contiv_control_ip": "<ip_address>", "contiv_network_if": "<if-name>", "contiv_network_ip": "<ip_address>", "max_pods": "40"},
+            {"name": "k8node-02", "management_ip": "<ip_address>", "contiv_control_if": "<if-name>", "contiv_control_ip": "<ip_address>", "contiv_network_if": "<if-name>", "contiv_network_ip": "<ip_address>", "max_pods": "40"},
+            {"name": "k8node-03", "management_ip": "<ip_address>", "contiv_control_if": "<if-name>", "contiv_control_ip": "<ip_address>", "contiv_network_if": "<if-name>", "contiv_network_ip": "<ip_address>", "max_pods": "40"}]
+}

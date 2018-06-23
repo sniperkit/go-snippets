@@ -1,2 +1,0 @@
-# dislet
-Go application launcher

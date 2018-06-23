@@ -1,0 +1,6 @@
+/tests/test.php:3	Avoid variables with short names like $q. Configured minimum length is 3.
+/tests/test.php:4	The method main has a boolean flag argument $flag, which is a certain sign of a Single Responsibility Principle violation.
+/tests/test.php:4	Avoid variables with short names like $as. Configured minimum length is 3.
+/tests/test.php:4	Avoid unused parameters such as '$as'.
+/tests/test.php:4	Avoid unused parameters such as '$flag'.
+/tests/test.php:5	Avoid variables with short names like $r. Configured minimum length is 3.

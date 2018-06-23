@@ -1,4 +1,0 @@
-/**
- *
- */
-package renaming.segmentranking;

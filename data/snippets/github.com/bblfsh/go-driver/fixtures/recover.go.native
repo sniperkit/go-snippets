@@ -1,0 +1,774 @@
+{
+    "status": "ok",
+    "language": "go",
+    "errors": [],
+    "ast": {
+        "@end": {
+            "@type": "ast:Position",
+            "col": 0,
+            "line": 0,
+            "off": 116
+        },
+        "@start": {
+            "@type": "ast:Position",
+            "col": 0,
+            "line": 0,
+            "off": 1
+        },
+        "@type": "File",
+        "Comments": null,
+        "Decls": [
+            {
+                "@end": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 116
+                },
+                "@start": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 19
+                },
+                "@type": "FuncDecl",
+                "Body": {
+                    "@end": {
+                        "@type": "ast:Position",
+                        "col": 0,
+                        "line": 0,
+                        "off": 116
+                    },
+                    "@start": {
+                        "@type": "ast:Position",
+                        "col": 0,
+                        "line": 0,
+                        "off": 31
+                    },
+                    "@type": "BlockStmt",
+                    "Lbrace": {
+                        "@type": "ast:Position",
+                        "col": 0,
+                        "line": 0,
+                        "off": 31
+                    },
+                    "List": [
+                        {
+                            "@end": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 98
+                            },
+                            "@start": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 34
+                            },
+                            "@type": "DeferStmt",
+                            "Call": {
+                                "@end": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 98
+                                },
+                                "@start": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 40
+                                },
+                                "@type": "CallExpr",
+                                "Args": null,
+                                "Ellipsis": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 0
+                                },
+                                "Fun": {
+                                    "@end": {
+                                        "@type": "ast:Position",
+                                        "col": 0,
+                                        "line": 0,
+                                        "off": 96
+                                    },
+                                    "@start": {
+                                        "@type": "ast:Position",
+                                        "col": 0,
+                                        "line": 0,
+                                        "off": 40
+                                    },
+                                    "@type": "FuncLit",
+                                    "Body": {
+                                        "@end": {
+                                            "@type": "ast:Position",
+                                            "col": 0,
+                                            "line": 0,
+                                            "off": 96
+                                        },
+                                        "@start": {
+                                            "@type": "ast:Position",
+                                            "col": 0,
+                                            "line": 0,
+                                            "off": 47
+                                        },
+                                        "@type": "BlockStmt",
+                                        "Lbrace": {
+                                            "@type": "ast:Position",
+                                            "col": 0,
+                                            "line": 0,
+                                            "off": 47
+                                        },
+                                        "List": [
+                                            {
+                                                "@end": {
+                                                    "@type": "ast:Position",
+                                                    "col": 0,
+                                                    "line": 0,
+                                                    "off": 93
+                                                },
+                                                "@start": {
+                                                    "@type": "ast:Position",
+                                                    "col": 0,
+                                                    "line": 0,
+                                                    "off": 51
+                                                },
+                                                "@type": "IfStmt",
+                                                "Body": {
+                                                    "@end": {
+                                                        "@type": "ast:Position",
+                                                        "col": 0,
+                                                        "line": 0,
+                                                        "off": 93
+                                                    },
+                                                    "@start": {
+                                                        "@type": "ast:Position",
+                                                        "col": 0,
+                                                        "line": 0,
+                                                        "off": 79
+                                                    },
+                                                    "@type": "BlockStmt",
+                                                    "Lbrace": {
+                                                        "@type": "ast:Position",
+                                                        "col": 0,
+                                                        "line": 0,
+                                                        "off": 79
+                                                    },
+                                                    "List": [
+                                                        {
+                                                            "@end": {
+                                                                "@type": "ast:Position",
+                                                                "col": 0,
+                                                                "line": 0,
+                                                                "off": 89
+                                                            },
+                                                            "@start": {
+                                                                "@type": "ast:Position",
+                                                                "col": 0,
+                                                                "line": 0,
+                                                                "off": 84
+                                                            },
+                                                            "@type": "AssignStmt",
+                                                            "Lhs": [
+                                                                {
+                                                                    "@end": {
+                                                                        "@type": "ast:Position",
+                                                                        "col": 0,
+                                                                        "line": 0,
+                                                                        "off": 85
+                                                                    },
+                                                                    "@start": {
+                                                                        "@type": "ast:Position",
+                                                                        "col": 0,
+                                                                        "line": 0,
+                                                                        "off": 84
+                                                                    },
+                                                                    "@type": "Ident",
+                                                                    "Name": "_",
+                                                                    "NamePos": {
+                                                                        "@type": "ast:Position",
+                                                                        "col": 0,
+                                                                        "line": 0,
+                                                                        "off": 84
+                                                                    }
+                                                                }
+                                                            ],
+                                                            "Rhs": [
+                                                                {
+                                                                    "@end": {
+                                                                        "@type": "ast:Position",
+                                                                        "col": 0,
+                                                                        "line": 0,
+                                                                        "off": 89
+                                                                    },
+                                                                    "@start": {
+                                                                        "@type": "ast:Position",
+                                                                        "col": 0,
+                                                                        "line": 0,
+                                                                        "off": 88
+                                                                    },
+                                                                    "@type": "Ident",
+                                                                    "Name": "r",
+                                                                    "NamePos": {
+                                                                        "@type": "ast:Position",
+                                                                        "col": 0,
+                                                                        "line": 0,
+                                                                        "off": 88
+                                                                    }
+                                                                }
+                                                            ],
+                                                            "Tok": "=",
+                                                            "TokPos": {
+                                                                "@type": "ast:Position",
+                                                                "col": 0,
+                                                                "line": 0,
+                                                                "off": 86
+                                                            }
+                                                        }
+                                                    ],
+                                                    "Rbrace": {
+                                                        "@type": "ast:Position",
+                                                        "col": 0,
+                                                        "line": 0,
+                                                        "off": 92
+                                                    }
+                                                },
+                                                "Cond": {
+                                                    "@end": {
+                                                        "@type": "ast:Position",
+                                                        "col": 0,
+                                                        "line": 0,
+                                                        "off": 78
+                                                    },
+                                                    "@start": {
+                                                        "@type": "ast:Position",
+                                                        "col": 0,
+                                                        "line": 0,
+                                                        "off": 70
+                                                    },
+                                                    "@type": "BinaryExpr",
+                                                    "Op": "!=",
+                                                    "OpPos": {
+                                                        "@type": "ast:Position",
+                                                        "col": 0,
+                                                        "line": 0,
+                                                        "off": 72
+                                                    },
+                                                    "X": {
+                                                        "@end": {
+                                                            "@type": "ast:Position",
+                                                            "col": 0,
+                                                            "line": 0,
+                                                            "off": 71
+                                                        },
+                                                        "@start": {
+                                                            "@type": "ast:Position",
+                                                            "col": 0,
+                                                            "line": 0,
+                                                            "off": 70
+                                                        },
+                                                        "@type": "Ident",
+                                                        "Name": "r",
+                                                        "NamePos": {
+                                                            "@type": "ast:Position",
+                                                            "col": 0,
+                                                            "line": 0,
+                                                            "off": 70
+                                                        }
+                                                    },
+                                                    "Y": {
+                                                        "@end": {
+                                                            "@type": "ast:Position",
+                                                            "col": 0,
+                                                            "line": 0,
+                                                            "off": 78
+                                                        },
+                                                        "@start": {
+                                                            "@type": "ast:Position",
+                                                            "col": 0,
+                                                            "line": 0,
+                                                            "off": 75
+                                                        },
+                                                        "@type": "Ident",
+                                                        "Name": "nil",
+                                                        "NamePos": {
+                                                            "@type": "ast:Position",
+                                                            "col": 0,
+                                                            "line": 0,
+                                                            "off": 75
+                                                        }
+                                                    }
+                                                },
+                                                "Else": null,
+                                                "If": {
+                                                    "@type": "ast:Position",
+                                                    "col": 0,
+                                                    "line": 0,
+                                                    "off": 51
+                                                },
+                                                "Init": {
+                                                    "@end": {
+                                                        "@type": "ast:Position",
+                                                        "col": 0,
+                                                        "line": 0,
+                                                        "off": 68
+                                                    },
+                                                    "@start": {
+                                                        "@type": "ast:Position",
+                                                        "col": 0,
+                                                        "line": 0,
+                                                        "off": 54
+                                                    },
+                                                    "@type": "AssignStmt",
+                                                    "Lhs": [
+                                                        {
+                                                            "@end": {
+                                                                "@type": "ast:Position",
+                                                                "col": 0,
+                                                                "line": 0,
+                                                                "off": 55
+                                                            },
+                                                            "@start": {
+                                                                "@type": "ast:Position",
+                                                                "col": 0,
+                                                                "line": 0,
+                                                                "off": 54
+                                                            },
+                                                            "@type": "Ident",
+                                                            "Name": "r",
+                                                            "NamePos": {
+                                                                "@type": "ast:Position",
+                                                                "col": 0,
+                                                                "line": 0,
+                                                                "off": 54
+                                                            }
+                                                        }
+                                                    ],
+                                                    "Rhs": [
+                                                        {
+                                                            "@end": {
+                                                                "@type": "ast:Position",
+                                                                "col": 0,
+                                                                "line": 0,
+                                                                "off": 68
+                                                            },
+                                                            "@start": {
+                                                                "@type": "ast:Position",
+                                                                "col": 0,
+                                                                "line": 0,
+                                                                "off": 59
+                                                            },
+                                                            "@type": "CallExpr",
+                                                            "Args": null,
+                                                            "Ellipsis": {
+                                                                "@type": "ast:Position",
+                                                                "col": 0,
+                                                                "line": 0,
+                                                                "off": 0
+                                                            },
+                                                            "Fun": {
+                                                                "@end": {
+                                                                    "@type": "ast:Position",
+                                                                    "col": 0,
+                                                                    "line": 0,
+                                                                    "off": 66
+                                                                },
+                                                                "@start": {
+                                                                    "@type": "ast:Position",
+                                                                    "col": 0,
+                                                                    "line": 0,
+                                                                    "off": 59
+                                                                },
+                                                                "@type": "Ident",
+                                                                "Name": "recover",
+                                                                "NamePos": {
+                                                                    "@type": "ast:Position",
+                                                                    "col": 0,
+                                                                    "line": 0,
+                                                                    "off": 59
+                                                                }
+                                                            },
+                                                            "Lparen": {
+                                                                "@type": "ast:Position",
+                                                                "col": 0,
+                                                                "line": 0,
+                                                                "off": 66
+                                                            },
+                                                            "Rparen": {
+                                                                "@type": "ast:Position",
+                                                                "col": 0,
+                                                                "line": 0,
+                                                                "off": 67
+                                                            }
+                                                        }
+                                                    ],
+                                                    "Tok": ":=",
+                                                    "TokPos": {
+                                                        "@type": "ast:Position",
+                                                        "col": 0,
+                                                        "line": 0,
+                                                        "off": 56
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "Rbrace": {
+                                            "@type": "ast:Position",
+                                            "col": 0,
+                                            "line": 0,
+                                            "off": 95
+                                        }
+                                    },
+                                    "Type": {
+                                        "@end": {
+                                            "@type": "ast:Position",
+                                            "col": 0,
+                                            "line": 0,
+                                            "off": 46
+                                        },
+                                        "@start": {
+                                            "@type": "ast:Position",
+                                            "col": 0,
+                                            "line": 0,
+                                            "off": 40
+                                        },
+                                        "@type": "FuncType",
+                                        "Func": {
+                                            "@type": "ast:Position",
+                                            "col": 0,
+                                            "line": 0,
+                                            "off": 40
+                                        },
+                                        "Params": {
+                                            "@end": {
+                                                "@type": "ast:Position",
+                                                "col": 0,
+                                                "line": 0,
+                                                "off": 46
+                                            },
+                                            "@start": {
+                                                "@type": "ast:Position",
+                                                "col": 0,
+                                                "line": 0,
+                                                "off": 44
+                                            },
+                                            "@type": "FieldList",
+                                            "Closing": {
+                                                "@type": "ast:Position",
+                                                "col": 0,
+                                                "line": 0,
+                                                "off": 45
+                                            },
+                                            "List": null,
+                                            "Opening": {
+                                                "@type": "ast:Position",
+                                                "col": 0,
+                                                "line": 0,
+                                                "off": 44
+                                            }
+                                        },
+                                        "Results": null
+                                    }
+                                },
+                                "Lparen": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 96
+                                },
+                                "Rparen": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 97
+                                }
+                            },
+                            "Defer": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 34
+                            }
+                        },
+                        {
+                            "@end": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 114
+                            },
+                            "@start": {
+                                "@type": "ast:Position",
+                                "col": 0,
+                                "line": 0,
+                                "off": 100
+                            },
+                            "@type": "ExprStmt",
+                            "X": {
+                                "@end": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 114
+                                },
+                                "@start": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 100
+                                },
+                                "@type": "CallExpr",
+                                "Args": [
+                                    {
+                                        "@end": {
+                                            "@type": "ast:Position",
+                                            "col": 0,
+                                            "line": 0,
+                                            "off": 113
+                                        },
+                                        "@start": {
+                                            "@type": "ast:Position",
+                                            "col": 0,
+                                            "line": 0,
+                                            "off": 106
+                                        },
+                                        "@type": "BasicLit",
+                                        "Kind": "STRING",
+                                        "Value": "\"stop!\"",
+                                        "ValuePos": {
+                                            "@type": "ast:Position",
+                                            "col": 0,
+                                            "line": 0,
+                                            "off": 106
+                                        }
+                                    }
+                                ],
+                                "Ellipsis": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 0
+                                },
+                                "Fun": {
+                                    "@end": {
+                                        "@type": "ast:Position",
+                                        "col": 0,
+                                        "line": 0,
+                                        "off": 105
+                                    },
+                                    "@start": {
+                                        "@type": "ast:Position",
+                                        "col": 0,
+                                        "line": 0,
+                                        "off": 100
+                                    },
+                                    "@type": "Ident",
+                                    "Name": "panic",
+                                    "NamePos": {
+                                        "@type": "ast:Position",
+                                        "col": 0,
+                                        "line": 0,
+                                        "off": 100
+                                    }
+                                },
+                                "Lparen": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 105
+                                },
+                                "Rparen": {
+                                    "@type": "ast:Position",
+                                    "col": 0,
+                                    "line": 0,
+                                    "off": 113
+                                }
+                            }
+                        }
+                    ],
+                    "Rbrace": {
+                        "@type": "ast:Position",
+                        "col": 0,
+                        "line": 0,
+                        "off": 115
+                    }
+                },
+                "Doc": null,
+                "Name": {
+                    "@end": {
+                        "@type": "ast:Position",
+                        "col": 0,
+                        "line": 0,
+                        "off": 28
+                    },
+                    "@start": {
+                        "@type": "ast:Position",
+                        "col": 0,
+                        "line": 0,
+                        "off": 24
+                    },
+                    "@type": "Ident",
+                    "Name": "fail",
+                    "NamePos": {
+                        "@type": "ast:Position",
+                        "col": 0,
+                        "line": 0,
+                        "off": 24
+                    }
+                },
+                "Recv": null,
+                "Type": {
+                    "@end": {
+                        "@type": "ast:Position",
+                        "col": 0,
+                        "line": 0,
+                        "off": 30
+                    },
+                    "@start": {
+                        "@type": "ast:Position",
+                        "col": 0,
+                        "line": 0,
+                        "off": 19
+                    },
+                    "@type": "FuncType",
+                    "Func": {
+                        "@type": "ast:Position",
+                        "col": 0,
+                        "line": 0,
+                        "off": 19
+                    },
+                    "Params": {
+                        "@end": {
+                            "@type": "ast:Position",
+                            "col": 0,
+                            "line": 0,
+                            "off": 30
+                        },
+                        "@start": {
+                            "@type": "ast:Position",
+                            "col": 0,
+                            "line": 0,
+                            "off": 28
+                        },
+                        "@type": "FieldList",
+                        "Closing": {
+                            "@type": "ast:Position",
+                            "col": 0,
+                            "line": 0,
+                            "off": 29
+                        },
+                        "List": null,
+                        "Opening": {
+                            "@type": "ast:Position",
+                            "col": 0,
+                            "line": 0,
+                            "off": 28
+                        }
+                    },
+                    "Results": null
+                }
+            }
+        ],
+        "Doc": null,
+        "Imports": null,
+        "Name": {
+            "@end": {
+                "@type": "ast:Position",
+                "col": 0,
+                "line": 0,
+                "off": 17
+            },
+            "@start": {
+                "@type": "ast:Position",
+                "col": 0,
+                "line": 0,
+                "off": 9
+            },
+            "@type": "Ident",
+            "Name": "fixtures",
+            "NamePos": {
+                "@type": "ast:Position",
+                "col": 0,
+                "line": 0,
+                "off": 9
+            }
+        },
+        "Package": {
+            "@type": "ast:Position",
+            "col": 0,
+            "line": 0,
+            "off": 1
+        },
+        "Unresolved": [
+            {
+                "@end": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 66
+                },
+                "@start": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 59
+                },
+                "@type": "Ident",
+                "Name": "recover",
+                "NamePos": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 59
+                }
+            },
+            {
+                "@end": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 78
+                },
+                "@start": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 75
+                },
+                "@type": "Ident",
+                "Name": "nil",
+                "NamePos": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 75
+                }
+            },
+            {
+                "@end": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 105
+                },
+                "@start": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 100
+                },
+                "@type": "Ident",
+                "Name": "panic",
+                "NamePos": {
+                    "@type": "ast:Position",
+                    "col": 0,
+                    "line": 0,
+                    "off": 100
+                }
+            }
+        ]
+    }
+}

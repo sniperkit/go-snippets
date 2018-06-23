@@ -1,0 +1,20 @@
+<footer>
+   <div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
+      <hr>
+      <div class="row">
+         {% if articles %}
+            {% set copy_date = articles[0].date.strftime('%Y') %}
+         {% else %}
+            {% set copy_date = '' %}
+         {% endif %}
+         <div class="col-md-6">
+           <ul class="list-inline social-buttons">
+             <li>&copy; 2016 <a href="https://github.com/donnemartin">{{ AUTHOR }} </a></li>
+             <li><a href="https://www.github.com/donnemartin"><i class="fa fa-github"></i></a></li>
+             <li><a href="https://www.twitter.com/donne_martin"><i class="fa fa-twitter"></i></a></li>
+             <li><a href="https://www.linkedin.com/in/donnemartin"><i class="fa fa-linkedin"></i></a></li>
+           </ul>
+         </div>
+       </div>
+    </div>
+</footer>

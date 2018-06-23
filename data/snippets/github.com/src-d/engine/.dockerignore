@@ -1,0 +1,2 @@
+# Exclude all directories and files except those used by Dockerfile to build the image
+

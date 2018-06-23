@@ -1,5 +1,0 @@
-**/build-scripts-alpine
-**/.ssh
-**/*.swp
-**/assets/srv
-**/Dockerfile.tmp

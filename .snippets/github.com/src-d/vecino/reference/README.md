@@ -1,1 +1,0 @@
-This is the Jupyter Notebook with the reference results from a paper in progress.

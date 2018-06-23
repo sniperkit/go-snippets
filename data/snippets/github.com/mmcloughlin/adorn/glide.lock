@@ -1,0 +1,23 @@
+hash: fd953c9276bc6ad09651ec7a277aa79493251442aaaf0d730a4c0ae3106dadd2
+updated: 2017-05-15T22:36:10.778078393-07:00
+imports:
+- name: github.com/inconshreveable/mousetrap
+  version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
+- name: github.com/pkg/errors
+  version: c605e284fe17294bda444b34710735b29d1a9d90
+- name: github.com/serenize/snaker
+  version: 1c7f65329f6524115af8ca01ab604c00cddf5558
+- name: github.com/spf13/cobra
+  version: 4cdb38c072b86bf795d2c81de50784d9fdd6eb77
+- name: github.com/spf13/pflag
+  version: e57e3eeb33f795204c1ca35f56c44f83227c6e66
+- name: github.com/stretchr/testify
+  version: 4d4bfba8f1d1027c4fdbe371823030df51419987
+  subpackages:
+  - require
+- name: golang.org/x/tools
+  version: bf4b54dc687c73b6ef63de8b8abf0ad3951e3edc
+  subpackages:
+  - imports
+  - go/ast/astutil
+devImports: []

@@ -1,5 +1,0 @@
-package html
-
-import (
-	"testing"
-)

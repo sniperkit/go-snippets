@@ -1,1 +1,0 @@
-curl -i -d @./user.json localhost:8080/users

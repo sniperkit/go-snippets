@@ -1,5 +1,0 @@
-*.sublime-project
-*.sublime-workspace
-filters/*.html
-examples/core/core
-examples/core/server

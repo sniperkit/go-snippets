@@ -1,0 +1,10 @@
+.directory
+*~
+*.swp
+*.prename
+
+devmine
+devmine.conf
+log
+pid
+tags

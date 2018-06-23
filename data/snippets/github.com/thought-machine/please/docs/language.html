@@ -1,0 +1,194 @@
+
+    <h1>The BUILD language</h1>
+
+    <p>Please's BUILD files typically contain a series of build rule declarations. These are
+      invocations of builtins like <code>java_binary</code> which create new BUILD targets.</p>
+
+    <p>However, you can do much more with it; the syntax is actually a restricted Python subset
+      so it's possible to script the creation of build targets in elaborate ways. See
+      <a href="#grammar">below</a> for a formal description of the grammar.</p>
+
+    <p>You can do most things that one might consider "simple" Python; <code>for</code> and
+      <code>if</code> statements, define functions, create lists and dicts, etc. Conventionally
+      we keep complex logic in build_defs files but at present there is no difference in accepted
+      syntax between the two.</p>
+
+    <p>Since it is not possible to <code>import</code> things, one obviously requires a different
+      method of sharing code; in Please that is <a href="lexicon.html#subinclude">subinclude</a>.
+      This function takes the output of a build rule elsewhere in the repo and makes it available
+      in the context of the currently executing file - for example, if it has defined a function,
+      that function is now available in your BUILD file at the top level.</p>
+
+    <p>See <a href="lexicon.html">here</a> for a full description of available builtin rules.</p>
+
+    <h2>Types</h2>
+
+    <p>The set of builtin types are again a subset of Python's:
+      <ul>
+	<li>Integers (all integers are 64-bit signed integers)</li>
+	<li>Strings</li>
+	<li>Lists</li>
+	<li>Dictionaries</li>
+	<li>Functions</li>
+	<li><code>True</code>, <code>False</code> and <code>None</code> are singletons which are
+	  instantiated by name.</li>
+      </ul>
+    </p>
+
+    <p>Specifically there are no classes, sets, floats or bytes. Tuples don't exist as a standalone
+      type, in various cases lists are generated as a replacement. In some cases the runtime may
+      prohibit modification of a list or dict when they can be shared between multiple BUILD files
+      in order to prevent one from seeing another's modifications.</p>
+
+    <p>Dictionaries are somewhat restricted in function; they may only be keyed by strings and cannot
+      be iterated directly - i.e. one must use <code>keys()</code>, <code>values()</code> or
+      <code>items()</code>. The results of all these functions are always consistently ordered.</p>
+
+    <h2>Functions</h2>
+
+    <p>The following functions are available as builtins; unless otherwise noted they mimic Python's
+      builtins in most cases (although this is not guaranteed to every possible nuance).
+      <ul>
+	<li><code>len</code></li>
+	<li><code>enumerate</code></li>
+	<li><code>zip</code></li>
+	<li><code>isinstance</code></li>
+	<li><code>range</code></li>
+	<li><code>any</code></li>
+	<li><code>all</code></li>
+	<li><code>sorted</code></li>
+      </ul>
+    </p>
+
+    <p>Several additional builtin functions are also available:
+      <ul>
+	<li><code>package_name</code> - returns the package being currently parsed.</li>
+	<li><code>join_path</code> - like <code>os.path.join</code></li>
+	<li><code>split_path</code> - like <code>os.path.split</code></li>
+	<li><code>splitext</code> - like <code>os.path.splitext</code></li>
+	<li><code>basename</code> - like <code>os.path.basename</code></li>
+	<li><code>dirname</code> - like <code>os.path.dirname</code></li>
+      </ul>
+    </p>
+
+    <p>The following are available as member functions of strings:
+      <ul>
+	<li><code>join</code></li>
+	<li><code>split</code></li>
+	<li><code>replace</code></li>
+	<li><code>partition</code></li>
+	<li><code>rpartition</code></li>
+	<li><code>startswith</code></li>
+	<li><code>endswith</code></li>
+	<li><code>format</code> - although this lacks some functionality, <code>%</code> is generally preferred</li>
+	<li><code>lstrip</code></li>
+	<li><code>rstrip</code></li>
+	<li><code>strip</code></li>
+	<li><code>find</code></li>
+	<li><code>rfind</code></li>
+	<li><code>count</code></li>
+	<li><code>upper</code></li>
+	<li><code>lower</code></li>
+      </ul>
+    </p>
+
+    <p>The following are available as member functions of dictionaries:
+      <ul>
+	<li><code>keys</code></li>
+	<li><code>values</code></li>
+	<li><code>items</code></li>
+	<li><code>copy</code></li>
+      </ul>
+    </p>
+
+    <p>Finally, messages can be logged to Please's usual logging mechanism. These
+      may or may not be displayed depending on the <code>-v</code> flag; by default only
+      <code>warning</code> and above are visible.
+      <ul>
+	<li><code>log.debug</code></li>
+	<li><code>log.info</code></li>
+	<li><code>log.notice</code></li>
+	<li><code>log.warning</code></li>
+	<li><code>log.error</code></li>
+	<li><code>log.fatal</code> - this will cause the process to exit immediately and unsuccessfully.</li>
+      </ul>
+    </p>
+
+    <h2>Style</h2>
+
+    <p>We normally write BUILD files in an idiom which doesn't quite match standard Python styles.
+      The justification is that these are mostly just inherited from working on Blaze, but a
+      brief explanation follows after an example:</p>
+
+    <pre><code>
+      # Taken from //src/core/BUILD in the Please repo
+      go_library(
+          name = 'core',
+          srcs = glob(['*.go'], exclude=['*_test.go', 'version.go']) + [':version'],
+          visibility = ['PUBLIC'],
+          deps = [
+              '//third_party/go:gcfg',
+              '//third_party/go:logging',
+              '//third_party/go:queue',
+          ]
+      )
+    </code></pre>
+
+    <p><b>All arguments to build rules are passed as keywords.</b> This is pretty important
+      since (1) nobody will be able to read your BUILD file otherwise and (2) while we don't
+      normally change the order of function arguments, we might sometimes insert earlier ones
+      which will break code using positional arguments.</p>
+
+    <p>Arguments to functions like <code>glob()</code> and <code>subinclude()</code> are not
+      necessarily passed as keywords.</p>
+
+    <p>We put spaces around the <code>=</code> for each argument to the build rule.</p>
+
+    <p>Either single or double quotes work, as usual, but don't mix both in one file.</p>
+
+    <p>Lists either go all on one line:
+      <pre><code>['*_test.go', 'version.go']</code></pre>
+      or are broken across multiple lines like so:
+      <pre><code>          [
+              '//third_party/go:gcfg',
+              '//third_party/go:logging',
+              '//third_party/go:queue',
+          ]</code></pre>
+    </p>
+
+    <p>Indentation is normally four spaces.</p>
+
+    <p>We generally try to order lists lexicographically but don't always get this 100%.</p>
+
+    <p>If you'd like an autoformatter for BUILD files, Google's
+      <a href="https://github.com/bazelbuild/buildifier">Buildifier</a> is very good & fast.
+      We use a slightly modified version of it internally & on the Please repo.</p>
+
+    <h2><a name="grammar">Grammar</a></h2>
+
+    <p>The grammar is defined as (more or less) the following, where <code>Ident</code>,
+      <code>String</code>, <code>Int</code> and <code>EOL</code> are token types emitted by the lexer.</p>
+
+    <pre><code>{{ .Grammar }}</code></pre>
+
+    <p>As mentioned above, this is similar to Python but lacks the <code>import</code>, <code>try</code>,
+      <code>except</code>, <code>finally</code>, <code>class</code>, <code>global</code>,
+      <code>nonlocal</code>, <code>while</code> and <code>async</code> keywords. The implementation
+      may happen to permit using these as identifiers although it's discouraged (some tools might
+      attempt to operate on the file using Python's <code>ast</code> module for convenience, which would not
+      be possible if those keywords are used).<br/>
+      As a result, while <code>raise</code> and <code>assert</code> <b>are</b> supported, it's
+      not possible to catch and handle the resulting exceptions. These hence function only to
+      signal an error condition which results in immediate termination.</p>
+
+    <p>A more limited set of operators than in Python are available. The provided set are
+      considered sufficient for use in BUILD files.</p>
+
+    <p>Function annotations similar to <a href="https://www.python.org/dev/peps/pep-3107">PEP-3107</a>
+      / <a href="https://www.python.org/dev/peps/pep-0484">PEP-484</a> are available, although
+      they have first-class meaning as type hints. The arguments are annotated with the expected
+      type or types (separated by <code>|</code>) and when called the type of the argument will
+      be verified to match. This makes it easier to give useful feedback to users if they
+      make mistakes in their BUILD files (e.g. passing a string where a list is required).</p>
+
+    <p>Varargs and kwargs functions are not supported.</p>

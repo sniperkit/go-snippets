@@ -1,7 +1,0 @@
-
-# dependencies folder
-/vendor
-
-# coverage file and folder
-coverage.txt
-coverages/*.txt

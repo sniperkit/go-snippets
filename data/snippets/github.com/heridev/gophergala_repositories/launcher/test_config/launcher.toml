@@ -1,0 +1,19 @@
+[hosts]
+
+  [hosts.localhost]
+  name="127.0.0.1"
+  user="user"
+  password="password"
+  port=22
+
+[scripts]
+  
+  [scripts.ls]
+  name="list files"
+  host="localhost"
+  content="ls && sleep 1 && ls"
+
+  [scripts.ls_lh]
+  name="another list files"
+  host="localhost"
+  content="ls -lh && sleep 1 && ls -lh"

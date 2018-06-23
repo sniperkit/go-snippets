@@ -1,2 +1,0 @@
-test.yaml:3:42: [error] too few spaces after comma (commas)
-test.yaml:4:1: [error] syntax error: found character '\t' that cannot start any token

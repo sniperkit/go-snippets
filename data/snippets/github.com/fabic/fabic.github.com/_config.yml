@@ -1,0 +1,77 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink: pretty
+
+# See Gemfile.
+#gems:
+#  - jekyll-paginate
+#  - jekyll-sitemap
+#  # Font Awesome GEM // UNUSED // see _includes/head.html
+#  #- font-awesome-sass
+
+# Setup
+title: fabic
+
+tagline: |
+    random (binary) wanderings
+    in the philament empires&hellip;
+
+description: |
+    <tt class='keyw'>if</tt> (fail); <tt class='keyw'>then</tt>
+      <tt class='keyw'>try:</tt>
+        // ...
+      <tt class='keyw'>catch</tt>( again ):
+        // <tt class='fixme'>fixme:</tt> please increment this [ 3 ]
+        // <tt class='fixme'>fixme:</tt> if you think we're not doing
+        // <tt class='fixme'>fixme:</tt> proper error handling here.
+        <tt class='keyw'>throw</tt> again;
+
+
+
+#just killing time, from a shell&hellip;
+
+url:                 http://fabic.net
+baseurl:             ""
+paginate: #5
+
+# Comments are powered by disqus
+comments: true
+
+# Google analytics
+#   ( https://analytics.google.com/
+#     see _includes/analytics.html
+#     which is included by _layouts/default.html )
+#
+#tracking_id: UA-69243698-7  #< can't tell where I got this one !?
+tracking_id: UA-37213083-1 # GA Tracking ID
+
+# About/contact
+author:
+  name:              Fabien Cadet
+  url:               http://fabic.net
+  email:             cadet.fabien@gmail.com
+
+# Custom vars
+version:             v1.0.2
+
+github_repo: fabic.github.com
+github_username: fabic
+github_show_edit_link: true
+
+disqus_username: fabic
+flickr_username: oeil-de-nuit #fabicxx
+instagram_username: fabic974
+imdb_username: ur28172689
+lastfm_username: melofab
+reddit_username: fabic
+spotify_username: BenjenStark
+youtube_user_channel: FabienCadet # Anshinritsumei (previously).
+
+facebook_username: FabienKd
+googleplus_username: FabienCadet
+twitter_username: FabienKd
+
+hopwork_username: fabiencadet
+linkedin_username: fabiencadet
+viadeo_username: 0022cjlxk79ifxra

@@ -1,3 +1,0 @@
-#!/bin/sh
-# < /dev/null is necessary because smbd (and nmbd too) stops if launched in foreground and receiving EOF from stdin.
-exec nmbd -Ds /config/smb.conf < /dev/null

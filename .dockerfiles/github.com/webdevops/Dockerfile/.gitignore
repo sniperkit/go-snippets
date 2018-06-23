@@ -1,9 +1,0 @@
-/.idea
-/.cache
-/tests/serverspec/vendor
-/tests/serverspec/.bundle/
-/tests/serverspec/Dockerfile*
-/BLACKLIST
-*.log
-*.pyc
-.doit.db

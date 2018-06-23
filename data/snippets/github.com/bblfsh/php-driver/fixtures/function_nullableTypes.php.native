@@ -1,0 +1,118 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 55,
+                    "endLine": 4,
+                    "endTokenPos": 25,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "byRef": false,
+                "name": "test",
+                "nodeType": "Stmt_Function",
+                "params": [
+                    {
+                        "attributes": {
+                            "endFilePos": 29,
+                            "endLine": 3,
+                            "endTokenPos": 9,
+                            "startFilePos": 21,
+                            "startLine": 3,
+                            "startTokenPos": 6
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "bar",
+                        "nodeType": "Param",
+                        "type": {
+                            "attributes": {
+                                "endFilePos": 24,
+                                "endLine": 3,
+                                "endTokenPos": 7,
+                                "startFilePos": 21,
+                                "startLine": 3,
+                                "startTokenPos": 6
+                            },
+                            "nodeType": "NullableType",
+                            "type": {
+                                "attributes": {
+                                    "endFilePos": 24,
+                                    "endLine": 3,
+                                    "endTokenPos": 7,
+                                    "startFilePos": 22,
+                                    "startLine": 3,
+                                    "startTokenPos": 7
+                                },
+                                "nodeType": "Name",
+                                "parts": [
+                                    "Foo"
+                                ]
+                            }
+                        },
+                        "variadic": false
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 43,
+                            "endLine": 3,
+                            "endTokenPos": 15,
+                            "startFilePos": 32,
+                            "startLine": 3,
+                            "startTokenPos": 12
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "foo",
+                        "nodeType": "Param",
+                        "type": {
+                            "attributes": {
+                                "endFilePos": 38,
+                                "endLine": 3,
+                                "endTokenPos": 13,
+                                "startFilePos": 32,
+                                "startLine": 3,
+                                "startTokenPos": 12
+                            },
+                            "nodeType": "NullableType",
+                            "type": "string"
+                        },
+                        "variadic": false
+                    }
+                ],
+                "returnType": {
+                    "attributes": {
+                        "endFilePos": 51,
+                        "endLine": 3,
+                        "endTokenPos": 21,
+                        "startFilePos": 48,
+                        "startLine": 3,
+                        "startTokenPos": 20
+                    },
+                    "nodeType": "NullableType",
+                    "type": {
+                        "attributes": {
+                            "endFilePos": 51,
+                            "endLine": 3,
+                            "endTokenPos": 21,
+                            "startFilePos": 49,
+                            "startLine": 3,
+                            "startTokenPos": 21
+                        },
+                        "nodeType": "Name",
+                        "parts": [
+                            "Baz"
+                        ]
+                    }
+                },
+                "stmts": []
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

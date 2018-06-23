@@ -1,0 +1,56 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 43,
+                    "endLine": 2,
+                    "endTokenPos": 15,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "byRef": false,
+                "name": "func1",
+                "nodeType": "Stmt_Function",
+                "params": [
+                    {
+                        "attributes": {
+                            "endFilePos": 30,
+                            "endLine": 2,
+                            "endTokenPos": 7,
+                            "startFilePos": 21,
+                            "startLine": 2,
+                            "startTokenPos": 5
+                        },
+                        "byRef": false,
+                        "default": null,
+                        "name": "a",
+                        "nodeType": "Param",
+                        "type": {
+                            "attributes": {
+                                "endFilePos": 27,
+                                "endLine": 2,
+                                "endTokenPos": 5,
+                                "startFilePos": 21,
+                                "startLine": 2,
+                                "startTokenPos": 5
+                            },
+                            "nodeType": "Name",
+                            "parts": [
+                                "boolean"
+                            ]
+                        },
+                        "variadic": false
+                    }
+                ],
+                "returnType": "string",
+                "stmts": []
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

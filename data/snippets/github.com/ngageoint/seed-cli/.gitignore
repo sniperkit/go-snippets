@@ -1,0 +1,15 @@
+# IDE Files
+.idea
+
+# Build / src directories
+src
+output
+
+# Generated assets
+assets/assets.go
+
+# Scratch directories
+temp-*
+
+# test manifests updated during tests
+testdata/complete/seed.manifest.json

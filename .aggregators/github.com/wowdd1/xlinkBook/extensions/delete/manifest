@@ -1,6 +1,0 @@
-{
-    "name" : "delete",
-    "module" : "delete",
-    "class" : "Delete",
-    "version" : "0.1"
-}

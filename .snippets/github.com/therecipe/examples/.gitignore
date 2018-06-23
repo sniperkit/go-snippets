@@ -1,6 +1,0 @@
-.DS_Store
-*.qmlc
-rcc*
-moc*
-deploy
-!/deploy

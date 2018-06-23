@@ -1,0 +1,129 @@
+Status:  ok
+Language:  php
+Errors: 
+UAST: 
+Module {
+.  Roles: Module
+.  Children: {
+.  .  0: Scalar_LNumber {
+.  .  .  Roles: Expression,Literal,Number
+.  .  .  TOKEN "0"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 7
+.  .  .  .  Line: 3
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 7
+.  .  .  .  Line: 3
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  }
+.  .  1: Scalar_LNumber {
+.  .  .  Roles: Expression,Literal,Number
+.  .  .  TOKEN "1"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 10
+.  .  .  .  Line: 4
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 10
+.  .  .  .  Line: 4
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  }
+.  .  2: Scalar_LNumber {
+.  .  .  Roles: Expression,Literal,Number
+.  .  .  TOKEN "4095"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 13
+.  .  .  .  Line: 5
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 17
+.  .  .  .  Line: 5
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  }
+.  .  3: Scalar_LNumber {
+.  .  .  Roles: Expression,Literal,Number
+.  .  .  TOKEN "4095"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 20
+.  .  .  .  Line: 6
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 24
+.  .  .  .  Line: 6
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  }
+.  .  4: Scalar_LNumber {
+.  .  .  Roles: Expression,Literal,Number
+.  .  .  TOKEN "4095"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 27
+.  .  .  .  Line: 7
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 31
+.  .  .  .  Line: 7
+.  .  .  .  Col: 5
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  }
+.  .  5: Scalar_LNumber {
+.  .  .  Roles: Expression,Literal,Number
+.  .  .  TOKEN "511"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 34
+.  .  .  .  Line: 8
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 37
+.  .  .  .  Line: 8
+.  .  .  .  Col: 4
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  }
+.  .  6: Scalar_LNumber {
+.  .  .  Roles: Expression,Literal,Number
+.  .  .  TOKEN "3640"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 40
+.  .  .  .  Line: 9
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 53
+.  .  .  .  Line: 9
+.  .  .  .  Col: 14
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  }
+.  }
+}
+

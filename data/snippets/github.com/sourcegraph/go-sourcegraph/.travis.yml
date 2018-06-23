@@ -1,0 +1,21 @@
+language: go
+
+go:
+  - 1.5
+  - tip
+
+matrix:
+  allow_failures:
+    - go: tip
+  fast_finish: true
+
+before_install:
+  - mkdir -p $HOME/gopath/src/sourcegraph.com/sourcegraph
+  - mv $TRAVIS_BUILD_DIR $HOME/gopath/src/sourcegraph.com/sourcegraph/go-sourcegraph
+  - export TRAVIS_BUILD_DIR=$HOME/gopath/src/sourcegraph.com/sourcegraph/go-sourcegraph
+
+install:
+  - go get -t -d -v ./...
+
+script:
+  - go build -v ./...

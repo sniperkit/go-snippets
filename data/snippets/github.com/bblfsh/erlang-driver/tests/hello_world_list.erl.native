@@ -1,0 +1,31 @@
+{
+    "ast": [
+        [
+            "call",
+            1,
+            [
+                "remote",
+                1,
+                [
+                    "atom",
+                    1,
+                    "io"
+                ],
+                [
+                    "atom",
+                    1,
+                    "write"
+                ]
+            ],
+            [
+                [
+                    "string",
+                    1,
+                    "Hola Mundo"
+                ]
+            ]
+        ]
+    ],
+    "errors": null,
+    "status": "ok"
+}

@@ -1,0 +1,60 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 14:00:04 -0500
+Received: (qmail 21530 invoked from network); 23 Jan 2015 10:59:19 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 10:59:19 -0800
+X-ASG-Debug-ID: 1422039555-017fd408af2125750001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id p9aJAubXlLCUun03 for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 10:59:15 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146372=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0NJCcsc003703
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 12:12:40 -0700 (MST)
+Received: from mail-ie0-f174.google.com (mail-ie0-f174.google.com [209.85.223.174])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0NJCSB4000031 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 12:12:29 -0700 (MST)
+Received: by mail-ie0-f174.google.com with SMTP id vy18so3779333iec.5
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 10:58:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=googlemail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=OTr4In7Fs7euuGWhzV23LC6voj1F889OrVS5S6HSgHs=; b=iZsT9iWT9Om5H5ssK9+oKZ+Nu3WiU6stXCfW484Qe6JfCqZWopwCeWIXu0j9DEx7ZL M56VVp5HJapddr9de+X6kOf1ZYbUPEK8mwHWKO2U4bpo2Y+KjGZ70mg0EPq5/0qAaRGI SWUFdNKq+Ng89qM4OSl9McuXZq+uDfleJp9M0382E5NdQXXmwEFHXalmSYKJ07Nllr3Q hOcMYeA5cMUtXqu1A/iNhIZU/GZzRlXoFLv5uxwZv2hLH53G8R+vAekb1MnxiRXJ6pZl sdYD7NQPmVKNpZiQw9iZXY8+Zq0LIJYxLQ5FIN+KES2TFH/cuarbIChL2/nxyq+Wktdf z2YQ==
+MIME-Version: 1.0
+X-Received: by 10.43.79.2 with SMTP id zo2mr10227735icb.78.1422039518024; Fri, 23 Jan 2015 10:58:38 -0800 (PST)
+Received: by 10.43.41.196 with HTTP; Fri, 23 Jan 2015 10:58:37 -0800 (PST)
+Date: Fri, 23 Jan 2015 19:58:37 +0100
+Message-ID: <CAJO05K2Y+Q+mpwE_=yCReUyJAF7pRVVWPiA82-wrKJyo+fUU_Q@mail.gmail.com>
+Subject: Munich BSD meetup
+From: Jan Lambertz <jd.arbeit@googlemail.com>
+X-ASG-Orig-Subj: Munich BSD meetup
+To: misc@openbsd.org
+Content-Type: text/plain; charset=UTF-8
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422039555
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14567
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+Hi,
+
+stolen the idea from Reyk, maybe we can have a BSD meetup near munich.
+One and only cirtitcal question is where.
+I live about 30km North of Munich, but my job is near munich central station.
+I fine with everywhere reachable in 1,5 hours.
+
+
+Jan
+

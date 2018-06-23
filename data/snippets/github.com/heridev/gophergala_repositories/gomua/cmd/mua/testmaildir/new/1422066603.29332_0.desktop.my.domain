@@ -1,0 +1,61 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 21:30:03 -0500
+Received: (qmail 19835 invoked from network); 23 Jan 2015 18:06:10 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 18:06:10 -0800
+X-ASG-Debug-ID: 1422065168-017fd408af213b7a0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id EcvRDTyB35tavSqw for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 18:06:09 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146384=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0O2JYmK023745
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 19:19:36 -0700 (MST)
+Received: from conveyor.shockley.net (conveyor.shockley.net [64.85.172.239])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0O2JML6008258 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=NO); Fri, 23 Jan 2015 19:19:23 -0700 (MST)
+Received: from [10.0.2.40] (c-68-82-212-51.hsd1.pa.comcast.net [68.82.212.51]) (AUTH: PLAIN steve.shockley, SSL: TLSv1/SSLv3,128bits,AES128-SHA)
+	by conveyor.shockley.net with esmtp; Fri, 23 Jan 2015 21:05:31 -0500 id 00143887.54C2FDEB.0000734D
+Message-ID: <54C2FE1A.5050706@shockley.net>
+Date: Fri, 23 Jan 2015 21:06:18 -0500
+From: Steve Shockley <steve.shockley@shockley.net>
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Thunderbird/31.4.0
+MIME-Version: 1.0
+To: Reyk Floeter <reyk@openbsd.org>
+CC: misc@openbsd.org
+Subject: Re: What are the disadvantages of soft updates?
+References: <em5ec6d08e-c3e2-49fb-90cc-d5735f9c60d6@probook> <20150120091709.GE21763@moule.localdomain> <20150121105035.GA11043@obiit.org> <54C1030B.9010309@shockley.net> <20150122141326.GB18519@autobahn.atexit.net>
+X-ASG-Orig-Subj: Re: What are the disadvantages of soft updates?
+In-Reply-To: <20150122141326.GB18519@autobahn.atexit.net>
+Content-Type: text/plain; charset=windows-1252; format=flowed
+Content-Transfer-Encoding: 8bit
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422065168
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14577
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+
+On 1/22/2015 9:13 AM, Reyk Floeter wrote:
+>> I've personally had problems with OpenBSD panics with softupdates when
+>> running under ESXi when the back-end storage becomes high-latency
+>> (aggressive SAN backups, not enough spindles).  I haven't tried recently (it
+>> was difficult to repro on demand) but I didn't really consider it an OpenBSD
+>> issue.  Presumably softupdate has shorter timeouts.
+>>
+> What release and what virtualized SCSI controller where you using?
+
+Hm... probably 5.0, with LSI Logic Parallel.
+

@@ -1,3 +1,0 @@
-[submodule "testdata/case/Proxy"]
-	path = testdata/case/Proxy
-	url = https://github.com/sgtest/csharp-testcase

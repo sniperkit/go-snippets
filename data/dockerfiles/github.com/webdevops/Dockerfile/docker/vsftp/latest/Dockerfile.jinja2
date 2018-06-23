@@ -1,0 +1,12 @@
+{{ docker.from("base", "latest") }}
+
+{{ environment.ftp() }}
+
+{{ docker.copy('conf/', '/opt/docker/') }}
+
+RUN set -x \
+    {{ vsftp.ubuntu() }} \
+    {{ provision.runBootstrap() }} \
+    {{ docker.cleanup() }}
+
+{{ docker.expose('20 21 12020 12021 12022 12023 12024 12025') }}

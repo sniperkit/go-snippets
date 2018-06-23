@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>doc/repotool</title>
+  <meta name="description" content="DevMine - A developer search engine and source code analysis framework
+">
+  <meta name="author" content="Devmine team">
+
+  <link rel="shortcut icon" href="/assets/img/favicon.ico">
+
+  <link rel="stylesheet" href="/lib/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/assets/css/github-markdown.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="canonical" href="http://devmine.ch/doc/repotool/">
+  <link rel="alternate" type="application/rss+xml" title="DevMine" href="http://devmine.ch/feed.xml" />
+
+  <script type="text/javascript" src="/lib/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/assets/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="/assets/js/scripts.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="/img/devmine-logo.png">&nbsp;DevMine</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/news/">News</a>
+          </li>
+          <li>
+            <a href="/project/">Project</a>
+          </li>
+          <li>
+            <a href="/downloads/">Downloads</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation<strong class="caret"></strong></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/doc/devmine/">Devmine</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="/doc/crawld">Crawld</a>
+              </li>
+              <li>
+                <a href="/doc/ght2dm">Ght2dm</a>
+              </li>
+              <li>
+                <a href="/doc/srccat">Srccat</a>
+              </li>
+              <li>
+                <a href="/doc/parsers">Parsers</a>
+              </li>
+              <li>
+                <a href="/doc/srctool/">Srctool</a>
+              </li>
+              <li>
+                <a href="/doc/repotool/">Repotool</a>
+              </li>
+              <li>
+                <a href="/doc/srcanlzr/">Srcanlzr</a>
+              </li>
+              <li>
+                <a href="/doc/fluxio/">Fluxio</a>
+              </li>
+              <li>
+                <a href="/doc/featscomp/">Featscomp</a>
+              </li>
+              <li>
+                <a href="/doc/api-server/">API-server</a>
+              </li>
+              <li>
+                <a href="/doc/webapp/">Webapp</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/about/">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</style><span id="forkongithub"><a href="https://github.com/DevMine">Fork me on GitHub</a></span>
+</header>
+
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <div class="container markdown-body">
+        <p><span class="pull-right">
+<a class="dm-grey" href="https://github.com/DevMine/repotool">View on GitHub <i class="fa fa-github"></i></a>
+</span></p>
+
+<h1 id="repotool---a-tool-to-aggregate-source-code-repositories-metadata">repotool - a tool to aggregate source code repositories metadata</h1>
+
+<p><a href="https://travis-ci.org/DevMine/repotool"><img src="https://travis-ci.org/DevMine/repotool.png?branch=master" alt="Build Status" /></a>
+<a href="http://godoc.org/github.com/DevMine/repotool"><img src="http://godoc.org/github.com/DevMine/repotool?status.svg" alt="GoDoc" /></a>
+<a href="https://gowalker.org/github.com/DevMine/repotool"><img src="http://img.shields.io/badge/doc-gowalker-blue.svg?style=flat" alt="GoWalker" /></a></p>
+
+<p><code>repotool</code> is a command line tool that aggregates source code repositories
+metadata (such as VCS type, commits and so on) and produces JSON objects out of
+it.  It is also able to store repository information into a database.</p>
+
+<p>A repository contains a list of commits that may contain, if you enable this
+option, a list of deltas. A delta contains information about a file
+touched by a commit. It may also contain patches if specified via an option.</p>
+
+<p>Currently, only <a href="http://git-scm.com/">git</a> is supported.</p>
+
+<p>Below is an example of the data produced, without commit deltas and patches:</p>
+
+<pre><code>{
+  "name": "repotool",
+  "vcs": "git",
+  "clone_url": "https://github.com/DevMine/repotool.git",
+  "clone_path": "/home/robin/Hacking/repotool",
+  "default_branch": "master",
+  "commits": [
+    {
+      "vcs_id": "df55def5e6185447c6bd360ec1144a847d73b986",
+      "message": "repotool: Add possibility to insert commit diff deltas into the db.\n\nFor this purpose, create a new 'commit_diff_deltas' table.\n",
+      "author": {
+        "name": "Robin Hahling",
+        "email": "robin.hahling@gw-computing.net"
+      },
+      "committer": {
+        "name": "Robin Hahling",
+        "email": "robin.hahling@gw-computing.net"
+      },
+      "author_date": "2015-01-14T18:12:47+01:00",
+      "commit_date": "2015-01-14T18:12:47+01:00",
+      "file_changed_count": 2,
+      "insertions_count": 89,
+      "deletions_count": 2
+    },
+    ...
+  ]
+}
+</code></pre>
+
+<p>And with deltas enabled (without patches):</p>
+
+<pre><code>{
+  "name": "repotool",
+  "vcs": "git",
+  "clone_url": "https://github.com/DevMine/repotool.git",
+  "clone_path": "/home/robin/Hacking/repotool",
+  "default_branch": "master",
+  "commits": [
+    {
+      "vcs_id": "863f9ed113f06829359d0fd4040ae4a6b5c1cf5e",
+      "message": "tools/batch: Use a channel to create a pool of tasks for goroutines.\n\nUse a channel on which each tasks (ie call to repotool) is added.\nThis allows to have goroutines picking up tasks from the channel as soon\nas they are done. This way, there is no waiting time as long as there\nare tasks in the pool.\n",
+      "author": {
+        "name": "Robin Hahling",
+        "email": "robin.hahling@gw-computing.net"
+      },
+      "committer": {
+        "name": "Robin Hahling",
+        "email": "robin.hahling@gw-computing.net"
+      },
+      "author_date": "2015-01-13T15:24:40+01:00",
+      "commit_date": "2015-01-13T15:24:40+01:00",
+      "diff_delta": [
+        {
+          "status": "modified",
+          "binary": false,
+          "old_file_path": "tools/batch.go",
+          "new_file_path": "tools/batch.go"
+        }
+      ],
+      "file_changed_count": 1,
+      "insertions_count": 25,
+      "deletions_count": 23
+    },
+    ...
+  ]
+}
+</code></pre>
+
+<p>And you can even include patches:</p>
+
+<pre><code>{
+  "name": "repotool",
+  "vcs": "git",
+  "clone_url": "https://github.com/DevMine/repotool.git",
+  "clone_path": "/home/robin/Hacking/repotool",
+  "default_branch": "master",
+  "commits": [
+    {
+      "vcs_id": "fe8aaac0c7650d8ce9c8f4ddeaa63105b3dd0e9e",
+      "message": "repotool: Print repository name before processing db insertions.\n",
+      "author": {
+        "name": "Robin Hahling",
+        "email": "robin.hahling@gw-computing.net"
+      },
+      "committer": {
+        "name": "Robin Hahling",
+        "email": "robin.hahling@gw-computing.net"
+      },
+      "author_date": "2015-01-14T18:14:18+01:00",
+      "commit_date": "2015-01-14T18:14:18+01:00",
+      "diff_delta": [
+        {
+          "patch": "diff --git a/repotool.go b/repotool.go\nindex ba1eed0..d1ce7a3 100644\n--- a/repotool.go\n+++ b/repotool.go\n@@ -97,8 +97,9 @@ func main() {\n \t\t}\n \t\tdefer db.Close()\n \n-\t\tfmt.Fprintf(os.Stderr, \"inserting %d commits into the database...\\n\",\n-\t\t\tlen(repository.GetCommits()))\n+\t\tfmt.Fprintf(os.Stderr,\n+\t\t\t\"inserting %d commits from %s repository into the database...\\n\",\n+\t\t\tlen(repository.GetCommits()), repository.GetName())\n \t\ttic := time.Now()\n \t\tinsertRepoData(db, repository)\n \t\ttoc := time.Now()\n",
+          "status": "modified",
+          "binary": false,
+          "old_file_path": "repotool.go",
+          "new_file_path": "repotool.go"
+        }
+      ],
+      "file_changed_count": 1,
+      "insertions_count": 3,
+      "deletions_count": 2
+    },
+    ...
+  ]
+}
+</code></pre>
+
+<h2 id="installation">Installation</h2>
+
+<p><code>repotool</code> depends on <a href="https://github.com/libgit2/git2go">git2go</a>, which is a
+<a href="http://golang.org/">Go</a> binding to <a href="https://libgit2.github.com/">libgit2</a>, a C
+library that implements <code>git</code> core methods. Hence, you need <code>libgit2</code> installed
+on your system unless you statically compile <code>libgit2</code> into <code>git2go</code>.</p>
+
+<p>If the requirements are met, installing <code>repotool</code> is as simple as running this
+command in a terminal (assuming <a href="http://golang.org/">Go</a> is installed):</p>
+
+<pre><code>go get github.com/DevMine/repotool/cmd/...
+</code></pre>
+
+<p>Or you can download a binary for your platform from the DevMine project’s
+<a href="http://devmine.ch/downloads">downloads page</a>.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p><code>repotool</code> produces JSON, provided that you feed it with a path to a source code
+repository managed by a VCS which can be either in the form of a directory or a
+tar archive. By default, informative messages are outputted to <code>stderr</code> whereas
+JSON is outputted to <code>stdout</code>. To see the list of available options, use the
+<code>-h</code> flag. Example usage:</p>
+
+<pre><code>repotool ~/Code/myawesomeproject &gt; myawesomeproject.json
+</code></pre>
+
+<p><code>repotool-db</code> can be used to insert data into the PostgreSQL database.
+You need to provide a configuration file in argument. Simply copy
+<code>repotool.conf.sample</code> to <code>repotool.conf</code> and adjust database connection
+information at the very least. See this
+<a href="https://github.com/DevMine/repotool/blob/master/db/README.md">README.md</a> for
+more information about the database schema.
+<code>repotool-db</code> can be used to process multiple repositories in parallel. This is
+why, as opposed to <code>repotool</code>, it does not simply take a repository as argument
+but it takes a directory where it expects to find source code repositories. The
+depth at which repositories are expected to be found can be specified with the
+<code>depth</code> flag. To see the list of available options, use the <code>-h</code> flag. Example
+usage:</p>
+
+<pre><code>repotool-db -c repotool.conf ~/Code
+</code></pre>
+
+<p>With the configuration file, you can also tell <code>repotool-db</code> to insert commit
+deltas and commits patches (the latter works only if you enable commit deltas,
+quite logically). Simply set the <code>commit_deltas</code> and to <code>true</code>. Note that the
+<code>commit_patches</code> option is ignored for now. However, you should know that
+inserting <code>commit_patches</code> slow things down a lot. <code>repotool-db</code> can process
+repositories concurrently by recursively traversing directories, spawning
+goroutines in the process. When using it, bear in mind that <code>repotool-db</code> is IO
+and CPU intensive, hence do not spawn too many goroutines or you might reach the
+number of open files limit. The number of goroutines can be adjusted with the
+<code>-g</code> parameter. Using about the same number of goroutines as the number of cpu
+cores should be a reasonable choice.</p>
+
+<p>As <code>libgit2</code> does not support reading information directly from a tar archive,
+when given a git repository as a tar archive, <code>repotool</code>, or <code>repotool-db</code> will
+extract part of the archive into a temporary location. You can specify where
+using <code>tmp_dir</code> in the configuration file for <code>repotool-db</code> or by given the
+information as argument to <code>repotool</code>. We advise specifying a path to a ramdisk
+for increased performance and reduced main storage I/Os. When using a ramdisk
+with limited capacity, you shall specify the largest size for a tar archive to
+be extracted in <code>tmp_dir</code> using the <code>tmp_dir_file_size_limit</code> option from the
+configuration file for <code>repotool-db</code> or by using the appropriate flag for
+<code>repotool</code>. Every tar archive larger than this size will be extracted in its
+storage location instead.</p>
+
+
+      </div>
+    </div>
+
+    <footer id="footer">
+  <div class="container">
+    <p>
+      Copyright &copy; 2014-2015 - The DevMine authors
+      <a href="https://github.com/orgs/DevMine/people"><i class="fa fa-github"></i></a>
+      - <a href="/about">contact us!</a>
+    </p>
+    <p>
+    <small>Last site update: 2015-06-12 10:49:08 +0200</small>
+    </p>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,78 @@
+<div class="modal-header">
+    <h3 class="modal-title">Add Data Source</h3>
+</div>
+<div class="modal-body">
+    <form name="dataSourceForm" novalidate>
+    	<legend>Presets</legend>
+    	<div class="form-group">
+    		<button class="btn btn-primary" style="width: 100%; margin-bottom: 5px" ng-click="preset('golang')">#Search Results on Stack Overflow for &quot;golang&quot;</button>
+    		<button class="btn btn-primary" style="width: 100%; margin-bottom: 5px" ng-click="preset('nodejs')">#Search Results on Stack Overflow for &quot;nodejs&quot;</button>
+    		<button class="btn btn-primary" style="width: 100%" ng-click="preset('gopher')">#Search Results on Stack Overflow for &quot;gopher&quot;</button>
+    	</div>
+
+    	<legend>Basic Settings</legend>
+        <div class="form-group has-feedback" ng-class="{'has-error': dataSourceForm.name.$invalid}">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="e.g. #Search Results on Stack Overflow for &quot;golang&quot;"
+            	   name="name" ng-model="dataSource.name" required>
+            <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="dataSourceForm.name.$invalid"></span>
+        </div>
+
+        <div class="form-group has-feedback" ng-class="{'has-error': dataSourceForm.interval.$invalid}">
+            <label>Interval (in ms)</label>
+            <input type="text" class="form-control" placeholder="e.g. 60000"
+                   name="interval" ng-model="dataSource.interval"
+                   ng-pattern="/^[0-9]*$/">
+            <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="dataSourceForm.interval.$invalid"></span>
+        </div>
+
+        <div class="form-group has-feedback" ng-class="{'has-error': dataSourceForm.timeout.$invalid}">
+            <label>Timeout (in ms)</label>
+            <input type="text" class="form-control" placeholder="e.g. 10000"
+                   name="timeout" ng-model="dataSource.timeout"
+                   ng-pattern="/^[0-9]*$/">
+            <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="dataSourceForm.timeout.$invalid"></span>
+        </div>
+
+        <div class="form-group has-feedback">
+            <label>Data Source Type</label>
+            <select ng-model="selectedDataSourceType" ng-options="opt.dataSourceType for opt in dataSourceTypes" class="form-control">
+            </select>
+        </div>
+
+        <legend>Type Settings</legend>
+        <div class="form-group has-feedback" ng-class="{'has-error': dataSourceForm.url.$invalid}">
+            <label>URL</label>
+            <input type="url" class="form-control" placeholder="e.g. http://stackoverflow.com/search?q=golang"
+            	   name="url" ng-model="dataSource.typeSettings.url" required>
+            <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="dataSourceForm.url.$invalid"></span>
+        </div>
+
+        <div class="form-group has-feedback" ng-class="{'has-error': dataSourceForm.cssPath.$invalid}">
+            <label>CSS Path</label>
+            <input type="text" class="form-control" placeholder="e.g. #mainbar > div.subheader.results-header > h2"
+            	   name="cssPath" ng-model="dataSource.typeSettings.cssPath" required>
+            <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="dataSourceForm.cssPath.$invalid"></span>
+        </div>
+
+        <div class="form-group has-feedback" ng-class="{'has-error': dataSourceForm.transformationScript.$invalid}">
+            <label>Transformation One-Liner (JavaScript)</label>
+            <input type="text" class="form-control" placeholder="e.g. value.replace(/\D/g, '')"
+            	   name="transformationScript" ng-model="dataSource.typeSettings.transformationScript">
+            <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="dataSourceForm.transformationScript.$invalid"></span>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-disabled="dataSourceForm.$invalid" ng-click="ok(dataSource)">Add Data Source</button>
+    <button class="btn btn-default" ng-disabled="dataSourceForm.$invalid" ng-click="test(dataSource)">Test Data Source (Output below!)</button>
+    <button class="btn btn-warning" ng-click="$dismiss()">Cancel</button>
+</div>
+<div class="modal-footer" ng-show="testResponse">
+	{{testResponse.status}} {{testResponse.statusText}}<br>
+	{{testResponse.error}}
+	<div class="form-group">
+        <label>Data Source Value</label>
+        <textarea class="form-control" rows="3" ng-model="testResponse.value" style="text-align: right"></textarea>
+    </div>
+</div>

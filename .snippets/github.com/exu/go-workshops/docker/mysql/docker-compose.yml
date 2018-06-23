@@ -1,6 +1,0 @@
-app:
-  image: mariadb:latest
-  ports:
-   - "7701:3306"
-  environment:
-      - MYSQL_ROOT_PASSWORD=root

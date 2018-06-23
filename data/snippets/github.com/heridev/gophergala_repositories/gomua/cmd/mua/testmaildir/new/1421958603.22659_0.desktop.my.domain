@@ -1,0 +1,80 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Thu, 22 Jan 2015 15:30:03 -0500
+Received: (qmail 15403 invoked from network); 22 Jan 2015 12:07:05 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 22 Jan 2015 12:07:05 -0800
+X-ASG-Debug-ID: 1421957224-017fd408af20dd2d0001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id PESGfqEuyhGamlc4 for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 12:07:04 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146355=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0MKJhKC026958
+	for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 13:19:45 -0700 (MST)
+Received: from wolfman.devio.us (devio.us [66.7.199.108])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0MKJScr031504 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES256-SHA bits=256 verify=NO)
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 13:19:30 -0700 (MST)
+Received: from localhost (localhost [127.0.0.1])
+	by wolfman.devio.us (Postfix) with ESMTP id 0FB4C1B5BD6; Thu, 22 Jan 2015 15:05:39 -0500 (EST)
+X-Virus-Scanned: amavisd-new at devio.us
+Received: from wolfman.devio.us ([127.0.0.1])
+	by localhost (wolfman.devio.us [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id IKfwYMmx5fsY; Thu, 22 Jan 2015 15:05:38 -0500 (EST)
+Received: from kokoro.anthrobsd.net (herngaard.torservers.net [96.44.189.102]) (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits)) (No client certificate requested)
+	by wolfman.devio.us (Postfix) with ESMTPSA id 03B141B5B8F; Thu, 22 Jan 2015 15:05:36 -0500 (EST)
+Message-ID: <54C1580E.4040606@devio.us>
+Date: Thu, 22 Jan 2015 15:05:34 -0500
+From: Brian Callahan <bcallah@devio.us>
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:24.0) Gecko/20100101 Thunderbird/24.4.0
+MIME-Version: 1.0
+To: Peter Hessler <phessler@theapt.org>,
+        Jan Lambertz <jd.arbeit@googlemail.com>
+CC: misc@openbsd.org
+Subject: Re: Hannover BSD meetup
+References: <20150122140230.GA18519@autobahn.atexit.net> <CAJO05K2ni8LSuYPUD4NjrsjmhZ5ePND3qZ2G3wgr5Tz9u+4Chw@mail.gmail.com> <20150122200320.GE28913@gir.theapt.org>
+X-ASG-Orig-Subj: Re: Hannover BSD meetup
+In-Reply-To: <20150122200320.GE28913@gir.theapt.org>
+Content-Type: text/plain; charset=windows-1252
+Content-Transfer-Encoding: 8bit
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421957224
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14537
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+
+Yup. Doing just this now in my new home. "If you build it, they will
+come." and all that other feel good stuff applies.
+
+~Brian
+
+On 01/22/15 15:03, Peter Hessler wrote:
+> It's very simple.  Make one of your own :).
+>
+> Pick a place, advertise it, and *make sure to show up*.  Keep it
+> regular, if you can.  The first 6 meetings or so will be you and your
+> friends, though.
+>
+>
+> On 2015 Jan 22 (Thu) at 20:05:13 +0100 (+0100), Jan Lambertz wrote:
+> :Hey Reyk,
+> :
+> :that sounds great. Unfortunately the Way to Hannover is 600km from
+> :here. I hope something simliar is happening soon near Munich. I was
+> :not able to find any Meeting for OpenBSD here.
+> :
+> :Jan
+> :
+

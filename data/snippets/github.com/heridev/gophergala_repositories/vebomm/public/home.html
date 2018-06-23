@@ -1,0 +1,66 @@
+<div class="container-fluid">
+
+<div style="margin-top:20px" class="row">
+	<div class="col-xs-12 col-sm-3 col-md-2 col-sm-offset-1 col-md-offset-1">
+		<div class="row">
+			<h3>{{ _vmh.User.Username }}, <small>{{ _vmh.User.Age() }}</small></h3>
+			<div>MMR {{ _vmh.User.Mmr }}</div>
+		</div>
+	</div>
+	
+    <div class="col-xs-12 col-sm-8 col-md-6">
+		<div class="row">
+			<h2>Voice Chat MM</h2>
+			<h3>Instant talk with a stranger, for fun and profit.ff</h3>
+			<hr class="colorgraph">
+			<form>
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+		               <button class="btn btn-lg btn-primary btn-block" #if="_vmh.Mode == ModeIdle"
+							#on(click)="_vmh.Start()">
+							Start Talking &nbsp;<span class="glyphicon glyphicon-earphone"></span>
+						</button>
+						<button class="btn btn-lg btn-warning btn-block disabled" #if="_vmh.Mode == ModeGetMic">
+							Acquiring Microphone...
+						</button>
+						<button class="btn btn-lg btn-error btn-block disabled" #if="_vmh.Mode == ModeSearching">
+							<span class="glyphicon glyphicon-search"></span> Looking for a partner...
+						</button>
+						<button #on(click)="_vmh.Stop()" class="btn btn-lg btn-warning btn-block" #if="_vmh.Mode != ModeTalking">
+							Stop Talking <span class="glyphicon glyphicon-remove"></span>
+						</button>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="form-group">
+							    <label>Gender Constraint</label>
+							    <select #value="&_vmh.Gender" class="form-control">
+									<option value="N">None</option>
+								  	<option value="M">Male</option>
+								 	<option value="F">Female</option>
+								</select>
+						  	</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="form-group">
+							<label>Minimum Age</label>
+				            <input #value="&_vmh.Cons.MinAge" type="text" class="form-control" value="0">
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="form-group">
+							<label>Maximum Age</label>
+				            <input #value="&_vmh.Cons.MaxAge" type="text" class="form-control" value="100">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+</div>

@@ -1,9 +1,0 @@
-{
-  "id": "gevvent-event-service",
-  "kind": "Service",
-  "apiVersion": "v1beta1",
-  "port": 8080,
-  "containerPort": 8080,
-  "selector": { "name": "gevvent-event-service" },
-  "labels": { "name": "gevvent-event-service" }
-}

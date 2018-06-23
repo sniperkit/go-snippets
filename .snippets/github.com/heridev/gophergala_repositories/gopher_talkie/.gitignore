@@ -1,7 +1,0 @@
-.DS_Store
-bin/
-coverage/
-.godeps/
-*.swp
-*.out
-.vagrant

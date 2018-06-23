@@ -1,2 +1,0 @@
-- service: spellcheck
-  command: make spellcheck 

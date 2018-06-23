@@ -1,2 +1,0 @@
-## Chatty Chatty Bang! Bang!
-

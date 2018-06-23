@@ -1,0 +1,1 @@
+{"hash":"ED4D8347D90443079B800C059DEB29E2","rights":"CC BY","creator":"batch","uri":"https://blog.fuzzing-project.org/31-Fuzzing-Math-miscalculations-in-OpenSSLs-BN_mod_exp-CVE-2015-3193.html","time":"2017-05-12","title":"propagation bug discovered in the BN_mod_exp() function"}

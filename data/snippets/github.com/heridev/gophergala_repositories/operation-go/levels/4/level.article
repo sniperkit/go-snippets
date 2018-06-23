@@ -1,0 +1,8 @@
+Mission: Being Recorded
+
+* Being Recorded
+
+.code source.go /START OMIT/,/EDITABLE OMIT/
+.play source.go /EDITABLE OMIT/,/UNEDITABLE OMIT/
+.code source.go /UNEDITABLE OMIT/,/END OMIT/
+.html script.html

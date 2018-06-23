@@ -1,0 +1,225 @@
+{
+    "status": "ok",
+    "language": "typescript",
+    "errors": [],
+    "ast": {
+        "amdDependencies": [],
+        "bindDiagnostics": [],
+        "col": 1,
+        "comments": [],
+        "end": 117,
+        "flags": [],
+        "identifierCount": 6,
+        "identifiers": {},
+        "isDeclarationFile": false,
+        "kind": "SourceFile",
+        "languageVariant": 0,
+        "line": 1,
+        "nodeCount": 26,
+        "pos": 0,
+        "referencedFiles": [],
+        "scriptKind": 3,
+        "statements": [
+            {
+                "catchClause": {
+                    "block": {
+                        "col": 12,
+                        "end": 77,
+                        "flags": [],
+                        "kind": "Block",
+                        "line": 3,
+                        "multiLine": true,
+                        "pos": 45,
+                        "statements": [
+                            {
+                                "col": 14,
+                                "end": 75,
+                                "expression": {
+                                    "arguments": [
+                                        {
+                                            "col": 17,
+                                            "end": 73,
+                                            "flags": [],
+                                            "kind": "StringLiteral",
+                                            "line": 4,
+                                            "pos": 64,
+                                            "text": "catched"
+                                        }
+                                    ],
+                                    "col": 14,
+                                    "end": 74,
+                                    "expression": {
+                                        "col": 14,
+                                        "end": 63,
+                                        "expression": {
+                                            "col": 14,
+                                            "end": 59,
+                                            "escapedText": "console",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 3,
+                                            "pos": 47
+                                        },
+                                        "flags": [],
+                                        "kind": "PropertyAccessExpression",
+                                        "line": 3,
+                                        "name": {
+                                            "col": 13,
+                                            "end": 63,
+                                            "escapedText": "log",
+                                            "flags": [],
+                                            "kind": "Identifier",
+                                            "line": 4,
+                                            "pos": 60
+                                        },
+                                        "pos": 47
+                                    },
+                                    "flags": [],
+                                    "kind": "CallExpression",
+                                    "line": 3,
+                                    "pos": 47
+                                },
+                                "flags": [],
+                                "kind": "ExpressionStatement",
+                                "line": 3,
+                                "pos": 47
+                            }
+                        ]
+                    },
+                    "col": 2,
+                    "end": 77,
+                    "flags": [],
+                    "kind": "CatchClause",
+                    "line": 3,
+                    "pos": 35,
+                    "variableDeclaration": {
+                        "col": 10,
+                        "end": 44,
+                        "flags": [],
+                        "kind": "VariableDeclaration",
+                        "line": 3,
+                        "name": {
+                            "col": 10,
+                            "end": 44,
+                            "escapedText": "e",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 3,
+                            "pos": 43
+                        },
+                        "pos": 43
+                    }
+                },
+                "col": 1,
+                "end": 116,
+                "finallyBlock": {
+                    "col": 10,
+                    "end": 116,
+                    "flags": [],
+                    "kind": "Block",
+                    "line": 5,
+                    "multiLine": true,
+                    "pos": 85,
+                    "statements": [
+                        {
+                            "col": 12,
+                            "end": 114,
+                            "expression": {
+                                "arguments": [
+                                    {
+                                        "col": 17,
+                                        "end": 112,
+                                        "flags": [],
+                                        "kind": "StringLiteral",
+                                        "line": 6,
+                                        "pos": 104,
+                                        "text": "always"
+                                    }
+                                ],
+                                "col": 12,
+                                "end": 113,
+                                "expression": {
+                                    "col": 12,
+                                    "end": 103,
+                                    "expression": {
+                                        "col": 12,
+                                        "end": 99,
+                                        "escapedText": "console",
+                                        "flags": [],
+                                        "kind": "Identifier",
+                                        "line": 5,
+                                        "pos": 87
+                                    },
+                                    "flags": [],
+                                    "kind": "PropertyAccessExpression",
+                                    "line": 5,
+                                    "name": {
+                                        "col": 13,
+                                        "end": 103,
+                                        "escapedText": "log",
+                                        "flags": [],
+                                        "kind": "Identifier",
+                                        "line": 6,
+                                        "pos": 100
+                                    },
+                                    "pos": 87
+                                },
+                                "flags": [],
+                                "kind": "CallExpression",
+                                "line": 5,
+                                "pos": 87
+                            },
+                            "flags": [],
+                            "kind": "ExpressionStatement",
+                            "line": 5,
+                            "pos": 87
+                        }
+                    ]
+                },
+                "flags": [],
+                "kind": "TryStatement",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "pos": 0,
+                "tryBlock": {
+                    "col": 4,
+                    "end": 35,
+                    "flags": [],
+                    "kind": "Block",
+                    "line": 1,
+                    "multiLine": true,
+                    "pos": 3,
+                    "statements": [
+                        {
+                            "col": 6,
+                            "end": 33,
+                            "expression": {
+                                "arguments": [],
+                                "col": 10,
+                                "end": 32,
+                                "expression": {
+                                    "col": 14,
+                                    "end": 30,
+                                    "escapedText": "RangeError",
+                                    "flags": [],
+                                    "kind": "Identifier",
+                                    "line": 2,
+                                    "pos": 19
+                                },
+                                "flags": [],
+                                "kind": "NewExpression",
+                                "line": 2,
+                                "pos": 15
+                            },
+                            "flags": [],
+                            "kind": "ThrowStatement",
+                            "line": 1,
+                            "pos": 5
+                        }
+                    ]
+                }
+            }
+        ],
+        "typeReferenceDirectives": []
+    }
+}

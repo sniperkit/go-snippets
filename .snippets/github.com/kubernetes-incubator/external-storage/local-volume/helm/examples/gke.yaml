@@ -1,4 +1,0 @@
-classes:
-- name: local-scsi
-  hostDir: "/mnt/disks"
-  storageClass: true

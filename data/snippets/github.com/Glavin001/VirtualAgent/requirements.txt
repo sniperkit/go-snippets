@@ -1,0 +1,4 @@
+Jinja2==2.7.3
+elasticsearch-dsl>=2.0.0,<3.0.0
+Flask==0.10
+PyGithub==1.26.0

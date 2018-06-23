@@ -1,5 +1,0 @@
-def test(a, b):
-    pass
-
-
-test(a=5, b=3, a=3)

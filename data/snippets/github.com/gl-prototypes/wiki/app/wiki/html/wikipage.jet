@@ -1,0 +1,14 @@
+<div class="ui bottom attached segment">
+  <div class="ui top attached segment">
+    <a class="ui blue right ribbon label" href="{{ req.URL.Path }}/edit">Edit</a>
+    <h2 class="ui dividing header" style="margin-top: -24px;">
+      {{ .Title }}
+    </h2>
+    <div style="font-size: large;">
+    {{ .Content | raw }}
+    </div>
+  </div>
+  <div class="ui bottom attached segment">
+    <em style="color: gray;">Last modified {{ .ModTime | time }} by {{ .ModUser }}</em>
+  </div>
+</div>

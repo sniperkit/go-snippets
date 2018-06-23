@@ -1,1 +1,0 @@
-Anybody said templates?

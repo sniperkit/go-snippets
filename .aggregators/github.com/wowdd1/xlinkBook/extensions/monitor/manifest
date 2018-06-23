@@ -1,6 +1,0 @@
-{
-    "name" : "monitor",
-    "module" : "monitor",
-    "class" : "Monitor",
-    "version" : "0.1"
-}

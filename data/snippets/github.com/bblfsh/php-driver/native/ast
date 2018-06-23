@@ -1,0 +1,8 @@
+#!/usr/bin/php
+<?php
+
+use AstExtractor\Command\Command;
+
+require_once 'vendor/autoload.php';
+
+exit(Command::run($argv));

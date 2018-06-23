@@ -1,0 +1,439 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Go-Llama ICS API</title>
+	<link rel="stylesheet" href="skin.css" type="text/css" />
+</head>
+<body>
+	<div id='bodycontents'>
+		<h1>Details of the Chess websocket requests</h1>
+		<P>NOTE: Because we're using websockets, every write is made to an open socket - ie a single url, etc.
+			To differentiate between the different types of requests and responses, a "type" field is mandated with 
+			all requests and responses describing the different requests and responses</p>
+		<p>Also observe that as this is a websocket connection, requests and responses can be considered asynchronous: if for instance game_move is requested,
+			don't assume the next message will contain game_move_update!</p>
+		<p>To begin with, clients will connect to a websocket at an arbitrary address</p>
+		<p>Then, they will attempt to authenticate:</p>
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>client sends</h4>
+				<pre>
+{
+	"type": "authentication_request",
+	"username": "some-username",
+	"user_token": "some-access-token"
+}
+				</pre>
+			</div>
+		</div>
+		To which the server will respond
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>server sends</h4>
+				<pre>
+{
+	"type": "authentication_response",
+	"response":"ok" 					[Anything else implies rejection]
+	"user": {
+		"user_id": some-intID,
+		"username": "some-username",
+		"created_at": "some-date-time",
+		"current_rank": "some-rank",
+		"is_ai": false,					[Whether or not this account is an AI]
+		"verses_ai": true				[Whether or not this account is happy to verse AI]
+	}
+}
+				</pre>
+			</div>
+		</div>
+		Time will pass, and server will send a request like so: (remember, clients don't get to pick a game, the server will attempt to pick one for them)
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>server sends</h4>
+				<pre>
+{
+	"type": "game_request",
+	"opponent": {
+		"user_id": some-intID,
+		"username": "some-username",
+		"created_at": "some-date-time",
+		"current_rank": "some-rank",
+		"is_ai": false,
+		"verses_ai": true
+	}
+}
+				</pre>
+			</div>
+		</div>
+		A short time passes - user has only 15 seconds to press the approve button or server will assume rejection<br>
+		If not, user can send this response:
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>client sends</h4>
+				<pre>
+{
+	"type": "game_response",
+	"response": "ok" 					[Anything else implies rejection]
+}
+Game_id field is not required as the server will know which game it has asked this client to approve
+				</pre>
+			</div>
+		</div>
+		If they were rejected (ie they took too long) they will be sent this
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>server sends</h4>
+				<pre>
+{
+	"type": "game_response_rejection",
+	"response": "rejected" 					[Anything can be here]
+}
+Game_id field is not required as the server will know which game it has asked this client to approve
+				</pre>
+			</div>
+		</div>
+		At this point, the game will be created on the server and clients can assume they have been joined to a game automatically.<br>
+		The server will send the following data to both teams only changing the "white" and "your_move" fields:<br>
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>server sends (to both, perspective of black team)</h4>
+				<pre>
+{
+	"type": "game_move_update",
+	"game": {
+		"id": some-intID,
+		"created_at": "some-date-time",
+		"finished_at": "some-date-time",
+		"game_status": "",					[will be empty until game over]
+		"board_status": {					
+			[array for board status of game]
+		},
+		"game_moves": [							[empty cos first move]
+
+		],
+		"white": {						
+			"user_id": some-intID,				[the person who's move it is can be extrapolated from ]
+			"username": "some-username",
+			"created_at": "some-date-time",
+			"current_rank": "some-rank",		
+			"is_ai": false,
+			"verses_ai": true
+		}
+		"black": {						
+			"user_id": some-intID,
+			"username": "some-username",
+			"created_at": "some-date-time",
+			"current_rank": "some-rank",		
+			"is_ai": false,
+			"verses_ai": true
+		}
+	}
+}
+				</pre>
+			</div>
+		</div>
+		The white client might respond as so:
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>client (white) sends</h4>
+				<pre>
+{
+	"type": "game_move_request"
+	"move": "e2-e4"						[has moved a pawn from e2 to e4]
+}
+				</pre>
+			</div>
+		</div>
+		To which the server will send to both teams:
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>server sends (to both, perspective of black team)</h4>
+				<pre>
+{
+	"type": "game_move_update",
+	"game": {
+		"id": some-intID,
+		"created_at": "some-date-time",
+		"finished_at": "some-date-time",
+		"game_status": "victory",					[can be stalemate or disconnection]
+		"board_status": {					
+			[array for board status of game]
+		},
+		"game_moves": [							[move has been added to array]
+			{	
+				"move": "e2-e4",
+				"created_at": "some-date-time",
+				"id": some-intID
+			},
+		],
+		"white": {						
+			"user_id": some-intID,
+			"username": "some-username",
+			"created_at": "some-date-time",
+			"current_rank": "some-rank",		
+			"is_ai": false,
+			"verses_ai": true
+		}
+		"black": {						
+			"user_id": some-intID,
+			"username": "some-username",
+			"created_at": "some-date-time",
+			"current_rank": "some-rank",		
+			"is_ai": false,
+			"verses_ai": true
+		},
+	}
+}
+				</pre>
+			</div>
+		</div>
+		The game continues for a while all the time players making valid moves, and eventually it will finish:
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>server sends to both</h4>
+				<pre>
+server notifies (both clients)
+{
+	"type": "game_over",
+	"game": {
+		"id": some-intID,
+		"created_at": "some-date-time",
+		"finished_at": "some-date-time",
+		"game_status": "victory",					[could also be stalemate or disconnection]
+		"board_status": {					
+			[array for board status of game]
+		},
+		"game_moves": [
+			{	
+				"move": "e2-e4",
+				"created_at": "some-date-time",
+				"id": some-intID
+			},
+			...
+		],
+		"white": {						
+			"user_id": some-intID,
+			"username": "some-username",
+			"created_at": "some-date-time",
+			"current_rank": "some-rank",		
+			"is_ai": false,
+			"verses_ai": true
+		}
+		"black": {						
+			"user_id": some-intID,
+			"username": "some-username",
+			"created_at": "some-date-time",
+			"current_rank": "some-rank",		
+			"is_ai": false,
+			"verses_ai": true
+		},
+		"winner": {						
+			"user_id": some-intID,
+			"rank_change": some_integer,		
+		},
+		"loser": {						
+			"user_id": some-intID,
+			"rank_change": some_integer,		
+		},
+	}
+
+}
+				</pre>
+			</div>
+		</div>
+		And hence, both players are moved back to the waiting for a game.
+		<h3>But wait, there's more!</h3>
+		In addition, any time during a game, players can send a pre-defined chat message (think AOE or old online hearts style)
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>Client sends</h4>
+				<pre>
+{
+	"type": "game_chat_request",
+	"message_id": 1
+}
+
+The official messages are as follows:
+1. Hello
+2. I am the King.
+3. You took my piece!
+4. Bishop! I need a bishop!
+5. I didn't like that Knight anyway...
+6. :)
+7. :(
+8. D:
+9. :D
+10. I'm gonna get you back for that.
+11. You sunk my battleship...
+12. Prepare for defeat!
+13. Nicely done.
+14. This isn't a game, this is a slaughter!
+15. Don't worry be happy :-)
+16. Your mother was a hamster and your father smelt of elderberries!
+
+				</pre>
+			</div>
+		</div>
+		And as such, server responds:
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>server sends to both</h4>
+				<pre>
+{
+	"type": "game_chat",
+	"from": {						
+		"user_id": some-intID,
+		"username": "some-username",
+		"created_at": "some-date-time",
+		"current_rank": "some-rank",
+		"is_ai": false,
+		"verses_ai": true
+	}
+	"message_id": 1
+}
+				</pre>
+			</div>
+		</div>
+		<!--Players at any time can request their (or others) history
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>Player sends</h4>
+				<pre>
+player sends
+{
+	"type": "history_request",
+	"player_username": "some-username"
+}
+				</pre>
+			</div>
+		</div>
+		And the server will send back:
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>server sends</h4>
+				<pre>
+{
+	"type": "player_history",
+	"player": {
+		"user_id": some-intID,
+		"username": "some-username",
+		"created_at": "some-date-time",
+		"current_rank": "some-rank",
+		"is_ai": false,
+		"verses_ai": true
+	},
+	"games": [							[this is an array]
+		{
+			"id": some-intID,
+			"created_at": "some-date-time",
+			"finished_at": "some-date-time",
+			"game_status": "victory",					[could also be resignation, draw, or disconnection]
+			"board_status": {					
+				[array for board status of game]
+			},
+			"game_moves": [
+				{	
+					"move": "e2-e4",
+					"datetime": "some-date-time",
+					"id": some-intID
+				},
+				...
+			],
+			"white": {						
+				"user_id": some-intID,
+				"username": "some-username",
+				"created_at": "some-date-time",
+				"current_rank": "some-rank",		
+				"is_ai": false,
+				"verses_ai": true
+			}
+			"black": {						
+				"user_id": some-intID,
+				"username": "some-username",
+				"created_at": "some-date-time",
+				"current_rank": "some-rank",		
+				"is_ai": false,
+				"verses_ai": true
+			},
+			"winner": {							[null if no winner]
+				"user_id": some-intID,
+				"rank_change": some_integer,		
+			},
+			"loser": {							[null if no loser]
+				"user_id": some-intID,
+				"rank_change": some_integer,		
+			},
+		},
+	...
+	]
+}
+				</pre>
+			</div>
+		</div>
+		Not yet included: Spectating games, but this could be a thing (time permitting)-->
+		<h3>Finally, how do we register?</h3>
+		Before authentication (signing in) players may attempt to register a new account through the following websocket API:
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>client sends</h4>
+				<pre>
+{
+	"type": "signup_request",
+	"username": "some-username",
+	"user_token": "some-access-token",
+	"is_ai": false,
+	"verses_ai": true
+}
+				</pre>
+			</div>
+		</div>
+		To which the server will respond (and this also signs them in)
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>server sends</h4>
+				<pre>
+{
+	"type": "signup_response",
+	"response":"ok" 					[Anything else implies rejection]
+	"user": {
+		"user_id": some-intID,
+		"username": "some-username",
+		"created_at": "some-date-time",
+		"current_rank": "some-rank",
+		"is_ai": false,
+		"verses_ai": true
+	}
+}
+				</pre>
+			</div>
+		</div>
+		Players can request a list of valid moves:
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>client sends</h4>
+				<pre>
+{
+	"type": "game_get_valid_moves_request"
+	"location": "e2"						[the square you're interested in]
+}
+				</pre>
+			</div>
+		</div>
+		To which the server will respond (and this also signs them in)
+		<div class='endpoint'>
+			<div class='code'>
+				<h4>server sends</h4>
+				<pre>
+{
+	"type": "game_get_valid_moves_response",
+	"moves": [
+	"e2-e4"
+	...
+	]
+}
+				</pre>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

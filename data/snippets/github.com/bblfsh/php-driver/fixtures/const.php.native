@@ -1,0 +1,134 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 43,
+                    "endLine": 3,
+                    "endTokenPos": 30,
+                    "startFilePos": 7,
+                    "startLine": 3,
+                    "startTokenPos": 2
+                },
+                "consts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 17,
+                            "endLine": 3,
+                            "endTokenPos": 8,
+                            "startFilePos": 13,
+                            "startLine": 3,
+                            "startTokenPos": 4
+                        },
+                        "name": "A",
+                        "nodeType": "Const",
+                        "value": {
+                            "attributes": {
+                                "endFilePos": 17,
+                                "endLine": 3,
+                                "endTokenPos": 8,
+                                "kind": 10,
+                                "startFilePos": 17,
+                                "startLine": 3,
+                                "startTokenPos": 8
+                            },
+                            "nodeType": "Scalar_LNumber",
+                            "value": 0
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 26,
+                            "endLine": 3,
+                            "endTokenPos": 15,
+                            "startFilePos": 20,
+                            "startLine": 3,
+                            "startTokenPos": 11
+                        },
+                        "name": "B",
+                        "nodeType": "Const",
+                        "value": {
+                            "attributes": {
+                                "endFilePos": 26,
+                                "endLine": 3,
+                                "endTokenPos": 15,
+                                "startFilePos": 24,
+                                "startLine": 3,
+                                "startTokenPos": 15
+                            },
+                            "nodeType": "Scalar_DNumber",
+                            "value": 1
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 35,
+                            "endLine": 3,
+                            "endTokenPos": 22,
+                            "startFilePos": 29,
+                            "startLine": 3,
+                            "startTokenPos": 18
+                        },
+                        "name": "C",
+                        "nodeType": "Const",
+                        "value": {
+                            "attributes": {
+                                "endFilePos": 35,
+                                "endLine": 3,
+                                "endTokenPos": 22,
+                                "kind": 1,
+                                "startFilePos": 33,
+                                "startLine": 3,
+                                "startTokenPos": 22
+                            },
+                            "nodeType": "Scalar_String",
+                            "value": "A"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 42,
+                            "endLine": 3,
+                            "endTokenPos": 29,
+                            "startFilePos": 38,
+                            "startLine": 3,
+                            "startTokenPos": 25
+                        },
+                        "name": "D",
+                        "nodeType": "Const",
+                        "value": {
+                            "attributes": {
+                                "endFilePos": 42,
+                                "endLine": 3,
+                                "endTokenPos": 29,
+                                "startFilePos": 42,
+                                "startLine": 3,
+                                "startTokenPos": 29
+                            },
+                            "name": {
+                                "attributes": {
+                                    "endFilePos": 42,
+                                    "endLine": 3,
+                                    "endTokenPos": 29,
+                                    "startFilePos": 42,
+                                    "startLine": 3,
+                                    "startTokenPos": 29
+                                },
+                                "nodeType": "Name",
+                                "parts": [
+                                    "E"
+                                ]
+                            },
+                            "nodeType": "Expr_ConstFetch"
+                        }
+                    }
+                ],
+                "nodeType": "Stmt_Const"
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

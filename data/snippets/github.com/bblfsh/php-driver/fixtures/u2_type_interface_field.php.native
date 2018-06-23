@@ -1,0 +1,64 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 61,
+                    "endLine": 4,
+                    "endTokenPos": 16,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "extends": [],
+                "name": "testiface1",
+                "nodeType": "Stmt_Interface",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 59,
+                            "endLine": 3,
+                            "endTokenPos": 14,
+                            "startFilePos": 33,
+                            "startLine": 3,
+                            "startTokenPos": 7
+                        },
+                        "consts": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 58,
+                                    "endLine": 3,
+                                    "endTokenPos": 13,
+                                    "startFilePos": 39,
+                                    "startLine": 3,
+                                    "startTokenPos": 9
+                                },
+                                "name": "b",
+                                "nodeType": "Const",
+                                "value": {
+                                    "attributes": {
+                                        "endFilePos": 58,
+                                        "endLine": 3,
+                                        "endTokenPos": 13,
+                                        "kind": 1,
+                                        "startFilePos": 43,
+                                        "startLine": 3,
+                                        "startTokenPos": 13
+                                    },
+                                    "nodeType": "Scalar_String",
+                                    "value": "class constant"
+                                }
+                            }
+                        ],
+                        "flags": 0,
+                        "nodeType": "Stmt_ClassConst"
+                    }
+                ]
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

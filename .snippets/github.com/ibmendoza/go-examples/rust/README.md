@@ -1,1 +1,0 @@
-- https://github.com/crossbeam-rs/crossbeam-channel (https://twitter.com/stjepang/status/1006202765499125760)

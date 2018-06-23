@@ -1,0 +1,35 @@
+extensions:
+	.py
+
+structures:
+	conditionals: if
+	conditionals: elif
+	conditionals: else
+	loops: foreach
+	loops: for
+	loops: while
+
+types:
+	arrays: $array = [.*]
+	dictionaries: $dict = {.*}
+
+names:
+	variables: $variable =
+	functions: def $name
+	function calls: $name()
+	comments: # $comment|"""$comment"""
+
+keywords:
+	and: and
+	except: except
+
+expressions:
+	multiplication: *
+	addition: +
+	subtraction: -
+	division: /
+	modulo: %
+
+libraries:
+	import: import
+	from: from

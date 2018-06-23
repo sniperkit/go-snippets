@@ -1,0 +1,373 @@
+{
+  "Defs": [
+    {
+      "Path": "Test",
+      "Name": "Test",
+      "Kind": "namespace",
+      "File": "src/Test/Class1.cs",
+      "DefStart": 13,
+      "DefEnd": 17,
+      "Exported": true,
+      "Data": {
+        "FmtStrings": {
+          "Name": {
+            "Unqualified": "Test",
+            "ScopeQualified": "Test",
+            "DepQualified": "Test",
+            "RepositoryWideQualified": "Test",
+            "LanguageWideQualified": "Test"
+          },
+          "Type": {
+            "Unqualified": "namespace",
+            "ScopeQualified": "namespace",
+            "DepQualified": "namespace",
+            "RepositoryWideQualified": "namespace",
+            "LanguageWideQualified": "namespace"
+          },
+          "NameAndTypeSeparator": " ",
+          "Language": "C#",
+          "DefKeyword": "",
+          "Kind": "namespace"
+        }
+      },
+      "TreePath": "Test"
+    },
+    {
+      "Path": "Test.A",
+      "Name": "A",
+      "Kind": "class",
+      "File": "src/Test/Class1.cs",
+      "DefStart": 37,
+      "DefEnd": 38,
+      "Exported": true,
+      "Data": {
+        "FmtStrings": {
+          "Name": {
+            "Unqualified": "A",
+            "ScopeQualified": "A",
+            "DepQualified": "Test.A",
+            "RepositoryWideQualified": "Test.A",
+            "LanguageWideQualified": "Test.A"
+          },
+          "Type": {
+            "Unqualified": "class",
+            "ScopeQualified": "class",
+            "DepQualified": "class",
+            "RepositoryWideQualified": "class",
+            "LanguageWideQualified": "class"
+          },
+          "NameAndTypeSeparator": " ",
+          "Language": "C#",
+          "DefKeyword": "",
+          "Kind": "class"
+        }
+      },
+      "TreePath": "Test/A"
+    },
+    {
+      "Path": "Test.B",
+      "Name": "B",
+      "Kind": "class",
+      "File": "src/Test/Class1.cs",
+      "DefStart": 67,
+      "DefEnd": 68,
+      "Data": {
+        "FmtStrings": {
+          "Name": {
+            "Unqualified": "B",
+            "ScopeQualified": "B",
+            "DepQualified": "Test.B",
+            "RepositoryWideQualified": "Test.B",
+            "LanguageWideQualified": "Test.B"
+          },
+          "Type": {
+            "Unqualified": "class",
+            "ScopeQualified": "class",
+            "DepQualified": "class",
+            "RepositoryWideQualified": "class",
+            "LanguageWideQualified": "class"
+          },
+          "NameAndTypeSeparator": " ",
+          "Language": "C#",
+          "DefKeyword": "",
+          "Kind": "class"
+        }
+      },
+      "TreePath": "Test/B"
+    },
+    {
+      "Path": "Test.C",
+      "Name": "C",
+      "Kind": "interface",
+      "File": "src/Test/Class1.cs",
+      "DefStart": 104,
+      "DefEnd": 105,
+      "Data": {
+        "FmtStrings": {
+          "Name": {
+            "Unqualified": "C",
+            "ScopeQualified": "C",
+            "DepQualified": "Test.C",
+            "RepositoryWideQualified": "Test.C",
+            "LanguageWideQualified": "Test.C"
+          },
+          "Type": {
+            "Unqualified": "interface",
+            "ScopeQualified": "interface",
+            "DepQualified": "interface",
+            "RepositoryWideQualified": "interface",
+            "LanguageWideQualified": "interface"
+          },
+          "NameAndTypeSeparator": " ",
+          "Language": "C#",
+          "DefKeyword": "",
+          "Kind": "interface"
+        }
+      },
+      "TreePath": "Test/C"
+    },
+    {
+      "Path": "Test.Class",
+      "Name": "Class",
+      "Kind": "class",
+      "File": "src/Test/Class2.cs",
+      "DefStart": 61,
+      "DefEnd": 66,
+      "Exported": true,
+      "Data": {
+        "FmtStrings": {
+          "Name": {
+            "Unqualified": "Class",
+            "ScopeQualified": "Class",
+            "DepQualified": "Test.Class",
+            "RepositoryWideQualified": "Test.Class",
+            "LanguageWideQualified": "Test.Class"
+          },
+          "Type": {
+            "Unqualified": "class",
+            "ScopeQualified": "class",
+            "DepQualified": "class",
+            "RepositoryWideQualified": "class",
+            "LanguageWideQualified": "class"
+          },
+          "NameAndTypeSeparator": " ",
+          "Language": "C#",
+          "DefKeyword": "",
+          "Kind": "class"
+        }
+      },
+      "TreePath": "Test/Class"
+    },
+    {
+      "Path": "Test.Class+s",
+      "Name": "s",
+      "Kind": "field",
+      "File": "src/Test/Class2.cs",
+      "DefStart": 88,
+      "DefEnd": 89,
+      "Data": {
+        "FmtStrings": {
+          "Name": {
+            "Unqualified": "string s",
+            "ScopeQualified": "string Class.s",
+            "DepQualified": "string Test.Class.s",
+            "RepositoryWideQualified": "string Test.Class.s",
+            "LanguageWideQualified": "string Test.Class.s"
+          },
+          "Type": {
+            "Unqualified": "field",
+            "ScopeQualified": "field",
+            "DepQualified": "field",
+            "RepositoryWideQualified": "field",
+            "LanguageWideQualified": "field"
+          },
+          "NameAndTypeSeparator": " ",
+          "Language": "C#",
+          "DefKeyword": "",
+          "Kind": "field"
+        }
+      },
+      "TreePath": "Test/Class/s"
+    },
+    {
+      "Path": "Test.D",
+      "Name": "D",
+      "Kind": "interface",
+      "File": "src/Test/Class1.cs",
+      "DefStart": 134,
+      "DefEnd": 135,
+      "Data": {
+        "FmtStrings": {
+          "Name": {
+            "Unqualified": "D",
+            "ScopeQualified": "D",
+            "DepQualified": "Test.D",
+            "RepositoryWideQualified": "Test.D",
+            "LanguageWideQualified": "Test.D"
+          },
+          "Type": {
+            "Unqualified": "interface",
+            "ScopeQualified": "interface",
+            "DepQualified": "interface",
+            "RepositoryWideQualified": "interface",
+            "LanguageWideQualified": "interface"
+          },
+          "NameAndTypeSeparator": " ",
+          "Language": "C#",
+          "DefKeyword": "",
+          "Kind": "interface"
+        }
+      },
+      "TreePath": "Test/D"
+    },
+    {
+      "Path": "Test.E",
+      "Name": "E",
+      "Kind": "struct",
+      "File": "src/Test/Class1.cs",
+      "DefStart": 161,
+      "DefEnd": 162,
+      "Data": {
+        "FmtStrings": {
+          "Name": {
+            "Unqualified": "E",
+            "ScopeQualified": "E",
+            "DepQualified": "Test.E",
+            "RepositoryWideQualified": "Test.E",
+            "LanguageWideQualified": "Test.E"
+          },
+          "Type": {
+            "Unqualified": "struct",
+            "ScopeQualified": "struct",
+            "DepQualified": "struct",
+            "RepositoryWideQualified": "struct",
+            "LanguageWideQualified": "struct"
+          },
+          "NameAndTypeSeparator": " ",
+          "Language": "C#",
+          "DefKeyword": "",
+          "Kind": "struct"
+        }
+      },
+      "TreePath": "Test/E"
+    }
+  ],
+  "Refs": [
+    {
+      "DefRepo": "github.com/JamesNK/Newtonsoft.Json",
+      "DefUnitType": "NugetPackage",
+      "DefUnit": "Newtonsoft.Json",
+      "DefPath": "Newtonsoft.Json.JsonConvert+NaN",
+      "File": "src/Test/Class2.cs",
+      "Start": 104,
+      "End": 107
+    },
+    {
+      "DefRepo": "github.com/JamesNK/Newtonsoft.Json",
+      "DefUnitType": "NugetPackage",
+      "DefUnit": "Newtonsoft.Json",
+      "DefPath": "Newtonsoft.Json.JsonConvert",
+      "File": "src/Test/Class2.cs",
+      "Start": 92,
+      "End": 103
+    },
+    {
+      "DefPath": "Test.A",
+      "Def": true,
+      "File": "src/Test/Class1.cs",
+      "Start": 37,
+      "End": 38
+    },
+    {
+      "DefPath": "Test.A",
+      "File": "src/Test/Class1.cs",
+      "Start": 71,
+      "End": 72
+    },
+    {
+      "DefPath": "Test.B",
+      "Def": true,
+      "File": "src/Test/Class1.cs",
+      "Start": 67,
+      "End": 68
+    },
+    {
+      "DefPath": "Test.Class+s",
+      "Def": true,
+      "File": "src/Test/Class2.cs",
+      "Start": 88,
+      "End": 89
+    },
+    {
+      "DefPath": "Test.Class",
+      "Def": true,
+      "File": "src/Test/Class2.cs",
+      "Start": 61,
+      "End": 66
+    },
+    {
+      "DefPath": "Test.C",
+      "Def": true,
+      "File": "src/Test/Class1.cs",
+      "Start": 104,
+      "End": 105
+    },
+    {
+      "DefPath": "Test.C",
+      "File": "src/Test/Class1.cs",
+      "Start": 165,
+      "End": 166
+    },
+    {
+      "DefPath": "Test.C",
+      "File": "src/Test/Class1.cs",
+      "Start": 41,
+      "End": 42
+    },
+    {
+      "DefPath": "Test.D",
+      "Def": true,
+      "File": "src/Test/Class1.cs",
+      "Start": 134,
+      "End": 135
+    },
+    {
+      "DefPath": "Test.D",
+      "File": "src/Test/Class1.cs",
+      "Start": 168,
+      "End": 169
+    },
+    {
+      "DefPath": "Test.D",
+      "File": "src/Test/Class1.cs",
+      "Start": 74,
+      "End": 75
+    },
+    {
+      "DefPath": "Test.E",
+      "Def": true,
+      "File": "src/Test/Class1.cs",
+      "Start": 161,
+      "End": 162
+    },
+    {
+      "DefPath": "Test",
+      "File": "src/Test/Class1.cs",
+      "Start": 13,
+      "End": 17
+    },
+    {
+      "DefPath": "Test",
+      "Def": true,
+      "File": "src/Test/Class1.cs",
+      "Start": 13,
+      "End": 17
+    },
+    {
+      "DefPath": "Test",
+      "File": "src/Test/Class2.cs",
+      "Start": 37,
+      "End": 41
+    }
+  ]
+}

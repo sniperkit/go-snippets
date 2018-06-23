@@ -1,0 +1,10 @@
+.idea
+*.iml
+run.sh
+*.pem
+*.key
+lib
+node_modules
+docker/run.sh
+vendor
+glide.lock

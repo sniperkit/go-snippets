@@ -1,0 +1,20 @@
+<div id="pjax-container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>名称</th>
+                <th>编码</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for warehouse in warehouses %}
+            <tr>
+                <td>{{warehouse.ID}}</td>
+                <td>{{warehouse.Name}}</td>
+                <td>{{warehouse.Code}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

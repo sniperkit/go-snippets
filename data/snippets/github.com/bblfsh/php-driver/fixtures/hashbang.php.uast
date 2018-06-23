@@ -1,0 +1,81 @@
+Status:  ok
+Language:  php
+Errors: 
+UAST: 
+Module {
+.  Roles: Module
+.  Children: {
+.  .  0: Stmt_InlineHTML {
+.  .  .  Roles: Incomplete,Literal,String
+.  .  .  TOKEN "#!/usr/bin/env php
+"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 0
+.  .  .  .  Line: 1
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 18
+.  .  .  .  Line: 1
+.  .  .  .  Col: 19
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  }
+.  .  1: Stmt_Echo {
+.  .  .  Roles: Call,Statement
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 26
+.  .  .  .  Line: 4
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 39
+.  .  .  .  Line: 4
+.  .  .  .  Col: 14
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: Scalar_String {
+.  .  .  .  .  Roles: Expression,Literal,String
+.  .  .  .  .  TOKEN "foobar"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 31
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 6
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 38
+.  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  Col: 13
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: exprs
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  2: Stmt_InlineHTML {
+.  .  .  Roles: Incomplete,Literal,String
+.  .  .  TOKEN "#!/usr/bin/env php
+"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 45
+.  .  .  .  Line: 7
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 63
+.  .  .  .  Line: 7
+.  .  .  .  Col: 19
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: children
+.  .  .  }
+.  .  }
+.  }
+}
+

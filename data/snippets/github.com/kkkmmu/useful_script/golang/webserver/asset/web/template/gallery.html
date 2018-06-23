@@ -1,0 +1,12 @@
+{{template "header"}}
+<div class="container">
+	<div class="row">
+		{{range .}}
+		<div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="{{.}}" /></div>
+		{{end}}
+	</div>
+</div>
+<link rel="stylesheet" href="asset/web/css/gallery.css">
+{{template "footer"}}
+
+

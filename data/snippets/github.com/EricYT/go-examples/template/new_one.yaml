@@ -1,0 +1,16 @@
+name: john
+age: 30
+job: IT engineer
+spouse:
+  
+  name: lucy
+  age: 28
+  
+children:
+  
+  - name: bob
+    age: 10
+  
+  - name: monica
+    age: 3
+  

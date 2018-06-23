@@ -1,0 +1,69 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 24,
+                    "endLine": 2,
+                    "endTokenPos": 6,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "name": "testtrait1",
+                "nodeType": "Stmt_Trait",
+                "stmts": []
+            },
+            {
+                "attributes": {
+                    "endFilePos": 58,
+                    "endLine": 3,
+                    "endTokenPos": 19,
+                    "startFilePos": 26,
+                    "startLine": 3,
+                    "startTokenPos": 8
+                },
+                "extends": null,
+                "flags": 0,
+                "implements": [],
+                "name": "testcls1",
+                "nodeType": "Stmt_Class",
+                "stmts": [
+                    {
+                        "adaptations": [],
+                        "attributes": {
+                            "endFilePos": 56,
+                            "endLine": 3,
+                            "endTokenPos": 17,
+                            "startFilePos": 43,
+                            "startLine": 3,
+                            "startTokenPos": 14
+                        },
+                        "nodeType": "Stmt_TraitUse",
+                        "traits": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 55,
+                                    "endLine": 3,
+                                    "endTokenPos": 16,
+                                    "startFilePos": 47,
+                                    "startLine": 3,
+                                    "startTokenPos": 16
+                                },
+                                "nodeType": "Name",
+                                "parts": [
+                                    "testtrai1"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "type": 0
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

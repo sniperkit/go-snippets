@@ -1,0 +1,13 @@
+var bool: boolean = false;
+var num: number = 3;
+var fl: number = 3.14;
+var bin: number = 0b1010;
+var oct: number = 0o744;
+var hex: number = 0xf00d;
+var str: string = "foo";
+var str2: string = 'fooSingleQuote';
+var wtv: any = 4;
+var und: undefined = undefined;
+var n: null = null;
+let sym = Symbol("somesym");
+export const ex = 3;

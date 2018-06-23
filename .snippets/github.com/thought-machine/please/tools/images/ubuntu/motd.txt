@@ -1,7 +1,0 @@
-This is a prebuilt image based on Ubuntu Artful which contains
-everything you should need to build Please.
-
-Run the following to get started:
- git clone https://github.com/thought-machine/please.git
- cd please
- ./bootstrap.sh

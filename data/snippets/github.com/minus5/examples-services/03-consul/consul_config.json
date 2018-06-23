@@ -1,0 +1,53 @@
+{
+  "domain": "sd",
+  "bind_addr": "127.0.0.1",
+  "bootstrap": true,
+  "server": true,
+  "ui": true,
+  "datacenter": "dev",
+  "data_dir": ".tmp/consul_data/",
+  "services": [
+    {
+      "id": "sensor",
+      "name": "sensor",
+      "address": "127.0.0.1",
+      "port": 9001,
+      "checks": [
+        {
+          "http": "http://127.0.0.1:9001/health_check",
+          "interval": "5s"
+        }        
+      ]
+    },
+    {
+      "id": "worker",
+      "name": "worker",
+      "address": "127.0.0.1",
+      "port": 9002,
+      "checks": [
+        {
+          "http": "http://127.0.0.1:9002/health_check",
+          "interval": "5s"
+        }        
+      ]
+    },
+    {
+      "id": "app",
+      "name": "app",
+      "address": "127.0.0.1",
+      "port": 9000,
+      "checks": [
+        {
+          "http": "http://127.0.0.1:9000/health_check",
+          "interval": "5s"
+        }        
+      ]
+    },
+    {
+      "id": "nsqd",
+      "name": "nsqd",
+      "address": "127.0.0.1",
+      "port": 4150
+    }
+  ]
+}

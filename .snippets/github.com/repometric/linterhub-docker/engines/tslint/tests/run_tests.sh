@@ -1,1 +1,0 @@
-tslint sample.ts

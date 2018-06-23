@@ -1,7 +1,0 @@
-xap/xap
-Gigaspaces/xap-premium
-Gigaspaces/xap-dotnet
-InsightEdge/insightedge
-InsightEdge/insightedge-examples
-InsightEdge/insightedge-zeppelin
-

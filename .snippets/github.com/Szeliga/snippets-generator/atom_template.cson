@@ -1,8 +1,0 @@
-.source.ruby.rspec':
-  {{- range .Snippets }}
-  '{{.Name}}':
-    'prefix': '{{.Acronym}}'
-    'body': """
-      {{.Body | split | join | trim }}
-    """
-  {{- end -}}

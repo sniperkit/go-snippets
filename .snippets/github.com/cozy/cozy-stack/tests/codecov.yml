@@ -1,5 +1,0 @@
-coverage:
-  range: 50..80
-  precision: 2
-ignore:
-  - "web/statik"

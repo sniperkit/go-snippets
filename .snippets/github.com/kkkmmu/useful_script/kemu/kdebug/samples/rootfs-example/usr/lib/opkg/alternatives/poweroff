@@ -1,3 +1,0 @@
-/sbin/poweroff
-/bin/busybox.nosuid 50
-/sbin/poweroff.sysvinit 200

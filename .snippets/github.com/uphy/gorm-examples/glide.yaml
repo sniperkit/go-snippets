@@ -1,6 +1,0 @@
-package: github.com/uphy/gorm-examples
-import:
-- package: github.com/jinzhu/gorm
-  version: ^1.0.0
-  subpackages:
-  - dialects/sqlite

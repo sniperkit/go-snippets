@@ -1,0 +1,15 @@
+{
+  "init_tasks": [
+  ],
+  "watchers": [
+    {
+      "extension": "html",
+      "excludes": ["bower_components"],
+      "tasks": [
+        {
+          "command": "wade"
+        }
+      ]
+    }
+  ]
+}

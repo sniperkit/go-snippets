@@ -1,0 +1,22 @@
+
+/* TEAM */
+
+Right now, just me:
+Your title: Alvaro Vilanova Vidal.
+Site: alvivi (at) gmail (dot) com // github.com/alvivi
+Twitter: @viator
+Location: Valencia, Spain.
+
+
+/* THANKS */
+
+Viky: @palviky
+Thanks for taking care of my for one day... but should had been two.
+
+
+/* SITE */
+
+Last update: 2015/01/26
+Standards: HTML5, CSS3, WebSockets.
+Components: Vanilla Javascript, Bootstrap.
+Software: Go, Bleve, LevelDB, Go, Gorilla, gddo/gosrc and a little more of Go.

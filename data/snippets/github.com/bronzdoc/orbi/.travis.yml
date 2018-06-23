@@ -1,0 +1,54 @@
+---
+  language: go
+  sudo: required
+  notifications:
+    email: true
+  go:
+    - 1.7
+    - tip
+  before_install:
+    - sudo add-apt-repository ppa:masterminds/glide -y
+    - sudo apt-get update -q
+    - sudo apt-get install glide -y
+    - glide install
+  install:
+    - go get github.com/golang/lint/golint
+  script:
+    - make fmt
+    - make lint
+    - make vet
+    - make test
+    - make release
+  deploy:
+    provider: releases
+    api_key:
+      secure: bYzbnOyHisOvBF7z76RycVYlU1uJ2HBMpZe7R40CV7bpFrUPRRxmRD9hTpUqGoMZLD5jQHB2DXYGbP3zx2/bg21arqeDNBbW9Lioi9nE1jxgIQyMV/uTmK78/47Uvc5yocnP+jym4GNxRbKuwtrCr/T19MsSljZOBEOoDTPx2S2O1bs1sKaKlu31PpE1WYOCOdHj0AENSyQocoK/jVOlmPMiBT9gmk6kHs/cT21k/xdAHbQsPggZGWGO7pUBtyGGfqB/ZivuDomf2JrVxIrwwH1IkUpcNxuv6ai1JddsKCfT8OE0wCBHuxkyBYIqGeCQyLVjJzDQ5jEaFjGv7kcNDZQXOiGvDa4XnpCUyYWx7zMdw4UW8NK1MP78JqGYCUW1np6CEjBXOUo9hHGUc8U8JFD+GfoZlTC+57zoBwfhXRG53a47H7Bb6Rr5q4aTUp3lmsecz15V/rEoVUehKGobOpdZZIwiaopCQS8GwxhV4zPqDZSYQ2fga4w34X8VUr0dC9LP32IA2tmOS0fHgObHuhLnfdixdqJogV4g2LlTAiE6ETjwLBRYDN9Eza/a0rfHnLMRuOVfQ0nZkIeQrinCh+c07mjYkgZlekJl29C2f8cbyA19Qt5EUPmLlhAWcerijUX6EuKs10JVztowGCzVXWaL1kJFVnf6ZURk4mOnW0Y=
+    go: 1.7
+    file:
+      - cross/orbi-darwin-386
+      - cross/orbi-darwin-386.md5
+      - cross/orbi-darwin-386.sha256
+      - cross/orbi-darwin-amd64
+      - cross/orbi-darwin-amd64.md5
+      - cross/orbi-darwin-amd64.sha256
+      - cross/orbi-freebsd-386
+      - cross/orbi-freebsd-386.md5
+      - cross/orbi-freebsd-386.sha256
+      - cross/orbi-freebsd-amd64
+      - cross/orbi-freebsd-amd64.md5
+      - cross/orbi-freebsd-amd64.sha256
+      - cross/orbi-linux-386
+      - cross/orbi-linux-386.md5
+      - cross/orbi-linux-386.sha256
+      - cross/orbi-linux-amd64
+      - cross/orbi-linux-amd64.md5
+      - cross/orbi-linux-amd64.sha256
+      - cross/orbi-linux-arm
+      - cross/orbi-linux-arm64
+      - cross/orbi-linux-arm64.md5
+      - cross/orbi-linux-arm64.sha256
+      - cross/orbi-linux-arm.md5
+      - cross/orbi-linux-arm.sha256
+    skip_cleanup: true
+    on:
+      tags: true

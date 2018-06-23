@@ -1,2 +1,0 @@
-- http://stateofjs.com/
-- https://medium.com/personal-growth/13-things-you-need-to-give-up-if-you-want-to-be-successful-44b5b9b06a26

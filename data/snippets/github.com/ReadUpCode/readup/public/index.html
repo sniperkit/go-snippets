@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html ng-app="readUp">
+<head>
+  <title>READ UP</title>
+  <!--Meta Data-->
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width initial-scale=1.0'>
+  <meta name='apple-mobile-web-app-title' content='Read Up'>
+  <meta name='apple-mobile-web-app-capable' content='yes'>
+
+  <!--Stylesheets-->
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+
+  <!--Google Analytics-->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44980820-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  <!--JS includes-->
+  <script src="//use.edgefonts.net/source-sans-pro:n3,i3,n4,i4,n9.js"></script>
+  <script src="lib/bower_components/jquery/jquery.js"></script>
+  <script src="lib/bower_components/angular/angular.js"></script>
+  <script src="lib/ng-infinite-scroll.js"></script>
+  <script src="lib/spin.min.js"></script>
+  <script src="lib/angular-spinner.min.js"></script>
+  <!-- // <script src="http://platform.twitter.com/widgets.js"></script> -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <script src="lib/bower_components/angular-strap/dist/angular-strap.min.js"></script>
+  <script src="build/bundle.js"></script>
+</head>
+
+<body>
+  <div id='main-container'>
+    <header>
+      <h1><a href="/">Read Up</a></h1>
+
+    </header>
+    <nav>
+      <div id='main-menu' class='tab'>
+        <a href='/'><div id='logo-main'></div></a>
+      </div>
+      <div id='search-input-tab' class='tab'><div class='tab-icon'></div></div>
+      <div id='paste-link-input-tab' class='tab'><div class='tab-icon'></div></div>
+      <div id='log-in' class='tab'>
+        <div ng-controller="LoginController">
+
+          <div id='logo-github' ng-click="updateLocation()">
+              <a ng-href='auth/github/#{{urlHash}}' target='_self'><img ng-show="currentUser.username" id='avatar' src={{currentUser.image_url}} />
+              <img ng-hide="currentUser.username" id='avatar' src='./images/transparent-01.png' /></a>
+          </div>
+          <div class="userSettings"
+               ng-show="currentUser.username"
+               data-placement='bottom'
+               bs-popover="'./partials/user_info_popover.html'">
+               <div><i class="icon-double-angle-down"></i></div>
+          </div>
+        </div>
+      </div>
+      <div ng-controller="FormController">
+        <form name="searchForm" class="submission-form" ng-submit="getSearchResults()">
+          <div id='search-input' class='main-input'>
+            <div class='icon'></div>
+            <div class='placeholder'>Find a topic</div>
+            <input id='search' class='main-input-text' type='text' autocomplete='off'
+                   ng-model="searchValue"
+                   bs-typeahead='typeaheadSearchFn'>
+          </div>
+        </form>
+        <!-- logged in users -->
+        <form name="itemForm" no-validate type='url' class="submission-form"
+              ng-disabled='!itemForm.$valid'
+              ng-show="currentUser.username">
+          <div id='paste-link-input' class='main-input'>
+            <div class='icon'></div>
+            <div class='placeholder'>Paste a link</div>
+            <input id='paste-link' class='main-input-text' type='url'
+                   ng-model="item.link"
+                   link-form
+                   required/>
+            <div ng-show='linkForm.hasLink' ng-include="'partials/link_form.html'"></div>
+          </div>
+        </form>
+        <!-- non-logged in users -->
+        <form name="itemForm" no-validate type='url' class="submission-form"
+              ng-disabled='itemForm.$invalid'
+              ng-submit='showLoginModal()'
+              ng-hide="currentUser.username">
+          <div id='paste-link-input' class='main-input'>
+            <div class='icon'></div>
+            <div class='placeholder'>Paste a link</div>
+            <input id='paste-link' class='main-input-text' type='url'
+                   ng-model="item.link"
+                   data-placement='bottom'
+                   bs-popover="'./partials/link_form_logged_out_popover.html'"
+                   required/>
+          </div>
+        </form>
+
+      </div>
+    </nav>
+      <div ng-controller="HomeController">
+        <div ng-view></div>
+      </div>
+  </div>
+  <footer>
+    <div><a class='footer-link'href='https://github.com/ReadUpCode/readup' target='_blank'>Improve Read Up</a></div>
+    <div class='divider'>Lovingly made at <a class='footer-link' href='http://www.hackreactor.com' target='_blank'>Hack Reactor</a></div>
+    <div class='divider'>&copy2013 ReadUp</div>
+  </footer>
+
+  <!-- Lazy loading of Twitter share buttons -->
+  <script src="lib/socialite/socialite.min.js"></script>
+  <script src="lib/lazyLoad.js"></script>
+</body>
+</html>

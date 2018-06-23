@@ -1,9 +1,0 @@
-.DS_Store
-.directory
-tags
-*.dump
-*.json
-*.prename
-*.swp
-*~
-parsers

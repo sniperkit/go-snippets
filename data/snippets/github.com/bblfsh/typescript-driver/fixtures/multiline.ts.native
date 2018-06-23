@@ -1,0 +1,74 @@
+{
+    "status": "ok",
+    "language": "typescript",
+    "errors": [],
+    "ast": {
+        "amdDependencies": [],
+        "bindDiagnostics": [],
+        "col": 1,
+        "comments": [],
+        "end": 66,
+        "flags": [],
+        "identifierCount": 1,
+        "identifiers": {},
+        "isDeclarationFile": false,
+        "kind": "SourceFile",
+        "languageVariant": 0,
+        "line": 1,
+        "nodeCount": 7,
+        "pos": 0,
+        "referencedFiles": [],
+        "scriptKind": 3,
+        "statements": [
+            {
+                "col": 1,
+                "declarationList": {
+                    "col": 1,
+                    "declarations": [
+                        {
+                            "col": 4,
+                            "end": 64,
+                            "flags": [],
+                            "initializer": {
+                                "col": 13,
+                                "end": 64,
+                                "flags": [],
+                                "kind": "NoSubstitutionTemplateLiteral",
+                                "line": 1,
+                                "pos": 12,
+                                "text": "Never gonna give you up;\nNever gonna let you down"
+                            },
+                            "kind": "VariableDeclaration",
+                            "line": 1,
+                            "name": {
+                                "col": 4,
+                                "end": 10,
+                                "escapedText": "lyrics",
+                                "flags": [],
+                                "kind": "Identifier",
+                                "line": 1,
+                                "pos": 3
+                            },
+                            "pos": 3
+                        }
+                    ],
+                    "end": 64,
+                    "flags": [
+                        "Let",
+                        "BlockScoped"
+                    ],
+                    "kind": "VariableDeclarationList",
+                    "line": 1,
+                    "pos": 0
+                },
+                "end": 65,
+                "flags": [],
+                "kind": "VariableStatement",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "pos": 0
+            }
+        ],
+        "typeReferenceDirectives": []
+    }
+}

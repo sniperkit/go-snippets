@@ -1,9 +1,0 @@
-webhook: https://hooks.slack.com/services/XXXXXXX/X123XX/123123123zbcdef
-channels: 
-  - "#test"
-origins:
-  - "localhost"
-
-# Recaptcha secret (optional).
-# Get it from https://www.google.com/recaptcha/admin
-recaptcha_key: "aasdflkj232oi234lkj"

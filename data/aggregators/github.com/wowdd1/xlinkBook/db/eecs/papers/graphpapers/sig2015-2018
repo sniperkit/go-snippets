@@ -1,0 +1,145 @@
+sig2015-1 | Homogeneous Codes for Energy Efficient Illumination and Imaging |  | author:
+sig2015-2 | Doppler Time-of-Flight Imaging |  | author:
+sig2015-3 | Phasor Imaging: A Generalization of Correlation-Based Time-of-Flight Imaging |  | author:
+sig2015-4 | Micron-scale Light Transport Decomposition Using Interferometry |  | author:
+sig2015-5 | Integrable PolyVector Fields |  | author:
+sig2015-6 | Stripe Patterns on Surfaces |  | author:
+sig2015-7 | Frame Field Generation through Metric Customization |  | author:
+sig2015-8 | Discrete Derivatives of Vector Fields on Surfaces -- An Operator Approach |  | author:
+sig2015-9 | Computational Bodybuilding: Anatomically-based Modeling of Human Bodies |  | author:
+sig2015-10 | Biomechanical Simulation and Control of Hands and Tendinous Systems |  | author:Prashant Sachdeva,  Shinjiro Sueda , Susanne Bradley, Mikhail Fain
+sig2015-11 | Realistic Biomechanical Simulation and Control of Human Swimming |  | author:
+sig2015-12 | GRIDiron: An interactive authoring and cognitive training foundation for reconstructive plastic surgery procedures |  | author:
+sig2015-13 | Detailed Spatio-Temporal Reconstruction of Eyelids |  | author:
+sig2015-14 | Dynamic 3D Avatar Creation from Hand-held Video Input |  | author:Alexandru-Eugen Ichim ,  Sofien Bouaziz 
+sig2015-15 | Driving High-Resolution Facial Scans with Video Performance Capture |  | author:Graham Fyffe , Andrew Jones, Oleg Alexander, Ryosuke Ichikari
+sig2015-16 | Real-Time High-Fidelity Facial Performance Capture |  | author:
+sig2015-17 | Facial Performance Sensing Head-Mounted Display |  | author:
+sig2015-18 | Complex Luminaires: Illumination and Appearance Rendering |  | author:Edgar Velazquez-Armendariz ,  Zhao Dong ,  Bruce Walter 
+sig2015-19 | Directional Dipole Model for Subsurface Scattering |  | author:
+sig2015-20 | Hyperspectral Modeling of Skin Appearance |  | author:Tenn F. Chen ,  Gladimir V. G. Baranoski ,  Bradley W. Kimmel 
+sig2015-21 | The SGGX Microflake Distribution |  | author:
+sig2015-22 | Multi-Scale Modeling and Rendering of Granular Materials |  | author:
+sig2015-23 | Power Particles: An incompressible fluid solver based on power diagrams |  | author:
+sig2015-24 | The Affine Particle-In-Cell Method |  | author:
+sig2015-25 | Restoring the Missing Vortices in Advection Projection Fluid Solvers |  | author:
+sig2015-26 | A Stream Function Solver for Liquid Simulations |  | author:
+sig2015-27 | Water Wave Animation via Wavefront Parameter Interpolation |  | author:Stefan Jeschke 
+sig2015-28 | Augmented Airbrush for Computer Aided Painting |  | author:Roy Shilkrot ,  Pattie Maes ,  Joseph A. Paradiso 
+sig2015-29 | eyeSelfie: Self-Directed Eye Alignment Using Reciprocal Eye-Box Imaging |  | author:Tristan Swedish ,  Ramesh Raskar ,  Karin Roesch , Krishna Rastogi, Ik Hyun Lee
+sig2015-30 | Optimal Presentation of Imagery with Focus Cues on Multi-Plane Displays |  | author:
+sig2015-31 | The Light-Field Stereoscope: Immersive Computer Graphics via Factored Near-Eye Light -Field Displays With Focus Cues |  | author:Fu-Chung Huang , Kevin Chen
+sig2015-32 | Dihedral Angle-based Maps of Tetrahedral Meshes |  | author:
+sig2015-33 | Conformal Mesh Deformations With Mobius Transformations |  | author:
+sig2015-34 | Close to Conformal Deformation of Volumes |  | author:
+sig2015-35 | Linear Subspace Design for Real-Time Shape Deformation |  | author:
+sig2015-36 | Isotopic Approximation Within a Tolerance Volume |  | author:Manish Mandad,  David Cohen-Steiner 
+sig2015-37 | Data-Driven Interactive Quadrangulation |  | author:
+sig2015-38 | Spectral Quadrangulation With Feature-Curve Alignment and Element-Size Control |  | author:
+sig2015-39 | Convolutional Wasserstein Distances: Efficient Optimal Transportation on Geometric Domains |  | author:
+sig2015-40 | Decomposing Time-Lapse Paintings into Layers |  | author:
+sig2015-41 | RingIt: Ring-Ordering Casual Photos of a Temporal Event |  | author:Hadar Averbuch-Elor 
+sig2015-42 | Time-lapse Mining from Internet Photos |  | author:
+sig2015-43 | Real-Time Hyperlapse Creation via Optimal Frame Selection |  | author:Neel Joshi ,  Wolf Kienzle , Mike Toelle,  Matt Uyttendaele 
+sig2015-44 | Bijective Parameterization with Free Boundaries |  | author:Jason Smith 
+sig2015-45 | Computing Locally Injective Mappings by Advanced MIPS |  | author:
+sig2015-46 | Seamless Surface Mappings |  | author:Noam Aigerman ,  Roi Poranne 
+sig2015-47 | Bounded-Distortion Harmonic Mappings in the Plane |  | author:
+sig2015-48 | Sampling Based Scene-Space Video Processing |  | author:
+sig2015-49 | Gaze-driven Video Re-editing |  | author:
+sig2015-50 | AudeoSynth: Music-Driven Video Montage |  | author:
+sig2015-51 | High-Quality Streamable Free-Viewpoint Video |  | author:Alvaro Collet ,  Ming Chuang ,  Pat Sweeney ,  Don Gillett ,  Dennis Evseev ,  David Calabrese ,  Hugues Hoppe 
+sig2015-52 | Interactive Material Design Using Model Reduction |  | author:Hongyi Xu ,  Yijing Li ,  Yong Chen 
+sig2015-53 | Data-Driven Finite Elements for Geometry and Material Design |  | author:
+sig2015-54 | Nonlinear Material Design Using Principal Stretches |  | author:Hongyi Xu,  Fun Shing Sin,  Yufeng Zhu
+sig2015-55 | Subspace Condensation: Full Space Adaptivity for Subspace Deformations |  | author:
+sig2015-56 | Hybrid Skeletal-Surface Motion Graphs for Character Animation from 4D Performance Capture |  | author:Peng Huang ,  Margara Tejera ,  John Collomosse 
+sig2015-57 | Iterative Training Of Dynamic Skills Inspired By Human Coaching Techniques |  | author:Sehoon Ha 
+sig2015-58 | Dynamic Terrain Traversal Skills Using Reinforcement Learning |  | author:Xue Bin Peng,  Glen Berseth 
+sig2015-59 | Online Control of Simulated Humanoids Using Particle Belief Propagation |  | author:
+sig2015-60 | Intuitive and Efficient Camera Control with the Toric Space |  | author:Christophe Lino 
+sig2015-61 | Perceptually Based Downscaling of Images |  | author:Cengiz Oztireli 
+sig2015-62 | Dehazing using Color-Lines           --> |  | author:
+sig2015-63 | An L1 Image Transform for Edge-Preserving Smoothing and Scene-Level Intrinsic Decomposition |  | author:Sai Bi ,  Xiaoguang Han 
+sig2015-64 | Learning to Remove Soft Shadows |  | author:
+sig2015-65 | A Computational Approach for Obstruction-Free Photography |  | author:
+sig2015-66 | Interaction Context |  | author:
+sig2015-67 | Elements of Style: Learning Perceptual Shape Style Similarity |  | author:
+sig2015-68 | Style Compatibility For 3D Furniture Models |  | author:
+sig2015-69 | Semantic Shape Editing Using Deformation Handles |  | author:
+sig2015-70 | Single-View Reconstruction via Joint Analysis of Image and Shape Collections |  | author:
+sig2015-71 | Architecture-Scale Human-Assisted Additive Manufacturing |  | author:
+sig2015-72 | Parametric Self-supporting Surfaces via Direct Computation of Airy Stress Functions |  | author:
+sig2015-73 | Foldabilizing Furniture |  | author:
+sig2015-74 | Computational Interlocking Furniture Assembly |  | author:
+sig2015-75 | LazyFluids: Appearance Transfer for Fluid Animations |  | author:
+sig2015-76 | Fluid Volume Modeling from Sparse Multi-view Images by Appearance Transfer |  | author:
+sig2015-77 | Garment Replacement in Monocular Video Sequences |  | author:Lorenz Rogge ,  Felix Klose ,  Michael Stengel ,  Martin Eisemann , Marcus Magnor,  Braunschweig
+sig2015-78 | Deformation Capture and Modeling of Soft Objects |  | author:
+sig2015-79 | Zoomorphic Design |  | author:
+sig2015-80 | Shading-based Refinement on Volumetric Signed Distance Function |  | author:
+sig2015-81 | Smoothed Quadratic Energies on Meshes |  | author:
+sig2015-82 | Real-Time Nonlinear Shape Interpolation |  | author:
+sig2015-83 | RAPter: Rebuilding Man-made Scenes with Regular Arrangements of Planes |  | author:Aron Monszpart ,  Nicolas Mellado ,  Gabriel J. Brostow 
+sig2015-84 | LOD Generation for Urban Scenes |  | author:
+sig2015-85 | Coupled Segmentation and Similarity Detection for Architectural Models |  | author:Ilke Demir ,  Daniel G. Aliaga 
+sig2015-86 | Shape Segmentation by Approximate Convexity Analysis |  | author:
+sig2015-87 | LinkEdit: Interactive Linkage Editing Using Symbolic Kinematics |  | author:
+sig2015-88 | Fab Forms: Customizable Objects for Fabrication With Validity and Geometry Caching |  | author:
+sig2015-89 | Computational Design of Twisty Joints and Puzzles |  | author:Timothy Sun 
+sig2015-90 | Reduced-Order Shape Optimization Using Offset Surfaces |  | author:
+sig2015-91 | OmniAD: Data-Driven Omni-Directional Aerodynamics |  | author:
+sig2015-92 | Robust Simulation of Sparsely Sampled Thin Features in SPH-Based Free Surface Flows |  | author:
+sig2015-93 | An Implicit Viscosity Formulation for SPH Fluids |  | author:Andreas Peer ,  Markus Ihmsen ,  Jens Cornelis 
+sig2015-94 | Codimensional Non-Newtonian Fluids |  | author:Bo Zhu ,  Minjae Lee,  Ed Quigley 
+sig2015-95 | Controlling Procedural Modeling Programs with Stochastically-Ordered Sequential Monte Carlo |  | author:Daniel Ritchie ,  B. Mildenhall
+sig2015-96 | WorldBrush: Interactive Example-based Synthesis of Procedural Virtual Worlds |  | author:
+sig2015-97 | Advanced Procedural Modeling of Architecture |  | author:Michael Schwarz 
+sig2015-98 | Learning Shape Placements by Example |  | author:
+sig2015-99 | Skin Microstructure Deformation with Displacement Map Convolution |  | author:
+sig2015-100 | Two-shot SVBRDF Capture for Stationary Materials |  | author:
+sig2015-101 | Image Based Relighting Using Neural Networks |  | author:Peiran Ren,  Yue Dong ,  Stephen Lin Xin Tong 
+sig2015-102 | Measurement-Based Editing of Diffuse Albedo with Consistent Interreflections |  | author:
+sig2015-103 | Animating Human Dressing |  | author:Alexander Clegg ,  Jie Tan ,  Greg Turk 
+sig2015-104 | A Perceptual Control Space for Garment Simulation |  | author:
+sig2015-105 | Space-time sketching of character animation |  | author:
+sig2015-106 | Real-Time Style Transfer for Unlabeled Heterogeneous Human Motion |  | author:
+sig2015-107 | Dyna: A Model of Dynamic Human Shape in Motion |  | author:Gerard Pons-Moll ,  Javier Romero ,  Naureen Mahmood 
+sig2015-108 | Adaptive Rendering Based on Weighted Local Regression |  | author:
+sig2015-109 | Adaptive Rendering With Linear Predictions |  | author:
+sig2015-110 | A Machine Learning Approach for Filtering Monte Carlo Noise |  | author:Nima Khademi Kalantari ,  Steve Bako , Pradeep Sen
+sig2015-111 | Gradient-Domain Path Tracing |  | author:
+sig2015-112 | Variance Analysis for Monte Carlo Integration |  | author:
+sig2015-113 | Single-View Hair Modeling Using A Hairstyle Database |  | author:
+sig2015-114 | SecondSkin: Sketch-Based Construction of Layered 3D Models |  | author:Chris De Paoli
+sig2015-115 | BendFields: Regularized Curvature Fields from Rough Concept Sketches |  | author:
+sig2015-116 | Flow Aligned Surfacing of Curve Networks |  | author:
+sig2015-117 | Topology-Constrained Surface Reconstruction From Cross-section |  | author:
+sig2015-118 | Beating Shapes Relying on Moire Level Lines |  | author:Sylvain Chosson
+sig2015-119 | MultiFab: A Machine-Vision-Assisted Platform for Multi-Material 3D Printing |  | author:
+sig2015-120 | Color Imaging and Pattern Hiding on a Metallic Substrate |  | author:Petar Pjanic 
+sig2015-121 | Computational Hydrographic Printing |  | author:
+sig2015-122 | Stable Constrained Dynamics |  | author:
+sig2015-123 | Air Meshes for Robust Collision Handling |  | author:Matthias Muller ,  Nuttapong Chentanez ,  Tae-Yong Kim 
+sig2015-124 | Using Nesterov¡¦s Method to Accelerate Multibody Dynamics With Friction and Contact |  | author:
+sig2015-125 | Aerophones in Flatland: Interactive Wave Simulation of Wind Instruments |  | author:Andrew Allen 
+sig2015-126 | 3DFlow: Continuous Summarization of Mesh Editing Workflows |  | author:
+sig2015-127 | Practical Hex-Mesh Optimization via Edge-Cone Rectification |  | author:
+sig2015-128 | Hexahedral Mesh Re-parameterization from Aligned Base Domains |  | author:Xifeng Gao,  Guoning Chen 
+sig2015-129 | Dyadic T-Mesh Subdivision |  | author:
+sig2015-130 | Simulating the Visual Experience of Very Bright and Very Dark Scenes |  | author:
+sig2015-131 | A Total Variation Approach for Customizing Imagery to Improve Visual Acuity |  | author:
+sig2015-132 | Palette-based Photo Recoloring |  | author:Huiwen Chang ,  Ohad Fried ,  Yiming Liu ,  Stephen Diverdi
+sig2015-133 | Data-driven Color Manifolds |  | author:Chuong H. Nguyen ,  Tobias Ritschel 
+sig2015-134 | Elastic Textures for Additive Fabrication |  | author:
+sig2015-135 | Microstructures to Control Elasticity in 3D Printing |  | author:
+sig2015-136 | By-Example Synthesis of Structurally Sound Patterns |  | author:
+sig2015-137 | Optimization-Based Design and Fabrication of Flexible Rod Meshes |  | author:
+sig2015-138 | Lillicon: Using Transient Widgets to Create Scale Variations of Icons |  | author:
+sig2015-139 | Vector Graphics Animation with Time-Varying Topology |  | author:
+sig2015-140 | Accelerating Vector Graphics Rendering Using the Graphics Hardware Pipeline |  | author:
+sig2015-141 | Piko: A Framework for Authoring Programmable Graphics Pipelines |  | author:Anjul Patney ,  Stanley Tzeng,  Kerry A. Seitz,  Jr. , John D. Owens
+sig2015-142 | Fast Grid-Free Surface Tracking |  | author:Nuttapong Chentanez ,  Matthias Muller ,  Miles Macklin 
+sig2015-143 | Double Bubbles Sans Toil and Trouble: Discrete Circulation-Preserving Vortex Sheets for Soap Films and Foams |  | author:
+sig2015-144 | Simulating Rigid Body Fracture with Surface Meshes |  | author:
+sig2015-145 | High-Resolution Brittle Fracture Simulation with Boundary Elements |  | author:David Hahn

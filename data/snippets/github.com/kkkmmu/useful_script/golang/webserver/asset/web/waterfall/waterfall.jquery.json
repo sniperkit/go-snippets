@@ -1,0 +1,29 @@
+{
+  "name": "waterfall",
+  "title": "waterfall",
+  "description": "jquery waterfall plugin,like Pinterest.",
+  "version": "0.1.73",
+  "homepage": "http://wlog.cn/waterfall/",
+  "docs": "http://wlog.cn/waterfall/",
+  "author": {
+    "name": "bingdian",
+    "email": "imbingdian@gmail.com",
+    "url": "http://wlog.cn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bingdian/waterfall.git"
+  },
+  "bugs": "https://github.com/bingdian/waterfall/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/bingdian/waterfall/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.6.1",
+    "handlebars": "*"
+  },
+  "keywords": ["waterfall", "pinterest", "infinitescroll", "scroll", "fluid", "layout", "huaban", "faxianla"]
+}

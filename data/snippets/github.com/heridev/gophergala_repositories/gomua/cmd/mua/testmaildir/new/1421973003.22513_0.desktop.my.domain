@@ -1,0 +1,81 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Thu, 22 Jan 2015 19:30:03 -0500
+Received: (qmail 20910 invoked from network); 22 Jan 2015 16:03:26 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 22 Jan 2015 16:03:26 -0800
+X-ASG-Debug-ID: 1421971405-017fd408af20eb910001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id 3EUPmzbGssORABFx for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 16:03:25 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146362=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0N0Gsjk015489
+	for <gabe@guzman-nunez.com>; Thu, 22 Jan 2015 17:16:56 -0700 (MST)
+Received: from mail-pd0-f173.google.com (mail-pd0-f173.google.com [209.85.192.173])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0N0GhSu019953 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 17:16:44 -0700 (MST)
+Received: by mail-pd0-f173.google.com with SMTP id fp1so4736972pdb.4
+	for <misc@openbsd.org>; Thu, 22 Jan 2015 16:02:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=from:message-id:date:user-agent:mime-version:to:subject:references :in-reply-to:content-type:content-transfer-encoding; bh=F8MUEwQJEP1twCXGJfqiU7ZgPiH3uODwveD9QTVjx5U=; b=niZhrXz1f41w2e7upxfH28TaCaBZDuGcUUajxZXHgosxzsymTglCPj9XWlI0rozQME tn/esMuEmcE6wfQYJzvRgwhtvry11CFI+K+NuOTHXkeCUjk0+iu4VXU0dXX/ZQHapwbF +ttnIPWekcFTsmJBHwLmSHLNJ4sxxQUAEarSBouKUD0XNAr6jfxsoBZAwlKvXqIyLJSB u5L5vIgUJC6umzuU8NYXsrQsJHjUr1YvmCYdNl3frpcOfx5CS7UyPXwrrvThA/fhlGVl hmWnA1mr6p40EZl+EBIXVcb1/db2ndFI/4GO+C0f7WUmslmBLeua4XUJ/d8fmbl/tw4z GrEA==
+X-Received: by 10.66.65.138 with SMTP id x10mr6701219pas.74.1421971373624; Thu, 22 Jan 2015 16:02:53 -0800 (PST)
+Received: from poulsbo.homeip.net (75-151-113-165-Washington.hfc.comcastbusiness.net. [75.151.113.165])
+	by mx.google.com with ESMTPSA id uq15sm10427487pab.8.2015.01.22.16.02.51
+	for <misc@openbsd.org> (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128); Thu, 22 Jan 2015 16:02:52 -0800 (PST)
+From: Jason Adams <adamsjas@gmail.com>
+X-Google-Original-From: Jason Adams <Adamsjas@gmail.com>
+Message-ID: <54C18FAA.9050304@gmail.com>
+Date: Thu, 22 Jan 2015 16:02:50 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Thunderbird/31.3.0
+MIME-Version: 1.0
+To: misc@openbsd.org
+Subject: Re: Using WiFi hotspots with OpenBSD?
+References: <CAOh3dDbqOMLFU32nRmToOvyHxO9p43bHSLxtovcfpcZgK7fUsA@mail.gmail.com>
+X-ASG-Orig-Subj: Re: Using WiFi hotspots with OpenBSD?
+In-Reply-To: <CAOh3dDbqOMLFU32nRmToOvyHxO9p43bHSLxtovcfpcZgK7fUsA@mail.gmail.com>
+Content-Type: text/plain; charset=windows-1252
+Content-Transfer-Encoding: 8bit
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1421971405
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14543
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+
+On 01/22/2015 03:41 PM, Alan Corey wrote:
+> It's like there's no DHCP
+> server out there, dhclient times out looking.  The phone is an Android
+> (4.4.2) so if I knew what I was doing I could look there.  It is
+> rooted and I could poke around in it.
+
+I'm guessing you want to use your phone as a hotspot for openBSD.
+So you turn on the hotspot feature in the phone an IT ACTS like a router and
+DHCP server, and it usually (if you are wise) is set up to use wpa2 (aes) security.
+
+Then you will need a file named hostname.ath0 (the last part will vary with the
+name of your wifi card) in the /etc directory.  attrs: 640
+
+in that file you have something like
+
+nwid (name-of-your-phone-accesspoint)
+wpakey (your wifi access point password
+dhcp
+
+Then it just seems to work automatically.
+
+-- 
+Those who do not understand Unix are condemned to reinvent it, poorly.
+

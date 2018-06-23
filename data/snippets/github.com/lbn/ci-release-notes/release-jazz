@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+runner() {
+  if [[ -z $GITHUB_ACCESS_TOKEN ]]; then
+    >&2 echo Please specify GITHUB_ACCESS_TOKEN
+    exit 1
+  fi
+  RN_VERSION="${VERSION:-1.0.1}"
+  ARCHIVE=ci-release-notes_${RN_VERSION}_linux_x86_64.tar.bz2
+  wget "https://github.com/lbn/ci-release-notes/releases/download/v$RN_VERSION/$ARCHIVE"
+  tar xf $ARCHIVE
+  ./codeship
+}
+
+runner

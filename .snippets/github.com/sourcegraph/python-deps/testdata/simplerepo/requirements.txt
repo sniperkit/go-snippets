@@ -1,3 +1,0 @@
-oauth==1.0.1
-itsdangerous==0.21
-repoze.lru==0.6

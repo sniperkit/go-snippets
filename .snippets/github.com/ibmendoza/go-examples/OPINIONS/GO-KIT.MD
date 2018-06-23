@@ -1,1 +1,0 @@
-- https://peter.bourgon.org/applied-go-kit

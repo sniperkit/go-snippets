@@ -1,0 +1,114 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #CCCCCC;
+}
+tbody {
+	top:20px;
+	left:50px;
+	position: absolute;
+}
+td {
+	/*background-color: #525252;*/
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 1px;
+}
+td.black {
+	background-color: #525252;
+}
+td.white {
+	background-color: #BABABA;
+}
+
+.piece {
+	position:absolute;
+	/*position:absolute;*/
+	width:52px;
+}
+
+
+#board-div {
+	float: left;
+	/*margin-left: 1em;*/
+	margin-top: 1px;
+	position:relative;
+	width:500px;
+}
+
+#interaction-window {
+	float: left;
+	margin-top: 20px;
+	margin-right: 20px;
+	width: 400px;
+}
+
+td.white.highlight, td.black.highlight {
+	background-color: cyan;
+}
+
+#chat-history {
+	margin-top: 2em;
+	overflow-y: scroll;
+	height: 270px;
+}
+
+#currentColor {
+	/*position: relative;*/
+	/*float: right;*/
+	/*margin-right: 20px;*/
+	margin-top: 5px;
+	/*width: 600px;*/
+	text-align: center;
+}
+
+#container {
+	margin: 50px;
+	margin-top: 5px;
+	margin: 0 auto;
+	background-color: white;
+	height: 42em;
+	width: 68em;
+	position: relative;
+}
+
+#header {
+	font: helvetica;
+	font-size: 20pt;
+	text-align: center;
+	margin-top: 15px;
+	padding: 10px;
+	/*position: absolute;*/
+	background-color: white;
+	border-bottom: 1px solid black; 
+}
+
+label {
+	padding: 5px;
+}
+
+.logo {
+	width: 25px;
+	height: 50px;
+}
+
+.user-form {
+	width: 300px;
+}
+
+#footer {
+	font: helvetica;
+	font-size: 10pt;
+	height: 3em;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	background-color: white;
+	width: 100%;
+	border-top: 1px solid black;
+}
+
+td.black.validSquare, td.white.validSquare {
+	background-color: green;
+}

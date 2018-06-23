@@ -1,3 +1,0 @@
-a = [x for x in y if x == 5]
-
-b = {x + y: y for x, y in y.items() if x == 5}

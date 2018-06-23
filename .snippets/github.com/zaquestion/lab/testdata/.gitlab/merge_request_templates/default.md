@@ -1,1 +1,0 @@
-I am the default merge request template for lab

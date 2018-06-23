@@ -1,5 +1,0 @@
-x = -len('.build')
-
-y = not x
-
-z = x.replace('-', '_')

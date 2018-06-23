@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ms:catalog xmlns:ms="http://microsoft.com/catalog.xsd">
+  <ms:meta>
+    <ms:source>http://msdn.microsoft.com/en-us/library/ms762271(v=vs.85).aspx</ms:source>
+  </ms:meta>
+   <ms:book id="bk101">
+      <ms:author>Gambardella, Matthew</ms:author>
+      <ms:title>XML Developer's Guide</ms:title>
+      <ms:genre>Computer</ms:genre>
+      <ms:price>44.95</ms:price>
+      <ms:publish_date>2000-10-01</ms:publish_date>
+      <ms:description>An in-depth look at creating applications 
+      with XML.</ms:description>
+   </ms:book>
+   <ms:book id="bk102">
+      <ms:author>Ralls, Kim</ms:author>
+      <ms:title>Midnight Rain</ms:title>
+      <ms:genre>Fantasy</ms:genre>
+      <ms:price>5.95</ms:price>
+      <ms:publish_date>2000-12-16</ms:publish_date>
+      <ms:description>A former architect battles corporate zombies, 
+      an evil sorceress, and her own childhood to become queen 
+      of the world.</ms:description>
+   </ms:book>
+   <ms:book id="bk103">
+      <ms:author>Corets, Eva</ms:author>
+      <ms:title>Maeve Ascendant</ms:title>
+      <ms:genre>Fantasy</ms:genre>
+      <ms:price>5.95</ms:price>
+      <ms:publish_date>2000-11-17</ms:publish_date>
+      <ms:description>After the collapse of a nanotechnology 
+      society in England, the young survivors lay the 
+      foundation for a new society.</ms:description>
+   </ms:book>
+</ms:catalog>

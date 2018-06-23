@@ -1,6 +1,0 @@
-{
-    "name" : "fulltext",
-    "module" : "fulltext",
-    "class" : "Fulltext",
-    "version" : "0.1"
-}

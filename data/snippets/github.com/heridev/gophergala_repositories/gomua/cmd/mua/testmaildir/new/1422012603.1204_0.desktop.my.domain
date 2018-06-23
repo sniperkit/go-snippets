@@ -1,0 +1,72 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 06:30:03 -0500
+Received: (qmail 25320 invoked from network); 23 Jan 2015 03:15:50 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 03:15:50 -0800
+X-ASG-Debug-ID: 1422011749-017fd408af2100860001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id erchZBITJ45o4Fdz for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 03:15:49 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146367=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0NBTXde031164
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 04:29:35 -0700 (MST)
+Received: from plane.gmane.org (plane.gmane.org [80.91.229.3])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0NBTM9k024207
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 04:29:23 -0700 (MST)
+Received: from list
+	by plane.gmane.org with local (Exim 4.69) (envelope-from <goom-misc@m.gmane.org>) id 1YEcD4-0006VD-1i
+	for misc@openbsd.org; Fri, 23 Jan 2015 12:15:30 +0100
+Received: from naiad.spacehopper.org ([195.95.187.26])
+	by main.gmane.org with esmtp (Gmexim 0.1 (Debian)) id 1AlnuQ-0007hv-00
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 12:15:30 +0100
+Received: from stu
+	by naiad.spacehopper.org with local (Gmexim 0.1 (Debian)) id 1AlnuQ-0007hv-00
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 12:15:30 +0100
+X-Injected-Via-Gmane: http://gmane.org/
+To: misc@openbsd.org
+From: Stuart Henderson <stu@spacehopper.org>
+Subject: Re: iked and isakmpd in parallel
+Date: Fri, 23 Jan 2015 11:15:24 +0000 (UTC)
+X-ASG-Orig-Subj: Re: iked and isakmpd in parallel
+Lines: 13
+Message-ID: <slrnmc4bac.uib.stu@naiad.spacehopper.org>
+References: <CALVQ6ZbS733Y7bU1rg3KXOjfJMUkDZx9cup58Kf1G4e3VYucrg@mail.gmail.com>
+X-Complaints-To: usenet@ger.gmane.org
+X-Gmane-NNTP-Posting-Host: naiad.spacehopper.org
+User-Agent: slrn/1.0.1 (OpenBSD)
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422011749
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.20
+X-Barracuda-Spam-Status: No, SCORE=0.20 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=BSF_SC0_MISMATCH_TO, BSF_SC7_SA298e
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14557
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 BSF_SC0_MISMATCH_TO    Envelope rcpt doesn't match header
+	0.20 BSF_SC7_SA298e         Custom Rule SA298e
+
+On 2015-01-20, Fedor Piecka <teplavoda@gmail.com> wrote:
+> We need to support both IKEv1 and IKEv2 peers in our environment.
+
+At this point, you need VMs or separate hardware to do this with OpenBSD.
+
+> My first question now is how to instruct iked to listen only on a selected
+> interface.
+>
+> The second question is whether the 2 of them wouldn't interfere with each
+> other.
+
+There are ways around address binding, but they would still interfere.
+

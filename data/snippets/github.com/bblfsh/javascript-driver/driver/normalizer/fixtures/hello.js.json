@@ -1,0 +1,346 @@
+{
+    "comments": [],
+    "end": 28,
+    "loc": {
+        "end": {
+            "column": 0,
+            "line": 2
+        },
+        "start": {
+            "column": 0,
+            "line": 1
+        }
+    },
+    "program": {
+        "body": [
+            {
+                "end": 27,
+                "expression": {
+                    "arguments": [
+                        {
+                            "end": 25,
+                            "extra": {
+                                "raw": "'Hello World'",
+                                "rawValue": "Hello World"
+                            },
+                            "loc": {
+                                "end": {
+                                    "column": 25,
+                                    "line": 1
+                                },
+                                "start": {
+                                    "column": 12,
+                                    "line": 1
+                                }
+                            },
+                            "start": 12,
+                            "type": "StringLiteral",
+                            "value": "Hello World"
+                        }
+                    ],
+                    "callee": {
+                        "computed": false,
+                        "end": 11,
+                        "loc": {
+                            "end": {
+                                "column": 11,
+                                "line": 1
+                            },
+                            "start": {
+                                "column": 0,
+                                "line": 1
+                            }
+                        },
+                        "object": {
+                            "end": 7,
+                            "loc": {
+                                "end": {
+                                    "column": 7,
+                                    "line": 1
+                                },
+                                "identifierName": "console",
+                                "start": {
+                                    "column": 0,
+                                    "line": 1
+                                }
+                            },
+                            "name": "console",
+                            "start": 0,
+                            "type": "Identifier"
+                        },
+                        "property": {
+                            "end": 11,
+                            "loc": {
+                                "end": {
+                                    "column": 11,
+                                    "line": 1
+                                },
+                                "identifierName": "log",
+                                "start": {
+                                    "column": 8,
+                                    "line": 1
+                                }
+                            },
+                            "name": "log",
+                            "start": 8,
+                            "type": "Identifier"
+                        },
+                        "start": 0,
+                        "type": "MemberExpression"
+                    },
+                    "end": 26,
+                    "loc": {
+                        "end": {
+                            "column": 26,
+                            "line": 1
+                        },
+                        "start": {
+                            "column": 0,
+                            "line": 1
+                        }
+                    },
+                    "start": 0,
+                    "type": "CallExpression"
+                },
+                "loc": {
+                    "end": {
+                        "column": 27,
+                        "line": 1
+                    },
+                    "start": {
+                        "column": 0,
+                        "line": 1
+                    }
+                },
+                "start": 0,
+                "type": "ExpressionStatement"
+            }
+        ],
+        "directives": [],
+        "end": 28,
+        "loc": {
+            "end": {
+                "column": 0,
+                "line": 2
+            },
+            "start": {
+                "column": 0,
+                "line": 1
+            }
+        },
+        "sourceType": "module",
+        "start": 0,
+        "type": "Program"
+    },
+    "start": 0,
+    "tokens": [
+        {
+            "end": 7,
+            "loc": {
+                "end": {
+                    "column": 7,
+                    "line": 1
+                },
+                "start": {
+                    "column": 0,
+                    "line": 1
+                }
+            },
+            "start": 0,
+            "type": {
+                "beforeExpr": false,
+                "binop": null,
+                "isAssign": false,
+                "isLoop": false,
+                "label": "name",
+                "postfix": false,
+                "prefix": false,
+                "rightAssociative": false,
+                "startsExpr": true
+            },
+            "value": "console"
+        },
+        {
+            "end": 8,
+            "loc": {
+                "end": {
+                    "column": 8,
+                    "line": 1
+                },
+                "start": {
+                    "column": 7,
+                    "line": 1
+                }
+            },
+            "start": 7,
+            "type": {
+                "beforeExpr": false,
+                "binop": null,
+                "isAssign": false,
+                "isLoop": false,
+                "label": ".",
+                "postfix": false,
+                "prefix": false,
+                "rightAssociative": false,
+                "startsExpr": false,
+                "updateContext": null
+            }
+        },
+        {
+            "end": 11,
+            "loc": {
+                "end": {
+                    "column": 11,
+                    "line": 1
+                },
+                "start": {
+                    "column": 8,
+                    "line": 1
+                }
+            },
+            "start": 8,
+            "type": {
+                "beforeExpr": false,
+                "binop": null,
+                "isAssign": false,
+                "isLoop": false,
+                "label": "name",
+                "postfix": false,
+                "prefix": false,
+                "rightAssociative": false,
+                "startsExpr": true
+            },
+            "value": "log"
+        },
+        {
+            "end": 12,
+            "loc": {
+                "end": {
+                    "column": 12,
+                    "line": 1
+                },
+                "start": {
+                    "column": 11,
+                    "line": 1
+                }
+            },
+            "start": 11,
+            "type": {
+                "beforeExpr": true,
+                "binop": null,
+                "isAssign": false,
+                "isLoop": false,
+                "label": "(",
+                "postfix": false,
+                "prefix": false,
+                "rightAssociative": false,
+                "startsExpr": true
+            }
+        },
+        {
+            "end": 25,
+            "loc": {
+                "end": {
+                    "column": 25,
+                    "line": 1
+                },
+                "start": {
+                    "column": 12,
+                    "line": 1
+                }
+            },
+            "start": 12,
+            "type": {
+                "beforeExpr": false,
+                "binop": null,
+                "isAssign": false,
+                "isLoop": false,
+                "label": "string",
+                "postfix": false,
+                "prefix": false,
+                "rightAssociative": false,
+                "startsExpr": true,
+                "updateContext": null
+            },
+            "value": "Hello World"
+        },
+        {
+            "end": 26,
+            "loc": {
+                "end": {
+                    "column": 26,
+                    "line": 1
+                },
+                "start": {
+                    "column": 25,
+                    "line": 1
+                }
+            },
+            "start": 25,
+            "type": {
+                "beforeExpr": false,
+                "binop": null,
+                "isAssign": false,
+                "isLoop": false,
+                "label": ")",
+                "postfix": false,
+                "prefix": false,
+                "rightAssociative": false,
+                "startsExpr": false
+            }
+        },
+        {
+            "end": 27,
+            "loc": {
+                "end": {
+                    "column": 27,
+                    "line": 1
+                },
+                "start": {
+                    "column": 26,
+                    "line": 1
+                }
+            },
+            "start": 26,
+            "type": {
+                "beforeExpr": true,
+                "binop": null,
+                "isAssign": false,
+                "isLoop": false,
+                "label": ";",
+                "postfix": false,
+                "prefix": false,
+                "rightAssociative": false,
+                "startsExpr": false,
+                "updateContext": null
+            }
+        },
+        {
+            "end": 28,
+            "loc": {
+                "end": {
+                    "column": 0,
+                    "line": 2
+                },
+                "start": {
+                    "column": 0,
+                    "line": 2
+                }
+            },
+            "start": 28,
+            "type": {
+                "beforeExpr": false,
+                "binop": null,
+                "isAssign": false,
+                "isLoop": false,
+                "label": "eof",
+                "postfix": false,
+                "prefix": false,
+                "rightAssociative": false,
+                "startsExpr": false,
+                "updateContext": null
+            }
+        }
+    ],
+    "type": "File"
+}

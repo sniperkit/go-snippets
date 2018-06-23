@@ -1,4 +1,0 @@
-This is a sample test file.
-It has a few lines of text,
-that will be read into the
-go program.

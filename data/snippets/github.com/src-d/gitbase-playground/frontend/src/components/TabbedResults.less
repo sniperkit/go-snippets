@@ -1,0 +1,132 @@
+@import '../variables.less';
+
+.results-padding {
+    padding: @small-spacing;
+}
+
+#tabbed-results {
+    display: flex;
+    flex-direction: column;
+
+    .tab-content {
+        flex: 1 1 auto;
+        overflow: auto;
+        min-height: 250px;
+
+        display: flex;
+        flex-direction: column;
+
+        background-color: @query-results-block;
+        border: solid 1px @primary;
+        border-top: 0px;
+
+        > .tab-pane {
+            flex: 1 1 auto;
+            padding: @big-spacing;
+
+            &[aria-hidden='false'] {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .animation-col {
+            margin-top: 3em;
+        }
+
+        .message-col {
+            margin-top: 1em;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .last-message-col {
+            margin-bottom: 3em;
+        }
+    }
+
+    .query-row {
+        display: flex;
+        margin-bottom: 2em;
+
+        .query-text,
+        .edit-query {
+            line-height: 16px;
+        }
+
+        .query-text {
+            flex: 0 1 auto;
+            white-space: pre;
+            font-family: @monospace-font;
+            color: @secondary-tint-2;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .query-button {
+            flex: 0 0 auto;
+
+            .edit-query {
+                width: auto;
+                float: left;
+                padding-top: 0px;
+                margin-left: 1ex;
+                border-top: 0px;
+            }
+        }
+    }
+
+    button.reload {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @btn-title-size: 22px;
+
+    .nav-tabs {
+        li.history-tab-title {
+            float: right;
+
+            .tab-title {
+                width: auto;
+            }
+        }
+
+        .tab-title {
+            width: 150px;
+            height: @btn-title-size;
+            vertical-align: middle;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            font-family: @monospace-font;
+            font-weight: @bold-font-weight;
+        }
+
+        .btn-title-common {
+            height: @btn-title-size;
+            width: @btn-title-size;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .btn-title {
+            .btn-title-common;
+            margin-left: 1ex;
+            .icon-btn-variant(@primary-tint-2);
+        }
+
+        > li.active {
+            .btn-title {
+                .icon-btn-variant(@tertiary);
+            }
+        }
+
+        .icon-title {
+            .btn-title-common;
+            margin-right: 1ex;
+        }
+    }
+}

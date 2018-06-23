@@ -1,6 +1,0 @@
-.DS_Store
-bower_components/
-node_modules/
-*~
-opentweet
-test-client/test-client

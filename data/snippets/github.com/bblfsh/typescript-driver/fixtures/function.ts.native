@@ -1,0 +1,267 @@
+{
+    "status": "ok",
+    "language": "typescript",
+    "errors": [],
+    "ast": {
+        "amdDependencies": [],
+        "bindDiagnostics": [],
+        "col": 1,
+        "comments": [],
+        "end": 119,
+        "flags": [],
+        "identifierCount": 11,
+        "identifiers": {},
+        "isDeclarationFile": false,
+        "kind": "SourceFile",
+        "languageVariant": 0,
+        "line": 1,
+        "nodeCount": 30,
+        "pos": 0,
+        "referencedFiles": [],
+        "scriptKind": 3,
+        "statements": [
+            {
+                "body": {
+                    "col": 17,
+                    "end": 20,
+                    "flags": [],
+                    "kind": "Block",
+                    "line": 1,
+                    "multiLine": true,
+                    "pos": 16,
+                    "statements": []
+                },
+                "col": 1,
+                "end": 20,
+                "flags": [],
+                "kind": "FunctionDeclaration",
+                "line": 1,
+                "modifierFlagsCache": 536870912,
+                "name": {
+                    "col": 9,
+                    "end": 14,
+                    "escapedText": "empty",
+                    "flags": [],
+                    "kind": "Identifier",
+                    "line": 1,
+                    "pos": 8
+                },
+                "parameters": [],
+                "pos": 0
+            },
+            {
+                "body": {
+                    "col": 25,
+                    "end": 50,
+                    "flags": [],
+                    "kind": "Block",
+                    "line": 4,
+                    "multiLine": true,
+                    "pos": 46,
+                    "statements": []
+                },
+                "col": 2,
+                "end": 50,
+                "flags": [],
+                "kind": "FunctionDeclaration",
+                "line": 2,
+                "modifierFlagsCache": 536870912,
+                "name": {
+                    "col": 9,
+                    "end": 37,
+                    "escapedText": "params",
+                    "flags": [],
+                    "kind": "Identifier",
+                    "line": 4,
+                    "pos": 30
+                },
+                "parameters": [
+                    {
+                        "col": 17,
+                        "end": 39,
+                        "flags": [],
+                        "kind": "Parameter",
+                        "line": 4,
+                        "name": {
+                            "col": 17,
+                            "end": 39,
+                            "escapedText": "a",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 4,
+                            "pos": 38
+                        },
+                        "pos": 38
+                    },
+                    {
+                        "col": 19,
+                        "end": 42,
+                        "flags": [],
+                        "kind": "Parameter",
+                        "line": 4,
+                        "name": {
+                            "col": 19,
+                            "end": 42,
+                            "escapedText": "b",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 4,
+                            "pos": 40
+                        },
+                        "pos": 40
+                    },
+                    {
+                        "col": 22,
+                        "end": 45,
+                        "flags": [],
+                        "kind": "Parameter",
+                        "line": 4,
+                        "name": {
+                            "col": 22,
+                            "end": 45,
+                            "escapedText": "c",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 4,
+                            "pos": 43
+                        },
+                        "pos": 43
+                    }
+                ],
+                "pos": 20
+            },
+            {
+                "body": {
+                    "col": 45,
+                    "end": 118,
+                    "flags": [],
+                    "kind": "Block",
+                    "line": 7,
+                    "multiLine": true,
+                    "pos": 96,
+                    "statements": [
+                        {
+                            "col": 47,
+                            "end": 116,
+                            "expression": {
+                                "col": 11,
+                                "end": 115,
+                                "flags": [],
+                                "kind": "BinaryExpression",
+                                "left": {
+                                    "col": 11,
+                                    "end": 111,
+                                    "escapedText": "a",
+                                    "flags": [],
+                                    "kind": "Identifier",
+                                    "line": 8,
+                                    "pos": 109
+                                },
+                                "line": 8,
+                                "operatorToken": {
+                                    "col": 13,
+                                    "end": 113,
+                                    "flags": [],
+                                    "kind": "PlusToken",
+                                    "line": 8,
+                                    "pos": 111
+                                },
+                                "pos": 109,
+                                "right": {
+                                    "col": 15,
+                                    "end": 115,
+                                    "escapedText": "b",
+                                    "flags": [],
+                                    "kind": "Identifier",
+                                    "line": 8,
+                                    "pos": 113
+                                }
+                            },
+                            "flags": [],
+                            "kind": "ReturnStatement",
+                            "line": 7,
+                            "pos": 98
+                        }
+                    ]
+                },
+                "col": 2,
+                "end": 118,
+                "flags": [],
+                "kind": "FunctionDeclaration",
+                "line": 5,
+                "modifierFlagsCache": 536870912,
+                "name": {
+                    "col": 9,
+                    "end": 66,
+                    "escapedText": "typed",
+                    "flags": [],
+                    "kind": "Identifier",
+                    "line": 7,
+                    "pos": 60
+                },
+                "parameters": [
+                    {
+                        "col": 16,
+                        "end": 76,
+                        "flags": [],
+                        "kind": "Parameter",
+                        "line": 7,
+                        "name": {
+                            "col": 16,
+                            "end": 68,
+                            "escapedText": "a",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 7,
+                            "pos": 67
+                        },
+                        "pos": 67,
+                        "type": {
+                            "col": 18,
+                            "end": 76,
+                            "flags": [],
+                            "kind": "NumberKeyword",
+                            "line": 7,
+                            "pos": 69
+                        }
+                    },
+                    {
+                        "col": 26,
+                        "end": 87,
+                        "flags": [],
+                        "kind": "Parameter",
+                        "line": 7,
+                        "name": {
+                            "col": 26,
+                            "end": 79,
+                            "escapedText": "b",
+                            "flags": [],
+                            "kind": "Identifier",
+                            "line": 7,
+                            "pos": 77
+                        },
+                        "pos": 77,
+                        "type": {
+                            "col": 29,
+                            "end": 87,
+                            "flags": [],
+                            "kind": "NumberKeyword",
+                            "line": 7,
+                            "pos": 80
+                        }
+                    }
+                ],
+                "pos": 50,
+                "type": {
+                    "col": 38,
+                    "end": 96,
+                    "flags": [],
+                    "kind": "NumberKeyword",
+                    "line": 7,
+                    "pos": 89
+                }
+            }
+        ],
+        "typeReferenceDirectives": []
+    }
+}

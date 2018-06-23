@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+<head>
+<!--	<link rel="stylesheet" href="public/stylesheets/screen.css" /> -->
+</head>
+
+<body>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ .Title }}</h3>
+  </div>
+  <div class="panel-body">
+    <p> {{ .Desc }} </p>
+    <div id="ytplayer"></div>
+    <form>
+      <div class="form-group">
+        <label for="tags">Tags</label>
+        <input type="email" class="form-control" id="tags"
+        value="{{ .TagString }}">
+      </div>
+      <a class="btn btn-default" href="#" role="button" id="update-btn">Update</a>
+    </form>
+  </div>
+</div>
+  <script>
+// Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+height: '390',
+width: '640',
+videoId: '{{ .ID }}'
+
+});
+
+}
+  </script>
+
+  <script>
+
+var updateObj = {
+id: '{{ .ID }}',
+is_curated: true,
+}
+
+    
+$('#update-btn').click(function(e) {
+    e.preventDefault();
+      var tagStr = $('#tags').val()
+      if (tagStr.length > 0 ) {
+      console.log("value of tags: " + tagStr);
+      var tags = $.map(tagStr.split(","), $.trim);
+      updateObj.tags = tags;
+      console.log("value of tags: " + tags);
+
+      $.ajax({
+        type: "PUT",
+        url: "/videos/" + updateObj.id,
+        data: JSON.stringify(updateObj)
+        }
+        ).done(function(msg){
+          alert("video updated");
+          }).fail(function( jqXHR, textStatus  ) {
+              alert( "Request failed: " + textStatus  );
+            });
+      } else {
+         console.log("no tags specified");
+      }
+    });
+  </script>
+
+
+  <ul>
+    <li>
+      <label>Default Thumbnail </label>
+  <img src="{{ .DefaultThumbnail.URL }}" />
+  </li>
+  <li>
+  <label> Medium Thumbnail </label>
+    <img src="{{ .MediumThumbnail.URL }}" />
+  </li>
+  <li>
+  <label> HighresThumbnail </label>
+  <img src="{{ .HighresThumbnail.URL }}" />
+  </li>
+  <li>
+    <label> Standard Thumbnail </label>
+  <img src="{{ .StandardThumbnail.URL }}" />
+  </li>
+  <li>
+  <label> Maxres Thumbnail </label>
+  <img src="{{ .MaxresThumbnail.URL }}" />
+  </li>
+  </ul>
+
+</body>
+
+</html>

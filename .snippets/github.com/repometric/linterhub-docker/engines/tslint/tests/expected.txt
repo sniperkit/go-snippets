@@ -1,4 +1,0 @@
-
-ERROR: sample.ts[2, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
-ERROR: sample.ts[3, 17]: Missing semicolon
-

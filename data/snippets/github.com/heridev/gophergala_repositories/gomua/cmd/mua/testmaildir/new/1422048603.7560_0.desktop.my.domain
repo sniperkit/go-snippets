@@ -1,0 +1,124 @@
+Received: by localhost (fdm 1.7, account "guzman-nunez.com");
+	Fri, 23 Jan 2015 16:30:03 -0500
+Received: (qmail 22589 invoked from network); 23 Jan 2015 13:07:31 -0800
+Received: from barracuda2.srihosting.com (184.105.137.201)
+  by plesk6.srihosting.com with SMTP; 23 Jan 2015 13:07:31 -0800
+X-ASG-Debug-ID: 1422047250-017fd408af212e200001-z2RL4H
+Received: from shear.ucar.edu (lists.openbsd.org [192.43.244.163]) by barracuda2.srihosting.com with ESMTP id 0FLqYDEFX0azmm4w for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 13:07:30 -0800 (PST)
+X-Barracuda-Envelope-From: owner-misc+M146379=gabe=guzman-nunez.com@openbsd.org
+X-Barracuda-Apparent-Source-IP: 192.43.244.163
+Received: from openbsd.org (localhost [127.0.0.1])
+	by shear.ucar.edu (8.14.8/8.14.5) with ESMTP id t0NLJmg2002091
+	for <gabe@guzman-nunez.com>; Fri, 23 Jan 2015 14:19:51 -0700 (MST)
+Received: from mail-lb0-f181.google.com (mail-lb0-f181.google.com [209.85.217.181])
+	by shear.ucar.edu (8.14.8/8.14.8) with ESMTP id t0NLJYKw010129 (version=TLSv1/SSLv3 cipher=DHE-DSS-AES128-SHA bits=128 verify=FAIL)
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 14:19:36 -0700 (MST)
+Received: by mail-lb0-f181.google.com with SMTP id u10so9091419lbd.12
+	for <misc@openbsd.org>; Fri, 23 Jan 2015 13:05:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:in-reply-to:references:from:date:message-id:subject:to :cc:content-type; bh=ZTIs1MwK7wO8amuXMu8LseQ82+gSj8vy/1Wa3j/OQI8=; b=ymkDPGVkhLahXFUlJvoqs/GgWMFnPEM6dTYJ193bOEF2YIfB1TtHTJsGMymW9eIFsp A0v58epDsYvnmogJQN282lklcF+tKDE7a/CFqY68I9qpHL/YH+f53gdSm9UY/nMvkc0U ceXIw78E8hcf7YgsKQVmJSjS9pbCbrxUN6hNfD02FHvrVp+xAHN+AtzLuaX1aUSTFyFD 4k4YXsXBcCInplb81WpZKT+DfzgwDJnkJpGJ4yQEU4IJBH68pqC7vexz1tXrEWSbt5YQ +Es+wbE6Z4xKaL1iMAsRNQTc2IzJSFMHpAg6Qz/HUXguEhBpJWxVH0LVFCb4bjRO37QC hIdQ==
+X-Received: by 10.152.8.104 with SMTP id q8mr9489166laa.56.1422047144020; Fri, 23 Jan 2015 13:05:44 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.114.186.200 with HTTP; Fri, 23 Jan 2015 13:05:03 -0800 (PST)
+In-Reply-To: <20150123205312.GJ3916@iris.usta.de>
+References: <20150123202400.htg6SHV5FSF8i0fq%punosevac72@gmail.com> <20150123205312.GJ3916@iris.usta.de>
+From: Amit Kulkarni <amitkulz@gmail.com>
+Date: Fri, 23 Jan 2015 15:05:03 -0600
+Message-ID: <CAOS-L3gzqrpCkLLu=1=SEoQ7W=wxtViuj6j=KaK4pA7C7vxGZA@mail.gmail.com>
+Subject: Re: What are the disadvantages of soft updates?
+To: Ingo Schwarze <schwarze@usta.de>
+X-ASG-Orig-Subj: Re: What are the disadvantages of soft updates?
+Cc: Predrag Punosevac <punosevac72@gmail.com>, misc <misc@openbsd.org>
+Content-Type: text/plain; charset="us-ascii"
+X-Converted-To-Plain-Text: from multipart/alternative by demime 1.01d
+X-Converted-To-Plain-Text: Alternative section used was text/plain
+List-Help: <mailto:majordomo@openbsd.org?body=help>
+List-ID: <misc.openbsd.org>
+List-Owner: <mailto:owner-misc@openbsd.org>
+List-Post: <mailto:misc@openbsd.org>
+List-Subscribe: <mailto:majordomo@openbsd.org?body=sub%20misc>
+List-Unsubscribe: <mailto:majordomo@openbsd.org?body=unsub%20misc>
+X-Loop: misc@openbsd.org
+Precedence: list
+Sender: owner-misc@openbsd.org
+X-Barracuda-Connect: lists.openbsd.org[192.43.244.163]
+X-Barracuda-Start-Time: 1422047250
+X-Barracuda-URL: http://184.105.137.201:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at srihosting.com
+X-Barracuda-BRTS-Status: 1
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=3.5 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=5.0 tests=
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.14569
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+
+On Fri, Jan 23, 2015 at 2:53 PM, Ingo Schwarze <schwarze@usta.de> wrote:
+
+> Hi Predrag,
+>
+> Predrag Punosevac wrote on Fri, Jan 23, 2015 at 03:24:00PM -0500:
+>
+> > I was following this discussion with the great interest but without
+> > intend to participate in it until today.
+> >
+> > Namely one of my OpenBSD servers (5.6 sparc64) runs Mollify and last
+> > night I received an e-mail from an angry user who could not upload files
+> > (the upload will fail or upload the file with file size zero). After
+> > running df I noticed that /tmp was 100% full (4GB used) but the size of
+> > individual files was only 12Kb.
+>
+> That is unlikely to be due to softdep.  The usual reason for a file
+> system to be actually full and seemingly almost empty at the same
+> time is somebody doing the following sequence of operations:
+>
+>  - open(2) a file for writing
+>  - writing a lot of data until the file system is full
+>  - unlink(2) the file
+>  - keep the process running that open(2)'ed it
+>  - let that process keep the file open and *not* close(2) it
+>
+> Specifically, in /tmp, anybody can do that.
+>
+> > I thought for a second and I remember seeing this with HAMMER on DF.
+>
+> The above works with almost any file system.
+>
+> > Long story short I checked /etc/fstab and
+> > sure enough I had rw,softdep next to each partition including tmp. I
+> > removed softdep rebooted the sytem and /tmp usage dropped to 0%.
+>
+> That's not likely to be related to softdep either.  Chances are
+> just rebooting would have solved the issue as well - simply because
+> rebooting terminates all running processes, and consequently closes
+> all open files.
+>
+
+One more point to add to Ingo's detailed and very helpful reply. Reboot
+actually clears /tmp.
+
+
+>
+> What you should have done instead was run fstat(1), look for processes
+> having files open in /tmp, use ls(1) -iRa /tmp to find the inode
+> numbers of linked files in /tmp, and kill the processes having files
+> open that were *not* linked until you found the one having the big
+> file open - and then have a friendly talk with the responsible user,
+> if any, or figure out what went wrong in case some daemon process
+> caused the issue.
+>
+> > My questions is which partitions should be mounted with softdep
+> > option?
+>
+> I'm not an expert on that and hardly ever use softdep, but i'd say
+> on file systems where file create/delete performance is *critically*
+> important, performace has been clearly demonstrated to be insufficient
+> without softdep, and you consider data loss harmless.
+>
+> > Is there a way to prune metadata which will save me for problems like
+> > the one I encountered last night.
+>
+> I'm not convinced that's a good question to ask.
+>
+> Yours,
+>   Ingo
+

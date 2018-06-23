@@ -1,3 +1,0 @@
-a, b, c = 'a:b:c'.split(':')
-
-d, e, f = 'abc.def'.partition('.')

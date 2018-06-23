@@ -1,0 +1,25 @@
+{
+  "Tools": [
+    {
+      "Subcmd": "scan",
+      "Op": "scan",
+      "SourceUnitTypes": [
+        "Dockerfile"
+      ]
+    },
+    {
+      "Subcmd": "graph",
+      "Op": "graph",
+      "SourceUnitTypes": [
+        "Dockerfile"
+      ]
+    },
+    {
+      "Subcmd": "depresolve",
+      "Op": "depresolve",
+      "SourceUnitTypes": [
+        "Dockerfile"
+      ]
+    }
+  ]
+}

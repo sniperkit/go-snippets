@@ -1,0 +1,11 @@
+{
+    "service":{
+        "name":"pug",
+        "port":":5000"
+    },
+    "db":{
+        "conn_string":"localhost:28015",
+        "name": "test",
+        "max_open_conn": 5
+    }
+}

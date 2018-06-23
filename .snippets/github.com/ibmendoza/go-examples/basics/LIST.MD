@@ -1,4 +1,0 @@
-- https://github.com/jmoiron/sqlx
-- https://github.com/johnnylee/sqlxchain
-- https://github.com/carbocation/interpose
-- https://github.com/antonholmquist/jason

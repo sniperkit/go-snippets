@@ -1,0 +1,112 @@
+{
+    "status": "ok",
+    "language": "php",
+    "errors": [],
+    "ast": {
+        "children": [
+            {
+                "attributes": {
+                    "endFilePos": 72,
+                    "endLine": 6,
+                    "endTokenPos": 22,
+                    "startFilePos": 6,
+                    "startLine": 2,
+                    "startTokenPos": 1
+                },
+                "extends": null,
+                "flags": 0,
+                "implements": [],
+                "name": "testcls2",
+                "nodeType": "Stmt_Class",
+                "stmts": [
+                    {
+                        "attributes": {
+                            "endFilePos": 37,
+                            "endLine": 3,
+                            "endTokenPos": 10,
+                            "startFilePos": 27,
+                            "startLine": 3,
+                            "startTokenPos": 7
+                        },
+                        "flags": 4,
+                        "nodeType": "Stmt_Property",
+                        "props": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 36,
+                                    "endLine": 3,
+                                    "endTokenPos": 9,
+                                    "startFilePos": 35,
+                                    "startLine": 3,
+                                    "startTokenPos": 9
+                                },
+                                "default": null,
+                                "name": "a",
+                                "nodeType": "Stmt_PropertyProperty"
+                            }
+                        ],
+                        "type": 4
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 55,
+                            "endLine": 4,
+                            "endTokenPos": 15,
+                            "startFilePos": 43,
+                            "startLine": 4,
+                            "startTokenPos": 12
+                        },
+                        "flags": 2,
+                        "nodeType": "Stmt_Property",
+                        "props": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 54,
+                                    "endLine": 4,
+                                    "endTokenPos": 14,
+                                    "startFilePos": 53,
+                                    "startLine": 4,
+                                    "startTokenPos": 14
+                                },
+                                "default": null,
+                                "name": "b",
+                                "nodeType": "Stmt_PropertyProperty"
+                            }
+                        ],
+                        "type": 2
+                    },
+                    {
+                        "attributes": {
+                            "endFilePos": 70,
+                            "endLine": 5,
+                            "endTokenPos": 20,
+                            "startFilePos": 61,
+                            "startLine": 5,
+                            "startTokenPos": 17
+                        },
+                        "flags": 1,
+                        "nodeType": "Stmt_Property",
+                        "props": [
+                            {
+                                "attributes": {
+                                    "endFilePos": 69,
+                                    "endLine": 5,
+                                    "endTokenPos": 19,
+                                    "startFilePos": 68,
+                                    "startLine": 5,
+                                    "startTokenPos": 19
+                                },
+                                "default": null,
+                                "name": "c",
+                                "nodeType": "Stmt_PropertyProperty"
+                            }
+                        ],
+                        "type": 1
+                    }
+                ],
+                "type": 0
+            }
+        ],
+        "nodeType": "Module"
+    }
+}

@@ -1,0 +1,454 @@
+Status:  ok
+Language:  go
+Errors: 
+UAST: 
+File {
+.  Roles: File
+.  StartPosition: {
+.  .  Offset: 1
+.  .  Line: 1
+.  .  Col: 2
+.  }
+.  EndPosition: {
+.  .  Offset: 69
+.  .  Line: 6
+.  .  Col: 1
+.  }
+.  Children: {
+.  .  0: ast:Position {
+.  .  .  Properties: {
+.  .  .  .  col: 2
+.  .  .  .  internalRole: Package
+.  .  .  .  line: 1
+.  .  .  .  off: 1
+.  .  .  }
+.  .  }
+.  .  1: Ident {
+.  .  .  Roles: Expression,Identifier
+.  .  .  TOKEN "fixtures"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 9
+.  .  .  .  Line: 1
+.  .  .  .  Col: 10
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 17
+.  .  .  .  Line: 2
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: Name
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: ast:Position {
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  col: 10
+.  .  .  .  .  .  internalRole: NamePos
+.  .  .  .  .  .  line: 1
+.  .  .  .  .  .  off: 9
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  2: FuncDecl {
+.  .  .  Roles: Declaration,Function
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 19
+.  .  .  .  Line: 3
+.  .  .  .  Col: 2
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 69
+.  .  .  .  Line: 6
+.  .  .  .  Col: 1
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: Decls
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: FuncType {
+.  .  .  .  .  Roles: Expression,Function,Type
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 19
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 2
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 48
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 31
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: Type
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: ast:Position {
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  col: 2
+.  .  .  .  .  .  .  .  internalRole: Func
+.  .  .  .  .  .  .  .  line: 3
+.  .  .  .  .  .  .  .  off: 19
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: FieldList {
+.  .  .  .  .  .  .  Roles: ArgsList
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 32
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 15
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 34
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 17
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: Params
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: ast:Position {
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  col: 16
+.  .  .  .  .  .  .  .  .  .  internalRole: Closing
+.  .  .  .  .  .  .  .  .  .  line: 3
+.  .  .  .  .  .  .  .  .  .  off: 33
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: ast:Position {
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  col: 15
+.  .  .  .  .  .  .  .  .  .  internalRole: Opening
+.  .  .  .  .  .  .  .  .  .  line: 3
+.  .  .  .  .  .  .  .  .  .  off: 32
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: FieldList {
+.  .  .  .  .  .  .  Roles: ArgsList,Return
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 35
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 18
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 48
+.  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  Col: 31
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: Results
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: ast:Position {
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  col: 30
+.  .  .  .  .  .  .  .  .  .  internalRole: Closing
+.  .  .  .  .  .  .  .  .  .  line: 3
+.  .  .  .  .  .  .  .  .  .  off: 47
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: ast:Position {
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  col: 18
+.  .  .  .  .  .  .  .  .  .  internalRole: Opening
+.  .  .  .  .  .  .  .  .  .  line: 3
+.  .  .  .  .  .  .  .  .  .  off: 35
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  2: Field {
+.  .  .  .  .  .  .  .  .  Roles: Argument,Return
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 36
+.  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  Col: 19
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 39
+.  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  Col: 22
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: List
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  0: Ident {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Type
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "int"
+.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 36
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 19
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 39
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 22
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: Type
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  .  .  0: ast:Position {
+.  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  col: 19
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: NamePos
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  off: 36
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  3: Field {
+.  .  .  .  .  .  .  .  .  Roles: Argument,Return
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 41
+.  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  Col: 24
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 47
+.  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  Col: 30
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  internalRole: List
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  0: Ident {
+.  .  .  .  .  .  .  .  .  .  .  Roles: Expression,Identifier,Type
+.  .  .  .  .  .  .  .  .  .  .  TOKEN "string"
+.  .  .  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 41
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 24
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  .  .  Offset: 47
+.  .  .  .  .  .  .  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  Col: 30
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: Type
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  .  .  0: ast:Position {
+.  .  .  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  col: 24
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  internalRole: NamePos
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  line: 3
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  off: 41
+.  .  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  1: Ident {
+.  .  .  .  .  Roles: Expression,Function,Identifier,Name
+.  .  .  .  .  TOKEN "Testfnc1"
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 24
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 7
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 32
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 15
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: Name
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: ast:Position {
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  col: 7
+.  .  .  .  .  .  .  .  internalRole: NamePos
+.  .  .  .  .  .  .  .  line: 3
+.  .  .  .  .  .  .  .  off: 24
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  .  2: BlockStmt {
+.  .  .  .  .  Roles: Block,Body,Function,Scope,Statement
+.  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  Offset: 49
+.  .  .  .  .  .  Line: 3
+.  .  .  .  .  .  Col: 32
+.  .  .  .  .  }
+.  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  Offset: 69
+.  .  .  .  .  .  Line: 6
+.  .  .  .  .  .  Col: 1
+.  .  .  .  .  }
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  internalRole: Body
+.  .  .  .  .  }
+.  .  .  .  .  Children: {
+.  .  .  .  .  .  0: ast:Position {
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  col: 32
+.  .  .  .  .  .  .  .  internalRole: Lbrace
+.  .  .  .  .  .  .  .  line: 3
+.  .  .  .  .  .  .  .  off: 49
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  1: ast:Position {
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  col: 2
+.  .  .  .  .  .  .  .  internalRole: Rbrace
+.  .  .  .  .  .  .  .  line: 5
+.  .  .  .  .  .  .  .  off: 68
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  .  2: ReturnStmt {
+.  .  .  .  .  .  .  Roles: Return,Statement
+.  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  Offset: 52
+.  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  Col: 3
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  Offset: 67
+.  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  Col: 1
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  internalRole: List
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  0: ast:Position {
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  col: 3
+.  .  .  .  .  .  .  .  .  .  internalRole: Return
+.  .  .  .  .  .  .  .  .  .  line: 4
+.  .  .  .  .  .  .  .  .  .  off: 52
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  1: BasicLit {
+.  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Number,Primitive
+.  .  .  .  .  .  .  .  .  TOKEN "3"
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 59
+.  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  Col: 10
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 60
+.  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  Col: 11
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  Kind: INT
+.  .  .  .  .  .  .  .  .  .  internalRole: Results
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  0: ast:Position {
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  col: 10
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: ValuePos
+.  .  .  .  .  .  .  .  .  .  .  .  line: 4
+.  .  .  .  .  .  .  .  .  .  .  .  off: 59
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  2: BasicLit {
+.  .  .  .  .  .  .  .  .  Roles: Expression,Literal,Primitive,String
+.  .  .  .  .  .  .  .  .  TOKEN ""foo""
+.  .  .  .  .  .  .  .  .  StartPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 62
+.  .  .  .  .  .  .  .  .  .  Line: 4
+.  .  .  .  .  .  .  .  .  .  Col: 13
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  EndPosition: {
+.  .  .  .  .  .  .  .  .  .  Offset: 67
+.  .  .  .  .  .  .  .  .  .  Line: 5
+.  .  .  .  .  .  .  .  .  .  Col: 1
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  Kind: STRING
+.  .  .  .  .  .  .  .  .  .  internalRole: Results
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  Children: {
+.  .  .  .  .  .  .  .  .  .  0: ast:Position {
+.  .  .  .  .  .  .  .  .  .  .  Properties: {
+.  .  .  .  .  .  .  .  .  .  .  .  col: 13
+.  .  .  .  .  .  .  .  .  .  .  .  internalRole: ValuePos
+.  .  .  .  .  .  .  .  .  .  .  .  line: 4
+.  .  .  .  .  .  .  .  .  .  .  .  off: 62
+.  .  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  .  }
+.  .  .  .  .  .  .  }
+.  .  .  .  .  .  }
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  3: Ident {
+.  .  .  Roles: Expression,Identifier
+.  .  .  TOKEN "int"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 36
+.  .  .  .  Line: 3
+.  .  .  .  Col: 19
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 39
+.  .  .  .  Line: 3
+.  .  .  .  Col: 22
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: Unresolved
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: ast:Position {
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  col: 19
+.  .  .  .  .  .  internalRole: NamePos
+.  .  .  .  .  .  line: 3
+.  .  .  .  .  .  off: 36
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  .  4: Ident {
+.  .  .  Roles: Expression,Identifier
+.  .  .  TOKEN "string"
+.  .  .  StartPosition: {
+.  .  .  .  Offset: 41
+.  .  .  .  Line: 3
+.  .  .  .  Col: 24
+.  .  .  }
+.  .  .  EndPosition: {
+.  .  .  .  Offset: 47
+.  .  .  .  Line: 3
+.  .  .  .  Col: 30
+.  .  .  }
+.  .  .  Properties: {
+.  .  .  .  internalRole: Unresolved
+.  .  .  }
+.  .  .  Children: {
+.  .  .  .  0: ast:Position {
+.  .  .  .  .  Properties: {
+.  .  .  .  .  .  col: 24
+.  .  .  .  .  .  internalRole: NamePos
+.  .  .  .  .  .  line: 3
+.  .  .  .  .  .  off: 41
+.  .  .  .  .  }
+.  .  .  .  }
+.  .  .  }
+.  .  }
+.  }
+}
+

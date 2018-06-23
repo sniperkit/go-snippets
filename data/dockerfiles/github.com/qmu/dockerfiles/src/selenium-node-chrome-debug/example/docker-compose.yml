@@ -1,0 +1,25 @@
+hub:
+  image: selenium/hub
+  ports:
+    - "4444:4444"
+
+node-firefox:
+  image: qmu1/selenium-node-firefox-debug
+  expose:
+    - "5555"
+  links:
+    - hub
+
+node-mobile:
+  image: qmu1/selenium-node-firefox-debug
+  expose:
+    - "5555"
+  links:
+    - hub
+
+node-chrome:
+  image: qmu1/selenium-node-chrome-debug
+  expose:
+    - "5555"
+  links:
+    - hub

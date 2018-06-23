@@ -1,0 +1,8 @@
+$ npm install -g vue-cli
+$ vue init webpack myapp
+$ cd myapp
+$ npm install
+$ npm run dev
+$ npm run build
+
+#如果run出错的话考虑是默认端口冲突，修改build/dev-server.js中的端口变量就可以修改默认端口了.

@@ -1,3 +1,0 @@
-package fixtures
-
-import . "fmt"
