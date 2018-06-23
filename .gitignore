@@ -1,0 +1,12 @@
+logs
+*.log
+npm-debug.log*
+build
+node_modules
+.cache
+dist
+package-lock.json
+website/index.merged.html
+website/index.html
+
+**/.DS_Store
