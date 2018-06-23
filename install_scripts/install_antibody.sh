@@ -1,0 +1,1 @@
+../zsh/antibody/install.sh

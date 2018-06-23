@@ -1,0 +1,12 @@
+[submodule "emacs.d/packages/platform-p"]
+	path = emacs.d/packages/platform-p
+	url = https://github.com/ongaeshi/platform-p
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = https://github.com/wkentaro/oh-my-zsh.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule "config/gnome-terminal-colors-solarized"]
+	path = config/gnome-terminal-colors-solarized
+	url = https://github.com/Anthony25/gnome-terminal-colors-solarized.git

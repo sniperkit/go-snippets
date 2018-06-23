@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+import argparse
+
+import fcn
+import skimage.io
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('img_files', nargs='+', help='image files')
+    parser.add_argument('-O', '--out', required=True, help='output file')
+    parser.add_argument('-n', '--n-imgs', type=int, help='number of images')
+    parser.add_argument('-x', '--shape', help='image shape (ex. 5x6)')
+    args = parser.parse_args()
+
+    shape = None
+    if args.shape:
+        shape = args.shape.split('x')
+        shape = int(shape[0]), int(shape[1])
+
+    imgs = []
+    for img_file in args.img_files:
+        img = skimage.io.imread(img_file)
+        imgs.append(img)
+        if args.n_imgs == len(imgs):
+            break
+
+    tiled = fcn.utils.get_tile_image(imgs, shape)
+    skimage.io.imsave(args.out, tiled)
+
+
+if __name__ == '__main__':
+    main()
