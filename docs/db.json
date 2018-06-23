@@ -1,0 +1,1359 @@
+{
+  "http://15721.courses.cs.cmu.edu/spring2016/": {
+    "desc": "CMU 15-721 (SPRING 2016) Database Systems",
+    "name": "CMU 15-721 (SPRING 2016) Database Systems",
+    "tags": [
+      "databases",
+      "theory"
+    ]
+  },
+  "http://15721.courses.cs.cmu.edu/spring2017/": {
+    "desc": "CMU 15-721 (SPRING 2017) Advanced Database Systems",
+    "name": "CMU 15-721 (SPRING 2017) Advanced Database Systems",
+    "tags": [
+      "databases",
+      "theory"
+    ]
+  },
+  "http://akumuli.org/akumuli/2017/04/29/nbplustree/": {
+    "desc": "Storage engine design(Part 1)",
+    "name": "Storage engine design(Part 1)",
+    "tags": [
+      "databases",
+      "design",
+      "implementation"
+    ]
+  },
+  "http://akumuli.org/akumuli/2017/08/01/storage-engine-design2/": {
+    "desc": "Storage engine design(Part 2)",
+    "name": "Storage engine design(Part 2)",
+    "tags": [
+      "databases",
+      "design",
+      "implementation"
+    ]
+  },
+  "http://aliceinwire.net/": {
+    "desc": "Minimal blog example",
+    "name": "Minimal blog example",
+    "tags": [
+      "blog",
+      "tech"
+    ]
+  },
+  "http://blog.ycombinator.com/building-for-the-blockchain/": {
+    "desc": "Building for the Blockchain",
+    "name": "Building for the Blockchain",
+    "tags": [
+      "cryptocurrencies",
+      "blockchain",
+      "article"
+    ]
+  },
+  "http://cassidoo.co/": {
+    "desc": "Personal blog of Cassidy williams",
+    "name": "Cassidy Williams: Software Engineer in Seattle",
+    "tags": [
+      "blog",
+      "tech"
+    ]
+  },
+  "http://catswhisker.xyz/log/2017/9/7/a_first_excercise_in_natural_language_processing_with_python_counting_hapaxes/#_finding_hapaxes_with_spacy": {
+    "desc": "A First Exercise in Natural Language Processing with Python: Counting Hapaxes",
+    "name": "A First Exercise in Natural Language Processing with Python: Counting Hapaxes",
+    "tags": [
+      "nlp",
+      "example",
+      "hapaxes",
+      "nltk",
+      "spacy"
+    ]
+  },
+  "http://clarkgrubb.com/nlp": {
+    "desc": "NLP tasks with various libraries",
+    "name": "NLP tasks with various libraries",
+    "tags": [
+      "nlp",
+      "libraries",
+      "blog",
+      "howto"
+    ]
+  },
+  "http://db.cs.berkeley.edu/papers/fntdb07-architecture.pdf": {
+    "desc": "Architecture of a Database System",
+    "name": "Architecture of a Database System",
+    "tags": [
+      "paper",
+      "databases",
+      "implementation",
+      "architecture"
+    ]
+  },
+  "http://dci.mit.edu/decentralizedweb": {
+    "desc": "BACK TO THE FUTURE: THE DECENTRALIZED WEB - A report by the Digital Currency Initiative and the Center for Civic Media",
+    "name": "BACK TO THE FUTURE: THE DECENTRALIZED WEB - A report by the Digital Currency Initiative and the Center for Civic Media",
+    "tags": [
+      "webarchitecture",
+      "future",
+      "article"
+    ]
+  },
+  "http://michal.space/ipns/michal.space/bitcoin-explained-part-one/": {
+    "desc": "Bitcoin Workings Explained, For Real: Part One",
+    "name": "Bitcoin Workings Explained, For Real: Part One",
+    "tags": [
+      "cryptocurrencies",
+      "bitcoin",
+      "article"
+    ]
+  },
+  "http://michal.space/ipns/michal.space/bitcoin-explained-part-three/": {
+    "desc": "Bitcoin Workings Explained, For Real: Part Three",
+    "name": "Bitcoin Workings Explained, For Real: Part Three",
+    "tags": [
+      "cryptocurrencies",
+      "bitcoin",
+      "article"
+    ]
+  },
+  "http://michal.space/ipns/michal.space/bitcoin-explained-part-two/": {
+    "desc": "Bitcoin Workings Explained, For Real: Part Two",
+    "name": "Bitcoin Workings Explained, For Real: Part Two",
+    "tags": [
+      "cryptocurrencies",
+      "article",
+      "bitcoin"
+    ]
+  },
+  "http://nicktasios.nl/posts/space-invaders-from-scratch-part-1.html": {
+    "desc": "Space Invaders from Scratch - Part 1",
+    "name": "Space Invaders from Scratch - Part 1",
+    "tags": [
+      "gameprogramming",
+      "spaceinvaders",
+      "opengl",
+      "cpp"
+    ]
+  },
+  "http://norvig.com/21-days.html": {
+    "desc": "Teach Yourself Programming in Ten Years",
+    "name": "Teach Yourself Programming in Ten Years",
+    "tags": [
+      "article",
+      "teach",
+      "programming"
+    ]
+  },
+  "http://pages.cs.wisc.edu/~remzi/OSTEP/": {
+    "desc": "Operating Systems: Three Easy Pieces",
+    "name": "Operating Systems: Three Easy Pieces",
+    "tags": [
+      "distributedsystems",
+      "theory",
+      "os"
+    ]
+  },
+  "http://rogueliketutorials.com/": {
+    "desc": "Python Roguelike Tutorial",
+    "name": "Python Roguelike Tutorial",
+    "tags": [
+      "gameprogramming",
+      "python",
+      "roguelike",
+      "console"
+    ]
+  },
+  "http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html": {
+    "desc": "What We Talk About When We Talk About Distributed Systems",
+    "name": "What We Talk About When We Talk About Distributed Systems",
+    "tags": [
+      "distributedsystems",
+      "theory"
+    ]
+  },
+  "http://web.stanford.edu/class/cs276/": {
+    "desc": "MOOC about information retrieval and web search",
+    "name": "CS 276 / LING 286: Information Retrieval and Web Search",
+    "tags": [
+      "informationretrieval",
+      "websearch",
+      "course",
+      "stanford"
+    ]
+  },
+  "http://wttr.in/": {
+    "desc": "Ascii weather",
+    "name": "Ascii weather",
+    "tags": [
+      "oldskool",
+      "ascii",
+      "weather"
+    ]
+  },
+  "http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/es/index.html": {
+    "desc": "Spanish tutorial about learning git with an analogy of a multiplayer game",
+    "name": "Git Magic",
+    "tags": [
+      "git",
+      "book",
+      "tutorial"
+    ]
+  },
+  "http://www.dbms2.com/2015/04/16/notes-on-indexes-and-index-like-structures/": {
+    "desc": "Notes on indexes and index-like structures",
+    "name": "Notes on indexes and index-like structures",
+    "tags": [
+      "databases",
+      "design",
+      "implementation"
+    ]
+  },
+  "http://www.dourish.com/goodies/jargon.html": {
+    "desc": "The Original Hacker's Dictionary",
+    "name": "The Original Hacker's Dictionary",
+    "tags": [
+      "dictionary",
+      "hacker",
+      "oldskool"
+    ]
+  },
+  "http://www.fast.ai/": {
+    "desc": "fast.ai is dedicated to making the power of deep learning accessible to all",
+    "name": "fast.ai: Making neural nets uncool again",
+    "tags": [
+      "deeplearning",
+      "marchinlearning",
+      "blog"
+    ]
+  },
+  "http://www.forexnews.com/bitcoin-trading/": {
+    "desc": "Bitcoin Trading \u2013 The Ultimate Guide",
+    "name": "Bitcoin Trading \u2013 The Ultimate Guide",
+    "tags": [
+      "cryptocurrencies",
+      "trading"
+    ]
+  },
+  "http://www.gjermundbjaanes.com/understanding-ethereum-smart-contracts/": {
+    "desc": "Understanding Ethereum Smart Contracts",
+    "name": "Understanding Ethereum Smart Contracts",
+    "tags": [
+      "cryptocurrencies",
+      "blockchain",
+      "ethereum",
+      "smartcontracts"
+    ]
+  },
+  "http://www.labri.fr/perso/nrougier/from-python-to-numpy/#id9": {
+    "desc": "From Python to Numpy",
+    "name": "From Python to Numpy",
+    "tags": [
+      "python",
+      "manual",
+      "book",
+      "vectorization"
+    ]
+  },
+  "http://www.linuxjournal.com/content/zfs-linux": {
+    "desc": "Introduction & tutorial about ZFS in linux",
+    "name": "ZFS for Linux",
+    "tags": [
+      "zfs",
+      "linux",
+      "article",
+      "tutorial"
+    ]
+  },
+  "http://www.philipotoole.com/designing-a-search-system-for-log-data-part-i/": {
+    "desc": "Designing a search system for log data \u2014 part 1",
+    "name": "Designing a search system for log data \u2014 part 1",
+    "tags": [
+      "distributedsystems",
+      "log",
+      "design",
+      "implementation"
+    ]
+  },
+  "http://www.redbook.io/index.html": {
+    "desc": "Readings in Database Systems, 5th Edition",
+    "name": "Readings in Database Systems, 5th Edition",
+    "tags": [
+      "databases",
+      "theory"
+    ]
+  },
+  "https://able.bio/drenther/react-server-side-rendering-from-scratch--43mfqwo": {
+    "desc": "We will implement a basic server-side rendering React app from scratch using express",
+    "name": "React Server-Side Rendering from Scratch",
+    "tags": [
+      "react",
+      "webdevelopment"
+    ]
+  },
+  "https://bitbucket.org/MartinFelis/love-android-sdl2/": {
+    "desc": "Love2d Android Bitbucket",
+    "name": "Love2d Android Bitbucket",
+    "tags": [
+      "gameprogramming",
+      "love2d",
+      "android",
+      "packaging"
+    ]
+  },
+  "https://bitbucket.org/npinochet/love-android-sdl2/commits/all": {
+    "desc": "Love2d Adnroid Fork. With ads?",
+    "name": "Love2d Adnroid Fork. With ads?",
+    "tags": [
+      "gameprogramming",
+      "android",
+      "love2d"
+    ]
+  },
+  "https://blockexplorer.com/news/top-25-cryptocurrency-exchanges-2017/": {
+    "desc": "Top 25 Cryptocurrency Exchanges of 2017",
+    "name": "Top 25 Cryptocurrency Exchanges of 2017",
+    "tags": [
+      "cryptocurrencies",
+      "trading"
+    ]
+  },
+  "https://blog.ably.io/how-to-implement-consistent-hashing-efficiently-fe038d59fff2": {
+    "desc": "Ably\u2019s realtime platform is distributed across more than 14 physical data centres and 100s of nodes. In order for us to ensure both load and data are distributed evenly and consistently across all our nodes, we use consistent hashing algorithms",
+    "name": "How we implemented consistent hashing efficiently",
+    "tags": [
+      "distributedsystems",
+      "implementation",
+      "datastructures"
+    ]
+  },
+  "https://blog.algolia.com/natural-languages-in-search/": {
+    "desc": "Handling natural languages in search",
+    "name": "Handling natural languages in search",
+    "tags": [
+      "nlp",
+      "search"
+    ]
+  },
+  "https://blog.gojekengineering.com/resiliency-in-distributed-systems-efd30f74baf4": {
+    "desc": "Resiliency in Distributed Systems",
+    "name": "Resiliency in Distributed Systems",
+    "tags": [
+      "distributedsystems",
+      "resiliency",
+      "article",
+      "intro"
+    ]
+  },
+  "https://blog.jooq.org/2016/07/04/how-functional-programming-will-finally-do-away-with-the-gof-patterns/": {
+    "desc": "Revision functional programming compartinf gof pattern",
+    "name": "How Functional Programming will (Finally) do Away With the GoF Patterns",
+    "tags": [
+      "article",
+      "functional-programming",
+      "pattern",
+      "gof"
+    ]
+  },
+  "https://blog.positive.com/rewriting-history-a-brief-introduction-to-long-range-attacks-54e473acdba9": {
+    "desc": "Rewriting History: A Brief Introduction to Long Range Attacks",
+    "name": "Rewriting History: A Brief Introduction to Long Range Attacks",
+    "tags": [
+      "cryptocurrencies",
+      "blockchain",
+      "hacking"
+    ]
+  },
+  "https://blog.separateconcerns.com/2015-07-07-four-easy-reads-distsys.html": {
+    "desc": "Four easy reads to understand distributed systems issues",
+    "name": "Four easy reads to understand distributed systems issues",
+    "tags": [
+      "distributedsystems",
+      "theory"
+    ]
+  },
+  "https://bluxte.net/musings/2018/04/10/go-good-bad-ugly/": {
+    "desc": "Go: the Good, the Bad and the Ugly",
+    "name": "Go: the Good, the Bad and the Ugly",
+    "tags": [
+      "golang",
+      "programming",
+      "language"
+    ]
+  },
+  "https://boyter.org/posts/how-to-start-go-project-2018/": {
+    "desc": "How to start a Go project in 2018",
+    "name": "How to start a Go project in 2018",
+    "tags": [
+      "golang",
+      "101",
+      "programming"
+    ]
+  },
+  "https://chainoperator.com/cryptocurrency-trading-guide/": {
+    "desc": "Trading Cryptocurrency in 2018: The Definitive Guide",
+    "name": "Trading Cryptocurrency in 2018: The Definitive Guide",
+    "tags": [
+      "cryptocurrencies",
+      "trading"
+    ]
+  },
+  "https://coinmarketcap.com": {
+    "desc": "Show the historical values of the cryptocurrencies",
+    "name": "CryptoCurrency Market Capitalizations",
+    "tags": [
+      "cryptocurrencies",
+      "stats"
+    ]
+  },
+  "https://cs.uwaterloo.ca/~plragde/flaneries/FDS/": {
+    "desc": "Book about Functional Data Structures",
+    "name": "Functional Data Structures",
+    "tags": [
+      "book",
+      "functionalprogramming",
+      "datastructures",
+      "programming"
+    ]
+  },
+  "https://cs50.github.io/games/": {
+    "desc": "harvard basic game programming course",
+    "name": "[CSCI E-23a] Introduction to Game Development",
+    "tags": [
+      "gameprogramming",
+      "course",
+      "love2d",
+      "gamedevelopment",
+      "university"
+    ]
+  },
+  "https://developers.google.com/machine-learning/crash-course/": {
+    "desc": "MACHINE LEARNING CRASH COURSE FROM GOOGLE",
+    "name": "Curso intensivo de aprendizaje autom\u00e1tico",
+    "tags": [
+      "machinelearning",
+      "course",
+      "tensorflow",
+      "google"
+    ]
+  },
+  "https://developers.google.com/machine-learning/rules-of-ml/": {
+    "desc": "Recomendaciones para la ingenier\u00eda de aprendizaje autom\u00e1tico",
+    "name": "Recomendaciones para la ingenier\u00eda de aprendizaje autom\u00e1tico",
+    "tags": [
+      "machinelearning",
+      "guide",
+      "tutorial",
+      "101"
+    ]
+  },
+  "https://diaspora.github.io/diaspora_federation/index.html": {
+    "desc": "The purpose of this document is to specify the communications that go on between diaspora* servers (and other servers supporting this protocol). If you experience any issues, feel free to get in touch with us",
+    "name": "diaspora* federation protocol",
+    "tags": [
+      "protocol",
+      "internet",
+      "communication",
+      "reference"
+    ]
+  },
+  "https://eli.thegreenplace.net/2017/concurrent-servers-part-1-introduction/": {
+    "desc": "Concurrent Servers: Part 1 - Introduction",
+    "name": "Concurrent Servers: Part 1 - Introduction",
+    "tags": [
+      "webarchitecture",
+      "technical"
+    ]
+  },
+  "https://eli.thegreenplace.net/2017/concurrent-servers-part-2-threads/": {
+    "desc": "Concurrent Servers: Part 2 - Threads",
+    "name": "Concurrent Servers: Part 2 - Threads",
+    "tags": [
+      "webarchitecture",
+      "technical"
+    ]
+  },
+  "https://eli.thegreenplace.net/2017/concurrent-servers-part-3-event-driven/": {
+    "desc": "Concurrent Servers: Part 3 - Event-driven",
+    "name": "Concurrent Servers: Part 3 - Event-driven",
+    "tags": [
+      "webarchitecture",
+      "technical"
+    ]
+  },
+  "https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying": {
+    "desc": "The Log: What every software engineer should know about real-time data's unifying abstraction",
+    "name": "The Log: What every software engineer should know about real-time data's unifying abstraction",
+    "tags": [
+      "distributedsystems",
+      "theory",
+      "log"
+    ]
+  },
+  "https://fabxc.org/tsdb/": {
+    "desc": "Writing a Time Series Database from Scratch",
+    "name": "Writing a Time Series Database from Scratch",
+    "tags": [
+      "databases",
+      "programing",
+      "timeseries"
+    ]
+  },
+  "https://frontendmasters.com/books/front-end-handbook/2018/": {
+    "desc": "Front-End Developer Handbook 2018",
+    "name": "Front-End Developer Handbook 2018",
+    "tags": [
+      "frontend",
+      "development",
+      "web",
+      "handbook"
+    ]
+  },
+  "https://gamedevelopment.tutsplus.com/tutorials/code-optimizations-for-game-development-basic-structures-and-mindsets--cms-30760": {
+    "desc": "Code Optimizations for Game Development: Basic Structures and Mindsets",
+    "name": "Code Optimizations for Game Development: Basic Structures and Mindsets",
+    "tags": [
+      "gamedevelopment",
+      "gameprogramming",
+      "codioptimizations",
+      "programming"
+    ]
+  },
+  "https://gearheart.io/blog/creating-a-site-preview-like-in-slack-using-aiohttp/": {
+    "desc": "Creating a site preview like in slack (using aiohttp)",
+    "name": "Creating a site preview like in slack (using aiohttp)",
+    "tags": [
+      "python",
+      "web",
+      "tutorial"
+    ]
+  },
+  "https://github.com/DovAmir/awesome-design-patterns": {
+    "desc": "Awesome design patterns list",
+    "name": "Awesome design patterns",
+    "tags": [
+      "awesome-list",
+      "designpattern",
+      "softwaredesign",
+      "microservices",
+      "cloud"
+    ]
+  },
+  "https://github.com/GetStoryline/awesome-bots": {
+    "desc": "Awesome bots",
+    "name": "awesome-bots",
+    "tags": [
+      "awesome-list",
+      "chatbot",
+      "nlp"
+    ]
+  },
+  "https://github.com/LisaDziuba/Marketing-for-Engineers": {
+    "desc": "Marketing for Engineers",
+    "name": "Marketing for Engineers",
+    "tags": [
+      "gameprogramming",
+      "tutorials",
+      "marketing"
+    ]
+  },
+  "https://github.com/RasaHQ/rasa_nlu": {
+    "desc": "Rasa NLU (Natural Language Understanding) is a tool for understanding what is being said in short pieces of text",
+    "name": "turn natural language into structured data",
+    "tags": [
+      "library",
+      "python",
+      "nlp",
+      "nlu"
+    ]
+  },
+  "https://github.com/cmahon/awesome-cryptocurrency": {
+    "desc": "A curated list of awesome blockchain, cryptocurrency and fintech resources. Early stage work in progress.",
+    "name": "awesome cryptocurrencies",
+    "tags": [
+      "awesome-list",
+      "bitcoin",
+      "cryptocurrencies",
+      "cryptocurrency"
+    ]
+  },
+  "https://github.com/google/python-fire": {
+    "desc": "fire: Python Fire is a library for automatically generating command line interfaces (CLIs) from absolutely any Python object.",
+    "name": "fire: Python Fire is a library for automatically generating command line interfaces (CLIs) from absolutely any Python object.",
+    "tags": [
+      "python",
+      "library"
+    ]
+  },
+  "https://github.com/grab/front-end-guide": {
+    "desc": "Study guide and introduction tothe modern front end stack",
+    "name": "Study guide and introduction to the modern front end stack",
+    "tags": [
+      "webdev",
+      "tutorials",
+      "guide"
+    ]
+  },
+  "https://github.com/harpribot/awesome-information-retrieval": {
+    "desc": "Curated list of information retrieval and web search resources from all around the web.",
+    "name": "Awesome information retrieval",
+    "tags": [
+      "awesome-list",
+      "informationretrieval"
+    ]
+  },
+  "https://github.com/iliakan/javascript-tutorial-en": {
+    "desc": "Modern javascript tutorial",
+    "name": "Modern javascript tutorial",
+    "tags": [
+      "webdev",
+      "tutorials",
+      "javascript"
+    ]
+  },
+  "https://github.com/jwasham/coding-interview-university#pick-one-language-for-the-interview": {
+    "desc": "A complete computer science study plan to become a software engineer.",
+    "name": "A complete computer science study plan to become a software engineer.",
+    "tags": [
+      "roadmap",
+      "programming",
+      "codinginterview",
+      "studyplan"
+    ]
+  },
+  "https://github.com/kamranahmedse/developer-roadmap": {
+    "desc": "Roadmap to becoming a web developer in 2018",
+    "name": "Web developer roadmap",
+    "tags": [
+      "backend",
+      "graphic",
+      "diagram",
+      "developer"
+    ]
+  },
+  "https://github.com/learn-anything/books": {
+    "desc": "Interesting books",
+    "name": "Interesting Books Lists",
+    "tags": [
+      "awesome-list",
+      "book",
+      "list",
+      "programming",
+      "it"
+    ]
+  },
+  "https://github.com/open-guides/og-aws": {
+    "desc": "Amazon Web Services \u2014 a practical guide",
+    "name": "Amazon Web Services \u2014 a practical guide",
+    "tags": [
+      "aws",
+      "webarchitecture",
+      "manuals"
+    ]
+  },
+  "https://github.com/pypa/pipenv": {
+    "desc": "pipenv: Python Development Workflow for Humans",
+    "name": "pipenv: Python Development Workflow for Humans",
+    "tags": [
+      "python",
+      "library"
+    ]
+  },
+  "https://github.com/rby90/Project-Based-Tutorials-in-C": {
+    "desc": "A curated list of project-based tutorials in C",
+    "name": "Project based tutorials in C",
+    "tags": [
+      "clang",
+      "projects",
+      "sourcecode",
+      "examples"
+    ]
+  },
+  "https://github.com/rxin/db-readings": {
+    "desc": "Readings in Databases",
+    "name": "Readings in Databases",
+    "tags": [
+      "databases",
+      "theory"
+    ]
+  },
+  "https://github.com/sdispater/pendulum": {
+    "desc": "pendulum: Python datetimes made easy",
+    "name": "pendulum: Python datetimes made easy",
+    "tags": [
+      "python",
+      "library"
+    ]
+  },
+  "https://github.com/theanalyst/awesome-distributed-systems": {
+    "desc": "A curated list to learn about distributed systems",
+    "name": "A curated list to learn about distributed systems",
+    "tags": [
+      "distributedsystems",
+      "theory"
+    ]
+  },
+  "https://github.com/tombusby/cypherpunk-research": {
+    "desc": "This repository is essentially for compiling information about Cypherpunks, the history of the movement, and the people/events of note.",
+    "name": "Cypherpunk Research",
+    "tags": [
+      "cypherpunk",
+      "awesome-list"
+    ]
+  },
+  "https://github.com/verekia/js-stack-from-scratch": {
+    "desc": "Step-by-step tutorial to build a modern JavaScript stack.",
+    "name": "Step-by-step tutorial to build a modern JavaScript stack.",
+    "tags": [
+      "webdev",
+      "tutorials",
+      "javascript"
+    ]
+  },
+  "https://github.com/wimvanderbauwhede/limited-systems/wiki/Hacking-the-Pleroma:-Elixir,-Phoenix-and-a-bit-of-ActivityPub": {
+    "desc": "Hacking the Pleroma: Elixir, Phoenix and a bit of ActivityPub",
+    "name": "Hacking the Pleroma: Elixir, Phoenix and a bit of ActivityPub",
+    "tags": [
+      "activitypub",
+      "hacking",
+      "programming",
+      "tutorial"
+    ]
+  },
+  "https://github.com/yandexdataschool": {
+    "desc": "Yandex data analysis projects",
+    "name": "Yandex data analysis projects",
+    "tags": [
+      "yandex",
+      "dataanalysis",
+      "machinelearning",
+      "projects"
+    ]
+  },
+  "https://grothoff.org/christian/habil.pdf": {
+    "desc": "GNUNET Paper",
+    "name": "GNUNET Paper",
+    "tags": [
+      "distributedsystems",
+      "gnunet",
+      "paper",
+      "theory"
+    ]
+  },
+  "https://heartbeat.fritz.ai/the-7-nlp-techniques-that-will-change-how-you-communicate-in-the-future-part-i-f0114b2f0497": {
+    "desc": "The 7 NLP Techniques That Will Change How You Communicate in the Future (Part I)",
+    "name": "The 7 NLP Techniques That Will Change How You Communicate in the Future (Part I)",
+    "tags": [
+      "nlp",
+      "machinelearning"
+    ]
+  },
+  "https://increment.com/programming-languages/crash-course-in-compilers/": {
+    "desc": "A crash course in compilers",
+    "name": "A crash course in compilers",
+    "tags": [
+      "compiler",
+      "101",
+      "introduction",
+      "course"
+    ]
+  },
+  "https://jacobian.org/writing/python-environment-2018/": {
+    "desc": "MY PYTHON DEVELOPMENT ENVIRONMENT, 2018 EDITION",
+    "name": "MY PYTHON DEVELOPMENT ENVIRONMENT, 2018 EDITION",
+    "tags": [
+      "python",
+      "environment"
+    ]
+  },
+  "https://jvns.ca/blog/2018/03/05/things-ive-learned-networking/": {
+    "desc": "A few things I've learned about computer networking",
+    "name": "A few things I've learned about computer networking",
+    "tags": [
+      "networking",
+      "linux",
+      "miniguide"
+    ]
+  },
+  "https://jvns.ca/blog/2018/04/16/new-perf-zine/": {
+    "desc": "Profiling & tracing with perf",
+    "name": "Profiling & tracing with perf",
+    "tags": [
+      "ezine",
+      "perf",
+      "network",
+      "comic"
+    ]
+  },
+  "https://learnxinyminutes.com/docs/elixir/": {
+    "desc": "Learn Elixir in Y minutes",
+    "name": "Learn Elixir in Y Minutes",
+    "tags": [
+      "elixir",
+      "tutorial",
+      "programming",
+      "cheatsheet"
+    ]
+  },
+  "https://lethain.com//some-of-my-favorite-technical-papers/": {
+    "desc": "Some of my favorite technical papers.",
+    "name": "Some of my favorite technical papers.",
+    "tags": [
+      "papers",
+      "readinglist",
+      "computerscience"
+    ]
+  },
+  "https://letsencrypt.org/": {
+    "desc": "Free, automated and open certificate authority",
+    "name": "FREE SSL Web Certificate",
+    "tags": [
+      "webdev",
+      "resources",
+      "ssl"
+    ]
+  },
+  "https://love2d.org/forums/viewtopic.php?t=82166": {
+    "desc": "Android Admob and Google Play Game Services Support",
+    "name": "Android Admob and Google Play Game Services Support",
+    "tags": [
+      "gameprogramming",
+      "packaging",
+      "love2d",
+      "android"
+    ]
+  },
+  "https://medium.com/airbnb-engineering/react-native-at-airbnb-f95aa460be1c": {
+    "desc": "In 2016, we took a big bet on React Native. Two years later, we\u2019re ready to share our experience with the world and show what\u2019s next",
+    "name": "React Native at Airbnb",
+    "tags": [
+      "react",
+      "reactnative",
+      "mobile"
+    ]
+  },
+  "https://medium.com/data-from-the-trenches/text-classification-the-first-step-toward-nlp-mastery-f5f95d525d73": {
+    "desc": "Build a Strong Baseline by Following Simple Steps",
+    "name": "Text Classification: The First Step Toward NLP Mastery",
+    "tags": [
+      "nlp",
+      "introduction",
+      "101",
+      "machinelearning"
+    ]
+  },
+  "https://medium.com/machine-learning-for-humans/why-machine-learning-matters-6164faf1df12": {
+    "desc": "Machine learning for humans",
+    "name": "Machine learning for humans",
+    "tags": [
+      "101",
+      "introduction",
+      "machinelearning"
+    ]
+  },
+  "https://medium.com/mlreview/topic-modeling-with-scikit-learn-e80d33668730": {
+    "desc": "Topic Modeling with Scikit Learn",
+    "name": "Topic Modeling with Scikit Learn",
+    "tags": [
+      "machinelearning",
+      "topicmodeling",
+      "scikitlearn",
+      "python"
+    ]
+  },
+  "https://medium.com/startup-grind/what-every-software-engineer-should-know-about-search-27d1df99f80d": {
+    "desc": "Want to build or improve a search experience? Start here.",
+    "name": "What every software engineer should know about search",
+    "tags": [
+      "search",
+      "article",
+      "roadmap",
+      "searchengines"
+    ]
+  },
+  "https://medium.com/tech-tajawal/modern-backend-developer-in-2018-6b3f7b5f8b9": {
+    "desc": "Modern Backend Developer in 2018",
+    "name": "Backend developer roadmap",
+    "tags": [
+      "backend",
+      "developer",
+      "roadmap"
+    ]
+  },
+  "https://medium.com/towards-data-science/write-the-code-f6d58c728df0": {
+    "desc": "The architecture behind Skyscanner\u2019s recommended destinations",
+    "name": "The architecture behind Skyscanner\u2019s recommended destinations",
+    "tags": [
+      "webarchitecture",
+      "examples"
+    ]
+  },
+  "https://ml-compiled.readthedocs.io/en/latest/about.html": {
+    "desc": "ML Compiled is an encyclopedia for machine learning and related subjects with an emphasis on explanations that are concise and intuitive",
+    "name": "ML Compiled",
+    "tags": [
+      "machinelearning",
+      "101",
+      "awesome-list"
+    ]
+  },
+  "https://monades.roperzh.com/": {
+    "desc": "Ramblings about Programming, Elixir, JavaScript and others",
+    "name": "Monades blog",
+    "tags": [
+      "blog",
+      "programming",
+      "oldskool"
+    ]
+  },
+  "https://monkey.org/~marius/unix-tools-hints.html": {
+    "desc": "HINTS FOR WRITING UNIX TOOLS",
+    "name": "HINTS FOR WRITING UNIX TOOLS",
+    "tags": [
+      "unix",
+      "tools",
+      "programming",
+      "linux"
+    ]
+  },
+  "https://monkeylearn.com/blog/beginners-guide-text-vectorization/": {
+    "desc": "The Beginner\u2019s Guide to Text Vectorization",
+    "name": "The Beginner\u2019s Guide to Text Vectorization",
+    "tags": [
+      "nlp",
+      "text",
+      "tutorial",
+      "introduction"
+    ]
+  },
+  "https://monkeylearn.com/blog/getting-started-in-natural-language-processing-nlp/": {
+    "desc": "Getting started in Natural Language Processing (NLP)",
+    "name": "Getting started in Natural Language Processing (NLP)",
+    "tags": [
+      "nlp",
+      "machinelearning",
+      "introduction",
+      "101"
+    ]
+  },
+  "https://nlpforhackers.io/textrank-text-summarization/": {
+    "desc": "TextRank for Text Summarization",
+    "name": "TextRank for Text Summarization",
+    "tags": [
+      "nlp",
+      "textrank",
+      "summarization"
+    ]
+  },
+  "https://nlpforhackers.io/topic-modeling/": {
+    "desc": "Topic modelling, in the context of Natural Language Processing, is described as a method of uncovering hidden structure in a collection of texts",
+    "name": "Complete Guide to Topic Modeling",
+    "tags": [
+      "nlp",
+      "topicmodeling",
+      "guide"
+    ]
+  },
+  "https://nosql.zeef.com/stefan.edlich": {
+    "desc": "NoSQL Database List",
+    "name": "NoSQL Database List",
+    "tags": [
+      "databases",
+      "examples",
+      "nosql"
+    ]
+  },
+  "https://numaverse.com/": {
+    "desc": "Open source, on Ethereum, with built-in support for federation.",
+    "name": "A distributed social network",
+    "tags": [
+      "ethereum",
+      "socialnetwork",
+      "activitypub",
+      "project"
+    ]
+  },
+  "https://opensource.com/article/18/4/ext4-filesystem": {
+    "desc": "Learn the history of ext4, including what's different from ext3 and the other filesystems that came before it.",
+    "name": "Understanding Linux filesystems: ext4 and beyond",
+    "tags": [
+      "filesystem",
+      "ext4",
+      "linux"
+    ]
+  },
+  "https://ordepdev.me/posts/what-you-should-know-about-database-storage-and-retrieval": {
+    "desc": "List of papers about databases",
+    "name": "What you should know about database storage and retrieval",
+    "tags": [
+      "databases",
+      "retrieval",
+      "theory",
+      "papers",
+      "article"
+    ]
+  },
+  "https://ownyourbits.com/2018/05/23/the-real-power-of-linux-executables/": {
+    "desc": "The real power of Linux executables",
+    "name": "The real power of Linux executables",
+    "tags": [
+      "linux",
+      "internals",
+      "executable"
+    ]
+  },
+  "https://pillow.readthedocs.io/en/5.1.x/": {
+    "desc": "Pillow is the friendly PIL fork",
+    "name": "Pillow is the friendly PIL fork",
+    "tags": [
+      "imageprocessing",
+      "python",
+      "computervision",
+      "machinelearning"
+    ]
+  },
+  "https://pragprog.com/magazines/2013-05/a-functional-introduction-to-lua": {
+    "desc": "Creating Some Fireworks with Lua",
+    "name": "Creating Some Fireworks with Lua",
+    "tags": [
+      "gameprogramming",
+      "lua",
+      "tutorial"
+    ]
+  },
+  "https://pudding.cool/2018/02/waveforms/": {
+    "desc": "Interactive guide that introduce waveforms",
+    "name": "WaveForms",
+    "tags": [
+      "waveforms",
+      "introduction",
+      "visual"
+    ]
+  },
+  "https://qotoqot.com/blog/founder-skills/": {
+    "desc": "What you should know as a founder of a software company",
+    "name": "What you should know as a founder of a software company",
+    "tags": [
+      "article",
+      "bussiness",
+      "softwarecompany"
+    ]
+  },
+  "https://queue.acm.org/detail.cfm?id=3220266": {
+    "desc": "Algorithms Behind Modern Storage Systems",
+    "name": "Algorithms Behind Modern Storage Systems",
+    "tags": [
+      "databases",
+      "algorithm"
+    ]
+  },
+  "https://raw.githubusercontent.com/w3c/activitypub/gh-pages/activitypub-tutorial.txt": {
+    "desc": "Simple Activitypub tutorial example",
+    "name": "ActivityPub tutorial",
+    "tags": [
+      "activitypub",
+      "internet",
+      "communication",
+      "protocol"
+    ]
+  },
+  "https://realpython.com/python-data-classes/": {
+    "desc": "The Ultimate Guide to Data Classes in Python 3.7",
+    "name": "The Ultimate Guide to Data Classes in Python 3.7",
+    "tags": [
+      "python",
+      "advanced"
+    ]
+  },
+  "https://safe-network-explained.github.io/safe-for-bitcoiners": {
+    "desc": "SAFE Network explained using bitcoin terminology",
+    "name": "SAFE Network explained using bitcoin terminology",
+    "tags": [
+      "blockchain",
+      "maidsafe",
+      "cryptocurrencies",
+      "decentralized",
+      "web"
+    ]
+  },
+  "https://sanctum.geek.nz/arabesque/series/unix-as-ide/?": {
+    "desc": "Unix as IDE: Introduction",
+    "name": "Unix as IDE: Introduction",
+    "tags": [
+      "unix",
+      "linux",
+      "ide",
+      "programming"
+    ]
+  },
+  "https://stackshare.io/stream/stream-and-go-news-feeds-for-over-300-million-end-users": {
+    "desc": "Stream & Go: News Feeds for Over 300 Million End Users",
+    "name": "Stream & Go: News Feeds for Over 300 Million End Users",
+    "tags": [
+      "webarchitecture",
+      "examples",
+      "stream",
+      "golang"
+    ]
+  },
+  "https://steemit.com/bitcoin/@vhmcrypto/trading-strategy-101-understanding-cryptocurrency-volume": {
+    "desc": "Trading Strategy 101 \u2013 Understanding Cryptocurrency Volume",
+    "name": "Trading Strategy 101 \u2013 Understanding Cryptocurrency Volume",
+    "tags": [
+      "cryptocurrencies",
+      "trading"
+    ]
+  },
+  "https://suckless.org/": {
+    "desc": "software that sucks less",
+    "name": "software that sucks less",
+    "tags": [
+      "software",
+      "blog",
+      "oldskool"
+    ]
+  },
+  "https://talks.golang.org/2013/distsys.slide#1": {
+    "desc": "Go, for Distributed Systems",
+    "name": "Go, for Distributed Systems",
+    "tags": [
+      "golang",
+      "implementation",
+      "design",
+      "distributedsystems"
+    ]
+  },
+  "https://tomassetti.me/guide-parsing-algorithms-terminology/": {
+    "desc": "in-depth presentation of the concepts and algorithms used in parsing",
+    "name": "A Guide to Parsing: Algorithms and Terminology",
+    "tags": [
+      "parsing",
+      "guide",
+      "algorithm"
+    ]
+  },
+  "https://tryolabs.com/blog/2017/08/10/finding-the-right-representation-for-your-nlp-data/": {
+    "desc": "Finding the right representation for your NLP data",
+    "name": "Finding the right representation for your NLP data",
+    "tags": [
+      "nlp",
+      "practical"
+    ]
+  },
+  "https://tuinderlusten-jheronimusbosch.ntr.nl/en": {
+    "desc": "Jarding de las delicias interactivo",
+    "name": "El jardin de las delicias (interactivo)",
+    "tags": [
+      "art",
+      "interactive",
+      "painting"
+    ]
+  },
+  "https://unwttng.com/home": {
+    "desc": "Jack Preston blog",
+    "name": "Jack Preston blog",
+    "tags": [
+      "blog",
+      "technology"
+    ]
+  },
+  "https://unwttng.com/how-does-procedural-generation-work-random-noise": {
+    "desc": "Random Noise and Procedural Generation",
+    "name": "Random Noise and Procedural Generation",
+    "tags": [
+      "gameprogramming",
+      "procedural"
+    ]
+  },
+  "https://unwttng.com/what-is-a-blockchain": {
+    "desc": "Everything You Wanted To Know About Blockchains: Part 1",
+    "name": "Everything You Wanted To Know About Blockchains: Part 1",
+    "tags": [
+      "cryptocurrencies",
+      "blockchain",
+      "bitcoin"
+    ]
+  },
+  "https://unwttng.com/what-is-bitcoin-ethereum": {
+    "desc": "Everything You Wanted To Know About Blockchains: Part 2",
+    "name": "Everything You Wanted To Know About Blockchains: Part 2",
+    "tags": [
+      "cryptocurrencies",
+      "blockchain",
+      "ethereum"
+    ]
+  },
+  "https://wilkerdos.com/2018/05/the-ultimate-plywood-workbench/": {
+    "desc": "The Ultimate Plywood Workbench",
+    "name": "The Ultimate Plywood Workbench",
+    "tags": [
+      "maker",
+      "workbench",
+      "build"
+    ]
+  },
+  "https://withintent.uncorkedstudios.com/inside-el-paquete-cubas-social-network-2fa6c99660ee": {
+    "desc": "Inside El Paquete, Cuba\u2019s Social Network",
+    "name": "Inside El Paquete, Cuba\u2019s Social Network",
+    "tags": [
+      "article",
+      "hacktivism",
+      "cuba"
+    ]
+  },
+  "https://www.bitwiseinvestments.com/index": {
+    "desc": "First CryptoIndex",
+    "name": "First CryptoIndex",
+    "tags": [
+      "cryptocurrencies",
+      "trading"
+    ]
+  },
+  "https://www.coindesk.com/decentralization-vs-scale-studies-explore-cryptos-growing-struggle/": {
+    "desc": "Decentralization vs Scale: Crypto's Growing Struggle",
+    "name": "Decentralization vs Scale: Crypto's Growing Struggle",
+    "tags": [
+      "cryptocurrencies",
+      "article",
+      "blockchain"
+    ]
+  },
+  "https://www.cs.cornell.edu/home/kleinber/networks-book/": {
+    "desc": "Book about networks and graphs",
+    "name": "Networks, Crowds, and Markets: Reasoning About a Highly Connected World",
+    "tags": [
+      "networks",
+      "graphs",
+      "book",
+      "theory"
+    ]
+  },
+  "https://www.datacamp.com/community/tutorials/finance-python-trading": {
+    "desc": "Python For Finance: Algorithmic Trading",
+    "name": "Python For Finance: Algorithmic Trading",
+    "tags": [
+      "python",
+      "finance",
+      "algorithms",
+      "101",
+      "introduction"
+    ]
+  },
+  "https://www.inqdo.com/aws-explained-the-basics/?lang=en": {
+    "desc": "AWS explained: the basics",
+    "name": "AWS explained: the basics",
+    "tags": [
+      "aws",
+      "tutorial",
+      "101",
+      "introduction"
+    ]
+  },
+  "https://www.jtolio.com/2017/01/writing-advanced-web-applications-with-go/": {
+    "desc": "Writing Advanced Web Applications with Go",
+    "name": "Writing Advanced Web Applications with Go",
+    "tags": [
+      "golang",
+      "article",
+      "programming"
+    ]
+  },
+  "https://www.kdnuggets.com/2018/04/understanding-behind-sentiment-analysis-part-1.html": {
+    "desc": "Build your first sentiment classifier in 3 steps",
+    "name": "Understanding What is Behind Sentiment Analysis \u2013 Part 1",
+    "tags": [
+      "nlp",
+      "sentimentanalysis",
+      "machinelearning"
+    ]
+  },
+  "https://www.mariocampos.io/blog/more-unix-tools-hints/": {
+    "desc": "More Hints for Writing Unix Tools",
+    "name": "More Hints for Writing Unix Tools",
+    "tags": [
+      "unix",
+      "tools",
+      "programming"
+    ]
+  },
+  "https://www.meebey.net/posts/ethereum_gpu_mining_on_linux_howto/": {
+    "desc": "Ethereum GPU Mining on Linux How-To",
+    "name": "Ethereum GPU Mining on Linux How-To",
+    "tags": [
+      "ethereum",
+      "cryptocurrencies",
+      "cryptocurrency"
+    ]
+  },
+  "https://www.nayuki.io/page/designing-better-file-organization-around-tags-not-hierarchies": {
+    "desc": "Designing better file organization around tags, not hierarchies",
+    "name": "Designing better file organization around tags, not hierarchies",
+    "tags": [
+      "filesystem",
+      "technical",
+      "article"
+    ]
+  },
+  "https://www.noisli.com/": {
+    "desc": "Configurable ambient sound",
+    "name": "Noisli ambient sound",
+    "tags": [
+      "sound",
+      "work",
+      "ambient"
+    ]
+  },
+  "https://www.nytimes.com/2018/01/16/magazine/beyond-the-bitcoin-bubble.html": {
+    "desc": "Beyond the Bitcoin Bubble",
+    "name": "Beyond the Bitcoin Bubble",
+    "tags": [
+      "cryptocurrencies",
+      "bitcoin",
+      "article"
+    ]
+  },
+  "https://www.positrondream.com/wallpapers-all/": {
+    "desc": "Positron Dream wallpapers",
+    "name": "Positron Dream wallpapers",
+    "tags": [
+      "wallpapers",
+      "multimedia"
+    ]
+  },
+  "https://www.reddit.com/r/CryptoCurrency/comments/6l130v/a_boring_investors_guide_to_cryptocurrency/": {
+    "desc": "A Boring Investor\u2019s Guide to Cryptocurrency Investing",
+    "name": "A Boring Investor\u2019s Guide to Cryptocurrency Investing",
+    "tags": [
+      "cryptocurrencies",
+      "trading"
+    ]
+  },
+  "https://www.robinwieruch.de/the-soundcloud-client-in-react-redux/": {
+    "desc": "The soundcloud client in react + redux",
+    "name": "The soundcloud client in react + redux",
+    "tags": [
+      "webdev",
+      "react",
+      "tutorial"
+    ]
+  },
+  "https://www.toptal.com/python/introduction-python-microservices-nameko": {
+    "desc": "Introduction to Python Microservices with Nameko",
+    "name": "Introduction to Python Microservices with Nameko",
+    "tags": [
+      "microservices",
+      "python",
+      "nameko",
+      "introduction"
+    ]
+  },
+  "https://www.tradingview.com/cryptocurrency-signals/": {
+    "desc": "Tradingview cryptocurrency signals dashboard",
+    "name": "Cryptocurrency signals",
+    "tags": [
+      "bitcoin",
+      "cryptocurrencies",
+      "signal",
+      "dashboard"
+    ]
+  }
+}
