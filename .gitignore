@@ -1,0 +1,12 @@
+node_modules/
+currentSnippet\.js
+*.md.temp.js
+.idea
+test.sh
+/*.log
+
+dist/flavor\.min\.css
+
+dist/flavor\.css
+
+test_old/
