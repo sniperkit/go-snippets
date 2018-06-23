@@ -1,0 +1,167 @@
+# Sample gitconfig
+#
+# You probably want to change the [user] section here since you are not me.
+
+[alias]
+    # add
+    a = add                           # add
+    chunkyadd = add --patch           # stage commits chunk by chunk
+
+    # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+    snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+    snapshots = !git stash list --grep snapshot
+
+    #via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+    recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+
+    # branch
+    b = branch -v                     # branch (verbose)
+
+    # commit
+    c = commit -m                     # commit with message
+    ca = commit -am                   # commit all with message
+    ci = commit                       # commit
+    amend = commit --amend            # ammend your last commit
+    ammend = commit --amend           # ammend your last commit
+
+    # checkout
+    co = checkout                     # checkout
+    nb = checkout -b                  # create and switch to a new branch (mnemonic: "git new branch branchname...")
+
+    # cherry-pick
+    cp = cherry-pick -x               # grab a change from a branch
+
+    # diff
+    d = diff                          # diff unstaged changes
+    dc = diff --cached                # diff staged changes
+    last = diff HEAD^                 # diff last committed change
+
+    # log
+    l = log --graph --date=short
+    changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+    short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+    simple = log --pretty=format:\" * %s\"
+    shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+
+    # Pull
+    pl   = pull
+    plo  = pull --rebase origin
+    plom = pull --rebase origin master
+    plog = pull --rebase origin gh-pages
+    plu  = pull --rebase upstream
+    plum = pull --rebase upstream master
+    plug = pull --rebase upstream gh-pages
+
+    # Push
+    ps   = push
+    pso  = push origin
+    psom = push origin master
+    psog = push origin gh-pages
+    psu  = push upstream
+    psum = push upstream master
+    psug = push upstream gh-pages
+
+    # rebase
+    rc = rebase --continue            # continue rebase
+    rs = rebase --skip                # skip rebase
+
+    # Remote
+    ra  = remote add
+    rao = remote add origin
+    rau = remote add upstream
+    rs  = remote set-url
+    rso = remote set-url origin
+    rsu = remote set-url upstream
+
+    # reset
+    unstage = reset HEAD              # remove files from index (tracking)
+    uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
+    filelog = log -u                  # show changes to a file
+    mt = mergetool                    # fire up the merge tool
+
+    # stash
+    ss = stash                        # stash changes
+    sl = stash list                   # list stashes
+    sa = stash apply                  # apply stash (restore changes)
+    sd = stash drop                   # drop stashes (destory changes)
+
+    # status
+    s = status                        # status
+    st = status                       # status
+    stat = status                     # status
+
+    # tag
+    t = tag -n                        # show tags with <n> lines of each tag message
+
+    # svn helpers
+    svnr = svn rebase
+    svnd = svn dcommit
+    svnl = svn log --oneline --show-commit
+
+    # Sync
+    sync = plu && pso
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+	compression = -1
+	autocrlf = input
+	whitespace = trailing-space,space-before-tab
+	precomposeunicode = true
+
+
+# Base Configs
+[apply]
+    whitespace = nowarn
+[help]
+    autocorrect = 1
+[grep]
+    extendRegexp = true
+    lineNumber   = true
+
+# Merge
+[merge]
+    tool = diffmerge
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+# Diff
+[diff]
+    tool = diffmerge
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+    prompt = false
+
+# Gitflow
+[gitflow "prefix"]
+	feature = feature-
+	release = release-
+	hotfix = hotfix-
+	support = support-
+	versiontag = v
+
+[push]
+	default = upstream
+[submodule]
+	fetchJobs = 4
+
+# Commit Template
+[commit]
+	template = ~/.dotfiles/git/template.txt
+
+# Format
+[format]
+  pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+
+[log]
+	showSignature = false
+
