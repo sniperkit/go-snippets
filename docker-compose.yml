@@ -1,0 +1,16 @@
+version: '3'
+services:
+  influxdb:
+    build:
+      context: ./docker/pkg/influxdb
+    ports:
+      - 8086:8096
+    networks:
+      - sherlock
+  telegraf:
+    build:
+      context: ./docker/pkg/telegraf
+    ports:
+      - 9411:9411
+networks:
+  sherlock:
