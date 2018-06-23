@@ -1,0 +1,52 @@
+# vim: set ft=gitconfig:
+
+[user]
+	name = Kentaro Wada
+	email = www.kentaro.wada@gmail.com
+[merge]
+	tool = vimdiff
+[diff]
+	tool = vimdiff
+	renames = true
+	algorithm = histogram
+[color]
+	ui = auto
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	bw = browse
+	pr = pull-request
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	pl = !hub browse -- pulls
+	is = !hub browse -- issues
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[core]
+	excludesfile = ~/.gitignore_global
+[http]
+	sslVerify = false
+[rerere]
+	enabled = true
+[branch]
+	autosetupmerge = always
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[pull]
+	rebase = true
+[push]
+	default = current
+[pager]
+	status = false
+	branch = false
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[credential]
+	helper = cache
+[hub]
+	protocol = https
