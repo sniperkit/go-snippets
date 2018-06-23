@@ -1,0 +1,43 @@
+{
+  "editor.fontSize": 15,
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.tabSize": 4,
+  "editor.trimAutoWhitespace": true,
+  "editor.tabCompletion": true,
+  "explorer.openEditors.visible": 0,
+  "window.restoreWindows": "none",
+  "terminal.external.osxExec": "iTerm.app",
+  "files.autoSave": "onFocusChange",
+  "extensions.autoUpdate": true,
+  "workbench.iconTheme": "ayu",
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "solid",
+  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "files.trimTrailingWhitespace": true,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "boundary",
+  "workbench.colorTheme": "Ayu Mirage",
+  "window.zoomLevel": 0,
+  "extensions.ignoreRecommendations": false,
+  "go.coverageDecorator": "gutter",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "/vendor": true
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.fontAliasing": "antialiased",
+  "editor.fontWeight": "300",
+  "docker.showExplorer": false,
+  "workbench.editor.showIcons": true,
+  "go.testOnSave": false,
+  "go.coverOnSave": false,
+  "explorer.confirmDragAndDrop": false,
+  "search.smartCase": true,
+  "alex.enable": true,
+  "editor.fontFamily": "FuraCode Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true
+}
