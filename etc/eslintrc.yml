@@ -1,0 +1,55 @@
+env:
+  browser: true
+  es6: true
+  node: true
+extends: 'eslint:recommended'
+installedESLint: true
+parserOptions:
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+    jsx: true
+  sourceType: module
+plugins:
+  - react
+rules:
+  indent:
+    - warn
+    - 2
+  linebreak-style:
+    - warn
+    - unix
+  quotes:
+    - warn
+    - single
+  no-empty:
+    - warn
+    - allowEmptyCatch: true
+  semi:
+    - warn
+    - never
+  no-console: off
+  no-extra-parens: off
+  curly:
+    - warn
+    - all
+  brace-style:
+    - error
+    - 1tbs
+  comma-dangle:
+    - warn
+    - always-multiline
+  jsx-quotes:
+    - warn
+    - prefer-single
+  no-multi-spaces:
+    - warn
+    - exceptions:
+        Property: true
+        ImportDeclaration: false
+
+  react/jsx-uses-react: error
+  react/jsx-uses-vars: error
+  no-unused-vars:
+    - warn
+    - varsIgnorePattern: React
+

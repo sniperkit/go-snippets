@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Taken from https://gist.github.com/dergachev/4627207
+
+ffmpeg -i "$1" -vf scale=${2:-800:-1} -r ${3:-10} -f image2pipe -vcodec ppm - | \
+  convert -delay 5 -layers Optimize -loop 0 - "$1.gif"
+
