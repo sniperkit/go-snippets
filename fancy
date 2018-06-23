@@ -1,0 +1,5 @@
+function wdr {
+		 wdir=$1
+		 [[ $wdir ]] || wdir=.
+		 tail -f $wdir/*
+}

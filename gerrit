@@ -1,0 +1,51 @@
+
+# Usage: grpush [BRANCH]
+# Push to the gerrit repo to make or update a change. Chooses the master branch
+# by default.
+function grpush {
+  branch=$1
+  git push origin HEAD:refs/for/${branch:-master}
+}
+
+# Usage: grbase BRANCH NEWBRANCH
+# Like rebase, except it is geared around gerrit's commit history squashing style.
+# When this command is done, the contents and commit message will remain the same,
+# but the parent commit will be the one pointed to by the provided branch.
+#
+# BRANCH should be the parent, and NEWBRANCH is the name of a branch to be created
+# where the new commit will be (so your current branch doesn't accidentally get
+# messed up).
+#
+# This function creates and applies a patch, and keeps the same commit message as
+# whatever was the top commit when it was run.
+function grbase {(
+  tmp=$(mktemp -d)
+  parent=$1
+  self=grbase-$parent  # TODO: inspect to get the current branch
+  
+  [[ $parent ]] || ( echo "Usage: grbase BRANCH" && exit 1 )
+
+  git diff $parent --name-only > $tmp/files
+  echo file list stored in $tmp/files
+
+  git diff $parent > $tmp/patch
+  echo "patch stored in $tmp/patch"
+
+  # save the commit message to re-apply it in the new branch
+  git log -1 --format=%B > $tmp/commit
+  echo "commit stored in $tmp/commit"
+ 
+  git checkout $parent || exit
+  git branch $self || exit
+  # this checkout will fail if there are staged files.
+  git checkout $self || exit
+  git apply $tmp/patch || exit
+  git add $(cat $tmp/files)
+  git commit -F $tmp/commit
+)}
+
+function gamend {
+  commit=$(mktemp)
+  git log -1 --format=%B > "$commit"
+  git commit --amend -F "$commit" $@
+}
