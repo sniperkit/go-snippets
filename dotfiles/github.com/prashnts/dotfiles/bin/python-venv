@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+GIT_TOPLEVEL=`git rev-parse --show-toplevel 2> /dev/null`
+GIT_DIRNAME=`echo $GIT_TOPLEVEL | rev | cut -d'/' -f1 | rev`
+if [[ -s "$GIT_TOPLEVEL/.env" ]]; then
+  source $GIT_TOPLEVEL/.env
+fi
+export PYENV_VERSION=$GIT_DIRNAME
+~/.pyenv/shims/python $@
