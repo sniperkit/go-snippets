@@ -13,26 +13,31 @@ echolor --White "## [START] GIT - PRE-COMMIT"
 
 [ `which echolor` == "" ] && wget -nc -o /usr/local/bin/echolor https://raw.githubusercontent.com/Gruppio/Echolor/master/echolor.sh
 
+function test_args()
+# function timer()
+{
+	local count_args=($#)
+	echolor --Green "Function name: ${FUNCNAME} with ${count_args}"
+}
+
+test_args
+test_args 234
+test_args -1 "test_argument_1"
+test_args -1 "test_argument_1" "test_argument_2"
+# exit 1
+
 #####################################################################
 # If called with no arguments a new timer is returned.
 # If called with arguments the first is used as a timer
 # value and the elapsed time is returned in the form HH:MM:SS.
 #
+# function timer
 function timer()
 {
 	local count_args=($#)
-	echolor --Green "Function name: ${FUNCNAME} with ${count_args}"
-
-	exit
-	return
 
 	# if [[ $# -eq 0 ]] || [[ $# -gt 2 ]]; then
-	if [[ $# -eq 2 ]]; then
-		echolor --Green  "init timer"
-	# echolor --Green  "args: $#"
-    # if [[[ $# -eq 0 ] || [ $# -eq 2 ]]]; then
-        echo $(date '+%s')
-    else
+	if [ $count_args -eq 1 ]; then
         local stime=$1
 		local event_name=${2:-""}
 		local quiet=${3:-"false"}
@@ -45,6 +50,9 @@ function timer()
         dh=$((dt / 3600))
         [ $event_name != ""] && msg="event name: ${event_name}, " 
         [ ${quiet} == "false" ] && printf '%sduration: %d:%02d:%02d' $msg $dh $dm $ds
+    else
+		echolor --Green  "init timer"
+        echo $(date '+%s')
     fi
 }
 
