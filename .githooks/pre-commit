@@ -6,6 +6,8 @@
 
 clear
 
+exit
+
 echo ""
 echo "## [START] GIT - PRE-COMMIT"
 echo ""
