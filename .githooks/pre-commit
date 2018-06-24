@@ -32,12 +32,11 @@ test_args -1 "test_argument_1" "test_argument_2"
 # value and the elapsed time is returned in the form HH:MM:SS.
 #
 # function timer
-function timer()
+function timer
 {
-	local count_args=($#)
-	echolor --Green "Function name: ${FUNCNAME} with ${count_args}"
-	# if [[ $# -eq 0 ]] || [[ $# -gt 2 ]]; then
-	if [ $count_args -eq 1 ]; then
+	local stime=${1:-"-1"}
+	if [ $stime -gt 0 ]; then
+		echolor --Red "End timer with ${count_args} args."
         local stime=$1
 		local event_name=${2:-""}
 		local quiet=${3:-"false"}
@@ -51,7 +50,7 @@ function timer()
         [ $event_name != ""] && msg="event name: ${event_name}, " 
         [ ${quiet} == "false" ] && printf '%sduration: %d:%02d:%02d' $msg $dh $dm $ds
     else
-		echolor --Green  "init timer"
+		echolor --Green "Start timer with ${count_args} args."
         echo $(date '+%s')
     fi
 }
@@ -65,7 +64,7 @@ function fbs {
 	local start=$(timer -1 "fbs")
 	local limit=${1:-"20"}
 	du -m . | sort -nr | head -n $limit
-	local elapsed=$(timer $start)
+	timer $start
 	separator
 }
 
@@ -73,7 +72,7 @@ function fb {
 	local start=$(timer -1 "fb")
 	local limit=${1:-"20"}
 	du -h . | sort -hr | head -n $limit
-	local elapsed=$(timer $start)
+	timer $start
 	separator
 }
 
@@ -82,7 +81,7 @@ function fbg {
 	local pattern=${1:-"vendor"}
 	local limit=${2:-"50"}
 	du -h . | grep "$pattern" | sort -hr | head -n $limit
-	local elapsed=$(timer $start)
+	timer $start
 	separator
 }
 
@@ -90,7 +89,7 @@ function fd {
 	local start=$(timer -1 "fd")
 	local pattern=${1:-"test"}
 	find . -name "$pattern" -type d -exec rm -rf {} +
-	local elapsed=$(timer $start)
+	timer $start
 	separator
 }
 
@@ -99,7 +98,7 @@ function ls_subtrees {
 	local export_file=${1:-".meta/ls-subtrees.tsv"}
 	ensure_dir
 	git log | grep -E 'git-subtree-dir|git-subtree-repo' | awk '{ print $2 $3 $4 }' > $export_file ;
-	local elapsed=$(timer $start)
+	timer $start
 	separator
 }
 
@@ -108,7 +107,7 @@ function ls_subtrees_sorted {
 	local export_file=${1:-".meta/ls-subtrees.sorted.tsv"}
 	ensure_dir
 	git log | grep -e git-subtree-dir -e git-subtree-repo | tr -d ' ' | cut -d ":" -f2 | sort | uniq > $export_file ;
-	local elapsed=$(timer $start)
+	timer $start
 	separator
 }
 
@@ -117,7 +116,7 @@ function ls_subtrees_exists {
 	local export_file=${1:-".meta/ls-subtrees.exists.tsv"}
 	ensure_dir
 	git log | grep -e git-subtree-dir -e git-subtree-repo | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi' > $export_file ;
-	local elapsed=$(timer $start)
+	timer $start
 	separator
 }
 
@@ -126,7 +125,7 @@ function ls_subtrees_dedup {
 	local export_file=${1:-".meta/ls-subtrees.dedup.tsv"}
 	ensure_dir
 	git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi' > $export_file ;
-	local elapsed=$(timer $start)
+	timer $start
 	separator
 }
 
@@ -143,7 +142,7 @@ function ls_dirs_size {
 	local export_file=${1:-".meta/ls-dirs.by_size.top${limit}.output"}
 	ensure_dir
 	du -m . | sort -nr | head -n $limit > ${export_file}
-	local elapsed=$(timer $start)
+	timer $start
 	separator
 }
 
@@ -163,7 +162,7 @@ function rm_dirs_by_name {
 		REMOVED_DIRS_TOTAL=$((REMOVED_DIRS_TOTAL+$removed_dirs_count))
 		echolor --Red " - [WARNING] removed_dirs       = ${removed_dirs[@]}"
 	fi
-	local elapsed=$(timer $start)
+	timer $start
 }
 
 export REMOVE_DIRS="vendor,Godeps,node_modules"
@@ -184,13 +183,13 @@ for key in "${REMOVE_DIRS_ARRAY[@]}"; do
 	rm_dirs_by_name "${key}"
 	separator
 done
-elapsed=$(timer $start)
+timer $start
 
 start=$(timer -1 "remove_dirs_commit")
 if [ ${REMOVED_DIRS_TOTAL} -gt 0 ]; then
 	git_commit "remove vendor dirs..."
 fi
-elapsed=$(timer $start)
+timer $start
 
 export GCPRUNEFUL=false
 function pruneful {
@@ -209,7 +208,7 @@ function pruneful {
 			git prune
 		fi
 	fi
-	local elapsed=$(timer $start)
+	timer $start
 	separator
 }
 
@@ -231,7 +230,7 @@ function ls_unstagged {
 	if [ "${UNSTAGGED_FILES_COUNT}" -gt 0 ]; then 
 		COMMITFUL=true
 	fi
-	local elapsed=$(timer $start)
+	timer $start
 	separator
 }
 
@@ -247,7 +246,7 @@ function git_commit {
 	git add .
 	git commit -am "$1"
 	COMMIT_COUNT=($COMMIT_COUNT+1)
-	local elapsed=$(timer $start)
+	timer $start
 }
 
 echolor --Green "## PRE-COMMIT - SUMMARY"
