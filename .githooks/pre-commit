@@ -20,8 +20,9 @@ echolor --White "## [START] GIT - PRE-COMMIT"
 #
 function timer()
 {
-	echolor --Green  "args: ${#}"
-	if [ $# -eq 0 ] || [ $# -eq 2 ]; then
+	if [[ $# -eq 0 ]] || [[ $# -gt 1 ]]; then
+		echolor --Green  "init timer"
+	# echolor --Green  "args: $#"
     # if [[[ $# -eq 0 ] || [ $# -eq 2 ]]]; then
         echo $(date '+%s')
     else
