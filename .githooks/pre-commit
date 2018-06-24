@@ -80,6 +80,16 @@ rm_dirs_by_name Godeps
 rm_dirs_by_name node_modules
 echo "Successfully removed all vendor dirs: vendor, Godeps, node_modules"
 
+rm -f .git/gc.log
+
+
+function git_commit {
+	local git_status=$(git status -uno)
+	echo "git_status: ${git_status}"
+}
+
+# grep "remove .git/gc.log"
+
 # ls_dirs_size
 # ls_subtrees
 # ls_subtrees_sorted
