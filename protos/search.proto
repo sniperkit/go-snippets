@@ -1,0 +1,26 @@
+syntax = "proto3";
+package omniscience;
+
+import "google/api/annotations.proto";
+
+message Service {
+    string id = 1;
+}
+
+message ListServicesRequest {
+
+}
+
+message ListServicesResponse {
+    repeated Service services = 1;
+}
+
+service Search {
+    // List all services which have documents available for searching.
+    rpc ListServices (ListServicesRequest) returns (ListServicesResponse) {
+        option (google.api.http) = {
+          post: "/v1/omniscience/services"
+         body: "*"
+        };
+    }
+}

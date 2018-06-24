@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package omniscience;
+
+import "google/protobuf/timestamp.proto";
+
+message Document {
+    DocumentId id = 1;
+    string title = 2;
+    string description = 3;
+    string content = 4;
+    string url = 5;
+    string service = 6;
+    google.protobuf.Timestamp last_modified = 7;
+}
+
+message DocumentId {
+    string id = 1;
+}

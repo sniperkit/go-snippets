@@ -1,0 +1,27 @@
+apiVersion: skaffold/v1alpha2
+kind: Config
+build:
+  artifacts:
+  - imageName: github.com/keelerh/omniscience/omniscience-server
+    workspace: .
+    docker:
+        dockerfilePath: cmd/omniscience_server/Dockerfile
+  - imageName: github.com/keelerh/omniscience/ingester-github
+    workspace: .
+    docker:
+        dockerfilePath: cmd/ingester/github/Dockerfile
+  - imageName: github.com/keelerh/omniscience/ui
+    workspace: .
+    docker:
+        dockerfilePath: ui/Dockerfile
+deploy: 
+  kubectl:
+    manifests:
+      - k8s/all-k8s-*
+      - k8s/prod-k8s-*
+profiles:
+  - name: dev
+    deploy:
+      kubectl:
+        manifests:
+          - k8s/all-k8s-*
