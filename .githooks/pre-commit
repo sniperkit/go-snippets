@@ -141,12 +141,13 @@ function rm_dirs_by_name {
 	done
 
 	# local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print)
+	echolor --Red "find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +"
 	local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
 	local removed_dirs_array=($(echo "$removed_dirs" | tr ' ' '\n'))
 	local removed_dirs_count=${#removed_dirs_array[@]}
 	echo " - pattern_dirname    = ${pattern_dirname}"
 	echo " - removed_dirs_count = ${removed_dirs_count}"
-	echo " - removed_dirs       = ${removed_dirs[@]}"
+
 	if [ ${removed_dirs_count} -gt 0 ]; then
 		REMOVED_DIRS_KEYS+=(${pattern_dirname})
 		REMOVED_DIRS_TOTAL=$((REMOVED_DIRS_TOTAL+$removed_dirs_count))
@@ -162,14 +163,8 @@ echolor --Cyan "## REMOVE vendoring dirs"
 echo "- REMOVE_DIRS_ARRAY: ${REMOVE_DIRS_ARRAY[*]}"
 echo ""
 
-declare elapsed
 declare start
-
-start=$(timer)
-if [ ${REMOVED_DIRS_TOTAL} -gt 0 ]; then
-	git_commit "remove vendor dirs..."
-fi
-echo $(timer $start "remove_dirs_commit")
+declare elapsed
 
 export GCPRUNEFUL=false
 function pruneful {
@@ -227,6 +222,7 @@ function git_commit {
 	git commit -am "$1"
 	COMMIT_COUNT=($COMMIT_COUNT+1)
 	echo $(timer $start "$FUNCNAME")
+	separator
 }
 
 echolor --Green "## PRE-COMMIT - SUMMARY"
