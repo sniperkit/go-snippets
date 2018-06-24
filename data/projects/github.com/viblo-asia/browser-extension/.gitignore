@@ -1,0 +1,14 @@
+.DS_Store
+.idea
+node_modules
+mix-manifest.json
+.env
+.env.*
+!.env.example
+!.env.staging
+!.env.production
+npm-debug.log
+/*.log
+build
+dist
+jsconfig.json
