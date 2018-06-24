@@ -26,3 +26,4 @@ https://github.com/larsxschneider/git-repo-analysis
 - https://forums.resin.io/t/suggestions-for-deploying-from-a-monolithic-git-repo/467/8
 - https://gist.github.com/arschles/5d7ba90495eb50fa04fc
 - https://github.com/bluebird89/Docs/blob/0168a4f57b825a8565575780127663198ccbd3c6/Tools/Git.md
+- https://confluence.atlassian.com/bitbucket/reduce-repository-size-321848262.html

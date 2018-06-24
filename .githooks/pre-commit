@@ -6,25 +6,10 @@
 
 clear
 
-# exit
-
 echo ""
 echolor --White "## [START] GIT - PRE-COMMIT"
 
 [ `which echolor` == "" ] && wget -nc -o /usr/local/bin/echolor https://raw.githubusercontent.com/Gruppio/Echolor/master/echolor.sh
-
-function test_args()
-# function timer()
-{
-	local count_args=($#)
-	echolor --Green "Function name: ${FUNCNAME} with ${count_args}"
-}
-
-test_args
-test_args 234
-test_args -1 "test_argument_1"
-test_args -1 "test_argument_1" "test_argument_2"
-# exit 1
 
 #####################################################################
 # If called with no arguments a new timer is returned.
@@ -46,10 +31,7 @@ function timer()
         ds=$((dt % 60))
         dm=$(((dt / 60) % 60))
         dh=$((dt / 3600))
-        # [ "$2[*]" != "" ] && msg="event name: ${2}, " 
-        # [ "$2[*]" != "" ] && msg="event name: ${2}, " 
-        # [ ${quiet} == "false" ] && printf '%sduration: %d:%02d:%02d' $msg $dh $dm $ds
-		printf '%sduration: %d:%02d:%02d' "$2" $dh $dm $ds
+		printf 'function: "%s", duration: %d:%02d:%02d' "$2" $dh $dm $ds
     fi
 }
 
@@ -66,7 +48,7 @@ function fbs {
 	separator
 }
 
-function fb { 
+function ls_directory_with_sort_head { 
 	local start=$(timer)
 	local limit=${1:-"20"}
 	du -h . | sort -hr | head -n $limit
@@ -74,7 +56,7 @@ function fb {
 	separator
 }
 
-function fbg { 
+function ls_directory_with_grep_sort_head { 
 	local start=$(timer)
 	local pattern=${1:-"vendor"}
 	local limit=${2:-"50"}
@@ -83,10 +65,10 @@ function fbg {
 	separator
 }
 
-function fd { 
+function remove_dirs_recursive { 
 	local start=$(timer)
 	local pattern=${1:-"test"}
-	find . -name "$pattern" -type d -exec rm -rf {} +
+	find . -not -path '*/\.git/*' -name "$pattern" -type d -exec rm -rf {} +
 	echo $(timer $start $FUNCNAME)
 	separator
 }
@@ -149,7 +131,7 @@ declare REMOVED_DIRS_KEYS=()
 function rm_dirs_by_name { 
 	local start=$(timer)
 	local pattern_dirname=${1:-"test"}
-	local removed_dirs=$(find . -name "$pattern_dirname" -type d -print -exec rm -rf {} +)
+	local removed_dirs=$(find . -not -path '*/\.git/*' -name "$pattern_dirname" -type d -print -exec rm -rf {} +)
 	local removed_dirs_array=($(echo "$removed_dirs" | tr ' ' '\n'))
 	local removed_dirs_count=${#removed_dirs_array[@]}
 	echo " - pattern_dirname    = ${pattern_dirname}"
@@ -298,6 +280,7 @@ echo ""
 # modified files issue
 # git config core.autocrlf false
 
+# git reset --hard HEAD~1
 # git config --global fetch.prune true
 # git config --global gc.auto 1
 # git config --local gc.auto 1
