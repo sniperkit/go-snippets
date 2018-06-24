@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Copyright 2018 Yunify Inc. All rights reserved.
+# Use of this source code is governed by a Apache license
+# that can be found in the LICENSE file.
+
+source ./env
+
+gen_version
+
+echo "Release metad linux version ..."
+mkdir -p bin/linux
+env GOOS=linux GOARCH=amd64 go build -o bin/linux/metad .
+tar -C bin/linux/ -czf bin/linux/metad-linux-amd64.tar.gz metad
+
+echo "Release metad darwin version ..."
+mkdir -p bin/darwin
+env GOOS=darwin GOARCH=amd64 go build -o bin/darwin/metad .
+tar -C bin/darwin/ -czf bin/darwin/metad-darwin-amd64.tar.gz metad
+
+echo "Release metad alpine version ..."
+mkdir -p bin/alpine
+docker build -t metad_builder -f Dockerfile.build.alpine .
+docker run -ti --rm -v $(pwd):/app metad_builder ./build bin/alpine/metad
+tar -C bin/alpine/ -czf bin/alpine/metad-alpine-amd64.tar.gz metad
+
+ls -lh bin/*
+
+revert_version
