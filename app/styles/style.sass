@@ -1,0 +1,73 @@
+
+@import './base.sass'
+@import './animation.sass'
+@import './mixin.scss'
+@import './material-icons/material-icons.scss'
+
+
+
+$green  :   #42b983
+$gray   :   #eee
+
+
+.dialog
+    position: absolute
+    right: 0
+    top: 44px
+    padding: 20px
+    height: auto
+    background: #fff
+    color: #000 
+    border: 1px solid #ccc    
+    border-color: rgba(0,0,0,.2)
+    box-shadow: 0 2px 10px rgba(0,0,0,.2)
+
+    outline: none
+    border-radius: 4px
+    text-align: left
+    z-index: 99
+    &:before
+      content: " "
+      position: absolute
+      top: -16px
+      right: 8px
+      width: 0
+      height: 0
+      border: 8px solid transparent
+      border-bottom: 8px solid #fff
+    & > .title
+        margin: 20px    
+    & > .close
+        width: 100%
+  
+
+
+//setting
+.setting 
+  width: 280px;
+  &  .title 
+    margin: 8px 0;  
+    font-size: 16px;
+    color: #252b32;
+    border-bottom: 1px solid #eee;
+  &  .bottom 
+    display: block;
+    text-align: center;
+    margin: 24px auto 0 auto;  
+  &  .item 
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;   
+    & >span
+      color: #46505e;
+      font-size: 14px;
+      
+
+.button
+      background: #46b8da;
+      border: 1px solid #5bc0de;
+      border-radius: 4px;
+      padding: 4px 6px;
+      color: #fff;
+      font-size: 13px;       
+      cursor: pointer; 
