@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+package blacksquaremedia.reason.classification.hoeffding;
+
+import "github.com/bsm/reason/core/core.proto";
+import "github.com/bsm/reason/util/util.proto";
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+option (gogoproto.goproto_stringer_all) = true;
+option (gogoproto.goproto_unrecognized_all) = false;
+
+option go_package = "internal";
+option java_package = "com.blacksquaremedia.reason.classification";
+option java_outer_classname = "HoeffdingProtos";
+
+// Tree wraps the tree data.
+message Tree {
+  // The underlying model.
+  blacksquaremedia.reason.core.Model model = 1;
+
+  // The target feature.
+  string target = 2;
+
+  // The root nodeRef.
+  int64 root = 3;
+
+  // The node registry.
+  repeated Node nodes = 4;
+}
+
+// FeatureStats instances maintain stats based on
+// observation of a particular feature.
+message FeatureStats {
+
+  message Numerical {
+    blacksquaremedia.reason.util.Vector min = 1 [(gogoproto.nullable) = false];
+    blacksquaremedia.reason.util.Vector max = 2 [(gogoproto.nullable) = false];
+    blacksquaremedia.reason.util.StreamStatsDistribution stats = 3 [(gogoproto.nullable) = false];
+  }
+
+  message Categorical {
+    blacksquaremedia.reason.util.VectorDistribution stats = 1 [
+      (gogoproto.embed) = true,
+      (gogoproto.nullable) = false
+    ];
+  }
+
+  oneof kind {
+    Numerical numerical = 1;
+    Categorical categorical = 2;
+  }
+}
+
+// Node is a tree node
+message Node {
+
+  // Observation stats for the node
+  blacksquaremedia.reason.util.Vector stats = 1;
+
+  // Nodes can be leaf or split nodes.
+  oneof kind {
+    LeafNode leaf = 2;
+    SplitNode split = 3;
+  }
+}
+
+// SplitNode instances are intermediate nodes within the tree.
+message SplitNode {
+  // The feature name (predictor).
+  string feature = 1;
+
+  // The pivot value for binary splits (numerical predictors).
+  double pivot = 2;
+
+  // Children is a collection of child node references.
+  message Children {
+    repeated int64 dense = 1;
+
+    map<int64, int64> sparse = 2;
+    int64 sparse_cap = 3;
+  }
+
+  // The child references.
+  Children children = 3 [(gogoproto.nullable) = false];
+}
+
+// LeafNode instances are the leaves within the tree.
+message LeafNode {
+  // Observation stats, but feature.
+  map<string, FeatureStats> feature_stats = 1;
+
+  // Weight at the time of the last split evaluation.
+  double weight_at_last_eval = 2;
+
+  // Status indicator.
+  bool is_disabled = 3;
+}
