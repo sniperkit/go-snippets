@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{.Title}}</title>
+  <style type="text/css">
+    html {
+      box-sizing: border-box;
+    }
+    *,*::before,*::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font-family: 'Avenir Next', 'Avenir', Helvetica, sans-serif;
+      background: #eee;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #152842;
+    }
+    nav {
+      background: #23242f;
+      color: #eee;
+      width: 100%;
+      padding: 10px 20px;
+    }
+    nav a {
+      color: #eee;
+    }
+    #wrap {
+      max-width: 960px;
+      margin: 25px auto;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      background: #fff;
+    }
+    #wrap header {
+      padding: 5px 5px;
+    }
+    table {
+      width: 100%;
+    }
+    table th, table td {
+      text-align: left;
+      padding: 5px 5px;
+    }
+    tbody tr:nth-child(odd) {
+       background-color: #efefef;
+    }
+    .date {
+      margin-top: 21px;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <p class="date">{{ .Datestamp }}</p>
+    <a href="https://datatogether.org"><h3>Data Together</h3></a>
+  </nav>
+  <div id="wrap">
+    <header></header>
+    <table>
+      <thead>
+        <tr>
+          <th>Url</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range .Records }}
+          <tr>
+            <td><a href="{{ .Path }}">{{ .Url }}</a></td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
