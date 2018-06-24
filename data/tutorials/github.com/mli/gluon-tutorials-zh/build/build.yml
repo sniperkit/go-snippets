@@ -1,0 +1,16 @@
+name: gluon_zh_docs
+dependencies:
+- python
+- jupyter
+- sphinx=1.6.3
+- sphinx_rtd_theme
+- matplotlib
+- pandas
+- notebook=5.0.0
+- pip:
+  - pyopenssl>= 17.3.0
+  - nbsphinx
+  - recommonmark
+  - https://github.com/mli/notedown/tarball/master
+  - mxnet-cu80==1.2.0
+  - jieba

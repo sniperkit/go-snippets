@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="35.5 -.5 338.5 113.5" width="338.5" height="113.5">
+  <defs>
+    <font-face font-family="PingFang SC" font-size="9" panose-1="2 11 4 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="58" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="400">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Regular"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 0 M 0 -3 L 8 0 L 0 3" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.7.1 
+    <dc:date>2018-05-15 05:25:40 +0000</dc:date>
+  </metadata>
+  <g id="Inception" fill-opacity="1" stroke-dasharray="none" stroke="none" stroke-opacity="1" fill="none">
+    <title>Inception</title>
+    <rect fill="white" x="35.5" y="0" width="338.5" height="113"/>
+    <g id="Inception: Layer 1">
+      <title>Layer 1</title>
+      <g id="Graphic_3">
+        <rect x="36" y="49.5" width="72" height="18" fill="#d7e8fd"/>
+        <rect x="36" y="49.5" width="72" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(41 52)" fill="black">
+          <tspan font-family="PingFang SC" font-size="9" font-weight="400" fill="black" x="7.105" y="10">1 x 1 卷积层</tspan>
+        </text>
+      </g>
+      <g id="Graphic_4">
+        <rect x="121.5" y="31.5" width="67.5" height="18" fill="#d7e8fd"/>
+        <rect x="121.5" y="31.5" width="67.5" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(126.5 34)" fill="black">
+          <tspan font-family="PingFang SC" font-size="9" font-weight="400" fill="black" x="3.064" y="10">3 x 3 卷积层</tspan>
+        </text>
+      </g>
+      <g id="Graphic_5">
+        <rect x="121.5" y="63" width="67.5" height="18" fill="white"/>
+        <rect x="121.5" y="63" width="67.5" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(126.5 65.5)" fill="black">
+          <tspan font-family="PingFang SC" font-size="9" font-weight="400" fill="black" x="4.855" y="10">1 x 1 卷积层</tspan>
+        </text>
+      </g>
+      <g id="Graphic_6">
+        <rect x="202.5" y="63" width="67.5" height="18" fill="white"/>
+        <rect x="202.5" y="63" width="67.5" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(207.5 65.5)" fill="black">
+          <tspan font-family="PingFang SC" font-size="9" font-weight="400" fill="black" x="4.855" y="10">1 x 1 卷积层</tspan>
+        </text>
+      </g>
+      <g id="Graphic_7">
+        <rect x="202.5" y="31.5" width="67.5" height="18" fill="#d7e8fd"/>
+        <rect x="202.5" y="31.5" width="67.5" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(207.5 34)" fill="black">
+          <tspan font-family="PingFang SC" font-size="9" font-weight="400" fill="black" x="3.064" y="10">5 x 5 卷积层</tspan>
+        </text>
+      </g>
+      <g id="Graphic_8">
+        <rect x="283.5" y="31.5" width="90" height="18" fill="white"/>
+        <rect x="283.5" y="31.5" width="90" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(288.5 34)" fill="black">
+          <tspan font-family="PingFang SC" font-size="9" font-weight="400" fill="black" x="16.105" y="10">1 x 1 卷积层</tspan>
+        </text>
+      </g>
+      <g id="Graphic_9">
+        <rect x="283.5" y="63" width="90" height="18" fill="#d7e8fd"/>
+        <rect x="283.5" y="63" width="90" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(288.5 65.5)" fill="black">
+          <tspan font-family="PingFang SC" font-size="9" font-weight="400" fill="black" x="5.314" y="10">3 x 3 最大池化层</tspan>
+        </text>
+      </g>
+      <g id="Graphic_10">
+        <rect x="162" y="94.5" width="67.5" height="18" fill="#eff6fd"/>
+        <rect x="162" y="94.5" width="67.5" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(167 97)" fill="black">
+          <tspan font-family="PingFang SC" font-size="9" font-weight="400" fill="black" x="19.75" y="10">输入</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11">
+        <rect x="162" y="0" width="67.5" height="18" fill="#eff6fd"/>
+        <rect x="162" y="0" width="67.5" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(167 2.5)" fill="black">
+          <tspan font-family="PingFang SC" font-size="9" font-weight="400" fill="black" x="6.25" y="10">通道合并层</tspan>
+        </text>
+      </g>
+      <g id="Line_12">
+        <line x1="207.32143" y1="94.5" x2="216.86398" y2="87.07801" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_13">
+        <line x1="184.17857" y1="94.5" x2="174.63602" y2="87.07801" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_14">
+        <line x1="155.25" y1="63" x2="155.25" y2="59.4" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_15">
+        <line x1="236.25" y1="63" x2="236.25" y2="59.4" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_17">
+        <line x1="328.5" y1="63" x2="328.5" y2="59.4" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_18">
+        <path d="M 162 103.5 L 72 103.5 L 72 77.4" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_19">
+        <path d="M 72 49.5 L 72 9 L 152.1 9" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_20">
+        <line x1="166.82143" y1="31.5" x2="176.36398" y2="24.078012" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_21">
+        <line x1="224.67857" y1="31.5" x2="215.13602" y2="24.078012" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_22">
+        <path d="M 328.5 31.5 L 328.5 9 L 239.4 9" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_23">
+        <path d="M 229.5 103.5 L 328.5 103.5 L 328.5 90.9" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>
