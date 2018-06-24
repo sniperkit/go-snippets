@@ -1,0 +1,6 @@
+.DS_Store
+gin-bin
+task_mgmt
+coverage.txt
+config.*.json
+*.env
