@@ -1,0 +1,6 @@
+.DS_Store
+config.*.json
+patchbay
+gin-bin
+*.env
+coverage.txt

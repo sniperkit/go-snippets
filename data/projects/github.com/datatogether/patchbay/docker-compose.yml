@@ -1,0 +1,91 @@
+version: '2'
+services:
+  patchbay:
+    build: .
+    volumes:
+      - .:/go/src/github.com/datatogether/patchbay
+      - ./sql:/sql
+    ports:
+     - 3000:3000
+    networks:
+      - back-tier
+    depends_on:
+      - postgres
+      - identity
+      - coverage
+    environment:
+      - PORT=3000
+      - IDENTITY_SERVICE_URL=identity:9090
+      - COVERAGE_SERVICE_URL=coverage:9191
+      - GOLANG_ENV=develop
+      - POSTGRES_DB_URL=postgres://postgres@postgres/postgres?sslmode=disable
+  identity:
+    # comment out "image" and uncomment build,volumes to build from
+    # local copy of identity server instead of docker image
+    # must have identity repo locally
+    image: "archivers/identity:latest"
+    # build: ../identity
+    # volumes:
+    # - ../identity:/go/src/github.com/datatogether/identity
+    networks:
+      - back-tier
+    depends_on:
+      - postgres
+    ports:
+      - 3100:3100
+      - 9090:9090
+    environment:
+      - PORT=3100
+      - RPC_PORT=9090
+      - GOLANG_ENV=develop
+      - POSTGRES_DB_URL=postgres://postgres@postgres/postgres?sslmode=disable
+      - |
+        PUBLIC_KEY=-----BEGIN PUBLIC KEY-----
+        MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMOsqD9mC5mWC4Fa5rTU3Zaq+ZWIgEzw
+        C0nkkPMLVAfJpkFI7uiyCIj5n6OuPCDGNJTzXMjJsBd1YhUqzg2XnAsCAwEAAQ==
+        -----END PUBLIC KEY-----
+      - |
+        PRIVATE_KEY=-----BEGIN RSA PRIVATE KEY-----
+        MIIBOwIBAAJBAMOsqD9mC5mWC4Fa5rTU3Zaq+ZWIgEzwC0nkkPMLVAfJpkFI7uiy
+        CIj5n6OuPCDGNJTzXMjJsBd1YhUqzg2XnAsCAwEAAQJAF8Qoy0qBri3jR9ramqwg
+        HeS2W8swiie9t0PjtyFxG2DUP6ENDgodWzrA+WJD5dJSlkWUlwgCUJ3jk/vK3eOJ
+        AQIhAOi5Y0dUpR8GVQX7YeIDug4N39T2FnYxB1XdH5GKX/fxAiEA1z6oRREeTGTL
+        ULZYRkyz41tVC+uCTGeUw1i9UMi8b7sCIQDRP49CXZsx8BGWlVaHT26EoHj3FGVR
+        0/eSfoWZ6N8tIQIhAI2y6gPN6SxRjqdr42EkTah3D93xBK5X4k9XtAninGrRAiB7
+        k4uJgqHl8hgs3bndGibFuepdLWJed7YXa+eF57FdmA==
+        -----END RSA PRIVATE KEY-----
+  coverage:
+    # comment out "image" and uncomment build,volumes to build from
+    # local copy of identity server instead of docker image
+    # must have identity repo locally
+    # image: "archivers/coverage:latest"
+    build: ../coverage
+    volumes:
+      - ../coverage:/go/src/github.com/datatogether/coverage
+      # - ../coverage/sql:/sql
+    networks:
+      - back-tier
+    depends_on:
+      - postgres
+    ports:
+      - 3300:3300
+      - 9191:9191
+    environment:
+      - PORT=3300
+      - RPC_PORT=9191
+      - GOLANG_ENV=develop
+      - POSTGRES_DB_URL=postgres://postgres@postgres/postgres?sslmode=disable
+  postgres:
+    image: "postgres:9.6-alpine"
+    networks:
+      - back-tier
+    # environment:
+    #   POSTGRES_USER: archivers
+    #   POSTGRES_DB: archives
+    #   POSTGRES_PASSWORD: ""
+
+volumes:
+  db-data:
+
+networks:
+  back-tier:
