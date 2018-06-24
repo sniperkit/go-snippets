@@ -1,0 +1,7 @@
+/.idea
+/react/node_modules
+*.iml
+npm-debug.log
+main
+react/bundle.js
+react/ghrc.json
