@@ -22,6 +22,7 @@ https://github.com/topics/github-bot?l=go
 https://github.com/topics/summarization?l=go
 https://github.com/topics/dataset?l=go
 https://github.com/topics/docs?l=go
+https://github.com/topics/code-review?l=go
 https://github.com/topics/terminal?l=go
 https://github.com/topics/blockchain?l=go
 https://github.com/topics/cli?l=go
