@@ -122,16 +122,16 @@ if [ ${REMOVED_DIRS_TOTAL} -gt 0 ]; then
 	git_commit "remove vendor dirs..."
 fi
 
-export GCPRUNFUL=false
-function prunful {
+export GCPRUNEFUL=false
+function pruneful {
 	local match="git prune"
 	local file=".git/gc.log"
 	echo ""
-	echolor --Cyan "## CHECK repo is prunful ?"
+	echolor --Cyan "## CHECK repo is pruneful ?"
 	if [ -f ${file} ]; then
 		echolor --Red "### found ${file}"
-		[ `cat  ${file} | grep -c "$match"` -gt 0 ] && GCPRUNFUL=true
-		if [ "$GCPRUNFUL" == "true" ]; then
+		[ `cat  ${file} | grep -c "$match"` -gt 0 ] && GCPRUNEFUL=true
+		if [ "$GCPRUNEFUL" == "true" ]; then
 			echo "### removing ${file}"
 			rm -f $file
 			echo "### Run git prune"
@@ -141,7 +141,7 @@ function prunful {
 	separator
 }
 
-prunful
+pruneful
 
 export COMMITFUL=false
 export UNSTAGGED_FILES=""
@@ -205,10 +205,10 @@ else
 fi
 
 ## gc prune ?
-if [ "${GCPRUNFUL}" == true ]; then
-	echolor --Red   "- GCPRUNFUL             =   ${GCPRUNFUL}"
+if [ "${GCPRUNEFUL}" == true ]; then
+	echolor --Red   "- GCPRUNEFUL             =   ${GCPRUNEFUL}"
 else
-	echolor --Green "- GCPRUNFUL             =   ${GCPRUNFUL}"
+	echolor --Green "- GCPRUNEFUL             =   ${GCPRUNEFUL}"
 fi
 
 
@@ -221,6 +221,10 @@ echo ""
 # ls_subtrees_sorted
 # ls_subtrees_exists
 # ls_subtrees_dedup
+
+# ref. http://www.codewrecks.com/blog/index.php/2014/04/22/git-showing-file-as-modified-even-if-it-is-unchanged/
+# modified files issue
+# git config core.autocrlf false
 
 # git config --global fetch.prune true
 # git config --global gc.auto 1

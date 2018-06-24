@@ -2,3 +2,4 @@
 BUILD linguist-language=Python diff=python
 docs/* linguist-documentation
 third_party/go/src/* linguist-vendored
+* text=off

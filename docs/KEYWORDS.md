@@ -19,6 +19,8 @@ stop words sync language:Go
 
 ## Github Topics - Repositories
 https://github.com/topics/github-bot?l=go
+https://github.com/topics/cpp?l=go
+
 https://github.com/topics/summarization?l=go
 https://github.com/topics/dataset?l=go
 https://github.com/topics/docs?l=go
