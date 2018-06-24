@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Written by Eric Crosson
+# 2017-03-07
+#
+# This program initializes the encapsulating /hooks directory to
+# interface with this submodule.
+
+# set -x
+
+readonly submodule="$(dirname "$0")"
+# shellcheck disable=SC1090
+source "${submodule}/captain-hook.sh"
+pushd "${submodule}/.." >/dev/null
+
+# To use the post-clone script, see https://github.com/git-hook/post-clone
+readonly HOOKS=(pre-commit prepare-commit-msg commit-msg post-commit post-checkout pre-rebase post-clone)
+
+for hook in "${HOOKS[@]}"; do
+    mkdir -p "${hook}.d"
+    ln -sf captain-hook/run-hook "${hook}"
+done

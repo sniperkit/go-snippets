@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Written by Eric Crosson
+# 2016-10-28
+#
+# This template should not need modification.
+#
+# This template should be symlinked to create a new git hook, and a
+# corresponding git-hook.d directory created with (numbered) scripts
+# placed inside.  See existing hooks for examples.
+
+# set -x
+
+readonly hookdir="$(dirname "$0")"
+readonly hook="$(basename "$0")"
+
+cd "${hookdir}" || {
+    echo "Aborting: could not cd into '${hookdir}'"
+    exit -1
+}
+# shellcheck disable=SC1090
+source captain-hook/captain-hook.sh
+
+runHook "${hook}" "$@"
