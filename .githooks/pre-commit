@@ -11,7 +11,7 @@ echolor --White "## [START] GIT - PRE-COMMIT"
 
 [ `which echolor` == "" ] && wget -nc -o /usr/local/bin/echolor https://raw.githubusercontent.com/Gruppio/Echolor/master/echolor.sh
 
-export REMOVE_DIRS="vendor,Godeps,node_modules"
+export REMOVE_DIRS="vendor,Godeps,node_modules,bower_components,_vendor,dist,CMakeFiles,CMakeScripts"
 export REMOVE_DIRS_ARRAY=($(echo "$REMOVE_DIRS" | tr ',' '\n'))
 
 #####################################################################
