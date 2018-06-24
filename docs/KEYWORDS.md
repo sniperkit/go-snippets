@@ -27,6 +27,8 @@ https://github.com/topics/blockchain?l=go
 https://github.com/topics/cli?l=go
 https://github.com/topics/pagerank?l=go
 https://github.com/topics/dashboard?l=go
+https://github.com/topics/fake-news
+https://github.com/topics/chrome
 https://github.com/topics/cui?l=go
 https://github.com/samkcarlile/pro
 https://github.com/topics/chrome-extension?l=go
