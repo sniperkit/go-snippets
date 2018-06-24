@@ -1,0 +1,6 @@
+.DS_Store
+gin-bin
+sentry
+coverage.txt
+config.*.json
+*.env
