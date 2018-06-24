@@ -1,0 +1,9 @@
+cppinit.exe
+cppinit
+build*
+test/
+include/
+cmake.modules/
+.vscode/
+CMakeLists.txt
+*.cmake
