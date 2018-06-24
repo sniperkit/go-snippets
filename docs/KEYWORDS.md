@@ -21,6 +21,15 @@ stop words sync language:Go
 https://github.com/topics/github-bot?l=go
 https://github.com/topics/summarization?l=go
 https://github.com/topics/dataset?l=go
+https://github.com/topics/docs?l=go
+https://github.com/topics/terminal?l=go
+https://github.com/topics/blockchain?l=go
+https://github.com/topics/cli?l=go
+https://github.com/topics/pagerank?l=go
+https://github.com/topics/dashboard?l=go
+https://github.com/topics/cui?l=go
+https://github.com/samkcarlile/pro
+
 https://github.com/topics/classification?l=go
 https://github.com/topics/multi-label?l=go
 https://github.com/topics/go-github?l=go

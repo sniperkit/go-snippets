@@ -95,11 +95,6 @@ function rm_dirs_by_name {
 	fi
 }
 
-function mfcb { local val="$4"; "$1"; eval "$2[$3]=\$val;"; };
-function val_ltrim { if [[ "$val" =~ ^[[:space:]]+ ]]; then val="${val:${#BASH_REMATCH[0]}}"; fi; };
-function val_rtrim { if [[ "$val" =~ [[:space:]]+$ ]]; then val="${val:0:${#val}-${#BASH_REMATCH[0]}}"; fi; };
-function val_trim { val_ltrim; val_rtrim; };
-
 export REMOVE_DIRS="vendor,Godeps,node_modules"
 export REMOVE_DIRS_ARRAY=($(echo "$REMOVE_DIRS" | tr ',' '\n'))
 export REMOVE_DIRS_COUNT=${#REMOVE_DIRS_ARRAY[@]}
@@ -141,7 +136,7 @@ function prunful {
 	separator
 }
 
-prunful
+# prunful
 
 export COMMITFUL=false
 export UNSTAGGED_FILES=""
@@ -159,7 +154,7 @@ function ls_unstagged {
 	separator
 }
 
-ls_unstagged
+# ls_unstagged
 # commitful
 
 echo "## SUMMARY"
