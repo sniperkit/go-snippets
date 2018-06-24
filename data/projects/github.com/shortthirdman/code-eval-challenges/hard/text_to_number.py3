@@ -1,0 +1,38 @@
+import fileinput
+
+d = ["zero", "hundred", "thousand", "million", "negative"]
+d0 = {'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4,
+      'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9}
+d1 = {'ten': 10, 'eleven': 11, 'twelve': 12, 'thirteen': 13,
+      'fourteen': 14, 'fifteen': 15, 'sixteen': 16, 'seventeen': 17,
+      'eighteen': 18, 'nineteen': 19}
+d2 = {'twenty': 20, 'thirty': 30, 'forty': 40, 'fifty': 50,
+      'sixty': 60, 'seventy': 70, 'eighty': 80, 'ninety': 90}
+
+for line in fileinput.input():
+    h = q = r = 0
+    t = line.split()
+    if t[0] == d[-1]:
+        n = -1
+        t.pop(0)
+    else:
+        n = 1
+    for i in t:
+        if i == d[0]:
+            q = 0
+        elif i in d0:
+            h = d0[i]
+        elif i in d1:
+            q += d1[i]
+        elif i in d2:
+            q += d2[i]
+        elif i == d[1]:
+            q = h * 100
+            h = 0
+        elif i == d[2]:
+            r += (h + q) * 1000
+            h = q = 0
+        elif i == d[3]:
+            r = (h + q) * 1000000
+            h = q = 0
+    print(n * (r + q + h))

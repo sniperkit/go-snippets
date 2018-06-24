@@ -1,0 +1,6 @@
+{
+  "name": "Grinch",
+  "summary": "Help Grinch to find the shortest way.",
+  "constraints": "Each line of input contains a list of four to twenty instances of three numbers, and two numbers. The number of input lines is 15.",
+  "url": "https://www.codeeval.com/browse/229"
+}

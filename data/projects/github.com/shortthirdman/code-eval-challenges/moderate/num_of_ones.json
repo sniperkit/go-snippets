@@ -1,0 +1,6 @@
+{
+  "name": "Number of Ones",
+  "summary": "Determine the number of one bits in an integer.",
+  "constraints": "Each line of input contains one integer. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/16"
+}

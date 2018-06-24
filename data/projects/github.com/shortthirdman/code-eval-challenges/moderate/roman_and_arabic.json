@@ -1,0 +1,6 @@
+{
+  "name": "Roman and Arabic",
+  "summary": "Calculate aromatic numbers.",
+  "constraints": "Each line of input contains one string between 2 and 20 characters. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/150"
+}

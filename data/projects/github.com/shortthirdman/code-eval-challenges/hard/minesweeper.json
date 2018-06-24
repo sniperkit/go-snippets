@@ -1,0 +1,6 @@
+{
+  "name": "Minesweeper",
+  "summary": "Find the mines within a M*N matrix.",
+  "constraints": "Each line of input contains two integers and a string of '*' and '.'. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/79"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Closest Pair",
+  "summary": "Given a set of points in a two dimensional space, you will have to find the distance between the closest two points.",
+  "constraints": "The input consists of an unconstrained number of sets that start with a line containing a nonnegative integer n equal or lower than 10000 followed by n lines containing two nonnegative integers lower than 40000 and terminated by n equal zero.",
+  "url": "https://www.codeeval.com/browse/51"
+}

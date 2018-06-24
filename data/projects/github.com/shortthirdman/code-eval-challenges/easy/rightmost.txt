@@ -1,0 +1,6 @@
+Hello World,r
+Hello CodeEval,E
+
+Yesofcourse,X
+in nova fert animus,n
+Willst Du einen Schneemann bauen?,W

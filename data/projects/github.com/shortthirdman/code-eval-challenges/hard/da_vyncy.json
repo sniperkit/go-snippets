@@ -1,0 +1,6 @@
+{
+  "name": "Da Vyncy",
+  "summary": "Recreate a document from a set of fragments.",
+  "constraints": "Each line of input contains a list of strings with 2 to 1022 characters. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/77"
+}

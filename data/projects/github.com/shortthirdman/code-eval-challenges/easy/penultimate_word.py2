@@ -1,0 +1,5 @@
+import fileinput
+
+for line in fileinput.input():
+    st = line.split()
+    print "" if len(st) < 2 else st[-2]

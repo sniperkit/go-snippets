@@ -1,0 +1,6 @@
+{
+  "name": "Decryption",
+  "summary": "Determine the plain text message from an encrypted string.",
+  "constraints": "No input.",
+  "url": "https://www.codeeval.com/browse/61"
+}

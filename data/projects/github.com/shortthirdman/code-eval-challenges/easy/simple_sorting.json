@@ -1,0 +1,6 @@
+{
+  "name": "Simple Sorting",
+  "summary": "Sort several numbers",
+  "constraints": "Each line of input contains a list of signed floating point numbers. Length and number of input lines are unconstrained.",
+  "url": "https://www.codeeval.com/browse/91"
+}

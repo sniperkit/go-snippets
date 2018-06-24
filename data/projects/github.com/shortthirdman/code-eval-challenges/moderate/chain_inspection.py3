@@ -1,0 +1,13 @@
+import fileinput
+
+for line in fileinput.input():
+    b, been = "BEGIN", set()
+    s = [i.split('-') for i in line.rstrip('\n').split(';')]
+    m = {i[0]: i[1] for i in s}
+    for i in range(len(s)):
+        if not b in m or m[b] in been:
+            b = ""
+            break
+        b = m[b]
+        been.add(b)
+    print("GOOD" if b == "END" else "BAD")

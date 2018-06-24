@@ -1,0 +1,6 @@
+{
+  "name": "Jolly Jumpers",
+  "summary": "Determine if a sequence of numbers is a Jolly Jumper",
+  "constraints": "Each line of input contains 3000 or less integers. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/43"
+}

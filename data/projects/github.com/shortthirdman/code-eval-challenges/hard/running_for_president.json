@@ -1,0 +1,6 @@
+{
+  "name": "Running for president",
+  "summary": "Build your strategy to win the Presidency of the United States.",
+  "constraints": "The input contains an integer n, a list of n instances of one string and one integer, and a list of instances of one string, an integer, and a list of instances of one string and one integer.",
+  "url": "https://www.codeeval.com/browse/145"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Predict the Number",
+  "summary": "Try to go beyond the limits",
+  "constraints": "Each line of input contains one integer between 0 and 3000000000. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/125"
+}

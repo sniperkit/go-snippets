@@ -1,0 +1,6 @@
+{
+  "name": "Roman Numerals",
+  "summary": "Convert a cardinal number to a Roman numeral",
+  "constraints": "Each line of input contains one integer between 1 and 3999. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/106"
+}

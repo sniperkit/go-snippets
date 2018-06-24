@@ -1,0 +1,6 @@
+{
+  "name": "Package Problem",
+  "summary": "Put as many things into a package as possible",
+  "constraints": "Each line of input contains one positive integer less or equal to 100 and a list of items consisting of an integer, a floating point number less or equal to 100, and a price in dollar less or equal to $100. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/114"
+}

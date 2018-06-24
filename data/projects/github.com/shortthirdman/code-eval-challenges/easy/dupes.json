@@ -1,0 +1,6 @@
+{
+  "name": "Unique Elements",
+  "summary": "Extract unique list from a sorted list of numbers.",
+  "constraints": "Each line of input contains an unconstrained number of sorted integers. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/29"
+}

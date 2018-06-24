@@ -1,0 +1,6 @@
+{
+  "name": "Read More",
+  "summary": "Limit the length of the text.",
+  "constraints": "Each line of input contains one string of 300 or less characters. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/167"
+}

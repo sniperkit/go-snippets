@@ -1,0 +1,6 @@
+{
+  "name": "Roller Coaster",
+  "summary": "Turn the text into RoLlErCoAsTeR case.",
+  "constraints": "Each line of input contains one string. The total length of input is less or equal to 1000 characters.",
+  "url": "https://www.codeeval.com/browse/156"
+}

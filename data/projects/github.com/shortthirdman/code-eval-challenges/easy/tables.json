@@ -1,0 +1,6 @@
+{
+  "name": "Multiplication Tables",
+  "summary": "Print out the grade school multiplication table upto 12*12",
+  "constraints": "No input.",
+  "url": "https://www.codeeval.com/browse/23"
+}

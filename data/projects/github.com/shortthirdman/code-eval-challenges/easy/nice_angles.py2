@@ -1,0 +1,12 @@
+import fileinput, sys
+
+for line in fileinput.input():
+    a = float(line)
+    b = int(a)
+    sys.stdout.write(str(b) + ".")
+    a = (a - b) * 60
+    b = int(a)
+    sys.stdout.write("{:0>2d}'".format(b))
+    a = (a - b) * 60
+    b = int(a)
+    print "{:0>2d}\"".format(b)

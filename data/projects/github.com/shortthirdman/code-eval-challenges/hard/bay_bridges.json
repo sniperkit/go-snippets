@@ -1,0 +1,6 @@
+{
+  "name": "Bay Bridges",
+  "summary": "Build Bridges Over San Francisco Bay",
+  "constraints": "Each line of input contains one positive integer and four floating point numbers. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/109"
+}

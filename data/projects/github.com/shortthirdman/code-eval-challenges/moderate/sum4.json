@@ -1,0 +1,6 @@
+{
+  "name": "Sum to Zero",
+  "summary": "Count of ways in which the sum of four numbers is zero",
+  "constraints": "Each line of input contains a list of signed integers. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/81"
+}

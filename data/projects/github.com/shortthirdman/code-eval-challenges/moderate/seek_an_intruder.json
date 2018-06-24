@@ -1,0 +1,6 @@
+{
+  "name": "Seek for an Intruder",
+  "summary": "Find the IP address of an intruder",
+  "constraints": "The input contains 800 to 1200 lines with 100 to 300 characters.",
+  "url": "https://www.codeeval.com/browse/137"
+}

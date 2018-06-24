@@ -1,0 +1,6 @@
+{
+  "name": "Data Recovery",
+  "summary": "Reconstruct a sentence using hints",
+  "constraints": "Each line of input contains an unconstrained number n of strings and a shuffled sequence of n-1 integers between 1 and n. There are between 20 and 40 input lines.",
+  "url": "https://www.codeeval.com/browse/140"
+}

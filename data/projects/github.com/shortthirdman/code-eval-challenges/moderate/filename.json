@@ -1,0 +1,6 @@
+{
+  "name": "Filename Pattern",
+  "summary": "Filter a list of filenames.",
+  "constraints": "Each line of input contains one string and a list of 100 strings. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/169"
+}

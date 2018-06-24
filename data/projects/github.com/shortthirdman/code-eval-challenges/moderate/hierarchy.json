@@ -1,0 +1,6 @@
+{
+  "name": "Organizational Hierarchy",
+  "summary": "Recreate the hierarchy tree.",
+  "constraints": "Each line of input contains a list of strings consisting of two characters. The number of input lines is 15.",
+  "url": "https://www.codeeval.com/browse/221"
+}

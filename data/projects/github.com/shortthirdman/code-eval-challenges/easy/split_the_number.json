@@ -1,0 +1,6 @@
+{
+  "name": "Split The Number",
+  "summary": "Evaluate the number according to the pattern",
+  "constraints": "Each line of input contains one integer between 100 and 1000000000, and one string consisting of lower case Latin letters and one + or -. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/131"
+}

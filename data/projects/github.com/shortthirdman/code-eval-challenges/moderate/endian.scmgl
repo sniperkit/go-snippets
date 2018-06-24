@@ -1,0 +1,6 @@
+(use-modules (rnrs bytevectors))
+(display
+  (if (eq? (native-endianness) (endianness little))
+    "LittleEndian"
+    "BigEndian"))
+(newline)

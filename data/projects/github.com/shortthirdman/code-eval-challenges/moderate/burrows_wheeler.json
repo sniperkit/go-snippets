@@ -1,0 +1,6 @@
+{
+  "name": "Burrows-Wheeler transform",
+  "summary": "Complete file decompression by inverting BWT.",
+  "constraints": "Each line of input contains one string with between 5 and 1500 characters. The number of input lines is 20.",
+  "url": "https://www.codeeval.com/browse/184"
+}

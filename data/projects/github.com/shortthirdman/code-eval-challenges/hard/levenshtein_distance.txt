@@ -1,0 +1,16 @@
+hello
+kitty
+naxos
+x
+END OF INPUT
+hallo
+naxos
+halo
+nolo
+malo
+narxos
+a
+asdfasdffax
+naxso
+
+helol

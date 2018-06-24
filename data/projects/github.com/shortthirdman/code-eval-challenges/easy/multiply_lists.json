@@ -1,0 +1,6 @@
+{
+  "name": "Multiply Lists",
+  "summary": "Multiply elements in 2 lists",
+  "constraints": "Each line of input contains two equally long lists of one to ten integers between 0 and 99. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/113"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "JSON menu IDs",
+  "summary": "Calculate IDs in JSON menu",
+  "constraints": "Each line of input may contain one JSON string which contains integers between 0 and 100. Length and number of input lines are unconstrained.",
+  "url": "https://www.codeeval.com/browse/102"
+}

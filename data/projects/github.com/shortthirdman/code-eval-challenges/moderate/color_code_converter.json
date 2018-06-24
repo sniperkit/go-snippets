@@ -1,0 +1,6 @@
+{
+  "name": "Color Code Converter",
+  "summary": "Determine and convert the color code",
+  "constraints": "Each line of input contains one color code, which can be either HSL or HSV containing an integer between 0 and 359 and two integers between 0 and 100, CMYK containing four floating point numbers between 0 and 1, or Hex containing one integer between 0 and ffffff. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/148"
+}

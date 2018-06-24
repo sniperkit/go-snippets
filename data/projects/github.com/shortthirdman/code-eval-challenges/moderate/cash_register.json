@@ -1,0 +1,6 @@
+{
+  "name": "Cash Register",
+  "summary": "Determine the amount of change to be returned",
+  "constraints": "Each line of input contains two floating point numbers. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/54"
+}

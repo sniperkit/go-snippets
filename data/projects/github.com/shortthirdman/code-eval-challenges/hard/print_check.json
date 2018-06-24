@@ -1,0 +1,6 @@
+{
+  "name": "Text Dollar",
+  "summary": "Print out the text dollar amount of a given quantity",
+  "constraints": "Each line of input contains one positive integer lower than 1000000000. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/52"
+}

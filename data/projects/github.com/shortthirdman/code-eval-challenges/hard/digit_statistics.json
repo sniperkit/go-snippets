@@ -1,0 +1,6 @@
+{
+  "name": "Digit statistics",
+  "summary": "Find statistics in sequence",
+  "constraints": "Each line of input contains one integer between 2 and 9 and one positive integer lower or equal to 1000000000000. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/144"
+}

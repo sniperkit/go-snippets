@@ -1,0 +1,6 @@
+{
+  "name": "Endianness",
+  "summary": "Determine the endianness of a system.",
+  "constraints": "No input.",
+  "url": "https://www.codeeval.com/browse/15"
+}

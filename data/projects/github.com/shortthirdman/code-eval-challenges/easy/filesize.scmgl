@@ -1,0 +1,2 @@
+(display (stat:size (stat (list-ref (command-line) 1))))
+(newline)

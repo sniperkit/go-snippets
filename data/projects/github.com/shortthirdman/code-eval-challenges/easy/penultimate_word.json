@@ -1,0 +1,6 @@
+{
+  "name": "Penultimate Word",
+  "summary": "Find the next-to-last word",
+  "constraints": "Each line of input contains one string with more than one word. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/92"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Mars Networks",
+  "summary": "Find the minimum length of the optical fiber cable which connects probes to a network.",
+  "constraints": "Each line of input contains a list 3 to 250 pairs of nonnegative integers equal or below 10000. The number of input lines is 20.",
+  "url": "https://www.codeeval.com/browse/164"
+}

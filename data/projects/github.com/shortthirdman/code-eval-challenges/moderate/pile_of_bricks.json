@@ -1,0 +1,6 @@
+{
+  "name": "A Pile of Bricks",
+  "summary": "Close a hole in a wall",
+  "constraints": "Each line of input contains two pairs of integers between -100 and 100 and a list of equal to or less than 15 instances of one integer and two triplets of integers between -100 and 100. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/117"
+}

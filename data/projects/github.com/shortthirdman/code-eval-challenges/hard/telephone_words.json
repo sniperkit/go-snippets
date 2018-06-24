@@ -1,0 +1,6 @@
+{
+  "name": "Telephone Words",
+  "summary": "Print out the words corresponding to a telephone number",
+  "constraints": "Each line of input contains seven digits. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/59"
+}

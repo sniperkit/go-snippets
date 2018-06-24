@@ -1,0 +1,6 @@
+{
+  "name": "N Mod M",
+  "summary": "Determine the modulus (without the modulus operator).",
+  "constraints": "Each line of input contains two positive integers. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/62"
+}

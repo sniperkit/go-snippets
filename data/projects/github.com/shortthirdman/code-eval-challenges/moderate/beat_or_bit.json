@@ -1,0 +1,6 @@
+{
+  "name": "Beat or Bit",
+  "summary": "Learn more about the Gray code algorithm.",
+  "constraints": "Each line of input contains a list of two to six binary numbers between two and one hundred. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/236"
+}

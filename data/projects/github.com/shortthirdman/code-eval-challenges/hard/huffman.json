@@ -1,0 +1,6 @@
+{
+  "name": "Code like Huffman",
+  "summary": "Learn more about Huffman's tree.",
+  "constraints": "Each line of input contains a string of 3 to 30 lowercase characters. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/234"
+}

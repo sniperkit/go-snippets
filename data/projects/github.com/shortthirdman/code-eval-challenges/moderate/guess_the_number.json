@@ -1,0 +1,6 @@
+{
+  "name": "Guess the Number",
+  "summary": "Guess the number in log2(N) steps.",
+  "constraints": "Each line of input contains one nonnegative integer and a list of strings. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/170"
+}

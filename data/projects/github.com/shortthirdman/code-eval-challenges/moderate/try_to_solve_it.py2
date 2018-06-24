@@ -1,0 +1,5 @@
+import fileinput, string
+
+s, d = "abcdefghijklmnopqrstuvwxyz", "uvwxyznopqrstghijklmabcdef"
+for line in fileinput.input():
+    print line.translate(string.maketrans(s, d), '\n')

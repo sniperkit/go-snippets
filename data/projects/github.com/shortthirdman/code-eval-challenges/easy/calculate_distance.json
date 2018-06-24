@@ -1,0 +1,6 @@
+{
+  "name": "Calculate Distance",
+  "summary": "Calculate a distance between two points",
+  "constraints": "Each line of input contains four integers between -100 and 100. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/99"
+}

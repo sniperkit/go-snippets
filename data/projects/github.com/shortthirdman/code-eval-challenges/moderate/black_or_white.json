@@ -1,0 +1,6 @@
+{
+  "name": "Black or white",
+  "summary": "Find the smallest submatrix",
+  "constraints": "Each line of input contains a list of n times n characters of '1' or '0', with n between 2 and 25. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/209"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Time to eat",
+  "summary": "Sort timestamps in the right order.",
+  "constraints": "Each line of input contains a list of 2 to 20 timestamps from 00:00:01 to 23:59:59. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/214"
+}

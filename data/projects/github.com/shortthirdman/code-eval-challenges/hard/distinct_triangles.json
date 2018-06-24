@@ -1,0 +1,6 @@
+{
+  "name": "Distinct Triangles",
+  "summary": "Find the number of distinct triangles formed in a graph",
+  "constraints": "Each line of input contains two integers between 1 and 100 and a list of pairs of integers between 0 and 99. The number of lines of input is 10.",
+  "url": "https://www.codeeval.com/browse/188"
+}

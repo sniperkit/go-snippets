@@ -1,0 +1,6 @@
+{
+  "name": "One zero, two zero...",
+  "summary": "Count zeros in a binary system.",
+  "constraints": "Each line of input contains one integer between 0 and 10 and one integer between 5 and 1000. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/217"
+}

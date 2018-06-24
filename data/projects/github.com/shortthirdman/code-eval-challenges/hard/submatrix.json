@@ -1,0 +1,6 @@
+{
+  "name": "Largest Sub-Matrix",
+  "summary": "Determine the largest sub-matrix in a matrix",
+  "constraints": "The input consists of 20 or less lines containing an equal number of integers between -100 and 100.",
+  "url": "https://www.codeeval.com/browse/105"
+}

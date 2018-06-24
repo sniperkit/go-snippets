@@ -1,0 +1,6 @@
+{
+  "name": "Car Race",
+  "summary": "Determine the fastest car",
+  "constraints": "The first line of input contains a list of sections consisting of one floating point number and one integer. Each following line of input contains two integers and two floating point numbers. The number of input lines is between 21 and 41.",
+  "url": "https://www.codeeval.com/browse/138"
+}

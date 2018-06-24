@@ -1,0 +1,6 @@
+{
+  "name": "Juggle Fest",
+  "summary": "A challenge from Yodle",
+  "constraints": "The input consists of 2000 lines containing character 'C', a string, and three integers, and 12000 lines containing character 'J', a string, three integers, and a list of strings.",
+  "url": "https://www.codeeval.com/browse/88"
+}

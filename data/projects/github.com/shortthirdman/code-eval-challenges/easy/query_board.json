@@ -1,0 +1,6 @@
+{
+  "name": "Query Board",
+  "summary": "Set and get values from a matrix using tiny DSL",
+  "constraints": "Each line of input contains one out of four strings with one or two integers between 0 and 255 and between 0 and 31 respectively. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/87"
+}

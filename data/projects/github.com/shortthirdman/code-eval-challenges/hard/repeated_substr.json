@@ -1,0 +1,6 @@
+{
+  "name": "Repeated Substring",
+  "summary": "Find the longest repeated substring in a given text",
+  "constraints": "Each line of input contains one string. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/53"
+}

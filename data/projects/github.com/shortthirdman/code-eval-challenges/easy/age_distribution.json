@@ -1,0 +1,6 @@
+{
+  "name": "Age distribution",
+  "summary": "Print out where the person is.",
+  "constraints": "Each line of input contains one signed integer. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/152"
+}

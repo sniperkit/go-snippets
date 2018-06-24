@@ -1,0 +1,6 @@
+{
+  "name": "Strings and arrows",
+  "summary": "Print the number of arrows in a string",
+  "constraints": "Each line of input contains one string consisting of 10 to 250 '>', '<', and '-' characters. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/203"
+}

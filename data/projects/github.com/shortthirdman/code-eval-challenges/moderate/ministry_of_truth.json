@@ -1,0 +1,6 @@
+{
+  "name": "The Ministry of Truth",
+  "summary": "Your task is to help the Big Brother",
+  "constraints": "Each line of input contains two strings with less or equal to 100000 characters. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/143"
+}

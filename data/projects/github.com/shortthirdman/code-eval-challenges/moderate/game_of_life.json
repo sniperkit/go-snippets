@@ -1,0 +1,6 @@
+{
+  "name": "Game of Life",
+  "summary": "Implement the classical cellular automaton game.",
+  "constraints": "The input contains 100 lines with strings of 100 characters each.",
+  "url": "https://www.codeeval.com/browse/161"
+}

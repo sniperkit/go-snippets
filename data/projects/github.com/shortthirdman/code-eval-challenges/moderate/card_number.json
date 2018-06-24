@@ -1,0 +1,6 @@
+{
+  "name": "Card number validation",
+  "summary": "Check if bank card numbers are valid.",
+  "constraints": "Each line of input contains one number between 12 and 19 digits length seperated by spaces into groups of 4 digits. The number of input lines is 100.",
+  "url": "https://www.codeeval.com/browse/172"
+}

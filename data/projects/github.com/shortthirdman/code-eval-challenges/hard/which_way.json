@@ -1,0 +1,6 @@
+{
+  "name": "Which way is faster?",
+  "summary": "Find the fastest way",
+  "constraints": "Each line of input contains a list of strings. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/207"
+}

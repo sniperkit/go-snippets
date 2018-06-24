@@ -1,0 +1,6 @@
+{
+  "name": "Compare Points",
+  "summary": "Given two (x, y) points A and B, determine which cardinal direction B is from A.",
+  "constraints": "Each line of input contains four integers between -10000 and 10000. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/192"
+}

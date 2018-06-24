@@ -1,0 +1,6 @@
+{
+  "name": "Find a Writer",
+  "summary": "Find a famous writer in a string",
+  "constraints": "Each line of input may contain a string of unconstrained length n and a list of integers between 1 and n. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/97"
+}

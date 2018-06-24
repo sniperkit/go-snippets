@@ -1,0 +1,6 @@
+{
+  "name": "The Labyrinth",
+  "summary": "Find the shortest way to exit.",
+  "constraints": "The input consists of one multiline string of ' ' and '*'. Number and length of input lines are less or equal to 101.",
+  "url": "https://www.codeeval.com/browse/157"
+}

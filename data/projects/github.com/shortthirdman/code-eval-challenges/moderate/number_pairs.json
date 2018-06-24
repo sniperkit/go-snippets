@@ -1,0 +1,6 @@
+{
+  "name": "Number Pairs",
+  "summary": "Find pairs of numbers in a sorted array whose sum is X",
+  "constraints": "Each line of input contains a sorted list of positive integers and an integer. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/34"
+}

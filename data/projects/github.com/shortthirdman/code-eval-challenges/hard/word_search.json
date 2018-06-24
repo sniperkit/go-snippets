@@ -1,0 +1,6 @@
+{
+  "name": "Word Search",
+  "summary": "Find if a word exists in a grid",
+  "constraints": "Each line of input contains one string. Length and number of input lines are unconstrained.",
+  "url": "https://www.codeeval.com/browse/65"
+}

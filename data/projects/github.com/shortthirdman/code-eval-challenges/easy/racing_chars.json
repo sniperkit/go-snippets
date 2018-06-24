@@ -1,0 +1,6 @@
+{
+  "name": "Racing Chars",
+  "summary": "Explore a race track avoiding crashes",
+  "constraints": "Each line of input contains one string with 12 characters. The number of input lines is 50.",
+  "url": "https://www.codeeval.com/browse/136"
+}

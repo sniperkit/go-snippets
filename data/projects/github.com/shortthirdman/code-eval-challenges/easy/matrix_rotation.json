@@ -1,0 +1,6 @@
+{
+  "name": "Matrix Rotation",
+  "summary": "Rotate a 2D matrix 90 degrees clockwise.",
+  "constraints": "Each line of input contains a list of 1 to 100 characters from 'a' to 'z'. The number of input lines is 100.",
+  "url": "https://www.codeeval.com/browse/178"
+}

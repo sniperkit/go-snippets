@@ -1,0 +1,4 @@
+import fileinput
+
+for line in fileinput.input():
+    print bin(int(line)).count("1") % 3

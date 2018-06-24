@@ -1,0 +1,6 @@
+{
+  "name": "Broken LCD",
+  "summary": "Determine whether a given number can be displayed on the damaged LCD.",
+  "constraints": "Each line of input contains twelve binary integers and one floating point number. The number of input lines is 100.",
+  "url": "https://www.codeeval.com/browse/179"
+}
