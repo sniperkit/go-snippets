@@ -1,0 +1,85 @@
+Requirements:
+- Create server and workers and watch them simultaneously
+    - be given path of executable
+- Create workers of different speeds
+    - either a delay before telling server it is done (and including its speed)
+        - or a delay on each vertex
+    - be able to tell workers to start at one speed, and change speed after x checkpoints
+- kill/restart workers
+- know when checkpoints occur
+- know num vertices assigned 
+
+- timeout, optimal ratio
+    - specify these in server commandline?
+
+- restart server
+    - know when supersteps occur
+    - know when checkpoints occur
+
+
+
+
+
+ssh -f user@host "echo foo; sleep 5; echo bar"
+
+http://stackoverflow.com/questions/21001220/bash-sequence-wait-for-output-then-start-next-program
+
+
+
+worker [other stuff]... [start delay] [change point] [changed delay]
+sed checkpoint X/q
+worker [other stuff]... [start delay] [change point] [changed delay]
+
+"worker1: saved checkpoint 1"
+"worker1: assigned N partitions [X-Y]"
+
+
+python:
+- read config file
+    - location of client file
+    - location of server file
+    - location of worker files
+        (the worker pool)
+    - location of test data
+    - location of answer key
+
+- run tests:
+    - setup server
+    - setup X workers with appropriate commandline arguments
+        - for each test: 
+            - for each worker:
+                - start-delay,
+                - change-point,
+                - changed-delay values
+
+    - collect output for each worker in separate string
+    - collect output from server
+    - compare results is correct, OR, server output says failure
+    - check that after checkpoint X, each worker is assigned num partitions appropriate
+    to its speed
+    - prints time for complete test
+
+
+
+
+
+
+
+****************************
+
+15 
+assign partition 
+jobname
+
+1. Receive partition (vertex range)
+2. split vertices between threads (engines)
+3. Ready to run supersteps
+4. Run superstep and return messages
+5. Run superstep w/ checkpoint (store current value in DB)
+6. Return Done
+7. Restart from Checkpoint (load from DB)
+
+
+
+
+

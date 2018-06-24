@@ -1,0 +1,21 @@
+generate_test_file n max_edges_per_vertex
+solve_page_rank_python test_file
+    - produce results stdout? file?
+client
+    - produce restults stdout? file
+diff client_file python_file
+
+
+output file format
+n pr
+
+
+E.G:
+
+
+0 .23423423
+1 .00000123
+2 .21391328
+...
+1
+
