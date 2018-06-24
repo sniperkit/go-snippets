@@ -1,0 +1,288 @@
+---
+  swagger: "2.0"
+  info: 
+    version: "0.0.1"
+    title: "Archivers Identity API"
+    description: "Api for Archivers records"
+    termsOfService: "https://archivers.space/terms/api"
+    contact: 
+      name: "b5"
+    license: 
+      name: "AGPL"
+  host: "ident.archivers.space"
+  basePath: "/"
+  schemes: 
+  - "https"
+  consumes: 
+  - application/json
+  produces: 
+  - application/json
+  - application/x-pem-file
+  paths: 
+    /publickey:
+      get:
+        description: "Get this service's public key"
+        produces:
+        - application/x-pem-file
+        responses:
+          "200":
+            description: "Public Key"
+            schema:
+              $ref: "#/definitions/PublicKey"
+    /session:
+      get:
+        description: "Get session user"
+        produces:
+        - application/json
+        responses:
+          "200":
+            description: "Current User"
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+                data:
+                  $ref: "#/definitions/User"
+      # TODO - finish
+      # put:
+      #   description: "Update Current User"
+      #   produces:
+      #   - application/json
+      post:
+        description: "Create a New Session"
+        produces:
+        - application/json
+        responses:
+          "200":
+            description: "Successful Login"
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+                data:
+                  $ref: "#/definitions/User"
+
+      delete:
+        description: "Logout current session"
+        produces:
+          - application/json
+        responses:
+          "200":
+            description: "Successful logout, alias for GET /logout"
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+    
+    # TODO - document keys handlers
+    # /session/keys:
+    #   get:
+    #   post:
+    #   delete:
+
+    /jwt:
+      post:
+        description: "Get JSON Web Token"
+        consumes:
+        - application/json
+        produces:
+        - application/jwt
+        # TODO - support "accept: application/json" responses
+        # - application/json
+        parameters:
+        - name: credentials
+          in: body
+          description: json object of username & password login credentials
+          required: true
+          schema:
+            type: object
+            properties:
+              username: 
+                type: string
+              password:
+                type: string
+        responses:
+          "200":
+            description: "Returned JWT"
+            schema:
+              $ref: "#/definitions/JWT"
+            examples:
+              application/jwt: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTgwNTIwMjUsInVzZXJJZCI6IjY4YjBhYTlkLTBmYWEtNDJiMy1iODJlLTdhNDZhYTliM2ZlYiIsInVzZXJuYW1lIjoiYjUiLCJ1c2VyVHlwZSI6Im5vbmUifQ.fFJXTcNDJPZhqo_hXkiVHpC3oCWDWahPJ1qA0d_v9VFvDh0G3xcIDOJH54GEbAnE-pJ2oYwyxKzz--zHQbLoJw
+
+      # TODO - valid DELETE to JWT should invalidate all jwt's
+      # issued before the current time
+      # delete:
+    /logout:
+      get:
+        description: "Logout current session"
+        consumes:
+        - application/json
+        produces:
+        - application/json
+        responses:
+          "200":
+            description: "Successful logout"
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+      post:
+        description: "Logout current session"
+        consumes:
+        - application/json
+        produces:
+        - application/json
+        responses:
+          "200":
+            description: "Successful logout"
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+    /users:
+      get:
+        description: "Get Users"
+        produces:
+          - "application/json"
+        responses:
+          "200":
+            description: "Enveloped array of Users"
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+                data:
+                  $ref: "#/definitions/User"
+                pagination:
+                  type: object
+            examples:
+              application/json:
+                meta:
+                  code: 200
+                data:
+                - id: "a0288c2a-decd-492e-adb1-61dccbf0eba5"
+                  created: 1495036588
+                  updated: 1495036588
+                  username: "mr_green"
+                  type: "user"
+                  email: "mrgreen@aol.com"
+                  name: "Mr Green"
+                  description: ""
+                  home_url: ""
+                  currentKey: "644b51b9567d0d999e40f697d7406a26030cde95a83775d285ff1f57a73b3fab"
+                - id: "f0288c2a-efcd-492e-adb1-61dccbf0eba5"
+                  created: 1495036588
+                  updated: 1495036588
+                  username: "ms_blue"
+                  type: "user"
+                  email: "msblue@aol.com"
+                  name: "Ms Blue"
+                  description: ""
+                  home_url: ""
+                  currentKey: "743c61b9567d0d999e40f697d7406a26030cde95a83775d285ff1f57a73b3fab"
+                pagination:
+                  next: 2
+    /users/{id}:
+      get:
+        description: "Get info on a single user"
+        produces:
+        - application/json
+        consumes:
+        - application/json
+        parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        responses:
+          "200":
+            description: "Single User"
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+                data:
+                  $ref: "#/definitions/User"
+            examples:
+              application/json:
+                meta:
+                  code: 200
+                data:
+                  id: "a0288c2a-decd-492e-adb1-61dccbf0eba5"
+                  created: 1495036588
+                  updated: 1495036588
+                  username: "mr_green"
+                  type: "user"
+                  email: "mrgreen@aol.com"
+                  name: "Mr Green"
+                  description: ""
+                  home_url: ""
+                  currentKey: "644b51b9567d0d999e40f697d7406a26030cde95a83775d285ff1f57a73b3fab"
+
+    # TODO - planned groups support, not yet implemented
+    # /groups:
+    # /groups/{id}:
+
+    # TODO - finish oauth documentation
+    # /oauth/github:
+    # /oauth/github/repoaccess:
+
+  definitions:
+    PublicKey:
+      type: "string"
+      example: >
+        -----BEGIN PUBLIC KEY-----
+        MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMOsqD9mC5mWC4Fa5rTU3Zaq+ZWIgEzw
+        C0nkkPMLVAfJpkFI7uiyCIj5n6OuPCDGNJTzXMjJsBd1YhUqzg2XnAsCAwEAAQ==
+        -----END PUBLIC KEY-----
+    JWT:
+      type: "string"
+      example: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTgwNTIwMjUsInVzZXJJZCI6IjY4YjBhYTlkLTBmYWEtNDJiMy1iODJlLTdhNDZhYTliM2ZlYiIsInVzZXJuYW1lIjoiYjUiLCJ1c2VyVHlwZSI6Im5vbmUifQ.fFJXTcNDJPZhqo_hXkiVHpC3oCWDWahPJ1qA0d_v9VFvDh0G3xcIDOJH54GEbAnE-pJ2oYwyxKzz--zHQbLoJw
+    User:
+      type: "object"
+      required:
+      - "id"
+      properties:
+        id:
+          type: string
+          format: "uuidv4"
+          example: "08fadcb0-2bd4-4f68-9b10-b9e88668762d"
+        created:
+          type: string
+          format: date-time
+          description: timestamp of first addition to the database rounded to seconds in UTC.
+        updated:
+          type: string
+          format: date-time
+          description: timestamp of most recent change rounded to seconds in UTC
+        username:
+          type: string
+          description: handle for the user. min 1 character, max 80. composed of [_,-,a-z,A-Z,1-9]
+          example: "wonder_woman"
+        type:
+          type: string
+          description: specifies weather this is a user or an organization
+          example: "user"
+        name:
+          type: string
+          description: user name field. could be first[space]last, but not strictly enforced
+          example: "Diana Prince"
+        description:
+          type: string
+          description: user-filled description of self
+          example: The Spirit of Truth
+        homeUrl:
+          type: string
+          description: url this user wants the world to click
+          example: "https://en.wikipedia.org/wiki/Wonder_Woman"
+        currentKey:
+          type: string
+          description: sh256 multihash of public key that this user is currently using for signatures
+          example: "358a2a6b8e857836a9410c3ae5285eb5fec6fda7dcb7c78f75b4bada99bceea3"
