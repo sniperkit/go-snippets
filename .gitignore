@@ -1,0 +1,7 @@
+.dapper
+.github-release
+.tmass
+*.swp
+bin/
+dist/
+tmux*
