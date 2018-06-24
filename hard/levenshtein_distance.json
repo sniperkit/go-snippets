@@ -1,0 +1,6 @@
+{
+  "name": "Levenshtein Distance",
+  "summary": "Find out how big the social network of a word is",
+  "constraints": "Each of the first 15 to 30 lines of input contains one string, followed by the string 'END OF INPUT', followed by around 10000 strings.",
+  "url": "https://www.codeeval.com/browse/58"
+}

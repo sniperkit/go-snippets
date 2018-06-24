@@ -1,0 +1,6 @@
+{
+  "name": "Mth to last element",
+  "summary": "Determine the Mth to last element of a list",
+  "constraints": "Each line of input contains a list of characters and one integer. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/10"
+}

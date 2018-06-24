@@ -1,0 +1,6 @@
+{
+  "name": "Alphabet blocks",
+  "summary": "Forming words from alphabet blocks",
+  "constraints": "Each line of input contains an integer n between 4 and 18, a string with up to n characters, and a list of n strings with 6 characters. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/201"
+}

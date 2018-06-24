@@ -1,0 +1,17 @@
+(use-modules (ice-9 rdelim))
+(define input (open-input-file (list-ref (command-line) 1)))
+(let loop ((line (read-line input)))
+  (cond ((not (eof-object? line))
+    (if (not (string-null? line))
+      (begin
+        (let ((s (string-split line #\,)))
+          (let ((t (string-rindex (list-ref s 0)
+                                  (list-ref
+                                    (string->list
+                                      (list-ref s 1)) 0))))
+            (display (if t
+                       t
+                       -1))))
+        (newline)))
+    (loop (read-line input)))))
+(close input)

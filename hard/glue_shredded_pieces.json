@@ -1,0 +1,6 @@
+{
+  "name": "Glue Shredded Pieces",
+  "summary": "Reconstruct the original text from overlapping pieces.",
+  "constraints": "Each line of input contains a list of 125 to 975 strings with 8 to 28 characters. The number of input lines is 20.",
+  "url": "https://www.codeeval.com/browse/185"
+}

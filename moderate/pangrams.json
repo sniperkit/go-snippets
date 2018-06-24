@@ -1,0 +1,6 @@
+{
+  "name": "Pangrams",
+  "summary": "Find the missing alphabets",
+  "constraints": "Each line of input contains one string. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/37"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Delta Time",
+  "summary": "Find the time difference.",
+  "constraints": "Each line of input contains two time values in HH:MM:SS format with leading zeros. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/166"
+}

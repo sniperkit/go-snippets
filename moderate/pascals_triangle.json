@@ -1,0 +1,6 @@
+{
+  "name": "Pascals Triangle",
+  "summary": "Print out pascals triangle upto a certain depth.",
+  "constraints": "Each line of input contains one positive integer. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/66"
+}

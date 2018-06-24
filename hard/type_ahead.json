@@ -1,0 +1,6 @@
+{
+  "name": "Type Ahead",
+  "summary": "Building a type ahead feature",
+  "constraints": "Each line of input contains one positive integer and one string. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/55"
+}

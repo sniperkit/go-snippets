@@ -1,0 +1,11 @@
+(define n 0)
+(do ((i 9 (- i 2)))
+    ((< i 1))
+  (do ((j 9 (1- j)))
+      ((< j 0))
+    (set! n (+ (* i 101) (* j 10)))
+    (if (= (modulo-expt 2 (1- n) n) 1)
+      (begin
+        (display n)
+        (newline)
+        (exit 0)))))

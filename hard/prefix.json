@@ -1,0 +1,6 @@
+{
+  "name": "Prefix expressions",
+  "summary": "Evaluating a prefix expression.",
+  "constraints": "Each line of input contains a list of n characters '+', '*', and '/', and n+1 numbers. The number of input lines is less or equal to 40."
+  "url": "https://www.codeeval.com/browse/7"
+}

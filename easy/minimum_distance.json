@@ -1,0 +1,6 @@
+{
+  "name": "Minimum Distance",
+  "summary": "Find a point with the smallest sum of distances to every given point.",
+  "constraints": "Each line of input contains one positive integer n lower than 100 and a list of n positive integers lower than 10000. The number of input lines is 10.",
+  "url": "https://www.codeeval.com/browse/189"
+}

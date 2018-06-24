@@ -1,0 +1,6 @@
+{
+  "name": "Meet Comb sort",
+  "summary": "Learn more about the comb sort algorithm.",
+  "constraints": "Each line of input contains an unconstrained list of numbers. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/233"
+}

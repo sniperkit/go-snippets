@@ -1,0 +1,6 @@
+{
+  "name": "Gronsfeld cipher",
+  "summary": "Decipher the message enciphered with the Gronsfeld cipher.",
+  "constraints": "Each line of input contains one string of digits and one other string. The length of input lines is unconstrained, the number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/181"
+}

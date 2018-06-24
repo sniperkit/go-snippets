@@ -1,0 +1,6 @@
+{
+  "name": "Rightmost Char",
+  "summary": "Print the position of the rightmost occurrence of a char.",
+  "constraints": "Each line of input may contain one string and one character. Length and number of input lines are unconstrained.",
+  "url": "https://www.codeeval.com/browse/31"
+}

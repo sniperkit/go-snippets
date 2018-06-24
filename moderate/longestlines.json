@@ -1,0 +1,6 @@
+{
+  "name": "Longest Lines",
+  "summary": "Finding the 'N' longest lines within a file.",
+  "constraints": "The first line of input contains a positive integer n, the other n lines strings of different lengths. The length of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/2"
+}

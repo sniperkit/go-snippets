@@ -1,0 +1,6 @@
+{
+  "name": "Pass Triangle",
+  "summary": "Lead the way within the triangle",
+  "constraints": "Each line of input contains a continuously increasing number of nonnegative integers. The input file is given.",
+  "url": "https://www.codeeval.com/browse/89"
+}

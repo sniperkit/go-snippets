@@ -1,0 +1,9 @@
+import fileinput
+
+for line in fileinput.input():
+    l = sum(1 for c in line if c.islower())
+    u = sum(1 for c in line if c.isupper())
+    if l + u > 0:
+        print "lowercase: {:.2f} uppercase: {:.2f}".format(100. * l / (l + u), 100. * u / (l + u))
+    else:
+        print "lowercase: 0.00 uppercase: 0.00"

@@ -1,0 +1,6 @@
+{
+  "name": "Working experience",
+  "summary": "Retrieve an actual value",
+  "constraints": "Each line of input contains a list of date ranges between Jan 1990 and Dec 2020. The number of input lines is between 20 and 40.",
+  "url": "https://www.codeeval.com/browse/139"
+}

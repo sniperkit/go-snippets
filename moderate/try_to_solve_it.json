@@ -1,0 +1,6 @@
+{
+  "name": "Try to solve it",
+  "summary": "How good decoder are you?",
+  "constraints": "Each line of input contains a string of between 2 and 40 lowercase characters. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/226"
+}

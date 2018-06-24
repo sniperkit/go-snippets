@@ -1,0 +1,6 @@
+{
+  "name": "Capitalize Words",
+  "summary": "Capitalize words in a sentence",
+  "constraints": "Each line of input contains one string. Length and number of input lines are unconstrained.",
+  "url": "https://www.codeeval.com/browse/93"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Cracking eggs",
+  "summary": "Determine the number of drops.",
+  "constraints": "Each line of input contains two integers. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/151"
+}

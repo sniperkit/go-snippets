@@ -1,0 +1,6 @@
+{
+  "name": "Ugly Numbers",
+  "summary": "Count the number of expressions that can be created from a number",
+  "constraints": "Each line of input contains one nonnegative integer less than 10000000000000. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/42"
+}

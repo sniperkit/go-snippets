@@ -1,0 +1,6 @@
+{
+  "name": "The Cubes",
+  "summary": "Find the length of the shortest way in the multilevel labyrinth.",
+  "constraints": "Each line of input contains one integer N between 5 and 11 and a string with length N^3. The number of input lines is 20.",
+  "url": "https://www.codeeval.com/browse/175"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Multiples of a Number",
+  "summary": "Multiples of a number greater than another number.",
+  "constraints": "Each line of input contains two integers. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/18"
+}

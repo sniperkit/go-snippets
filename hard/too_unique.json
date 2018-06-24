@@ -1,0 +1,6 @@
+{
+  "name": "Too unique",
+  "summary": "Find and mark the biggest submatrices of unique elements.",
+  "constraints": "The input consists of 60 lines with 20 characters from 'a' to 'z'.",
+  "url": "https://www.codeeval.com/browse/162"
+}

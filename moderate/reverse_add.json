@@ -1,0 +1,6 @@
+{
+  "name": "Reverse and Add",
+  "summary": "Continually add a number to its reverse to arrive at a palindrome",
+  "constraints": "Each line of input contains one integer below 10000. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/45"
+}

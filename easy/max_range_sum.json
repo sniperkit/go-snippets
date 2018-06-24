@@ -1,0 +1,6 @@
+{
+  "name": "Max Range Sum",
+  "summary": "Determine max sum at the range.",
+  "constraints": "Each line of input contains a positive integer lower than 100 and a list of less than 10000 integers greater than -10000 and lower than 10000. The number of input lines is 20.",
+  "url": "https://www.codeeval.com/browse/186"
+}

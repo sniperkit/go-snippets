@@ -1,0 +1,15 @@
+import fileinput
+
+for line in fileinput.input():
+    st, r = line.split(), []
+    f, b, n = int(st[0]), int(st[1]), int(st[2])
+    for i in xrange(1, n+1):
+        if i % f == 0 and i % b == 0:
+            r.append("FB")
+        elif i % f == 0:
+            r.append("F")
+        elif i % b == 0:
+            r.append("B")
+        else:
+            r.append(str(i))
+    print " ".join(r)

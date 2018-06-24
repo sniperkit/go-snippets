@@ -1,0 +1,6 @@
+{
+  "name": "To PI or not to PI",
+  "summary": "Print a PI number.",
+  "constraints": "Each line of input contains one integer between 1 and 5000. The number of input lines is 30.",
+  "url": "https://www.codeeval.com/browse/228"
+}

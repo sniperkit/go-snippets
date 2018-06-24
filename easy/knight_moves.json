@@ -1,0 +1,6 @@
+{
+  "name": "Knight Moves",
+  "summary": "Find positions for the next move of the knight.",
+  "constraints": "Each line of input contains one position on a chessboard. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/180"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Builders team",
+  "summary": "Count all squares on the map.",
+  "constraints": "Each line of input contains a list of 4 to 60 instances of two integers between 1 and 25. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/218"
+}

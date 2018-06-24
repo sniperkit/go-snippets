@@ -1,0 +1,6 @@
+{
+  "name": "Commuting Engineer",
+  "summary": "Travelling Salesman Problem",
+  "constraints": "Each line of input contains one positive integer, one string, and two floating point numbers. The number of input lines is 10.",
+  "url": "https://www.codeeval.com/browse/90"
+}

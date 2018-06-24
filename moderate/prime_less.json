@@ -1,0 +1,6 @@
+{
+  "name": "Prime Numbers",
+  "summary": "Print prime numbers less than N",
+  "constraints": "Each line of input contains one positive integer less than 4294967295. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/46"
+}

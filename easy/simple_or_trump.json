@@ -1,0 +1,6 @@
+{
+  "name": "Simple or Trump",
+  "summary": "Check which card is higher.",
+  "constraints": "Each line of input contains two strings and a character. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/235"
+}

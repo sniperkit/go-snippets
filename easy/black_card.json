@@ -1,0 +1,6 @@
+{
+  "name": "Black card",
+  "summary": "Find the winner.",
+  "constraints": "Each line of input contains a list of four to ten strings and an integer between three and fifteen. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/222"
+}

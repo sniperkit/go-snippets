@@ -1,0 +1,6 @@
+{
+  "name": "File Size",
+  "summary": "Print the file size in bytes.",
+  "constraints": "The first argument contains a path to a file. The size of the file is unconstrained.",
+  "url": "https://www.codeeval.com/browse/26"
+}

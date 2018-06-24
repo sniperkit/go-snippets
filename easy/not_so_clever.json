@@ -1,0 +1,6 @@
+{
+  "name": "Not so clever",
+  "summary": "Simplicity is not always good.",
+  "constraints": "Each line of input contains a list of numbers and an integer between one and eight. The number of input lines is forty.",
+  "url": "https://www.codeeval.com/browse/232"
+}

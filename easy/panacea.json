@@ -1,0 +1,6 @@
+{
+  "name": "Panacea - truth or lie",
+  "summary": "Check whether the virus was stopped by antivirus.",
+  "constraints": "Each line of input contains a list of one to eight hexadecimal numbers and a list of one to eight binary numbers, each with a sum between 60 and 1500. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/237"
+}

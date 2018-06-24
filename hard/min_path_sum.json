@@ -1,0 +1,6 @@
+{
+  "name": "Minimum Path Sum",
+  "summary": "Calculate the minimum sum of a path through a matrix.",
+  "constraints": "The input contains instances of one line with one positive integer n followed by n lines with n integers. The number of instances is unconstrained.",
+  "url": "https://www.codeeval.com/browse/72"
+}

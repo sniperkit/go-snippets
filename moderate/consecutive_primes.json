@@ -1,0 +1,6 @@
+{
+  "name": "Consecutive Primes",
+  "summary": "Determine how many ways the numbers can be arranged such that every consecutive pair sums to a prime.",
+  "constraints": "Each line of input contains one positive integer between 2 and 18. The number of input lines is 5.",
+  "url": "https://www.codeeval.com/browse/187"
+}

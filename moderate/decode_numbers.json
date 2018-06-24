@@ -1,0 +1,6 @@
+{
+  "name": "Decode Numbers",
+  "summary": "Count the number of ways to decode a string.",
+  "constraints": "Each line of input contains one string of numbers between 1 and 26. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/73"
+}

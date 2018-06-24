@@ -1,0 +1,20 @@
+import fileinput, sys
+
+morse = "ETIANMSURWDKGOHVF L PJBXCYZQ  54 3   2       16       7   8 90"
+for line in fileinput.input():
+    m = 1
+    for i in line.rstrip('\n'):
+        if i == '.':
+            m *= 2
+        elif i == '-':
+            m = m*2 + 1
+        else:
+            if m == 1:
+                sys.stdout.write(' ')
+            else:
+                if m < 64:
+                    sys.stdout.write(morse[m-2])
+                m = 1
+    if m > 1 and m < 64:
+        sys.stdout.write(morse[m-2])
+    print

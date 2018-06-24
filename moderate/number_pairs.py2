@@ -1,0 +1,17 @@
+import fileinput, sys
+
+for line in fileinput.input():
+    st = line.split(';')
+    a = st[0].split(',')
+    b = int(st[1])
+
+    f = False
+    for i in a:
+        if 2 * int(i) < b and str(b - int(i)) in a:
+            if f:
+                sys.stdout.write(';')
+            sys.stdout.write(i + ',' + str(b - int(i)))
+            f = True
+    if not f:
+        sys.stdout.write('NULL')
+    print

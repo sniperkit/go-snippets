@@ -1,0 +1,9 @@
+"""reverse the elements of the list, k items at a time"""
+import fileinput
+
+for line in fileinput.input():
+    s = line.split(';')
+    k, l = int(s[1]), s[0].split(',')
+    for i in range(0, len(l)-k+1, k):
+        l = l[:i] + l[i:i+k][::-1] + l[i+k:]
+    print(*l, sep=',')

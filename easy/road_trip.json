@@ -1,0 +1,6 @@
+{
+  "name": "Road Trip",
+  "summary": "Do not be left without petrol",
+  "constraints": "Each line of input contains a list of 500 to 600 strings and integers lower or equal to 30000. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/124"
+}

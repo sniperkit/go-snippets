@@ -1,0 +1,6 @@
+{
+  "name": "Ray of Light",
+  "summary": "Trace the path of light distribution.",
+  "constraints": "Each line of input contains one string with 10 times 10 characters. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/176"
+}

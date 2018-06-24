@@ -1,0 +1,6 @@
+{
+  "name": "Prime Palindrome",
+  "summary": "Biggest prime palindrome < 1000.",
+  "constraints": "No input.",
+  "url": "https://www.codeeval.com/browse/3"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Trailing String",
+  "summary": "Determine if a string 'B' occurs at the end of string 'A'",
+  "constraints": "Each line of input may contain two strings. Length and number of input lines are unconstrained.",
+  "url": "https://www.codeeval.com/browse/32"
+}

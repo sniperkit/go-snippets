@@ -1,0 +1,10 @@
+"""print out all the possible sequences of letters that can represent
+a given telephone number"""
+import fileinput, itertools
+
+T = ('0', '1', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz')
+
+for s in fileinput.input():
+    print(','.join(a+b+c+d+e+f+g for a, b, c, d, e, f, g in
+      itertools.product(T[int(s[0])], T[int(s[1])], T[int(s[2])],
+      T[int(s[3])], T[int(s[4])], T[int(s[5])], T[int(s[6])])))

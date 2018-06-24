@@ -1,0 +1,6 @@
+{
+  "name": "Clean up the words",
+  "summary": "Print the words separated by spaces",
+  "constraints": "Each line of input contains one string between 10 and 100 characters. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/205"
+}

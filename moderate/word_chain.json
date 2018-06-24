@@ -1,0 +1,6 @@
+{
+  "name": "Word chain",
+  "summary": "Find the longest chain of words",
+  "constraints": "Each line of input contains a list of 4 to 35 strings with 3 to 7 characters. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/135"
+}

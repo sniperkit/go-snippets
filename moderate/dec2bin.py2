@@ -1,0 +1,4 @@
+import fileinput
+
+for line in filter(lambda x: x != '\n', fileinput.input()):
+    print "{0:b}".format(int(line))

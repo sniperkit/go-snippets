@@ -1,0 +1,6 @@
+import fileinput
+
+for line in fileinput.input():
+    s = [int(i) for i in line.split()]
+    t = [i for i in s if s.count(i) == 1]
+    print s.index(min(t)) + 1 if t else 0

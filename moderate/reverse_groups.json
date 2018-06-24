@@ -1,0 +1,6 @@
+{
+  "name": "Reverse Groups",
+  "summary": "Reverse elements in a list k items at a time.",
+  "constraints": "Each line of input contains a list of numbers and one positive integer. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/71"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Longest Path",
+  "summary": "Find the longest path of unique elements.",
+  "constraints": "Each line of input contains one string with between 4 and 36 characters. The number of input lines is 20.",
+  "url": "https://www.codeeval.com/browse/182"
+}

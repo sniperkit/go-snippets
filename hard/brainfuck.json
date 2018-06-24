@@ -1,0 +1,6 @@
+{
+  "name": "Brainfuck",
+  "summary": "Blow your mind",
+  "constraints": "Each line of input contains a string. The number of input lines is 10.",
+  "url": "https://www.codeeval.com/browse/210"
+}

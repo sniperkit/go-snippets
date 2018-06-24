@@ -1,0 +1,6 @@
+{
+  "name": "Decimal To Binary",
+  "summary": "Print the binary representation of a decimal number.",
+  "constraints": "Each line of input may contain one nonnegative integer. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/27"
+}

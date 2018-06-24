@@ -1,0 +1,6 @@
+{
+  "name": "Lakes, not cakes",
+  "summary": "Count all lakes.",
+  "constraints": "Each line of input contains a list of 3 to 30 equally long lists of 3 to 30 characters '#' or 'o'. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/213"
+}

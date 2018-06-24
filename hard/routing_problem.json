@@ -1,0 +1,6 @@
+{
+  "name": "Routing Problem",
+  "summary": "Find the shortest path for the package",
+  "constraints": "The first line of input contains a list of h equal 150 to 300 instances of one integer between 0 and h-1 and zero to six IP ranges in CIDR notation. Each of the 30 to 40 subsequent lines of input contains two integers.",
+  "url": "https://www.codeeval.com/browse/129"
+}

@@ -1,0 +1,16 @@
+(define (robot f x y)
+  (if (and (= x 3) (= y 3))
+    1
+    (let ((r 0))
+      (if (and (> x 0) (not (logbit? (+ (1- x) (* 4 y)) f)))
+        (set! r (+ r (robot (+ f (ash 1 (+ (1- x) (* 4 y)))) (1- x) y))))
+      (if (and (> y 0) (not (logbit? (+ x (* 4 (1- y))) f)))
+        (set! r (+ r (robot (+ f (ash 1 (+ x (* 4 (1- y))))) x (1- y)))))
+      (if (and (< x 3) (not (logbit? (+ x 1 (* 4 y)) f)))
+        (set! r (+ r (robot (+ f (ash 1 (+ x 1 (* 4 y)))) (1+ x) y))))
+      (if (and (< y 3) (not (logbit? (+ x (* 4 (1+ y))) f)))
+        (set! r (+ r (robot (+ f (ash 1 (+ x (* 4 (1+ y))))) x (1+ y)))))
+      r)))
+
+(display (robot 1 0 0))
+(newline)

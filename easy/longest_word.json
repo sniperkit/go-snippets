@@ -1,0 +1,6 @@
+{
+  "name": "Longest Word",
+  "summary": "Get the longest word in a sentence",
+  "constraints": "Each line of input contains one string. Number and length of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/111"
+}

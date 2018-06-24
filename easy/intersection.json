@@ -1,0 +1,6 @@
+{
+  "name": "Set Intersection",
+  "summary": "Print the intersection of two sets of numbers.",
+  "constraints": "Each line of input contains two sorted lists of integers. Length and number of input lines are unconstrained.",
+  "url": "https://www.codeeval.com/browse/30"
+}

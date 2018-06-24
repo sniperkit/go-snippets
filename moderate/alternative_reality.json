@@ -1,0 +1,6 @@
+{
+  "name": "Alternative reality",
+  "summary": "Count all alternative ways.",
+  "constraints": "Each line of input contains one integer between 1 and 100. The number of input lines is 30.",
+  "url": "https://www.codeeval.com/browse/223"
+}

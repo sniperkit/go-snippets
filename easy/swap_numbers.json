@@ -1,0 +1,6 @@
+{
+  "name": "Swap Numbers",
+  "summary": "Swap numbers surrounding a word",
+  "constraints": "Each line of input contains a string with one to seventeen words that have digits as prefix and suffix. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/196"
+}

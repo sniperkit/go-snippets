@@ -1,0 +1,6 @@
+{
+  "name": "Interrupted Bubble Sort",
+  "summary": "Sort a list of elements. Partially.",
+  "constraints": "Each line of input contains a list of positive integers and an integer. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/158"
+}

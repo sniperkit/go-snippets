@@ -1,0 +1,6 @@
+{
+  "name": "Hex to Decimal",
+  "summary": "Convert a hex number to its decimal equivalent.",
+  "constraints": "Each line of input contains one hexadecimal integer. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/67"
+}

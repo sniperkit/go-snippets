@@ -1,0 +1,16 @@
+import fileinput, sys
+
+for line in fileinput.input():
+    up = True
+    for c in line:
+        if c.isalpha():
+            if up:
+                sys.stdout.write(c.upper())
+                up = False
+            else:
+                sys.stdout.write(c.lower())
+                up = True
+        else:
+            sys.stdout.write(c)
+    if line[-1] != '\n':
+        print

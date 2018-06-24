@@ -1,0 +1,6 @@
+XX.YY,XXX.Y,X..YY,XX..Y
+XX...YY,X....YY,XX..YYY,X..YYYY
+XXYY,X..Y,XX.Y
+X........Y,X........Y
+X.Y..Y,X..Y
+XY.Y,XX.Y

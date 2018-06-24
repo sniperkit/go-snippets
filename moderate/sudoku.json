@@ -1,0 +1,6 @@
+{
+  "name": "Sudoku",
+  "summary": "Determine if a grid layout is a valid sudoku solution.",
+  "constraints": "Each line of input contains one integer n of either 4 or 9 and a list n times n integers between 1 and n. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/78"
+}

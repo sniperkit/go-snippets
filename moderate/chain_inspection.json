@@ -1,0 +1,6 @@
+{
+  "name": "Chain Inspection",
+  "summary": "Try to pass a chain",
+  "constraints": "Each line of input contains a list of 1 to 500 pairs of strings or positive integers between 2 and 10000. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/119"
+}

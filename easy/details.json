@@ -1,0 +1,6 @@
+{
+  "name": "Details",
+  "summary": "Determine how many cells will be shifted detail.",
+  "constraints": "Each line of input contains a list of 2 to 10 strings with 2 to 10 characters. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/183"
+}

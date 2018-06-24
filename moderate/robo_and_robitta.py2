@@ -1,0 +1,7 @@
+import fileinput, string
+
+for line in fileinput.input():
+    r, st = 0, [int(s) for s in line.translate(string.maketrans('x', ' '), '|').split()]
+    while st[1] != st[3]:
+        r, st[0], st[1], st[2], st[3] = r+st[0], st[1]-1, st[0], st[1]-st[3], st[2]
+    print r+st[2]

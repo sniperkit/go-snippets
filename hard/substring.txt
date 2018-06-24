@@ -1,0 +1,8 @@
+Hello,ell
+This is good, is 
+CodeEval,C*Eval
+test*ing,test\*ing
+test\ing,test\\ing
+test*ing,t*s*n*g
+test*ing,t*t*s*g
+Old,Young

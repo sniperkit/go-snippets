@@ -1,0 +1,6 @@
+{
+  "name": "Compressed Sequence",
+  "summary": "Compress a sequence using a simple algorithm",
+  "constraints": "Each line of input contains between 1 and 400 integers from 0 to 99. There are between 20 and 50 input lines.",
+  "url": "https://www.codeeval.com/browse/128"
+}

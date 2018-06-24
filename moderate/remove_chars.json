@@ -1,0 +1,6 @@
+{
+  "name": "Remove Characters",
+  "summary": "Delete specific characters from a string.",
+  "constraints": "Each line of input contains two strings. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/13"
+}

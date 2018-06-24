@@ -1,0 +1,6 @@
+{
+  "name": "Juggling With Zeros",
+  "summary": "Convert a zero based number into integer",
+  "constraints": "Each line of input contains one string which contains a zero-based integer. Length and number of input lines are unconstrained.",
+  "url": "https://www.codeeval.com/browse/149"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Straight lines",
+  "summary": "Print the number of straight lines",
+  "constraints": "Each line of input contains a list of an unconstrained number times two integers between -20 and 20. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/204"
+}

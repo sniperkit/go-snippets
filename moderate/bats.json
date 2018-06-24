@@ -1,0 +1,6 @@
+{
+  "name": "Bats Challenge",
+  "summary": "Count bats on the wire.",
+  "constraints": "Each line of input contains three integers l, d, and n, and a list of n integers if any. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/146"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Sequence Transformation",
+  "summary": "Transform a binary sequence into a string",
+  "constraints": "Each line of input consists of a string with 1 to 150 characters of '0's and '1's and a string with 1 to 1000 characters of 'A's and 'B's. The number of input lines is less or equal to 50.",
+  "url": "https://www.codeeval.com/browse/130"
+}

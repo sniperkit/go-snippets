@@ -1,0 +1,18 @@
+(use-modules (ice-9 rdelim))
+(use-modules (srfi srfi-1))
+(define input (open-input-file (list-ref (command-line) 1)))
+(define (delete-adjacent-duplicates lst)
+  (fold-right (lambda (elem ret)
+                (if (equal? elem (first ret))
+                    ret
+                    (cons elem ret)))
+              (list (last lst))
+              lst))
+(let loop ((line (read-line input)))
+  (cond ((not (eof-object? line))
+    (display (string-join
+               (delete-adjacent-duplicates
+                 (string-split line #\,)) ","))
+    (newline)
+    (loop (read-line input)))))
+(close input)

@@ -1,0 +1,6 @@
+{
+  "name": "Find a Square",
+  "summary": "Do 4 points make a square?",
+  "constraints": "Each line of input contains four times two nonnegative integers between 0 and 10. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/101"
+}

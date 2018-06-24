@@ -1,0 +1,6 @@
+{
+  "name": "Distinct Subsequences",
+  "summary": "Determine the number of distinct subsequences within a string.",
+  "constraints": "Each line of input contains two strings. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/69"
+}

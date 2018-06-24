@@ -1,0 +1,6 @@
+{
+  "name": "Array Absurdity",
+  "summary": "Determine if an array contains a duplicated entry",
+  "constraints": "Each line of input contains one positive integer n and a list of n integers between 0 and n-2. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/41"
+}

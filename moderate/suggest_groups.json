@@ -1,0 +1,6 @@
+{
+  "name": "Suggest Groups",
+  "summary": "Help your friends to join groups.",
+  "constraints": "Each line of input contains one string, a list of strings, and a list of between zero and fifteen strings. The number of input lines is 200.",
+  "url": "https://www.codeeval.com/browse/165"
+}

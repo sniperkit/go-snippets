@@ -1,0 +1,6 @@
+{
+  "name": "Chardonnay or Cabernet",
+  "summary": "Guess a wine name.",
+  "constraints": "Each line of input contains a list of 2 to 10 strings between 2 and 15 characters and a string of up to 5 characters. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/211"
+}

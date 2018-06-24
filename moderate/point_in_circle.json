@@ -1,0 +1,6 @@
+{
+  "name": "Point in Circle",
+  "summary": "Define whether a point is in a circle",
+  "constraints": "Each line of input contains five signed floating point numbers between -100 and 100. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/98"
+}

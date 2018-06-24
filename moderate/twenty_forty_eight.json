@@ -1,0 +1,6 @@
+{
+  "name": "Twenty Forty Eight",
+  "summary": "Implement the 2048 game logic",
+  "constraints": "Each line of input contains one string, one integer n between 4 and 10, and n times n integers between 2 and 1024. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/194"
+}

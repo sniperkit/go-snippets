@@ -1,0 +1,6 @@
+{
+  "name": "Text to Number",
+  "summary": "Convert English text representation of a number to a decimal number",
+  "constraints": "Each line of input contains one string. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/110"
+}

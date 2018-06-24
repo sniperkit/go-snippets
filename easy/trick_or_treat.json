@@ -1,0 +1,6 @@
+{
+  "name": "Trick or Treat",
+  "summary": "Count all candies.",
+  "constraints": "Each line of input contains four integers between 0 and 100. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/220"
+}

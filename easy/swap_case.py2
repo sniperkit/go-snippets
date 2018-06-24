@@ -1,0 +1,12 @@
+import fileinput, sys
+
+for line in fileinput.input():
+    for c in line:
+        if c.islower():
+            sys.stdout.write(c.upper())
+        elif c.isupper():
+            sys.stdout.write(c.lower())
+        else:
+            sys.stdout.write(c)
+    if line[-1] != '\n':
+        print

@@ -1,0 +1,6 @@
+{
+  "name": "Happy Numbers",
+  "summary": "Determine if a number is a happy number or not",
+  "constraints": "Each line of input contains one positive integer. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/39"
+}

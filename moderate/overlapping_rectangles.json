@@ -1,0 +1,6 @@
+{
+  "name": "Overlapping Rectangles",
+  "summary": "Determine if two rectangles overlap.",
+  "constraints": "Each line of input contains eight numbers. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/70"
+}

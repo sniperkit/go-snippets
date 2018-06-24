@@ -1,0 +1,6 @@
+{
+  "name": "Lowest Unique Number",
+  "summary": "Find the lowest unique number in a set",
+  "constraints": "Each line of input contains 10 to 20 integers between 1 and 9. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/103"
+}

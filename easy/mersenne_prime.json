@@ -1,0 +1,6 @@
+{
+  "name": "Mersenne Prime",
+  "summary": "Find all Mersenne numbers smaller than n.",
+  "constraints": "Each line of input contains one positive integer between 4 and 3000. The number of input lines is 20.",
+  "url": "https://www.codeeval.com/browse/240"
+}

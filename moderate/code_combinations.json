@@ -1,0 +1,6 @@
+{
+  "name": "Code combinations",
+  "summary": "Check whether you can make words from the given letters.",
+  "constraints": "Each line of input contains a list of two to ten strings of equal length, with two to ten characters. The number of input lines is forty.",
+  "url": "https://www.codeeval.com/browse/238"
+}

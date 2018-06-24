@@ -1,0 +1,6 @@
+{
+  "name": "Message Decoding",
+  "summary": "Decode an encoded message",
+  "constraints": "Each line of input contains two strings, the second one consisting of '0's and '1's. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/36"
+}

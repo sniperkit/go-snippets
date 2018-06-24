@@ -1,0 +1,6 @@
+{
+  "name": "Fibonacci Series",
+  "summary": "Print out the nth fibonacci number",
+  "constraints": "Each line of input contains one integer greater or equal to zero. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/22"
+}

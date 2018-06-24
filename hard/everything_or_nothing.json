@@ -1,0 +1,6 @@
+{
+  "name": "Everything or Nothing",
+  "summary": "Check if a code is correct.",
+  "constraints": "Each line of input contains a list of 1 to 8 strings. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/216"
+}

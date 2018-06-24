@@ -1,0 +1,6 @@
+{
+  "name": "Magic Numbers",
+  "summary": "Print out a list of all the magic numbers in a provided range.",
+  "constraints": "Each line of input contains two positive integers equal or below 10000. The number of input lines is 20.",
+  "url": "https://www.codeeval.com/browse/193"
+}

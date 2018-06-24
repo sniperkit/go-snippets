@@ -1,0 +1,6 @@
+{
+  "name": "Word to Digit",
+  "summary": "Substitute words to digits",
+  "constraints": "Each line of input contains a list of twenty or less strings. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/104"
+}

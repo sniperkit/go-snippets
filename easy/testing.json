@@ -1,0 +1,6 @@
+{
+  "name": "Testing",
+  "summary": "Wanna try to be a tester?",
+  "constraints": "Each line of input contains two equally long strings of five to forty characters. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/225"
+}

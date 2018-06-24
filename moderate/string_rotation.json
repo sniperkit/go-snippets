@@ -1,0 +1,6 @@
+{
+  "name": "String Rotation",
+  "summary": "Find if a string is the rotation of another string.",
+  "constraints": "Each line of input contains two strings. Length and number of input lines are unconstrained.",
+  "url": "https://www.codeeval.com/browse/76"
+}

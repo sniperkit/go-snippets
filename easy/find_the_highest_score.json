@@ -1,0 +1,6 @@
+{
+  "name": "Find the highest score",
+  "summary": "Find the highest rate in the table",
+  "constraints": "Each line of input contains a list of 2 to 10 equally long lists of 4 to 20 integers between -1000 and 1000. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/208"
+}

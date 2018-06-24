@@ -1,0 +1,6 @@
+{
+  "name": "The Major Element",
+  "summary": "Find the major element in a sequence",
+  "constraints": "Each line of input contains 10000 to 30000 integers between 0 and 100. The number of input lines is lower or equal to forty.",
+  "url": "https://www.codeeval.com/browse/132"
+}

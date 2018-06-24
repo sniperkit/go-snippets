@@ -1,0 +1,6 @@
+{
+  "name": "Even Numbers",
+  "summary": "Determine if a number is even or not",
+  "constraints": "Each line of input contains one integer between 1 and 4999. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/100"
+}

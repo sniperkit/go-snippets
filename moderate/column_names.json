@@ -1,0 +1,6 @@
+{
+  "name": "Column Names",
+  "summary": "Convert integer to excel-style column name",
+  "constraints": "Each line of input contains one positive integer between 1 and 18278. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/197"
+}

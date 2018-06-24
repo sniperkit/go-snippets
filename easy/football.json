@@ -1,0 +1,6 @@
+{
+  "name": "Football",
+  "summary": "Find countries that are football fans.",
+  "constraints": "Each line of input contains a list of between three and twenty lists of between one and seven integers. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/230"
+}

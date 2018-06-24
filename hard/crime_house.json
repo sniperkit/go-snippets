@@ -1,0 +1,6 @@
+{
+  "name": "Crime House",
+  "summary": "Count criminals in the Crime House",
+  "constraints": "Each line of input contains one integer n between 1 and 15 and a list of n instances of a character E or L and an integer between 0 and 2000. The number of input lines is 20.",
+  "url": "https://www.codeeval.com/browse/195"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Real fake",
+  "summary": "Check credit card numbers.",
+  "constraints": "Each line of input contains one number with 16 digits length seperated by spaces into groups of 4 digits. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/227"
+}

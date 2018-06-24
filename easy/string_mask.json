@@ -1,0 +1,6 @@
+{
+  "name": "String mask",
+  "summary": "Change case letters by mask",
+  "constraints": "Each line of input contains two strings between 1 and 20 characters each. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/199"
+}

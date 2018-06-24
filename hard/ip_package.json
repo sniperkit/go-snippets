@@ -1,0 +1,6 @@
+{
+  "name": "IP package",
+  "summary": "Calculate IP checksum.",
+  "constraints": "Each line of input contains two IP addresses and a list of hexadecimal integers between 00 and ff. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/154"
+}

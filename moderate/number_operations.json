@@ -1,0 +1,6 @@
+{
+  "name": "Number Operations",
+  "summary": "Determine if it is possible to produce the number 42 with five cards.",
+  "constraints": "Each line of input contains five positive integers between 1 and 52. The number of input lines is unconstrained.",
+  "url": "https://www.codeeval.com/browse/190"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Slang Flavor",
+  "summary": "Add some slang to the text.",
+  "constraints": "Each line of input contains one string. The length of input lines is unconstrained. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/174"
+}

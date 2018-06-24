@@ -1,0 +1,6 @@
+{
+  "name": "Robo and Robitta",
+  "summary": "Count all nuts.",
+  "constraints": "Each line of input contains two integers m, n between 2 and 50, and two integers between 1 and m and 1 and n. The number of input lines is 40.",
+  "url": "https://www.codeeval.com/browse/212"
+}
