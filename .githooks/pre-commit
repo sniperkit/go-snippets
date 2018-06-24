@@ -35,7 +35,7 @@ test_args -1 "test_argument_1" "test_argument_2"
 function timer()
 {
 	local count_args=($#)
-
+	echolor --Green "Function name: ${FUNCNAME} with ${count_args}"
 	# if [[ $# -eq 0 ]] || [[ $# -gt 2 ]]; then
 	if [ $count_args -eq 1 ]; then
         local stime=$1
