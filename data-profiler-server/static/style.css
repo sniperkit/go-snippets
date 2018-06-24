@@ -1,0 +1,102 @@
+html {
+		font-family: Arial, Helvetica, sans-serif;
+		/*  background: #f4fef4; */
+}
+.navbar {
+		background: #333333;
+		padding: 10 10;
+		margin: 0;
+		overflow: hidden;
+}
+
+.searchbar {
+		float:right;
+		height:20px;
+}
+
+#searchbutton {
+		height:25px;
+		padding:0 0;
+		margin:0 auto;
+}
+
+.link {
+		transition: 0.3s ease;
+		color: #ffffff;
+		font-size: 20px;
+		text-decoration: none;
+		width:100px;
+}
+
+.link:hover {
+		background: #33aa22;
+}
+
+#main {
+		width: 1000px;
+		margin: 0 auto;
+		box-shadow: 10px 10px 10px #888888;
+		/*  	background: #f8fef8;*/
+}
+
+.copyright {
+		text-align: center;
+		margin: 0 auto;
+		width:200px;
+}
+
+table.tablelist {
+		border-collapse:collapse;
+		position: relative;
+		margin:0 auto;
+}
+
+.tablelist th, td {
+		text-align: left;
+		padding: 8px;
+}
+
+.tablelist tr:nth-child(even){
+		background-color: #f2f2f2
+}
+
+.tablelist th {
+		/*		background-color: #4CAF50;*/
+		background-color: #33AA22;
+		color: white;
+}
+#popPolicyDiv {
+		margin:0 auto;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+		background: #33AA22;
+		color: white;
+}
+
+div.center {
+		margin: 0 auto;
+}
+
+.tooltip {
+		border:1px solid black;
+		width:auto;
+		height:auto;
+		position: absolute;
+		background: white;
+}
+
+.delete-button {
+		background: #aa0000;
+}
+
+#tabs .ui-tabs-active, #newsmform .ui-tabs-active{
+		background-color: #33AA22;
+		border: 1px solid #33AA22;
+		font-color: #FFFFFF;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}

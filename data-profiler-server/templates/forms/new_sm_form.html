@@ -1,0 +1,223 @@
+{{ define "appx" }}
+<h3>Population Policy</h3>
+<div id='popPolicyDiv'>
+<fieldSet>
+<legend>Select approxiximation policy</legend>
+<label for="full">Full</label>
+<input type='radio' name='popPolicy' value='full' checked/>
+<label for="aprx">Approximate</label>
+<input type='radio' name='popPolicy' value='aprx'/>
+<br/>
+<div id='popParametersDiv'>
+<select name='popParameter'>
+<option value="popCount">Datasets count</option>
+<option value="popThreshold">Similarity threshold</option>
+</select>
+<input style='width:auto' type='text' name='popParameterValue' class='ui-widget ui-widget-content ui-corner-all' />
+</div>
+</fieldSet>
+</div>
+{{end}}
+
+<div name='tabs' title="Estimate Similarity Matrix" id='newsmform'>
+<ul>
+<li> <a href='#jaccard'>Jaccard Estimator</a></li>
+<li> <a href='#bhattacharyya'>Bhattacharyya Estimator</a></li>
+<li> <a href='#correlation'>Correlation Estimator</a></li>
+<li> <a href='#composite'>Composite Estimator</a></li>
+<li> <a href='#script'>Script Estimator</a></li>
+<li> <a href='#scriptpair'>Script Pair Estimator</a></li>
+<li> <a href='#size'>Size Estimator</a></li>
+</ul>
+
+<div id='jaccard'>
+<form method='post' action='/datasets/{{ $.ID }}/newsm?action=submit'>
+<h3>Jaccard Estimator Parameters<h3>
+<table class='tablelist'>
+<tr><th>No. threads</th><td><input type='text' name='concurrency' value='1' class='ui-widget ui-widget-content ui-corner-all' /></td></tr>
+<input type='hidden' name='estimatorType' value='jaccard'/>
+</table>
+{{ template "appx" . }}
+<br/>
+<span style='float:right'>
+<input type='submit' class="ui-button ui-widget ui-corner-all"/>
+</span>
+</form>
+</div>
+
+
+<div id='bhattacharyya'>
+<form method='post' action='/datasets/{{ $.ID }}/newsm?action=submit'>
+<h3>Bhattacharyya Estimator Parameters<h3>
+<table class='tablelist'>
+<tr><th>No. threads</th><td><input class='ui-widget ui-widget-content ui-corner-all' type='text' name='concurrency' value='1'/></td></tr>
+<tr><th>Max No. Partitions</th><td><input class='ui-widget ui-widget-content ui-corner-all' type='text' name='partitions' value='32'/></td></tr>
+<tr><th>Dataset sampling</th><td><input class='ui-widget ui-widget-content ui-corner-all' type='text' name='tree.sr' value='0.1'/></td></tr>
+<tr><th>Dataset Columns</th><td><input class='ui-widget ui-widget-content ui-corner-all' type='text' name='columns' value='all'/></td></tr>
+<input type='hidden' name='estimatorType' value='bhattacharyya'/>
+</table>
+{{ template "appx" . }}
+<br/>
+<span style='float:right'>
+<input type='submit' class="ui-button ui-widget ui-corner-all"/>
+</span>
+</form>
+</div>
+
+<div id='correlation'>
+<form method='post' action='/datasets/{{ $.ID }}/newsm?action=submit'> 
+<h3>Correlation Estimator Parameters<h3>
+<table class='tablelist'>
+<tr><th>No. threads</th><td><input class='ui-widget ui-widget-content ui-corner-all' type='text' name='concurrency' value='1'/></td></tr>
+<tr><th>Column to examine</th><td><input class='ui-widget ui-widget-content ui-corner-all' type='text' name='column' value='0'/></td></tr>
+<tr><th>Correlation Type</th>
+<td>
+<select name="type">
+<option value="pearson">Pearson</option>
+<option value="spearman">Spearman</option>
+<option value="kendall">Kendall</option>
+</select>
+</td>
+</tr>
+<tr><th>Normalization Type</th>
+<td>
+<select name="normalization">
+<option value="abs">Absolute value</option>
+<option value="scale">Scale</option>
+<option value="pos">Positive only</option>
+</select>
+</td>
+</tr>
+<input type='hidden' name='estimatorType' value='correlation'/>
+</table>
+{{ template "appx" . }}
+<br/>
+<span style='float:right'>
+<input type='submit' class="ui-button ui-widget ui-corner-all"/>
+</span>
+</form>
+</div>
+
+<div id='composite'>
+<h3>Composite Estimator Parameters</h3>
+<form method='post' action='/datasets/{{ $.ID }}/newsm?action=submit'>
+<table class='tablelist' id='compositetable'>
+<tr><th>No. threads</th><td><input type='text' name='concurrency' value='1'  class='ui-widget ui-widget-content ui-corner-all' /></td></tr>
+<tr><th>Expression</th><td><input type='text' name='expression' value='x1' class='ui-widget ui-widget-content ui-corner-all'  /></td></tr>
+
+<tr id='templaterow'><th>x1</th><td><select name='x1'><option></option>{{ range $k,$v:= $.Matrices }}<option value='{{$k}}'>{{$v}}</option>{{ end }}</select></td></tr>
+<input type='hidden' name='estimatorType' value='composite'/>
+</table>
+<div style='text-align:right'>
+<label onclick='addInput()'>Add parameter</label>
+</div>
+{{ template "appx" . }}
+<br/>
+<span style='float:right'>
+<input type='submit' class="ui-button ui-widget ui-corner-all"/>
+</span>
+</form>
+</div>
+<script>
+function addInput() {
+		a = "<tr>"+$("#templaterow").clone().html()+"</tr>";
+		rows = $("#compositetable tr").length;
+		b = a.split("x1").join("x"+(rows-1))
+		$("#compositetable tr:last").after(b);
+}
+</script>
+
+
+<div id='size'>
+<form method='post' action='/datasets/{{ $.ID }}/newsm?action=submit'>
+<h3>Size Estimator Parameters<h3>
+<table class='tablelist'>
+<tr><th>No. threads</th><td><input type='text' name='concurrency' value='1' class='ui-widget ui-widget-content ui-corner-all' /></td></tr>
+<input type='hidden' name='estimatorType' value='size'/>
+</table>
+{{ template "appx" . }}
+<br/>
+<span style='float:right'>
+<input type='submit' class="ui-button ui-widget ui-corner-all"/>
+</span>
+</form>
+</div>
+
+
+
+<div id='script'>
+<h3>Script Estimator Parameters</h3>
+<form method='post' action='/datasets/{{ $.ID }}/newsm?action=submit'>
+<table class='tablelist'>
+<tr><th>No. threads</th><td><input type='text' name='concurrency' value='1' class='ui-widget ui-widget-content ui-corner-all' /></td></tr>
+<tr>
+		<th>Script</th>
+<td>
+<select name="script">
+		{{ range $k, $v:= $.Scripts }}
+		<option value="{{$k}}">{{$v}}</option>
+		{{ end }}
+</select>
+</td>
+
+</tr>
+<input type='hidden' name='estimatorType' value='script'/>
+<tr>
+		<th>Type</th>
+<td>
+<select name="type">
+<option value="cosine">Cosine similarity</option>
+<option value="manhattan">Manhattan distance</option>
+<option value="euclidean">Euclidean distance</option>
+</select>
+</td>
+</tr>
+</table>
+{{ template "appx" . }}
+<br/>
+<span style='float:right'>
+<input type='submit' class="ui-button ui-widget ui-corner-all"/>
+</span>
+</form>
+</div>
+
+
+
+<div id='scriptpair'>
+<h3>Script Pair Estimator Parameters</h3>
+<form method='post' action='/datasets/{{ $.ID }}/newsm?action=submit' enctype="multipart/form-data" >
+<table class='tablelist'>
+<tr><th>No. threads</th><td><input type='text' name='concurrency' value='1' class='ui-widget ui-widget-content ui-corner-all' /></td></tr>
+<tr>
+		<th>Script</th>
+<td>
+		<input type='file' name='script'/>
+<!--
+		<select name="script">
+		{{ range $k, $v:= $.Scripts }}
+		<option value="{{$k}}">{{$v}}</option>
+		{{ end }}
+</select>
+-->
+</td>
+
+</tr>
+<input type='hidden' name='estimatorType' value='scriptpair'/>
+</table>
+{{ template "appx" . }}
+<br/>
+<span style='float:right'>
+<input type='submit' class="ui-button ui-widget ui-corner-all"/>
+</span>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+<script type='text/javascript'>
+$( "div[name=tabs]" ).tabs();
+</script>

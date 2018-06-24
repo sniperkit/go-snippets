@@ -1,0 +1,15 @@
+<form method='post' enctype="multipart/form-data" action='/datasets/{{.ID}}/newop?action=submit'>
+<table class='tablelist'>
+<tr>
+<th>Description</th>
+<td><input type='text' name='description' class="ui-button ui-widget ui-corner-all" /></td>
+</tr>
+<tr>
+<th>File</th>
+<td><input type='file' name='file' class="ui-button ui-widget ui-corner-all" /></td>
+</tr>
+</table>
+<span style='float:right;'>
+<input type='submit' class="ui-button ui-widget ui-corner-all"/>
+</span>
+</form>

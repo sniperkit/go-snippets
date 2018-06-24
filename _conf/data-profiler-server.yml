@@ -1,0 +1,37 @@
+---
+server: 
+    listen: 0.0.0.0:8080
+    dirs:
+            templates: data-profiler-server/templates
+            static: data-profiler-server/static
+database: /home/giannis/data-profiler-datasets/sqlite3.db
+logfile: ""
+scripts:
+        mds: _rscripts/mdscaling.R
+        analysis:
+                - _rscripts/pca.R
+        ml:
+                SVM : _rscripts/svm-appx.R
+                Simple Linear Regression : _rscripts/lm-appx.R
+                CART : _rscripts/cart-regression-appx.R
+                Artificial Neural Network : _rscripts/ann-regression-appx.R
+                Artificial Neural Network (2): _rscripts/ann-regression-appx-2.R
+                Artificial Neural Network (3): _rscripts/ann-regression-appx-3.R
+                Artificial Neural Network (4): _rscripts/ann-regression-appx-4.R
+                Artificial Neural Network (5): _rscripts/ann-regression-appx-5.R
+                Artificial Neural Network (2,2): _rscripts/ann-regression-appx-2-2.R
+                Artificial Neural Network (2,3): _rscripts/ann-regression-appx-2-3.R
+                Artificial Neural Network (2,4): _rscripts/ann-regression-appx-2-4.R
+                Artificial Neural Network (2,5): _rscripts/ann-regression-appx-2-5.R
+                Artificial Neural Network (3,2): _rscripts/ann-regression-appx-3-2.R
+                Artificial Neural Network (3,3): _rscripts/ann-regression-appx-3-3.R
+                Artificial Neural Network (3,4): _rscripts/ann-regression-appx-3-4.R
+                Artificial Neural Network (3,5): _rscripts/ann-regression-appx-3-5.R
+                Artificial Neural Network (4,2): _rscripts/ann-regression-appx-4-2.R
+                Artificial Neural Network (4,3): _rscripts/ann-regression-appx-4-3.R
+                Artificial Neural Network (4,4): _rscripts/ann-regression-appx-4-4.R
+                Artificial Neural Network (4,5): _rscripts/ann-regression-appx-4-5.R
+                Artificial Neural Network (5,2): _rscripts/ann-regression-appx-5-2.R
+                Artificial Neural Network (5,3): _rscripts/ann-regression-appx-5-3.R
+                Artificial Neural Network (5,4): _rscripts/ann-regression-appx-5-4.R
+                Artificial Neural Network (5,5): _rscripts/ann-regression-appx-5-5.R

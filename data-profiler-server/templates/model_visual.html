@@ -1,0 +1,364 @@
+{{ define "title" }}Model Visualization{{ end }}
+
+{{ define "body"}}
+
+<div id='tabs'>
+		<ul>
+				<li><a href='#projection'>Projection</a></li>
+				<li><a href='#errors'>Errors</a></li>
+		</ul>
+
+
+<div id='projection'>
+		<h2>Model Projection</h2>
+		<pre id='labels' hidden>{{$.Labels}}</pre>
+		<pre id='samples' hidden>{{$.Samples}}</pre>
+		<pre id='approximated' hidden>{{$.ApproximatedValues}}</pre>
+		<pre id='coordinates' hidden>{{$.Coordinates}}</pre>
+		<pre id='scores' hidden>{{$.ScoresID}}</pre>
+		<div id="container" style="height: 800px"></div>
+		<label for='appx'>Approximated values:<input type='checkbox' name='appx' id='appxCheckbox' onclick='depictAppxValues()' checked/></label>
+		<br/>
+		<label for='samples'>Samples:<input type='checkbox' name='samples' id='sampleCheckbox' onclick='depictSamples()' checked/></label>
+		<br/>
+		<label for='actual'>Actual values:<input type='checkbox' name='actual' id='actualCheckbox' onclick='depictActualValues()'/></label>
+</div>
+<div id='errors'>
+<h2>Error Metrics</h2>
+<!--<table class='tablelist'>
+{{ range $k, $v := .Errors}}
+<tr><th>{{$k}}</th><td>{{$v}}</td></tr>
+{{end}}
+
+</table>
+-->
+<div id='errortable'></div>
+<pre id='errors_raw' hidden>
+{{ range $k, $v := .Errors}}
+{{$k}},{{$v}}
+{{end}}
+</pre>
+<script  type='text/javascript'>
+var errors=$("#errors_raw").html()
+metrics = errors.split("\n");
+prefixes = {};
+suffixes = {};
+errorsMap = {};
+for(var i=0;i<metrics.length;i++) {
+		entry = metrics[i];
+		kv = entry.split(",");
+		if(kv.length >0){
+			title =kv[0];
+			value = kv[1];
+			kv = title.split("-");
+			prefix = kv[0];
+			suffix = kv[1];
+			if(prefix != undefined && prefix != "") {
+					prefixes[prefix]=undefined;
+			}
+			if(suffix != undefined && suffix != "") {
+					suffixes[suffix]=undefined;
+			}
+			if(prefix!=undefined && prefix != "" && errorsMap[prefix]==undefined) {
+					errorsMap[prefix] = {}
+			}
+			if(suffix!=undefined && suffix!= "" && errorsMap[prefix][suffix]==undefined) {
+					errorsMap[prefix][suffix] = value
+			}
+		}
+}
+htmlString="<table class='tablelist'>";
+
+htmlString=htmlString+"<tr>";
+htmlString=htmlString+"<th></th>";
+for(var key in suffixes) {
+		htmlString=htmlString+"<th style='text-align:center;'>"+key+"</th>";
+}
+
+for (var key1 in prefixes) {
+	htmlString=htmlString+"<tr>";
+	htmlString=htmlString+"<th>"+key1+"</th>";
+
+	for (var key2 in suffixes) {
+	htmlString=htmlString+"<td style='text-align:right;'>"+errorsMap[key1][key2]+"</td>";
+	}
+	htmlString=htmlString+"</tr>";
+}
+
+htmlString=htmlString+"</tr>";
+htmlString=htmlString+"</table>";
+
+$("#errortable").html(htmlString);
+</script>
+</div>
+</div>
+
+<script>
+var chart;
+var approximatedValues = [];
+var actualValues = [];
+var sampleValues = [];
+var scores;
+
+// data parsing
+var coordinates=$( "#coordinates").html().split("\n");
+var labels= $( "#labels").html().split("\n");
+var samples= JSON.parse($( "#samples").html());
+var appx= $( "#approximated").html().split(",");
+var scoresID= $( "#scores").html();
+var targetDiv = "container";
+
+for(var i=0;i<coordinates.length;i++) {
+		str = coordinates[i].split(",");
+		var tuple = {};
+		var defineTuple = false;
+		if (str.length > 0){
+				tuple.x = parseFloat(str[0]);
+				if (!isNaN(tuple.x)){
+						defineTuple = true;
+				}
+		} else {
+				tuple.x = 0.0;
+		}
+		if (str.length > 1){
+				tuple.z = parseFloat(str[1]);
+				defineTuple = true;
+		} else {
+				tuple.z = 0.0;
+		}
+		if (appx.length > i){
+				tuple.y = parseFloat(appx[i]);
+				defineTuple = true;
+		} else {
+				tuple.y = 0.0;
+		}
+		if (defineTuple) {
+				tuple.name = labels[i];
+				tuple.color = "rgb(200,0,0)"
+				approximatedValues.push(tuple);
+		}
+}
+for(var key in samples) {
+		o = approximatedValues[key]
+		tup = {}
+		tup.x = o.x;
+		tup.z = o.z;
+		tup.y = parseFloat(samples[key])
+		tup.name = o.name
+		tup.color="rgb(0,0,200)"
+		sampleValues.push(tup)
+}
+// normalization
+//var maxElem={x:"",y:"",z:""}, minElem = {x:"", y:"", z:""};
+//for(var i=0;i<data.length;i++) {
+//		o = data[i]
+//				if (maxElem.x == "" || maxElem.x < o.x) {
+//						maxElem.x = o.x;
+//				}
+//		if (maxElem.y == "" || maxElem.y < o.y) {
+//				maxElem.y = o.y;
+//		}
+//		if (maxElem.z == "" || maxElem.z < o.z) {
+//				maxElem.z = o.z;
+//		}
+//		if (minElem.x == "" || minElem.x > o.x) {
+//				minElem.x = o.x;
+//		}
+//		if (minElem.y == "" || minElem.y > o.y) {
+//				minElem.y = o.y;
+//		}
+//		if (minElem.z == "" || minElem.z > o.z) {
+//				minElem.z = o.z;
+//		}
+//
+//}
+// Give the points a 3D feel by adding a radial gradient
+Highcharts.getOptions().colors = $.map(Highcharts.getOptions().colors, function (color) {
+		return {
+				radialGradient: {
+						cx: 0.4,
+						cy: 0.3,
+						r: 0.5
+				},
+				stops: [
+						[0, color],
+						[1, Highcharts.Color(color).brighten(-0.2).get('rgb')]
+				]
+		};
+});
+
+// Set up the chart
+chart = new Highcharts.Chart({
+		chart: {
+				renderTo: targetDiv,
+				margin: 100,
+				width:950,
+				type: 'scatter',
+				options3d: {
+						enabled: true,
+						alpha: 10,
+						beta: 30,
+						depth: 800,
+						viewDistance: 5,
+						fitToPlot: false,
+						frame: {
+								bottom: { size: 1, color: 'rgba(0,0,0,0.02)' },
+								back: { size: 1, color: 'rgba(0,0,0,0.04)' },
+								side: { size: 1, color: 'rgba(0,0,0,0.06)' }
+						}
+				},
+		},
+		title: {
+				text: 'Operator Model'
+		},
+		subtitle: {
+				text: 'Click and drag the plot area to rotate in space'
+		},
+		tooltip: {
+				pointFormatter: function(){ 
+						var message = this.name+"<br/>(";
+						message +=parseFloat(this.x)+","
+								message +=parseFloat(this.z)+","
+								message +=parseFloat(this.y)+")"
+								if(scores!=undefined && scores[this.name]!=undefined) {
+										message+="<br/>Operator score:"+parseFloat(scores[this.name]);
+								}
+						return message
+				}
+		},
+		plotOptions: {
+				scatter: {
+						width: 10,
+						height: 10,
+						depth: 10
+				}
+		},
+		yAxis: {
+				title: { 
+						text : "Operator Values"
+				}
+		},
+		xAxis: {
+				title: { 
+						text : "PC1"
+				},
+				gridLineWidth: 1
+		},
+		zAxis: {
+				title: { 
+						text : "PC2"
+				},
+				showFirstLabel: false
+		},
+		legend: {
+				enabled: false
+		},
+		series: [{
+				name: 'Approximated Values',
+				colorByPoint: false,
+				data : approximatedValues
+		},{
+				name: 'Samples',
+				colorByPoint: false,
+				data : sampleValues
+		},{
+				name: 'Actual Values',
+				colorByPoint: false,
+				data : actualValues
+		} ]
+});
+
+
+// Add mouse events for rotation
+$(chart.container).on('mousedown.hc touchstart.hc', function (eStart) {
+		eStart = chart.pointer.normalize(eStart);
+
+		var posX = eStart.pageX,
+		posY = eStart.pageY,
+		alpha = chart.options.chart.options3d.alpha,
+		beta = chart.options.chart.options3d.beta,
+		newAlpha,
+		newBeta,
+		sensitivity = 6; // lower is more sensitive
+
+		$(document).on({
+				'mousemove.hc touchdrag.hc': function (e) {
+						// Run beta
+						newBeta = beta + (posX - e.pageX) / sensitivity;
+						chart.options.chart.options3d.beta = newBeta;
+
+						// Run alpha
+						newAlpha = alpha + (e.pageY - posY) / sensitivity;
+						chart.options.chart.options3d.alpha = newAlpha;
+
+						chart.redraw(false);
+				},
+				'mouseup touchend': function () {
+						$(document).off('.hc');
+				}
+		});
+});
+function depictActualValues() {
+		if($("#actualCheckbox").is(":checked")) {
+		$.get("/scores/"+scoresID+"/text/", function(d) {
+				var arr = d.split("\n");
+				scores = {};
+				for(var i=0;i<arr.length;i++) {
+					t = arr[i].split(":");
+					if (t.length == 2) {
+						scores[t[0]] = t[1];
+					}
+				}
+				var actualValues = [];
+				for(var i=0;i<approximatedValues.length;i++) {
+					tup = {};
+					tup.x = approximatedValues[i].x;
+					tup.z = approximatedValues[i].z;
+					tup.y = parseFloat(scores[approximatedValues[i].name])
+					tup.name = approximatedValues[i].name
+					tup.color = "rgb(0,200,0)"
+					actualValues.push(tup)
+				}
+				chart.series[2].update({data:actualValues});
+				chart.series[2].show();
+		});
+		} else {
+				chart.series[2].hide();
+		}
+}
+function depictAppxValues() {
+		if($("#appxCheckbox").is(":checked")) {
+				chart.series[0].show();
+		} else {
+				chart.series[0].hide();
+		}
+}
+
+function depictSamples() {
+		if($("#sampleCheckbox").is(":checked")) {
+				chart.series[1].show();
+		} else {
+				chart.series[1].hide();
+		}
+}
+
+</script>
+
+
+
+
+
+
+
+<script>
+if(scoresID=="") {
+		$("#actualCheckbox").attr("disabled", true);
+}
+$("#tabs").tabs();
+</script>
+
+
+
+{{ end }}
+
+{{ template "base.html" . }}
