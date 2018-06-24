@@ -26,6 +26,7 @@ https://github.com/topics/code-review?l=go
 https://github.com/topics/terminal?l=go
 https://github.com/topics/blockchain?l=go
 https://github.com/topics/cli?l=go
+https://github.com/topics/package-manager?l=go
 https://github.com/topics/pagerank?l=go
 https://github.com/topics/dashboard?l=go
 https://github.com/topics/fake-news
