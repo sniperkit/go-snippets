@@ -279,6 +279,13 @@ echo ""
 # git config core.fileMode false
 # git config --global core.autocrlf true
 
+# git rm -r --cached .
+# git add -A
+# git commit -am 'Removing ignored files'
+
+# ref. https://stackoverflow.com/questions/5787937/git-status-shows-files-as-changed-even-though-contents-are-the-same
+# git ls-files --eol
+
 # ref. http://www.codewrecks.com/blog/index.php/2014/04/22/git-showing-file-as-modified-even-if-it-is-unchanged/
 # modified files issue
 # git config core.autocrlf false

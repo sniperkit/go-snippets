@@ -30,4 +30,5 @@ https://github.com/larsxschneider/git-repo-analysis
 - https://stackoverflow.com/questions/15752026/git-on-windows-shows-modified-files-all-the-time-even-for-newly-cloned-repo
 - https://stackoverflow.com/questions/9750606/git-still-shows-files-as-modified-after-adding-to-gitignore
 - https://stackoverflow.com/questions/14564946/git-status-shows-changed-files-but-git-diff-doesnt
-- 
+- https://blog.andrewray.me/dealing-with-compiled-files-in-git/
+- https://stackoverflow.com/questions/5787937/git-status-shows-files-as-changed-even-though-contents-are-the-same
