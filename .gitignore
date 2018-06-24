@@ -1,0 +1,5 @@
+.DS_Store
+gin-bin
+content
+coverage.*
+config.*.json
