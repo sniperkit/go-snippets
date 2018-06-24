@@ -6,7 +6,7 @@
 
 clear
 
-exit
+# exit
 
 echo ""
 echo "## [START] GIT - PRE-COMMIT"
@@ -86,14 +86,17 @@ function ls_dirs_size {
 declare REMOVED_DIRS_MAP=()
 function rm_dirs_by_name { 
 	local pattern_dirname=${1:-"test"}
-	local removed_dirs=$(find . -name "$pattern_dirname" -type d -print -exec rm -rf {} +)
-	local removed_dirs_count=${#removed_dirs[@]}
-	REMOVED_DIRS_MAP[${pattern_dirname}]=$removed_dirs_count
+	local removed_dirs=$(find . -name "$pattern_dirname" -type d -print)
+	local removed_dirs_array=($(echo "$removed_dirs" | tr ' ' '\n'))
+
+	# local removed_dirs=$(find . -name "$pattern_dirname" -type d -print -exec rm -rf {} +)
+	local removed_dirs_count=${#removed_dirs_array[@]}
 	echo " - pattern_dirname    = ${pattern_dirname}"
 	echo " - removed_dirs_count = ${removed_dirs_count}"
 	echo " - removed_dirs       = ${removed_dirs[@]}"
-	if [ ${removed_dirs_count} > 0 ]; then
-		echo " - removed_dirs       = ${removed_dirs[@]}"
+	if [ ${removed_dirs_count} -gt 0 ]; then
+		REMOVED_DIRS_MAP[${pattern_dirname}]=$removed_dirs_count
+		echolor --Red " - [WARNING] removed_dirs       = ${removed_dirs[@]}"
 	fi
 }
 
@@ -114,7 +117,7 @@ for key in "${REMOVE_DIRS_ARRAY[@]}"; do
 done
 
 for key in "${REMOVED_DIRS_MAP[@]}"; do
-	echo "### REMOVE Successfully removed all dirnames: \"${$key}\""
+	echo "### REMOVE Successfully removed all dirnames: \"${key}\""
 	echo "- REMOVED_DIRS_MAP[$key] = $REMOVED_DIRS_MAP[$key]"
 done
 
@@ -130,7 +133,7 @@ function prunful {
 		local lookup=$(cat .git/gc.log | grep $match)
 		if [ $lookup == $match ]; then
 			echo "### removing ${file}"
-			rm -f .git/gc.log
+			rm -f $file
 			echo "### Run git prune"
 			git prune
 		fi
@@ -138,7 +141,7 @@ function prunful {
 	separator
 }
 
-# prunful
+prunful
 
 export COMMITFUL=false
 export UNSTAGGED_FILES=""
@@ -150,7 +153,7 @@ function ls_unstagged {
 	echo "$UNSTAGGED_FILES"
 	echo ""
 	echo "- UNSTAGGED_FILES_COUNT=${#UNSTAGGED_FILES[@]}"
-	if [ "${UNSTAGGED_FILES_COUNT}" > 0 ]; then 
+	if [ "${UNSTAGGED_FILES_COUNT}" -gt 0 ]; then 
 		COMMITFUL=true
 	fi
 	separator
@@ -158,6 +161,9 @@ function ls_unstagged {
 
 # ls_unstagged
 # commitful
+
+rm -fR ./0
+
 
 echo "## SUMMARY"
 echo "- REMOVE_DIRS           =   ${REMOVE_DIRS}"

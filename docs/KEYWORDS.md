@@ -29,7 +29,11 @@ https://github.com/topics/pagerank?l=go
 https://github.com/topics/dashboard?l=go
 https://github.com/topics/cui?l=go
 https://github.com/samkcarlile/pro
-
+https://github.com/topics/chrome-extension?l=go
+https://github.com/topics/chrome-extension?l=vue
+https://github.com/topics/chrome-extensions?l=vue
+https://github.com/topics/chrome-extension?l=python
+https://github.com/topics/chrome-extensions?l=vue
 https://github.com/topics/classification?l=go
 https://github.com/topics/multi-label?l=go
 https://github.com/topics/go-github?l=go
