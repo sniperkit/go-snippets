@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package blacksquaremedia.reason.classification.ftrl;
+
+import "github.com/bsm/reason/core/core.proto";
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+option (gogoproto.goproto_stringer_all) = true;
+option (gogoproto.goproto_unrecognized_all) = false;
+
+option go_package = "internal";
+option java_package = "com.blacksquaremedia.reason.classification";
+option java_outer_classname = "FTRLProtos";
+
+// Optimizer wraps the optimizer data.
+message Optimizer {
+  // The underlying model.
+  blacksquaremedia.reason.core.Model model = 1;
+
+  // The target feature.
+  string target = 2;
+
+  // The gradient sums.
+  repeated double sums = 3;
+
+  // The weights.
+  repeated double weights = 4;
+}

@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package blacksquaremedia.reason.core;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+option (gogoproto.goproto_stringer_all) = true;
+option (gogoproto.goproto_unrecognized_all) = false;
+
+option go_package = "core";
+option java_package = "com.blacksquaremedia.reason";
+option java_outer_classname = "CoreProtos";
+
+// Model describes a set of features
+message Model {
+  map<string, Feature> features = 1;
+}
+
+// Feature is an attribute of a fact/example.
+message Feature {
+  // Kind identifies the feature type.
+  enum Kind {
+    NUMERICAL   = 0;
+    CATEGORICAL = 1;
+  }
+
+  // Strategies apply to categorical features and define how
+  // fact value are converted to numeric category indices.
+  enum Strategy {
+    // This is the default strategy where categories are calculated as
+    // the index of the value in the vocabulary list. This strategy can
+    // be used in combination with HashBuckets to look up values outside
+    // the vocabulary.
+    VOCABULARY = 0;
+    // Categorical feature with an identity simply use the numeric fact
+    // values s the category.
+    IDENTITY = 1;
+    // Like VOCABULARY this uses a vocabulary but - instead of referring to
+    // HashBuckets - unknown values are appended to the vocabulary list.
+    // Please use this option with care as there is no limitation for growth.
+    EXPANDABLE = 2;
+  }
+
+  // The name.
+  string name = 1;
+
+  // The kind.
+  Kind kind = 2;
+
+  // The categorical bucketing strategy.
+  Strategy strategy = 3;
+
+  // List of known fact values.
+  repeated string vocabulary = 4;
+
+  // Defines the number of hash buckets used by hashed
+  // categorical features.
+  uint32 hash_buckets = 5;
+}

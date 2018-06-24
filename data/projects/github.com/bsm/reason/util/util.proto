@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package blacksquaremedia.reason.util;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+option (gogoproto.goproto_stringer_all) = true;
+option (gogoproto.goproto_unrecognized_all) = false;
+
+option go_package = "util";
+option java_package = "com.blacksquaremedia.reason";
+option java_outer_classname = "UtilProtos";
+
+// StreamStats is a data structure that can accumulate
+// common statical metrics about a stream of numbers
+// memory-efficiently, without actually storing the data.
+message StreamStats {
+  // The total weight of the sample.
+  double weight = 1;
+  // The weighted sum of all values in the sample.
+  double sum    = 2;
+  // The weighted sum of of all square values.
+  double sum_squares = 3;
+}
+
+// StreamStatsDistribution maintains a distribution of
+// stream stats by a particular outcome.
+message StreamStatsDistribution {
+  message Dense {
+    StreamStats stats = 1 [(gogoproto.embed) = true];
+  }
+
+  repeated Dense dense = 1 [(gogoproto.nullable) = false];
+  map<int64, StreamStats> sparse = 2;
+  int64 sparse_cap = 3;
+}
+
+// Vector represents a vector of weights.
+// The minimum value of each vector element is 0, which indicates "not set".
+message Vector {
+  repeated double dense = 1 [packed=true];
+  map<int64, double> sparse = 2;
+  int64 sparse_cap = 3;
+}
+
+// Vector maintains a distribution of vectors.
+message VectorDistribution {
+  message Dense {
+    Vector vector = 1 [(gogoproto.embed) = true];
+  }
+
+  repeated Dense dense = 1 [(gogoproto.nullable) = false];
+  map<int64, Vector> sparse = 2;
+  int64 sparse_cap = 3;
+}
