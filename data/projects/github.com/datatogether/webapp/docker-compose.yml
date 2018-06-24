@@ -1,0 +1,140 @@
+version: '2'
+services:
+
+  context:
+    build: .
+    volumes:
+      - ./src:/home/context/src
+    ports:
+     - 4000:4000
+    networks:
+      - back-tier
+    depends_on:
+      - patchbay
+
+  identity:
+    image: datatogether/identity:latest
+    # build: $GOPATH/src/github.com/datatogether/identity/
+    # volumes:
+    #   - $GOPATH/src/github.com/datatogether/identity:/go/src/github.com/datatogether/identity
+    networks:
+      - back-tier
+    depends_on:
+      - postgres
+    ports:
+      - 3100:3100
+    environment:
+      - PORT=3100
+      - GOLANG_ENV=develop
+      - ALLOWED_ORIGINS=http://localhost:3000
+      - POSTGRES_DB_URL=postgres://postgres@postgres/postgres?sslmode=disable
+      - |
+        PUBLIC_KEY=-----BEGIN PUBLIC KEY-----
+        MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMOsqD9mC5mWC4Fa5rTU3Zaq+ZWIgEzw
+        C0nkkPMLVAfJpkFI7uiyCIj5n6OuPCDGNJTzXMjJsBd1YhUqzg2XnAsCAwEAAQ==
+        -----END PUBLIC KEY-----
+      - |
+        PRIVATE_KEY=-----BEGIN RSA PRIVATE KEY-----
+        MIIBOwIBAAJBAMOsqD9mC5mWC4Fa5rTU3Zaq+ZWIgEzwC0nkkPMLVAfJpkFI7uiy
+        CIj5n6OuPCDGNJTzXMjJsBd1YhUqzg2XnAsCAwEAAQJAF8Qoy0qBri3jR9ramqwg
+        HeS2W8swiie9t0PjtyFxG2DUP6ENDgodWzrA+WJD5dJSlkWUlwgCUJ3jk/vK3eOJ
+        AQIhAOi5Y0dUpR8GVQX7YeIDug4N39T2FnYxB1XdH5GKX/fxAiEA1z6oRREeTGTL
+        ULZYRkyz41tVC+uCTGeUw1i9UMi8b7sCIQDRP49CXZsx8BGWlVaHT26EoHj3FGVR
+        0/eSfoWZ6N8tIQIhAI2y6gPN6SxRjqdr42EkTah3D93xBK5X4k9XtAninGrRAiB7
+        k4uJgqHl8hgs3bndGibFuepdLWJed7YXa+eF57FdmA==
+        -----END RSA PRIVATE KEY-----
+
+  patchbay:
+    image: datatogether/patchbay:latest
+    # build: $GOPATH/src/github.com/datatogether/patchbay/
+    # volumes:
+    #   - $GOPATH/src/github.com/datatogether/patchbay:/go/src/github.com/datatogether/patchbay
+    ports:
+     - 3000:3000
+    networks:
+      - back-tier
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - PORT=3000
+      - GOLANG_ENV=develop
+      - POSTGRES_DB_URL=postgres://postgres@postgres/postgres?sslmode=disable
+      - REDIS_URL=redis:6379
+      - |
+        PUBLIC_KEY=-----BEGIN PUBLIC KEY-----
+        MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMOsqD9mC5mWC4Fa5rTU3Zaq+ZWIgEzw
+        C0nkkPMLVAfJpkFI7uiyCIj5n6OuPCDGNJTzXMjJsBd1YhUqzg2XnAsCAwEAAQ==
+        -----END PUBLIC KEY-----
+      - |
+        PRIVATE_KEY=-----BEGIN RSA PRIVATE KEY-----
+        MIIBOwIBAAJBAMOsqD9mC5mWC4Fa5rTU3Zaq+ZWIgEzwC0nkkPMLVAfJpkFI7uiy
+        CIj5n6OuPCDGNJTzXMjJsBd1YhUqzg2XnAsCAwEAAQJAF8Qoy0qBri3jR9ramqwg
+        HeS2W8swiie9t0PjtyFxG2DUP6ENDgodWzrA+WJD5dJSlkWUlwgCUJ3jk/vK3eOJ
+        AQIhAOi5Y0dUpR8GVQX7YeIDug4N39T2FnYxB1XdH5GKX/fxAiEA1z6oRREeTGTL
+        ULZYRkyz41tVC+uCTGeUw1i9UMi8b7sCIQDRP49CXZsx8BGWlVaHT26EoHj3FGVR
+        0/eSfoWZ6N8tIQIhAI2y6gPN6SxRjqdr42EkTah3D93xBK5X4k9XtAninGrRAiB7
+        k4uJgqHl8hgs3bndGibFuepdLWJed7YXa+eF57FdmA==
+        -----END RSA PRIVATE KEY-----
+      - WEBAPP_SCRIPTS=http://localhost:4000/static/bundle.js
+      - TASKS_SERVICE_URL=task-mgmt:4400
+      - TITLE=Data Together
+
+  task-mgmt:
+    image: datatogether/task-mgmt:latest
+    # build: $GOPATH/src/github.com/datatogether/task-mgmt/
+    # volumes:
+    #   - $GOPATH/src/github.com/datatogether/task-mgmt:/go/src/github.com/datatogether/task-mgmt
+    ports:
+     - 3400:3400
+     - 4400:4400
+    networks:
+      - back-tier
+    depends_on:
+      - ipfs
+      - rabbitmq
+      - postgres
+      - redis
+    environment:
+      - PORT=3400
+      - TLS=false
+      - GOLANG_ENV=develop
+      - POSTGRES_DB_URL=postgres://postgres@postgres/postgres?sslmode=disable
+      - REDIS_URL=redis:6379
+      - PUBLIC_KEY=nothing_yet
+      - POSTMARK_KEY=POSTMARK_API_TEST
+      - EMAIL_NOTIFICATION_RECIPIENTS=brendan@qri.io
+      - GITHUB_LOGIN_URL=http://localhost:3100/oauth/github
+      - AMQP_URL=amqp://guest:guest@rabbitmq:5672/
+      - IPFS_API_URL=http://ipfs:5001/api/v0
+      - RPC_PORT=4400
+
+  ipfs:
+    image: "ipfs/go-ipfs:latest"
+    networks:
+      - back-tier
+    ports:
+      - 5001:5001
+  rabbitmq:
+    image: "library/rabbitmq:latest"
+    networks:
+      - back-tier
+    ports:
+      - 5672:5672
+      - 15672:15672
+  redis:
+    image: "library/redis:latest"
+    networks:
+      - back-tier
+    ports:
+      - 6379:6379
+  postgres:
+    image: postgres:9.6-alpine
+    networks:
+      - back-tier
+
+volumes:
+  db-data:
+
+networks:
+  back-tier:

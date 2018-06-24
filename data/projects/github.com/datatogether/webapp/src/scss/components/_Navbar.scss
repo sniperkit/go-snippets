@@ -1,0 +1,36 @@
+#navbar {
+	z-index: 3;
+  padding: 10px 0;
+  background: $slate;
+
+	#logotype {
+	  color: white;
+	  font-weight: 700;
+	  letter-spacing: 1px;
+	  font-size: 1.3em;
+	  padding-top: 0;
+		text-decoration: none;
+	}
+
+	.alpha {
+		text-align: center;
+		letter-spacing: 1px;
+	  color: $slate;
+	}
+	
+	.menu {
+	  text-align: right;
+	  padding-top: 3px;
+		a {
+		  margin-right: 16px;
+		  letter-spacing: 2px;
+		  text-transform: uppercase;
+		  font-weight: 500;
+		  font-size: 14px;
+		  color: $green;
+		}
+	}
+}
+
+
+

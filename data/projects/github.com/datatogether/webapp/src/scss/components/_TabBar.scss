@@ -1,0 +1,9 @@
+.tab.bar a {
+  margin-right: 1.5em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  font-weight: 500;
+  &.current {
+    opacity: 1.0;
+  }
+}

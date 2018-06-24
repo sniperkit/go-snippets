@@ -1,0 +1,23 @@
+.progressbar {
+  width: 100%;
+  border-radius: 2px;
+  background: rgba(0,0,0,0.25);
+  position: relative;
+  height: 10px;
+  overflow: hidden;
+
+  .progress {
+    position: absolute;
+    height: 100%;
+  }
+
+  &.standard {
+    margin-top: 0.2em;
+    margin-bottom: 0.8em;
+  }
+  
+  &.micro {
+    height: 5px;
+    max-width: 200px;
+  }
+}

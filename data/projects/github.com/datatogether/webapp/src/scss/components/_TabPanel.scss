@@ -1,0 +1,16 @@
+header {
+	padding: 15px 0 15px 0;
+
+	.tab {
+		text-transform: uppercase;
+		font-style: oblique;
+		font-weight: 700;
+		margin: 2px 20px 2px 0;
+		opacity: 0.25;
+		font-size: 18px;
+	}
+
+	.tab.current {
+		opacity: 1.0;
+	}
+}
