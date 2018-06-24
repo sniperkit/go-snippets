@@ -1,0 +1,777 @@
+{
+  "link": {
+    "rel": "self",
+    "url": "https://www.sciencebase.gov/catalog/item/55b943ade4b09a3b01b65d78"
+  },
+  "relatedItems": {
+    "link": {
+      "url": "https://www.sciencebase.gov/catalog/itemLinks?itemId=55b943ade4b09a3b01b65d78",
+      "rel": "related"
+    }
+  },
+  "id": "55b943ade4b09a3b01b65d78",
+  "title": "2015 LCC Network Areas",
+  "alternateTitles": [
+    "Landscape Conservation Cooperative"
+  ],
+  "summary": "Landscape Conservation Cooperatives (LCCs) are public-private partnerships composed of states, tribes, federal agencies, non-governmental organizations, universities, international jurisdictions, and others working together to address landscape and seascape scale conservation issues. LCCs inform resource management decisions to address broad-scale stressors-including habitat fragmentation, genetic isolation, spread of invasive species, and water scarcity-all of which are magnified by a rapidly changing climate.  For further information go to  http://lccnetwork.org.  The previous 2011 LCC Network Areas data is available at  https://www.sciencebase.gov/catalog/item/52f2735ee4b0a6f0bd498c2f  ",
+  "body": "Landscape Conservation Cooperatives (LCCs) are public-private partnerships composed of states, tribes, federal agencies, non-governmental organizations, universities, international jurisdictions, and others working together to address landscape and seascape scale conservation issues. LCCs inform resource management decisions to address broad-scale stressors-including habitat fragmentation, genetic isolation, spread of invasive species, and water scarcity-all of which are magnified by a rapidly changing climate. &nbsp;For further information go to&nbsp; <a href=\"http://lccnetwork.org\">http://lccnetwork.org</a>.<br>\n<br>\nThe previous 2011 LCC Network Areas data is available at&nbsp; <a href=\"https://www.sciencebase.gov/catalog/item/52f2735ee4b0a6f0bd498c2f\">https://www.sciencebase.gov/catalog/item/52f2735ee4b0a6f0bd498c2f</a><br>\n&nbsp;",
+  "citation": "Landscape Conservation Cooperatives:  : USA.",
+  "purpose": "This data is for planning purposes only. \n\nLCCs are applied conservation science partnerships with two main functions. The first is to promote collaboration among their members in defining shared conservation goals. With these goals in mind, partners can identify where and how they will take action, within their own authorities and organizational priorities, to best contribute to the larger conservation effort. The second function of LCCs is to provide the science and technical expertise needed to address the shared priorities and support conservation planning at landscape scales – beyond the scope and authority of any one organization. The organizational model of the LCC Network was intentionally structured to operate as a coordinated network of regionally-focused, self-directed partnerships. Self-direction and regional focus are important for individual LCCs to enable latitude for engaging local stakeholders on relevant high-priority issues within their geographies. Network coordination is important for LCCs to function as a larger collective to address issues at the appropriate ecological scale, to share best practices, to leverage resources, and to find economies of scale.\n\nFor further information go to http://lccnetwork.org. Collectively, LCCs comprise a seamless international network supporting landscapes and seascapes capable of sustaining abundant, diverse, and healthy populations of fish, wildlife, and plants. They provide a strong link between science and conservation delivery without duplicating existing partnerships or creating burdensome and unnecessary bureaucracy. Science-based recommendations and decision support tools produced by LCCs are readily transferable to field offices that implement on-the-ground actions. Rather than create a new conservation infrastructure from the ground up, LCCs build upon explicit biological management priorities and objectives, science available from existing partnerships (such as fish habitat partnerships, migratory bird joint ventures and flyway councils), as well as species- and geographic-based partnerships. LCCs support adaptive resource management by evaluating implementation of conservation strategies, maintaining and sharing information and data, and improving products as new information becomes available. Shared data platforms serve multiple purposes, including the collaborative development of population or habitat models under alternative climate scenarios to inform spatially explicit decision support for all partners. In the face of accelerated climate change and other 21st-century conservation challenges, LCCs regularly assess scientific information and effectiveness of conservation actions and support necessary adjustments as new information becomes available. This iterative process of information sharing helps scientists and resource managers deal with uncertainties on the landscape and provides tools to evaluate the implications of management alternatives to determine the most effective conservation actions to support shared priorities.",
+  "provenance": {
+    "annotation": "LCC Network",
+    "dataSource": "Input directly",
+    "dateCreated": "2015-07-29T21:20:45Z",
+    "lastUpdated": "2017-08-18T18:44:37Z"
+  },
+  "hasChildren": true,
+  "parentId": "50cb9113e4b09e092d6f1090",
+  "contacts": [
+    {
+      "name": "Ben Thatcher",
+      "type": "Point of Contact",
+      "contactType": "person",
+      "email": "ben_thatcher@fws.gov",
+      "jobTitle": "Assistant National LCC Coordinator",
+      "organization": {
+        "displayText": "Landscape Conservation Cooperatives Network"
+      },
+      "primaryLocation": {
+        "officePhone": "703-358-2060",
+        "streetAddress": {
+          "line1": "5275 Leesburg Pike, MS: SA",
+          "city": "Falls Church",
+          "state": "Virginia",
+          "zip": "22041",
+          "country": "USA"
+        },
+        "mailAddress": {}
+      }
+    },
+    {
+      "name": "Ben Thatcher",
+      "type": "Distributor",
+      "contactType": "person",
+      "email": "ben_thatcher@fws.gov",
+      "jobTitle": "Assistant National LCC Coordinator",
+      "organization": {
+        "displayText": "Landscape Conservation Cooperatives Network"
+      },
+      "primaryLocation": {
+        "officePhone": "703-358-2060",
+        "streetAddress": {
+          "line1": "5275 Leesburg Pike, MS: SA",
+          "city": "Falls Church",
+          "state": "Virginia",
+          "zip": "22041",
+          "country": "USA"
+        },
+        "mailAddress": {}
+      }
+    },
+    {
+      "name": "Landscape Conservation Cooperatives Network",
+      "type": "Lead Organization",
+      "contactType": "organization",
+      "organization": {},
+      "primaryLocation": {
+        "streetAddress": {},
+        "mailAddress": {}
+      }
+    },
+    {
+      "name": "Ben Thatcher",
+      "type": "Point of Contact",
+      "contactType": "person",
+      "email": "ben_thatcher@fws.gov",
+      "jobTitle": "Assistant National LCC Coordinator",
+      "organization": {
+        "displayText": "Landscape Conservation Cooperatives Network"
+      },
+      "primaryLocation": {
+        "officePhone": "703-358-2060",
+        "streetAddress": {
+          "line1": "5275 Leesburg Pike, MS: SA",
+          "city": "Falls Church",
+          "state": "Virginia",
+          "zip": "22041",
+          "country": "USA"
+        },
+        "mailAddress": {}
+      }
+    },
+    {
+      "name": "Ben Thatcher",
+      "type": "Point of Contact",
+      "contactType": "person",
+      "email": "ben_thatcher@fws.gov",
+      "jobTitle": "Assistant National LCC Coordinator",
+      "organization": {
+        "displayText": "Landscape Conservation Cooperatives Network"
+      },
+      "primaryLocation": {
+        "officePhone": "703-358-2060",
+        "streetAddress": {
+          "line1": "5275 Leesburg Pike, MS: SA",
+          "city": "Falls Church",
+          "state": "Virginia",
+          "zip": "22041",
+          "country": "USA"
+        },
+        "mailAddress": {}
+      }
+    },
+    {
+      "name": "Ben Thatcher",
+      "type": "Distributor",
+      "contactType": "person",
+      "email": "ben_thatcher@fws.gov",
+      "jobTitle": "Assistant National LCC Coordinator",
+      "organization": {
+        "displayText": "Landscape Conservation Cooperatives Network"
+      },
+      "primaryLocation": {
+        "officePhone": "703-358-2060",
+        "streetAddress": {
+          "line1": "5275 Leesburg Pike, MS: SA",
+          "city": "Falls Church",
+          "state": "Virginia",
+          "zip": "22041",
+          "country": "USA"
+        },
+        "mailAddress": {}
+      }
+    }
+  ],
+  "webLinks": [
+    {
+      "type": "serviceMapUrl",
+      "typeLabel": "OGC Service Map URL",
+      "uri": "https://www.sciencebase.gov/catalogMaps/mapping/ows/55c52e08e4b033ef5212bd75?service=wms&request=getcapabilities&version=1.3.0",
+      "title": "2015 LCC Network Areas OGC WMS",
+      "hidden": false
+    },
+    {
+      "type": "serviceMapUrl",
+      "typeLabel": "OGC Service Map URL",
+      "uri": "https://www.sciencebase.gov/catalogMaps/mapping/ows/55c52e08e4b033ef5212bd75?service=wfs&request=getcapabilities&version=1.0.0",
+      "title": "2015 LCC Network Areas OGC WFS",
+      "hidden": false
+    },
+    {
+      "type": "arcgis",
+      "typeLabel": "ArcGIS Web Services",
+      "uri": "https://www.sciencebase.gov/arcgis/rest/services/Catalog/55b943ade4b09a3b01b65d78/FeatureServer",
+      "title": "2015 LCC Network Areas ArcGIS REST Feature Server",
+      "hidden": false
+    },
+    {
+      "type": "arcgis",
+      "typeLabel": "ArcGIS Web Services",
+      "uri": "http://fws.maps.arcgis.com/home/item.html?id=12e70c4083bb47078142c14d465f0a79",
+      "title": "2015 LCC Network Areas: FWS AGOL Hosted",
+      "hidden": false
+    }
+  ],
+  "browseCategories": [
+    "Publication",
+    "Data"
+  ],
+  "browseTypes": [
+    "Citation",
+    "ArcGIS Map Package",
+    "Downloadable",
+    "ArcGIS Service Definition",
+    "Map Service",
+    "ArcGIS REST Map Service"
+  ],
+  "systemTypes": [
+    "Folder",
+    "Downloadable",
+    "Mappable"
+  ],
+  "tags": [
+    {
+      "type": "theme",
+      "scheme": "landscape conservation cooperatives",
+      "name": "landscape conservation cooperatives"
+    },
+    {
+      "type": "theme",
+      "scheme": "landscape conservation cooperatives",
+      "name": "fish and wildlife service"
+    },
+    {
+      "type": "theme",
+      "scheme": "landscape conservation cooperatives",
+      "name": "partnerships"
+    },
+    {
+      "type": "theme",
+      "scheme": "landscape conservation cooperatives",
+      "name": "conservation"
+    },
+    {
+      "type": "theme",
+      "scheme": "landscape conservation cooperatives",
+      "name": "LCC"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Appalachian"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "California"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Desert"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Eastern Tallgrass Prairie and Big Rivers"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Great Basin"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Great Northern"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Great Plains"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Gulf Coast Prairie"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Gulf Coast Plains and Ozarks"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "North Atlantic"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "North Pacific"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Peninsular Florida"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Plains and Prairie Potholes"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "South Atlantic"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Southern Rockies"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Upper Midwest and Great Lakes"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Aleutian and Bering Sea Islands"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Arctic"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Northwest Boreal"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Western Alaska"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Pacific Islands"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Caribbean"
+    },
+    {
+      "type": "place",
+      "scheme": "Places",
+      "name": "Unclassified"
+    },
+    {
+      "type": "dataset",
+      "scheme": "scopecode",
+      "name": "dataset"
+    },
+    {
+      "type": "ISO Topic Category",
+      "scheme": "URL of ISO Codelist?",
+      "name": "biota"
+    },
+    {
+      "type": "ISO Topic Category",
+      "scheme": "URL of ISO Codelist?",
+      "name": "boundaries"
+    },
+    {
+      "type": "ISO Topic Category",
+      "scheme": "URL of ISO Codelist?",
+      "name": "environment"
+    },
+    {
+      "type": "ISO Topic Category",
+      "scheme": "URL of ISO Codelist?",
+      "name": "Inland Waters"
+    }
+  ],
+  "dates": [
+    {
+      "type": "Info",
+      "dateString": "2015-07-29",
+      "label": "Metadata Creation Date"
+    },
+    {
+      "type": "Info",
+      "dateString": "2015-07-01",
+      "label": "Citation Publication Date"
+    },
+    {
+      "type": "Info",
+      "dateString": "2015-07-29",
+      "label": "Metadata Creation Date"
+    },
+    {
+      "type": "Info",
+      "dateString": "2015-07-01",
+      "label": "Citation Publication Date"
+    }
+  ],
+  "spatial": {
+    "boundingBox": {
+      "minX": -180.0,
+      "maxX": 180.0,
+      "minY": -15.4221666396,
+      "maxY": 83.1480839371
+    }
+  },
+  "facets": [
+    {
+      "note": "",
+      "conference": "",
+      "journal": "",
+      "parts": [
+        {
+          "type": "FGDC Metadata Citation Facet",
+          "value": "Remove This Facet To Recreate From Metadata File"
+        },
+        {
+          "type": "Publication Place",
+          "value": "USA"
+        }
+      ],
+      "edition": "",
+      "language": "",
+      "tableOfContents": "",
+      "citationType": "Vector Digital Data Set (Polygon)",
+      "className": "gov.sciencebase.catalog.item.facet.CitationFacet"
+    },
+    {
+      "boundingBox": {
+        "minY": -89.9999955234825,
+        "minX": -180.0,
+        "maxY": 90.0,
+        "maxX": 180.0
+      },
+      "name": "2015_Final_LCC_Data_and_Map.mpk",
+      "files": [
+        {
+          "name": "2015_Final_LCC_Data_and_Map.mpk",
+          "title": "",
+          "contentType": "x-gis/x-mpk",
+          "contentEncoding": null,
+          "pathOnDisk": "__disk__a6/81/64/a6816404f5ba071daa1edc9841c48f6dc4324395",
+          "processed": false,
+          "processToken": null,
+          "imageWidth": null,
+          "imageHeight": null,
+          "size": 10628398,
+          "dateUploaded": "2015-08-11T00:51:11Z",
+          "originalMetadata": true,
+          "useForPreview": false,
+          "s3Object": null,
+          "checksum": null,
+          "url": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__a6%2F81%2F64%2Fa6816404f5ba071daa1edc9841c48f6dc4324395"
+        },
+        {
+          "name": "thumbnail.png",
+          "title": null,
+          "contentType": "image/png",
+          "contentEncoding": null,
+          "pathOnDisk": "__disk__61/d7/8b/61d78bb1fb732b037a4f728f37b5206314c42374",
+          "processed": null,
+          "processToken": null,
+          "imageWidth": 200,
+          "imageHeight": 133,
+          "size": 23480,
+          "dateUploaded": "2016-08-30T00:12:13Z",
+          "originalMetadata": null,
+          "useForPreview": null,
+          "s3Object": null,
+          "checksum": null,
+          "url": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__61%2Fd7%2F8b%2F61d78bb1fb732b037a4f728f37b5206314c42374"
+        }
+      ],
+      "className": "gov.sciencebase.catalog.item.facet.MapPackageFacet"
+    },
+    {
+      "filePathUsed": "__disk__20/f2/f6/20f2f6f39f410f00df665db02426e64fa2e8e1e8",
+      "boundingBox": {
+        "minY": -15.4221535652159,
+        "minX": -179.999988541187,
+        "maxY": 86.453768425936,
+        "maxX": 179.999988541187
+      },
+      "processingState": "success",
+      "servicePath": "55b943ade4b09a3b01b65d78",
+      "serverType": "",
+      "processingMessage": "",
+      "name": "2015_LCC_Network_v08292016.sd",
+      "files": [
+        {
+          "name": "2015_LCC_Network_v08292016.sd",
+          "title": "",
+          "contentType": "x-gis/x-arcgis-service-def",
+          "contentEncoding": null,
+          "pathOnDisk": "__disk__20/f2/f6/20f2f6f39f410f00df665db02426e64fa2e8e1e8",
+          "processed": false,
+          "processToken": null,
+          "imageWidth": null,
+          "imageHeight": null,
+          "size": 2259056,
+          "dateUploaded": "2016-08-30T00:20:24Z",
+          "originalMetadata": true,
+          "useForPreview": false,
+          "s3Object": null,
+          "checksum": {
+            "value": "f7eb27e7c77c9a96319e5e7d5d43deb8",
+            "type": "MD5"
+          },
+          "url": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__20%2Ff2%2Ff6%2F20f2f6f39f410f00df665db02426e64fa2e8e1e8"
+        },
+        {
+          "name": "thumbnail.png",
+          "title": null,
+          "contentType": "image/png",
+          "contentEncoding": null,
+          "pathOnDisk": "__disk__d2/8a/22/d28a226b546e7523811259a9d79706aff27f2225",
+          "processed": null,
+          "processToken": null,
+          "imageWidth": 200,
+          "imageHeight": 133,
+          "size": 12564,
+          "dateUploaded": "2016-08-30T00:20:37Z",
+          "originalMetadata": null,
+          "useForPreview": null,
+          "s3Object": null,
+          "checksum": null,
+          "url": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__d2%2F8a%2F22%2Fd28a226b546e7523811259a9d79706aff27f2225"
+        }
+      ],
+      "enabledServices": [
+        "KmlServer",
+        "WMSServer"
+      ],
+      "serviceId": "55b943ade4b09a3b01b65d78",
+      "className": "gov.sciencebase.catalog.item.facet.ServiceDefinitionFacet"
+    }
+  ],
+  "files": [
+    {
+      "name": "08042015_1432_LCC_Map_Asize_land.pdf",
+      "title": "",
+      "contentType": "application/pdf",
+      "contentEncoding": null,
+      "pathOnDisk": "__disk__4e/16/3e/4e163e34992f5013cf32a39bb89c479164db236c",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 1141770,
+      "dateUploaded": "2015-08-05T16:53:11Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__4e%2F16%2F3e%2F4e163e34992f5013cf32a39bb89c479164db236c"
+    },
+    {
+      "name": "2015_LCC_Networks-ISO_19115-2.xml",
+      "title": "",
+      "contentType": "application/vnd.iso.19115+xml",
+      "contentEncoding": null,
+      "pathOnDisk": "__disk__ff/b2/f6/ffb2f6508d974976745620f1504fc37e794937ba",
+      "processed": null,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 78333,
+      "dateUploaded": "2015-08-07T18:32:24Z",
+      "originalMetadata": true,
+      "useForPreview": null,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__ff%2Fb2%2Ff6%2Fffb2f6508d974976745620f1504fc37e794937ba"
+    },
+    {
+      "name": "2015_LCC_Networks_shapefile.zip",
+      "title": "",
+      "contentType": "application/zip",
+      "contentEncoding": null,
+      "pathOnDisk": "__disk__39/73/76/39737632f578722f0845f83a3ca2a4e44a566d54",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 2458817,
+      "dateUploaded": "2015-08-11T00:50:16Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__39%2F73%2F76%2F39737632f578722f0845f83a3ca2a4e44a566d54"
+    },
+    {
+      "name": "08062015_Final_LCC_Map_Asize_Land_600dpi.jpg",
+      "title": "",
+      "contentType": "image/jpeg",
+      "contentEncoding": null,
+      "pathOnDisk": "__disk__e9/e0/03/e9e00337e14080c9454b361c1039afbb2c75eb98",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": 6600,
+      "imageHeight": 5100,
+      "size": 5441195,
+      "dateUploaded": "2015-08-17T15:10:30Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__e9%2Fe0%2F03%2Fe9e00337e14080c9454b361c1039afbb2c75eb98"
+    }
+  ],
+  "distributionLinks": [
+    {
+      "uri": "https://www.sciencebase.gov/arcgis/rest/services/Catalog/55b943ade4b09a3b01b65d78/MapServer",
+      "title": "ArcGIS REST Service",
+      "type": "serviceLink",
+      "typeLabel": "Service Link",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/arcgis/rest/services/Catalog/55b943ade4b09a3b01b65d78/MapServer/kml/mapImage.kmz",
+      "title": "KML Service",
+      "type": "kml",
+      "typeLabel": "KML Download",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/arcgis/services/Catalog/55b943ade4b09a3b01b65d78/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+      "title": "ArcGIS WMS Service",
+      "type": "serviceLink",
+      "typeLabel": "Service Link",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalogMaps/mapping/ows/55b943ade4b09a3b01b65d78?service=wms&request=getcapabilities&version=1.3.0",
+      "title": "ScienceBase WMS Service",
+      "type": "serviceCapabilitiesUrl",
+      "typeLabel": "OGC Service Capabilities URL",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/items?parentId=55b943ade4b09a3b01b65d78&format=json",
+      "title": "ScienceBase Collection JSON",
+      "type": "repo",
+      "typeLabel": "ScienceBase Repository",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/items?parentId=55b943ade4b09a3b01b65d78&format=atom",
+      "title": "ScienceBase Collection ATOM",
+      "type": "repo",
+      "typeLabel": "ScienceBase Repository",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/items?parentId=55b943ade4b09a3b01b65d78&format=csv",
+      "title": "ScienceBase Collection CSV",
+      "type": "repo",
+      "typeLabel": "ScienceBase Repository",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/oai-pmh?verb=ListRecords&metadataPrefix=fgdc-orig&set=55b943ade4b09a3b01b65d78",
+      "title": "ScienceBase OAI PMH Service",
+      "type": "oai-pmh",
+      "typeLabel": "OAI-PMH",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/item/55b943ade4b09a3b01b65d78/csw?service=CSW&version=2.0.2&request=GetRecords",
+      "title": "ScienceBase CSW Service",
+      "type": "csw",
+      "typeLabel": "",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78",
+      "title": "Download Attached Files",
+      "type": "downloadLink",
+      "typeLabel": "Download Link",
+      "rel": "alternate",
+      "name": "2015LCCNetworkA.zip",
+      "files": [
+        {
+          "name": "2015_Final_LCC_Data_and_Map.mpk",
+          "title": "",
+          "contentType": "x-gis/x-mpk"
+        },
+        {
+          "name": "thumbnail.png",
+          "title": null,
+          "contentType": "image/png"
+        },
+        {
+          "name": "2015_LCC_Network_v08292016.sd",
+          "title": "",
+          "contentType": "x-gis/x-arcgis-service-def"
+        },
+        {
+          "name": "thumbnail.png",
+          "title": null,
+          "contentType": "image/png"
+        },
+        {
+          "name": "08042015_1432_LCC_Map_Asize_land.pdf",
+          "title": "",
+          "contentType": "application/pdf"
+        },
+        {
+          "name": "2015_LCC_Networks-ISO_19115-2.xml",
+          "title": "",
+          "contentType": "application/vnd.iso.19115+xml"
+        },
+        {
+          "name": "2015_LCC_Networks_shapefile.zip",
+          "title": "",
+          "contentType": "application/zip"
+        },
+        {
+          "name": "08062015_Final_LCC_Map_Asize_Land_600dpi.jpg",
+          "title": "",
+          "contentType": "image/jpeg"
+        }
+      ]
+    }
+  ],
+  "previewImage": {
+    "from": "attachedFile",
+    "original": {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__e9%2Fe0%2F03%2Fe9e00337e14080c9454b361c1039afbb2c75eb98",
+      "viewUri": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__e9%2Fe0%2F03%2Fe9e00337e14080c9454b361c1039afbb2c75eb98&width=6600&height=5100",
+      "viewUrl": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__e9%2Fe0%2F03%2Fe9e00337e14080c9454b361c1039afbb2c75eb98&width=6600&height=5100",
+      "width": 6600,
+      "height": 5100,
+      "size": 5441195
+    },
+    "thumbnail": {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__e9%2Fe0%2F03%2Fe9e00337e14080c9454b361c1039afbb2c75eb98&width=150&height=116",
+      "width": 150,
+      "height": 116
+    },
+    "small": {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__e9%2Fe0%2F03%2Fe9e00337e14080c9454b361c1039afbb2c75eb98&width=350&height=270",
+      "width": 350,
+      "height": 270
+    },
+    "medium": {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__e9%2Fe0%2F03%2Fe9e00337e14080c9454b361c1039afbb2c75eb98&width=580&height=448",
+      "width": 580,
+      "height": 448
+    },
+    "large": {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__e9%2Fe0%2F03%2Fe9e00337e14080c9454b361c1039afbb2c75eb98&width=1000&height=773",
+      "width": 1000,
+      "height": 773
+    },
+    "alternateImages": [
+      {
+        "from": "mapPreview",
+        "original": {
+          "uri": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__cd%2F09%2Ffa%2Fcd09fad31e5ba07fb24ba377724c8fb6475e7fde",
+          "viewUri": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__cd%2F09%2Ffa%2Fcd09fad31e5ba07fb24ba377724c8fb6475e7fde&width=360&height=240",
+          "viewUrl": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__cd%2F09%2Ffa%2Fcd09fad31e5ba07fb24ba377724c8fb6475e7fde&width=360&height=240",
+          "width": 360,
+          "height": 240,
+          "size": 109490
+        },
+        "thumbnail": {
+          "uri": "https://www.sciencebase.gov/catalog/file/get/55b943ade4b09a3b01b65d78?f=__disk__cd%2F09%2Ffa%2Fcd09fad31e5ba07fb24ba377724c8fb6475e7fde&width=150&height=100",
+          "width": 150,
+          "height": 100
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "conformsTo": "https://project-open-data.cio.gov/v1.1/schema",
+  "describedBy": "https://project-open-data.cio.gov/v1.1/schema/catalog.json",
+  "@context": "https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld",
+  "@type": "dcat:Catalog",
+  "dataset" : [
+    {
+      "@type": "dcat:Dataset",
+      "title": "Enterprise Data Inventory",
+      "description": "A JSON file of the datasets",
+      "modified": "2015-11-24",
+      "accessLevel": "public",
+      "identifier": "DOE-019-1254627400",
+      "dataQuality": true,
+      "describedByType": "text/json",
+      "license": "https://creativecommons.org/licenses/by/4.0",
+      "publisher": {
+        "@type": "org:Organization",
+        "name": "DOE"
+      },
+      "contactPoint": {
+        "@type": "vcard:Contact",
+        "fn": "Brenda Coblentz",
+        "hasEmail": "mailto:brenda.coblentz@hq.doe.gov"
+      },
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "mediaType": "text/plain",
+          "format": "JSON",
+          "title": "Enterprise Data Inventory",
+          "description": "Energy Enterprise Datasets -",
+          "downloadURL": "https://www.energy.gov/data.json"
+        }
+      ],
+      "keyword": [
+        "datasets"
+      ],
+      "bureauCode": [
+        "019:00"
+      ],
+      "programCode": [
+        "019:000"
+      ]
+    }
+  ]
+}
