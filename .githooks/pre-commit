@@ -13,6 +13,32 @@ echolor --White "## [START] GIT - PRE-COMMIT"
 
 [ `which echolor` == "" ] && wget -nc -o /usr/local/bin/echolor https://raw.githubusercontent.com/Gruppio/Echolor/master/echolor.sh
 
+#####################################################################
+# If called with no arguments a new timer is returned.
+# If called with arguments the first is used as a timer
+# value and the elapsed time is returned in the form HH:MM:SS.
+#
+function timer()
+{
+	echolor --Green  "args: ${#}"
+	if [ $# -eq 0 ] || [ $# -eq 2 ]; then
+    # if [[[ $# -eq 0 ] || [ $# -eq 2 ]]]; then
+        echo $(date '+%s')
+    else
+        local stime=$1
+		local event_name=${2:-""}
+		local quiet=${3:-"false"}
+        local msg=""
+        etime=$(date '+%s')
+        if [[ -z "$stime" ]]; then stime=$etime; fi
+        dt=$((etime - stime))
+        ds=$((dt % 60))
+        dm=$(((dt / 60) % 60))
+        dh=$((dt / 3600))
+        [ $event_name != ""] && msg="event name: ${event_name}, " 
+        [ ${quiet} == "false" ] && printf '%sduration: %d:%02d:%02d' $msg $dh $dm $ds
+    fi
+}
 
 function separator {
 	echo "-----------------------------------------------------------------"
@@ -20,74 +46,95 @@ function separator {
 }
 
 function fbs { 
+	local start=$(timer -1 "fbs")
 	local limit=${1:-"20"}
 	du -m . | sort -nr | head -n $limit
+	local elapsed=$(timer $start)
 	separator
 }
 
 function fb { 
+	local start=$(timer -1 "fb")
 	local limit=${1:-"20"}
 	du -h . | sort -hr | head -n $limit
+	local elapsed=$(timer $start)
 	separator
 }
 
 function fbg { 
+	local start=$(timer -1 "fbg")
 	local pattern=${1:-"vendor"}
 	local limit=${2:-"50"}
 	du -h . | grep "$pattern" | sort -hr | head -n $limit
+	local elapsed=$(timer $start)
 	separator
 }
 
 function fd { 
+	local start=$(timer -1 "fd")
 	local pattern=${1:-"test"}
 	find . -name "$pattern" -type d -exec rm -rf {} +
+	local elapsed=$(timer $start)
 	separator
 }
 
 function ls_subtrees {
+	local start=$(timer -1 "ls_subtrees")
 	local export_file=${1:-".meta/ls-subtrees.tsv"}
 	ensure_dir
 	git log | grep -E 'git-subtree-dir|git-subtree-repo' | awk '{ print $2 $3 $4 }' > $export_file ;
+	local elapsed=$(timer $start)
 	separator
 }
 
 function ls_subtrees_sorted {
+	local start=$(timer -1 "ls_subtrees_sorted")
 	local export_file=${1:-".meta/ls-subtrees.sorted.tsv"}
 	ensure_dir
 	git log | grep -e git-subtree-dir -e git-subtree-repo | tr -d ' ' | cut -d ":" -f2 | sort | uniq > $export_file ;
+	local elapsed=$(timer $start)
 	separator
 }
 
 function ls_subtrees_exists {
+	local start=$(timer -1 "ls_subtrees_exists")
 	local export_file=${1:-".meta/ls-subtrees.exists.tsv"}
 	ensure_dir
 	git log | grep -e git-subtree-dir -e git-subtree-repo | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi' > $export_file ;
+	local elapsed=$(timer $start)
 	separator
 }
 
 function ls_subtrees_dedup {
+	local start=$(timer -1 "ls_subtrees_dedup")
 	local export_file=${1:-".meta/ls-subtrees.dedup.tsv"}
 	ensure_dir
 	git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi' > $export_file ;
+	local elapsed=$(timer $start)
 	separator
 }
 
 function ensure_dir {
+	local start=$(timer -1 "ensure_dir")
 	local prefix_path=${1:-".meta"}
 	mkdir -p ${prefix_path}
+	local elapsed=$(timer $start)
 }
 
 function ls_dirs_size {
+	local start=$(timer -1 "ensure_dir")
 	local limit=${1:-"50"}
 	local export_file=${1:-".meta/ls-dirs.by_size.top${limit}.output"}
 	ensure_dir
 	du -m . | sort -nr | head -n $limit > ${export_file}
+	local elapsed=$(timer $start)
 	separator
 }
 
 export REMOVED_DIRS_TOTAL=0
 declare REMOVED_DIRS_KEYS=()
 function rm_dirs_by_name { 
+	local start=$(timer -1 "ensure_dir")
 	local pattern_dirname=${1:-"test"}
 	local removed_dirs=$(find . -name "$pattern_dirname" -type d -print -exec rm -rf {} +)
 	local removed_dirs_array=($(echo "$removed_dirs" | tr ' ' '\n'))
@@ -100,6 +147,7 @@ function rm_dirs_by_name {
 		REMOVED_DIRS_TOTAL=$((REMOVED_DIRS_TOTAL+$removed_dirs_count))
 		echolor --Red " - [WARNING] removed_dirs       = ${removed_dirs[@]}"
 	fi
+	local elapsed=$(timer $start)
 }
 
 export REMOVE_DIRS="vendor,Godeps,node_modules"
@@ -111,19 +159,26 @@ echolor --Cyan "## REMOVE vendoring dirs"
 echo "- REMOVE_DIRS_ARRAY: ${REMOVE_DIRS_ARRAY[*]}"
 echo ""
 
-# use for loop read all nameservers
+declare elapsed
+declare start
+
+start=$(timer -1 "remove_dirs")
 for key in "${REMOVE_DIRS_ARRAY[@]}"; do
 	echo "### REMOVE recursively all dirnames: \"${key}\""
 	rm_dirs_by_name "${key}"
 	separator
 done
+elapsed=$(timer $start)
 
+start=$(timer -1 "remove_dirs_commit")
 if [ ${REMOVED_DIRS_TOTAL} -gt 0 ]; then
 	git_commit "remove vendor dirs..."
 fi
+elapsed=$(timer $start)
 
 export GCPRUNEFUL=false
 function pruneful {
+	local start=$(timer -1 "pruneful")
 	local match="git prune"
 	local file=".git/gc.log"
 	echo ""
@@ -138,6 +193,7 @@ function pruneful {
 			git prune
 		fi
 	fi
+	local elapsed=$(timer $start)
 	separator
 }
 
@@ -147,6 +203,7 @@ export COMMITFUL=false
 export UNSTAGGED_FILES=""
 export UNSTAGGED_FILES_COUNT=0
 function ls_unstagged {
+	local start=$(timer -1 "ls_unstagged")
 	local result=$(git status --short | grep '^.[^ ]' | sed 's/^...//')
 	UNSTAGGED_FILES=($(echo "$result" | tr ' ' '\n'))
 	UNSTAGGED_FILES_COUNT=${#UNSTAGGED_FILES[@]}
@@ -158,6 +215,7 @@ function ls_unstagged {
 	if [ "${UNSTAGGED_FILES_COUNT}" -gt 0 ]; then 
 		COMMITFUL=true
 	fi
+	local elapsed=$(timer $start)
 	separator
 }
 
@@ -167,29 +225,26 @@ rm -fR ./0
 
 export COMMIT_COUNT=0
 function git_commit {
+	local start=$(timer -1 "git_commit")
 	[ "$COMMIT_COUNT" -gt 2 ] && exit # prevent infinite loops
 	local message=${1:-"add latest changes..."}	
 	git add .
 	git commit -am "$1"
 	COMMIT_COUNT=($COMMIT_COUNT+1)
+	local elapsed=$(timer $start)
 }
 
-
-
 echolor --Green "## PRE-COMMIT - SUMMARY"
-
 echo ""
 
 ## removed vendor dirs ? 
 echolor --Yellow "### CLEAN-UP"
-
 if [ ${REMOVED_DIRS_TOTAL} -gt 0 ]; then
 	echolor --Red "- REMOVED_DIRS_KEYS     =   ${REMOVED_DIRS_KEYS[*]}"
 	echolor --Red "- REMOVED_DIRS_TOTAL    =   ${REMOVED_DIRS_TOTAL}"
 else
 	echolor --Green "- REMOVED_DIRS_TOTAL    =   ${REMOVED_DIRS_TOTAL}"
 fi
-
 echo ""
 
 ## Unstagged files ?
@@ -211,10 +266,14 @@ else
 	echolor --Green "- GCPRUNEFUL             =   ${GCPRUNEFUL}"
 fi
 
-
 echo ""
 echolor --White     "## [END] GIT - PRE-COMMIT"
 echo ""
+
+# In general my mac is ok with git but if there are a lot of loose objects then it gets very much slower. 
+# It seems hfs is not so good with lots of files in a single directory.
+# git repack -ad
+# git gc --prune=now
 
 # ls_dirs_size
 # ls_subtrees
