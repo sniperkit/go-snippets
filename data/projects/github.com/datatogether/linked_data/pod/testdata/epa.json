@@ -1,0 +1,77 @@
+{
+  "conformsTo": "https://project-open-data.cio.gov/v1.1/schema",
+  "dataset" : [
+    {
+      "publisher": {
+        "@type": "org:Organization",
+        "name": "Environmental Protection Agency"
+      },
+      "accessLevel": "public",
+      "distribution": [
+        {
+          "accessURL": "ftp://ftp.chesapeakebay.net/pub/CBP_WQ_2008.txt",
+          "format": "API",
+          "@type": "dcat:Distribution",
+          "mediaType": "application/octet-stream"
+        },
+        {
+          "downloadURL": "http://www.chesapeakebay.net/data_waterquality.aspx",
+          "@type": "dcat:Distribution",
+          "mediaType": "application/octet-stream"
+        }
+      ],
+      "description": "The Chesapeake Information Management System (CIMS), designed in 1996, is an integrated, accessible information management system for the Chesapeake Bay Region. CIMS is an organized, distributed library of information and software tools designed to increase basin-wide public access to Chesapeake Bay information. The information delivered by CIMS includes technical and public information, educational material, environmental indicators, policy documents, and scientific data. Through the use of relational databases, web-based programming, and web-based GIS a large number of Internet resources have been established. These resources include multiple distributed on-line databases, on-demand graphing and mapping of environmental data, and geographic searching tools for environmental information. Baseline monitoring data, summarized data and environmental indicators that document ecosystem status and trends, confirm linkages between water quality, habitat quality and abundance, and the distribution and integrity of biological populations are also available. One of the major features of the CIMS network is the Chesapeake Bay Program&apos;s Data Hub, providing users access to a suite of long- term water quality and living resources databases. Chesapeake Bay mainstem and tidal tributary water quality, benthic macroinvertebrates, toxics, plankton, and fluorescence data can be obtained for a network of over 800 monitoring stations.",
+      "keyword": [
+        "chesapeake bay",
+        "water quality data",
+        "nutrients",
+        "field parameters",
+        "tributary",
+        "salinity",
+        "estuary",
+        "monitor",
+        "biology",
+        "biological",
+        "habitat",
+        "toxic",
+        "pollution",
+        "environmental",
+        "indicators",
+        "education",
+        "science",
+        "research"
+      ],
+      "title": "Chesapeake Bay Program Water Quality Database",
+      "issued": "1984-01-16",
+      "modified": "2010-01-08",
+      "dataQuality": false,
+      "landingPage": "https://edg.epa.gov/metadata/catalog/search/resource/details.page?uuid=%7B56C5568A-0F80-45FB-B1DF-72BA78D3C425%7D",
+      "bureauCode": [
+        "020:00"
+      ],
+      "references": [
+        "http://www.chesapeakebay.net/data_waterquality.aspx",
+        "https://edg.epa.gov/metadata/catalog/search/resource/details.page?uuid=%7B19C806EC-6198-4A27-8CE2-AA374D7E3DFE%7D",
+        "https://edg.epa.gov/metadata/rest/document?id=%7B19C806EC-6198-4A27-8CE2-AA374D7E3DFE%7D",
+        "https://edg.epa.gov/metadata/catalog/search/resource/livedata-preview.page?uuid=%7B19C806EC-6198-4A27-8CE2-AA374D7E3DFE%7D&url=http%3A%2F%2Fwww.chesapeakebay.net%2Fdata_waterquality.aspx&info=http%3A%2F%2Fedg-intranet.epa.gov%2Fmetadata%2Frest%2Fdocument%3Ff%3Dhtml%26showRelativeUrl%3Dtrue%26id%3D%257B19C806EC-6198-4A27-8CE2-AA374D7E3DFE%257D"
+      ],
+      "accrualPeriodicity": "R/P2M",
+      "spatial": "-180.0,-90.0,180.0,90.0",
+      "programCode": [
+        "020:072"
+      ],
+      "license": "http://edg.epa.gov/EPA_Data_License.html",
+      "contactPoint": {
+        "hasEmail": "mailto:mmallone@chesapeakebay.net",
+        "@type": "vcard:Contact",
+        "fn": "Mike Mallonee, Water Quality Data Manager"
+      },
+      "identifier": "{19C806EC-6198-4A27-8CE2-AA374D7E3DFE}",
+      "@type": "dcat:Dataset"
+    }
+  ],
+  "describedBy": "https://project-open-data.cio.gov/v1.1/schema/catalog.json",
+  "@context": "https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld",
+  "@id": "https://edg.epa.gov/data.json",
+  "@type": "dcat:Catalog"
+}

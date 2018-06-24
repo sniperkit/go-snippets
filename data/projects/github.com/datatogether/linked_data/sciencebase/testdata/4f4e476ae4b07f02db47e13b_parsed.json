@@ -1,0 +1,407 @@
+{
+  "link": {
+    "rel": "self",
+    "url": "https://www.sciencebase.gov/catalog/item/4f4e476ae4b07f02db47e13b"
+  },
+  "relatedItems": {
+    "link": {
+      "rel": "related",
+      "url": "https://www.sciencebase.gov/catalog/itemLinks?itemId=4f4e476ae4b07f02db47e13b"
+    }
+  },
+  "id": "4f4e476ae4b07f02db47e13b",
+  "title": "National Climate Change and Wildlife Science Center",
+  "summary": "The National Climate Change and Wildlife Science Center (NCCWSC) works to provide natural resource managers with the tools and information they need to develop and execute management strategies that address the impacts of climate change on fish, wildlife and their habitats. The NCCWSC is a part of the U.S. Geological Survey’s Climate and Land Use Change Mission Area (CLU) and acts as the managing entity for the eight Department of the Interior (DOI) Climate Science Centers (CSCs). The NCCWSC and CSCs partner closely with natural and cultural resource managers and scientists from inside and outside of government to gather the information and build the tools needed to help fish and wildlife and their habitats and ecosystems adapt to [...]",
+  "body": "\u003cp\u003eThe\u0026nbsp;\u003cstrong\u003eNational Climate Change and Wildlife Science Center\u003c/strong\u003e\u0026nbsp;(NCCWSC) works to provide natural resource managers with the tools and information they need to develop and execute management strategies that address the impacts of climate change on fish, wildlife and their habitats.\u003c/p\u003e\n\n\u003cp\u003eThe NCCWSC is a part of the U.S. Geological Survey’s\u0026nbsp;Climate and Land Use Change Mission Area (CLU)\u0026nbsp;and acts as the managing entity for the eight Department of the Interior (DOI)\u0026nbsp;\u003ca href=\"https://nccwsc.usgs.gov/csc\"\u003eClimate Science Centers (CSCs)\u003c/a\u003e.\u003c/p\u003e\n\n\u003cp\u003eThe NCCWSC and CSCs\u0026nbsp;\u003ca href=\"https://nccwsc.usgs.gov/partners-overview\"\u003epartner\u003c/a\u003e\u0026nbsp;closely with natural and cultural resource managers and scientists from inside and outside of government to gather the information and build the tools needed to help fish and wildlife and their habitats and ecosystems adapt to climate change. \u0026nbsp;The NCCWSC and CSCs prioritize the delivery of science, research data products, and decision-support tools that are usable and focused on key priorities -- as defined by managers -- and are delivered to users effectively.\u0026nbsp;\u003c/p\u003e\n\n\u003cp\u003ePlease check out the\u0026nbsp;\u003ca href=\"https://nccwsc.usgs.gov/content/fact-sheets-reports\"\u003e\u003cstrong\u003eFact Sheets for NCCWSC, the CSCs, and CLU\u003c/strong\u003e\u003c/a\u003e\u0026nbsp;and our\u0026nbsp;\u003ca href=\"https://nccwsc.usgs.gov/content/region-maps\"\u003emap resources\u003c/a\u003e\u0026nbsp;for more information.\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;\u0026nbsp;\u003c/p\u003e\n\n\u003cp\u003eThe NCCWSC is located at the U.S. Geological Survey in Reston, Virginia.\u0026nbsp; The CSCs are located in eight regions across the United States.\u003c/p\u003e\n\n\u003cp\u003e\u003cbr\u003e\n\u0026nbsp;\u003c/p\u003e\n",
+  "provenance": {
+    "dateCreated": "2012-02-29T15:42:34Z",
+    "lastUpdated": "2017-08-11T14:54:27Z"
+  },
+  "hasChildren": true,
+  "parentId": "4f4e4760e4b07f02db47df9c",
+  "contacts": [
+    {
+      "active": true,
+      "contactType": "person",
+      "email": "efort@usgs.gov",
+      "firstName": "Emily",
+      "jobTitle": "IT Specialist",
+      "lastName": "Fort",
+      "middleName": "M",
+      "name": "Emily M Fort",
+      "oldPartyId": 23651,
+      "organization": {
+        "displayText": "National Climate Change and Wildlife Science Center and Climate Science Centers"
+      },
+      "primaryLocation": {
+        "building": "John W Powell",
+        "buildingCode": "AAA",
+        "faxPhone": "7036484044",
+        "mailAddress": {
+          "city": "Reston",
+          "country": "USA",
+          "line1": "12201 Sunrise Valley Drive, Mail Stop 400",
+          "mailStopCode": "400",
+          "state": "VA",
+          "zip": "20192-0002"
+        },
+        "name": "Emily M Fort/BRD/USGS/DOI - Primary Location",
+        "officePhone": "7036484082",
+        "streetAddress": {
+          "city": "Reston",
+          "country": "US",
+          "line1": "12201 Sunrise Valley Dr",
+          "state": "VA",
+          "zip": "20192-0002"
+        }
+      },
+      "type": "Contact"
+    }
+  ],
+  "systemTypes": [
+    "Community",
+    "Folder"
+  ],
+  "facets": [
+    {
+      "className": "gov.sciencebase.catalog.item.facet.ExpandoFacet",
+      "object": {
+        "agendas": [
+          {
+            "description": "",
+            "id": "4f4e476ae4b07f02db47e13b",
+            "name": "Northwest CSC Agenda",
+            "themes": [
+              {
+                "name": "Climate Science \u0026 Modeling",
+                "number": 1,
+                "options": {
+                  "a": "Coordinate with and leverage efforts at the national level to advance techniques of analyzing and  downscaling global and regional climate models as appropriate for the Northwest, including the  understanding, quantification, and characterization of climate model uncertainty.",
+                  "b": "Connect with and leverage efforts at the national level to advance the understanding of nonlinear  behavior of climate systems, and feedbacks between climate systems and other physical and  biological systems, including development and application of coupled regional models suitable to  this task.",
+                  "c": "Develop a data infrastructure for documentation, storage, and dissemination of a well-vetted set  of future climate scenarios including multimodel ensembles, along with guidance regarding  appropriate interpretation, use, and uncertainty.",
+                  "d": "Identify metadata standards for model data sets to ensure data are properly documented and  appropriate for specific uses."
+                },
+                "question": "Continue development of climate science and modeling capabilities  to provide resource managers and researchers across all disciplines reliable and defensible information on the range of probable future climate conditions and associated uncertainty in the Northwest."
+              },
+              {
+                "name": "Response of Physical Systems to Climate Change",
+                "number": 2,
+                "options": {
+                  "a": "Advance understanding of the response of hydrologic systems to future climate, including  changes in snow hydrology, alpine glaciers, streams (both perennial and intermittent), lakes (both  lotic and lentic systems), groundwater systems, wetlands, water temperature, water quality, and  extreme events. This need relates to effects on aquatic habitat, as well as the timing and amount  of water available for agricultural and municipal use, recreation, wildlife and stock use, and power  generation. The hydrologic response also affects understanding of drought, flood risk, reservoir  operations, and land management.",
+                  "b": "Advance understanding of changes in physical and chemical processes in marine systems,  including sea level rise, salinity, acidity, circulation patterns, nutrients, dissolved oxygen, intensity  of storm events, and shoreline erosion.",
+                  "c": "Advance understanding of atmospheric fluxes of carbon dioxide, other greenhouse gases, and  water, as well as other of atmospheric processes, such as acid and nutrient deposition, airborne  dust, and other contaminants.",
+                  "d": "Improve understanding of erosion, mass wasting, and sediment transport processes (including \nboth wind and water) resulting from changes in precipitation and stream flow, sea level rise, and \nglacier retreat, particularly as they relate to hazards, water quality, aquatic habitat, cultural \nresources, and infrastructure.",
+                  "e": "Quantify probable changes in soil moisture and energy, particularly as they relate to vegetation, \nevapotranspiration, and hydrologic budgets. This need includes effects to irrigated agriculture \n(e.g., soil suitability, water consumption rates, and cropping patterns).",
+                  "f": "Advance understanding of probable changes in air and water temperatures, and develop \nprojections of the potential impacts to affected physical and biological systems."
+                },
+                "question": "Characterize and model the response of physical  systems (for example hydrologic, atmospheric, and earth-systems) to historic and future temperature  and precipitation, taking into consideration the effects of uncertainty. Key among these processes is the  hydrologic response, which directly influences streams and groundwater resources, ecosystems,  historical and cultural resources, and ecosystem services."
+              },
+              {
+                "name": "Response of Biological Systems to Climate Change",
+                "number": 3,
+                "options": {
+                  "a": "Characterize the response of species, populations, and ecosystems to climate change.",
+                  "b": "Improve understanding of threats to habitat connectivity and potential for fragmentation of\nterrestrial, aquatic, marine, and nearshore habitats.",
+                  "c": "Continue to advance understanding and modeling of changes in fire regimes.",
+                  "d": "Continue to develop understanding of the ecology and potential impacts of invasive species, plant\nand animal diseases, harmful algal blooms, pathogens, and epidemic insect infestations.",
+                  "e": "Enhance understanding of carbon cycling, biological carbon sequestration, and carbon emissions, particularly as they relate to land management, mitigation, and adaptation strategies.",
+                  "f": "Improve understanding of potential changes in phenology (relative timing of physical and biological cycles) and related monitoring needs.",
+                  "g": "Improve understanding of the feedback between biological systems and processes, and physical systems and processes (including climate)."
+                },
+                "question": "Characterize and model the response of biota, terrestrial and aquatic ecosystems, and biogeochemical systems to changing climate, specifically including the effects of uncertainty.  Characterization may include analysis of historic data, field research, and model analysis, as well as other approaches. The efforts in Research Theme 2 complement and provide the physical template for understanding the biological systems in this theme. The elements of this theme have importance to biodiversity, biotic components of culturally important\nlandscapes, as well as ecosystem services."
+              },
+              {
+                "name": "Vulnerability and Adaptation",
+                "number": 4,
+                "options": {
+                  "a": "Assess the vulnerabilities (as well as resiliencies) of terrestrial, aquatic, and near-shore marine ecosystems, as well as individual species and populations, to climate change and non-climate-change stressors.",
+                  "b": "Identify vulnerabilities of physical and biological systems and landscape characteristics critical to Native American Tribes.\nThese efforts must consider the unique relation between Tribes and the landscape, and the large degree to which Tribes rely on the landscape for their economic well-being and cultural identity.",
+                  "c": "Assess climate-related increases in vulnerability of threatened and endangered species or other species of concern.",
+                  "d": "Identify vulnerabilities of freshwater resources, particularly as they relate to ecosystem needs, cultural and historical resources, human needs, infrastructure, and shifting demands.",
+                  "e": "Develop adaptation strategies for vulnerabilities identified at the full range of spatial scales."
+                },
+                "question": "Identify vulnerabilities of specific physical systems, ecosystems, human health, cultural resources, and infrastructure to climate change, and identify actions or practices that may improve prospects for adaptation. This theme complements understandings developed in Research Themes 2 and 3."
+              },
+              {
+                "name": "Monitoring and Observation Systems",
+                "number": 5,
+                "options": {
+                  "a": "Inventory and evaluate existing monitoring networks, expand and modify networks as necessary, and, where feasible, integrate efforts across agencies.  Ensure monitoring and observation efforts inform understanding of physical and biological systems, and inform assessment and modification of adaptation efforts.",
+                  "b": "Develop new metrics for tracking the response of physical systems, ecosystems, and individual biota to climate change, and establish new monitoring and observation systems where needed.",
+                  "c": "Use models, where applicable, to evaluate data from and guide design of monitoring networks."
+                },
+                "question": "Evaluate, enhance, develop (if necessary) new programs for monitoring and observation of key physical and biological systems, and develop systematic methods for\nanalyzing, storing, and serving information. This theme centers on the need for data (including traditional knowledge) required to quantify physical and biological processes, track changes, and evaluate effectiveness of adaptation and mitigation measures."
+              },
+              {
+                "name": "Data, Infrastructure, Analysis, and Modeling",
+                "number": 6,
+                "options": {
+                  "a": "Expand retrospective analyses of the response of physical and biological systems to historic climate and advance paleoclimate research. This effort needs to occur at a range of scales and, where possible, incorporate traditional knowledge.",
+                  "b": "Continue development and application of a set of coherent and well-vetted models of regional climate, physical and biological systems, using best practices and employing multimodel\nensembles. Develop standard methods for evaluating model application, calibration, and uncertainty.",
+                  "c": "Incorporate models into decision support systems.",
+                  "d": "Characterize and, where possible, quantify uncertainty.  Develop methods to include uncertainty in decision making and to characterize and assess risk associated with action or non-action.",
+                  "e": "Improve existing (or develop new) data management practices and, as appropriate, infrastructure to ensure common standards for data collection and processing, formatting, quality assurance, storage and archiving, and data sharing."
+                },
+                "question": "Improve methods for data analysis and storage, modeling, forecasting, and decision-support. This cross-cutting theme relates to science application across the full range of disciplines, processes, and scales. Efforts related to decision support systems should be coordinated with the CDSC."
+              },
+              {
+                "name": "Communication of Science Findings",
+                "number": 7,
+                "options": {
+                  "a": "Develop an information infrastructure that allows on-the-ground resource managers and non-technical decision makers ready access to current, thoroughly peer reviewed syntheses of climate science, future climate projections, assessments of uncertainty, responses of physical and\nbiological systems, and vulnerabilities.  The overall goal of such an effort would be to enable users to have a single source of information they need for resource management and decision support.",
+                  "b": "Translate and transfer scientific information and data to scientists, resource managers, stakeholders, and the general public in a manner appropriate to target audience. Utilize as\nappropriate the full range of tools and techniques, such as factsheets, websites, webinars, seminars, workshops, and training courses."
+                },
+                "question": "Develop strategies for communicating results and current thinking to the full range of agencies, stakeholders, and the general public. Efforts under this theme relate to all other science themes and should be coordinated with other major efforts such as the LCCs and the NOAA-funded Pacific Northwest Climate Impacts Research Consortium (CIRC), as appropriate. Because of the importance of communication of science findings to society at large, particular attention should be paid to communication of science findings to non-science agencies, agency staff, and the\ngeneral public."
+              }
+            ],
+            "url": "http://www.doi.gov/csc/northwest/upload/NW-CSC-Science-Agenda-2012-2015.pdf"
+          },
+          {
+            "description": "Southwest CSC Agenda",
+            "id": "4f4e476ae4b07f02db47e13b",
+            "name": "Southwest CSC Agenda",
+            "themes": [
+              {
+                "name": "Stakeholder Information Needs",
+                "number": 1,
+                "options": {
+                  "a": "Scale-appropriate climate models for resource decision making",
+                  "b": "Linked hydrologic and ecosystem models and metrics",
+                  "c": "Linked climate and hydrologic/ecosystem models",
+                  "d": "Extreme event projections",
+                  "e": "Sea-level rise and ocean acidification effects projections",
+                  "f": "Ecosystem and species resilience knowledge",
+                  "g": "Effective monitoring strategies",
+                  "h": "Stakeholder-scientist communication"
+                },
+                "question": "Stakeholder Information Needs"
+              },
+              {
+                "name": "Fiscal Year 13 Project Priorities",
+                "number": 2,
+                "options": {
+                  "a": "Forecasting climate change and variability at intermediate time scales",
+                  "b": "Linking climatic, hydrological and ecological changes at intermediate time scales",
+                  "c": "Hydrological implications of climate change in the Southwest"
+                },
+                "question": "Fiscal Year 13 Project Priorities"
+              },
+              {
+                "name": "Fiscal Year 14 Project Priorities",
+                "number": 3,
+                "options": {
+                  "a": "Effects of climate change on coastlines, estuaries and wetlands",
+                  "b": "Optimal design and implementation of monitoring strategies",
+                  "c": "Hydroclimatic change and terrestrial ecosystems"
+                },
+                "question": "Fiscal Year 14 Project Priorities"
+              },
+              {
+                "name": "SW CSC Research Theme",
+                "number": 4,
+                "options": {
+                  "a": "Climate science and forecasting:  Downscaling of climate models, Uncertainty assessment, Anthropogenic and natural variability interaction",
+                  "b": "Hydroclimate and water availability: Temperature and precipitation projections, Extreme event scenarios, Paleoclimate contextualization",
+                  "c": "Ecological responses and vulnerabilities: Species and ecosystem responses, Adaptive capacity assessment, Ecological resilience to climate variability and change",
+                  "d": "Designing monitoring strategies: Critical data gap analysis, Data overlap analysis, Development of strategies for monitoring",
+                  "e": "Establishing best information exchange practices: Connection of knowledge needs with science capacity, Documentation of best practices for future application"
+                },
+                "question": "SW CSC Research Theme"
+              },
+              {
+                "name": "Traditional Ecological Knowledge",
+                "number": 5,
+                "options": {
+                  "a": "Yes",
+                  "b": "No"
+                },
+                "question": "Traditional Ecological Knowledge"
+              }
+            ],
+            "url": ""
+          }
+        ]
+      }
+    },
+    {
+      "abbreviatedName": "",
+      "backgroundColor": "",
+      "backgroundImageUrl": "",
+      "className": "gov.sciencebase.catalog.item.facet.CommunityFacet",
+      "savedSearches": [
+        {
+          "description": "NCCWSC Project Data",
+          "name": "ProjectData",
+          "title": "NCCWSC Project Data",
+          "uri": "?q=\u0026filter=browseCategory!%3DProject\u0026filter=browseCategory%3DData"
+        },
+        {
+          "description": "NCCWSC Projects",
+          "name": "Projects",
+          "title": "NCCWSC Projects",
+          "uri": "?q=\u0026filter=browseCategory%3DProject"
+        }
+      ],
+      "template": "",
+      "usgsTitle": "",
+      "usgsTitleBackgroundColor": "",
+      "usgsTitleColor": "",
+      "vocabCategoryId": ""
+    }
+  ],
+  "files": [
+    {
+      "name": "addProjectLinks.groovy",
+      "title": "",
+      "contentType": "text/x-groovy",
+      "contentEncoding": "",
+      "pathOnDisk": "__disk__fe/1e/a5/fe1ea59983adabce7338aedfe7636b5599b51331",
+      "processed": false,
+      "processToken": "",
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "size": 2805,
+      "dateUploaded": "2017-07-26T16:41:36Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "s3Object": "",
+      "checksum": {
+        "type": "MD5",
+        "value": "34464098accb49858996633d0e1e550b"
+      },
+      "url": "https://www.sciencebase.gov/catalog/file/get/4f4e476ae4b07f02db47e13b?f=__disk__fe%2F1e%2Fa5%2Ffe1ea59983adabce7338aedfe7636b5599b51331"
+    },
+    {
+      "name": "addProjectTagsToChildren.groovy",
+      "title": "",
+      "contentType": "text/x-groovy",
+      "contentEncoding": "",
+      "pathOnDisk": "__disk__11/0b/9f/110b9fa7648a66f4af9d563dba37ad3f1f95466a",
+      "processed": false,
+      "processToken": "",
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "size": 4536,
+      "dateUploaded": "2017-07-26T16:41:36Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "s3Object": "",
+      "checksum": {
+        "type": "MD5",
+        "value": "038cfc18711b2e5c26cadd152ae50b45"
+      },
+      "url": "https://www.sciencebase.gov/catalog/file/get/4f4e476ae4b07f02db47e13b?f=__disk__11%2F0b%2F9f%2F110b9fa7648a66f4af9d563dba37ad3f1f95466a"
+    },
+    {
+      "name": "setBrowseCategoryDataInApprovedDataSets.groovy",
+      "title": "",
+      "contentType": "text/x-groovy",
+      "contentEncoding": "",
+      "pathOnDisk": "__disk__70/35/3b/70353b0a73d7fd5691818d090a709bdb773404f4",
+      "processed": false,
+      "processToken": "",
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "size": 2036,
+      "dateUploaded": "2017-07-26T16:41:36Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "s3Object": "",
+      "checksum": {
+        "type": "MD5",
+        "value": "9f66d3a7494811ed0cfedc2b0bed9d2a"
+      },
+      "url": "https://www.sciencebase.gov/catalog/file/get/4f4e476ae4b07f02db47e13b?f=__disk__70%2F35%2F3b%2F70353b0a73d7fd5691818d090a709bdb773404f4"
+    }
+  ],
+  "distributionLinks": [
+    {
+      "uri": "https://www.sciencebase.gov/catalogMaps/mapping/ows/4f4e476ae4b07f02db47e13b?mode=download\u0026request=kml\u0026service=wms\u0026layers=childrenBoundingBox,children",
+      "title": "KML Service",
+      "type": "kml",
+      "typeLabel": "KML Download",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalogMaps/mapping/ows/4f4e476ae4b07f02db47e13b?service=wms\u0026request=getcapabilities\u0026version=1.3.0",
+      "title": "ScienceBase WMS Service",
+      "type": "serviceCapabilitiesUrl",
+      "typeLabel": "OGC Service Capabilities URL",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/items?parentId=4f4e476ae4b07f02db47e13b\u0026format=json",
+      "title": "ScienceBase Collection JSON",
+      "type": "repo",
+      "typeLabel": "ScienceBase Repository",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/items?parentId=4f4e476ae4b07f02db47e13b\u0026format=atom",
+      "title": "ScienceBase Collection ATOM",
+      "type": "repo",
+      "typeLabel": "ScienceBase Repository",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/items?parentId=4f4e476ae4b07f02db47e13b\u0026format=csv",
+      "title": "ScienceBase Collection CSV",
+      "type": "repo",
+      "typeLabel": "ScienceBase Repository",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/oai-pmh?verb=ListRecords\u0026metadataPrefix=fgdc-orig\u0026set=4f4e476ae4b07f02db47e13b",
+      "title": "ScienceBase OAI PMH Service",
+      "type": "oai-pmh",
+      "typeLabel": "OAI-PMH",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/item/4f4e476ae4b07f02db47e13b/csw?service=CSW\u0026version=2.0.2\u0026request=GetRecords",
+      "title": "ScienceBase CSW Service",
+      "type": "csw",
+      "typeLabel": "",
+      "rel": "alternate",
+      "name": "",
+      "files": ""
+    },
+    {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/4f4e476ae4b07f02db47e13b",
+      "title": "Download Attached Files",
+      "type": "downloadLink",
+      "typeLabel": "Download Link",
+      "rel": "alternate",
+      "name": "NationalClimate.zip",
+      "files": [
+        {
+          "contentType": "text/x-groovy",
+          "name": "addProjectLinks.groovy",
+          "title": ""
+        },
+        {
+          "contentType": "text/x-groovy",
+          "name": "addProjectTagsToChildren.groovy",
+          "title": ""
+        },
+        {
+          "contentType": "text/x-groovy",
+          "name": "setBrowseCategoryDataInApprovedDataSets.groovy",
+          "title": ""
+        }
+      ]
+    }
+  ]
+}
