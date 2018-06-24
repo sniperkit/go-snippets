@@ -1,0 +1,12 @@
+---
+language: bash
+
+os:
+  - linux
+  - osx
+
+git:
+  submodules: true
+
+script:
+  - make test
