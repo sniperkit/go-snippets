@@ -9,8 +9,10 @@ clear
 # exit
 
 echo ""
-echo "## [START] GIT - PRE-COMMIT"
-echo ""
+echolor --White "## [START] GIT - PRE-COMMIT"
+
+[ `which echolor` == "" ] && wget -nc -o /usr/local/bin/echolor https://raw.githubusercontent.com/Gruppio/Echolor/master/echolor.sh
+
 
 function separator {
 	echo "-----------------------------------------------------------------"
@@ -83,19 +85,19 @@ function ls_dirs_size {
 	separator
 }
 
-declare REMOVED_DIRS_MAP=()
+export REMOVED_DIRS_TOTAL=0
+declare REMOVED_DIRS_KEYS=()
 function rm_dirs_by_name { 
 	local pattern_dirname=${1:-"test"}
-	local removed_dirs=$(find . -name "$pattern_dirname" -type d -print)
+	local removed_dirs=$(find . -name "$pattern_dirname" -type d -print -exec rm -rf {} +)
 	local removed_dirs_array=($(echo "$removed_dirs" | tr ' ' '\n'))
-
-	# local removed_dirs=$(find . -name "$pattern_dirname" -type d -print -exec rm -rf {} +)
 	local removed_dirs_count=${#removed_dirs_array[@]}
 	echo " - pattern_dirname    = ${pattern_dirname}"
 	echo " - removed_dirs_count = ${removed_dirs_count}"
 	echo " - removed_dirs       = ${removed_dirs[@]}"
 	if [ ${removed_dirs_count} -gt 0 ]; then
-		REMOVED_DIRS_MAP[${pattern_dirname}]=$removed_dirs_count
+		REMOVED_DIRS_KEYS+=(${pattern_dirname})
+		REMOVED_DIRS_TOTAL=$((REMOVED_DIRS_TOTAL+$removed_dirs_count))
 		echolor --Red " - [WARNING] removed_dirs       = ${removed_dirs[@]}"
 	fi
 }
@@ -105,7 +107,7 @@ export REMOVE_DIRS_ARRAY=($(echo "$REMOVE_DIRS" | tr ',' '\n'))
 export REMOVE_DIRS_COUNT=${#REMOVE_DIRS_ARRAY[@]}
 
 echo ""
-echo "## REMOVE vendoring dirs"
+echolor --Cyan "## REMOVE vendoring dirs"
 echo "- REMOVE_DIRS_ARRAY: ${REMOVE_DIRS_ARRAY[*]}"
 echo ""
 
@@ -116,22 +118,20 @@ for key in "${REMOVE_DIRS_ARRAY[@]}"; do
 	separator
 done
 
-for key in "${REMOVED_DIRS_MAP[@]}"; do
-	echo "### REMOVE Successfully removed all dirnames: \"${key}\""
-	echo "- REMOVED_DIRS_MAP[$key] = $REMOVED_DIRS_MAP[$key]"
-done
-
-echo "Successfully removed all vendor dirs: ${REMOVE_DIRS}"
+if [ ${REMOVED_DIRS_TOTAL} -gt 0 ]; then
+	git_commit "remove vendor dirs..."
+fi
 
 export GCPRUNFUL=false
 function prunful {
-	local match="prune"
+	local match="git prune"
 	local file=".git/gc.log"
-	echo "## CHECK repo is prunful ?"
+	echo ""
+	echolor --Cyan "## CHECK repo is prunful ?"
 	if [ -f ${file} ]; then
-		echo "### found ${file}"
-		local lookup=$(cat .git/gc.log | grep $match)
-		if [ $lookup == $match ]; then
+		echolor --Red "### found ${file}"
+		[ `cat  ${file} | grep -c "$match"` -gt 0 ] && GCPRUNFUL=true
+		if [ "$GCPRUNFUL" == "true" ]; then
 			echo "### removing ${file}"
 			rm -f $file
 			echo "### Run git prune"
@@ -147,10 +147,12 @@ export COMMITFUL=false
 export UNSTAGGED_FILES=""
 export UNSTAGGED_FILES_COUNT=0
 function ls_unstagged {
-	UNSTAGGED_FILES=$(git status --short | grep '^.[^ ]' | sed 's/^...//')
+	local result=$(git status --short | grep '^.[^ ]' | sed 's/^...//')
+	UNSTAGGED_FILES=($(echo "$result" | tr ' ' '\n'))
 	UNSTAGGED_FILES_COUNT=${#UNSTAGGED_FILES[@]}
-	echo "## CHECK unstagged files: "
-	echo "$UNSTAGGED_FILES"
+	echo ""
+	echolor --Cyan "## CHECK unstagged files: "
+	echolor --Red "$UNSTAGGED_FILES"
 	echo ""
 	echo "- UNSTAGGED_FILES_COUNT=${#UNSTAGGED_FILES[@]}"
 	if [ "${UNSTAGGED_FILES_COUNT}" -gt 0 ]; then 
@@ -159,27 +161,60 @@ function ls_unstagged {
 	separator
 }
 
-# ls_unstagged
-# commitful
+ls_unstagged
 
 rm -fR ./0
 
+export COMMIT_COUNT=0
+function git_commit {
+	[ "$COMMIT_COUNT" -gt 2 ] && exit # prevent infinite loops
+	local message=${1:-"add latest changes..."}	
+	git add .
+	git commit -am "$1"
+	COMMIT_COUNT=($COMMIT_COUNT+1)
+}
 
-echo "## SUMMARY"
-echo "- REMOVE_DIRS           =   ${REMOVE_DIRS}"
-echo "- REMOVE_DIRS_COUNT     =   ${REMOVE_DIRS_COUNT}"
-echo "- REMOVE_DIRS_COUNT     =   ${REMOVE_DIRS_COUNT}"
-echo "- UNSTAGGED_FILES_COUNT =   ${UNSTAGGED_FILES_COUNT}"
-echo "- COMMITFUL             =   ${COMMITFUL}"
+
+
+echolor --Green "## PRE-COMMIT - SUMMARY"
 
 echo ""
-echo "## [END] GIT - PRE-COMMIT"
+
+## removed vendor dirs ? 
+echolor --Yellow "### CLEAN-UP"
+
+if [ ${REMOVED_DIRS_TOTAL} -gt 0 ]; then
+	echolor --Red "- REMOVED_DIRS_KEYS     =   ${REMOVED_DIRS_KEYS[*]}"
+	echolor --Red "- REMOVED_DIRS_TOTAL    =   ${REMOVED_DIRS_TOTAL}"
+else
+	echolor --Green "- REMOVED_DIRS_TOTAL    =   ${REMOVED_DIRS_TOTAL}"
+fi
+
 echo ""
 
-# exit 1
+## Unstagged files ?
+echolor --Yellow    "### CHECKER"
+if [ "${UNSTAGGED_FILES_COUNT}" -gt 0 ]; then
+	echolor --Red   "- COMMITFUL             =   ${COMMITFUL}"
+	echolor --Red   "- UNSTAGGED_FILES_COUNT =   ${UNSTAGGED_FILES_COUNT}"
+	echolor --Red   "- UNSTAGGED_FILES       =   ${UNSTAGGED_FILES[*]}"
+	git_commit "add unstagged files"
+else
+	echolor --Green "- COMMITFUL             =   ${COMMITFUL}"
+	echolor --Green "- UNSTAGGED_FILES_COUNT =   ${UNSTAGGED_FILES_COUNT}"
+fi
+
+## gc prune ?
+if [ "${GCPRUNFUL}" == true ]; then
+	echolor --Red   "- GCPRUNFUL             =   ${GCPRUNFUL}"
+else
+	echolor --Green "- GCPRUNFUL             =   ${GCPRUNFUL}"
+fi
 
 
-# grep "remove .git/gc.log"
+echo ""
+echolor --White     "## [END] GIT - PRE-COMMIT"
+echo ""
 
 # ls_dirs_size
 # ls_subtrees
