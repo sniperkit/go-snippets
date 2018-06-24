@@ -1,0 +1,47 @@
+@import "components/CodeEditor";
+@import "components/DateInput";
+@import "components/Footer";
+@import "components/ForceGraph";
+@import "components/Items";
+@import "components/Login";
+@import "components/MainMenu";
+@import "components/MonthCalendar";
+@import "components/Navbar";
+@import "components/ProgressBar";
+@import "components/Signup";
+@import "components/Spinner";
+@import "components/TabBar";
+@import "components/View";
+
+
+.item {
+  margin-bottom: 8px;
+}
+
+.card {
+  overflow: hidden;
+  min-height: 260px;
+  padding-top: 0;
+  margin-bottom: 1.5em;
+  margin-top: 1em;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.15);
+  background: white;
+
+  header {
+    display: block;
+    min-height: 150px;
+    padding: 1.5em 1em 0 1em;
+    margin-top: 0;
+    color: white;
+    position: relative;
+    h3, h4 {
+      color: white;
+      position: absolute;
+      bottom: 5px;
+    }
+  }
+  .info {
+    padding: 1em;
+  }
+}

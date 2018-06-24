@@ -1,0 +1,10 @@
+#user {
+  .profile_photo {
+    max-width: 170px;
+    border-radius: 3px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+}

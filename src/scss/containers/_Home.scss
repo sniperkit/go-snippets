@@ -1,0 +1,55 @@
+#home {
+  margin: 2em 0 0 0;
+  padding-bottom: 0;
+  background: $slate;
+
+  .masthead {
+    // background: top center url("https://s3.us-east-2.amazonaws.com/static.archivers.space/clouds.png") repeat-x;
+    background: top center url("https://s3.amazonaws.com/datatogether/svg/lines_bg.svg") repeat-x;
+    padding-top: 50px;
+    min-height: 650px;
+    position: relative;
+    .tagline {
+      text-align: center;
+      color: white;
+      margin: 5em auto 0 auto;
+      max-width: 60%;
+      font-size: 3em;
+      line-height: 1.45em;
+    }
+    .left-lines {
+      position: absolute;
+      left: 0;
+      top: 12%;
+      max-width: 200px;
+    }
+    .right-lines {
+      position: absolute;
+      right: 0;
+      top: 40%;
+      max-width: 300px;
+    }
+    // img {
+    //   width: 100%;
+    //   max-width: 1200px;
+    //   margin: 0 0 0 auto;
+    //   display: block;
+    // }
+  }
+
+  .signup {
+    margin-top: 10em;
+    .text {
+      margin-top: 35px;
+      margin-bottom: 35px;
+      color: white;
+    }
+    .image {
+      text-align: center;
+      img {
+        margin: 0 auto;
+        max-width: 300px;
+      }
+    }
+  }
+}

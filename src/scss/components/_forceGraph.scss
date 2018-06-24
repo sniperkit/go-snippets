@@ -1,0 +1,13 @@
+.rv-force__interactive .rv-force__node {
+  cursor: pointer;
+}
+
+.rv-force__label {
+  pointer-events: none;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.rv-force__label::selection {
+  background: none;
+}

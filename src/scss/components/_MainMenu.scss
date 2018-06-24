@@ -1,0 +1,41 @@
+#main_menu {
+  width: 300px;
+  background: $slate;
+  box-shadow: -1 0 8px rgba(0,0,0,0.45);
+  position: fixed;
+  transition: right 0.15s;
+  top: 50px;
+  right: -100%;
+  height: 100%;
+  z-index: 2;
+  a {
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    display: block;
+    text-transform: uppercase;
+    padding: 1em;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+  a:hover {
+    background-color: rgba(0,0,0,0.2);
+  }
+
+  a.section-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 1em;
+    background: rgba(0,0,0,0.2);
+  }
+
+  a.sub {
+    padding: 0.75em 1em 0.75em 2em;
+  }
+}
+
+#main_menu.hide {
+  right: -100%;
+}
+#main_menu.show {
+  right: 0;
+}

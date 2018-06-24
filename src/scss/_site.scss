@@ -1,0 +1,242 @@
+html, body, #root, #app {
+  min-height: 100%;
+}
+
+body, #root {
+  // grossness to make sure the app always consumes the entire window
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.bg-green { background: $green; }
+.bg-blue { background: $blue; }
+.bg-purple { background: $purple; }
+.bg-red { background: $red; }
+.bg-yellow { background: $yellow; }
+.bg-orange { background: $orange; }
+.bg-white { background: white; }
+.bg-tope { background: $tope; }
+
+.tope { color: $tope; }
+.green { color: $green; }
+.blue { color: $blue; }
+.purple { color: $purple; }
+.red { color: $red; }
+.yellow { color: $yellow; }
+.orange { color: $orange; }
+.white { color: white; }
+
+hr.green { border-top: 2px solid $green; }
+hr.blue { border-top: 2px solid $blue; }
+hr.purple { border-top: 2px solid $purple; }
+hr.red { border-top: 2px solid $red; }
+hr.yellow { border-top: 2px solid $yellow; }
+hr.orange { border-top: 2px solid $orange; }
+
+header > hr {
+  margin-top: 0;
+}
+
+#content-wrapper, #root {
+  min-height: 90%;
+}
+
+.wrapper, .page {
+  min-height: 100%
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #666;
+}
+
+.address {
+  color: $orange;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.meta.label {
+  text-transform: uppercase;
+  font-weight: "bold";
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+
+.source,
+.source.item {
+  hr {
+    border-top: 2px solid $yellow;
+  }
+  .title,
+  .label {
+    color: $yellow;
+  }
+  .colorized,
+  .progressbar .progress {
+    background: $yellow;
+  }
+}
+
+.url,
+.url.item {
+  hr {
+    border-top: 2px solid $purple;
+  }
+  .title,
+  .label {
+    color: $purple;
+  }
+  .colorized,
+  .progressbar .progress {
+    background: $purple;
+  }
+}
+
+.metadata,
+.metadata.item,
+.metadata.editor {
+  hr {
+    border-top: 2px solid $teal;
+  }
+  .title,
+  .label,
+  a,
+  .control-label {
+    color: $teal;
+  }
+  .colorized,
+  .progressbar .progress {
+    background: $teal;
+  }
+  .control-label {
+  }
+}
+
+.collection,
+.collection.item {
+  hr {
+    border-top: 2px solid $green;
+  }
+  .title,
+  .label {
+    color: $green;
+  }
+  .colorized,
+  .progressbar .progress {
+    background: $green;
+  }
+}
+
+.link {
+  hr {
+    border-top: 2px solid $blue;
+  }
+  .title,
+  .label {
+    color: $blue;
+  }
+  .colorized,
+  .progressbar .progress {
+    background: $blue;
+  }
+}
+
+.content,
+.content.item {
+  hr {
+    border-top: 2px solid $magenta;
+  }
+  .title,
+  .label {
+    color: $magenta;
+  }
+  .colorized,
+  .progressbar .progress {
+    background: $magenta;
+  }
+}
+a.content { color: $magenta; }
+
+
+.primer,
+.primer.item {
+  hr {
+   border-top: 2px solid $tope; 
+  }
+  .label,
+  .title {
+    color: $tope;
+  }
+  .colorized,
+  .progressbar .progress {
+    background: $tope;
+  }
+}
+
+.user,
+.user.item,
+.community,
+.community.item {
+  hr {
+   border-top: 1px solid $slate; 
+  }
+  .label,
+  .title {
+    color: $slate;
+  }
+  .colorized,
+  .progressbar .progress {
+    background: $slate;
+  }
+}
+
+.activity,
+.activity.item {
+  hr {
+   border-top: 1px solid $red; 
+  }
+  .label,
+  .title {
+    color: $red;
+  }
+  .colorized,
+  .progressbar .progress {
+    background: $red;
+  }
+}
+
+.colorized {
+  color: white;
+  .title,
+  .label {
+    color: white;
+  }
+  .progressbar .progress {
+    background: white;
+  }
+  a {
+    color: white;
+  }
+
+  .btn {
+    background: rgba(0,0,0,0.1);
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.1);
+  }
+}
