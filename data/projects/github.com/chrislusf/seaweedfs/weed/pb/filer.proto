@@ -1,0 +1,153 @@
+syntax = "proto3";
+
+package filer_pb;
+
+//////////////////////////////////////////////////
+
+service SeaweedFiler {
+
+    rpc LookupDirectoryEntry (LookupDirectoryEntryRequest) returns (LookupDirectoryEntryResponse) {
+    }
+
+    rpc ListEntries (ListEntriesRequest) returns (ListEntriesResponse) {
+    }
+
+    rpc GetEntryAttributes (GetEntryAttributesRequest) returns (GetEntryAttributesResponse) {
+    }
+
+    rpc CreateEntry (CreateEntryRequest) returns (CreateEntryResponse) {
+    }
+
+    rpc UpdateEntry (UpdateEntryRequest) returns (UpdateEntryResponse) {
+    }
+
+    rpc DeleteEntry (DeleteEntryRequest) returns (DeleteEntryResponse) {
+    }
+
+    rpc AssignVolume (AssignVolumeRequest) returns (AssignVolumeResponse) {
+    }
+
+    rpc LookupVolume (LookupVolumeRequest) returns (LookupVolumeResponse) {
+    }
+
+}
+
+//////////////////////////////////////////////////
+
+message LookupDirectoryEntryRequest {
+    string directory = 1;
+    string name = 2;
+}
+
+message LookupDirectoryEntryResponse {
+    Entry entry = 1;
+}
+
+message ListEntriesRequest {
+    string directory = 1;
+}
+
+message ListEntriesResponse {
+    repeated Entry entries = 1;
+}
+
+message Entry {
+    string name = 1;
+    bool is_directory = 2;
+    repeated FileChunk chunks = 3;
+    FuseAttributes attributes = 4;
+}
+
+message FileChunk {
+    string file_id = 1;
+    int64 offset = 2;
+    uint64 size = 3;
+    int64 mtime = 4;
+}
+
+message FuseAttributes {
+    uint64 file_size = 1;
+    int64 mtime = 2;
+    uint32 file_mode = 3;
+    uint32 uid = 4;
+    uint32 gid = 5;
+    int64 crtime = 6;
+    string mime = 7;
+    string replication = 8;
+    string collection = 9;
+    int32 ttl_sec = 10;
+}
+
+message GetEntryAttributesRequest {
+    string name = 1;
+    string parent_dir = 2;
+    string file_id = 3;
+}
+
+message GetEntryAttributesResponse {
+    FuseAttributes attributes = 1;
+    repeated FileChunk chunks = 2;
+}
+
+message GetFileContentRequest {
+    string file_id = 1;
+}
+
+message GetFileContentResponse {
+    bytes content = 1;
+}
+
+message CreateEntryRequest {
+    string directory = 1;
+    Entry entry = 2;
+}
+
+message CreateEntryResponse {
+}
+
+message UpdateEntryRequest {
+    string directory = 1;
+    Entry entry = 2;
+}
+message UpdateEntryResponse {
+}
+
+message DeleteEntryRequest {
+    string directory = 1;
+    string name = 2;
+    bool is_directory = 3;
+    bool is_delete_data = 4;
+}
+
+message DeleteEntryResponse {
+}
+
+message AssignVolumeRequest {
+    int32 count = 1;
+    string collection = 2;
+    string replication = 3;
+    int32 ttl_sec = 4;
+}
+
+message AssignVolumeResponse {
+    string file_id = 1;
+    string url = 2;
+    string public_url = 3;
+    int32 count = 4;
+}
+
+message LookupVolumeRequest {
+    repeated string volume_ids = 1;
+}
+
+message Locations {
+    repeated Location locations = 1;
+}
+
+message Location {
+    string url = 1;
+    string public_url = 2;
+}
+message LookupVolumeResponse {
+    map<string, Locations> locations_map = 1;
+}
