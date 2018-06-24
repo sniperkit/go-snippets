@@ -1,0 +1,19 @@
+
+/**
+ *  本地存储的键 
+ */
+const KEYS = {
+    // featrues key
+    BACKGROUND: 'BACKGROUND',
+    ENGINIE: 'ENGINIE',
+    LOVESITES: 'LOVESITES',
+    // setting key
+    SETTING_APPLICATION : 'SETTING_APPLICATION',
+    SETTING_BOOKMARK : 'SETTING_BOOKMARK',
+    SETTING_COMMONSITES : 'SETTING_COMMONSITES',
+    // bakcground
+    SETTING_BING: 'SETTING_BING',
+    SETTING_COLOR: 'SETTING_COLOR'
+}
+
+export default KEYS
