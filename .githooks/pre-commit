@@ -140,8 +140,8 @@ function rm_dirs_by_name {
 		remove_sequence+=" -name \"$key\" "
 	done
 
-	local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print)
-	# local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
+	# local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print)
+	local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
 	local removed_dirs_array=($(echo "$removed_dirs" | tr ' ' '\n'))
 	local removed_dirs_count=${#removed_dirs_array[@]}
 	echo " - pattern_dirname    = ${pattern_dirname}"
@@ -164,14 +164,6 @@ echo ""
 
 declare elapsed
 declare start
-
-start=$(timer)
-for key in "${REMOVE_DIRS_ARRAY[@]}"; do
-	echo "### REMOVE recursively all dirnames: \"${key}\""
-	rm_dirs_by_name "${key}"
-	separator
-done
-echo $(timer $start "remove_dirs")
 
 start=$(timer)
 if [ ${REMOVED_DIRS_TOTAL} -gt 0 ]; then
