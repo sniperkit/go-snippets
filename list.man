@@ -1,0 +1,77 @@
+.TH LIST 1
+.SH NAME
+list \(en list files
+.
+.SH SYNOPSIS
+list [\fIflag\fR ...] [\fIfile\fR ...]
+.
+.SH DESCRIPTION
+.P
+The \fIlist\fR command lists each \fIfile\fR (or the current directory).
+.
+.SS Options
+.
+.IP \fB\-a\fR
+Do not ignore files starting with a dot.
+.
+.IP \fB\-d\fR
+List directories themselves, not their contents.
+.
+.IP \fB\-f\fR
+Show file type using the following indicators:
+.RS
+.IP \fBdev\fR
+Device
+.IP \fBdir\fR
+Directory
+.IP \fBf\fR
+Regular file
+.IP \fBlink\fR
+Symbolic link
+.IP \fBpipe\fR
+Named pipe
+.IP \fBsock\fR
+Socket
+.RE
+.
+.IP \fB\-r\fR
+List subdirectories recursively.
+.
+.IP \fB\-s\fR
+Show size.
+.
+.IP \fB\-t\fR
+Show time of last modification.
+.
+.SS Sorting
+.P
+The file listing is always sorted by name.
+Pipe the output to \fIsort\fR(1) to change the order.
+The following will sort the files by type:
+.IP
+list \-f | sort
+.P
+To sort the files by modification time, use
+.IP
+list \-t | sort
+.P
+The \fIsort\fR(1) command can also sort numerically.
+This is useful when sorting by size.
+.IP
+list \-s | sort \-n
+.
+.SS Searching
+.P
+When searching for files,
+use the \fB\-r\fR flag to list subdirectories recursively.
+Pipe the output to \fIgrep\fR(1) to select files.
+.P
+To search for files from November 2017, use
+.IP
+list \-r \-t | grep '^2017\-11'
+.P
+Or search for symbolic links:
+.IP
+list \-r \-f | grep '^link'
+.SH "SEE ALSO"
+find(1), grep(1), ls(1), sort(1)
