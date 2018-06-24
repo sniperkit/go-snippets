@@ -1,0 +1,7 @@
+https://github.com/zquestz/s
+https://github.com/upcrob/fsq
+https://github.com/vbauerster/getparty
+https://github.com/verdverm/vermui
+https://github.com/jennieveenhuizen/list
+https://github.com/ttlaak/pagerank
+https://github.com/shogo-ma/pagerank

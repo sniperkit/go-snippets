@@ -15,14 +15,20 @@ LOAD DATA INFILE language:Go
 admin vue golang
 
 
-## Gitvu Topics - Repositories
+## Github Topics - Repositories
 https://github.com/topics/github-bot?l=go
+https://github.com/topics/summarization?l=go
+https://github.com/topics/dataset?l=go
+https://github.com/topics/classification?l=go
+https://github.com/topics/multi-label?l=go
+https://github.com/topics/go-github?l=go
+https://github.com/topics/terminal?l=go
 
-
-## Latest
+## Golanglibs.com - Queries
 alias
 aliases
 pagination
+history
 daemonize
 pluggable
 cli plugins
