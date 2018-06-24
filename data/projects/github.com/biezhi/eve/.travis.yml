@@ -1,0 +1,10 @@
+language: go
+sudo: required
+
+go:
+  - "1.10.1"
+
+install:
+  - sudo apt-get update
+  - go get github.com/biezhi/moe
+  - go get github.com/olekukonko/tablewriter
