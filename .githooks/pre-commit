@@ -11,6 +11,9 @@ echolor --White "## [START] GIT - PRE-COMMIT"
 
 [ `which echolor` == "" ] && wget -nc -o /usr/local/bin/echolor https://raw.githubusercontent.com/Gruppio/Echolor/master/echolor.sh
 
+export REMOVE_DIRS="vendor,Godeps,node_modules"
+export REMOVE_DIRS_ARRAY=($(echo "$REMOVE_DIRS" | tr ',' '\n'))
+
 #####################################################################
 # If called with no arguments a new timer is returned.
 # If called with arguments the first is used as a timer
@@ -131,7 +134,14 @@ declare REMOVED_DIRS_KEYS=()
 function rm_dirs_by_name { 
 	local start=$(timer)
 	local pattern_dirname=${1:-"test"}
-	local removed_dirs=$(find . -not -path '*/\.git/*' -name "$pattern_dirname" -type d -print -exec rm -rf {} +)
+
+	local remove_sequence=""
+	for key in "${REMOVE_DIRS_ARRAY[@]}"; do
+		remove_sequence+=" -name \"$key\" "
+	done
+
+	local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print)
+	# local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
 	local removed_dirs_array=($(echo "$removed_dirs" | tr ' ' '\n'))
 	local removed_dirs_count=${#removed_dirs_array[@]}
 	echo " - pattern_dirname    = ${pattern_dirname}"
@@ -145,8 +155,6 @@ function rm_dirs_by_name {
 	echo $(timer $start $FUNCNAME)
 }
 
-export REMOVE_DIRS="vendor,Godeps,node_modules"
-export REMOVE_DIRS_ARRAY=($(echo "$REMOVE_DIRS" | tr ',' '\n'))
 export REMOVE_DIRS_COUNT=${#REMOVE_DIRS_ARRAY[@]}
 
 echo ""
