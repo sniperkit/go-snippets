@@ -1,0 +1,119 @@
+#!/usr/bin/env python3.6
+#
+# Copyright (C) 2016,2017 The University of Sheffield, UK
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+""" Tool for mining the cdnjs git repository"""
+
+import getopt
+import logging
+import sys
+import os
+
+from ExtensionCrawler.config import (const_log_format, const_basedir)
+from ExtensionCrawler.cdnjs_git import (pull_and_update_db, update_db_all_libs,
+                                        update_db_from_listfile)
+
+
+def helpmsg():
+    """Print help message."""
+    print("cdnjs-git-miner [OPTION]")
+    print(
+        "    -i               initialize/update database with all libraries in the repository"
+    )
+    print("    -u               update: pull repository and update database")
+    print(
+        "    -l <PATHFILE>    read list of libraries to update from file (recusively)"
+    )
+    print("    -n <TASKID>      process chunk n where n in [1,N]")
+    print("    -N <MAXTASKID>   ")
+    print("    -v               verbose")
+    print(
+        "    -c               print csv format to stdout instead of writing to database"
+    )
+    print("    -a=<DIR>         archive directory")
+    print("    -h               print this help text")
+
+
+def main(argv):
+    """Main function of the extension crawler."""
+    basedir = const_basedir()
+    verbose = False
+    initialize = False
+    update = False
+    taskid = 1
+    listfile = None
+    maxtaskid = 1
+    csv = False
+
+    try:
+        opts, args = getopt.getopt(argv, "hvicl:ua:p:n:N:", [
+            "archive=", "listupdate=", "taskid=", "maxtaskid="
+        ])
+    except getopt.GetoptError:
+        helpmsg()
+        sys.exit(2)
+    for opt, arg in opts:
+        if opt == '-h':
+            helpmsg()
+            sys.exit()
+        elif opt == '-v':
+            verbose = True
+        elif opt in ("-l", "--listupdate"):
+            listfile = arg
+        elif opt in ("-a", "--archive"):
+            basedir = arg
+        elif opt == '-i':
+            initialize = True
+        elif opt == '-u':
+            update = True
+        elif opt == '-c':
+            csv = True
+        elif opt in ("-n", "--taskid"):
+            taskid = int(arg)
+        elif opt in ("-N", "--maxtaskid"):
+            maxtaskid = int(arg)
+
+    if verbose:
+        loglevel = logging.INFO
+    else:
+        loglevel = logging.WARNING
+
+    logger = logging.getLogger()
+    ch = logging.StreamHandler(sys.stdout)
+    ch.setFormatter(logging.Formatter(const_log_format()))
+    logger.addHandler(ch)
+    logger.setLevel(loglevel)
+
+    cdnjs_git_path = os.path.join(os.path.join(basedir, "filedb"), "cdnjs-git")
+
+    if initialize:
+        logging.info("Starting update of all db libs")
+        update_db_all_libs(cdnjs_git_path, csv, taskid, maxtaskid)
+        logging.info("Finished update of all db libs")
+    if update:
+        logging.info("Starting update of new db libs")
+        pull_and_update_db(cdnjs_git_path, csv)
+        logging.info("Finished update of new db libs")
+    if listfile is not None:
+        logging.info("Starting update from list file")
+        update_db_from_listfile(cdnjs_git_path, listfile, csv)
+        logging.info("Finished update from list file")
+
+    logging.info("Successfully updated cdnjs table")
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

@@ -1,0 +1,7 @@
+#!/bin/bash
+set -o nounset
+set -o errexit
+
+printenv
+
+(set -x; /usr/bin/time singularity exec --pwd /opt/ExtensionCrawler -B $TMPDIR:/tmp create-db.img create-db -t 1 -n $SGE_TASK_ID $*)

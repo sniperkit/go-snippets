@@ -1,0 +1,247 @@
+#!/usr/bin/env python3.6
+#
+# Copyright (C) 2016,2017 The University of Sheffield, UK
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+"""
+A crawler for extensions from the Chrome Web Store.
+"""
+
+import sys
+import datetime
+import time
+import getopt
+import logging
+import itertools
+import multiprocessing
+from functools import reduce
+from ExtensionCrawler.discover import get_new_ids
+from ExtensionCrawler.archive import get_forum_ext_ids, get_existing_ids, update_extensions
+from ExtensionCrawler.config import *
+from ExtensionCrawler.util import log_info, log_exception, setup_logger
+
+
+def write_log(dirname, fname, text):
+    """Write text into the file with name fname in directory dirname."""
+    os.makedirs(dirname, exist_ok=True)
+    with open(os.path.join(dirname, fname), 'w') as logfile:
+        logfile.write(text)
+
+
+def log_failures_to_file(dirname, today, res):
+    """Log failures during download/update in the log directory dirname."""
+    not_authorized = "\n".join(sorted([x.ext_id for x in res if x.not_authorized()]))
+    write_log(dirname, today + "-not-authorized.log", not_authorized)
+
+    updated = "\n".join(sorted([x.ext_id for x in res if x.is_ok() and not x.not_modified()]))
+    write_log(dirname, today + "-updated.log", updated)
+
+    has_exception = "\n".join(sorted([x.ext_id for x in res if x.has_exception()]))
+    write_log(dirname, today + "-raised-exception.log", has_exception)
+
+    raised_ddos = "\n".join(sorted([x.ext_id for x in res if x.raised_google_ddos()]))
+    write_log(dirname, today + "-raised-ddos.log", raised_ddos)
+
+    not_in_store = "\n".join(sorted([x.ext_id for x in res if x.not_in_store()]))
+    write_log(dirname, today + "-not-in-store.log", not_in_store)
+
+    new = "\n".join(sorted([x.ext_id for x in res if x.is_new()]))
+    write_log(dirname, today + "-new-in-store.log", new)
+
+    file_corruption = "\n".join(sorted([x.ext_id for x in res if x.corrupt_tar()]))
+    write_log(dirname, today + "-file-corruption.log", file_corruption)
+
+    sql_exception = "\n".join(sorted([x.ext_id for x in res if x.sql_exception()]))
+    write_log(dirname, today + "-sql-exception.log", sql_exception)
+
+    worker_exception = "\n".join(sorted([x.ext_id for x in res if x.worker_exception]))
+    write_log(dirname, today + "-worker-exception.log", worker_exception)
+
+    sql_fail = "\n".join(sorted([x.ext_id for x in res if not x.sql_success()]))
+    write_log(dirname, today + "-sql-not-updated.log", sql_fail)
+
+
+def log_summary(res, runtime=0):
+    """Log brief result summary."""
+
+    corrupt_tar_archives = list(filter(lambda x: x.corrupt_tar(), res))
+
+    log_info("Summary:")
+    log_info("    Updated {} out of {} extensions successfully".format(str(len(list(filter(lambda x: x.is_ok(), res)))),
+        str(len(res))))
+    log_info("    Updated extensions:      {:8d}".format(
+        len(list(filter(lambda x: x.is_ok() and not x.not_modified(), res)))))
+    log_info("    Updated SQL databases:   {:8d}".format(len(list(filter(lambda x: x.sql_success(), res)))))
+    log_info("    New extensions:          {:8d}".format(len(list(filter(lambda x: x.is_new(), res)))))
+    log_info("    Not authorized:          {:8d}".format(len(list(filter(lambda x: x.not_authorized(), res)))))
+    log_info("    Raised Google DDOS:      {:8d}".format(len(list(filter(lambda x: x.raised_google_ddos(), res)))))
+    log_info("    Not modified archives:   {:8d}".format(len(list(filter(lambda x: x.not_modified(), res)))))
+    log_info("    Extensions not in store: {:8d}".format(len(list(filter(lambda x: x.not_in_store(), res)))))
+    log_info("    Unknown exception:       {:8d}".format(len(list(filter(lambda x: x.has_exception(), res)))))
+    log_info("    Corrupt tar archives:    {:8d}".format(len(corrupt_tar_archives)))
+    log_info("    SQL exception:           {:8d}".format(len(list(filter(lambda x: x.sql_exception(), res)))))
+    log_info(
+        "    Worker exception:        {:8d}".format(len(list(filter(lambda x: x.worker_exception is not None, res)))))
+    log_info("    Total runtime:            {}".format(str(datetime.timedelta(seconds=int(runtime)))))
+
+    if corrupt_tar_archives:
+        log_info("")
+        log_info("List of extensions with corrupted files/archives:")
+        for x in corrupt_tar_archives:
+            log_info("{}: {}".format(x.ext_id, x.exception), 1)
+        log_info("")
+
+
+def helpmsg():
+    """Print help message."""
+    print("crawler [OPTION]")
+    print("    -h                  print this help text")
+    print("    -s                  silent (no log messages)")
+    print("    -d                  discover new extensions")
+    print("    -p <N>              number of concurrent downloads")
+    print("    -a <DIR>            archive directory")
+    print(
+        "    -t <N>              timeout for an individual extension download")
+    print("    --max-discover <N>  discover at most N new extensions")
+    print("    --pystuck           start pystuck server for all processes")
+
+
+def print_config(basedir, archive_dir, conf_dir, discover, parallel,
+                 ext_timeout, start_pystuck):
+    """Print current configuration."""
+    log_info("Configuration:")
+    log_info("  Base dir:                         {}".format(basedir))
+    log_info("    Archive directory:              {}".format(archive_dir))
+    log_info("    Configuration directory:        {}".format(conf_dir))
+    log_info("  Discover new extensions:          {}".format(discover))
+    log_info("  Max num. of concurrent downloads: {}".format(parallel))
+    log_info("  Download timeout:                 {}".format(ext_timeout))
+    log_info("  Start PyStuck:                    {}".format(start_pystuck))
+
+
+def parse_args(argv):
+    """Parse command line arguments. """
+    basedir = const_basedir()
+    parallel = const_parallel_downloads()
+    verbose = const_verbose()
+    discover = const_discover()
+    ext_timeout = const_ext_timeout()
+    max_discover = None
+    start_pystuck = False
+    try:
+        opts, _ = getopt.getopt(
+            argv, "hsda:p:t:",
+            ["timeout=", "archive=", 'parallel=', 'max-discover=', 'pystuck'])
+    except getopt.GetoptError:
+        helpmsg()
+        sys.exit(2)
+    for opt, arg in opts:
+        if opt == '-h':
+            helpmsg()
+            sys.exit()
+        elif opt in ("-a", "--archive"):
+            basedir = arg
+        elif opt in ("-p", "--parallel"):
+            parallel = int(arg)
+        elif opt in ("-t", "--timeout"):
+            ext_timeout = int(arg)
+        elif opt == '-s':
+            verbose = False
+        elif opt == '-d':
+            discover = True
+        elif opt == '--max-discover':
+            discover = True
+            max_discover = int(arg)
+        elif opt == '--pystuck':
+            start_pystuck = True
+    return basedir, parallel, verbose, discover, max_discover, ext_timeout, start_pystuck
+
+
+def main(argv):
+    """Main function of the extension crawler."""
+
+    # Use a separate process which forks new worker processes. This should make sure
+    # that processes which got created after running for some time also require only
+    # little memory. Details:
+    # https://docs.python.org/3.6/library/multiprocessing.html#contexts-and-start-methods
+    multiprocessing.set_start_method("forkserver")
+
+    today = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    basedir, parallel, verbose, discover, max_discover, ext_timeout, start_pystuck = parse_args(argv)
+
+    setup_logger(verbose)
+
+    if start_pystuck:
+        import pystuck
+        pystuck.run_server(port=10000)
+
+    # Surpressing these "Starting HTTPS connection ..." log messages
+    # Older versions of requests use loglevel INFO for that, newer ones DEBUG
+    logging.getLogger("requests").setLevel(logging.WARNING)
+
+    archive_dir = os.path.join(basedir, "data")
+    os.makedirs(archive_dir, exist_ok=True)
+    conf_dir = os.path.join(basedir, "conf")
+    os.makedirs(conf_dir, exist_ok=True)
+    open(os.path.join(conf_dir, "forums.conf"), 'a').close()
+    log_dir = os.path.join(basedir, "log")
+    os.makedirs(log_dir, exist_ok=True)
+
+    start_time = time.time()
+
+    print_config(basedir, archive_dir, conf_dir, discover, parallel,
+                 ext_timeout, start_pystuck)
+
+    forum_ext_ids = get_forum_ext_ids(conf_dir)
+    known_ids = list(set(get_existing_ids(archive_dir)) | set(forum_ext_ids))
+    discovered_ids = []
+    if discover:
+        log_info("Discovering new ids {}...".format(
+            "(at most {}) ".format(max_discover) if max_discover is not None else ""))
+        try:
+            discovered_ids = list(
+                itertools.islice(get_new_ids(known_ids), max_discover))
+        except Exception:
+            log_exception("Exception when discovering new ids")
+        log_info("Discovered {} new extensions".format(len(discovered_ids)), 1)
+
+    ext_ids = list(set(discovered_ids) | set(known_ids))
+
+    discovered_ids = None
+    known_ids = None
+
+    res = update_extensions(archive_dir, parallel, forum_ext_ids, ext_ids, ext_timeout, verbose, start_pystuck)
+
+    # We re-try (once) the extensions with unknown exceptions, as
+    # they are often temporary
+    has_exception = list(filter(lambda x: x.has_exception(), res))
+    if has_exception:
+        log_info("  {} extensions with unknown exceptions, start another try ...".format(str(len(has_exception))))
+        has_exception_ids = [x.ext_id for x in has_exception]
+        forum_ext_ids_except = list(
+            set(forum_ext_ids).intersection(set(has_exception_ids)))
+        ext_ids_except = sorted(
+            list(set(has_exception_ids) - set(forum_ext_ids_except)))
+        res_update = update_extensions(archive_dir, parallel,
+                                       forum_ext_ids_except, ext_ids_except, ext_timeout, verbose, start_pystuck)
+        res = list(set(res) - set(has_exception)) + res_update
+
+    end_time = time.time()
+    log_summary(res, int(end_time - start_time))
+    log_failures_to_file(log_dir, today, res)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
