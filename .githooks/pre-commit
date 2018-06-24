@@ -142,9 +142,8 @@ function rm_vendor_dirs {
 		remove_sequence+=" -name \"$key\" "
 	done
 
-	local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print)
 	echolor --Red "find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +"
-	# local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
+	local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
 	local removed_dirs_array=($(echo "$removed_dirs" | tr ' ' '\n'))
 	local removed_dirs_count=${#removed_dirs_array[@]}
 	echo " - pattern_dirname    = ${pattern_dirname}"
