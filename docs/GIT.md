@@ -27,3 +27,7 @@ https://github.com/larsxschneider/git-repo-analysis
 - https://gist.github.com/arschles/5d7ba90495eb50fa04fc
 - https://github.com/bluebird89/Docs/blob/0168a4f57b825a8565575780127663198ccbd3c6/Tools/Git.md
 - https://confluence.atlassian.com/bitbucket/reduce-repository-size-321848262.html
+- https://stackoverflow.com/questions/15752026/git-on-windows-shows-modified-files-all-the-time-even-for-newly-cloned-repo
+- https://stackoverflow.com/questions/9750606/git-still-shows-files-as-modified-after-adding-to-gitignore
+- https://stackoverflow.com/questions/14564946/git-status-shows-changed-files-but-git-diff-doesnt
+- 

@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Serve all git repos in current dir using `klaus`
-
-KLAUS_REPOS=`find . -name .git -type d -prune -maxdepth 2 | \
-    grep -o '/.*/' | sed 's#/#/r/#' | sed 's#/$##' | tr '\n' ' '` \
-  KLAUS_SITE_NAME='Legit' \
-  gunicorn klaus.contrib.wsgi

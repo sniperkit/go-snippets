@@ -276,6 +276,9 @@ echo ""
 # ls_subtrees_exists
 # ls_subtrees_dedup
 
+# git config core.fileMode false
+# git config --global core.autocrlf true
+
 # ref. http://www.codewrecks.com/blog/index.php/2014/04/22/git-showing-file-as-modified-even-if-it-is-unchanged/
 # modified files issue
 # git config core.autocrlf false

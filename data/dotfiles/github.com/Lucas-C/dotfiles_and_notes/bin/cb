@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-# Paste Windows clipboard in Cygwin, very useful in Vim as r!cb
-cat /dev/clipboard
