@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-nginx
+spec:
+  selector:
+    matchLabels:
+      run: ui-nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: ui-nginx
+    spec:
+      containers:
+      - name: ui-nginx
+        image: github.com/keelerh/omniscience/ui
+        ports:
+        - containerPort: 80

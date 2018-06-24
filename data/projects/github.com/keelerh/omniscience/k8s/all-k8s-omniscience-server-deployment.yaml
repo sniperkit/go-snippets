@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: omniscience-server
+spec:
+  selector:
+    matchLabels:
+      run: omniscience-server
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: omniscience-server
+    spec:
+      containers:
+      - name: omniscience-server
+        image: github.com/keelerh/omniscience/omniscience-server

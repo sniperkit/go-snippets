@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package omniscience;
+
+import "document.proto";
+import "google/protobuf/empty.proto";
+
+service Ingester {
+    // Ingests documents and indexes and uploads them to persistant storage.
+    rpc Ingest (stream Document) returns (google.protobuf.Empty) {}
+}

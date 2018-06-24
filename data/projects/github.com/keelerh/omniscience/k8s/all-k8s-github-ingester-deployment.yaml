@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingester-github
+spec:
+  selector:
+    matchLabels:
+      run: ingester-github
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: ingester-github
+    spec:
+      containers:
+      - name: ingester-github
+        image: github.com/keelerh/omniscience/ingester-github
+        args: 
+          - "--github_api_token_file_path=/etc/secrets/api-token"
+          - "--github_organization=omniscience"
+          - "--ingestion_service_address=omniscience-server:50051"
+        volumeMounts:
+        - name: ingester-github-secrets
+          mountPath: "/etc/secrets/"
+          readOnly: true
+      volumes:
+      - name: ingester-github-secrets
+        secret:
+          secretName: ingester-github
