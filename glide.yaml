@@ -1,0 +1,5 @@
+package: github.com/minger/parse-graph
+import:
+- package: github.com/dmiller/go-seq
+  subpackages:
+  - murmur3
