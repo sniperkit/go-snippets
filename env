@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Copyright 2018 Yunify Inc. All rights reserved.
+# Use of this source code is governed by a Apache license
+# that can be found in the LICENSE file.
+
+ORG_PATH="github.com/yunify"
+REPO_PATH="${ORG_PATH}/metad"
+
+function gen_version {
+VERSION=${TRAVIS_TAG:-1.0.dev}
+GIT_VERSION=$(git rev-parse --verify -q HEAD)
+cat <<EOT > version.go
+package main
+
+const VERSION = "$VERSION"
+const GIT_VERSION = "$GIT_VERSION"
+EOT
+}
+
+function revert_version {
+git checkout version.go
+}
