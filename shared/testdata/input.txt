@@ -39,3 +39,5 @@ https://github.com/gavingroovygrover/qu
 https://github.com/sourcegraph/srclib
 https://github.com/otiai10/gosseract
 https://github.com/Ch3ck/github-bot
+https://github.com/carbocation/pagerank
+https://github.com/Piasy/ghrc

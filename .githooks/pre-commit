@@ -1,63 +1,71 @@
 #!/bin/sh
 
-# set -x
-# set -e
-
-# git config --global alias.ignored = !git ls-files -v | grep "^[[:lower:]]"
-# git ls-files -v | grep "^[[:lower:]]"
-
 # export QUERY="dockerfiles alpine"; export EXPORT_FILE=".meta/ghs_snip.${QUERY/ /_}.$(date +%Y-%m-%d).sh"; echo -e "#/bin/sh\n\n# Query: ${QUERY}\n" > ${EXPORT_FILE}; chmod a+x ${EXPORT_FILE}; ghs --max=1000 --token="${GITHUB_TOKEN}" --sort=updated ${QUERY} | cut -d " " -f1 | xargs -I {}  bash -c 'echo "dock https://github.com/{}";' >> ${EXPORT_FILE}
 # export QUERY="dockerfiles alpine"; export EXPORT_FILE=".meta/ghs_urls.${QUERY/ /_}.$(date +%Y-%m-%d).tsv";  echo -e "# Query: ${QUERY}\n" > ${EXPORT_FILE}; chmod a+x ${EXPORT_FILE}; ghs --max=1000 --token="${GITHUB_TOKEN}" --sort=updated ${QUERY} | cut -d " " -f1 | xargs -I {}  bash -c 'echo "https://github.com/{}.git";' >> ${EXPORT_FILE}
 # export QUERY="dockerfiles alpine"; export EXPORT_FILE=".meta/ghs_results.${QUERY/ /_}.$(date +%Y-%m-%d).tsv";  echo -e "uri\tdescription" > ${EXPORT_FILE}; chmod a+x ${EXPORT_FILE}; ghs --max=1000 --token="${GITHUB_TOKEN}" --sort=updated ${QUERY} | xargs -I {}  bash -c 'echo "github.com/{}";' >> ${EXPORT_FILE}
 
+clear
+
+echo ""
+echo "## [START] GIT - PRE-COMMIT"
+echo ""
+
+function separator {
+	echo "-----------------------------------------------------------------"
+	echo
+}
+
 function fbs { 
 	local limit=${1:-"20"}
 	du -m . | sort -nr | head -n $limit
+	separator
 }
 
 function fb { 
 	local limit=${1:-"20"}
 	du -h . | sort -hr | head -n $limit
+	separator
 }
 
 function fbg { 
 	local pattern=${1:-"vendor"}
 	local limit=${2:-"50"}
 	du -h . | grep "$pattern" | sort -hr | head -n $limit
+	separator
 }
 
 function fd { 
 	local pattern=${1:-"test"}
 	find . -name "$pattern" -type d -exec rm -rf {} +
-}
-
-function rm_dirs_by_name { 
-	local pattern=${1:-"test"}
-	find . -name "$pattern" -type d -print -exec rm -rf {} +
+	separator
 }
 
 function ls_subtrees {
 	local export_file=${1:-".meta/ls-subtrees.tsv"}
 	ensure_dir
 	git log | grep -E 'git-subtree-dir|git-subtree-repo' | awk '{ print $2 $3 $4 }' > $export_file ;
+	separator
 }
 
 function ls_subtrees_sorted {
 	local export_file=${1:-".meta/ls-subtrees.sorted.tsv"}
 	ensure_dir
 	git log | grep -e git-subtree-dir -e git-subtree-repo | tr -d ' ' | cut -d ":" -f2 | sort | uniq > $export_file ;
+	separator
 }
 
 function ls_subtrees_exists {
 	local export_file=${1:-".meta/ls-subtrees.exists.tsv"}
 	ensure_dir
 	git log | grep -e git-subtree-dir -e git-subtree-repo | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi' > $export_file ;
+	separator
 }
 
 function ls_subtrees_dedup {
 	local export_file=${1:-".meta/ls-subtrees.dedup.tsv"}
 	ensure_dir
 	git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi' > $export_file ;
+	separator
 }
 
 function ensure_dir {
@@ -70,23 +78,103 @@ function ls_dirs_size {
 	local export_file=${1:-".meta/ls-dirs.by_size.top${limit}.output"}
 	ensure_dir
 	du -m . | sort -nr | head -n $limit > ${export_file}
+	separator
 }
 
-export DEP_DIRNAMES="vendor;Godeps;node_modules"
-
-# rm_dirs_by_name vendor;Godeps;node_modules
-rm_dirs_by_name vendor
-rm_dirs_by_name Godeps 
-rm_dirs_by_name node_modules
-echo "Successfully removed all vendor dirs: vendor, Godeps, node_modules"
-
-rm -f .git/gc.log
-
-
-function git_commit {
-	local git_status=$(git status -uno)
-	echo "git_status: ${git_status}"
+declare REMOVED_DIRS_MAP=()
+function rm_dirs_by_name { 
+	local pattern_dirname=${1:-"test"}
+	local removed_dirs=$(find . -name "$pattern_dirname" -type d -print -exec rm -rf {} +)
+	local removed_dirs_count=${#removed_dirs[@]}
+	REMOVED_DIRS_MAP[${pattern_dirname}]=$removed_dirs_count
+	echo " - pattern_dirname    = ${pattern_dirname}"
+	echo " - removed_dirs_count = ${removed_dirs_count}"
+	echo " - removed_dirs       = ${removed_dirs[@]}"
+	if [ ${removed_dirs_count} > 0 ]; then
+		echo " - removed_dirs       = ${removed_dirs[@]}"
+	fi
 }
+
+function mfcb { local val="$4"; "$1"; eval "$2[$3]=\$val;"; };
+function val_ltrim { if [[ "$val" =~ ^[[:space:]]+ ]]; then val="${val:${#BASH_REMATCH[0]}}"; fi; };
+function val_rtrim { if [[ "$val" =~ [[:space:]]+$ ]]; then val="${val:0:${#val}-${#BASH_REMATCH[0]}}"; fi; };
+function val_trim { val_ltrim; val_rtrim; };
+
+export REMOVE_DIRS="vendor,Godeps,node_modules"
+export REMOVE_DIRS_ARRAY=($(echo "$REMOVE_DIRS" | tr ',' '\n'))
+export REMOVE_DIRS_COUNT=${#REMOVE_DIRS_ARRAY[@]}
+
+echo ""
+echo "## REMOVE vendoring dirs"
+echo "- REMOVE_DIRS_ARRAY: ${REMOVE_DIRS_ARRAY[*]}"
+echo ""
+
+# use for loop read all nameservers
+for key in "${REMOVE_DIRS_ARRAY[@]}"; do
+	echo "### REMOVE recursively all dirnames: \"${key}\""
+	rm_dirs_by_name "${key}"
+	separator
+done
+
+for key in "${REMOVED_DIRS_MAP[@]}"; do
+	echo "### REMOVE Successfully removed all dirnames: \"${$key}\""
+	echo "- REMOVED_DIRS_MAP[$key] = $REMOVED_DIRS_MAP[$key]"
+done
+
+echo "Successfully removed all vendor dirs: ${REMOVE_DIRS}"
+
+export GCPRUNFUL=false
+function prunful {
+	local match="prune"
+	local file=".git/gc.log"
+	echo "## CHECK repo is prunful ?"
+	if [ -f ${file} ]; then
+		echo "### found ${file}"
+		local lookup=$(cat .git/gc.log | grep $match)
+		if [ $lookup == $match ]; then
+			echo "### removing ${file}"
+			rm -f .git/gc.log
+			echo "### Run git prune"
+			git prune
+		fi
+	fi
+	separator
+}
+
+prunful
+
+export COMMITFUL=false
+export UNSTAGGED_FILES=""
+export UNSTAGGED_FILES_COUNT=0
+function ls_unstagged {
+	UNSTAGGED_FILES=$(git status --short | grep '^.[^ ]' | sed 's/^...//')
+	UNSTAGGED_FILES_COUNT=${#UNSTAGGED_FILES[@]}
+	echo "## CHECK unstagged files: "
+	echo "$UNSTAGGED_FILES"
+	echo ""
+	echo "- UNSTAGGED_FILES_COUNT=${#UNSTAGGED_FILES[@]}"
+	if [ "${UNSTAGGED_FILES_COUNT}" > 0 ]; then 
+		COMMITFUL=true
+	fi
+	separator
+}
+
+ls_unstagged
+# commitful
+
+echo "## SUMMARY"
+echo "- REMOVE_DIRS           =   ${REMOVE_DIRS}"
+echo "- REMOVE_DIRS_COUNT     =   ${REMOVE_DIRS_COUNT}"
+echo "- REMOVE_DIRS_COUNT     =   ${REMOVE_DIRS_COUNT}"
+echo "- UNSTAGGED_FILES_COUNT =   ${UNSTAGGED_FILES_COUNT}"
+echo "- COMMITFUL             =   ${COMMITFUL}"
+
+echo ""
+echo "## [END] GIT - PRE-COMMIT"
+echo ""
+
+# exit 1
+
 
 # grep "remove .git/gc.log"
 
