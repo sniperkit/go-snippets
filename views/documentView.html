@@ -1,0 +1,33 @@
+{{define "documentView"}}
+<div class="result-container">
+    <div class="text-truncate">
+        <a class="result-title" href={{.Uri}}>{{.Title}}</a>
+        <br>
+        <span class="result-link">{{.Uri}}</span>
+        <br>
+        <span class="result-meta"><b>Date: </b>{{.Date}}</span>
+        <br>
+        <span class="result-meta"><b>Size: </b>{{.Size}} bytes</span>
+        <br>
+        <span class="result-meta"><b>Score: </b>{{.Score}}</span>
+        <br>
+        <span class="result-meta"><b>Keywords: </b>{{range .Keywords}}{{.Word}} {{.Tf}}; {{end}}</span>
+        <br>
+        <span class="result-meta"><b>Parents:</b></span>
+        <br>
+    {{range .Parents}}
+        <a class="result-meta" href={{.}}>{{.}}</a>
+        <br>
+    {{end}}
+        <span class="result-meta"><b>Children:</b></span>
+        <br>
+    {{range .Children}}
+        <a class="result-meta" href={{.}}>{{.}}</a>
+        <br>
+    {{end}}
+        <a class="result-meta" href="/search/?keywords={{range .Keywords}}{{.Word}}+{{end}}">
+            <b>Get similar pages</b>
+        </a>
+    </div>
+</div>
+{{end}}
