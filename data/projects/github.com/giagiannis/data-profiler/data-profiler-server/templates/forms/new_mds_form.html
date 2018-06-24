@@ -1,0 +1,15 @@
+<div name='form'>
+<form method='post' action="/mds/{{.ID}}/run?action=submit&datasetID={{.DatasetID}}">
+<table class='tablelist'>
+<tr>
+<th>Number of dimensions</th>
+<td>
+<input type='text' name='k' title='number of dimensions' class="ui-button ui-widget ui-corner-all"/>
+</td>
+</tr>
+</table>
+<div style='float:right'>
+<input type='submit' class="ui-button ui-widget ui-corner-all"/>
+</div>
+</form>
+</div>

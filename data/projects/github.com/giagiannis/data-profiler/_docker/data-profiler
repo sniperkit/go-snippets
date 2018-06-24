@@ -1,0 +1,38 @@
+---
+server: 
+    listen: 0.0.0.0:8080
+    dirs:
+            templates: /opt/src/github.com/giagiannis/data-profiler/data-profiler-server/templates
+            static: /opt/src/github.com/giagiannis/data-profiler/data-profiler-server/static
+database: /opt/src/github.com/giagiannis/data-profiler/sqlite3.db
+logfile: ""
+scripts:
+        mds: /opt/src/github.com/giagiannis/data-profiler/_rscripts/mdscaling.R
+        analysis:
+                - /opt/src/github.com/giagiannis/data-profiler/_rscripts/pca.R
+        ml:
+                SVM : /opt/src/github.com/giagiannis/data-profiler/_rscripts/svm-appx.R
+                Simple Linear Regression : /opt/src/github.com/giagiannis/data-profiler/_rscripts/lm-appx.R
+                CART : /opt/src/github.com/giagiannis/data-profiler/_rscripts/cart-regression-appx.R
+                Artificial Neural Network : /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx.R
+                Artificial Neural Network (2): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-2.R
+                Artificial Neural Network (3): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-3.R
+                Artificial Neural Network (4): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-4.R
+                Artificial Neural Network (5): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-5.R
+                Artificial Neural Network (2,2): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-2-2.R
+                Artificial Neural Network (2,3): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-2-3.R
+                Artificial Neural Network (2,4): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-2-4.R
+                Artificial Neural Network (2,5): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-2-5.R
+                Artificial Neural Network (3,2): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-3-2.R
+                Artificial Neural Network (3,3): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-3-3.R
+                Artificial Neural Network (3,4): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-3-4.R
+                Artificial Neural Network (3,5): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-3-5.R
+                Artificial Neural Network (4,2): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-4-2.R
+                Artificial Neural Network (4,3): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-4-3.R
+                Artificial Neural Network (4,4): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-4-4.R
+                Artificial Neural Network (4,5): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-4-5.R
+                Artificial Neural Network (5,2): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-5-2.R
+                Artificial Neural Network (5,3): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-5-3.R
+                Artificial Neural Network (5,4): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-5-4.R
+                Artificial Neural Network (5,5): /opt/src/github.com/giagiannis/data-profiler/_rscripts/ann-regression-appx-5-5.R
+

@@ -1,0 +1,21 @@
+{{ define "title" }} {{ $.Name }} SM Heatmap{{ end }}
+{{ define "body" }}
+<h1>Similarity Matrix Heatmap</h1>
+<label for='select'>Order by dataset:</label>
+<select onchange='changeOrdering(this)'>
+<option></option>
+{{ range $i,$f := $.Files }}
+<option value='{{$f}}'>{{$f}}</option>
+{{end}}
+</select>
+<div id='container' style='width:800px; height:800px;'>
+<div class='heatmap'>
+</div>
+</div>
+<script>
+var smID = "/sm/"+window.location.pathname.split("/")[2]+"/csv/";
+createHeatmap(smID);
+</script>
+{{ end }}
+
+{{ template "base.html" . }}

@@ -1,0 +1,21 @@
+language: go
+
+go:
+        - 1.7.1
+
+before_install:
+        - sudo apt-get -qq update
+        - sudo apt-get install -qq -y r-base
+        - export R_LIBS="/tmp/Rlib"
+        - mkdir $R_LIBS
+        - echo "install.packages('GenSA', repos='http://cran.us.r-project.org')" | R --vanilla
+        - echo "install.packages('e1071', repos='http://cran.us.r-project.org')" | R --vanilla
+        - go get github.com/mattn/goveralls
+
+script:
+        - PATH="$HOME/gopath/bin:$PATH"
+        - chmod +x .coverage && ./.coverage --coveralls
+
+branches:
+        only:
+                - master

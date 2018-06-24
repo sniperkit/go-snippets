@@ -1,0 +1,304 @@
+{{ define "title" }}
+{{ if .  }}
+{{ .Name }} page
+{{else}}
+Dataset Not Found
+{{end}}
+{{ end }}
+
+{{ define "body" }}
+{{ if .  }}
+<h1>{{ .Name }}</h1>
+<div id='tabs'>
+		<ul>
+				<li><a href='#details'>Details</a></li>
+				<li><a href='#files'>Files</a></li>
+				<li><a href='#sm'>Similarity Matrices</a></li>
+				<li><a href='#operators'>Operators</a></li>
+				<li><a href='#model'>Modeling</a></li>
+		</ul>
+<div id='details'>
+<h2>Details</h2>
+<table class='tablelist'>
+<tr><th>Path</th><td>{{.Path}}</td></tr>
+<tr><th>Description</th><td>{{.Description}}</td></tr>
+</table>
+</div>
+
+<div id='files'>
+		<h2>Files ({{ len .Files }}) </h2>
+{{ if .Files }}
+<code style='width:800px;'>
+<ul style='column-count:5;'>
+{{ range $id, $f := .Files }}
+<!--<li style='width:50%;'><a href='/download/?type=datafile&id={{ $.ID }}&name={{ $f }}'>{{ $f }}</a></li>-->
+<li style='width:50%;'><a href='/download/?type=datafile&id={{ $.ID }}&name={{ $f }}'>Dataset {{ $id }}</a></li>
+{{ end }}
+</ul>
+</code>
+
+
+{{ else }}
+No files found
+{{ end }}
+</div>
+
+<div id='sm'>
+<h2>Similarity Matrices
+<button title="Estimate a new Similarity Matrix" style='height:30px;' class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="createPopup('/datasets/{{ $.ID}}/newsm', 'Estimate new Similarity Matrix');"> <span class="ui-icon ui-icon-plusthick" ></span></button>
+</h2>
+{{ if $.Matrices }}
+<table class='tablelist'>
+		<tr><th>Filename</th><th>Configuration</th><th>Actions</th></tr>
+{{ range $i, $m := $.Matrices }}
+<tr>
+		<td><a href='/download/?type=sm&id={{ $m.ID }}&name={{ $m.Filename }}'>{{$m.Filename}}</a></td>
+		<td>
+				<ul>
+				{{ range $k, $v := $m.Configuration}}
+				{{ if $v }}
+				<li><span style='font-weight: bold'/>{{$k}}</span>:{{$v}}</li>
+				{{ end }}
+				{{ end}}
+				</ul>
+		</td>
+		<td>
+				<button title="Visualize Similarity Matrix" class="ui-button ui-widget ui-corner-all" 
+						onclick="window.location.href='/sm/{{ $m.ID }}/visual/'">
+					<img src='/static/visualize.png' width=30/></a>
+				</button>
+				<br/>
+				<button title="Transform SM to an Euclidean space" class="ui-button ui-widget ui-corner-all" 
+						onclick="createPopup('/mds/{{ $m.ID }}/run/?datasetID={{$.ID}}', 'Transform SM to an Euclidean space')">
+					<img src='/static/transform.png' width=30/></a>
+				</button>
+				<br/>
+			<button title="Show coordinates" class="ui-button ui-widget ui-corner-all" 
+						onclick="createPopup('/coords/{{ $m.ID }}/', 'Dataset coordinates')">
+					<img src='/static/coordinates.png' width=30/></a>
+				</button>
+
+				<br/>
+				<button title="Delete Similarity Matrix" class="ui-button ui-widget ui-corner-all" style='background:#aa0000;' 
+						onclick="window.location.href='/sm/{{ $m.ID }}/delete/?datasetID={{$.ID}}'">
+					<img src='/static/delete.png' width=30/></a>
+				</button>
+		</td>
+</tr>
+{{ end }}
+</table>
+{{ else }}
+No similarity matrices found
+{{ end }}
+</div>
+
+
+<div id='operators'>
+<h2>Operators
+<button title="Insert a new operator for this dataset" style='height:30px;' class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="createPopup('/datasets/{{ $.ID}}/newop', 'Insert operator');"> <span class="ui-icon ui-icon-plusthick" ></span></button>
+</h2>
+{{ if .Operators }}
+<table class='tablelist'>
+<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Actions</th>
+</tr>
+{{ range $k, $v := .Operators }}
+<tr>
+		<td><a href='/download/?type=operator&id={{$v.ID}}&name={{$v.Name}}'>{{$v.Name}}</a></td>
+		<td>{{$v.Description}}</td>
+		<td>
+		
+		{{ if .ScoresFile }}
+		<button title="Download the operator's scores" class="ui-button ui-widget ui-corner-all" 
+		onclick="window.location.href='/download/?type=scores&id={{$v.ID}}&name=scores'">
+		<img src='/static/download.png' width=30/></a>
+		</button>
+		{{ else }}
+		<button title="Evaluate the operator's scores" class="ui-button ui-widget ui-corner-all" 
+		onclick="window.location.href='/operator/{{ $v.ID }}/run/'">
+		<img src='/static/play.png' width=30/></a>
+		</button>
+		{{ end}}
+		<br/>
+		<button title="Delete Operator" class="ui-button ui-widget ui-corner-all" style='background:#aa0000;' 
+		onclick="window.location.href='/operator/{{ $v.ID }}/delete/?datasetID={{$.ID}}'">
+		<img src='/static/delete.png' width=30/></a>
+		</button>
+		</td>
+</tr>
+{{ end }}
+</table>
+{{ else }}
+No operators found
+{{ end }}
+</div>
+
+<div id='model'>
+<h2>Modeling
+<!--
+		FIXME: this button must create a popup form asking for modeling parameters!
+		<button title="Create a new operator model" style='height:30px;' class="ui-button ui-widget ui-corner-all ui-button-icon-only" onclick="createPopup('#', 'Create model');"> <span class="ui-icon ui-icon-plusthick" ></span></button>
+-->
+<button title="Create a new operator model" style='height:30px;' class="ui-button ui-widget ui-corner-all ui-button-icon-only" 
+onclick="createPopup('/modeling/{{$.ID}}/new', 'Create new model');"> <span class="ui-icon ui-icon-plusthick" ></span></button>
+</h2>
+{{ if .Models }}
+<script type='text/javascript'>
+function toggleSelectAllCheckboxes(obj,name) {
+		if($("#"+obj).is(":checked")) {
+			$("input[name=ids]").prop("checked",true);
+		} else {
+			$("input[name=ids]").prop("checked",false);
+		}
+}
+</script>
+<form method='post' action='/modeling/{{ $.ID }}/comparison'>
+<table class='tablelist'>
+		<tr>
+				<th><input type='checkbox' id="ids_handler" onclick='toggleSelectAllCheckboxes("ids_handler","ids")'/></th>
+				<th>Coordinates</th><th>Operator</th><th>SR</th><th>Errors</th><th>Configuration</th><th>Actions</th></tr>
+
+{{ range $k, $model := .Models }} 
+<tr>
+		<td><input type='checkbox' name='ids' value='{{$model.ID}}'/></td>
+		<td>
+				<div style='width:200px; overflow:scroll;'>
+				<ul>
+		
+						<li><span style='font-weight:bold'>{{$model.Coordinates.Filename}}</span></li>
+						<hr/>
+						<li><span style='font-weight:bold'>k:</span>{{ $model.Coordinates.K }}</li>
+					{{range $k,$v := $model.Coordinates.SimilarityMatrix.Configuration}}
+					<li><span style='font-weight:bold'>{{ $k }}:</span>{{ $v }}</li>
+					{{end}}
+				</ul>
+				</div>
+		</td>
+		<td>{{$model.Operator.Name}}</td>
+		<td style='text-align:right;'>{{$model.SamplingRate | printf "%.2f"}}</td>
+		<td>
+				<div style='width:150px; overflow:scroll;'>
+				<ul>
+				<li><span style='font-weight: bold'/>MAE</span>:{{index $model.Errors "MAE-all" }}</li>
+				<li><span style='font-weight: bold'/>RMSE</span>:{{index $model.Errors "RMSE-all" }}</li>
+				<li><span style='font-weight: bold'/>MdAPE</span>:{{index $model.Errors "MdAPE-all" }}</li>
+				<li><span style='font-weight: bold'/>NRMSE</span>:{{index $model.Errors "NRMSE-all" }}</li>
+				</ul>
+				</div>
+		</td>
+		<td>
+				<div style='width:250px; overflow:scroll;'>
+				<ul>
+				{{ range $k, $v:= $model.Configuration }}
+				<li><span style='font-weight: bold'/>{{$k}}</span>:{{$v}}</li>
+				{{ end}}
+				</ul>
+				</div>
+		</td>
+		<td>
+		<button type='button' title="Download the sampled datasets" class="ui-button ui-widget ui-corner-all" 
+		onclick="window.location.href='/download/?type=samples&id={{$model.ID}}&name=samples.json'">
+		<img src='/static/download.png' width=30/></a>
+		</button>
+		<br/>
+		<button type='button' title="Download the approximated scores" class="ui-button ui-widget ui-corner-all" 
+				onclick="window.location.href='/download/?type=appx&id={{$model.ID}}&name=appx.csv'">
+		<img src='/static/download.png' width=30/></a>
+		</button>
+		<br/>
+		<button type='button' title="Visualize model" class="ui-button ui-widget ui-corner-all" 
+				onclick="window.location.href='/modeling/{{$model.ID}}/visual'">
+		<img src='/static/visualize.png' width=30/></a>
+		</button>
+		<br/>
+		<button type='button' title="Delete Model" class="ui-button ui-widget ui-corner-all" style='background:#aa0000;' 
+						onclick="window.location.href='/modeling/{{ $model.ID }}/delete/?datasetID={{$.ID}}'">
+					<img src='/static/delete.png' width=30/></a>
+				</button>
+
+		</td>
+</tr>
+{{ end }} 
+</table>
+<table class='tablelist'>
+						<tr>	
+								<th colspan=2 style='text-align:center;'>Models Comparison</th>
+						</tr>
+						<tr>
+								<td>x axis</td>
+								<td>
+								<select name='xlabel' id='xlabel'></select>
+								</td>
+						</tr>
+						<tr>
+								<td>y axis</td>
+								<td>
+								<select name='ylabel' id='ylabel'></select>
+								</td>
+						</tr>
+						<tr>
+								<td colspan=2 style='text-align:center;'>
+<button title="Compare models" class="ui-button ui-widget ui-corner-all" 
+				onclick="console.log($('input[name=ids]'))"
+				><img src='/static/stats.png' width=30/></a></button>
+
+								</td>
+						</tr>
+				</table>
+
+</form>
+<pre id='xlabels' hidden>
+{{ range $m := .Models }}
+{{ range $k, $v := $m.Coordinates.SimilarityMatrix.Configuration }}
+{{ $k }}
+{{ end }} 
+{{ end }}
+</pre>
+
+<script type='text/javascript'>
+a = $("#xlabels").html().split("\n");
+foo = {"SR" : "", "k" :""};
+for(i=0;i<a.length;i++) {
+		if (a[i]!="") {
+				foo[a[i]] = "";
+		}
+}
+for (var key in foo) {
+	$("#xlabel").append("<option value='"+key+"'>"+key+"</option>");
+}
+</script>
+
+<pre id='ylabels' hidden>
+{{ range $m := .Models }}
+{{ range $k, $v := $m.Errors }}
+{{ $k }}
+{{ end }} 
+{{ end }}
+</pre>
+<script type='text/javascript'>
+a = $("#ylabels").html().split("\n");
+foo = {};
+for(i=0;i<a.length;i++) {
+		if (a[i]!="") {
+				foo[a[i]] = "";
+		}
+}
+for (var key in foo) {
+	$("#ylabel").append("<option value='"+key+"'>"+key+"</option>");
+}
+</script>
+{{else }}
+No models found
+{{end}}
+</div>
+</div>
+<script>
+$("#tabs").tabs();
+</script>
+{{else}}
+<h2>Dataset Not Found</h2>
+{{end}}
+{{ end }}
+{{ template "base.html" . }}

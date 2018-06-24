@@ -1,0 +1,21 @@
+<h1>Dataset Coordinates</h2>
+<table class='tablelist'>
+<tr>
+		<th>File</th>
+		<th>Dimensions</th>
+		<th>GoF</th>
+		<th>Stress</th>
+		<th>Actions</th>
+</tr>
+{{ range $i, $k := .}} 
+<tr>
+		<td><a href='/download/?type=coord&name={{$k.Filename}}&id={{$k.ID}}'>{{$k.Filename}}</a></td>
+<td>{{$k.K}}</td>
+<td>{{$k.GOF}}</td>
+<td>{{$k.Stress}}</td>
+<td>
+<button title="Show coordinates" class="ui-button ui-widget ui-corner-all" onclick="window.location.href='/coords/{{ $k.ID }}/visual'"> <img src='/static/visualize.png' width=30/></a></button>
+</td>
+</tr>
+{{ end }}
+</table>

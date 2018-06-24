@@ -1,0 +1,66 @@
+<form method='post' action='/modeling/new/new?action=submit'>
+		<table class='tablelist'>
+				<tr>
+						<th>Sampling Rate</th>
+						<td><input type='text' name='sr'/></td>
+				</tr>
+				<tr>
+						<th>Operator</th><td>
+								<select name='operatorid'>
+										{{ range $k,$v := $.Operators }}
+										<option value='{{$v.ID}}'>{{$v.Name}}</option>
+										{{ end }}
+								</select>
+						</td>
+				</tr>
+
+				<tr>
+						<td colspan=2><hr/></td>
+				</tr>
+				<tr>
+						<th>Script Based</th>
+						<td><input type='radio' name='modeltype' value='script' checked/> </td>
+				</tr>
+				<tr>
+						<th>Coordinates</th><td>
+								<select name='coordinatesid'>
+										{{ range $k, $v := $.Coordinates }}
+										<option value='{{$v.ID}}'>{{$v.Filename}}</option>
+										{{ end }}
+								</select>
+						</td>
+				</tr>
+								<tr>
+						<th>ML Model</th><td>
+								<select name='script'>
+										{{ range $k,$v := $.MLScripts }}
+										<option value='{{$v}}'>{{$k}}</option>
+										{{ end }}
+								</select>
+						</td>
+				</tr>
+				<tr>
+						<td colspan=2><hr/></td>
+				</tr>
+				<tr>
+						<th>KNN Based</th>
+						<td><input type='radio' name='modeltype' value='knn'/> </td>
+				</tr>
+				<tr>
+						<th>Similarity Matrix</th><td>
+								<select name='matrixid'>
+										{{ range $k, $v := $.Matrices}}
+										<option value='{{$v.ID}}'>{{$v.Filename}}</option>
+										{{ end }}
+								</select>
+						</td>
+				</tr>
+
+				<tr>
+						<th>K</th><td><input type='text' name='k'/></td>
+				</tr>
+
+		</table>
+		<input type='text' value='{{$.DatasetID}}' name='datasetid' hidden/>
+		<div style='text-align:right'><input type='submit'/></div>
+</form>

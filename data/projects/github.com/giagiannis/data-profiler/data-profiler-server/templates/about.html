@@ -1,0 +1,24 @@
+{{ define "title" }}
+About Page
+{{ end }}
+
+{{ define "body"}}
+<h1>About</h1>
+<h2>Description</h2>
+<p>
+data-profiler is a project for modeling datasets in an operator agnostic-way.
+</p>
+
+<p>Let's start:</p>
+<ol>
+		<li>Go to the <a href='/datasets'>Datasets</a> tab and insert yours.</li>
+		<li>Calculate the similarities of your datasets & visualize them.</li>
+		<li>Model your datasets based on your operators!</li>
+</ol>
+
+<h2>Contact</h2>
+If you like this project contact <a href='mailto:ggian@cslab.ece.ntua.gr'>contact</a> us 
+and star us on <a href='https://github.com/giagiannis/data-profiler'>Github</a>.
+{{ end }}
+
+{{ template "base.html" . }}

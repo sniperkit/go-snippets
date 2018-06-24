@@ -1,0 +1,7 @@
+_datasets/
+_workbench/
+*.swp
+TODO.txt
+_results
+*.db
+.Rhistory

@@ -1,0 +1,50 @@
+{{ define "title" }}Dataset Coordinates{{ end }}
+{{ define "body" }}
+
+<pre id='coordinates' hidden>
+{{ $.Coordinates }}
+</pre>
+
+<pre id='labels' hidden>
+{{ $.Labels }}
+</pre>
+
+<label for='select'>Color by:</label>
+<select id='select' onchange='colorizePoints(this)'>
+<option value='none'>Default</option>
+{{ range $k, $v:= $.Operators }}
+<option value='{{$v.ID}}'>{{$v.Name}} </option>
+{{ end }}
+</select>
+
+<div style='float:right;'>
+<label for='selectdat'>Show dataset:</label>
+<select id='selectdat' onchange='trackDataset(this)'>
+<option value='none'>None</option>
+</select>
+</div>
+
+<div id="container" style="height: 800px"></div>
+
+<script>
+var chart;
+var data;
+var scores;
+create3DScatterPlot("coordinates", "labels", "container");
+
+$.each($("#labels").html().split("\n"), function(k,v) {
+		if (v!="") {
+				$("#selectdat")
+						.append($("<option/>", {
+								value: v,
+								text: v
+						}));
+		}
+});
+
+
+
+</script>
+{{ end }}
+
+{{ template "base.html" . }}
