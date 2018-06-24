@@ -20,6 +20,9 @@ echolor --White "## [START] GIT - PRE-COMMIT"
 #
 function timer()
 {
+	local count_args=$#
+	echolor --Green "Function name: ${FUNCNAME} with ${count_args}"
+
 	# if [[ $# -eq 0 ]] || [[ $# -gt 2 ]]; then
 	if [[ $# -eq 2 ]]; then
 		echolor --Green  "init timer"
