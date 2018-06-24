@@ -1,0 +1,16 @@
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    sha: v0.9.3
+    hooks:
+    -   id: check-json
+    -   id: check-merge-conflict
+    -   id: trailing-whitespace
+        args:
+        - --no-markdown-linebreak-ext
+    -   id: check-xml
+    -   id: check-yaml
+-   repo: git://github.com/Lucas-C/pre-commit-hooks
+    sha: v1.1.4
+    hooks:
+    -   id: remove-crlf
+        exclude: npp/.*\.xml
+    -   id: remove-tabs

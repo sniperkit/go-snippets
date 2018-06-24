@@ -1,0 +1,62 @@
+# Author: Lucas Cimon (github.com/Lucas-C/linux_configuration)
+# Readline config file
+# bind -p # Equivalent to dump-functions
+# bind -s # Equivalent to dump-macros
+# bind -v # Equivalent to dump-variables
+# ldconfig -p | grep readline # get readline versions on system. Bash doesn't link to them, has its own version included: ldd $(which bash)
+
+# Under OSX, iTerm2 must be configured to map <CMD>+arrow to send Esc+[1;5X
+# Note: "\e[X", with X in ABCD => 'bare' arrow key
+
+$include /etc/inputrc
+
+set input-meta on
+set output-meta on
+
+# allow the use of 8bit-characters + disable meta key
+set convert-meta off
+
+$if Bash
+    set expand-tilde on
+    Space: magic-space
+
+    # <CTRL>+<SPACE> : perform shell-expansion on the current cmd-line, i.e. expand aliases, history & shell variables
+    C-SPACE: shell-expand-line
+$endif
+set show-all-if-ambiguous on
+set completion-ignore-case on
+set blink-matching-paren on
+
+# Makes Home/End keys work under vim in gnome-terminal (and tmux)
+"\e[1~": "\eOH"
+"\e[4~": "\eOF"
+
+# <CTRL>+left/right arrows
+# WHEN xterm-keys on, e.g. inside Tmux (already in /etc/inputrc) + needed for Cygwin:
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+# WHEN xterm-keys off: -> SANITY-CHECK-TEST: it can make readline (e.g. in python interpreter) jump words simply by pressing the arrow keys, under tmux but not tilda
+$if term=xterm-256color
+$else
+"\eOC": forward-word
+"\eOD": backward-word
+# For Docker containers (tested under Windows + Cmder):
+"\e[;5C": forward-word
+"\e[;5D": backward-word
+$endif
+#"\eO5C": forward-word
+#"\eO5D": backward-word
+# Under RHEL:
+"\e[5C": forward-word
+"\e[5D": backward-word
+
+# <CTRL>+up/left: history search based on the current line; the search string must match at the beginning of a history line.
+# WHEN xterm-keys on, e.g. inside Tmux:
+"\e[1;5A": history-search-backward
+"\e[1;5B": history-search-forward
+# WHEN xterm-keys off:
+"\eOA": history-search-backward
+"\eOB": history-search-forward
+# Under RHEL
+"\e[5A": history-search-backward
+"\e[5B": history-search-forward

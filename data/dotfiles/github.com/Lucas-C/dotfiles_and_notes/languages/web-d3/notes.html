@@ -1,0 +1,50 @@
+<!---->
+<html/>
+<!---->
+<!--Notepad in browser-->
+data:text/html, <html contenteditable>
+
+<!--Footnotes-->
+The sentence leading up to the notation.<sup><a href="#fn1" id="ref1"><small>1</small></a></sup>
+<sup id="fn1">1. Here is the notation that the sentence above leads up to.<a href="#ref1">↩</a></sup>
+
+<!-- Fallback when SVG is not supported -->
+<img src="logo.svg" onerror="this.src = 'logo.png';" alt="logo" width="140" height="140"/
+
+chrissimpkins/six-four <!-- Encode & embed images as base64 -->
+
+<!--Use protocol-relative URLs (starting with //) like so:-->
+<img src="//domain.com/img/logo.png" alt="">
+<!--This will cause the browser to automatically prepend the protocol that is currently being used. This trick also works in CSS.-->
+
+<!--http://www.w3schools.com/html/html5_svg.asp-->
+<svg width="100" height="100">
+    <g transform="rotate(-45 50 50)"> <!-- svg:g group, other transformations: translate, scale, skewX, skewY, matrix -->
+        <circle cx="25" cy="25" r="25" fill="purple" />
+        <rect x="30" y="30" height="60" width="60" fill="none" stroke="blue" />
+    </g>
+    <text x="20" y="20" font-family="sans-serif" font-size="20px" fill="red">Hello!</text>
+</svg>
+<!-- Setting the SVG shape-rendering property to crispEdges disables anti-aliasing for some or all lines -->
+
+<iframe> # inline frame used to embed another document within the current HTML document
+
+<img src="mon-image.jpg" srcset="mon-imageHD.jpg 2x" width="" height="" alt="">
+
+<meta name="robots" content="noindex"> <!-- hide from search engines -->
+
+<select>
+  <optgroup label="Group 1">
+    <option value="option1"> Option 1 </option>
+    <option value="option2"> Option 2 </option>
+  </optgroup>
+  <optgroup label="Group 2"> ...
+</select>
+
+<abbr title="World Wide Web">WWW</abbr>
+
+Coding Defined Copyright 2014-<del>2015</del><ins>2016</ins>
+
+Price of Flight Ticket reduced to <mark>$500</mark> from $750
+
+DO NOT USE autocomplete: https://github.com/anttiviljami/browser-autofill-phishing
