@@ -133,7 +133,7 @@ function ls_dirs_size {
 
 export REMOVED_DIRS_TOTAL=0
 declare REMOVED_DIRS_KEYS=()
-function rm_dirs_by_name { 
+function rm_vendor_dirs { 
 	local start=$(timer)
 	local pattern_dirname=${1:-"test"}
 
@@ -142,9 +142,9 @@ function rm_dirs_by_name {
 		remove_sequence+=" -name \"$key\" "
 	done
 
-	# local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print)
+	local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print)
 	echolor --Red "find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +"
-	local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
+	# local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
 	local removed_dirs_array=($(echo "$removed_dirs" | tr ' ' '\n'))
 	local removed_dirs_count=${#removed_dirs_array[@]}
 	echo " - pattern_dirname    = ${pattern_dirname}"
@@ -157,6 +157,8 @@ function rm_dirs_by_name {
 	fi
 	echo $(timer $start $FUNCNAME)
 }
+
+rm_vendor_dirs
 
 export REMOVE_DIRS_COUNT=${#REMOVE_DIRS_ARRAY[@]}
 
