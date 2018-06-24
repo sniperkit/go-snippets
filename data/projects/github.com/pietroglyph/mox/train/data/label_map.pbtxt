@@ -1,0 +1,24 @@
+item {
+  id: 1
+  name: 'cardName'
+}
+
+item {
+  id: 2
+  name: 'setSymbol'
+}
+
+item {
+  id: 3
+  name: 'collectorNumber'
+}
+
+item {
+  id: 4
+  name: 'typeLine'
+}
+
+item {
+  id: 5
+  name: 'card'
+}

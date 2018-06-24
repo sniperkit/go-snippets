@@ -32,3 +32,31 @@ https://github.com/larsxschneider/git-repo-analysis
 - https://stackoverflow.com/questions/14564946/git-status-shows-changed-files-but-git-diff-doesnt
 - https://blog.andrewray.me/dealing-with-compiled-files-in-git/
 - https://stackoverflow.com/questions/5787937/git-status-shows-files-as-changed-even-though-contents-are-the-same
+- https://www.infoq.com/news/2017/02/GVFS
+- http://www.codewrecks.com/blog/index.php/2017/06/22/optimize-your-local-git-repository-from-time-to-time/
+- https://stackoverflow.com/questions/3119850/is-there-a-way-to-clean-up-git
+- https://stackoverflow.com/questions/5613345/how-to-shrink-the-git-folder
+- http://stevelorek.com/how-to-shrink-a-git-repository.html
+- https://blog.github.com/2018-03-05-measuring-the-many-sizes-of-a-git-repository/
+- https://git-scm.com/book/en/v2/Git-Internals-Maintenance-and-Data-Recovery
+- http://erikimh.com/optimizing-a-previously-large-and-bloated-git-repository/
+- https://www.atlassian.com/blog/git/handle-big-repositories-git
+- https://beacots.com/optimize-size-of-git-repository/
+- https://blogs.msdn.microsoft.com/bharry/2017/05/24/the-largest-git-repo-on-the-planet/
+- https://www.infoq.com/news/2017/02/GVFS
+- 
+
+# Examples
+3. Remove these files out of git(For ex: every .psd file in any folder): git filter-branch –index-filter ‘git rm –cached –ignore-unmatch **/*.psd’
+
+4. Remove git backup: rm -rf .git/refs/original/
+
+5. Expire all of loose objects: git reflog expire –expire=now –all
+
+6. Check if ther’s any loose objects left: git fsck –full –unreachable
+
+7. Repack(recompress objects file into .pack file): git repack -A -d
+
+8. Run git garbage collector: git gc –aggressive –prune=now
+
+9. Push changes: git push -f

@@ -1,0 +1,2 @@
+# Raw Data
+This folder contains raw data, in individual files. There should be a `text/json` and an `image/png` file for every UUID. Each UUID (the file name, excluding the `.png` or `.json` extension) should correspond to a [Scryfall](https://scryfall.com) UUID. To annotate and create more data of real cards, navigate to `tools/label_helper/`, run go install, and then type `label_helper -o "../../raw_data"`.

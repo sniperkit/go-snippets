@@ -1,0 +1,4 @@
+inference_graph/ filter=lfs diff=lfs merge=lfs -text
+inference_graph/* filter=lfs diff=lfs merge=lfs -text
+inference_graph/saved_model/saved_model.pb filter=lfs diff=lfs merge=lfs -text
+inference_graph/saved_model/variables filter=lfs diff=lfs merge=lfs -text

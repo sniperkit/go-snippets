@@ -1,0 +1,299 @@
+{{define "Document"}}<!DOCTYPE HTML>
+<html charset="utf-8">
+<head>
+  <title>mox Data Helper</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    const REMINDER_TEXT_SIZE = 12
+    const RECT_FILL_STYLE = "rgba(0, 0, 0, 0.3)";
+    const TEXT_FILL_STYLE_LIGHT = "rgba(255, 255, 255, 1)";
+    const TEXT_FILL_STYLE_DARK = "rgba(0, 0, 0, 0.9)";
+
+    var canvas;
+    var context;
+    var boundingBoxes = new Map();
+    var drawing = false;
+
+    window.onload = function() {
+      canvas = $("#card")[0];
+      context = canvas.getContext("2d");
+
+      context.lineWidth = 1;
+      context.fillStyle = RECT_FILL_STYLE;
+      context.font = REMINDER_TEXT_SIZE + "px serif";
+
+      document.oncontextmenu = function() {return false;};
+
+      document.onkeydown = checkKey;
+
+      function checkKey(e) {
+          e = e || window.event;
+
+          let preventDefault = true;
+          let delta = {x: 0, y: 0};
+          if (e.code === "ArrowUp") {
+              delta.y = -1;
+          }
+          else if (e.code === "ArrowDown") {
+              delta.y = 1;
+          }
+          else if (e.code === "ArrowLeft") {
+             delta.x = -1;
+          }
+          else if (e.code === "ArrowRight") {
+             delta.x = 1;
+          } else if (e.code == "KeyN") {
+            nextRadio();
+          } else if (e.code == "KeyS" && e.ctrlKey) {
+            $("#save").click();
+          } else if (e.code == "KeyD" && e.ctrlKey) {
+            boundingBoxes.delete($("input[name=boundingBoxType]:checked", "#boundingBoxForm").val());
+            redrawCanvas(context, boundingBoxes);
+            return;
+          } else {
+            preventDefault = false;
+          }
+
+          if (preventDefault) {
+            e.preventDefault();
+          }
+
+          var bb = boundingBoxes.get($("input[name=boundingBoxType]:checked", "#boundingBoxForm").val());
+          if (typeof(bb) === "undefined")
+          {
+            console.error("Couldn't get bouding boxes for selected radio button.");
+            return; // DOM probably isn't loaded yet?
+          }
+
+          if (e.ctrlKey || e.altKey) {
+            if (e.altKey) {
+              bb.deform(0, delta.x, delta.y, 0);
+            } else {
+              bb.deform(delta.x, 0, 0, delta.y);
+            }
+          } else {
+            bb.transform(delta.x, delta.y);
+          }
+
+          redrawCanvas(context, boundingBoxes);
+      }
+
+      var canvRect = canvas.getBoundingClientRect();
+      if ({{.CardNameHelper.FontFamily}} !== "") {
+        let cn = $(".card-name");
+        boundingBoxes.set(cn.data("key"),
+          new BoundingBox("green", cn.position().left - canvRect.left, cn.position().top - canvRect.top, (cn.position().left - canvRect.left) + cn.width(),
+          (cn.position().top - canvRect.top) + cn.height() + {{.CardNameHelper.PaddingBottom}}));
+      }
+      if ({{.TypeLineHelper.FontFamily}} !== "") {
+        let tl = $(".type-line");
+        boundingBoxes.set(tl.data("key"),
+          new BoundingBox("pink", tl.position().left - canvRect.left, tl.position().top - canvRect.top, (tl.position().left - canvRect.left) + tl.width(),
+          (tl.position().top - canvRect.top) + tl.height() + {{.CardNameHelper.PaddingBottom}}));
+      }
+      if ({{.CollectorNumberHelper.FontFamily}} !== "") {
+        let cnu = $(".collector-number");
+        boundingBoxes.set(cnu.data("key"),
+          new BoundingBox("red", cnu.position().left - canvRect.left, cnu.position().top - canvRect.top, (cnu.position().left - canvRect.left) + cnu.width(),
+          (cnu.position().top - canvRect.top) + cnu.height() + {{.CollectorNumberHelper.PaddingBottom}}));
+      }
+
+      redrawCanvas(context, boundingBoxes);
+
+      $("#card").mousedown(function(event) {
+        if (event.button == 0) {
+          let radio = $("input[name=boundingBoxType]:checked", "#boundingBoxForm");
+          var offset = $("#card").offset();
+          var canvRect = canvas.getBoundingClientRect();
+          boundingBoxes.set(radio.val(), new BoundingBox(radio.data("color"), event.clientX - canvRect.left, event.clientY - canvRect.top));
+          drawing = true;
+        } else if (event.button == 2) {
+          nextRadio();
+        }
+      }).mouseup(function() {
+        drawing = false;
+      }).mousemove(function(event) {
+        if (drawing) {
+          var rect = canvas.getBoundingClientRect();
+          var radioName = $("input[name=boundingBoxType]:checked", "#boundingBoxForm").val();
+
+          var bb = boundingBoxes.get(radioName);
+          bb.endX = event.clientX - rect.left;
+          bb.endY = event.clientY - rect.top;
+          boundingBoxes.set(radioName, bb);
+
+          redrawCanvas(context, boundingBoxes);
+        }
+      });
+
+      $("#save").click(function() {
+        var req = new XMLHttpRequest();
+
+        req.open("POST", "/ingest", true);
+        req.setRequestHeader("Content-Type", "text/json");
+
+        let obj = Object.create(null);
+        for (let [k,v] of boundingBoxes) {
+            if (v.color !== "undefined") {
+              v.color = undefined;
+            }
+            obj[k] = v;
+        }
+        obj.uuid = {{.UUID}};
+        req.send(JSON.stringify(obj));
+      	req.onreadystatechange = function() {
+            if (document.location.search.indexOf("?frame=") != 0) {
+      	       if (this.readyState == 4) document.location = "/"; // Removes custom multiverse id (also reloads page)
+            } else {
+              document.location = document.location;
+            }
+      	}
+      });
+
+      $("#discard").click(function() {
+        if (document.location.search.indexOf("?frame=") != 0) {
+           if (this.readyState == 4) document.location = "/"; // Removes custom multiverse id (also reloads page)
+        } else {
+          document.location = document.location;
+        }
+      });
+    };
+
+    function redrawCanvas(ctx, bbs) {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage($("#cardImage")[0], 0, 0);
+
+      bbs.forEach(function(v, k) {
+        v.draw(context, k);
+        v.round();
+      });
+    }
+
+    function nextRadio() {
+      $("input[name=boundingBoxType]:checked", "#boundingBoxForm").next().next().click();
+    }
+
+    class BoundingBox {
+      constructor(color, startX, startY, endX, endY) {
+        this.color = color;
+        this.startX = startX;
+        this.startY = startY;
+        if (typeof(endX) !== "undefined") {
+          this.endX = endX;
+        } else {
+          this.endX = startX;
+        }
+        if (typeof(endY) !== "undefined") {
+          this.endY = endY;
+        } else {
+          this.endY = startY;
+        }
+      }
+
+      transform(x, y) {
+        this.startX += x;
+        this.endX += x;
+        this.startY += y;
+        this.endY += y;
+      }
+
+      deform(startX, endX, startY, endY) {
+        this.startX += startX;
+        this.endX += endX;
+        this.startY += startY;
+        this.endY += endY;
+      }
+
+      round() {
+        this.startX = Math.round(this.startX);
+        this.startY = Math.round(this.startY);
+        this.endX = Math.round(this.endX);
+        this.endY = Math.round(this.endY);
+      }
+
+      draw(ctx, name) {
+        ctx.strokeStyle = this.color;
+        ctx.beginPath();
+        ctx.fillStyle = RECT_FILL_STYLE;
+        ctx.rect(this.startX, this.startY, this.endX - this.startX, this.endY - this.startY);
+        ctx.fill();
+        ctx.stroke();
+
+        if (typeof(name) !== "undefined") {
+          let imgData = ctx.getImageData(this.startX, this.endY + 2, 10, REMINDER_TEXT_SIZE);
+          let sum = 0;
+          for (var i=0;i<imgData.data.length;i+=4) {
+            sum += imgData.data[i];
+            sum += imgData.data[i+1];
+            sum += imgData.data[i+2];
+          }
+          let avg = sum / (imgData.data.length/3);
+          if (avg < 255) {
+            ctx.fillStyle = TEXT_FILL_STYLE_LIGHT;
+          } else {
+            ctx.fillStyle = TEXT_FILL_STYLE_DARK;
+          }
+          ctx.fillText(name, this.startX, this.endY + REMINDER_TEXT_SIZE + 2);
+        }
+      }
+    }
+  </script>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .helper {
+      margin: 0px;
+      position: absolute;
+      color: rgba(0, 0, 0, 0);
+      z-index: -1;
+    }
+
+    .card-name {
+      font-family: {{.CardNameHelper.FontFamily}};
+      font-size: {{.CardNameHelper.FontSize}};
+      letter-spacing: {{.CardNameHelper.LetterSpacing}};
+      top: {{.CardNameHelper.Top}};
+      left: {{.CardNameHelper.Left}};
+    }
+
+    .type-line {
+      font-family: {{.TypeLineHelper.FontFamily}};
+      top: {{.TypeLineHelper.Top}};
+      left: {{.TypeLineHelper.Left}};
+      font-size: {{.TypeLineHelper.FontSize}};
+      letter-spacing: {{.TypeLineHelper.LetterSpacing}};
+    }
+
+    .collector-number {
+      font-family: {{.CollectorNumberHelper.FontFamily}};
+      top: {{.CollectorNumberHelper.Top}};
+      left: {{.CollectorNumberHelper.Left}};
+      font-size: {{.CollectorNumberHelper.FontSize}};
+      letter-spacing: {{.CollectorNumberHelper.LetterSpacing}};
+    }
+  </style>
+</head>
+<body>
+  <p class="card-name helper" data-key="cardName">{{.CardName}}</p>
+  <p class="type-line helper" data-key="typeLine">{{.TypeLine}}</p>
+  <p class="collector-number helper" data-key="collectorNumber">{{.CollectorNumber}}</p>
+  <div class="container">
+    <canvas id="card" width="745px" height="1040px"></canvas>
+    <form id="boundingBoxForm">
+      Bounding Box Type:<br>
+      <input type="radio" name="boundingBoxType" value="cardName" data-color="green" checked> Card Name ({{.CardName}})<br>
+      <input type="radio" name="boundingBoxType" value="typeLine" data-color="pink"> Type Line ({{.TypeLine}})<br>
+      <input type="radio" name="boundingBoxType" value="collectorNumber" data-color="red"> Collector Number ({{.CollectorNumber}})<br>
+      <input type="radio" name="boundingBoxType" value="setSymbol" data-color="yellow"> Set Symbol ({{.Set}})<br>
+      <i>All bounding boxes are optional.</i>
+    </form>
+  </div>
+  <button id="save">Save and Continue</button>
+  <button id="discard">This Card is Unsuitable for Training</button>
+  <img id="cardImage" src="{{.URI}}" alt="Card Preview" style="display: none;" width="745px" height="1040px"></img>
+</body>
+</html>
+{{end}}
