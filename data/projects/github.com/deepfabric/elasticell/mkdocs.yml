@@ -1,0 +1,16 @@
+site_name: "Elasticell Documentation"
+repo_url: https://github.com/deepfabric/elasticell
+docs_dir: docs
+pages:
+- Index: index.md
+- User Guide:
+  - Quick Start: user-guide/quick-start.md
+  - Installation: user-guide/installation.md
+  - Configuation: user-guide/configuration.md
+- Architecture: 
+  - Overview: architecture/index.md
+  - Concept: architecture/concept.md
+  - Multi-Raft: architecture/multi-raft.md 
+- Indexer: 
+  - Overview: indexer/indexer.md
+- Unsupport Redis Command: unsupport-command.md

@@ -1,0 +1,51 @@
+syntax = "proto2";
+package metapb;
+
+import "gogoproto/gogo.proto";
+
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.goproto_enum_prefix_all) = false;
+
+enum StoreState {
+    UP        = 0;
+    Down      = 1;
+    Tombstone = 2;
+}
+
+message Label {
+    optional string key   = 1 [(gogoproto.nullable) = false];
+    optional string value = 2 [(gogoproto.nullable) = false];
+}
+
+message Cluster {
+    optional uint64 id          = 1 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional uint32 maxReplicas = 2 [(gogoproto.nullable) = false];
+}
+
+message Peer {
+    optional uint64 id      = 1 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional uint64 storeID = 2 [(gogoproto.nullable) = false];
+}
+
+message CellEpoch {
+    optional uint64 confVer = 1 [(gogoproto.nullable) = false];
+    optional uint64 cellVer = 2 [(gogoproto.nullable) = false];
+}
+
+message Cell {
+    optional uint64    id    = 1 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional bytes     start = 2;
+    optional bytes     end   = 3;
+    optional CellEpoch epoch = 4 [(gogoproto.nullable) = false];
+    repeated Peer      peers = 5 [(gogoproto.nullable) = true];
+}
+
+message Store {
+    optional uint64       id            = 1 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional string       address       = 2 [(gogoproto.nullable) = false];
+    repeated Label        lables        = 3 [(gogoproto.nullable) = false];
+    optional StoreState   state         = 4 [(gogoproto.nullable) = false];
+    optional string       clientAddress = 5 [(gogoproto.nullable) = false];
+}

@@ -1,0 +1,40 @@
+- hosts: pd
+  remote_user: root
+  tasks:
+  - name: find pd pid
+    shell: ps -ef|grep pd.json|grep -v grep|awk '{print $2}'
+    register: pd_pid
+  - name: kill pd pid
+    shell: kill -9 {{ item }} 
+    with_items: "{{ pd_pid.stdout.split() }}"
+  - name: clear local store
+    shell: "{{ item }}"
+    with_items: 
+    - rm -rf {{ ELASTICELL_DIR }}/pd/data/*
+    - rm -rf {{ ELASTICELL_DIR }}/log/*
+
+- hosts: cell
+  remote_user: root
+  tasks:
+  - name: find cell pid
+    shell: ps -ef|grep cell.json|grep -v grep|awk '{print $2}'
+    register: cell_pid
+  - name: kill cell pid
+    shell: kill -9 {{ item }} 
+    with_items: "{{ cell_pid.stdout.split() }}"
+  - name: clear local store
+    shell: "{{ item }}"
+    with_items: 
+    - rm -rf {{ ELASTICELL_DIR }}/log/*
+    - rm -rf {{ ELASTICELL_DIR }}/cell/data/*
+
+- hosts: proxy
+  remote_user: root
+  tasks:
+  - name: find proxy pid
+    shell: ps -ef|grep proxy.json|grep -v grep|awk '{print $2}'
+    register: proxy_pid
+  - name: kill proxy pid
+    shell: kill -9 {{ item }} 
+    with_items: "{{ proxy_pid.stdout.split() }}"
+

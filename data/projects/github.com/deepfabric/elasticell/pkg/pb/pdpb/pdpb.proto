@@ -1,0 +1,361 @@
+syntax = "proto2";
+package pdpb;
+
+import "gogoproto/gogo.proto";
+import "metapb/metapb.proto";
+
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.goproto_enum_prefix_all) = false;
+
+service PDService {
+    rpc RegisterWatcher (RegisterWatcherReq) returns (RegisterWatcherRsp) {}
+    rpc WatcherHeartbeat (WatcherHeartbeatReq) returns (WatcherHeartbeatRsp) {}
+    rpc GetLeader (LeaderReq) returns (LeaderRsp) {}
+    rpc AllocID (AllocIDReq) returns (AllocIDRsp) {}
+    rpc GetClusterID(GetClusterIDReq) returns (GetClusterIDRsp) {}
+    rpc GetInitParams(GetInitParamsReq) returns (GetInitParamsRsp) {}
+    rpc IsClusterBootstrap (IsClusterBootstrapReq) returns (IsClusterBootstrapRsp) {}
+    rpc BootstrapCluster (BootstrapClusterReq) returns (BootstrapClusterRsp) {}
+    rpc ListStore(ListStoreReq) returns (ListStoreRsp) {}
+    rpc PutStore(PutStoreReq) returns (PutStoreRsp) {}
+    rpc GetStore(GetStoreReq) returns (GetStoreRsp) {}
+    rpc CellHeartbeat (CellHeartbeatReq) returns (CellHeartbeatRsp) {}
+    rpc StoreHeartbeat (StoreHeartbeatReq) returns (StoreHeartbeatRsp) {}
+    rpc AskSplit (AskSplitReq) returns (AskSplitRsp) {}
+    rpc ReportSplit(ReportSplitReq) returns (ReportSplitRsp) {}
+    rpc GetLastRanges(GetLastRangesReq) returns (GetLastRangesRsp) {}
+}
+
+enum ConfChangeType {
+    AddNode    = 0;
+    RemoveNode = 1;
+}
+
+message ChangePeer {
+    optional ConfChangeType type = 1 [(gogoproto.nullable) = false];
+    optional metapb.Peer    peer = 2 [(gogoproto.nullable) = true];
+}
+
+message TransferLeader {
+    optional metapb.Peer peer = 1 [(gogoproto.nullable) = false];
+}
+
+message PeerStats {
+    optional metapb.Peer peer        = 1 [(gogoproto.nullable) = false];
+    optional uint64      downSeconds = 2 [(gogoproto.nullable) = false];
+}
+
+message Range {
+    optional metapb.Cell  cell         = 1 [(gogoproto.nullable) = false];
+    optional metapb.Store leaderStore  = 2 [(gogoproto.nullable) = false];
+}
+
+message StoreStats {
+    optional uint64 storeID            = 1 [(gogoproto.nullable) = false];
+    // Capacity for the store.
+    optional uint64 capacity           = 2 [(gogoproto.nullable) = false];
+    // Available size for the store.
+    optional uint64 available          = 3 [(gogoproto.nullable) = false];
+    // Total region count in this store.
+    optional uint32 cellCount          = 4 [(gogoproto.nullable) = false];
+    // Current sending snapshot count.
+    optional uint32 sendingSnapCount   = 5 [(gogoproto.nullable) = false];
+    // Current receiving snapshot count.
+    optional uint32 receivingSnapCount = 6 [(gogoproto.nullable) = false];
+    // When the store is started (unix timestamp in seconds).
+    optional uint32 startTime          = 7 [(gogoproto.nullable) = false];
+    // How many region is applying snapshot.
+    optional uint32 applyingSnapCount  = 8 [(gogoproto.nullable) = false];
+    // If the store is busy
+    optional bool   isBusy             = 9 [(gogoproto.nullable) = false];
+    // Actually used space by db
+    optional uint64 usedSize           = 10 [(gogoproto.nullable) = false];
+    // Bytes written for the store.
+    optional uint64 bytesWritten       = 11 [(gogoproto.nullable) = false];
+    optional int32  logLevel           = 12 [(gogoproto.nullable) = false];
+}
+
+message RequestHeader {
+    // cluster_id is the ID of the cluster which be sent to.
+    optional uint64 clusterID = 1 [(gogoproto.nullable) = false];
+}
+
+message ResponseHeader {
+    optional uint64 clusterID = 1 [(gogoproto.nullable) = false];
+}
+
+message Leader {
+    optional uint64 id             = 1 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional string name           = 2 [(gogoproto.nullable) = false];
+    optional string addr           = 3 [(gogoproto.nullable) = false];
+    optional string etcdClientAddr = 4 [(gogoproto.nullable) = false];
+}
+
+message Watcher {
+    optional string addr      = 1 [(gogoproto.nullable) = false];
+    optional uint32 eventFlag = 2 [(gogoproto.nullable) = false];
+}
+
+message RegisterWatcherReq {
+    optional string  from    = 1 [(gogoproto.nullable) = false];
+    optional uint64  id      = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional Watcher watcher = 3 [(gogoproto.nullable) = false];
+}
+
+message RegisterWatcherRsp {
+  
+}
+
+message WatcherHeartbeatReq {
+    optional string from   = 1 [(gogoproto.nullable) = false];
+    optional uint64 id     = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional string addr   = 3 [(gogoproto.nullable) = false];
+    optional uint64 offset = 4 [(gogoproto.nullable) = false];
+}
+
+message WatcherHeartbeatRsp {
+    optional bool paused = 1 [(gogoproto.nullable) = false];
+}
+
+message WatcherNotify {
+    optional uint64 offset = 1 [(gogoproto.nullable) = false];
+}
+
+message WatcherNotifySync {
+    optional uint64 offset = 1 [(gogoproto.nullable) = false];
+}
+
+message WatcherNotifyRsp {
+    optional uint64      offset = 1 [(gogoproto.nullable) = false];
+    repeated WatchEvent  events = 2;
+}
+
+message WatchEvent {
+    optional uint32     event      = 1 [(gogoproto.nullable) = false];
+    optional CellEvent  cellEvent  = 2;
+    optional StoreEvent storeEvent = 3;
+}
+
+message CellEvent {
+    optional Range range = 1; 
+}
+
+message StoreEvent {
+    optional metapb.Store store = 1;
+}
+
+message LeaderReq {
+    optional string from = 1 [(gogoproto.nullable) = false];
+    optional uint64 id   = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+}
+
+message LeaderRsp {
+    optional Leader leader = 1 [(gogoproto.nullable) = false];
+}
+
+message ListStoreReq {
+    optional string from = 1 [(gogoproto.nullable) = false];
+    optional uint64 id   = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+}
+
+message ListStoreRsp {
+    repeated metapb.Store  stores = 1;
+}
+
+message PutStoreReq {
+    optional string        from   = 1 [(gogoproto.nullable) = false];
+    optional uint64        id     = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional RequestHeader header = 3 [(gogoproto.nullable) = false];
+    optional metapb.Store  store  = 4 [(gogoproto.nullable) = false];
+}
+
+message PutStoreRsp {
+    optional ResponseHeader header = 1 [(gogoproto.nullable) = false];
+}
+
+message GetStoreReq {
+    optional string        from    = 1 [(gogoproto.nullable) = false];
+    optional uint64        id      = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional RequestHeader header  = 3 [(gogoproto.nullable) = false];
+    optional uint64        storeID = 4 [(gogoproto.nullable) = false];
+}
+
+message GetStoreRsp {
+    optional ResponseHeader header = 1 [(gogoproto.nullable) = false];
+    optional metapb.Store   store  = 2 [(gogoproto.nullable) = false];
+}
+
+message GetClusterIDReq {
+    optional string from = 1 [(gogoproto.nullable) = false];
+    optional uint64 id   = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+}
+
+message GetClusterIDRsp {
+    optional uint64 id = 1 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+}
+
+message GetInitParamsReq {
+    optional string from = 1 [(gogoproto.nullable) = false];
+    optional uint64 id   = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+}
+
+message GetInitParamsRsp {
+    optional bytes params = 1;
+}
+
+message AllocIDReq {
+    optional string from = 1 [(gogoproto.nullable) = false];
+    optional uint64 id   = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+}
+
+message AllocIDRsp {
+    optional uint64 id = 1 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+}
+
+message IsClusterBootstrapReq {
+    optional string from = 1 [(gogoproto.nullable) = false];
+    optional uint64 id   = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+}
+
+message IsClusterBootstrapRsp {
+    optional bool value = 1 [(gogoproto.nullable) = false];
+}
+
+message BootstrapClusterReq {
+    optional string from         = 1 [(gogoproto.nullable) = false];
+    optional uint64 id           = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional metapb.Store store  = 3 [(gogoproto.nullable) = false];
+    repeated metapb.Cell  cells  = 4 [(gogoproto.nullable) = false];
+}
+
+message BootstrapClusterRsp {
+    optional bool alreadyBootstrapped = 1 [(gogoproto.nullable) = false];
+}
+
+message CellHeartbeatReq {
+    optional string from              = 1  [(gogoproto.nullable) = false];
+    optional uint64 id                = 2  [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional metapb.Cell cell         = 3  [(gogoproto.nullable) = false];
+    optional metapb.Peer leader       = 4  [(gogoproto.nullable) = true];
+    // Leader considers that these peers are down.
+    repeated PeerStats   downPeers    = 5  [(gogoproto.nullable) = false];
+    // Pending peers are the peers that the leader can't consider as
+    // working followers.
+    repeated metapb.Peer pendingPeers = 6  [(gogoproto.nullable) = false];
+    // Bytes read/written during this period.
+    optional uint64      bytesWritten = 7  [(gogoproto.nullable) = false];
+    optional uint64      bytesRead    = 8  [(gogoproto.nullable) = false];
+    // Keys read/written during this period.
+    optional uint64      keysWritten  = 9  [(gogoproto.nullable) = false];
+    optional uint64      keysRead     = 10 [(gogoproto.nullable) = false];
+}
+
+message CellHeartbeatRsp {
+    optional ChangePeer     changePeer     = 1 [(gogoproto.nullable) = true];
+    optional TransferLeader transferLeader = 2 [(gogoproto.nullable) = true];
+}
+
+message StoreHeartbeatReq {
+    optional string        from   = 1 [(gogoproto.nullable) = false];
+    optional uint64        id     = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional RequestHeader header = 3 [(gogoproto.nullable) = false];
+    optional StoreStats    stats  = 4 [(gogoproto.nullable) = true];
+}
+
+message StoreHeartbeatRsp {
+    optional ResponseHeader header      = 1 [(gogoproto.nullable) = false];
+    optional SetLogLevel    setLogLevel = 2 [(gogoproto.nullable) = true];
+    repeated IndexDef       indices     = 3 [(gogoproto.nullable) = true];
+}
+
+message AskSplitReq {
+    optional string        from   = 1 [(gogoproto.nullable) = false];
+    optional uint64        id     = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional RequestHeader header = 3 [(gogoproto.nullable) = false];
+    optional metapb.Cell   cell   = 4 [(gogoproto.nullable) = false];
+}
+
+message AskSplitRsp {
+    optional ResponseHeader header     = 1 [(gogoproto.nullable) = false];
+    optional uint64         newCellID  = 2 [(gogoproto.nullable) = false];
+    repeated uint64         newPeerIDs = 3;
+}
+
+message ReportSplitReq {
+    optional string        from   = 1 [(gogoproto.nullable) = false];
+    optional uint64        id     = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+    optional RequestHeader header = 3 [(gogoproto.nullable) = false];
+    optional metapb.Cell   left   = 4 [(gogoproto.nullable) = false];
+    optional metapb.Cell   right  = 5 [(gogoproto.nullable) = false];
+}
+
+message ReportSplitRsp {
+    optional ResponseHeader header = 1 [(gogoproto.nullable) = false];
+}
+
+message GetLastRangesReq {
+    optional string from = 1 [(gogoproto.nullable) = false];
+    optional uint64 id   = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "ID"];
+}
+
+message GetLastRangesRsp {
+    repeated Range ranges = 1;
+}
+
+message SetLogLevel {
+    optional int32 newLevel = 1 [(gogoproto.nullable) = false];
+}
+
+enum FieldType {
+    Text   = 0;
+    Uint8  = 1;
+    Uint16 = 2;
+    Uint32 = 3;
+    Uint64 = 4;
+    Float32 = 5;
+    Float64 = 6;
+}
+
+message FieldDef {
+    required string name    = 1;
+    required FieldType type = 2;
+}
+
+message IndexDef {
+    optional string        name         = 1 [(gogoproto.nullable) = false];
+    optional string        keyPattern   = 2 [(gogoproto.nullable) = false];
+	repeated FieldDef      fields       = 3;
+}
+message IndexKeyRequest {
+	optional uint64 cellID   = 1 [(gogoproto.nullable) = false];
+    optional string idxName  = 2 [(gogoproto.nullable) = false];
+	repeated bytes cmdArgs   = 3;
+	optional bool isDel      = 4 [(gogoproto.nullable) = false];
+}
+
+message IndexSplitRequest {
+	optional uint64 leftCellID  = 1 [(gogoproto.nullable) = false];
+	optional uint64 rightCellID = 2 [(gogoproto.nullable) = false];
+}
+
+message IndexDestroyCellRequest {
+    optional uint64 cellID = 1 [(gogoproto.nullable) = false];
+}
+
+message IndexRebuildCellRequest {
+    optional uint64 cellID = 1 [(gogoproto.nullable) = false];
+}
+
+message IndexRequest {
+    optional IndexSplitRequest idxSplit = 1;
+    optional IndexDestroyCellRequest idxDestroy = 2;
+    optional IndexRebuildCellRequest idxRebuild = 3;
+}
+
+message KeyMetaVal {
+	optional string idxName   = 1 [(gogoproto.nullable) = false];
+	optional uint64 docID     = 2 [(gogoproto.nullable) = false];
+	optional uint64 cellID    = 3 [(gogoproto.nullable) = false];
+}
