@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/views/resultView.css" rel="stylesheet">
+    <title>GoSearch</title>
+</head>
+
+<body>
+
+<div class="upper row">
+    <div class="col-md-1 col-sm-1 vcenter">
+        <h5><a class="nav-link" href="/">GoSearch</a></h5>
+    </div>
+    <div class="col-md-6 col-sm-10 min-height vcenter">
+        <form name="searchForm" class="input-group input-group-lg" action="/search" method="get">
+            <input id="searchText" type="search" class="form-control" name="keywords">
+            <input type="hidden" name="page" value="1"/>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="col-md-5 col-sm-1 vcenter">
+        <ul class="nav nav-pills justify-content-end">
+            <li class="nav-item">
+                <a class="btn btn-outline-secondary" href="/history/clear">Clear History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Text</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/keywords">Keywords</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/history">History</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="lower container">
+    <div class="row">
+        <span class="text-muted">Click individual row to add query into the search bar</span>
+    </div>
+    <div class="row" style="margin-top: 1em">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th scope="col">Query</th>
+                <th scope="col">Time</th>
+                <th scope="col">Search within this query result</th>
+            </tr>
+        {{range .}}
+            <tr>
+                <td onclick="search({{.GetQuery}})">{{.GetQuery}}</td>
+                <td onclick="search({{.GetQuery}})">{{.GetTime}}</td>
+                <td>
+                    <form name="searchForm" action="/search/nested/" method="get">
+                        <div class="input-group">
+                            <input type="search" class="form-control" name="needle">
+                        </div>
+                        <input type="hidden" name="haystack" value="{{.GetQuery}}"/>
+                    </form>
+                </td>
+            </tr>
+        {{end}}
+        </table>
+    </div>
+</div>
+
+<script src="/static/js/jquery-slim.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script>
+    function search(query) {
+        document.getElementById("searchText").value += query + " ";
+    }
+</script>
+</body>
+</html>
