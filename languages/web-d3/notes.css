@@ -1,0 +1,80 @@
+SMACSS (Scalable and Modular Architecture for CSS)
+BEM (Blocks, Elements and Modifiers)
+OOCSS (object-oriented CSS)
+
+
+:after { clear: both } /* Float clear. Alt: { overflow: auto; width: 100%; } -> the last part is needed by "some browsers" */
+
+normalize.css
+
+stylelint >> csslint
+sudo sed -i '/output += "\\n" + message.evidence;/i                output += "\\nRule: " + message.rule.id + " - " + message.rule.name;' /usr/local/lib/node_modules/csslint/lib/csslint-node.js
+csslint --ignore=ids,overqualified-elements $css_file
+
+curl 'http://dev.w3.org/cvsweb/2002/css-validator/build.xml?rev=1.28;content-type=text%2Fplain' > build.xml
+ant prepare
+rm -r tmp/
+java -jar css-validator.jar $css_url
+
+/* Remove default style for <a href=> links */
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: inherit;
+}
+/* Responsive design tables - FROM: http://lehollandaisvolant.net/?mode=links&id=20140107205810 */
+table, tbody { display: block; }
+tr { display: table; }
+td { display: table-row; }
+
+table {
+  table-layout: fixed; /* The layout is fixed based on the first row. Set the width of those, and the rest of the table follows. */
+}
+
+.transparent { zoom: 1; filter: alpha(opacity=50); opacity: 0.5; } /* CSS Transparency Settings for All Browsers */
+
+//github.com/tomgenoni/cssdig # analyze, refactor, standardize and maintain your CSS
+
+for(i=0;A=$$("*")[i++];)A.style.outline="solid hsl("+(A+A).length*9+",99%,50%)1px" // CSS debuggung one-liner - Alt: pesticide.io
+
+background-size: cover
+
+'pointer-events: none' prevents:
+- click actions from doing anything
+- the default cursor pointer from displaying
+- CSS hover and active state triggering
+- JavaScript click events from firing
+
+List CSS classes used in HTML files:
+
+    html_files=$(find -not -path '*/bower_components/*' -not -path '*/node_modules/*' -name '*.html')
+    grep -h -o 'class="[^"]*"' $html_files | sed 's/class="\(.*\)"/\1/' | grep -v '^{.*}$' | tr ' ' '\n' | sort | uniq -c | sort
+
+Responsive square dive:
+- use the viewport unit, eg. 50vh
+- use padding-bottom = % of width : http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+outline VS border : 1st does NOT take space when computing the element bounding box
+
+Style guide generation from comments : KSS, mdcss
+
+zoltan-dulac/css3FontConverter
+
+cssnext > pleeease
+
+// How to debug an annoying scrollbar caused by an overflow in height ? Find the guily element by traversing your page top-down in your browser DOM debug window, putting on each element a:
+overflow: hidden
+
+// Styling Broken Images
+https://bitsofco.de/styling-broken-images/?utm_source=hashnode.com
+
+
+/**************/
+/* Flex boxes */
+/**************/
+http://alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
+https://github.com/philipwalton/flexbugs

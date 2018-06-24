@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+      canvas {
+        image-rendering: pixelated;
+      }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="onSubmit(); return false">
+      <label for="width">width:</label>
+      <input id="width" type="number" value="30">
+      <label for="height">height:</label>
+      <input id="height" type="number" value="30">
+      <label for="pixelSize">pixelSize: <output id="pixelSizeOutput">20</output></label>
+      <input id="pixelSize" type="range" min="1" max="20" oninput="pixelSizeOutput.value = this.value" value="20">
+      <label for="ruleset">ruleset:</label>
+      <select id="ruleset">
+        <option default value="ruleset1">Ruleset 1</option>
+      </select>
+      <input type="submit">
+    <form>
+    <canvas></canvas>
+    <script src="irregular_pixels.bundle.js"></script>
+    <script>
+      function onSubmit() {
+        render({
+          canvas: document.getElementsByTagName('canvas')[0],
+          width: +document.getElementById('width').value,
+          height: +document.getElementById('height').value,
+          pixelSize: document.getElementById('pixelSize').value,
+          ruleset: document.getElementById('ruleset').value,
+        });
+      }
+      onSubmit();
+    </script>
+  </body>
+</html>
