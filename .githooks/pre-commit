@@ -38,6 +38,8 @@ function timer()
     fi
 }
 
+declare script_start=$(timer)
+
 function separator {
 	echo "-----------------------------------------------------------------"
 	echo
@@ -258,7 +260,8 @@ else
 fi
 
 echo ""
-echolor --White     "## [END] GIT - PRE-COMMIT"
+echolor --White "## [END] GIT - PRE-COMMIT"
+echolor --Yellow $(timer $script_start "pre-commit")
 echo ""
 
 # In general my mac is ok with git but if there are a lot of loose objects then it gets very much slower. 
