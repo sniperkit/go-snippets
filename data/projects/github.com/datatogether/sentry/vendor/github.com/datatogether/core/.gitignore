@@ -1,7 +1,0 @@
-.DS_Store
-config.production.json
-config.test.json
-patchbay
-gin-bin
-coverage.out
-
