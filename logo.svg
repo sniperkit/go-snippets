@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120">
+  <defs>
+    <pattern id="stripe" 
+      width="50" height="50" 
+      patternUnits="userSpaceOnUse"
+      patternTransform="rotate(45)">
+      <rect width="25" height="200" transform="translate(0,0)" fill="rgba(255, 255, 255, 0.15)"></rect>
+    </pattern>
+  </defs>
+  <g>
+    <polygon stroke-linejoin="round" points="60,60 90,90 410,90 410,30 90,30" fill="#F8BA00" stroke="#F8BA00" stroke-width="40" />
+    <circle cx="100" cy="60" r="20" fill="#FFFFFF" />
+    <rect width="480" height="120" x="0" y="0" fill="url(#stripe)" />
+  </g>
+  <g font-family="Chalkboard SE" font-size="72"><text x="270" y="85" fill="#000000" text-anchor="middle"><tspan font-weight="100">sticker</tspan></text></g>
+</svg>

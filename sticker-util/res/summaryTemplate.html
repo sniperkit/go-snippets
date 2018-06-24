@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+  <head>
+    <title>sticker-util summarize {{.tblname}} of {{.dsname}}</title>
+    <link rel="stylesheet" href="res/external/bootstrap.min.css">
+    <link rel="stylesheet" href="res/style.css">
+    <script src="res/external/d3.min.js"></script>
+    <script src="res/plot2d.js"></script>
+    <script>
+    var freqCards = {
+      feature: {},
+      label: {},
+    };
+    function plotFreq(type) {
+      var container = document.getElementById(type+'-freq-plot');
+      function makeTitle(title, scale) {
+        if (scale == "Linear") {
+          return title;
+        } else if (scale == "Log") {
+          return "log10("+title+")";
+        } else {
+          return "UnknownScale<"+scale+">("+title+")";
+        }
+      }
+      plot2d(container, 'canvas').data(freqCards[type].data)
+                                 .xAxisTitle(makeTitle('Rank', freqCards[type].xAxisScale))
+                                 .yAxisTitle(makeTitle('Frequency', freqCards[type].yAxisScale))
+                                 .xAxisScale(freqCards[type].xAxisScale)
+                                 .yAxisScale(freqCards[type].yAxisScale)
+                                 .draw('rank', 'freq');
+    }
+    function loadFreqCard(type) {
+      var filename = type+'Freq.csv';
+      d3.csv(filename, function(err, data) {
+        var container = document.getElementById(type+'-freq-plot');
+        if (err) {
+          container.innerHTML = 'ERROR: '+filename+': '+err;
+        }
+        var sumFreq = 0;
+        for (var i = 0; i < data.length; i++) {
+          data[i].id = +data[i].id;
+          data[i].freq = +data[i].freq;
+          sumFreq += data[i].freq;
+          data[i].rank = i + 1;
+        }
+        freqCards[type] = {
+          data: data,
+        };
+        document.getElementById(type+'-size').innerText = data.length;
+        var avgFreq = sumFreq/data.length;
+        document.getElementById(type+'-freq-min').innerText = data[data.length-1].freq;
+        var q25 = (1 - 0.25)*(data.length - 1), q50 = (1 - 0.5)*(data.length - 1), q75 = (1 - 0.75)*(data.length - 1);
+        document.getElementById(type+'-freq-q25').innerText = q25%1 == 0 ? data[q25].freq : (Math.ceil(q25) - q25)*data[Math.ceil(q25)].freq + (q25 - Math.floor(q25))*data[Math.floor(q25)].freq;
+        document.getElementById(type+'-freq-med').innerText = q50%1 == 0 ? data[q50].freq : (Math.ceil(q50) - q50)*data[Math.ceil(q50)].freq + (q50 - Math.floor(q50))*data[Math.floor(q50)].freq;
+        document.getElementById(type+'-freq-q75').innerText = q75%1 == 0 ? data[q75].freq : (Math.ceil(q75) - q75)*data[Math.ceil(q75)].freq + (q75 - Math.floor(q75))*data[Math.floor(q75)].freq;
+        document.getElementById(type+'-freq-max').innerText = data[0].freq;
+        document.getElementById(type+'-freq-avg').innerText = Math.round(avgFreq);
+        selectAxisScale(type+'-x', 'Linear', false);
+        selectAxisScale(type+'-y', 'Log', false);
+        plotFreq(type);
+      });
+    }
+    var cardHandlers = {
+      'feature-freq-card': function() {
+        if (!freqCards['feature'].data) {
+          loadFreqCard('feature');
+        }
+      },
+      'label-freq-card': function() {
+        if (!freqCards['label'].data) {
+          loadFreqCard('label');
+        }
+      },
+    };
+    function toggle(type) {
+      var div = document.getElementById(type);
+      div.style.display = div.style.display == 'none' ? '' : 'none';
+      if (cardHandlers[type]) {
+        cardHandlers[type](type);
+      }
+    }
+    function selectButtonInGroup(groupId, buttonId) {
+      var group = document.getElementById(groupId);
+      for (var i = 0; i < group.children.length; i++) {
+        group.children[i].classList.remove('active');
+      }
+      document.getElementById(groupId+'-'+buttonId.toLowerCase()).classList.add('active');
+    }
+    function selectAxisScale(type_axis, scale, plot) {
+      var type_axis_ = type_axis.split("-");
+      var type = type_axis_[0], axis = type_axis_[1];
+      freqCards[type][axis+'AxisScale'] = scale;
+      selectButtonInGroup(type_axis+'-scale', scale);
+      if (plot && freqCards[type].data) {
+        plotFreq(type);
+      }
+    }
+    var searchShowAll = {
+      'label': true,
+      'feature': true,
+    };
+    function toggleSearchShowAll(type) {
+      searchShowAll[type] = !searchShowAll[type];
+      document.getElementById('search-result-header-'+type).innerText = searchShowAll[type] ? '[-]' : '[+]';
+      document.body.classList[searchShowAll[type] ? 'remove' : 'add']('hide-omittable-'+type+'s');
+    }
+    function search(keyCode, labels) {
+      if (keyCode != 0x0d) {
+        return;
+      }
+      var status = document.getElementById('search-status');
+      status.style.display = 'none';
+      status.className = 'alert';
+      var tbody = document.getElementById('search-result');
+      tbody.innerHTML = '';
+      function showError(msg) {
+          console.error('search', msg);
+          status.classList.add('alert-danger');
+          status.innerText = msg;
+          status.style.display = 'block';
+      }
+      var summary = document.getElementById('search-result-summary');
+      summary.innerHTML = '';
+      d3.json('search.json?labels='+encodeURIComponent(labels)+'&count=50', function(err, data) {
+        if (err) {
+          showError(err.srcElement.responseURL+': '+err.srcElement.responseText);
+          return;
+        }
+        if (data.status != "success") {
+          showError(data.message);
+        }
+        console.log(data);
+        var entries = data.entries;
+        summary.innerText = 'Returned '+entries.length+(entries.length == 1 ? ' Entry' : ' Entries')+' of Hit '+data.nhits+(data.nhits == 1 ? ' Entry' : ' Entries');
+        for (var i = 0; i < entries.length; i++) {
+          var entryi = entries[i];
+          var tr = document.createElement('tr');
+          var thId = document.createElement('th');
+          thId.innerText = i;
+          tr.appendChild(thId);
+          var tdIndex = document.createElement('td');
+          tdIndex.innerText = entryi.i;
+          tr.appendChild(tdIndex);
+          var tdLabels = document.createElement('td');
+          for (var label in entryi.y) {
+            var labelType = entryi.y[label];
+            var spanLabel = document.createElement('span');
+            spanLabel.classList.add('badge', labelType == 'highlighted' ? 'badge-warning' : 'badge-dark');
+            if (labelType == 'none') {
+              spanLabel.classList.add('omittable-label');
+            }
+            spanLabel.innerText = label;
+            tdLabels.appendChild(spanLabel);
+            var spanSpace = document.createElement('span');
+            spanSpace.innerHTML = ' ';
+            tdLabels.appendChild(spanSpace);
+          }
+          tr.appendChild(tdLabels);
+          var tdFeatures = document.createElement('td');
+          for (var feature in entryi.x) {
+            var spanFeature = document.createElement('span');
+            spanFeature.classList.add('badge', 'badge-secondary', 'omittable-feature');
+            spanFeature.innerText = feature+' ';
+            var spanFeatureValue = document.createElement('span');
+            spanFeatureValue.classList.add('badge', 'badge-dark')
+            spanFeatureValue.innerText = entryi.x[feature];
+            spanFeature.appendChild(spanFeatureValue);
+            tdFeatures.appendChild(spanFeature);
+            var spanSpace = document.createElement('span');
+            spanSpace.innerHTML = ' ';
+            tdFeatures.appendChild(spanSpace);
+          }
+          tr.appendChild(tdFeatures);
+          tbody.appendChild(tr);
+        }
+      });
+    }
+    </script>
+  </head>
+  <body><div id="container">
+    <h1>sticker-util summary {{.tblname}} of {{.dsname}}</h1>
+    <dl class="row left-margin">
+      <dt class="col-sm-2">Table Sizes</dt> <dd class="col-sm-10">{{.nentries}}</dd>
+      <dt class="col-sm-2">Feature Space</dt> <dd class="col-sm-10"><dl class="row">
+        <dt class="col-sm-4">Dimension</dt> <dd class="col-sm-8">{{.nfeatures}}</dd>
+        <dt class="col-sm-4">Activations per Entry Summary</dt> <dd class="col-sm-8"><dl class="row">
+          <dt class="col-sm-4">Minimum</dt> <dd class="col-sm-8">{{.featureActs.min}}</dd>
+          <dt class="col-sm-4">1st Quantile</dt> <dd class="col-sm-8">{{.featureActs.q25}}</dd>
+          <dt class="col-sm-4">Median</dt> <dd class="col-sm-8">{{.featureActs.med}}</dd>
+          <dt class="col-sm-4">3rd Quantile</dt> <dd class="col-sm-8">{{.featureActs.q75}}</dd>
+          <dt class="col-sm-4">Maximum</dt> <dd class="col-sm-8">{{.featureActs.max}}</dd>
+          <dt class="col-sm-4">Average</dt> <dd class="col-sm-8">{{printf "%.0f" .featureActs.avg}}</dd>
+        </dl></dd>
+      </dl></dd>
+      <dt class="col-sm-2">Label Space</dt> <dd class="col-sm-10"><dl class="row">
+        <dt class="col-sm-4">Size</dt> <dd class="col-sm-8">{{.nlabels}}</dd>
+        <dt class="col-sm-4">Counts per Entry Summary</dt> <dd class="col-sm-8"><dl class="row">
+          <dt class="col-sm-4">Minimum</dt> <dd class="col-sm-8">{{.labelCounts.min}}</dd>
+          <dt class="col-sm-4">1st Quantile</dt> <dd class="col-sm-8">{{.labelCounts.q25}}</dd>
+          <dt class="col-sm-4">Median</dt> <dd class="col-sm-8">{{.labelCounts.med}}</dd>
+          <dt class="col-sm-4">3rd Quantile</dt> <dd class="col-sm-8">{{.labelCounts.q75}}</dd>
+          <dt class="col-sm-4">Maximum</dt> <dd class="col-sm-8">{{.labelCounts.max}}</dd>
+          <dt class="col-sm-4">Average</dt> <dd class="col-sm-8">{{printf "%.0f" .labelCounts.avg}}</dd>
+        </dl></dd>
+      </dl></dd>
+    </dl>
+    {{define "axisScaleSelector"}}
+      <div id="{{.type_axis}}-scale" class="btn-group" data-toggle="buttons">
+        <label id="{{.type_axis}}-scale-linear" class="btn btn-secondary"><input type="radio" name="options" class="btn btn-secondary" onclick="selectAxisScale('{{.type_axis}}', 'Linear', true)">Linear</button></label>
+        <label id="{{.type_axis}}-scale-log" class="btn btn-secondary"><input type="radio" name="options" class="btn btn-secondary" onclick="selectAxisScale('{{.type_axis}}', 'Log', true)">Log</button></label>
+      </div>
+    {{end}}
+    {{define "freqCard"}}
+      <h2 class="hover-appeal" onclick="toggle('{{.type}}-freq-card');">{{toUpperFirst .type}} Occurrence Summary</h2>
+      <div id="{{.type}}-freq-card" style="display: none;"><div class="card card-body"><div class="row">
+        <div id="{{.type}}-freq-plot" class="col-sm-7"></div>
+        <div class="col-sm-5"><dl class="row">
+          <dt class="col-sm-4">Size</dt> <dd id="{{.type}}-size" class="col-sm-8"></dd>
+          <dt class="col-sm-4">Minimum</dt> <dd id="{{.type}}-freq-min" class="col-sm-8"></dd>
+          <dt class="col-sm-4">1st Quantile</dt> <dd id="{{.type}}-freq-q25" class="col-sm-8"></dd>
+          <dt class="col-sm-4">Median</dt> <dd id="{{.type}}-freq-med" class="col-sm-8"></dd>
+          <dt class="col-sm-4">3rd Quantile</dt> <dd id="{{.type}}-freq-q75" class="col-sm-8"></dd>
+          <dt class="col-sm-4">Maximum</dt> <dd id="{{.type}}-freq-max" class="col-sm-8"></dd>
+          <dt class="col-sm-4">Average</dt> <dd id="{{.type}}-freq-avg" class="col-sm-8"></dd>
+          <dt class="col-sm-4">X-Axis Scale</dt> <dd class="col-sm-8">{{template "axisScaleSelector" (map "type_axis" (concat .type "-x"))}}</dd>
+          <dt class="col-sm-4">Y-Axis Scale</dt> <dd class="col-sm-8">{{template "axisScaleSelector" (map "type_axis" (concat .type "-y"))}}</dd>
+        </dl></div>
+      </div></div></div>
+    {{end}}
+    {{template "freqCard" (map "type" "feature" "nameSizesOfTables" .nameSizesOfTables)}}
+    {{template "freqCard" (map "type" "label" "nameSizesOfTables" .nameSizesOfTables)}}
+    <h2 class="hover-appeal" onclick="toggle('least-ranks-card');">Least Label Ranks Needed for Completely Predicting Top-K</h2>
+    <div id="least-ranks-card" style="display: none;"><div class="card card-body">
+      <table class="table">
+        {{$qs := (slice 5 10 25 50 75 90 95 99 100)}}
+        <thead><tr>
+          <th>Top-K</th>
+          {{range $_, $q := $qs}}
+            <th>{{$q}}%</th>
+          {{end}}
+        </tr></thead>
+        <tbody>
+        {{range $k, $leastRanks := .leastRanksSet}}
+        <tr>
+          <th>{{incInt $k}}</th>
+          {{range $_, $q := $qs}}
+          <td>{{index $leastRanks (decInt (divInt (mulInt (len $leastRanks) $q) 100))}}</td>
+          {{end}}
+        </tr>
+        {{end}}
+        </tbody>
+      </table>
+    </div></div>
+    <h2>Quick Search</h2>
+    <div id="search-card"><div class="card card-body">
+      <form class="form-inline">
+        <input type="text" class="form-control col-sm-12" id="search-labels" placeholder="Labels (AND; Enter to Search)" autocomplete="off" onkeypress="search(event.keyCode, this.value);">
+        <input type="text" id="dummy-input-text-for-disabling-submit-with-enter" style="display: none;">
+      </form>
+      <small id="search-result-summary" class="text-muted"></small>
+      <div id="search-status" class="alert" style="display: none;"></div>
+      <table class="table">
+        <thead><tr><th>#</th><th>Index</th><th>Labels <span id="search-result-header-label" onclick="toggleSearchShowAll('label')">[-]</span></th><th>Features <span id="search-result-header-feature" onclick="toggleSearchShowAll('feature')">[-]</span></th></tr></thead>
+        <tbody id="search-result"></tbody>
+      </div>
+    </div></div>
+  </div></body>
+  <script>
+  search(0x0d, '');
+  </script>
+</html>

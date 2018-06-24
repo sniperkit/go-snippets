@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+  <head>
+    <title>sticker-util inspectForest {{.filename}}</title>
+    <link rel="stylesheet" href="../res/external/bootstrap.min.css">
+    <link rel="stylesheet" href="../res/style.css">
+    <script src="../res/external/d3.min.js"></script>
+    <script src="../res/plot2d.js"></script>
+    <script src="../res/plot1d.js"></script>
+    <script>
+    function toggleLeaf(leafId) {
+      var div = document.getElementById('leaf'+leafId);
+      div.style.display = div.style.display == 'none' ? '' : 'none';
+      var containerAvgZ = document.getElementById('containerAvgZ'+leafId);
+      if (containerAvgZ.innerHTML == "") {
+        var data_ = JSON.parse(document.getElementById('dataAvgZ'+leafId).innerText);
+        var data = [];
+        for (var key in data_) {
+          var entry = data_[key];
+          entry.avgZ = Math.round(entry.sumZ/entry.n*1000)/1000;
+          entry.color = (entry.L && entry.R) ? '#AAA7E2' : (entry.L ? '#FF8DC6' : '#56C1FF');
+          entry.colorOn = (entry.L && entry.R) ? '#7780D3' : (entry.L ? '#EF5FA7' : '#00A2FF');
+          entry.name = key;
+          data.push(entry);
+        }
+        containerAvgZ.innerText = "draw";
+        plot1d(containerAvgZ).data(data).color('color').colorOn('colorOn').name('name').draw('avgZ');
+      }
+    }
+    var histMaxCount = 40;
+    var hists = {};
+    function hist(type, cumulative) {
+      if (hists[type]) {
+        return;
+      }
+      hists[type] = true;
+      var card = document.getElementById(type);
+      var container = card.children[0];
+      var value = card.getAttribute('value');
+      var values = value.substr(4, value.length-(4+1)).split(' ');
+      var data = [];
+      for (var i = 0; i < values.length; i++) {
+        var pair = values[i].split(':');
+        data.push({'label': pair[0], 'count': +pair[0], 'freq': +pair[1]});
+      }
+      data.sort(function(x, y) { return d3.ascending(x.count, y.count) });
+      var dataMin = data[0].count, dataMax = data[data.length-1].count;
+      if (data.length > histMaxCount) {
+        // The first entry of data is always for count=0.
+        var scale = d3.scaleLog().domain([data[1].count, data[data.length-1].count+1]).range([0, 1]);
+        var data0 = data;
+        data = [{'label': '0', 'count': 0, 'freq': data[0].freq}];
+        var n = histMaxCount/2;
+        for (var i = 1; i < n; i++) {
+          data.push({'label': '', 'min': NaN, 'max': 0, 'freq': +0});
+        }
+        for (var i0 = 1; i0 < data0.length; i0++) {
+          var i = 1 + Math.floor(scale(data0[i0].count)*(n-1));
+          if (isNaN(data[i].min)) {
+            data[i].min = data0[i0].count;
+          }
+          data[i].freq += data0[i0].freq;
+        }
+        for (var i = 1; i < n; i++) {
+          if (i + 1 < data.length) {
+            data[i].max = data[i+1].min - 1;
+          } else {
+            data[i].max = dataMax;
+          }
+          data[i].label = data[i].min == data[i].max ? data[i].min : data[i].min+'-'+data[i].max;
+        }
+      }
+      if (cumulative) {
+        for (var i = 0; i < data.length; i++) {
+          data[i].label = '≦'+(data[i].max || data[i].count);
+          data[i].cumfreq = 0;
+          for (var j = 0; j <= i; j++) {
+            data[i].cumfreq += data[j].freq;
+          }
+        }
+      }
+      plot2d(container).type('bar').data(data)
+                       .xAxisTitle((cumulative ? 'Cumulative ' : '')+'Sub-Sample Count')
+                       .yAxisTitle('Frequency')
+                       .yAxisScale('Log')
+                       .draw('label', cumulative ? 'cumfreq' : 'freq');
+    }
+    var toggleHandlers = {
+      forestSummaryDataHist: function() { hist('forestSummaryDataHist', false); },
+      forestSummaryFeatureHist: function() { hist('forestSummaryFeatureHist', true); },
+      forestSummaryLabelHist: function() { hist('forestSummaryLabelHist', true); },
+    };
+    function toggle(target) {
+      var div = document.getElementById(target);
+      div.style.display = div.style.display == 'none' ? '' : 'none';
+      document.getElementById('toggle-'+target).childNodes[0].innerText = div.style.display == 'none' ? 'Click to Show' : 'Click to Hide';
+      var handler = toggleHandlers[target];
+      if (handler) {
+        handler();
+      }
+    }
+    </script>
+  </head>
+  <body><div id="container">
+    {{define "LabelFrequency"}}
+      {{range $label := (sortSparseVector .labelFreq false true)}}
+      <span class="badge badge-{{if (index $.anotherLabelFreq $label)}}{{$.badgeTypeBoth}}{{else}}{{$.badgeType}}{{end}}">{{annotateUint32 $.labelMap $label}} <span class="badge badge-pill badge-light">{{index $.labelFreq $label}}</span></span>
+      {{end}}
+    {{end}}
+    {{define "Leaf"}}
+      {{$summary := (index .tree.SummarySet (intToUint64 .leafId))}}
+      <div class="leaf-head head hover-appeal" id="leafHead{{.leafId}}" onclick="toggleLeaf({{.leafId}})"><strong>Leaf #b{{printf "%b" .leafId}}</strong> <small class="text-muted"> - Splitter Training Performance: 
+        <span class="badge {{if (eq $summary.splitPerf.fp 0)}}badge-success{{else}}badge-warning{{end}}">True-Left <span class="badge badge-light">{{$summary.splitPerf.tn}}</span></span>
+        <span class="badge {{if (eq $summary.splitPerf.fn 0)}}badge-light{{else}}badge-warning{{end}}">False-Left <span class="badge {{if (eq $summary.splitPerf.fn 0)}}badge-dark{{else}}badge-light{{end}}">{{$summary.splitPerf.fn}}</span></span>
+        <span class="badge {{if (eq $summary.splitPerf.fp 0)}}badge-light{{else}}badge-warning{{end}}">False-Right <span class="badge {{if (eq $summary.splitPerf.fp 0)}}badge-dark{{else}}badge-light{{end}}">{{$summary.splitPerf.fp}}</span></span>
+        <span class="badge {{if (eq $summary.splitPerf.fn 0)}}badge-success{{else}}badge-warning{{end}}">True-Right <span class="badge badge-light">{{$summary.splitPerf.tp}}</span></span>
+      </small></div>
+      <div class="card card-body" id="leaf{{.leafId}}" style="display: none;">
+      <dl class="row">
+        {{$leftLabelFreq := (index .tree.LabelFreqSet (intToUint64 (mulInt .leafId 2)))}}
+        {{$rightLabelFreq := (index .tree.LabelFreqSet (intToUint64 (incInt (mulInt .leafId 2))))}}
+        <dt class="col-sm-2">Label Frequency in Left</dt> <dd class="col-sm-10">{{template "LabelFrequency" (map "labelFreq" $leftLabelFreq "anotherLabelFreq" $rightLabelFreq "labelMap" .labelMap "badgeType" "left" "badgeTypeBoth" "both")}}</dd>
+        <dt class="col-sm-2">Label Frequency in Right</dt> <dd class="col-sm-10">{{template "LabelFrequency" (map "labelFreq" $rightLabelFreq "anotherLabelFreq" $leftLabelFreq "labelMap" .labelMap "badgeType" "right" "badgeTypeBoth" "both")}}</dd>
+        {{$avgZPerLabel := (map)}}
+        {{range $label, $n := $summary.splitPerf.nentriesPerLabel}}
+          {{$avgZ := (map "sumZ" (index $summary.splitPerf.sumZPerLabel $label) "n" $n)}}
+          {{if (index $leftLabelFreq $label)}}{{mapSet $avgZ "L" true}}{{end}}
+          {{if (index $rightLabelFreq $label)}}{{mapSet $avgZ "R" true}}{{end}}
+          {{mapSet $avgZPerLabel (annotateUint32 $.labelMap $label) $avgZ}}
+        {{end}}
+        <dt class="col-sm-2">Avg. Predictors per Label</dt> <dd class="col-sm-10">
+          <div id="dataAvgZ{{.leafId}}" style="display: none">{{toJSON $avgZPerLabel}}</div>
+          <div id="containerAvgZ{{.leafId}}"></div>
+          {{if (ne .display "none")}}
+            <script>toggleLeaf({{$.leafId}});</script>
+          {{end}}
+        </dd>
+        {{if $summary.suppVecs}}
+          <dt class="col-sm-2">{{len $summary.suppVecs}} Support Vector(s)</dt> <dd class="col-sm-10">
+            <dl class="row"><dt class="col-sm-12 hover-appeal" id="toggle-leafSuppVec{{.leafId}}" onclick="toggle('leafSuppVec{{.leafId}}')"><small class="text-muted">Click to Show</small></dt></dl>
+            <div class="card card-body" id="leafSuppVec{{.leafId}}" style="display: none;"><dl class="row">
+            {{range $i, $suppVec := $summary.suppVecs}}
+              <dt class="col-sm-1">{{incInt $i}}@{{if $suppVec.delta}}right{{else}}left{{end}} <small class="text-muted">beta={{printf "%.2g" $suppVec.beta}}</small></dt>
+              <dd class="col-sm-11"><dl class="row"><dt class="col-sm-4">
+              {{range $label := sortStrings (annotateInts $.labelMap $suppVec.labels) false}}
+                <span class="badge badge-dark">{{$label}}</span>
+              {{end}}
+              </dt>
+              <dd class="col-sm-8">
+              {{range $pair := $suppVec.featureVector}}
+                <span class="badge badge-secondary">{{annotateUint32 $.featureMap $pair.Key}} <span class="badge badge-dark">{{$pair.Value}}</span></span>
+              {{end}}
+              </dd>
+              </dl></dd>
+            {{end}}
+            </dl></div>
+          </dd>
+        {{end}}
+        {{$splitter := (index $.tree.SplitterSet (intToUint64 $.leafId))}}
+        {{$w := $splitter.Weight}}
+        {{$wK := 50}}
+        {{if (gt $wK (len $w))}}
+          {{$wK := (len $w)}}
+        {{end}}
+        <dt class="col-sm-2">Bottom-/Top-{{$wK}} Weight Factors(s)</dt> <dd class="col-sm-10">
+          bias = {{$splitter.Bias}}
+          <dl class="row"><dt class="col-sm-12 hover-appeal" id="toggle-leafWeightFactor{{.leafId}}" onclick="toggle('leafWeightFactor{{.leafId}}')"><small class="text-muted">Click to Show</small></dt></dl>
+          <div class="card card-body" id="leafWeightFactor{{.leafId}}" style="display: none;"><dl class="row">
+          {{$indices := sortSparseVector $w false true}}
+          {{$indicesTop := cutUint32Slice $indices 0 $wK}}
+          {{$indicesBottom := cutUint32Slice $indices (subInt 0 $wK) $wK}}
+          {{range $i, $feature := $indicesTop}}
+            <dt class="col-sm-2">-{{incInt $i}} <small class="text-muted">w={{printf "%.2g" (index $w (index $indicesBottom (subInt $wK 1 $i)))}}</small></dt>
+            <dd class="col-sm-4">{{annotateUint32 $.featureMap (index $indicesBottom $i)}}</dd>
+            <dt class="col-sm-2">{{incInt $i}} <small class="text-muted">w={{printf "%.2g" (index $w $feature)}}</small></dt>
+            <dd class="col-sm-4">{{annotateUint32 $.featureMap $feature}}</dd>
+          {{end}}
+          </dl></div>
+        </dd>
+      </dl>
+      {{if (not (.tree.IsTerminalLeaf (intToUint64 (mulInt .leafId 2))))}}
+        {{template "Leaf" (map "leafId" (mulInt .leafId 2) "tree" .tree "featureMap" .featureMap "labelMap" .labelMap "display" "none")}}
+      {{end}}
+      {{if (not (.tree.IsTerminalLeaf (intToUint64 (incInt (mulInt .leafId 2)))))}}
+        {{template "Leaf" (map "leafId" (incInt (mulInt .leafId 2)) "tree" .tree "featureMap" .featureMap "labelMap" .labelMap "display" "none")}}
+      {{end}}
+      </div>
+    {{end}}
+
+    <h1>sticker-util inspect {{.filename}}</h1>
+    <dl class="row">
+      <dt class="col-sm-2">Parameters per Tree</dt> <dd class="col-sm-10"><dl class="row">
+        <dt class="col-sm-4">Assigner <small class="text-muted">- for left/right label assignment</small></dt> <dd class="col-sm-8"><dl class="row">
+          <dt class="col-sm-5">Name</dt> <dd class="col-sm-7">{{.forest.TreeParams.AssignerName}}</dd>
+          <dt class="col-sm-5">Initializer</dt> <dd class="col-sm-7">{{.forest.TreeParams.AssignInitializerName}}</dd>
+        </dl></dd>
+        <dt class="col-sm-4">FeatureSubSampler <small class="text-muted">- on each sub-sample dataset</small></dt> <dd class="col-sm-8">{{.forest.TreeParams.FeatureSubSamplerName}}</dd>
+        <dt class="col-sm-4">ClassifierTrainer <small class="text-muted"> - of each splitter</small></dt> <dd class="col-sm-8"><dl class="row">
+          <dt class="col-sm-5">Name</dt> <dd class="col-sm-7">{{.forest.TreeParams.ClassifierTrainerName}}</dd>
+          <dt class="col-sm-5">C <small class="text-muted">- penalty parameter</small></dt> <dd class="col-sm-7">{{.forest.TreeParams.C}}</dd>
+          <dt class="col-sm-5">epsilon <small class="text-muted">- tolerance parameter</small></dt> <dd class="col-sm-7">{{.forest.TreeParams.Epsilon}}</dd>
+        </dl></dd>
+        <dt class="col-sm-4">Max. Labels <small class="text-muted">in each terminal leaf</small></dt> <dd class="col-sm-8">{{.forest.TreeParams.K}}</dd>
+        <dt class="col-sm-4">Max. Entries <small class="text-muted">in each terminal leaf (best-effort)</small></dt> <dd class="col-sm-8">{{.forest.TreeParams.MaxEntriesInLeaf}}</dd>
+        <dt class="col-sm-4">Max. Support Vectors <small class="text-muted">in each leaf</small></dt> <dd class="col-sm-8">{{.forest.TreeParams.SuppVecK}}</dd>
+      </dl></dd>
+      <dt class="col-sm-2">Sub-Sampling Summary</dt> <dd class="col-sm-10"><dl class="row">
+        {{$titles := (slice "Data Points" "Features" "Labels")}}
+        {{$types := (slice "forestSummaryDataHist" "forestSummaryFeatureHist" "forestSummaryLabelHist")}}
+        {{$values := (slice .forest.Summary.dataHist .forest.Summary.featureHist .forest.Summary.labelHist)}}
+        {{range $i, $title := $titles}}
+        <dt class="col-sm-2">{{$title}}</dt> <dd class="col-sm-10">
+          <dl class="row"><dt class="col-sm-12 hover-appeal" id="toggle-{{index $types $i}}" onclick="toggle('{{index $types $i}}')"><small class="text-muted">Click to Show</small></dt></dl>
+          <div class="card card-body" id="{{index $types $i}}" style="display: none;" value="{{index $values $i}}"><dl class="row">
+          </dl></div>
+        </dd>
+        {{end}}
+      </dl></dd>
+      <dt class="col-sm-2">Num. Trees</dt> <dd class="col-sm-10">{{len .forest.Trees}}</dd>
+      <dt class="col-sm-2">Selected Tree</dt> <dd class="col-sm-10">
+        <div class="btn-group" data-toggle="buttons">
+          {{range $treeId, $_ := .forest.Trees}}
+          <label class="btn btn-secondary {{if eq $treeId $.treeId}}active{{end}}" id="label-select-tree{{$treeId}}"><input type="radio" name="options" class="btn btn-secondary" id="select-tree{{$treeId}}" value="tree?treeId={{$treeId}}" onclick="location.href = this.value;">{{$treeId}}</button></label>
+          {{end}}
+        </div>
+      </dd>
+    </dl>
+    <h2 class="head">Tree #{{.treeId}}</h2>
+    <div class="tree" id="tree{{.treeId}}">
+      {{$tree := index .forest.Trees .treeId}}
+      {{template "Leaf" (map "leafId" 1 "tree" $tree "featureMap" $.featureMap "labelMap" $.labelMap "display" "block")}}
+    </div>
+  </div></body>
+</html>
