@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="103 157 176.5 86.5" width="176.5" height="86.5">
+  <defs>
+    <font-face font-family="Arial" font-size="9" panose-1="2 11 6 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="73.24219" slope="0" x-height="518.5547" cap-height="716.3086" ascent="905.2734" descent="-211.91406" font-weight="400">
+      <font-face-src>
+        <font-face-name name="ArialMT"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="12" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 0 M 0 -3 L 8 0 L 0 3" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.7.1 
+    <dc:date>2018-05-17 05:13:13 +0000</dc:date>
+  </metadata>
+  <g id="densenet" fill-opacity="1" stroke-dasharray="none" stroke="none" stroke-opacity="1" fill="none">
+    <title>densenet</title>
+    <rect fill="white" x="103" y="157" width="176.5" height="86.5"/>
+    <g id="densenet: Layer 1">
+      <title>Layer 1</title>
+      <g id="Graphic_15">
+        <rect x="103.5" y="184.5" width="63" height="18" fill="white"/>
+        <rect x="103.5" y="184.5" width="63" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(108.5 188.35278)" fill="black">
+          <tspan font-family="Arial" font-size="9" font-weight="400" fill="black" x="23.498535" y="8">B</tspan>
+        </text>
+      </g>
+      <g id="Graphic_14">
+        <rect x="103.5" y="225" width="63" height="18" fill="#f3f8fe"/>
+        <rect x="103.5" y="225" width="63" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(108.5 228.85278)" fill="black">
+          <tspan font-family="Arial" font-size="9" font-weight="400" fill="black" x="23.498535" y="8">A</tspan>
+        </text>
+      </g>
+      <g id="Graphic_13">
+        <circle cx="135.30195" cy="164.25" r="6.75001078583781" fill="#d3e8ff"/>
+        <circle cx="135.30195" cy="164.25" r="6.75001078583781" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(130.90195 157.082)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="12" font-weight="400" fill="black" x=".8" y="11">+</tspan>
+        </text>
+      </g>
+      <g id="Line_12">
+        <line x1="135" y1="225" x2="135" y2="212.4" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_11">
+        <line x1="135.0929" y1="184.5" x2="135.13008" y2="180.89912" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_10">
+        <path d="M 135 214.16508 L 146.9 214.16508 L 172.5 214.16508 C 174.15685 214.16508 175.5 212.82193 175.5 211.16508 L 175.5 180 L 175.5 167.25 C 175.5 165.59315 174.15685 164.25 172.5 164.25 L 151.95195 164.25" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_16">
+        <rect x="207" y="184.5" width="63" height="18" fill="white"/>
+        <rect x="207" y="184.5" width="63" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(212 188.35278)" fill="black">
+          <tspan font-family="Arial" font-size="9" font-weight="400" fill="black" x="23.498535" y="8">B</tspan>
+        </text>
+      </g>
+      <g id="Graphic_17">
+        <rect x="207" y="225" width="63" height="18" fill="#f3f8fe"/>
+        <rect x="207" y="225" width="63" height="18" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(212 228.85278)" fill="black">
+          <tspan font-family="Arial" font-size="9" font-weight="400" fill="black" x="23.498535" y="8">A</tspan>
+        </text>
+      </g>
+      <g id="Graphic_18">
+        <path d="M 229.59113 157.5 L 247.1275 157.5 C 249.2018 157.5 250.88528 160.524 250.88528 164.25 C 250.88528 167.976 249.2018 171 247.1275 171 L 229.59113 171 C 227.51682 171 225.83333 167.976 225.83333 164.25 C 225.83333 160.524 227.51682 157.5 229.59113 157.5 Z" fill="#d3e8ff"/>
+        <path d="M 229.59113 157.5 L 247.1275 157.5 C 249.2018 157.5 250.88528 160.524 250.88528 164.25 C 250.88528 167.976 249.2018 171 247.1275 171 L 229.59113 171 C 227.51682 171 225.83333 167.976 225.83333 164.25 C 225.83333 160.524 227.51682 157.5 229.59113 157.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(229.33853 159.10278)" fill="black">
+          <tspan font-family="Arial" font-size="9" font-weight="400" fill="black" x="2.7695585" y="8">[ , ]</tspan>
+        </text>
+      </g>
+      <g id="Line_19">
+        <line x1="238.5" y1="225" x2="238.5" y2="212.4" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_20">
+        <line x1="238.4567" y1="184.5" x2="238.4394" y2="180.89989" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_21">
+        <path d="M 238.5 214.16508 L 250.4 214.16508 L 276 214.16508 C 277.65685 214.16508 279 212.82193 279 211.16508 L 279 180 L 279 167.25 C 279 165.59315 277.65685 164.25 276 164.25 L 260.78528 164.25" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>
