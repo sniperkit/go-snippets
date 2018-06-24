@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <title>sticker-util inspectBoost {{.filename}}</title>
+    <link rel="stylesheet" href="res/external/bootstrap.min.css">
+    <link rel="stylesheet" href="res/style.css">
+    <script>
+    function toggleCard(target) {
+      var div = document.getElementById(target);
+      div.style.display = div.style.display == 'none' ? '' : 'none';
+    }
+    </script>
+  </head>
+  <body><div id="container">
+    <h1>sticker-util inspectOne {{.filename}}</h1>
+    <dl class="row">
+      <dt class="col-sm-4">ClassifierTrainer <small class="text-muted"> - of each classifier</small></dt> <dd class="col-sm-8"><dl class="row">
+        <dt class="col-sm-5">Name</dt> <dd class="col-sm-7">{{.model.Params.ClassifierTrainerName}}</dd>
+        <dt class="col-sm-5">C <small class="text-muted">- penalty parameter</small></dt> <dd class="col-sm-7">{{.model.Params.C}}</dd>
+        <dt class="col-sm-5">epsilon <small class="text-muted">- tolerance parameter</small></dt> <dd class="col-sm-7">{{.model.Params.Epsilon}}</dd>
+      </dl></dd>
+      <dt class="col-sm-4">T <small class="text-muted"> - max. labels</small></dt> <dd class="col-sm-8">{{.model.Params.T}}<dd>
+    </dl>
+    {{$T := .model.Nrounds}}
+    <div class="head hover-appeal" onclick="toggleCard('rounds')"><h2>Trained {{$T}} Round{{if ne $T 1}}s{{end}}</h2></div>
+    <div class="card card-body" id="rounds">
+      {{range $t, $biast := .model.Biases}}
+        {{$summary := (index $.model.Summaries $t)}}
+        <div><dl class="row">
+          <dd class="col-sm-4">
+            <strong>#{{incInt $t}} Round</strong>
+            <span class="badge {{if (eq $summary.splitPerf.fp 0)}}badge-success{{else}}badge-warning{{end}}">TN <span class="badge badge-light">{{$summary.splitPerf.tn}}</span></span>
+            <span class="badge {{if (eq $summary.splitPerf.fn 0)}}badge-light{{else}}badge-warning{{end}}">FN <span class="badge {{if (eq $summary.splitPerf.fn 0)}}badge-dark{{else}}badge-light{{end}}">{{$summary.splitPerf.fn}}</span></span>
+            <span class="badge {{if (eq $summary.splitPerf.fp 0)}}badge-light{{else}}badge-warning{{end}}">FP <span class="badge {{if (eq $summary.splitPerf.fp 0)}}badge-dark{{else}}badge-light{{end}}">{{$summary.splitPerf.fp}}</span></span>
+            <span class="badge {{if (eq $summary.splitPerf.fn 0)}}badge-success{{else}}badge-warning{{end}}">TP <span class="badge badge-light">{{$summary.splitPerf.tp}}</span></span>
+            <small class="text-muted">bias={{printf "%.4g" $biast}}</small>
+          </dd>
+          <dd class="col-sm-8">
+            {{range $label := (index $.model.LabelLists $t)}}
+              <span class="badge badge-dark">{{annotateUint32 $.labelMap $label}}</span>
+            {{end}}
+          </dd>
+        </dl></div>
+      {{end}}
+    </div>
+    {{range $i, $testResult := .testResults}}
+      {{$result := $testResult.result}}
+      <div class="head hover-appeal" onclick="toggleCard('testResults{{$i}}')"><h2>#{{incInt $i}} Test Result on {{$result.nentries}} entr{{if ne $result.nentries 1}}ies{{else}}y{{end}} in "{{$testResult.tableName}}"</h2></div>
+      <div class="card card-body" id="testResults{{$i}}">
+        <table class="table">
+          <thead>
+            <th>T</th><th>Time/Entry</th>
+            {{range $i, $maxPrecisionK := $result.maxPrecisions}}
+              <th>Precision@{{index $result.Ks $i}}/{{printf "%.4g" (mulFloat32 $maxPrecisionK 100)}}%</th>
+            {{end}}
+            {{range $_, $K := $result.Ks}}
+              <th>nDCG@{{$K}}</th>
+            {{end}}
+          </thead>
+          <tbody>
+            {{range $_, $round := $result.rounds}}
+              <tr>
+                <th>{{$round.T}}</th><th>{{$round.inferenceTimePerEntry}}</th>
+                {{range $_, $precision := $round.precisions}}
+                  <td>{{printf "%.4g" (mulFloat32 $precision 100)}}%</td>
+                {{end}}
+                {{range $_, $nDCG := $round.nDCGs}}
+                  <td>{{printf "%.4g" (mulFloat32 $nDCG 100)}}%</td>
+                {{end}}
+              </tr>
+            {{end}}
+          </tbody>
+        </table>
+      </div>
+    {{end}}
+  </div></body>
+</html>

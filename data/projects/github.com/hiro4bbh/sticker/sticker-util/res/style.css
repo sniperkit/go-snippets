@@ -1,0 +1,50 @@
+#container {
+  margin: 16px;
+}
+
+.canvas-container {
+  position: relative;
+}
+
+.row {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.axis line, .axis path {
+  stroke: #5E5E5E;
+}
+.bar {
+  fill: #56C1FF;
+}
+.bar-mouseover {
+  fill: #00A2FF;
+}
+
+.head {
+  padding: 8px;
+}
+.hover-appeal:hover {
+  background: #EEEEEE;
+}
+
+.arrow {
+  left: 50%;
+}
+
+.badge-left {
+  background-color: #FF8DC6;
+}
+.badge-right {
+  background-color: #56C1FF;
+}
+.badge-both {
+  background-color: #AAA7C2;
+}
+
+body.hide-omittable-features .omittable-feature {
+  display: none;
+}
+body.hide-omittable-labels .omittable-label {
+  display: none;
+}
