@@ -1,0 +1,1 @@
+name ,steps ,usage,versionData Express/ Scala,1 - 14,Connects to EPIC/Clarity(Oracle based database) to extract data from the EMR using sql queries and store the data in the PostgreSQL database. ,0.9.1.3

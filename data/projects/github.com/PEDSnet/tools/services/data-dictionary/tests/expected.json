@@ -1,0 +1,64 @@
+{
+    "demographics": {
+        "birth_date": {
+            "implementation_status": "Deferred",
+            "site_comments": "site comment 12"
+        },
+        "birth_time": {
+            "implementation_status": "Immediate",
+            "site_comments": "site comment 13"
+        },
+        "patid": {
+            "implementation_status": "Deferred",
+            "site_comments": "site comment 11"
+        },
+        "sex": {
+            "implementation_status": "Deferred",
+            "site_comments": ""
+        }
+    },
+    "enrollment": {
+        "chart": {
+            "implementation_status": "",
+            "site_comments": ""
+        },
+        "enr_basis": {
+            "implementation_status": "Immediate",
+            "site_comments": "site comment 24"
+        },
+        "enr_end_date": {
+            "implementation_status": "Unavailable",
+            "site_comments": "site comment 23"
+        },
+        "enr_start_date": {
+            "implementation_status": "Deferred",
+            "site_comments": "site comment 22"
+        },
+        "patid": {
+            "implementation_status": "Deferred",
+            "site_comments": "site comment 21"
+        }
+    },
+    "exampletable": {
+        "chart": {
+            "implementation_status": "Immediate",
+            "site_comments": "Able to identify charts based upon scrambled PATID."
+        },
+        "enr_basis": {
+            "implementation_status": "Immediate",
+            "site_comments": "Enrollment determined by insurance enrollment, start enrollment to end enrollment."
+        },
+        "enr_end_date": {
+            "implementation_status": "Immediate",
+            "site_comments": "Actual last date of enrollment period."
+        },
+        "enr_start_date": {
+            "implementation_status": "Immediate",
+            "site_comments": "Actual start date of enrollment period."
+        },
+        "patid": {
+            "implementation_status": "Immediate",
+            "site_comments": "Site defined: actual local patient ID is PHI - scrambled for PCORnet purposes."
+        }
+    }
+}

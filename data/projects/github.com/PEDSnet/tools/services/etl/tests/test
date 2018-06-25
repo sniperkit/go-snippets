@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# cd into the directory of this script.
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+
+python3 ../parser.py input.md | diff expected.json - > /dev/null
+
+# Message stating that the output did not match.
+if [ $? -ne 0 ]; then
+    echo 'Output did not match'
+fi

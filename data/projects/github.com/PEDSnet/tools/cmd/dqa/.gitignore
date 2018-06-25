@@ -1,0 +1,5 @@
+vendor/
+
+# VS Code and Delve
+debug
+.vscode
