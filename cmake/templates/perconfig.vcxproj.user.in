@@ -1,0 +1,3 @@
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='@USERFILE_CONFIGNAME@|@USERFILE_PLATFORM@'">
+    <LocalDebuggerWorkingDirectory>@USERFILE_WORKING_DIRECTORY@</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>

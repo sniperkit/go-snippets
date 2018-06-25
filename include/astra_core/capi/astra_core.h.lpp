@@ -1,0 +1,19 @@
+/* ^^^AUTOGENHEADER^^^ */
+#ifndef ASTRA_CAPI_H
+#define ASTRA_CAPI_H
+
+#include "astra_defines.h"
+#include "astra_types.h"
+
+ASTRA_BEGIN_DECLS
+
+ASTRA_API astra_status_t astra_initialize();
+ASTRA_API astra_status_t astra_terminate();
+
+^^^BEGINREPLACE:stream^^^
+ASTRA_API ^RETURN^ astra_^FUNC^(^PARAMS^);
+
+^^^ENDREPLACE^^^
+ASTRA_END_DECLS
+
+#endif /* ASTRA_CAPI_H */
