@@ -1,0 +1,100 @@
+#!/bin/bash
+
+#
+# Bash Profile - Functions Helpers
+#
+
+#
+# parse_url function allows to parse any kind of urls 
+# and to split it into parts.
+#
+function parse_url() {
+
+	# url var catch the 1st function argument
+	local url=${1:-""}
+
+	# parts declares the associative array with the url parts. 
+	declare -a parts=()
+
+	# extract the protocol
+	local proto="$(echo $1 | grep :// | sed -e's,^\(.*://\).*,\1,g')"
+	parts["proto"] = proto
+
+	# remove the protocol
+	local url="$(echo ${1/$proto/})"
+	parts["url"] = url
+
+	# extract the user (if any)
+	local user="$(echo $url | grep @ | cut -d@ -f1)"
+	parts["user"] = user
+
+	# extract the host
+	local host="$(echo ${url/$user@/} | cut -d/ -f1)"
+	parts["host"] = host
+
+	# by request - try to extract the port
+	local port="$(echo $host | sed -e 's,^.*:,:,g' -e 's,.*:\([0-9]*\).*,\1,g' -e 's,[^0-9],,g')"
+	parts["port"] = port
+
+	# extract the path (if any)
+	local path="$(echo $url | grep / | cut -d/ -f2-)"
+	parts["path"] = path
+
+	# provider
+	local provider="$(echo $url | grep / | cut -d/ -f1)"
+	parts["provider"] = provider
+
+	# namespace
+	local namespace="$(echo $url | grep / | cut -d/ -f2)"
+	parts["namespace"] = namespace
+
+	# name
+	local interface="$(echo $url | grep / | cut -d/ -f3)"
+	parts["interface"] = interface
+
+	# package_uri
+	local uri="${provider}/${namespace}/${interface}"
+	parts["uri"] = uri
+
+	echo ${parts[*]}
+}
+
+function list {
+	local input_file=${1:-"input.txt"}
+	local parallel=${2:-"10"}
+	cat file | xargs -I % 
+}
+
+function fbs { 
+	local limit=${1:-"20"}
+	du -m . | sort -nr | head -n $limit
+}
+
+function fb { 
+	local limit=${1:-"20"}
+	du -h . | sort -hr | head -n $limit
+}
+
+function fbg { 
+	local pattern=${1:-"vendor"}
+	local limit=${2:-"50"}
+	du -h . | grep "$pattern" | sort -hr | head -n $limit
+}
+
+function fd { 
+	local pattern=${1:-"test"}
+	# find . -type d -name "$pattern" -print -exec rm -r "{}" \;
+	find . -name "$pattern" -type d -exec rm -rf {} +
+	# find . -name "$pattern" -type d -print0 # | xargs -r0 -- rm -r
+}
+
+function rmd { 
+	local pattern=${1:-"test"}
+	find . -name "$pattern" -type d -print -exec rm -rf {} +
+	# find . -name "$pattern" -print0 | xargs -r0 -- rm -r
+	# find . -name "$pattern" -type d -prune -exec rm -rf '{}' '+'
+	# find . -type d -name "$pattern" -print 
+}
+
+
+

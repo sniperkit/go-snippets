@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#
+# Bash Profile - Output Helpers
+#
+
+#####################################################################
+# If called with no arguments a new timer is returned.
+# If called with arguments the first is used as a timer
+# value and the elapsed time is returned in the form HH:MM:SS.
+#
+# function timer
+function timer()
+{
+	if [ $# -eq 0 ]; then
+        echo $(date '+%s')
+    else
+        local stime=$1
+        etime=$(date '+%s')
+        if [[ -z "$stime" ]]; then stime=$etime; fi
+        dt=$((etime - stime))
+        ds=$((dt % 60))
+        dm=$(((dt / 60) % 60))
+        dh=$((dt / 3600))
+		printf 'function: "%s", duration: %d:%02d:%02d' "$2" $dh $dm $ds
+    fi
+}

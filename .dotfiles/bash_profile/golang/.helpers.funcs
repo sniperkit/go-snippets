@@ -1,0 +1,45 @@
+#!/bin/bash
+
+#
+# Bash Profile - Functions Helpers for Golang
+#
+
+#
+# Generic aliases
+# 
+alias gr="go run -race *.go"
+
+## golang_cd2src_uri function allows to switch to golang source directory by providing only the repo uri
+function golang_cd2src_uri {
+	local uri=${uri:-""}
+	[ "$uri" == "" ] && echo --Red "No uri provided"
+	cd $GOPATH/src/$1
+}
+
+alias god=golang_cd2src_uri
+
+export REMOVED_DIRS_TOTAL=0
+declare REMOVED_DIRS_KEYS=()
+function rm_vendor_dirs { 
+	local start=$(timer)
+	local pattern_dirname=${1:-"test"}
+
+	local remove_sequence=""
+	for key in "${REMOVE_DIRS_ARRAY[@]}"; do
+		remove_sequence+=" -name \"$key\" "
+	done
+
+	echolor --Red "find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +"
+	local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
+	local removed_dirs_array=($(echo "$removed_dirs" | tr ' ' '\n'))
+	local removed_dirs_count=${#removed_dirs_array[@]}
+	echo " - pattern_dirname    = ${pattern_dirname}"
+	echo " - removed_dirs_count = ${removed_dirs_count}"
+
+	if [ ${removed_dirs_count} -gt 0 ]; then
+		REMOVED_DIRS_KEYS+=(${pattern_dirname})
+		REMOVED_DIRS_TOTAL=$((REMOVED_DIRS_TOTAL+$removed_dirs_count))
+		echolor --Red " - [WARNING] removed_dirs       = ${removed_dirs[@]}"
+	fi
+	echo $(timer $start $FUNCNAME)
+}

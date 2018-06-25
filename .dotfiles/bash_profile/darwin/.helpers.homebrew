@@ -1,0 +1,3 @@
+#!/bin/bash
+
+# HOMEBREW_MAKE_JOBS=4 VERBOSE=1 brew install --verbose mysql --with-local-infile

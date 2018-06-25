@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#
+# Bash Profile - Aliases for Golang
+#
+
+alias gr="go run -race *.go"

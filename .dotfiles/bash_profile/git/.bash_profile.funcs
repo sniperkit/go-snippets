@@ -1,0 +1,443 @@
+#!/bin/bash
+
+#
+# Bash Profile - Functions Helpers for Git
+#
+
+function god {
+	cd $GOPATH/src/$1
+}
+
+function gi {
+	git clone --recursive --depth=1 https://$1 $GOPATH/src/$1
+	cd $GOPATH/src/$1
+}
+
+## ls-subtrees() function allows:
+## - to return the list of subtrees added to a repository by parsing git logs.
+## - to filter the output by applying a deduplication or sorting filters
+function ls-subtrees() {
+
+	### Export output - args
+	local exportFile=${5:-"true"}
+	local exportPrefixPath=${5:-".meta"}
+	local exportBasename=${6:-"ls-subtrees"}
+	local exportExtension=${7:-"tsv"}
+	local exportFilePath=${1:-"${exportPrefixPath}/ls-subtrees.tsv"}
+
+	### Subtrees attributes - args
+	local patterns=${2:-"git-subtree-dir|git-subtree-repo"}
+
+	### Filtering - args
+	local ordered=${3:-"true"}
+	local dedup=${4:-"true"}
+
+	### Prepare 
+	ensure_dir $(dirname ${exportFilePath})
+
+	### Execute 
+	local output=""
+	local command=()
+
+	# print logs
+	command+="git log"
+
+	# grep logs
+	command+="|"
+	command+="grep"
+	command+="-e git-subtree-dir"
+	command+="-e git-subtree-repo"
+
+	# awk
+	command+="|"
+	command+="awk '{ print $2 $3 $4 }'"
+
+	# tr
+	command+="|"
+	command+="tr -d ' '"
+
+	# cut
+	command+="|"
+	command+="cut -d ":" -f2"
+
+	# sort
+	command+="|"
+	command+="sort"		
+
+	# uniq
+	command+="|"
+	command+="uniq"
+
+	# directory exists
+	command+="|"
+	command+="xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi'"
+
+	# echo to local file
+	command+=">"
+	command+="$export_file"
+
+	# response=($(echo "$ls_subtrees" | tr ',' '\n'))
+
+	### Return output 
+	if [ "${exportFile}" == true ]; then
+		echo ${output} > $export_file ;
+	else
+		echo ${output}
+	fi
+
+}
+
+export COMMITFUL=false
+export UNSTAGGED_FILES=""
+export UNSTAGGED_FILES_COUNT=0
+function ls_unstagged {
+	local start=$(timer)
+	local result=$(git status --short | grep '^.[^ ]' | sed 's/^...//')
+	UNSTAGGED_FILES=($(echo "$result" | tr ' ' '\n'))
+	UNSTAGGED_FILES_COUNT=${#UNSTAGGED_FILES[@]}
+	echo ""
+	echolor --Cyan "## CHECK unstagged files: "
+	echolor --Red "$UNSTAGGED_FILES"
+	echo ""
+	echo "- UNSTAGGED_FILES_COUNT=${#UNSTAGGED_FILES[@]}"
+	if [ "${UNSTAGGED_FILES_COUNT}" -gt 0 ]; then 
+		COMMITFUL=true
+	fi
+	echo $(timer $start "$FUNCNAME")
+	separator
+}
+
+export COMMIT_COUNT=0
+function git_commit {
+	local start=$(timer)
+	[ "$COMMIT_COUNT" -gt 2 ] && exit # prevent infinite loops
+	local message=${1:-"add latest changes..."}	
+	git add .
+	git commit -am "$1"
+	COMMIT_COUNT=($COMMIT_COUNT+1)
+	echo $(timer $start "$FUNCNAME")
+	separator
+}
+
+export GCPRUNEFUL=false
+function pruneful {
+	local start=$(timer)
+	local match="git prune"
+	local file=".git/gc.log"
+	echo ""
+	echolor --Cyan "## CHECK repo is pruneful ?"
+	if [ -f ${file} ]; then
+		echolor --Red "### found ${file}"
+		[ `cat  ${file} | grep -c "$match"` -gt 0 ] && GCPRUNEFUL=true
+		if [ "$GCPRUNEFUL" == "true" ]; then
+			echo "### removing ${file}"
+			rm -f $file
+			echo "### Run git prune"
+			git prune
+		fi
+	fi
+	echo $(timer $start $FUNCNAME)
+	separator
+}
+
+function commitful {
+	local dir=${1:-"$GOPATH"}
+	for d in $(find $dir -name '.git' -printf "%h\n"); do
+	  pushd $d >/dev/null
+	  status="undefined"
+	  [ `git status -uno | grep -c "nothing to commit, working directory clean"` -gt 0 ] && status="clean"
+	  [ `git status -uno | grep -c "Untracked files:"` -gt 0 ] && status="untracked"
+	  [ `git status -uno | grep -c "Changes not staged for commit:"` -gt 0 ] && status="not staged"
+	  [ `git status -uno | grep -c "Changes to be committed:"` -gt 0 ] && status="to be committed"
+	  [ `git status -uno | grep -c "Your branch is ahead of"` -gt 0 ] && status="ahead of"
+	  f=`git status -uno | grep -cE "modified\:|added\:"`
+	  echo "[$status] ($f files) $d : status has `git status -uno | wc -l` lines"
+	  popd >/dev/null
+	done
+}
+
+function clean_github {
+	local extensions=${1:-"*.a;*.so;*.exe;"}
+	# ref. https://stackoverflow.com/questions/1133698/find-name-pattern-that-matches-multiple-patterns
+	# find . -type f -regex "*\.\(a\|so\|exe\|zip\|tar.gz\|bz2\|txt\)$" -type f -print
+	# find . -regextype posix-egrep -regex ".*\.(a|so|exe|zip|tar.gz|bz2|txt)$"
+	# find . -type f | egrep -i "*.a|*.so|*.exe|*.zip|*.tar.gz"
+	find . -name "$pattern" -type d -print -exec rm -rf {} +
+}
+
+function sanitize_url {
+	echo
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"snippets"}
+}
+
+function snip {
+	echo
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"snippets"}
+	if [ "$url" != "" ]; then
+		clear
+		purl $url
+		echo
+		echolor --green "args:"
+		echolor --White "  url: $url"
+		echolor --White "  dry: $dry"
+		echo
+		echolor --Yellow "raw:"
+		echolor --White "  url: $url"
+		echolor --White "  proto: $proto"
+		echolor --White "  user: $user"
+		echolor --White "  host: $host"
+		echolor --White "  port: $port"
+		echolor --White "  path: $path"
+		echo
+		echolor --Cyan "golang:"
+		echolor --White "  provider:		$provider"
+		echolor --White "  namespace:		$namespace"
+		echolor --White "  interface:		$interface"
+		echolor --White "  package_uri:		$package_uri"
+		echo
+	fi
+	# echo "https://github.com/bstrds/4chdm/blob/42de90323321003998dcec7afced01e98825458d/4chdata/get" | sed 's/http\:\/\///g' | sed 's/https\:\/\///g'
+	pwd
+	# echo
+	# echolor --Green "git status:"
+	# git status -uno
+
+	echo
+	echolor --Red "git subtree add:"
+	# mkdir -p prefix_path
+	git subtree add --prefix ${prefix_path}/${package_uri} https://$package_uri ${branch} --squash
+
+	echo
+}
+
+function git_commit {
+	local message=${1:-"add latest changes..."}	
+	git add .
+	git commit -am "$1"
+}
+
+function awe {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/awesome-lists"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	# git_commit "index awesome list from: $package_uri"
+}
+
+
+function dock {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/dockerfiles"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	# git_commit "index dockerfile(s) list from: $package_uri"
+}
+
+function aggr {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/aggregators"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	# git_commit "index aggregation related project from: $package_uri"
+}
+
+function blr {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/boilerplates"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	git_commit "index boilerplate from: $package_uri"
+}
+
+function kb {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/wikis"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	# git_commit "index wiki markdowns from: $package_uri"
+}
+
+function eg {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/examples"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	# git_commit "index examples from: $package_uri"
+}
+
+function tuto {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/tutorials"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	# git_commit "index tutorials from: $package_uri"
+}
+
+function ben {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/benchmarks"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	# git_commit "index benchmarking scripts from: $package_uri"
+}
+
+
+function prj {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/projects"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	# git_commit "index project from: $package_uri"
+}
+alias proj=prj
+
+function dot {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/dotfiles"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	# git_commit "index dotfiles from: $package_uri"
+}
+
+function expl {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/examples"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	# git_commit "index examples from: $package_uri"
+}
+
+# source ~/.bash_profile
+function src {
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local prefix_path=${3:-"data/sources"}
+ 	snip $url $branch $prefix_path
+	purl $url
+ 	# git_commit "index source code from: $package_uri"
+}
+
+function gits {
+	echo
+	local url=${1:-""}
+	local branch=${2:-"master"}
+	local dry=${3:-"y"}
+	local dest=${4:-""}
+	if [ "$url" != "" ]; then
+		clear
+		purl $url
+		echo
+		echolor --green "args:"
+		echolor --White "  url: $url"
+		echolor --White "  dry: $dry"
+		echo
+		echolor --Yellow "raw:"
+		echolor --White "  url: $url"
+		echolor --White "  proto: $proto"
+		echolor --White "  user: $user"
+		echolor --White "  host: $host"
+		echolor --White "  port: $port"
+		echolor --White "  path: $path"
+		echo
+		echolor --Cyan "golang:"
+		echolor --White "  provider:		$provider"
+		echolor --White "  namespace:		$namespace"
+		echolor --White "  interface:		$interface"
+		echolor --White "  package_uri:		$package_uri"
+		echo
+	fi
+	# echo "https://github.com/bstrds/4chdm/blob/42de90323321003998dcec7afced01e98825458d/4chdata/get" | sed 's/http\:\/\///g' | sed 's/https\:\/\///g'
+	pwd
+	echo
+	echolor --Green "git status:"
+	git status -uno
+	if [ "$dry" == 'y' ]; then
+		echo
+		echolor --Red "git subtree add:"
+		local prefix_path=".staging/src/$package_uri"
+		if [ "$dest" != ""]; then 
+			prefix_path="$dest"
+		fi
+
+		git subtree add --prefix ${prefix_path} https://$package_uri ${branch} --squash
+	fi
+	if [ -d $PWD/.staging/src/$package_uri ]; then
+		mkdir -p .staging/aliases/names
+		mkdir -p .staging/aliases/uri
+		echo
+		echolor --Red "symlink?"
+		if [ ! -d $PWD/.staging/aliases/names/${interface} ]; then
+			echolor --White " ---> ln -s $PWD/.staging/src/$package_uri/ $PWD/.staging/aliases/names/${interface}"
+			ln -s $PWD/.staging/src/$package_uri/ $PWD/.staging/aliases/names/${interface}
+		fi
+		if [ ! -d $PWD/.staging/aliases/uri/${namespace}__${interface} ]; then
+			echolor --White " ---> ln -s $PWD/.staging/src/$package_uri/ $PWD/.staging/aliases/full/${namespace}__${interface}"
+		fi
+		echo
+	fi
+	echo
+}
+
+function git-agent {
+	eval "$(ssh-agent -s)"
+	ssh-add -K ~/.ssh/id_rsa
+}
+
+
+function gitr {
+	local url=${1:-""}
+	local depth=${2:-"1"}
+	git clone --recursive --depth=$depth $url
+}
+
+function uget {
+	local type=${1:-"snip"}
+	local user=${2:-"hunter"}
+	local page=${3:-"1"}
+	curl -s "https://api.github.com/users/$user/repos?page=$page&per_page=100" | grep -e 'git_url*' | cut -d \" -f 4 | xargs -L1 ${type} ; 
+}
+
+function bs {
+	local input_file=${1:-"./shared/testdata/provider/vcs/github.com/ghs.prj.links.tsv"}
+	local command=${2:-"prj"}
+	local parallel=${3:-"10"}
+	if [ $input_file == "" ]; then 
+		echo "Please provide an input filepath..."
+		echo "Exiting now :-("
+		return 
+	fi
+	export -f prj git_commit purl snip 
+	export -f ${command}
+	cat ${input_file} | awk -v env_var="$command" '{print env_var " " $1}' | xargs -0 bash -c
+}
+
+function bl {
+	local input_file=${1:-"./shared/testdata/provider/input.txt"}
+	local command=${2:-"prj"}
+	local parallel=${3:-"10"}
+	if [ $input_file == "" ]; then 
+		echo "Please provide an input filepath..."
+		echo "Exiting now :-("
+		return 
+	fi
+	export -f prj git_commit purl snip 
+	export -f ${command}
+	cat ${input_file} | awk -v env_var="$command" '{print env_var " " $1}' | cut -d \" -f 4 | xargs -L1 echo
+	# cat ${input_file} | awk -v env_var="$command" '{print env_var " " $1}' | xargs -0 bash -c
+}
+

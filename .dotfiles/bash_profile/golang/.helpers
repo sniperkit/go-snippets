@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#
+# Bash Profile - Golang helpers
+#
+
+## Glide
+declare -a GLIDE_COMMANDS=\
+(
+	"glide"="github.com/Masterminds/glide"
+	"glide-pin"="github.com/multiplay/glide-pin"
+	"glide-clean"="github.com/ngdinhtoan/glide-cleanup"
+)
+
+
+
+[ `which glide` == "" ] && go get -v -u github.com/Masterminds/glide
+[ `which glide-pin` == "" ] && go get -v -u github.com/multiplay/glide-pin
+[ `which glide-clean` == "" ] && go get -v -u github.com/ngdinhtoan/glide-cleanup

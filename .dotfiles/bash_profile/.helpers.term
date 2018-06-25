@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#
+# Bash Profile - Terminal Helpers
+#
+
+#### Terminal - common aliases
+
+alias cc="stty sane; clear"
+
+#### Terminal - Functions + aliases
+
+###
+### Function "rename_terminal_tab()" allows to...
+###
+function rename_terminal_tab()
+{
+	echo -ne "\033]0;$1:$2\007"
+}
+### rtt() is an alias of function rename_terminal_tab()
+alias rtt=rename_terminal_tab

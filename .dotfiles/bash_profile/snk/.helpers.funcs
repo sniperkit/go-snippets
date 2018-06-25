@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Sniperkit - Functions
+
+# export QUERY="dockerfiles alpine"; export EXPORT_FILE=".meta/ghs_snip.${QUERY/ /_}.$(date +%Y-%m-%d).sh"; echo -e "#/bin/sh\n\n# Query: ${QUERY}\n" > ${EXPORT_FILE}; chmod a+x ${EXPORT_FILE}; ghs --max=1000 --token="${GITHUB_TOKEN}" --sort=updated ${QUERY} | cut -d " " -f1 | xargs -I {}  bash -c 'echo "dock https://github.com/{}";' >> ${EXPORT_FILE}
+# export QUERY="dockerfiles alpine"; export EXPORT_FILE=".meta/ghs_urls.${QUERY/ /_}.$(date +%Y-%m-%d).tsv";  echo -e "# Query: ${QUERY}\n" > ${EXPORT_FILE}; chmod a+x ${EXPORT_FILE}; ghs --max=1000 --token="${GITHUB_TOKEN}" --sort=updated ${QUERY} | cut -d " " -f1 | xargs -I {}  bash -c 'echo "https://github.com/{}.git";' >> ${EXPORT_FILE}
+# export QUERY="dockerfiles alpine"; export EXPORT_FILE=".meta/ghs_results.${QUERY/ /_}.$(date +%Y-%m-%d).tsv";  echo -e "uri\tdescription" > ${EXPORT_FILE}; chmod a+x ${EXPORT_FILE}; ghs --max=1000 --token="${GITHUB_TOKEN}" --sort=updated ${QUERY} | xargs -I {}  bash -c 'echo "github.com/{}";' >> ${EXPORT_FILE}

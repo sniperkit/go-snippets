@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#
+# Bash Profile - Output Helpers
+#
+
+#####################################################################
+# Echolor allows to colorize bash outputs
+# It is a wrapper of the 'echo' command 
+# repository: 'https//:github.com/Gruppio/Echolor'
+#
+# install Echolor in '/usr/local/bin'
+[ `which echolor` == "" ] && wget -nc -o /usr/local/bin/echolor https://raw.githubusercontent.com/Gruppio/Echolor/master/echolor.sh
+
+#####################################################################
+# Called with no arguments
+# Display a speration line
+#
+# function separator
+function separator {
+	echo "-----------------------------------------------------------------"
+	echo
+}
