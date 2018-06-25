@@ -1,6 +1,0 @@
-Bind = "0.0.0.0:10000"
-LocalDatabase = "/opt/chronograf.db"
-QueryResponseBytesLimit = 2500000
-
-# DSN to connect to MySQL for storing Chronograf application data.
-# MySQLDSN = "user:password@tcp(192.0.2.1:3306)/some_database"

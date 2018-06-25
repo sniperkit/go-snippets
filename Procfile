@@ -1,0 +1,1 @@
+web: snk-dev-assistant

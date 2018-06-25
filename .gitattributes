@@ -2,4 +2,6 @@
 BUILD linguist-language=Python diff=python
 docs/* linguist-documentation
 third_party/go/src/* linguist-vendored
-* text=off
+* text=auto
+*.ai binary
+readme.md merge=union
