@@ -1,0 +1,5 @@
+add_subdirectory(DepthReaderPoll)
+add_subdirectory(DepthReaderEvent)
+add_subdirectory(HandReader)
+add_subdirectory(ColorReaderPoll)
+add_subdirectory(ColorReaderEvent)

@@ -1,0 +1,19 @@
+/* ^^^AUTOGENHEADER^^^ */
+#ifndef ASTRA_PLUGINSERVICE_PROXY_H
+#define ASTRA_PLUGINSERVICE_PROXY_H
+
+#include "../astra_types.h"
+#include "astra_plugin.h"
+#include <stdarg.h>
+
+struct astra_pluginservice_proxy_t
+{
+    void* pluginService;
+
+^^^BEGINREPLACE:plugin^^^
+    ^RETURN^ (*^FUNC^)(^PARAMS:types,void^);
+
+^^^ENDREPLACE^^^
+};
+
+#endif /* ASTRA_PLUGINSERVICE_PROXY_H */

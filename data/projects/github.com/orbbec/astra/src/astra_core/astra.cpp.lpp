@@ -1,0 +1,88 @@
+/* ^^^AUTOGENHEADER^^^ */
+// This file is part of the Orbbec Astra SDK [https://orbbec3d.com]
+// Copyright (c) 2015 Orbbec 3D
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// Be excellent to each other.
+#include "astra_context.hpp"
+#include "astra_cxx_compatibility.hpp"
+#include <astra_core_api.h>
+#include <astra_core/capi/astra_host_events.h>
+#include <memory>
+#include <cstring>
+
+static std::unique_ptr<astra::context> g_contextPtr(nullptr);
+static bool g_initialized = false;
+
+ASTRA_BEGIN_DECLS
+
+ASTRA_API astra_status_t astra_initialize()
+{
+    if (g_initialized)
+        return ASTRA_STATUS_SUCCESS;
+
+    g_initialized = true;
+    g_contextPtr = astra::make_unique<astra::context>();
+
+    return g_contextPtr->initialize();
+}
+
+ASTRA_API astra_status_t astra_terminate()
+{
+    if (!g_initialized)
+        return ASTRA_STATUS_SUCCESS;
+
+    astra_status_t rc =  g_contextPtr->terminate();
+    g_initialized = false;
+
+    return rc;
+}
+
+^^^BEGINREPLACE:stream^^^
+ASTRA_API ^RETURN^ astra_^FUNC^(^PARAMS^)
+{
+    if (g_contextPtr)
+    {
+        return g_contextPtr->^FUNC^(^PARAMS:names,deref^);
+    }
+    else
+    {
+        return ASTRA_STATUS_UNINITIALIZED;
+    }
+}
+
+^^^ENDREPLACE^^^
+ASTRA_API astra_status_t astra_notify_host_event(astra_event_id id, const void* data, size_t dataSize)
+{
+    if (g_contextPtr)
+    {
+        return g_contextPtr->notify_host_event(id, data, dataSize);
+    }
+    else
+    {
+        return ASTRA_STATUS_UNINITIALIZED;
+    }
+}
+
+ASTRA_API astra_status_t astra_notify_resource_available(const char* resourceURI)
+{
+    return astra_notify_host_event(ASTRA_EVENT_RESOURCE_AVAILABLE, resourceURI, std::strlen(resourceURI));
+}
+
+ASTRA_API astra_status_t astra_notify_resource_unavailable(const char* resourceURI)
+{
+    return astra_notify_host_event(ASTRA_EVENT_RESOURCE_UNAVAILABLE, resourceURI, std::strlen(resourceURI));
+}
+
+ASTRA_END_DECLS

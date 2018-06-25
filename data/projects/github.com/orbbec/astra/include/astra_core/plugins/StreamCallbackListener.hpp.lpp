@@ -1,0 +1,60 @@
+﻿/* ^^^AUTOGENHEADER^^^ */
+// This file is part of the Orbbec Astra SDK [https://orbbec3d.com]
+// Copyright (c) 2015 Orbbec 3D
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// Be excellent to each other.
+#ifndef ASTRA_STREAMCALLBACK_LISTENER_HPP
+#define ASTRA_STREAMCALLBACK_LISTENER_HPP
+
+#include "../capi/astra_types.h"
+#include <astra_core/capi/plugins/astra_plugin_callbacks.h>
+
+namespace astra {
+
+    class stream_callback_listener
+    {
+    public:
+        virtual ~stream_callback_listener() = default;
+    private:
+
+^^^BEGINREPLACE:plugincallbacks^^^
+        static ^RETURN^ ^FUNC^_thunk(^PARAMS:void^)
+        {
+            static_cast<stream_callback_listener*>(^PARAMS:voidonly,names^)->^FUNC^(^PARAMS:names,wrap,deref^);
+        }
+
+^^^ENDREPLACE^^^
+^^^BEGINREPLACE:plugincallbacks^^^
+        virtual ^RETURN^ ^FUNC^(^PARAMS:ref^) {}
+
+^^^ENDREPLACE^^^
+
+        friend stream_callbacks_t create_plugin_callbacks(stream_callback_listener* context);
+    };
+
+    inline stream_callbacks_t create_plugin_callbacks(stream_callback_listener* context)
+    {
+        stream_callbacks_t callbacks;
+
+        callbacks.context = context;
+^^^BEGINREPLACE:plugincallbacks^^^
+        callbacks.^FUNC^_callback = &stream_callback_listener::^FUNC^_thunk;
+^^^ENDREPLACE^^^
+
+        return callbacks;
+    }
+}
+
+#endif // ASTRA_STREAMCALLBACK_LISTENER_HPP
