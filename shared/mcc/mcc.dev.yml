@@ -1,0 +1,57 @@
+---
+schema_version: v1.1.0
+timezone: Europe/Paris
+widgets:
+  - id: menu_sift
+    type: menu
+    title: Sift
+    content:
+      - category: Development
+        name: GitHub Open
+        description: opens repository home by your browser
+        command: bin/lib/git-open/git-open origin master
+
+      - category: Development
+        name: GitHub Issue Open
+        description: opens issue page of current branch by your browser
+        command: bin/lib/github-issue-open/main
+
+      - category: Build
+        name: Build binary
+        description: Build Sift on your local machine
+        command: make build
+
+      - category: Build
+        name: Build & Check
+        description: Build & Check Sift on your local machine
+        command: make build
+
+      - category: Install
+        name: Install and test
+        description: Install & test Sift on your local machine
+        command: make install
+
+      - category: Build
+        name: Build dist
+        description: Cross-build Sift for Linux, MacOSX, Windows, NetBSD, OpenBSD, Solaris platforms.
+        command: make dist
+
+      - category: Docker
+        name: Build Docker image
+        description: Build docker image on Sift command cli 
+        command: make docker
+
+      - category: Test
+        name: Tests 
+        description: Run testing files on this repository
+        command: make test
+
+layout:
+  - name: DASHBOARD
+    rows:
+      - height: 100%
+        cols:
+          - width: 12
+            stacks:
+              - id: menu_sift
+                height: 100% 

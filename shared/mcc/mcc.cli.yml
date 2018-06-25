@@ -1,0 +1,30 @@
+---
+schema_version: v1.1.0
+timezone: Europe/Paris
+widgets:
+  - id: menu_sift
+    type: menu
+    title: SIFT
+    content:
+      - category: Replace
+        name: Replace
+        description: replace value in local file
+        command: sift '<RecordId>(\d+)' --replace '$1' myXmlFile.xml 
+      - category: Find
+        name: Data processing
+        description: find and process patterns in local file
+        command: sift -i --no-filename '^\d+\s+([\w-]+).*knicks' --replace '$1' | sort | uniq -c | sort -nr | head
+      - category: Find
+        name: Log file search
+        description: find patterns in log dirs/files
+        command: sift -z sift-tool.org queries* 
+
+layout:
+  - name: DASHBOARD
+    rows:
+      - height: 100%
+        cols:
+          - width: 12
+            stacks:
+              - id: menu_docker
+                height: 100% 

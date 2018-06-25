@@ -1,0 +1,70 @@
+# hint: FROM `golang`:`1.10-alpine` AS builder
+FROM {{ .ContainerBuilderBase }}:{{ .ContainerBuilderBaseTag }} AS builder
+
+# hint: RUN apk add --no-progress --no-cache `make cmake`
+RUN {{ if .ContainerBuilderDepsAddList }} \
+	{{ if .ContainerBuilderDepsAddCmd }} {{ .ContainerBuilderDepsAddCmd }} {{ if .ContainerBuilderDepsAddOpts }} \
+	{{ $option := range .ContainerBuilderDepsAddOpts }} {{ .option }} {{ end }} \
+	{{ $pkgName, $pkgVer := range .ContainerBuilderDepsAddList }} {{ .pkgName }}{{ if .pkgVer }}:{{ .pkgVer }}{{ end }} {{ end }}
+
+{{ if .ContainerBuilderCopyLocalDir }}
+{{ if .ContainerBuilderCopyContainerDir }}
+# Copy local directory to conatiner directory (custom settings)
+COPY {{ .ContainerBuilderCopyLocalDir }} {{ .ContainerBuilderCopyContainerDir }}
+{{ else }}
+# Copy local directory to conatiner directory (default settings)
+COPY {{ .ContainerBuilderCopyLocalDir }} /go/src/{{ .ContainerAppRepoUri }}
+{{ end }}
+{{ end }}
+
+{{ if .ContainerBuilderWorkDir }}
+{{ if .ContainerBuilderCopyContainerDir }}
+# Copy local directory to conatiner directory (default settings)
+WORKDIR {{ .ContainerBuilderCopyContainerDir }}
+{{ else }}
+# Copy local directory to conatiner directory (default settings)
+WORKDIR /go/src/{{ .ContainerAppRepoUri }}
+{{ end }}
+{{ end }}
+
+RUN cd /go/src/{{ .ContainerAppRepoUri }} \
+{{ if .ContainerBuilderCrossBuild }}
+	&& \
+	&& gox build -v
+{{ else }}
+ && go build -v
+{{ end }}
+
+# eg. FROM alpine:3.7 AS runtime
+FROM {{ .ContainerRuntimeBase }}:{{ .ContainerRuntimeBaseTag }} AS runtime
+
+{{ .ContainerSecurityTini }}
+# Install tini to /usr/local/sbin
+ADD https://github.com/krallin/tini/releases/download/v{{ .ContainerSecurityTiniVersion }}/tini-{{ .ContainerSecurityTiniCompiler }}-{{ .ContainerSecurityTiniArch }} /usr/local/sbin/tini
+{{ end }}
+
+# Install runtime dependencies & create runtime user
+RUN apk --no-cache --no-progress add ca-certificates git libssh2 openssl \
+ && chmod +x /usr/local/sbin/tini && mkdir -p /opt \
+ && adduser -D {{ .ContainerUsername }} -h /opt/{{ .ContainerUserHomeDirname }} -s /bin/sh \
+ && su {{ .ContainerUsername }} -c 'cd /opt/{{ .ContainerUserHomeDirname }}; mkdir -p bin config data'
+
+# Switch to user context
+USER {{ .ContainerUsername }}
+WORKDIR /opt/{{ .ContainerUserHomeDirname }}
+
+# Copy {{ .ContainerAppBasename }} binary to /opt/{{ .ContainerUserHomeDirname }}/bin
+COPY --from=builder /go/src/github.com/blippar/git2etcd/git2etcd /opt/{{ .ContainerUserHomeDirname }}/bin/{{ .ContainerAppBasename }}
+COPY config.example.json /opt/{{ .ContainerUserHomeDirname }}/config/config.json
+ENV PATH $PATH:/opt/{{ .ContainerUserHomeDirname }}/bin
+
+# Container configuration
+
+{{ if .ContainerExposePorts }}{{ $key, $port range := ContainerExposePorts }}
+EXPOSE {{ .port }}
+{{ end }}
+
+VOLUME ["/opt/{{ .ContainerUserHomeDirname }}/data"]
+
+ENTRYPOINT ["tini", "-g", "--"]
+CMD ["/opt/{{ .ContainerUserHomeDirname }}/bin/{{ .ContainerAppBasename }}", "-conf_dir=/opt/git2etcd/config"]

@@ -1,0 +1,20 @@
+---
+groups:
+  app:
+  - dtk-splash
+  - dtk-fetch-d
+  - dtk-parse-d
+  cli:
+  - dtk-fetch-cli
+  stores_kv:
+  - dtk-redis
+
+commands:
+  test: run dfk make test
+  build: run dfk make build
+  gofmt: run dfk gofmt -w crane
+
+accelerated-mounts:
+  crane:
+    uid: 1000
+    gid: 1000

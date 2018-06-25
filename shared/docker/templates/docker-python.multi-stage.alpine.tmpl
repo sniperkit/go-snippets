@@ -1,0 +1,25 @@
+# defaults: 
+# os: alpine 3.7
+# source: python 3.6
+# ref: https://blog.realkinetic.com/building-minimal-docker-containers-for-python-applications-37d0272c52f3
+FROM python:{{.PyVersion}}-alpine as base
+
+FROM base as builder
+RUN mkdir /install
+WORKDIR /install
+
+COPY {{ .PipReqFileLocal }} /{{ .PipReqFileContainer }}
+RUN pip install --install-option="--prefix=/install" -r /requirements.txt
+
+FROM base
+COPY --from=builder /install /usr
+COPY src /app
+WORKDIR /app
+
+{{ if .ContainerEntrypoint }}
+ENTRYPOINT [{{ $key, $cmd := range .ContainerEntrypoint }}]
+{{ end }}
+
+{{ if .ContainerCmd }}
+CMD [{{ $key, $cmd := range .ContainerCmd }}]
+{{ end }}

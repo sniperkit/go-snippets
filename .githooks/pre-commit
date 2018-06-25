@@ -1,5 +1,7 @@
 #!/bin/sh
 
+exit
+
 clear
 
 echo ""
@@ -127,30 +129,97 @@ function ls_dirs_size {
 	separator
 }
 
-export REMOVED_DIRS_TOTAL=0
+declare REMOVED_DIRS_TOTAL=0
 declare REMOVED_DIRS_KEYS=()
 function rm_vendor_dirs { 
-	local start=$(timer)
-	local pattern_dirname=${1:-"test"}
 
-	local remove_sequence=""
-	for key in "${REMOVE_DIRS_ARRAY[@]}"; do
-		remove_sequence+=" -name \"$key\" "
+	# start timer
+	local start=$(timer)
+
+	# function args
+	local pattern_dirname=${1:-"test"}
+	local prefix_path=${2:-"."}
+	local exclude_paths=${3:-'*/\.git/*,*/\.svn/*'}
+
+	# excludes
+	# convert to array
+	local exclude_paths_array=($(echo "$exclude_paths" | tr ' ' '\n'))
+
+	# patterns
+	# get the default patterns for directories to remove
+	local patterns_array=${REMOVE_DIRS_ARRAY}
+
+	# result
+	local matches=(fs_find ${prefix_path} ${patterns_array} ${excludes_array})
+	# local matches=(fs_sift ${prefix_path} ${patterns_array} ${excludes_array})
+	# local matches=(fs_fsql ${prefix_path} ${patterns_array} ${excludes_array})
+	# local matches=(fs_snks ${prefix_path} ${patterns_array} ${excludes_array})
+
+	local matches_array=($(echo "$matches" | tr ' ' '\n'))
+	local matches_count=${#matches_array[@]}
+
+	# stop timer
+	local time_execution=$(timer $start $FUNCNAME)
+
+	# output summary
+	echolor --White  " - pattern_dirname    = ${pattern_dirname}"
+	echolor --Cyan   " - matches_count      = ${matches_count}"
+
+	if [ ${matches_count} -gt 0 ]; then
+		REMOVED_DIRS_KEYS+=(${pattern_dirname})
+		REMOVED_DIRS_TOTAL=$((REMOVED_DIRS_TOTAL+$matches_count))
+		echolor --White   " - matches_array       = ${matches_array[@]}"
+		echolor --Green   " - matches_count      = ${matches_count}"
+	else
+		echolor --Red     " - matches_count      = ${matches_count}"
+	fi
+
+	echolor --White  " - removed_global_items          = ${REMOVED_DIRS_KEYS[*]}"
+	echolor --White  " - removed_global_items_total    = ${REMOVED_DIRS_TOTAL}"
+	echolor --Yellow " - time_execution = ${time_execution}"
+}
+
+function fs_find() { 
+	local prefix_path=${1:-"."}
+	local patterns_array=$2
+	local excludes_array=$3
+
+	# remove patterns matching
+	local patterns_args=""
+	for pattern in "${patterns_array[@]}"; do
+		patterns_args+=" -name \"$pattern\" "
 	done
 
-	echolor --Red "find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +"
-	local removed_dirs=$(find . -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
-	local removed_dirs_array=($(echo "$removed_dirs" | tr ' ' '\n'))
-	local removed_dirs_count=${#removed_dirs_array[@]}
-	echo " - pattern_dirname    = ${pattern_dirname}"
-	echo " - removed_dirs_count = ${removed_dirs_count}"
+	local exclude_paths_sequence=""
+	for exclude in "${REMOVE_DIRS_ARRAY[@]}"; do
+		exclude_paths_sequence+=" -not -path '${exclude}' "
+	done
 
-	if [ ${removed_dirs_count} -gt 0 ]; then
-		REMOVED_DIRS_KEYS+=(${pattern_dirname})
-		REMOVED_DIRS_TOTAL=$((REMOVED_DIRS_TOTAL+$removed_dirs_count))
-		echolor --Red " - [WARNING] removed_dirs       = ${removed_dirs[@]}"
-	fi
-	echo $(timer $start $FUNCNAME)
+	echolor --Red "find ${prefix_path} -not -path '*/\.git/*' ${patterns_args} -type d -print -exec rm -rf {} +"
+	local removed_dirs=$(find ${prefix_path} -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
+	print ${removed_dirs}
+}
+
+function fs_snks() { 
+	local prefix_path=${1:-"."}
+	local patterns_array=$2
+	local excludes_array=$3
+
+	# remove patterns matching
+	local patterns_args=""
+	for pattern in "${patterns_array[@]}"; do
+		patterns_args+=" -name \"$pattern\" "
+	done
+
+	local exclude_paths_sequence=""
+	for exclude in "${REMOVE_DIRS_ARRAY[@]}"; do
+		exclude_paths_sequence+=" -not -path '${exclude}' "
+	done
+
+	# echolor --Red "sift ${prefix_path}"
+	local removed_dirs=$(sift ${prefix_path} -not -path '*/\.git/*' ${remove_sequence} -type d -print -exec rm -rf {} +)
+
+	print ${removed_dirs}
 }
 
 rm_vendor_dirs

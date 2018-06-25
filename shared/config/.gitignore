@@ -1,0 +1,6 @@
+config.y*
+config.json
+config.xml
+config.toml
+config.ini
+.env
