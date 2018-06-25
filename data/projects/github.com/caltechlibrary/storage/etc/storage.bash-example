@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#
+# S3 test setup example
+#
+
+# Load the config and credentials in ~/.aws if found
+export AWS_SDK_LOAD_CONFIG=1
+# You will need to define your bucket name
+export AWS_BUCKET="my.bucket.example.edu"
+
+#
+# Google Cloud Storage test setup example
+#
+export GOOGLE_BUCKET="my-test-bucket"
+
