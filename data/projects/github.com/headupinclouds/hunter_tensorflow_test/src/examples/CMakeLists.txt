@@ -1,0 +1,2 @@
+add_subdirectory(label_image)
+add_subdirectory(multibox_detector)
