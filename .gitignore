@@ -1,0 +1,8 @@
+*.sw?
+*.py?
+bin
+dist
+.DS_Store
+__pycache__
+
+services/dqa-secondary-reports/dqa_repo/

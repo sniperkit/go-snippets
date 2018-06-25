@@ -1,0 +1,1 @@
+name,steps,usage,versionEPIC/Clarity,1-25,Extracted data via SQL Query,EPIC 2014PostgreSQL,24-133,Transformed Clarity data and imported data OMOP format,PostgreSQL 9.3.5

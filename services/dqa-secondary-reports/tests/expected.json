@@ -1,0 +1,66 @@
+{
+    "unknown_table": {
+        "location_id": {
+            "CODE002": {
+                "persistent": [
+                    {
+                        "rank": "low",
+                        "site": "unknown hospital"
+                    }
+                ]
+            }
+        },
+        "name": {
+            "CODE0012": {
+                "persistent": [
+                    {
+                        "rank": "low",
+                        "site": "unknown hospital"
+                    }
+                ]
+            },
+            "CODE002": {
+                "persistent": [
+                    {
+                        "rank": "low",
+                        "site": "unknown hospital"
+                    }
+                ]
+            },
+            "CODE0022": {
+                "persistent": [
+                    {
+                        "rank": "low",
+                        "site": "unknown hospital"
+                    }
+                ]
+            },
+            "CODE0042": {
+                "solution proposed": [
+                    {
+                        "rank": "low",
+                        "site": "unknown hospital"
+                    }
+                ]
+            }
+        },
+        "source_value": {
+            "CODE001": {
+                "persistent": [
+                    {
+                        "rank": "",
+                        "site": "unknown hospital"
+                    }
+                ]
+            },
+            "CODE002": {
+                "under review": [
+                    {
+                        "rank": "medium",
+                        "site": "unknown hospital"
+                    }
+                ]
+            }
+        }
+    }
+}

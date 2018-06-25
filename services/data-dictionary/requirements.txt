@@ -1,0 +1,5 @@
+docopt
+Flask
+flask-cors
+openpyxl
+requests
