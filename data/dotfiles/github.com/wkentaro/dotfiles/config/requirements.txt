@@ -180,7 +180,7 @@ subprocess32==3.2.7
 sympy==1.1.1
 tabulate==0.8.2
 TBB==0.1
-tensorflow==1.4.0
+tensorflow==1.15.0
 tensorflow-tensorboard==0.4.0rc3
 termcolor==1.1.0
 termdown==1.12.1
