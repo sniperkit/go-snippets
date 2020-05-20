@@ -66,7 +66,7 @@ hacking==1.0.0
 html2text==2017.10.4
 html5lib==1.0.1
 htpasswd==2.3
-httplib2==0.10.3
+httplib2==0.18.0
 idna==2.6
 imageio==2.2.0
 -e git+https://github.com/wkentaro/imgaug.git@573cee961c6a46a43404ee4898041b233840f65e#egg=imgaug
