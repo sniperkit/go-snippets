@@ -106,7 +106,7 @@ MySQL-python==1.2.5
 nbconvert==5.3.1
 nbformat==4.4.0
 networkx==2.1
-notebook==5.4.1
+notebook==6.1.5
 numpy==1.14.2
 oauth2==1.9.0.post1
 olefile==0.44
