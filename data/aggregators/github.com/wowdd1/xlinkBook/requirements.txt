@@ -20,7 +20,7 @@ httplib2==0.9
 idna==2.6
 igdb-api-python==1.0
 itsdangerous==0.24
-Jinja2==2.8
+Jinja2==2.11.3
 MarkupSafe==0.23
 mock==1.0.1
 networkx==1.9.1
