@@ -49,7 +49,7 @@ sklearn==0.0
 slackclient==1.0.4
 smart-open==1.2.1
 uritemplate==0.6
-urllib3==1.22
+urllib3==1.26.5
 websocket-client==0.40.0
 Werkzeug==0.11.9
 wikipedia==1.4.0
